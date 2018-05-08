@@ -1,0 +1,7 @@
+version: "3"
+services:
+ tomcta-authorization:
+  container_name: tomcataut
+  image: tomcataut
+
+
