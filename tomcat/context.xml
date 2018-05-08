@@ -3,7 +3,7 @@
                override="false"/>
     <Parameter name="online.kheops.auth.hmacsecret" value="P47dnfP28ptS/uzuuvEACmPYdMiOtFNLXiWTIwNNPgUjrvTgF/JCh3qZi47sIcpeZaUXw132mfmR4q5K/fwepA=="
                override="false"/>
-    <Parameter name="online.kheops.pacs.uri" value="http://pacs_arc_1:8080/dcm4chee-arc/aets/DCM4CHEE/rs"
+    <Parameter name="online.kheops.pacs.uri" value="http://pacs_arc:8080/dcm4chee-arc/aets/DCM4CHEE/rs"
                override="false"/>
     <Parameter name="online.kheops.jdbc.url" value="jdbc:mysql://kheopsmysql/kheops"
                override="false"/>
