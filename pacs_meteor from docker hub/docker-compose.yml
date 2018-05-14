@@ -60,7 +60,7 @@ services:
       - kheops-mysql-volume:/var/lib/mysql
 
 
-  tomcta-authorization:
+  tomcat-authorization:
     container_name: tomcataut
     image: osirixfoundation/kheopsauthorization-tomcat
     volumes:
