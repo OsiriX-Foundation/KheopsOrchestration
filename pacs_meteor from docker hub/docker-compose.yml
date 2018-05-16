@@ -12,6 +12,7 @@ services:
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
       - /var/local/dcm4chee-arc/ldap:/var/lib/ldap
       - /var/local/dcm4chee-arc/slapd.d:/etc/ldap/slapd.d
+    restart: on-failure
   db:
     container_name: pacs_db
     image: dcm4che/postgres-dcm4chee:10.0-13
@@ -22,6 +23,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
       - /var/local/dcm4chee-arc/db:/var/lib/postgresql/data
+    restart: on-failure
   arc:
     container_name: pacs_arc
     image: dcm4che/dcm4chee-arc-psql:5.13.0
@@ -45,6 +47,7 @@ services:
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
       - /var/local/dcm4chee-arc/wildfly:/opt/wildfly/standalone
       - /var/local/dcm4chee-arc/storage:/storage
+    restart: on-failure
 
 
   kheops-mysql:
@@ -58,6 +61,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
       - kheops-mysql-volume:/var/lib/mysql
+    restart: on-failure
 
 
   tomcat-authorization:
@@ -66,6 +70,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
+    restart: on-failure
 
   meteor-viewer:
     container_name: kheopsviewer
@@ -78,6 +83,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
+    restart: on-failure
 
 
 volumes:
