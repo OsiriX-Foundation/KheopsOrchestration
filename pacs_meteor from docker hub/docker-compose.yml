@@ -4,8 +4,8 @@ services:
   ldap:
     container_name: pacs_ldap
     image: dcm4che/slapd-dcm4chee:2.4.44-13.0
-    ports:
-      - "389:389"
+#    ports:
+#      - "389:389"
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -16,8 +16,8 @@ services:
   db:
     container_name: pacs_db
     image: dcm4che/postgres-dcm4chee:10.0-13
-    ports:
-      - "5432:5432"
+#    ports:
+#      - "5432:5432"
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -27,13 +27,13 @@ services:
   arc:
     container_name: pacs_arc
     image: dcm4che/dcm4chee-arc-psql:5.13.0
-    ports:
-      - "8080:8080"
-      - "8443:8443"
-      - "9990:9990"
-      - "8787:8787"
-      - "11112:11112"
-      - "2575:2575"
+#    ports:
+#      - "8080:8080"
+#      - "8443:8443"
+#      - "9990:9990"
+#      - "8787:8787"
+#      - "11112:11112"
+#      - "2575:2575"
     env_file: docker-compose.env
     environment:
       WILDFLY_CHOWN: /opt/wildfly/standalone /storage
@@ -53,8 +53,8 @@ services:
   kheops-mysql:
     container_name: kheopsmysql
     image: osirixfoundation/kheopsauthorization-database
-    ports:
-      - "3306:3306"
+#    ports:
+#      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: mypwd
     volumes:
@@ -66,7 +66,7 @@ services:
 
   tomcat-authorization:
     container_name: tomcataut
-    image: osirixfoundation/kheopsauthorization-tomcat
+    image: osirixfoundation/kheopsauthorization-tomcat:master
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
@@ -75,15 +75,28 @@ services:
   meteor-viewer:
     container_name: kheopsviewer
     image: osirixfoundation/kheops-viewer
-    ports:
-      - "3000:3000"
+#    ports:
+#      - "3000:3000"
     environment:
-      ROOT_URL: http://localhost:3000
+      ROOT_URL: https://kheops.naturalimage.ch
       METEOR_SETTINGS: "{\"servers\":{\"dicomWeb\":[{\"name\":\"DCM4CHEE\",\"wadoUriRoot\":\"http://pacs_arc:8080/dcm4chee-arc/aets/DCM4CHEE/wado            \",\"qidoRoot\":\"http://tomcataut:8080/KheopsAuthorization\",\"authorizationRoot\":\"http://tomcataut:8080/KheopsAuthorization\",\"wadoRoot\":\"http://pacs_arc:8080/dcm4chee-arc/aets/DCM4CHEE/rs\",\"qidoSupportsIncludeField\":false,\"imageRendering\":\"wadouri\",\"thumbnailRendering\":\"wadors\",\"requestOptions\":{\"auth\":\"admin:admin\",\"logRequests\":true,\"logResponses\":false,\"logTiming\":true}}]},\"defaultServiceType\":\"dicomWeb\",\"dropCollections\":true,\"public\":{\"verifyEmail\":false,\"ui\":{\"studyListFunctionsEnabled\":true,\"leftSidebarOpen\":false,\"displaySetNavigationLoopOverSeries\":false,\"displaySetNavigationMultipleViewports\":true,\"autoPositionMeasurementsTextCallOuts\":\"TRLB\"}},\"proxy\":{\"enabled\":true},\"private\":{\"oAuth\":{\"google\":{\"clientId\":\"795653095144-nhfclj7mrb1h9n6tmdq2ugtj7ohkl3jq.apps.googleusercontent.com\",\"secret\":\"52Q-3JwelmKAn2CQKs5pd0Jr\"}}}}"
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
     restart: on-failure
+
+  nginx:
+    image: nginx
+    container_name: my_nginx
+    volumes:
+      - /home/gerome/Bureau/test_nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /home/gerome/Bureau/test_nginx/myconf.conf:/etc/nginx/conf.d/myconf.conf
+      - /home/gerome/Bureau/test_nginx/privkey1.pem:/etc/nginx/privkey1.pem
+      - /home/gerome/Bureau/test_nginx/fullchain1.pem:/etc/nginx/fullchain1.pem
+
+    ports:
+      - "80:80"
+      - "443:443"
 
 
 volumes:
