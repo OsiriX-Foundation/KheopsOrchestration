@@ -89,7 +89,7 @@ services:
     image: nginx
     container_name: my_nginx
     volumes:
-      - /home/gerome/Bureau/test_nginx/nginx.conf:/etc/nginx/nginx.conf
+#      - /home/gerome/Bureau/test_nginx/nginx.conf:/etc/nginx/nginx.conf
       - /home/gerome/Bureau/test_nginx/myconf.conf:/etc/nginx/conf.d/myconf.conf
       - /home/gerome/Bureau/test_nginx/privkey1.pem:/etc/nginx/privkey1.pem
       - /home/gerome/Bureau/test_nginx/fullchain1.pem:/etc/nginx/fullchain1.pem
@@ -97,6 +97,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8042:8042"
 
 
 volumes:
