@@ -71,6 +71,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
     restart: on-failure
+    depends_on:
+      - kheops-mysql
+      - arc
 
   meteor-viewer:
     container_name: kheopsviewer
@@ -84,6 +87,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
     restart: on-failure
+    depends_on:
+      - tomcat-authorization
+      - arc
 
   nginx:
     image: nginx
@@ -98,6 +104,9 @@ services:
       - "80:80"
       - "443:443"
       - "8042:8042"
+    depends_on:
+      - tomcat-authorization
+      - arc
 
 
 volumes:
