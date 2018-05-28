@@ -136,9 +136,9 @@ secrets:
   mysql_password:
     file: ${SECRETS_PATH}/mysql_password
   privkey1.pem:
-    file: ../../../test_nginx/privkey1.pem
+    file: ${NGINX_KEY}/privkey1.pem
   fullchain1.pem:
-    file: ../../../test_nginx/fullchain1.pem
+    file: ${NGINX_KEY}/fullchain1.pem
   OAuth2_secret:
     file: ${SECRETS_PATH}/OAuth2_secret
 
