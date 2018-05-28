@@ -1,4 +1,5 @@
 version: "3.1"
+
 services:
 
   ldap:
@@ -9,10 +10,11 @@ services:
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
-      - /var/local/dcm4chee-arc/ldap:/var/lib/ldap
-      - /var/local/dcm4chee-arc/slapd.d:/etc/ldap/slapd.d
+      - ${TIME_ZONE}:/etc/timezone:ro
+      - ${DCM4CHEE_PATH}/ldap:/var/lib/ldap
+      - ${DCM4CHEE_PATH}/slapd.d:/etc/ldap/slapd.d
     restart: on-failure
+
   db:
     container_name: pacs_db
     image: dcm4che/postgres-dcm4chee:10.0-13
@@ -21,19 +23,20 @@ services:
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
-      - /var/local/dcm4chee-arc/db:/var/lib/postgresql/data
+      - ${TIME_ZONE}:/etc/timezone:ro
+      - ${DCM4CHEE_PATH}/db:/var/lib/postgresql/data
     restart: on-failure
+
   arc:
     container_name: pacs_arc
     image: dcm4che/dcm4chee-arc-psql:5.13.0
-#    ports:
-#      - "8080:8080"
-#      - "8443:8443"
-#      - "9990:9990"
-#      - "8787:8787"
-#      - "11112:11112"
-#      - "2575:2575"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "9990:9990"
+      - "8787:8787"
+      - "11112:11112"
+      - "2575:2575"
     env_file: docker-compose.env
     environment:
       WILDFLY_CHOWN: /opt/wildfly/standalone /storage
@@ -44,10 +47,11 @@ services:
       - db
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
-      - /var/local/dcm4chee-arc/wildfly:/opt/wildfly/standalone
-      - /var/local/dcm4chee-arc/storage:/storage
+      - ${TIME_ZONE}:/etc/timezone:ro
+      - ${DCM4CHEE_PATH}/wildfly:/opt/wildfly/standalone
+      - ${DCM4CHEE_PATH}/storage:/storage
     restart: on-failure
+
 
 
   kheops-mysql:
@@ -65,9 +69,10 @@ services:
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
       - kheops-mysql-volume:/var/lib/mysql
     restart: on-failure
+
 
 
   tomcat-authorization:
@@ -75,7 +80,7 @@ services:
     image: osirixfoundation/kheopsauthorization-tomcat:master
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
     env_file: docker-compose.env
     depends_on:
@@ -86,18 +91,20 @@ services:
       - kheops_auth_hmasecret
       - mysql_password
 
+
   meteor-viewer:
     container_name: kheopsviewer
     image: osirixfoundation/kheops-viewer
 #    ports:
 #      - "3000:3000"
-    environment:
-      METEOR_SETTINGS: "{\"servers\":{\"dicomWeb\":[{\"name\":\"DCM4CHEE\",\"wadoUriRoot\":\"http://pacs_arc:8080/dcm4chee-arc/aets/DCM4CHEE/wado            \",\"qidoRoot\":\"http://tomcataut:8080/KheopsAuthorization\",\"authorizationRoot\":\"http://tomcataut:8080/KheopsAuthorization\",\"wadoRoot\":\"http://pacs_arc:8080/dcm4chee-arc/aets/DCM4CHEE/rs\",\"qidoSupportsIncludeField\":false,\"imageRendering\":\"wadouri\",\"thumbnailRendering\":\"wadors\",\"requestOptions\":{\"auth\":\"admin:admin\",\"logRequests\":true,\"logResponses\":false,\"logTiming\":true}}]},\"defaultServiceType\":\"dicomWeb\",\"dropCollections\":true,\"public\":{\"verifyEmail\":false,\"ui\":{\"studyListFunctionsEnabled\":true,\"leftSidebarOpen\":false,\"displaySetNavigationLoopOverSeries\":false,\"displaySetNavigationMultipleViewports\":true,\"autoPositionMeasurementsTextCallOuts\":\"TRLB\"}},\"proxy\":{\"enabled\":true},\"private\":{\"oAuth\":{\"google\":{\"clientId\":\"795653095144-nhfclj7mrb1h9n6tmdq2ugtj7ohkl3jq.apps.googleusercontent.com\",\"secret\":\"52Q-3JwelmKAn2CQKs5pd0Jr\"}}}}"
+
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - /usr/share/zoneinfo/Europe/Zurich:/etc/timezone:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
+    secrets:
+      - OAuth2_secret
     depends_on:
       - tomcat-authorization
       - arc
@@ -119,20 +126,21 @@ services:
 
 
 secrets:
-
   kheops_superuser_hmasecret:
-    file: secrets/kheops_superuser_hmasecret
+    file: ${SECRETS_PATH}/kheops_superuser_hmasecret
   kheops_auth_hmasecret:
-    file: secrets/kheops_auth_hmasecret
+    file: ${SECRETS_PATH}/kheops_auth_hmasecret
 
   mysql_root_password:
-    file: secrets/mysql_root_password
+    file: ${SECRETS_PATH}/mysql_root_password
   mysql_password:
-    file: secrets/mysql_password
+    file: ${SECRETS_PATH}/mysql_password
   privkey1.pem:
     file: ../../../test_nginx/privkey1.pem
   fullchain1.pem:
     file: ../../../test_nginx/fullchain1.pem
+  OAuth2_secret:
+    file: ${SECRETS_PATH}/OAuth2_secret
 
 volumes:
   kheops-mysql-volume:

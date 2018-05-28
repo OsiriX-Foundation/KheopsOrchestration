@@ -81,7 +81,7 @@ services:
 #    ports:
 #      - "3000:3000"
     environment:
-      ROOT_URL: https://kheops.naturalimage.ch
+      ROOT_URL: https://kheops.online
       METEOR_SETTINGS: "{\"servers\":{\"dicomWeb\":[{\"name\":\"DCM4CHEE\",\"wadoUriRoot\":\"http://pacs_arc:8080/dcm4chee-arc/aets/DCM4CHEE/wado            \",\"qidoRoot\":\"http://tomcataut:8080/KheopsAuthorization\",\"authorizationRoot\":\"http://tomcataut:8080/KheopsAuthorization\",\"wadoRoot\":\"http://pacs_arc:8080/dcm4chee-arc/aets/DCM4CHEE/rs\",\"qidoSupportsIncludeField\":false,\"imageRendering\":\"wadouri\",\"thumbnailRendering\":\"wadors\",\"requestOptions\":{\"auth\":\"admin:admin\",\"logRequests\":true,\"logResponses\":false,\"logTiming\":true}}]},\"defaultServiceType\":\"dicomWeb\",\"dropCollections\":true,\"public\":{\"verifyEmail\":false,\"ui\":{\"studyListFunctionsEnabled\":true,\"leftSidebarOpen\":false,\"displaySetNavigationLoopOverSeries\":false,\"displaySetNavigationMultipleViewports\":true,\"autoPositionMeasurementsTextCallOuts\":\"TRLB\"}},\"proxy\":{\"enabled\":true},\"private\":{\"oAuth\":{\"google\":{\"clientId\":\"795653095144-nhfclj7mrb1h9n6tmdq2ugtj7ohkl3jq.apps.googleusercontent.com\",\"secret\":\"52Q-3JwelmKAn2CQKs5pd0Jr\"}}}}"
     volumes:
       - /etc/localtime:/etc/localtime:ro
