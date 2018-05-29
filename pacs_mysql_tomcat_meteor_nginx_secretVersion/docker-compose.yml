@@ -56,7 +56,7 @@ services:
 
   kheops-mysql:
     container_name: kheopsmysql
-    image: osirixfoundation/kheopsauthorization-database
+    image: osirixfoundation/kheopsauthorization-database:${KHEOPS_DATABASE_IMAGE_TAG}
 #    ports:
 #      - "3306:3306"
     environment:
@@ -77,7 +77,7 @@ services:
 
   tomcat-authorization:
     container_name: tomcataut
-    image: osirixfoundation/kheopsauthorization-tomcat:master
+    image: osirixfoundation/kheopsauthorization-tomcat:${KHEOPS_TOMCAT_IMAGE_TAG}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -94,7 +94,7 @@ services:
 
   meteor-viewer:
     container_name: kheopsviewer
-    image: osirixfoundation/kheops-viewer
+    image: osirixfoundation/kheops-viewer:${KHEOPS_VIEWER_IMAGE_TAG}
 #    ports:
 #      - "3000:3000"
 
@@ -110,7 +110,7 @@ services:
       - arc
 
   nginx:
-    image: osirixfoundation/kheopsnginx
+    image: osirixfoundation/kheopsnginx:${KHEOPS_NGINX_IMAGE_TAG}
     container_name: kheopsnginx
     secrets:
       - privkey1.pem
