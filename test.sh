@@ -1,2 +1,0 @@
-curl -H "Content-Type: application/x-www-form-urlencoded" -d "assertion=eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiIxMDE1NDYxNDY0MzEzNjc4OTMzNjEiLCJlbWFpbCI6Imdlcm9tZS5wYXNxdWllckBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZXhwIjoyNTIyOTQzNTcyLCJpc3MiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJpYXQiOjE1MjI5Mzk5NzJ9.NzFA-XT80nwT4jU3D3ddc4zhh1KS2iVg8MEG-_TWL68&grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer" -X POST -v "http://172.21.0.5:8080/KheopsAuthorization/token"
-
