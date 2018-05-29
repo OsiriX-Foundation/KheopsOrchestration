@@ -28,7 +28,7 @@ script:
   - npm --version
   - node_modules/.bin/newman --version
   - cd kheops
-  - docker-compose up -d
+#  - docker-compose up -d
   - docker ps -a
   - node_modules/.bin/newman run tests/bitcoinz.postman_collection.json -e tests/tests.postman_environment.json
   
