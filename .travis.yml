@@ -16,3 +16,8 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - ls
   - docker-compose -version
+  
+script:
+  - cd kheops
+  - docker-compose up -d
+  - docker ps -a
