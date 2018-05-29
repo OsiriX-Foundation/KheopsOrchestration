@@ -23,10 +23,12 @@ before_install:
 install:
   - npm install newman  
 
-script:
+before_script:
   - node --version
   - npm --version
   - node_modules/.bin/newman --version
+
+script:
   - cd kheops
 #  - docker-compose up -d
   - docker ps -a
