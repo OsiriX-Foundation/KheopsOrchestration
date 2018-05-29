@@ -30,5 +30,5 @@ script:
   - cd kheops
 #  - docker-compose up -d
   - docker ps -a
-  - node_modules/.bin/newman run tests/bitcoinz.postman_collection.json -e tests/tests.postman_environment.json
+  - node_modules/.bin/newman run bitcoinz.postman_collection.json -e tests.postman_environment.json
   
