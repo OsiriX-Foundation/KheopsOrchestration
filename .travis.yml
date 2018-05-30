@@ -13,12 +13,12 @@ env:
   - DOCKER_COMPOSE_VERSION=1.21.2
 
 #before_install:
-#  - sudo rm /usr/local/bin/docker-compose
-#  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-#  - chmod +x docker-compose
-#  - sudo mv docker-compose /usr/local/bin
-#  - ls
-#  - docker-compose -version
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  - ls
+  - docker-compose -version
   
 install:
   - npm install newman  
@@ -29,8 +29,9 @@ before_script:
   - node_modules/.bin/newman --version
 
 script:
-#  - cd kheops
-#  - docker-compose up -d
+  - cd kheops
+  - docker-compose up -d
+  - cd ..
   - docker ps -a
   - node_modules/.bin/newman run bitcoinz.postman_collection.json -e tests.postman_environment.json
   - node_modules/.bin/newman run kheops.postman_collection.json -e kheops_localhost.postman_environment.json
