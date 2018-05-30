@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "8477774e-a908-4fcc-a599-c74d55ff03ff",
+		"name": "kheops",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "KheopsAuthorization/token-Bad assertion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "442edc98-b648-4a42-8533-57b1bc4df787",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content_Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "123456789",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test.kheops.online:8042/KheopsAuthorization/token",
+					"protocol": "https",
+					"host": [
+						"test",
+						"kheops",
+						"online"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KheopsAuthorization/token-Bad grant_type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "024fc40a-0459-4f04-a716-1850369e15bd",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:jwt-beare",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "123456789",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://test.kheops.online:8042/KheopsAuthorization/token",
+					"protocol": "https",
+					"host": [
+						"test",
+						"kheops",
+						"online"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
