@@ -46,7 +46,7 @@
 							"var lastDay = postman.getEnvironmentVariable('lastDay');",
 							"",
 							"// Oops! There is an error in this test. Fix it so that `<=` is `>=` to ensure the response was updated in the last day",
-							"tests[\"Updated in the last day\"] = bitcoinTime <= lastDay;",
+							"tests[\"Updated in the last day\"] = bitcoinTime >= lastDay;",
 							""
 						]
 					}
