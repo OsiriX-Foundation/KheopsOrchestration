@@ -47,12 +47,9 @@
 					]
 				},
 				"url": {
-					"raw": "https://test.kheops.online:8042/KheopsAuthorization/token",
-					"protocol": "https",
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
 					"host": [
-						"test",
-						"kheops",
-						"online"
+						"{{URL}}"
 					],
 					"port": "8042",
 					"path": [
@@ -74,6 +71,16 @@
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
 							""
 						]
 					}
@@ -105,12 +112,9 @@
 					]
 				},
 				"url": {
-					"raw": "https://test.kheops.online:8042/KheopsAuthorization/token",
-					"protocol": "https",
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
 					"host": [
-						"test",
-						"kheops",
-						"online"
+						"{{URL}}"
 					],
 					"port": "8042",
 					"path": [
