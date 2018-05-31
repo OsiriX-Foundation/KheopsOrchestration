@@ -414,6 +414,10 @@
 					{
 						"key": "Authorization",
 						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
 					}
 				],
 				"body": {},
@@ -455,6 +459,10 @@
 					{
 						"key": "Authorization",
 						"value": "Bearer 123456789"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
 					}
 				],
 				"body": {},
@@ -495,6 +503,10 @@
 					{
 						"key": "Authorization",
 						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
 					}
 				],
 				"body": {},
@@ -606,20 +618,20 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
+						"id": "e3ea1f27-8a5d-44aa-bbae-a858f66cd1f7",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
-							"tests[\"Empty response []\"] = responseBody === \"[]\""
+							"tests[\"Empty response []\"] = responseBody != \"[]\""
 						]
 					}
 				},
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "310f0869-409b-444d-aadb-da282d0dc39f",
+						"id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
 						"type": "text/javascript",
 						"exec": [
 							"function wait(ms)",
@@ -641,6 +653,10 @@
 					{
 						"key": "Authorization",
 						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
 					}
 				],
 				"body": {},
