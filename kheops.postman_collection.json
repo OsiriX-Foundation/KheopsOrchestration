@@ -942,6 +942,55 @@
 			"response": []
 		},
 		{
+			"name": "Study Metadata",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user2}}",
+						"studies",
+						"{{study_UID}}",
+						"metadata"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Removes a specific study from to another user-Forbidden",
 			"event": [
 				{
@@ -1026,6 +1075,46 @@
 						"type": "text/javascript",
 						"exec": [
 							"tests[\"Status code is 204\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a non existing study from the user's Inbox",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "089d91ab-3ba4-4b6b-929f-09c0dfaadf9d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
 						]
 					}
 				}
