@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "KheopsAuthorization/token-Bad assertion",
+			"name": "create user-Bad assertion",
 			"event": [
 				{
 					"listen": "test",
@@ -61,7 +61,7 @@
 			"response": []
 		},
 		{
-			"name": "KheopsAuthorization/token-Bad grant_type",
+			"name": "create user-Bad grant_type",
 			"event": [
 				{
 					"listen": "test",
@@ -126,7 +126,7 @@
 			"response": []
 		},
 		{
-			"name": "KheopsAuthorization/token-create",
+			"name": "create user1-create",
 			"event": [
 				{
 					"listen": "test",
@@ -191,12 +191,12 @@
 			"response": []
 		},
 		{
-			"name": "KheopsAuthorization/token-OK",
+			"name": "create user1-OK",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "31995924-3e59-4455-8b89-bf4b9bb5ee5b",
+						"id": "7d424a5e-5cda-49c1-a1f5-652755dbf16f",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
@@ -204,7 +204,7 @@
 							"",
 							"var jsonObject = JSON.parse(responseBody);",
 							"",
-							"pm.environment.set(\"access_token\", jsonObject.access_token);"
+							"pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
 						]
 					}
 				},
@@ -259,7 +259,140 @@
 			"response": []
 		},
 		{
-			"name": "KheopsAuthorization/users/{user}/studies-Empty",
+			"name": "create user2-create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2d502d26-5797-4180-b901-7230a32dfcaa",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 201\"] = responseCode.code === 201;",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5ODc2NTQzMjEiLCJlbWFpbCI6InRpdGlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.Csj6WCBDwZlXeUOE0nX6SmReZhGZayw2yZFKWzlwysE",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user2-OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "49ce3e58-085d-4826-b75d-678695216dd9",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"pm.environment.set(\"access_token_user2\", jsonObject.access_token);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5ODc2NTQzMjEiLCJlbWFpbCI6InRpdGlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.Csj6WCBDwZlXeUOE0nX6SmReZhGZayw2yZFKWzlwysE",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-Empty",
 			"event": [
 				{
 					"listen": "test",
@@ -280,7 +413,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{access_token}}"
+						"value": "Bearer {{access_token_user1}}"
 					}
 				],
 				"body": {},
@@ -301,7 +434,7 @@
 			"response": []
 		},
 		{
-			"name": "KheopsAuthorization/users/{user}/studies-Bad access_token",
+			"name": "user1 get studies list-Bad access_token",
 			"event": [
 				{
 					"listen": "test",
@@ -342,7 +475,7 @@
 			"response": []
 		},
 		{
-			"name": "KheopsAuthorization/users/{user}/studies-Bad user",
+			"name": "user1 get studies list-Bad user",
 			"event": [
 				{
 					"listen": "test",
@@ -361,7 +494,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{access_token}}"
+						"value": "Bearer {{access_token_user1}}"
 					}
 				],
 				"body": {},
@@ -406,7 +539,7 @@
 				],
 				"body": {
 					"mode": "file",
-					"file": "testStudy.dcm"
+					"file": {}
 				},
 				"url": {
 					"raw": "{{URL_PACS}}:8080/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
@@ -444,7 +577,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{access_token}}"
+						"value": "Bearer {{access_token_user1}}"
 					}
 				],
 				"body": {},
@@ -462,6 +595,48 @@
 						"{{study_UID}}",
 						"series",
 						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-1studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Empty response []\"] = responseBody === \"[]\""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies"
 					]
 				}
 			},
