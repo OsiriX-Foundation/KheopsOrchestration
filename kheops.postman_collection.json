@@ -196,7 +196,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "7d424a5e-5cda-49c1-a1f5-652755dbf16f",
+						"id": "b4cc6eaa-d3f9-46ae-9817-8bce26dde4e3",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
@@ -728,10 +728,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+						"id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 201\"] = responseCode.code === 201;"
+							"tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
 						]
 					}
 				}
@@ -812,10 +812,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6d7d9abd-dc46-4534-bbeb-f01ce7197fbc",
+						"id": "8f753068-1073-482a-9100-9d74e73e632b",
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
 						]
 					}
 				}
@@ -854,10 +854,10 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "63b7c961-bb53-4100-b38c-1677593b049c",
+						"id": "7e86d12d-13a0-40e2-ad8d-ebdf34f38359",
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
 						]
 					}
 				}
