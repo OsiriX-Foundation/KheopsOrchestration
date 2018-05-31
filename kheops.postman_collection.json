@@ -615,6 +615,24 @@
 							"tests[\"Empty response []\"] = responseBody === \"[]\""
 						]
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "310f0869-409b-444d-aadb-da282d0dc39f",
+						"type": "text/javascript",
+						"exec": [
+							"function wait(ms)",
+							"{",
+							"    var d = new Date();",
+							"    var d2 = null;",
+							"    do { d2 = new Date(); }",
+							"    while(d2-d < ms);",
+							"}",
+							"",
+							"wait(15000);"
+						]
+					}
 				}
 			],
 			"request": {
