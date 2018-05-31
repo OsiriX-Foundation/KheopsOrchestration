@@ -11,8 +11,8 @@ notifications:
 
 env:
   - DOCKER_COMPOSE_VERSION=1.21.2
-  - OLD="file"":" {}
-  - NEW="file"":" "testStudy.dcm"
+  - OLD="file"
+  - NEW=iiiiiiiiiiiiiiiiiiiiiiiiiiii
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
