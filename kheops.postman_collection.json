@@ -940,6 +940,167 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Removes a specific study from to another user-Forbidden",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "80270a6f-c37d-48aa-b99f-13b3596553da",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 403\"] = responseCode.code === 403;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific study from to another user-Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95fb8990-1211-4779-b810-106b7dc68df5",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific study from the user's Inbox-OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "58b76520-f7cd-40dd-87c1-c9bb822f6d8d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 204\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-Empty after Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Empty response []\"] = responseBody === \"[]\""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
