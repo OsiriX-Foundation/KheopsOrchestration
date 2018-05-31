@@ -551,7 +551,7 @@
 				],
 				"body": {
 					"mode": "file",
-					"file": "testStudy.dcm"
+					"file": {}
 				},
 				"url": {
 					"raw": "{{URL_PACS}}:8080/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
@@ -698,7 +698,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{access_token_user1}}"
+						"value": "Bearer {{access_token_user2}}"
 					},
 					{
 						"key": "Accept",
@@ -786,7 +786,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{access_token_user1}}"
+						"value": "Bearer {{access_token_user2}}"
 					},
 					{
 						"key": "Accept",
