@@ -3,6 +3,11 @@ node_js:
   - "8.2.1"
 sudo: required
 
+env:
+  - OLD="file": {}
+  - NEW="file": "testStudy.dcm"
+  - PACKAGE_VERSION="1.0.*"
+
 services:
   - docker
   
@@ -28,7 +33,7 @@ before_script:
 
   
 script:
-  - sed -i "s|"file"":" {}|"file"":" "testStudy.dcm"|" kheops.postman_collection.json
+  - sed -i "s|$OLD|$NEW|" kheops.postman_collection.json
   - cd kheops
 #  - docker-compose up -d
   - cd ..
