@@ -618,13 +618,15 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "84b17b8d-e7ff-47eb-b37d-56c40a4ce949",
+						"id": "a5055b06-d516-4117-b4f9-60329a2c6126",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
-							"tests[\"Not empty response []\"] = responseBody != \"[]\""
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"pm.environment.set(\"tempDicomData\", responseBody);"
 						]
 					}
 				},
@@ -812,7 +814,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8f753068-1073-482a-9100-9d74e73e632b",
+						"id": "e0df1af4-d60d-483c-8f80-daf27eda7d88",
 						"type": "text/javascript",
 						"exec": [
 							"tests[\"Status code is 400\"] = responseCode.code === 400;"
@@ -896,13 +898,16 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "2328784a-eb31-43ce-8368-5cea72e1cf13",
+						"id": "85349a90-80e8-4fc6-9185-d3c97888c39a",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
-							"tests[\"Not empty response []\"] = responseBody != \"[]\""
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"tests[\"responseBody OK\"] = responseBody === pm.environment.get(\"tempDicomData\");;",
+							""
 						]
 					}
 				}
