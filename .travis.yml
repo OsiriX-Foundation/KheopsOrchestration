@@ -25,14 +25,16 @@ before_script:
   - node --version
   - npm --version
   - node_modules/.bin/newman --version
-
+  - chmod +x script.sh
+  provider: script
+  script: script.sh 
+  
 script:
   - cd kheops
 #  - docker-compose up -d
   - cd ..
   - docker ps -a
 #  - sleep 30
-  - sed -i "s|\"file\": {}|\"file\": \"testStudy.dcm\"|" kheops.postman_collection.json
   - cat kheops.postman_collection.json
 #  - node_modules/.bin/newman run bitcoinz.postman_collection.json -e tests.postman_environment.json
 #  - node_modules/.bin/newman run kheops.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
