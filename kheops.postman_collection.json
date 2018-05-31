@@ -406,7 +406,7 @@
 				],
 				"body": {
 					"mode": "file",
-					"file": {testStudy.dcm}
+					"file": {"testStudy.dcm"}
 				},
 				"url": {
 					"raw": "{{URL_PACS}}:8080/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
