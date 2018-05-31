@@ -3,11 +3,6 @@ node_js:
   - "8.2.1"
 sudo: required
 
-env:
-  - OLD="file"":" {}
-  - NEW="file"":" "testStudy.dcm"
-  - PACKAGE_VERSION="1.0.*"
-
 services:
   - docker
   
@@ -16,6 +11,8 @@ notifications:
 
 env:
   - DOCKER_COMPOSE_VERSION=1.21.2
+  - OLD="file"":" {}
+  - NEW="file"":" "testStudy.dcm"
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
