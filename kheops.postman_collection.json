@@ -571,7 +571,7 @@
 			"response": []
 		},
 		{
-			"name": "Give a user access to a specific series (first time)",
+			"name": "Give an user access to a specific series (first time)",
 			"event": [
 				{
 					"listen": "test",
@@ -723,7 +723,7 @@
 			"response": []
 		},
 		{
-			"name": "Give a user2 access to a specific series from user1",
+			"name": "Give to user2 an access to a specific series from user1",
 			"event": [
 				{
 					"listen": "test",
@@ -759,6 +759,132 @@
 						"{{study_UID}}",
 						"series",
 						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give an access to a specific series from user1-Bad user id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b754a4f1-5176-466c-a026-e0d9ff840512",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/999999/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"999999",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give an access to a specific series from user1-Bad study_UID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d7d9abd-dc46-4534-bbeb-f01ce7197fbc",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/999999/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user2}}",
+						"studies",
+						"999999",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give an access to a specific series from user1-Bad series_UID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "63b7c961-bb53-4100-b38c-1677593b049c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/999999",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user2}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"999999"
 					]
 				}
 			},
