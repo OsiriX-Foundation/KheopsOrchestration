@@ -11,8 +11,6 @@ notifications:
 
 env:
   - DOCKER_COMPOSE_VERSION=1.21.2
-  - OLD="file"
-  - NEW=iiiiiiiiiiiiiiiiiiiiiiiiiiii
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -30,7 +28,8 @@ before_script:
 
   
 script:
-  - sed -i "s|$OLD|$NEW|" kheops.postman_collection.json
+  - chmod +x script.sh
+  - ./script.sh
   - cd kheops
 #  - docker-compose up -d
   - cd ..
