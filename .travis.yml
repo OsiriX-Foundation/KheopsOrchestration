@@ -35,6 +35,7 @@ script:
   - cd ..
   - docker ps -a
   - sleep 30
+  - docker ps -a
 #  - node_modules/.bin/newman run bitcoinz.postman_collection.json -e tests.postman_environment.json
   - node_modules/.bin/newman run kheops.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
 #  - node_modules/.bin/newman run kheops.postman_collection.json -e kheops_test.kheops.online.postman_environment.json -g Workspace.postman_globals.json
