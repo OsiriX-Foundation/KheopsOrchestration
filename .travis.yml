@@ -28,7 +28,7 @@ before_script:
 
   
 script:
-  - sed -i "s|\"file\": {}|\"file\": \"testStudy.dcm\"|" kheops.postman_collection.json 
+  - sed -i "s|"file": {}|"file": "testStudy.dcm"|" kheops.postman_collection.json 
   - cd kheops
 #  - docker-compose up -d
   - cd ..
