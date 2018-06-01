@@ -1130,6 +1130,164 @@
 			"response": []
 		},
 		{
+			"name": "Capability Tokens with scope-OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54963654-bd26-4abe-ab25-b608f724ebff",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"User is correct\"] = jsonObject.user === pm.globals.get(\"user1\");",
+							"tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
+							"",
+							"pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);",
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:x-kheops:params:oauth:grant-type:capability",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "{{secret_capability_token}}",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "StudyInstanceUID={{study_UID}} SeriesInstanceUID={{series_UID}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Capability Tokens with-Bad scope",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54963654-bd26-4abe-ab25-b608f724ebff",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"User is correct\"] = jsonObject.user === pm.globals.get(\"user1\");",
+							"tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
+							"",
+							"pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);",
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:x-kheops:params:oauth:grant-type:capability",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "{{secret_capability_token}}",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "StudyInstanceUID={{study_UID}}123 SeriesInstanceUID={{series_UID}}456",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Capability Tokens-Unknown capability token",
 			"event": [
 				{
