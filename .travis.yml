@@ -29,6 +29,7 @@ before_script:
   
 script:
   - chmod +x script.sh
+  - chmod +x scriptTitle.sh
   - ./script.sh
   - cd kheops
   - docker-compose up -d
@@ -38,8 +39,6 @@ script:
   - docker ps -a
 
   - node_modules/.bin/newman run kheops.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
-  - echo ***************************************************************************************
-  - echo *                             CAPABILITY TOKENS                                       *
-  - echo ***************************************************************************************
+  - ./scriptTitle.sh
   - node_modules/.bin/newman run kheops-Capability_Tokens.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
 #  - node_modules/.bin/newman run kheops.postman_collection.json -e kheops_test.kheops.online.postman_environment.json -g Workspace.postman_globals.json
