@@ -11,11 +11,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b4cc6eaa-d3f9-46ae-9817-8bce26dde4e3",
+						"id": "7d254f79-8603-4eab-9239-23ac1867331a",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Status code is 201\"] = responseCode.code === 201;",
 							"",
 							"var jsonObject = JSON.parse(responseBody);",
 							"",
@@ -68,6 +68,48 @@
 					"path": [
 						"KheopsAuthorization",
 						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a capability tokens user1-no token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5ae678e6-d584-48e6-9a6f-d3b1956f85c1",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Empty response []\"] = responseBody === \"[]\""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
 					]
 				}
 			},
@@ -329,6 +371,608 @@
 						"capabilities",
 						"{{secret_capability_token}}",
 						"revoke"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens-Bad user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "171773d7-d972-41c0-83ef-2a309029d291",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "dc9c2440-b780-4da9-a923-3bbaa17579ed",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"description\", \"some description\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/99999/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"99999",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens-Bad user1 access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "55f24ad3-dde1-4bc3-9282-88b0a91ed3a1",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "709d4eb1-b23b-42ac-8132-153af2dc22a7",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"description\", \"some description\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9999999"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens-Bad expiration date",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "37b12a50-1b5f-4c5d-b085-f72e969c9c98",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c89f916b-4bd1-4def-a504-75b7aa81cc80",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"description\", \"some description\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "expiration",
+							"value": "1st mai 2018",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens-Bad expiration date (old date)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f00dd5f5-8c8a-4329-9740-48b23c7fbeac",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 201\"] = responseCode.code === 201;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"Expiration date is correct\"] = jsonObject.expiration === pm.environment.get(\"expiration\");",
+							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"description\");",
+							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+							"",
+							"",
+							"pm.environment.unset(\"expiration\");"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "df5fb1bb-a79b-4a21-880e-c0ac7bbeef16",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"expiration\", \"2015-12-01T08:35:50Z\");",
+							"pm.environment.set(\"description\", \"some description 2\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "expiration",
+							"value": "{{expiration}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens-Bad header accept",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "97d4a0d1-28c6-4a75-bb65-dca8a377901a",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 406\"] = responseCode.code === 406;"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "08d10ca2-3a65-4fff-85cc-b66f9c7ae8bc",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"description\", \"some description\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json+dicom"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens-Empty description",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9540db44-c1c4-4e54-9be7-14dad10a39b2",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 201\"] = responseCode.code === 201;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"description\");",
+							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+							"",
+							"",
+							"pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bec3dcb0-f9a0-4f28-8b53-9cf1de3874c5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"description\", \"\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens-Bad description",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9540db44-c1c4-4e54-9be7-14dad10a39b2",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 201\"] = responseCode.code === 201;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"description\");",
+							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+							"",
+							"",
+							"pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9a26a64b-3c3e-492a-83bc-eabde92455f0",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"description\", \"è¨éà$-.,_:;£äö!ü`^'^'0{}[]//\\\\<<>>  繁体字 / 繁體字, fántǐzì, \");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a capability tokens-Bad user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86a915c0-e485-4bc4-89e1-733e0f6c12b3",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/999999/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"999999",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a capability tokens-Bad user1 access token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e0fa343-9a79-4987-b884-b712b6bd0c32",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9999999"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
 					]
 				}
 			},
