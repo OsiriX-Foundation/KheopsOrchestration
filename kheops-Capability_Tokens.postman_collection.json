@@ -977,6 +977,293 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Create a capability tokens user1-OK (for next step)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "44360ffc-dcfe-4475-95d2-f679d53359af",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 201\"] = responseCode.code === 201;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"description\");",
+							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+							"",
+							"",
+							"pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"description\", \"some description\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "description",
+							"value": "{{description}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Capability Tokens-OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54963654-bd26-4abe-ab25-b608f724ebff",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"User is correct\"] = jsonObject.user === pm.globals.get(\"user1\");",
+							"tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
+							"",
+							"pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);",
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:x-kheops:params:oauth:grant-type:capability",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "{{secret_capability_token}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Capability Tokens-Unknown capability token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fca21610-4c8c-4651-a8cb-96379b8ee9f4",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"Unknown capability token\"] = jsonObject.error_description === \"Unknown capability token\";"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:x-kheops:params:oauth:grant-type:capability",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "99999999",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Capability Tokens-Unknown grant type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0c20e4a-03c5-44f6-ab26-a3f133d51b76",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"Unknown grant typen\"] = jsonObject.error_description === \"Unknown grant type: urn:x-kheops:params:oauth:grant-type:capabilityyyyy\";"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:x-kheops:params:oauth:grant-type:capabilityyyyy",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "{{secret_capability_token}}",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"token"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
