@@ -242,7 +242,7 @@
 			"response": []
 		},
 		{
-			"name": "STOW with proxy RS",
+			"name": "STOW with proxy RS-OK",
 			"event": [
 				{
 					"listen": "test",
@@ -345,6 +345,50 @@
 						"KheopsAuthorization",
 						"users",
 						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "STOW with proxy RS-Bad token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46b2a9a0-7b01-4c06-881e-f187487eb856",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 500\"] = responseCode.code === 500;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "{{URL_PACS}}:8048/KheopsDICOMwebProxy/capabilities/9999999/proxy/studies",
+					"host": [
+						"{{URL_PACS}}"
+					],
+					"port": "8048",
+					"path": [
+						"KheopsDICOMwebProxy",
+						"capabilities",
+						"9999999",
+						"proxy",
 						"studies"
 					]
 				}
