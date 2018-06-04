@@ -639,6 +639,55 @@
 			"response": []
 		},
 		{
+			"name": "user2 get studies list-1 studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "85349a90-80e8-4fc6-9185-d3c97888c39a",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"tests[\"responseBody OK\"] = responseBody === pm.environment.get(\"tempDicomData\");;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user2}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Give an access to a specific series from user1-Bad user id",
 			"event": [
 				{
@@ -849,21 +898,269 @@
 			"response": []
 		},
 		{
-			"name": "user2 get studies list-1 studie",
+			"name": "Give an access to a specific series from user1-Bad Authorization",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "85349a90-80e8-4fc6-9185-d3c97888c39a",
+						"id": "869eb9c0-0153-4a03-96e9-27a943d41fc2",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 99999999"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user2}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series (Bad authorization)-Forbidden",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "80270a6f-c37d-48aa-b99f-13b3596553da",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 403\"] = responseCode.code === 403;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series (no Authorization)-Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95fb8990-1211-4779-b810-106b7dc68df5",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series from the user's Inbox-OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "58b76520-f7cd-40dd-87c1-c9bb822f6d8d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 204\"] = responseCode.code === 204;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series when user doesn't have access",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "089d91ab-3ba4-4b6b-929f-09c0dfaadf9d",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-Empty after Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
-							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"tests[\"Empty response []\"] = responseBody === \"[]\""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user2 get studies list-1 studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "38adeebe-e77c-4ff5-b3b7-3145055b6a2a",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
 							"",
-							"tests[\"responseBody OK\"] = responseBody === pm.environment.get(\"tempDicomData\");;",
-							""
+							"tests[\"Not empty response []\"] = responseBody != \"[]\""
 						]
 					}
 				}
@@ -898,7 +1195,157 @@
 			"response": []
 		},
 		{
-			"name": "Removes a specific study from to another user-Forbidden",
+			"name": "Give to user2 an access to a specific series from user1 who doesn't have access",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6317996c-4645-4546-82ad-9a1fa34f2de7",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user2}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give to user1 an access to a specific series from user2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-1studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5055b06-d516-4117-b4f9-60329a2c6126",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"pm.environment.set(\"tempDicomData\", responseBody);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
+						"type": "text/javascript",
+						"exec": [
+							"function wait(ms)",
+							"{",
+							"    var d = new Date();",
+							"    var d2 = null;",
+							"    do { d2 = new Date(); }",
+							"    while(d2-d < ms);",
+							"}",
+							"",
+							"wait(15000);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific study (Bad authorization)-Forbidden",
 			"event": [
 				{
 					"listen": "test",
@@ -938,7 +1385,7 @@
 			"response": []
 		},
 		{
-			"name": "Removes a specific study from to another user-Unauthorized",
+			"name": "Removes a specific study (no Authorization)-Unauthorized",
 			"event": [
 				{
 					"listen": "test",
@@ -1013,7 +1460,7 @@
 			"response": []
 		},
 		{
-			"name": "Removes a non existing study from the user's Inbox",
+			"name": "Removes a specific study when user doesn't have access",
 			"event": [
 				{
 					"listen": "test",
