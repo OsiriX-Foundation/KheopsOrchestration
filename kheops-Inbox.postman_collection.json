@@ -940,7 +940,170 @@
 			"response": []
 		},
 		{
-			"name": "Removes a specific series (Bad authorization)-Forbidden",
+			"name": "Removes a specific series-study_UID not valid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "06412370-2a49-4170-be9c-65a49f8e062e",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/9999999/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"9999999",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series-series_UID not valid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8dd1bb4e-3e1a-4342-bcae-e4b6974029b0",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/999999",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"999999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series (No Authorization)-Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95fb8990-1211-4779-b810-106b7dc68df5",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series (Bad Authorisation)-Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5e25238c-c3fa-444b-a693-b99ee4e8760c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 99999999999"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series (user2 remove for user1)-Forbidden",
 			"event": [
 				{
 					"listen": "test",
@@ -982,25 +1145,72 @@
 			"response": []
 		},
 		{
-			"name": "Removes a specific series (no Authorization)-Unauthorized",
+			"name": "Removes a specific series-study_UID doesn't exist",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "95fb8990-1211-4779-b810-106b7dc68df5",
+						"id": "61b44274-be92-4aad-89f6-2636e2ece7bb",
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
 						]
 					}
 				}
 			],
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}9/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}9",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific series-series_UID doesn't exist",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "198f926b-7142-48cd-b00c-0848900aa03c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}9",
 					"host": [
 						"{{URL}}"
 					],
@@ -1012,7 +1222,7 @@
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}9"
 					]
 				}
 			},
@@ -1345,7 +1555,122 @@
 			"response": []
 		},
 		{
-			"name": "Removes a specific study (Bad authorization)-Forbidden",
+			"name": "Removes a specific study-study_UID not valid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "06412370-2a49-4170-be9c-65a49f8e062e",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/9999999",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"9999999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific study (No Authorization)-Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95fb8990-1211-4779-b810-106b7dc68df5",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific study (Bad Authorization)-Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "95fb8990-1211-4779-b810-106b7dc68df5",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9999999"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Removes a specific study (user2 remove for user1)-Forbidden",
 			"event": [
 				{
 					"listen": "test",
@@ -1385,25 +1710,30 @@
 			"response": []
 		},
 		{
-			"name": "Removes a specific study (no Authorization)-Unauthorized",
+			"name": "Removes a specific study-study_UID doesn't exist",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "95fb8990-1211-4779-b810-106b7dc68df5",
+						"id": "61b44274-be92-4aad-89f6-2636e2ece7bb",
 						"type": "text/javascript",
 						"exec": [
-							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
 						]
 					}
 				}
 			],
 			"request": {
 				"method": "DELETE",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					}
+				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}9",
 					"host": [
 						"{{URL}}"
 					],
@@ -1413,7 +1743,7 @@
 						"users",
 						"{{user1}}",
 						"studies",
-						"{{study_UID}}"
+						"{{study_UID}}9"
 					]
 				}
 			},
