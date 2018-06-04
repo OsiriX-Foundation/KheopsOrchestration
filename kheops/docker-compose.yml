@@ -91,6 +91,19 @@ services:
       - kheops_auth_hmasecret
       - mysql_password
 
+  tomcat-proxy:
+    container_name: tomcatproxy
+    image: osirixfoundation/kheopsproxy-tomcat:${KHEOPS_PROXY_IMAGE_TAG}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
+    restart: on-failure
+    env_file: docker-compose.env
+    ports:
+      - "8049:8080"
+    depends_on:
+      - tomcat-authorization
+      - arc
 
   meteor-viewer:
     container_name: kheopsviewer
@@ -120,8 +133,10 @@ services:
       - "80:80"
       - "443:443"
       - "8042:8042"
+      - "8048:8048"
     depends_on:
       - tomcat-authorization
+      - tomcat-proxy
       - arc
 
 
