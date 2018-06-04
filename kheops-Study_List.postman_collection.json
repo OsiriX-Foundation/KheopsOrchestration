@@ -707,7 +707,7 @@
 			"response": []
 		},
 		{
-			"name": "Study Metadata-Bad study_UID",
+			"name": "Study Metadata-study_UID doesn't existe",
 			"event": [
 				{
 					"listen": "test",
@@ -754,7 +754,7 @@
 			"response": []
 		},
 		{
-			"name": "Study Metadata-Bad study_UID_2",
+			"name": "Study Metadata-study_UID not valid",
 			"event": [
 				{
 					"listen": "test",
