@@ -37,6 +37,12 @@ script:
   - docker ps -a
   - node_modules/.bin/newman run kheops.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
   - cd kheops
+  - docker-compose up -d
+  - cd ..
+  - sleep 45
+  - docker ps -a
+  - node_modules/.bin/newman run kheops-Study_List.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
+  - cd kheops
   - docker-compose down -v
   - docker-compose up -d
   - sleep 45
