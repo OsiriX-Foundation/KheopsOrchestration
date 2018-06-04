@@ -242,6 +242,116 @@
 			"response": []
 		},
 		{
+			"name": "STOW with proxy RS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7524252c-94ee-4cd1-8780-15785472765a",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "{{URL_PACS}}:8048/KheopsDICOMwebProxy/capabilities/{{secret_capability_token}}/proxy/studies",
+					"host": [
+						"{{URL_PACS}}"
+					],
+					"port": "8048",
+					"path": [
+						"KheopsDICOMwebProxy",
+						"capabilities",
+						"{{secret_capability_token}}",
+						"proxy",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-1studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5055b06-d516-4117-b4f9-60329a2c6126",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"pm.environment.set(\"tempDicomData\", responseBody);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
+						"type": "text/javascript",
+						"exec": [
+							"function wait(ms)",
+							"{",
+							"    var d = new Date();",
+							"    var d2 = null;",
+							"    do { d2 = new Date(); }",
+							"    while(d2-d < ms);",
+							"}",
+							"",
+							"wait(15000);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Create a capability tokens user1 with expiration date-OK",
 			"event": [
 				{
