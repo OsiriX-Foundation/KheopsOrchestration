@@ -1544,6 +1544,283 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Give to user1 an access to a specific series from user2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{study_UID}}",
+						"series",
+						"{{series_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-1 studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "85349a90-80e8-4fc6-9185-d3c97888c39a",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"tests[\"responseBody OK\"] = responseBody === pm.environment.get(\"tempDicomData\");;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give an access to a specific study from user2-Bad user id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b754a4f1-5176-466c-a026-e0d9ff840512",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/999999/studies/{{study_UID}}",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"999999",
+						"studies",
+						"{{study_UID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give an access to a specific series from user2-Bad study_UID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0df1af4-d60d-483c-8f80-daf27eda7d88",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/999999",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"999999"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Give an access to a specific series from user2-Bad study_UID_2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e0df1af4-d60d-483c-8f80-daf27eda7d88",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 400\"] = responseCode.code === 400;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user2}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{studie_UID}}99",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies",
+						"{{studie_UID}}99"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user1 get studies list-1studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5055b06-d516-4117-b4f9-60329a2c6126",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"pm.environment.set(\"tempDicomData\", responseBody);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
+						"type": "text/javascript",
+						"exec": [
+							"function wait(ms)",
+							"{",
+							"    var d = new Date();",
+							"    var d2 = null;",
+							"    do { d2 = new Date(); }",
+							"    while(d2-d < ms);",
+							"}",
+							"",
+							"wait(15000);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"port": "8042",
+					"path": [
+						"KheopsAuthorization",
+						"users",
+						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
