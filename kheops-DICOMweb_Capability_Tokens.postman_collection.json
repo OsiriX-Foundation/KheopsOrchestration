@@ -1368,19 +1368,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "54963654-bd26-4abe-ab25-b608f724ebff",
+						"id": "f14ac6cf-5e38-4c8f-9426-f3a68a23f3ff",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
-							"",
-							"var jsonObject = JSON.parse(responseBody);",
-							"",
-							"tests[\"User is correct\"] = jsonObject.user === pm.globals.get(\"user1\");",
-							"tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
-							"",
-							"pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);",
-							"",
+							"tests[\"Status code is 400\"] = responseCode.code === 400;",
 							""
 						]
 					}
