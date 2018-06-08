@@ -139,6 +139,16 @@ services:
       - tomcat-proxy
       - arc
 
+  proxy:
+    container_name: proxy
+    image: osirixfoundation/pacsproxyauthorization:latest
+    ports:
+      - "82:80"
+    depends_on:
+      - arc
+      - nginx
+
+
 
 secrets:
   kheops_superuser_hmasecret:
