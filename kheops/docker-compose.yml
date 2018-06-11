@@ -141,7 +141,8 @@ services:
 
   proxy:
     container_name: proxy
-    image: osirixfoundation/pacsproxyauthorization:latest
+    env_file: docker-compose.env
+    image: osirixfoundation/pacsproxyauthorization:${KHEOPS_PROXY_PACS_IMAGE_TAG}
     ports:
       - "82:80"
     depends_on:
