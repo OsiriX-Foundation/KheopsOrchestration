@@ -148,6 +148,8 @@ services:
     depends_on:
       - arc
       - nginx
+    secrets:
+      - kheops_superuser_hmasecret
 
 
 
