@@ -108,8 +108,8 @@ services:
   meteor-viewer:
     container_name: kheopsviewer
     image: osirixfoundation/kheops-viewer:${KHEOPS_VIEWER_IMAGE_TAG}
-#    ports:
-#      - "3000:3000"
+    ports:
+      - "3000:3000"
 
     env_file: docker-compose.env
     volumes:
@@ -143,6 +143,9 @@ services:
     container_name: proxy
     env_file: docker-compose.env
     image: osirixfoundation/pacsproxyauthorization:${KHEOPS_PROXY_PACS_IMAGE_TAG}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
     ports:
       - "82:80"
     depends_on:
