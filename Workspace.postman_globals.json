@@ -14,6 +14,12 @@
       "type": "text"
     },
     {
+      "key": "object_UID",
+      "value": "1.3.12.2.1107.5.1.4.48545.30000006100307470634300004921",
+      "enabled": true,
+      "type": "text"
+    },
+    {
       "key": "user1",
       "value": "123456789",
       "enabled": true,
@@ -24,10 +30,52 @@
       "value": "987654321",
       "enabled": true,
       "type": "text"
+    },
+    {
+      "key": "JWT_study_series",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlIiwiaWF0IjoxNDMwNjc3NjYzLCJuYW1lIjoiYm9iIiwic2VyaWVzX3VpZCI6IjEuMy4xMi4yLjExMDcuNS4xLjQuNDg1NDUuMzAwMDAwMDYxMDAzMDc0NzA2MzQzMDAwMDQ2OTMiLCJzdHVkeV91aWQiOiIyLjE2Ljg0MC4xLjExMzY2OS42MzIuMjAuMTIxMS4xMDAwMDMxNDIyMyIsImV4cCI6MTY1NzgyNTk3NH0.IaFCP1PK2yTD7BSHCg_woVKI2zJFf0pjGLakcOteO3Y",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "JWT_study_allAccess",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlIiwiaWF0IjoxNDMwNjc3NjYzLCJuYW1lIjoiYm9iIiwic2VyaWVzX3VpZCI6ImFsbF9hY2Nlc3MiLCJzdHVkeV91aWQiOiIyLjE2Ljg0MC4xLjExMzY2OS42MzIuMjAuMTIxMS4xMDAwMDMxNDIyMyIsImV4cCI6MTY1NzgyNTk3NH0.-_U6gpgxmcKwmZvsGkn3UtlvVsQqH_GyCAkFNXlO7xs",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "JWT_study_badSeries",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlIiwiaWF0IjoxNDMwNjc3NjYzLCJuYW1lIjoiYm9iIiwic2VyaWVzX3VpZCI6IjEuMi4zLjQuNS42LjcuOC45Iiwic3R1ZHlfdWlkIjoiMi4xNi44NDAuMS4xMTM2NjkuNjMyLjIwLjEyMTEuMTAwMDAzMTQyMjMiLCJleHAiOjE2NTc4MjU5NzR9.HG2kMw4hqRC0b0r4gfJL-ESv-J25O5agZ20Nksz5rz4",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "JWT_badStudy_series",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlIiwiaWF0IjoxNDMwNjc3NjYzLCJuYW1lIjoiYm9iIiwic2VyaWVzX3VpZCI6IjEuMy4xMi4yLjExMDcuNS4xLjQuNDg1NDUuMzAwMDAwMDYxMDAzMDc0NzA2MzQzMDAwMDQ2OTMiLCJzdHVkeV91aWQiOiIxLjIuMy40LjUuNi43LjguOSIsImV4cCI6MTY1NzgyNTk3NH0.DQUF1uRSoGZjcv95dCi3e3OZrPOx8wy5P7NGg39nUtU",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "JWT_badSecret",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlIiwiaWF0IjoxNDMwNjc3NjYzLCJuYW1lIjoiYm9iIiwic2VyaWVzX3VpZCI6IjEuMy4xMi4yLjExMDcuNS4xLjQuNDg1NDUuMzAwMDAwMDYxMDAzMDc0NzA2MzQzMDAwMDQ2OTMiLCJzdHVkeV91aWQiOiIyLjE2Ljg0MC4xLjExMzY2OS42MzIuMjAuMTIxMS4xMDAwMDMxNDIyMyIsImV4cCI6MTQ1NzgyNTk3NH0.BAvV1_itxbE-PjAM198hRqrxWSaOaYFU3y_lZDXg3is",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "JWT_notAllAccess",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlIiwiaWF0IjoxNDMwNjc3NjYzLCJuYW1lIjoiYm9iIiwic2VyaWVzX3VpZCI6IjEuMy4xMi4yLjExMDcuNS4xLjQuNDg1NDUuMzAwMDAwMDYxMDAzMDc0NzA2MzQzMDAwMDQ2OTMiLCJzdHVkeV91aWQiOiIyLjE2Ljg0MC4xLjExMzY2OS42MzIuMjAuMTIxMS4xMDAwMDMxNDIyMyIsImV4cCI6MTY1NzgyNTk3NH0.IaFCP1PK2yTD7BSHCg_woVKI2zJFf0pjGLakcOteO3Y",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "JWT_expired",
+      "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXRlIiwiaWF0IjoxNDMwNjc3NjYzLCJuYW1lIjoiYm9iIiwic2VyaWVzX3VpZCI6IjEuMy4xMi4yLjExMDcuNS4xLjQuNDg1NDUuMzAwMDAwMDYxMDAzMDc0NzA2MzQzMDAwMDQ2OTMiLCJzdHVkeV91aWQiOiIyLjE2Ljg0MC4xLjExMzY2OS42MzIuMjAuMTIxMS4xMDAwMDMxNDIyMyIsImV4cCI6MTQ1NzgyNTk3NH0.7slP7cyxxFrjNR5iMoFIuYX5m1n016IMtHHbAWl_9Ns",
+      "enabled": true,
+      "type": "text"
     }
   ],
   "name": "My Workspace Globals",
   "_postman_variable_scope": "globals",
-  "_postman_exported_at": "2018-05-31T07:26:56.923Z",
+  "_postman_exported_at": "2018-06-14T08:34:55.592Z",
   "_postman_exported_using": "Postman/6.1.3"
 }
