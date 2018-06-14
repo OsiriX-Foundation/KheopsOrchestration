@@ -845,11 +845,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
+								"id": "1d4676ee-10e8-4582-9168-6475495c503c",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"tests[\"Status code is 401\"] = responseCode.code === 401;"
 								]
 							}
 						}
@@ -1129,11 +1129,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
+								"id": "099d4d4d-5ea5-47c1-a2e7-f523fbde2d67",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"tests[\"Status code is 401\"] = responseCode.code === 401;"
 								]
 							}
 						}
