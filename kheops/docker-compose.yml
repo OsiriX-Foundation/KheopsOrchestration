@@ -138,10 +138,10 @@ services:
       - tomcat-authorization
       - tomcat-proxy
       - arc
-      - proxy
+      - kheopsAuthorizationProxy
 
-  proxy:
-    container_name: proxy
+  kheopsAuthorizationProxy:
+    container_name: kheopsAuthorizationProxy
     env_file: docker-compose.env
     image: osirixfoundation/pacsproxyauthorization:${KHEOPS_PROXY_PACS_IMAGE_TAG}
     volumes:
