@@ -138,6 +138,7 @@ services:
       - tomcat-authorization
       - tomcat-proxy
       - arc
+      - proxy
 
   proxy:
     container_name: proxy
@@ -150,7 +151,6 @@ services:
       - "82:80"
     depends_on:
       - arc
-      - nginx
     secrets:
       - kheops_superuser_hmasecret
 
