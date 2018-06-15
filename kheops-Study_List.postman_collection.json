@@ -60,11 +60,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"
@@ -129,11 +128,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"
@@ -173,11 +171,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -218,11 +215,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -262,11 +258,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -306,11 +301,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/111/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/111/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -349,11 +343,10 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL_PACS}}:8080/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
+					"raw": "{{URL_PACS}}/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
 					"host": [
 						"{{URL_PACS}}"
 					],
-					"port": "8080",
 					"path": [
 						"dcm4chee-arc",
 						"aets",
@@ -389,11 +382,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -458,11 +450,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -504,11 +495,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -543,11 +533,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -595,11 +584,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -642,11 +630,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -689,11 +676,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/999999/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/KheopsAuthorization/users/999999/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -736,11 +722,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}99/metadata",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}99/metadata",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -783,11 +768,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/9999/metadata",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/9999/metadata",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -830,11 +814,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -877,11 +860,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
