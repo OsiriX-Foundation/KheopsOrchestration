@@ -124,7 +124,7 @@ services:
 
   kheopsReverseProxy:
     image: osirixfoundation/kheopsnginx:${KHEOPS_NGINX_IMAGE_TAG}
-    container_name: kheopsReverseProxy
+    container_name: kheopsreverseproxy
     secrets:
       - privkey1.pem
       - fullchain1.pem
@@ -141,7 +141,7 @@ services:
       - kheopsAuthorizationProxy
 
   kheopsAuthorizationProxy:
-    container_name: kheopsAuthorizationProxy
+    container_name: kheopsauthorizationproxy
     env_file: docker-compose.env
     image: osirixfoundation/pacsproxyauthorization:${KHEOPS_PROXY_PACS_IMAGE_TAG}
     volumes:
