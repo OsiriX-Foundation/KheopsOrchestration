@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "489d411f-4d85-4d3a-81f9-674ea48206fc",
+		"_postman_id": "9074881e-6e59-4f37-937d-eea497dd79f2",
 		"name": "kheops-DICOMweb_Capability_Tokens",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -60,11 +60,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"
@@ -100,11 +99,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -178,11 +176,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -226,11 +223,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -269,11 +265,10 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL_PACS}}:8048/KheopsDICOMwebProxy/capabilities/{{secret_capability_token}}/proxy/studies",
+					"raw": "{{URL}}/KheopsDICOMwebProxy/capabilities/{{secret_capability_token}}/proxy/studies",
 					"host": [
-						"{{URL_PACS}}"
+						"{{URL}}"
 					],
-					"port": "8048",
 					"path": [
 						"KheopsDICOMwebProxy",
 						"capabilities",
@@ -336,11 +331,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -379,11 +373,10 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL_PACS}}:8048/KheopsDICOMwebProxy/capabilities/9999999/proxy/studies",
+					"raw": "{{URL}}/KheopsDICOMwebProxy/capabilities/9999999/proxy/studies",
 					"host": [
-						"{{URL_PACS}}"
+						"{{URL}}"
 					],
-					"port": "8048",
 					"path": [
 						"KheopsDICOMwebProxy",
 						"capabilities",
@@ -467,11 +460,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -513,11 +505,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities/{{secret_capability_token}}/revoke",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities/{{secret_capability_token}}/revoke",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -583,11 +574,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/99999/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/99999/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -652,11 +642,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -726,11 +715,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -813,11 +801,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -881,11 +868,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -959,11 +945,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -1037,11 +1022,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -1077,11 +1061,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/999999/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/999999/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -1117,11 +1100,10 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -1195,11 +1177,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"users",
@@ -1270,11 +1251,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"
@@ -1349,11 +1329,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"
@@ -1420,11 +1399,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"
@@ -1488,11 +1466,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"
@@ -1556,11 +1533,10 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}:8042/KheopsAuthorization/token",
+					"raw": "{{URL}}/KheopsAuthorization/token",
 					"host": [
 						"{{URL}}"
 					],
-					"port": "8042",
 					"path": [
 						"KheopsAuthorization",
 						"token"

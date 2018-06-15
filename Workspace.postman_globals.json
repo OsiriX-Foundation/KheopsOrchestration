@@ -74,8 +74,8 @@
       "type": "text"
     }
   ],
-  "name": "My Workspace Globals",
+  "name": "Workspace Globals",
   "_postman_variable_scope": "globals",
-  "_postman_exported_at": "2018-06-14T08:34:55.592Z",
+  "_postman_exported_at": "2018-06-15T09:45:27.271Z",
   "_postman_exported_using": "Postman/6.1.3"
 }
