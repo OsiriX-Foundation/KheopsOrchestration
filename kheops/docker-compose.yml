@@ -122,9 +122,9 @@ services:
       - tomcat-authorization
       - arc
 
-  nginx:
+  kheopsReverseProxy:
     image: osirixfoundation/kheopsnginx:${KHEOPS_NGINX_IMAGE_TAG}
-    container_name: kheopsnginx
+    container_name: kheopsReverseProxy
     secrets:
       - privkey1.pem
       - fullchain1.pem
