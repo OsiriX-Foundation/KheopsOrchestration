@@ -41,12 +41,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}:82/studies",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies"
 							]
 						}
@@ -85,12 +85,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -130,12 +130,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -175,12 +175,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -220,12 +220,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -259,12 +259,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=WADO",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -305,12 +305,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&requestType=WADO",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -351,12 +351,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -401,12 +401,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -451,12 +451,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_study_badSeries}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_study_badSeries}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -501,12 +501,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}&requestType=WADO",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -555,12 +555,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}33&requestType=WADO",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}33&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -609,12 +609,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -651,12 +651,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=XXX",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=XXX",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"wado"
 							],
 							"query": [
@@ -708,12 +708,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -746,12 +746,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -784,12 +784,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -824,12 +824,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}99/series/{{series_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}99/series/{{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}99",
 								"series",
@@ -864,12 +864,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}99",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -904,12 +904,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -946,12 +946,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}99",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -988,12 +988,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/metadata",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"metadata"
@@ -1027,12 +1027,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/metadata",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"metadata"
@@ -1066,12 +1066,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}/metadata",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1107,12 +1107,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}99/series/{{series_UID}}/metadata",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}99/series/{{series_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}99",
 								"series",
@@ -1148,12 +1148,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}99",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1188,12 +1188,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}/metadata",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1237,12 +1237,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies?StudyInstanceUID={{study_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies?StudyInstanceUID={{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies"
 							],
 							"query": [
@@ -1280,12 +1280,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies?StudyInstanceUID={{study_UID}}99",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies?StudyInstanceUID={{study_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies"
 							],
 							"query": [
@@ -1323,12 +1323,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series"
@@ -1368,12 +1368,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}99",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series"
@@ -1414,12 +1414,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_study_series}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_study_series}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1455,12 +1455,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}:82/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_expired}}",
+							"raw": "{{URL}}/kheopsAuthorizationProxy/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_expired}}",
 							"host": [
 								"{{URL}}"
 							],
-							"port": "82",
 							"path": [
+								"kheopsAuthorizationProxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
