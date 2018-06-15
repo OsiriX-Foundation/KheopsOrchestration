@@ -26,34 +26,16 @@ before_script:
   - npm --version
   - node_modules/.bin/newman --version
   - chmod +x script.sh
+  - chmod +x script_run_docker.sh
   - ./script.sh
 
   
 script:
-  - cd kheops
-  - docker-compose up -d
-  - cd ..
-  - sleep 45
-  - docker ps -a
+  - ./script_run_docker.sh
   - node_modules/.bin/newman run kheops-Inbox.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
-  - cd kheops
-  - docker-compose down -v
-  - docker-compose up -d
-  - cd ..
-  - sleep 45
-  - docker ps -a
+  - ./script_run_docker.sh
   - node_modules/.bin/newman run kheops-Study_List.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
-  - cd kheops
-  - docker-compose down -v
-  - docker-compose up -d
-  - sleep 45
-  - docker ps -a
-  - cd ..
+  - ./script_run_docker.sh
   - node_modules/.bin/newman run kheops-DICOMweb_Capability_Tokens.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
-  - cd kheops
-  - docker-compose down -v
-  - docker-compose up -d
-  - sleep 45
-  - docker ps -a
-  - cd ..
+  - ./script_run_docker.sh
   - node_modules/.bin/newman run kheops-proxy_pacs.postman_collection.json -e kheops_localhost.postman_environment.json -g Workspace.postman_globals.json
