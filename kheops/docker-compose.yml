@@ -129,6 +129,9 @@ services:
       - privkey1.pem
       - fullchain1.pem
     env_file: docker-compose.env
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
     ports:
       - "80:80"
       - "443:443"
@@ -161,7 +164,6 @@ secrets:
     file: ${SECRETS_PATH}/kheops_superuser_hmasecret
   kheops_auth_hmasecret:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret
-
   mysql_root_password:
     file: ${SECRETS_PATH}/mysql_root_password
   mysql_password:
