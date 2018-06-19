@@ -47,12 +47,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -111,12 +111,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -178,12 +178,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -245,12 +245,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -313,12 +313,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -380,12 +380,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -459,12 +459,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -527,12 +527,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -572,12 +572,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies"
@@ -610,12 +610,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -661,12 +661,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies"
@@ -699,12 +699,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/999999/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/999999/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"999999",
 						"studies",
@@ -740,12 +740,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/999999/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/999999/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -781,12 +781,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{studie_UID}}99/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{studie_UID}}99/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -822,12 +822,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/999999",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -863,12 +863,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}99",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}99",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -904,12 +904,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -945,12 +945,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/9999999/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/9999999/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -986,12 +986,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/999999",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1022,12 +1022,12 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1063,12 +1063,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1104,12 +1104,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1145,12 +1145,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}9/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}9/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1186,12 +1186,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}9",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}9",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1227,12 +1227,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1268,12 +1268,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1316,12 +1316,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -1361,12 +1361,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies"
@@ -1399,12 +1399,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -1440,12 +1440,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1508,12 +1508,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -1546,12 +1546,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/9999999",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/9999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1580,12 +1580,12 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1619,12 +1619,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1658,12 +1658,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1697,12 +1697,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}9",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}9",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1736,12 +1736,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1775,12 +1775,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1821,12 +1821,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -1859,12 +1859,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -1910,12 +1910,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -1948,12 +1948,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/999999/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/users/999999/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"999999",
 						"studies",
@@ -1987,12 +1987,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/999999",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -2026,12 +2026,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{studie_UID}}99",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{studie_UID}}99",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -2092,12 +2092,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"

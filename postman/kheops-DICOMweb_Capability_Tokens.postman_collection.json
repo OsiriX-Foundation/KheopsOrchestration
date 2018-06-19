@@ -60,12 +60,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -99,12 +99,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -176,12 +176,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -223,12 +223,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -265,12 +265,11 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsDICOMwebProxy/capabilities/{{secret_capability_token}}/proxy/studies",
+					"raw": "{{URL}}/capabilities/{{secret_capability_token}}/proxy/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsDICOMwebProxy",
 						"capabilities",
 						"{{secret_capability_token}}",
 						"proxy",
@@ -331,12 +330,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -373,12 +372,11 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsDICOMwebProxy/capabilities/9999999/proxy/studies",
+					"raw": "{{URL}}/capabilities/9999999/proxy/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsDICOMwebProxy",
 						"capabilities",
 						"9999999",
 						"proxy",
@@ -460,12 +458,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -505,12 +503,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities/{{secret_capability_token}}/revoke",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities/{{secret_capability_token}}/revoke",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities",
@@ -574,12 +572,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/99999/capabilities",
+					"raw": "{{URL}}/authorization/users/99999/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"99999",
 						"capabilities"
@@ -642,12 +640,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -715,12 +713,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -801,12 +799,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -868,12 +866,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -945,12 +943,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -1022,12 +1020,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -1061,12 +1059,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/999999/capabilities",
+					"raw": "{{URL}}/authorization/users/999999/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"999999",
 						"capabilities"
@@ -1100,12 +1098,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -1177,12 +1175,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"capabilities"
@@ -1251,12 +1249,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -1329,12 +1327,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -1399,12 +1397,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -1466,12 +1464,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -1533,12 +1531,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}

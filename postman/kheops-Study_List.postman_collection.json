@@ -60,12 +60,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -128,12 +128,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/token",
+					"raw": "{{URL}}/authorization/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"token"
 					]
 				}
@@ -171,12 +171,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -215,12 +215,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -258,12 +258,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -301,12 +301,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/111/studies",
+					"raw": "{{URL}}/authorization/users/111/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"111",
 						"studies"
@@ -382,12 +382,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies",
@@ -450,12 +450,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user1}}",
 						"studies"
@@ -495,12 +495,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies"
@@ -533,12 +533,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -584,12 +584,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies"
@@ -630,12 +630,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -676,12 +676,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/999999/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/authorization/users/999999/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"999999",
 						"studies",
@@ -722,12 +722,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}99/metadata",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}99/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -768,12 +768,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/9999/metadata",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/9999/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -814,12 +814,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
@@ -860,12 +860,12 @@
 				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/KheopsAuthorization/users/{{user2}}/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"KheopsAuthorization",
+						"authorization",
 						"users",
 						"{{user2}}",
 						"studies",
