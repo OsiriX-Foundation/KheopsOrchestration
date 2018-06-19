@@ -265,14 +265,14 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL}}/capabilities/{{secret_capability_token}}/proxy/studies",
+					"raw": "{{URL}}/capabilities/{{secret_capability_token}}/dicomweb/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"capabilities",
 						"{{secret_capability_token}}",
-						"proxy",
+						"dicomweb",
 						"studies"
 					]
 				}
@@ -372,14 +372,14 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL}}/capabilities/9999999/proxy/studies",
+					"raw": "{{URL}}/capabilities/9999999/dicomweb/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"capabilities",
 						"9999999",
-						"proxy",
+						"dicomweb",
 						"studies"
 					]
 				}
