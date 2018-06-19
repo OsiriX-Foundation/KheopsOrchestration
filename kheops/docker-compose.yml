@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
 
-  pacs-ldap:
+  ldap:
     container_name: pacsldap
     image: dcm4che/slapd-dcm4chee:2.4.44-13.0
 #    ports:
@@ -15,7 +15,7 @@ services:
       - ${DCM4CHEE_PATH}/slapd.d:/etc/ldap/slapd.d
     restart: on-failure
 
-  pacs-db:
+  db:
     container_name: pacsdb
     image: dcm4che/postgres-dcm4chee:10.0-13
 #    ports:
@@ -40,11 +40,11 @@ services:
     env_file: docker-compose.env
     environment:
       WILDFLY_CHOWN: /opt/wildfly/standalone /storage
-      WILDFLY_WAIT_FOR: pacs-ldap:389 pacs-db:5432
+      WILDFLY_WAIT_FOR: ldap:389 db:5432
       JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
     depends_on:
-      - pacs-ldap
-      - pacs-db
+      - ldap
+      - db
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
