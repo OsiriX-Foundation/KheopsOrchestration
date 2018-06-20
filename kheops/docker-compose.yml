@@ -93,7 +93,7 @@ services:
 
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
-    image: osirixfoundation/kheopsproxy-tomcat:${KHEOPS_PROXY_IMAGE_TAG}
+    image: osirixfoundation/kheops-dicomweb-proxy:${KHEOPS_DICOMWEB_PROXY_IMAGE_TAG}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
