@@ -2,8 +2,8 @@ version: "3.1"
 
 services:
 
-  pacs-ldap:
-    container_name: pacs_ldap
+  ldap:
+    container_name: pacsldap
     image: dcm4che/slapd-dcm4chee:2.4.44-13.0
 #    ports:
 #      - "389:389"
@@ -15,8 +15,8 @@ services:
       - ${DCM4CHEE_PATH}/slapd.d:/etc/ldap/slapd.d
     restart: on-failure
 
-  pacs-db:
-    container_name: pacs_db
+  db:
+    container_name: pacsdb
     image: dcm4che/postgres-dcm4chee:10.0-13
 #    ports:
 #      - "5432:5432"
@@ -27,8 +27,8 @@ services:
       - ${DCM4CHEE_PATH}/db:/var/lib/postgresql/data
     restart: on-failure
 
-  pacs-arc:
-    container_name: pacs_arc
+  arc:
+    container_name: pacsarc
     image: dcm4che/dcm4chee-arc-psql:5.13.0
     ports:
       - "8080:8080"
@@ -43,8 +43,8 @@ services:
       WILDFLY_WAIT_FOR: ldap:389 db:5432
       JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
     depends_on:
-      - pacs-ldap
-      - pacs-db
+      - ldap
+      - db
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -85,7 +85,7 @@ services:
     env_file: docker-compose.env
     depends_on:
       - kheops-authorization-database
-      - pacs-arc
+      - arc
     secrets:
       - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
@@ -103,7 +103,7 @@ services:
       - "8049:8080"
     depends_on:
       - kheops-authorization
-      - pacs-arc
+      - arc
 
   kheops-viewer:
     container_name: kheopsviewer
@@ -120,7 +120,7 @@ services:
       - OAuth2_secret
     depends_on:
       - kheops-authorization
-      - pacs-arc
+      - arc
 
   kheops-reverse-proxy:
     image: osirixfoundation/kheopsnginx:${KHEOPS_NGINX_IMAGE_TAG}
@@ -140,7 +140,7 @@ services:
     depends_on:
       - kheops-authorization
       - kheops-dicomweb-proxy
-      - pacs-arc
+      - arc
       - pacs-authorization-proxy
 
   pacs-authorization-proxy:
@@ -153,7 +153,7 @@ services:
     ports:
       - "82:80"
     depends_on:
-      - pacs-arc
+      - arc
     secrets:
       - kheops_superuser_hmasecret
 
