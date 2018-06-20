@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
 
-  ldap:
+  pacs-ldap:
     container_name: pacs_ldap
     image: dcm4che/slapd-dcm4chee:2.4.44-13.0
 #    ports:
@@ -15,7 +15,7 @@ services:
       - ${DCM4CHEE_PATH}/slapd.d:/etc/ldap/slapd.d
     restart: on-failure
 
-  db:
+  pacs-db:
     container_name: pacs_db
     image: dcm4che/postgres-dcm4chee:10.0-13
 #    ports:
@@ -27,7 +27,7 @@ services:
       - ${DCM4CHEE_PATH}/db:/var/lib/postgresql/data
     restart: on-failure
 
-  arc:
+  pacs-arc:
     container_name: pacs_arc
     image: dcm4che/dcm4chee-arc-psql:5.13.0
     ports:
@@ -43,8 +43,8 @@ services:
       WILDFLY_WAIT_FOR: ldap:389 db:5432
       JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
     depends_on:
-      - ldap
-      - db
+      - pacs-ldap
+      - pacs-db
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -54,8 +54,8 @@ services:
 
 
 
-  kheops-mysql:
-    container_name: kheops_authorization_database
+  kheops-authorization-database:
+    container_name: kheopsauthorizationdatabase
     image: osirixfoundation/kheopsauthorization-database:${KHEOPS_DATABASE_IMAGE_TAG}
 #    ports:
 #      - "3306:3306"
@@ -75,8 +75,8 @@ services:
 
 
 
-  tomcat-authorization:
-    container_name: kheops_authorization
+  kheops-authorization:
+    container_name: kheopsauthorization
     image: osirixfoundation/kheopsauthorization-tomcat:${KHEOPS_TOMCAT_IMAGE_TAG}
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -84,15 +84,15 @@ services:
     restart: on-failure
     env_file: docker-compose.env
     depends_on:
-      - kheops-mysql
-      - arc
+      - kheops-authorization-database
+      - pacs-arc
     secrets:
       - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
       - mysql_password
 
-  tomcat-proxy:
-    container_name: kheops_dicomweb_proxy
+  kheops-dicomweb-proxy:
+    container_name: kheopsdicomwebproxy
     image: osirixfoundation/kheopsproxy-tomcat:${KHEOPS_PROXY_IMAGE_TAG}
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -102,11 +102,11 @@ services:
     ports:
       - "8049:8080"
     depends_on:
-      - tomcat-authorization
-      - arc
+      - kheops-authorization
+      - pacs-arc
 
-  meteor-viewer:
-    container_name: kheops_viewer
+  kheops-viewer:
+    container_name: kheopsviewer
     image: osirixfoundation/kheops-viewer:${KHEOPS_VIEWER_IMAGE_TAG}
     ports:
       - "3000:3000"
@@ -119,12 +119,12 @@ services:
     secrets:
       - OAuth2_secret
     depends_on:
-      - tomcat-authorization
-      - arc
+      - kheops-authorization
+      - pacs-arc
 
-  kheopsReverseProxy:
+  kheops-reverse-proxy:
     image: osirixfoundation/kheopsnginx:${KHEOPS_NGINX_IMAGE_TAG}
-    container_name: kheops_reverse_proxy
+    container_name: kheopsreverseproxy
     secrets:
       - privkey1.pem
       - fullchain1.pem
@@ -138,13 +138,13 @@ services:
       - "8042:8042"
       - "8048:8048"
     depends_on:
-      - tomcat-authorization
-      - tomcat-proxy
-      - arc
-      - kheopsAuthorizationProxy
+      - kheops-authorization
+      - kheops-dicomweb-proxy
+      - pacs-arc
+      - pacs-authorization-proxy
 
-  kheopsAuthorizationProxy:
-    container_name: kheops_authorization_proxy
+  pacs-authorization-proxy:
+    container_name: pacsauthorizationproxy
     env_file: docker-compose.env
     image: osirixfoundation/pacsproxyauthorization:${KHEOPS_PROXY_PACS_IMAGE_TAG}
     volumes:
@@ -153,7 +153,7 @@ services:
     ports:
       - "82:80"
     depends_on:
-      - arc
+      - pacs-arc
     secrets:
       - kheops_superuser_hmasecret
 
