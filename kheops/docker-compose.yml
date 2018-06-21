@@ -155,7 +155,7 @@ services:
     depends_on:
       - arc
     secrets:
-      - kheops_superuser_hmasecret
+      - kheops_auth_hmasecret
 
 
 
