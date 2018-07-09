@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9074881e-6e59-4f37-937d-eea497dd79f2",
+		"_postman_id": "f8bc652a-8643-4785-9665-f6d10c0b4579",
 		"name": "kheops-DICOMweb_Capability_Tokens",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -48,13 +48,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiIxMjM0NTY3ODkiLCJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.916Xn1BnUwdhOvuWErWWOh_AkYXeS36mVRTP06VWsVA",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -97,7 +95,10 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
@@ -170,7 +171,6 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -221,7 +221,10 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
@@ -328,7 +331,10 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
 					"host": [
@@ -446,13 +452,11 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "expiration",
 							"value": "{{expiration}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -501,7 +505,10 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities/{{secret_capability_token}}/revoke",
 					"host": [
@@ -566,7 +573,6 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -634,7 +640,6 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -701,13 +706,11 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "expiration",
 							"value": "1st mai 2018",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -787,13 +790,11 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "expiration",
 							"value": "{{expiration}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -860,7 +861,6 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -937,7 +937,6 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1014,7 +1013,6 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1057,7 +1055,10 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{URL}}/authorization/users/999999/capabilities",
 					"host": [
@@ -1096,7 +1097,10 @@
 						"value": "Bearer 9999999"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
 					"host": [
@@ -1169,7 +1173,6 @@
 						{
 							"key": "description",
 							"value": "{{description}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1237,13 +1240,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:x-kheops:params:oauth:grant-type:capability",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "{{secret_capability_token}}",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1309,18 +1310,21 @@
 						{
 							"key": "grant_type",
 							"value": "urn:x-kheops:params:oauth:grant-type:capability",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "{{secret_capability_token}}",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "scope",
 							"value": "StudyInstanceUID={{study_UID}} SeriesInstanceUID={{series_UID}}",
+							"type": "text"
+						},
+						{
+							"key": "return_user",
+							"value": "true",
 							"description": "",
 							"type": "text"
 						}
@@ -1379,19 +1383,16 @@
 						{
 							"key": "grant_type",
 							"value": "urn:x-kheops:params:oauth:grant-type:capability",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "{{secret_capability_token}}",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "scope",
 							"value": "StudyInstanceUID={{study_UID}}123 SeriesInstanceUID={{series_UID}}456",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1452,13 +1453,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:x-kheops:params:oauth:grant-type:capability",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "99999999",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1519,13 +1518,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:x-kheops:params:oauth:grant-type:capabilityyyyy",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "{{secret_capability_token}}",
-							"description": "",
 							"type": "text"
 						}
 					]
