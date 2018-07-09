@@ -1246,6 +1246,12 @@
 							"key": "assertion",
 							"value": "{{secret_capability_token}}",
 							"type": "text"
+						},
+						{
+							"key": "return_user",
+							"value": "true",
+							"description": "",
+							"type": "text"
 						}
 					]
 				},
