@@ -166,6 +166,50 @@
 					"response": []
 				},
 				{
+					"name": "Give an user access to a specific series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000314223/series/1.3.12.2.1107.5.1.4.48545.30000006100307470634300004693",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies",
+								"2.16.840.1.113669.632.20.1211.10000314223",
+								"series",
+								"1.3.12.2.1107.5.1.4.48545.30000006100307470634300004693"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "dcm4chee STOW RS-study2",
 					"event": [
 						{
@@ -203,6 +247,50 @@
 								"DCM4CHEE",
 								"rs",
 								"studies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Give an user access to a specific series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies/1.2.840.113745.101000.1008000.38446.6272.7138759/series/1.3.12.2.1107.5.2.13.20561.30000005042216091690600001946",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies",
+								"1.2.840.113745.101000.1008000.38446.6272.7138759",
+								"series",
+								"1.3.12.2.1107.5.2.13.20561.30000005042216091690600001946"
 							]
 						}
 					},
@@ -252,6 +340,50 @@
 					"response": []
 				},
 				{
+					"name": "Give an user access to a specific series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000231621/series/1.3.12.2.1107.5.1.4.54693.30000006053107175587500014744",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies",
+								"2.16.840.1.113669.632.20.1211.10000231621",
+								"series",
+								"1.3.12.2.1107.5.1.4.54693.30000006053107175587500014744"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "dcm4chee STOW RS-study4",
 					"event": [
 						{
@@ -289,6 +421,50 @@
 								"DCM4CHEE",
 								"rs",
 								"studies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Give an user access to a specific series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000307912/series/1.3.6.1.4.1.19291.2.1.2.13214421782916617324360484294967295589745577",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies",
+								"2.16.840.1.113669.632.20.1211.10000307912",
+								"series",
+								"1.3.6.1.4.1.19291.2.1.2.13214421782916617324360484294967295589745577"
 							]
 						}
 					},
@@ -338,6 +514,50 @@
 					"response": []
 				},
 				{
+					"name": "Give an user access to a specific series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000329900/series/1.3.12.2.1107.5.1.4.54693.30000006102508593206200000003",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies",
+								"2.16.840.1.113669.632.20.1211.10000329900",
+								"series",
+								"1.3.12.2.1107.5.1.4.54693.30000006102508593206200000003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "user1 get studies list-5 elements",
 					"event": [
 						{
@@ -350,6 +570,24 @@
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "e10ebde1-1ec8-46ae-b91f-36725a225d74",
+								"type": "text/javascript",
+								"exec": [
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(15000);"
 								]
 							}
 						}
@@ -579,6 +817,306 @@
 							{
 								"key": "offset",
 								"value": "-1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Limit and offset",
+			"description": "",
+			"item": [
+				{
+					"name": "user1 get studies list-limit-offset-2 results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							},
+							{
+								"key": "limit",
+								"value": "2"
+							},
+							{
+								"key": "offset",
+								"value": "2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-limit-offset-3 results",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "041768ec-6480-4f18-a52b-be20ebc2c073",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							},
+							{
+								"key": "limit",
+								"value": "999"
+							},
+							{
+								"key": "offset",
+								"value": "2"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sort",
+			"description": "",
+			"item": [
+				{
+					"name": "user1 get studies list-sort-Bad key",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							},
+							{
+								"key": "sort",
+								"value": "badKey "
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-sort by PatientName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "78196211-92d0-4bf3-a83f-33f93ed9aea7",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							},
+							{
+								"key": "sort",
+								"value": "PatientName"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-sort by  -PatientName",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bcd301f4-0018-47ab-9572-0e15be617592",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							},
+							{
+								"key": "sort",
+								"value": "-00100010"
 							}
 						],
 						"body": {
@@ -854,132 +1392,6 @@
 							{
 								"key": "limit",
 								"value": "badLimit"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"users",
-								"{{user1}}",
-								"studies"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Limit and offset",
-			"description": "",
-			"item": [
-				{
-					"name": "user1 get studies list-limit-offset-2 results",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "2"
-							},
-							{
-								"key": "offset",
-								"value": "2"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"users",
-								"{{user1}}",
-								"studies"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user1 get studies list-limit-offset-3 results",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "041768ec-6480-4f18-a52b-be20ebc2c073",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "999"
-							},
-							{
-								"key": "offset",
-								"value": "2"
 							}
 						],
 						"body": {
