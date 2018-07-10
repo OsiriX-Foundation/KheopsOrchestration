@@ -6,10 +6,10 @@
  sed -i "s|\"file\": {}|\"file\": \"testStudy.dcm\"|" postman/kheops-proxy_pacs.postman_collection.json
  
  
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testStudy.dcm\"/' postman/kheops-Study_List-withOptions.postman_collection.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testFelix.dcm\"/' postman/kheops-Study_List-withOptions.postman_collection.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testIncisix.dcm\"/' postman/kheops-Study_List-withOptions.postman_collection.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testMaceosix.dcm\"/' postman/kheops-Study_List-withOptions.postman_collection.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testMagix.dcm\"/' postman/kheops-Study_List-withOptions.postman_collection.json
+ sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testStudy.dcm\"/" postman/kheops-Study_List-withOptions.postman_collection.json
+ sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testFelix.dcm\"/" postman/kheops-Study_List-withOptions.postman_collection.json
+ sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testIncisix.dcm\"/" postman/kheops-Study_List-withOptions.postman_collection.json
+ sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testMaceosix.dcm\"/" postman/kheops-Study_List-withOptions.postman_collection.json
+ sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testMagix.dcm\"/" postman/kheops-Study_List-withOptions.postman_collection.json
  
  cat postman/kheops-Study_List-withOptions.postman_collection.json
