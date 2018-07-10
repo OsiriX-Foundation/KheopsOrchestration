@@ -2169,7 +2169,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fe1007a8-2893-4b43-b0a5-37fb99553934",
+								"id": "6d85eb83-9ca9-45d7-b1eb-fe79b9f05986",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2177,7 +2177,7 @@
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"Return 2 studies\"] = jsonObject.length === user2;",
+									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"",
 									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\");"
 								]
