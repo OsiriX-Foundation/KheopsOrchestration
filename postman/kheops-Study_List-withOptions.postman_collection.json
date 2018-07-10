@@ -1743,18 +1743,964 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter-ModalitiesInStudy 1 result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1a2caed-05ba-49a0-a863-549337a19c51",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?00080061=MR",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "00080061",
+									"value": "MR"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter-ModalitiesInStudy 3 result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "41d05cfa-1c20-4aea-8782-0ecf3b5e7052",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?00080061=cT",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "00080061",
+									"value": "cT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter-ModalitiesInStudy 0 result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "756ad23d-9cfb-444a-ac6a-3f5eab72a8ff",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
+									"",
+									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?00080061=XX",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "00080061",
+									"value": "XX"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "DateTimeFilter",
 			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "user1 get studies list-filter date",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e0d1adf-31fa-4924-9361-d9883b1391ec",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"PatientName FELIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
+									"",
+									"",
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20050422",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "20050422"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter date-",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c0aec866-9927-4a30-81c4-63733afe31d3",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"PatientName MAGIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
+									"",
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061010-",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "20061010-"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter -date",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba050acb-8a76-4fc9-a9f7-3c521264ac43",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"PatientName FELIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
+									"",
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=-20051231",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "-20051231"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter date-date",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4c256778-7441-42d1-a779-108ce2cfb8e0",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061001-20061031",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "20061001-20061031"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter date badDate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b4ab95d-d04b-46c3-a0c9-1b2d80243aff",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061301",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "20061301"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter date badRequest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "532f634c-eacb-418e-9358-f6f41414a158",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061001-abcd",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "20061001-abcd"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter date badRequest",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "532f634c-eacb-418e-9358-f6f41414a158",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061001*20061212",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "20061001*20061212"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=000000.000000-235959.999999",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyTime",
+									"value": "000000.000000-235959.999999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter time-",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=000000.000000-",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyTime",
+									"value": "000000.000000-"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter -time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=-235959.999999",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyTime",
+									"value": "-235959.999999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter time badTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=000000.000000-255978.999999",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyTime",
+									"value": "000000.000000-255978.999999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-filter time badTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=time",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyTime",
+									"value": "time"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Combo",
 			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "user1 get studies list-combo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "77e36688-a606-49d6-9499-e24c49380951",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"tests[\"1st PatientName ENTERIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
+									"tests[\"2nd PatientName FELIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
+									"tests[\"3rd PatientName INCISIX\"] = jsonObject[2]['00100010']['Value'][0]['Alphabetic'] === \"INCISIX\";",
+									"tests[\"4th PatientName MACOESSIX\"] = jsonObject[3]['00100010']['Value'][0]['Alphabetic'] === \"MACOESSIX\";",
+									"tests[\"5th PatientName MAGIX\"] = jsonObject[4]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
+									"",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=PatientName&limit=3&offset=0&PatientName=*iX&StudyDate=20060701-20061231&ModalitiesInStudy=CT",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "PatientName"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "PatientName",
+									"value": "*iX"
+								},
+								{
+									"key": "StudyDate",
+									"value": "20060701-20061231"
+								},
+								{
+									"key": "ModalitiesInStudy",
+									"value": "CT"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
