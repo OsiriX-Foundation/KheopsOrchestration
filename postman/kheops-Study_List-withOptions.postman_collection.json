@@ -657,10 +657,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "offset",
-								"value": "3"
 							}
 						],
 						"body": {
@@ -668,7 +664,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=3",
 							"host": [
 								"{{URL}}"
 							],
@@ -677,6 +673,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "3"
+								}
 							]
 						}
 					},
@@ -713,10 +715,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "offset",
-								"value": "33"
 							}
 						],
 						"body": {
@@ -724,7 +722,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=33",
 							"host": [
 								"{{URL}}"
 							],
@@ -733,6 +731,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "33"
+								}
 							]
 						}
 					},
@@ -763,10 +767,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "offset",
-								"value": "badOffset"
 							}
 						],
 						"body": {
@@ -774,7 +774,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=badOffset",
 							"host": [
 								"{{URL}}"
 							],
@@ -783,6 +783,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "badOffset"
+								}
 							]
 						}
 					},
@@ -813,10 +819,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "offset",
-								"value": "-1"
 							}
 						],
 						"body": {
@@ -824,7 +826,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=-1",
 							"host": [
 								"{{URL}}"
 							],
@@ -833,6 +835,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "-1"
+								}
 							]
 						}
 					},
@@ -875,14 +883,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "2"
-							},
-							{
-								"key": "offset",
-								"value": "2"
 							}
 						],
 						"body": {
@@ -890,7 +890,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=2&offset=2",
 							"host": [
 								"{{URL}}"
 							],
@@ -899,6 +899,16 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								}
 							]
 						}
 					},
@@ -935,14 +945,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "999"
-							},
-							{
-								"key": "offset",
-								"value": "2"
 							}
 						],
 						"body": {
@@ -950,7 +952,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=999&offset=2",
 							"host": [
 								"{{URL}}"
 							],
@@ -959,6 +961,16 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "999"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								}
 							]
 						}
 					},
@@ -976,17 +988,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
+								"id": "79350662-00d0-47d6-80d1-1a08d8bd0c92",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
 								]
 							}
 						}
@@ -1001,10 +1007,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "sort",
-								"value": "badKey "
 							}
 						],
 						"body": {
@@ -1012,7 +1014,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=badKey",
 							"host": [
 								"{{URL}}"
 							],
@@ -1021,6 +1023,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "badKey"
+								}
 							]
 						}
 					},
@@ -1032,7 +1040,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "78196211-92d0-4bf3-a83f-33f93ed9aea7",
+								"id": "2af1ad7d-7686-4eb4-90d8-90a7799ec3c4",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1041,6 +1049,9 @@
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"tests[\"1st PatientName ENTERIX\"] = jsonObject. === \"ENTERIX\";",
+									"",
+									"",
 									"",
 									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
 								]
@@ -1057,10 +1068,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "sort",
-								"value": "PatientName"
 							}
 						],
 						"body": {
@@ -1068,7 +1075,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=PatientName",
 							"host": [
 								"{{URL}}"
 							],
@@ -1077,6 +1084,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "PatientName"
+								}
 							]
 						}
 					},
@@ -1113,10 +1126,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "sort",
-								"value": "-00100010"
 							}
 						],
 						"body": {
@@ -1124,7 +1133,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=-00100010",
 							"host": [
 								"{{URL}}"
 							],
@@ -1133,6 +1142,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-00100010"
+								}
 							]
 						}
 					},
@@ -1175,10 +1190,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "2"
 							}
 						],
 						"body": {
@@ -1186,7 +1197,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=2",
 							"host": [
 								"{{URL}}"
 							],
@@ -1195,6 +1206,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
 							]
 						}
 					},
@@ -1231,10 +1248,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "3"
 							}
 						],
 						"body": {
@@ -1242,7 +1255,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=3",
 							"host": [
 								"{{URL}}"
 							],
@@ -1251,6 +1264,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								}
 							]
 						}
 					},
@@ -1282,10 +1301,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "0"
 							}
 						],
 						"body": {
@@ -1293,7 +1308,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=0",
 							"host": [
 								"{{URL}}"
 							],
@@ -1302,6 +1317,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
 							]
 						}
 					},
@@ -1338,10 +1359,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "999"
 							}
 						],
 						"body": {
@@ -1349,7 +1366,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=999",
 							"host": [
 								"{{URL}}"
 							],
@@ -1358,6 +1375,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "999"
+								}
 							]
 						}
 					},
@@ -1388,10 +1411,6 @@
 							{
 								"key": "Accept",
 								"value": "application/dicom+json"
-							},
-							{
-								"key": "limit",
-								"value": "badLimit"
 							}
 						],
 						"body": {
@@ -1399,7 +1418,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=badLimit",
 							"host": [
 								"{{URL}}"
 							],
@@ -1408,6 +1427,12 @@
 								"users",
 								"{{user1}}",
 								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "badLimit"
+								}
 							]
 						}
 					},
