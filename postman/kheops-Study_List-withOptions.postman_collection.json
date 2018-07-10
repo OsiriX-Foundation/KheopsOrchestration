@@ -2500,17 +2500,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"id": "fff0db0b-d7b8-4ad5-9a48-246d80b764e2",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									""
 								]
 							}
 						}
@@ -2558,17 +2553,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"id": "586413de-1751-4d0c-a2fc-1d94b749c3e7",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
 								]
 							}
 						}
@@ -2622,7 +2611,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "94aa6805-6187-4a09-8a05-9176527355bf",
+								"id": "71455e08-5485-43dc-a548-3461f4e9198f",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2632,7 +2621,6 @@
 									"",
 									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"tests[\"1st PatientName ENTERIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
-									"tests[\"2th PatientName MACOESSIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MACOESSIX\";",
 									"tests[\"2th PatientName MAGIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
 									"",
 									"",
