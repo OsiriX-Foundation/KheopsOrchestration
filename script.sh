@@ -11,3 +11,5 @@
  sed -i "1,|RE|s|\"file\": {}|\"file\": \"testIncisix.dcm\"|" postman/kheops-Study_List-withOptions.postman_collection.json
  sed -i "1,|RE|s|\"file\": {}|\"file\": \"testMaceosix.dcm\"|" postman/kheops-Study_List-withOptions.postman_collection.json
  sed -i "1,|RE|s|\"file\": {}|\"file\": \"testMagix.dcm\"|" postman/kheops-Study_List-withOptions.postman_collection.json
+ 
+ cat postman/kheops-Study_List-withOptions.postman_collection.json
