@@ -39,3 +39,5 @@ script:
   - node_modules/.bin/newman run postman/kheops-DICOMweb_Capability_Tokens.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
   - node_modules/.bin/newman run postman/kheops-proxy_pacs.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - ./script_run_docker.sh
+  - node_modules/.bin/newman run postman/kheops-Study_List-withOptions.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
