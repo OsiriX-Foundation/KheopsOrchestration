@@ -1040,7 +1040,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "2af1ad7d-7686-4eb4-90d8-90a7799ec3c4",
+								"id": "5eb564ab-c203-4419-b733-6990d1b7cdc3",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1049,7 +1049,11 @@
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
-									"tests[\"1st PatientName ENTERIX\"] = jsonObject. === \"ENTERIX\";",
+									"tests[\"1st PatientName ENTERIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
+									"tests[\"2nd PatientName FELIX\"] = jsonObject[0]['00100010']['Value'][1]['Alphabetic'] === \"FELIX\";",
+									"tests[\"3rd PatientName INCISIX\"] = jsonObject[0]['00100010']['Value'][2]['Alphabetic'] === \"INCISIX\";",
+									"tests[\"4th PatientName MACEOSIX\"] = jsonObject[0]['00100010']['Value'][3]['Alphabetic'] === \"MACEOSIX\";",
+									"tests[\"5th PatientName MAGIX\"] = jsonObject[0]['00100010']['Value'][4]['Alphabetic'] === \"MAGIX\";",
 									"",
 									"",
 									"",
@@ -1101,7 +1105,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bcd301f4-0018-47ab-9572-0e15be617592",
+								"id": "177ce0e9-ca5f-440c-bda0-16f434b6afa0",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1110,6 +1114,12 @@
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"5th PatientName ENTERIX\"] = jsonObject[0]['00100010']['Value'][4]['Alphabetic'] === \"ENTERIX\";",
+									"tests[\"4th PatientName FELIX\"] = jsonObject[0]['00100010']['Value'][3]['Alphabetic'] === \"FELIX\";",
+									"tests[\"3rd PatientName INCISIX\"] = jsonObject[0]['00100010']['Value'][2]['Alphabetic'] === \"INCISIX\";",
+									"tests[\"2nd PatientName MACEOSIX\"] = jsonObject[0]['00100010']['Value'][1]['Alphabetic'] === \"MACEOSIX\";",
+									"tests[\"1st PatientName MAGIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
 									"",
 									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
 								]
