@@ -2164,6 +2164,64 @@
 					"response": []
 				},
 				{
+					"name": "user1 get studies list-filter date-date 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe1007a8-2893-4b43-b0a5-37fb99553934",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 studies\"] = jsonObject.length === user2;",
+									"",
+									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061005-20061019",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "StudyDate",
+									"value": "20061005-20061019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "user1 get studies list-filter date badDate",
 					"event": [
 						{
