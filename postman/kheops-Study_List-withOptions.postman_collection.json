@@ -623,6 +623,291 @@
 			]
 		},
 		{
+			"name": "Limit",
+			"description": "",
+			"item": [
+				{
+					"name": "user1 get studies list-limit-2 result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-limit-3 result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5e42e362-8771-43aa-a0db-c32a0c831dd0",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-limit-0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9b40449c-9ffc-4b7d-8288-2150b6f1cf61",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 400\"] = responseCode.code === 400;",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-limit-Big value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "48a5649a-12ab-4573-9396-d2c2730f4afd",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"",
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=999",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "999"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-limit-Bad value",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c1b6e61-7e30-4272-96a9-e58517dc740f",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/dicom+json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=badLimit",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"users",
+								"{{user1}}",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "badLimit"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Offset",
 			"description": "",
 			"item": [
@@ -1040,7 +1325,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7e98c7be-a0f4-43d9-b0b1-712e26f22d4f",
+								"id": "c84c5377-a80a-4aab-b485-4c34352374f2",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1052,7 +1337,7 @@
 									"tests[\"1st PatientName ENTERIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
 									"tests[\"2nd PatientName FELIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
 									"tests[\"3rd PatientName INCISIX\"] = jsonObject[2]['00100010']['Value'][0]['Alphabetic'] === \"INCISIX\";",
-									"tests[\"4th PatientName MACEOSIX\"] = jsonObject[3]['00100010']['Value'][0]['Alphabetic'] === \"MACEOSIX\";",
+									"tests[\"4th PatientName MACOESSIX\"] = jsonObject[3]['00100010']['Value'][0]['Alphabetic'] === \"MACOESSIX\";",
 									"tests[\"5th PatientName MAGIX\"] = jsonObject[4]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
 									"",
 									"",
@@ -1105,7 +1390,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c13e81a7-e669-45f2-8c10-ae824c04ee52",
+								"id": "8dec3d46-fc58-45aa-8416-18863704b399",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1115,11 +1400,11 @@
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
 									"",
-									"tests[\"5th PatientName ENTERIX\"] = jsonObject[4]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
-									"tests[\"4th PatientName FELIX\"] = jsonObject[3]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
-									"tests[\"3rd PatientName INCISIX\"] = jsonObject[2]['00100010']['Value'][0]['Alphabetic'] === \"INCISIX\";",
-									"tests[\"2nd PatientName MACEOSIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MACEOSIX\";",
 									"tests[\"1st PatientName MAGIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
+									"tests[\"2nd PatientName MACOESSIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MACOESSIX\";",
+									"tests[\"3rd PatientName INCISIX\"] = jsonObject[2]['00100010']['Value'][0]['Alphabetic'] === \"INCISIX\";",
+									"tests[\"4th PatientName FELIX\"] = jsonObject[3]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
+									"tests[\"5th PatientName ENTERIX\"] = jsonObject[4]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
 									"",
 									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
 								]
@@ -1166,289 +1451,19 @@
 			]
 		},
 		{
-			"name": "Limit",
+			"name": "Filter",
 			"description": "",
-			"item": [
-				{
-					"name": "user1 get studies list-limit-2 result",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/dicom+json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=2",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"users",
-								"{{user1}}",
-								"studies"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "2"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user1 get studies list-limit-3 result",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5e42e362-8771-43aa-a0db-c32a0c831dd0",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/dicom+json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=3",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"users",
-								"{{user1}}",
-								"studies"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "3"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user1 get studies list-limit-0",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "9b40449c-9ffc-4b7d-8288-2150b6f1cf61",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 400\"] = responseCode.code === 400;",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/dicom+json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=0",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"users",
-								"{{user1}}",
-								"studies"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "0"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user1 get studies list-limit-Big value",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "48a5649a-12ab-4573-9396-d2c2730f4afd",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
-									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/dicom+json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=999",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"users",
-								"{{user1}}",
-								"studies"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "999"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "user1 get studies list-limit-Bad value",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "5c1b6e61-7e30-4272-96a9-e58517dc740f",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 400\"] = responseCode.code === 400;"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/dicom+json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=badLimit",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"users",
-								"{{user1}}",
-								"studies"
-							],
-							"query": [
-								{
-									"key": "limit",
-									"value": "badLimit"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
+			"item": []
+		},
+		{
+			"name": "DateTimeFilter",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "Combo",
+			"description": "",
+			"item": []
 		}
 	]
 }
