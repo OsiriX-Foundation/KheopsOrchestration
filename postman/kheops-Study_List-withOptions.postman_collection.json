@@ -2622,7 +2622,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "77e36688-a606-49d6-9499-e24c49380951",
+								"id": "94aa6805-6187-4a09-8a05-9176527355bf",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2630,15 +2630,13 @@
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
+									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"tests[\"1st PatientName ENTERIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
-									"tests[\"2nd PatientName FELIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
-									"tests[\"3rd PatientName INCISIX\"] = jsonObject[2]['00100010']['Value'][0]['Alphabetic'] === \"INCISIX\";",
-									"tests[\"4th PatientName MACOESSIX\"] = jsonObject[3]['00100010']['Value'][0]['Alphabetic'] === \"MACOESSIX\";",
-									"tests[\"5th PatientName MAGIX\"] = jsonObject[4]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
+									"tests[\"2th PatientName MACOESSIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MACOESSIX\";",
+									"tests[\"2th PatientName MAGIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
 									"",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\");"
 								]
 							}
 						}
