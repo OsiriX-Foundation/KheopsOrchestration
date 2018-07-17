@@ -801,7 +801,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "416cea00-4742-4a6e-a7df-9466efa446c9",
+								"id": "2b26cfe5-8da5-468b-9708-d68401070f74",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -811,7 +811,7 @@
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") == 5;"
 								]
 							}
 						}
