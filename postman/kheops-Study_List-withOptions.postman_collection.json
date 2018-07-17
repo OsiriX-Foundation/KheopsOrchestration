@@ -632,7 +632,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
+								"id": "f790ef9b-7817-4821-ada9-5bb4eac571ef",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -642,7 +642,7 @@
 									"",
 									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -690,7 +690,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5e42e362-8771-43aa-a0db-c32a0c831dd0",
+								"id": "adeb19af-a0b7-4988-93b1-b6a88f99e6a8",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -700,7 +700,7 @@
 									"",
 									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -801,7 +801,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "48a5649a-12ab-4573-9396-d2c2730f4afd",
+								"id": "416cea00-4742-4a6e-a7df-9466efa446c9",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -811,7 +811,7 @@
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -917,7 +917,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
+								"id": "a3942e1d-8e40-473b-9645-7c9796698a21",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -927,7 +927,7 @@
 									"",
 									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -975,7 +975,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dc73bdd5-9245-4fc2-8000-a8d723425fcc",
+								"id": "a33e2adb-70a2-4a00-86e0-fb4b965e4ec8",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -985,7 +985,7 @@
 									"",
 									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -1143,7 +1143,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e232ea42-0454-40dd-80e8-a410fdef7416",
+								"id": "ecba653c-b978-4f9c-8acf-a0e52246cc1e",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1153,7 +1153,7 @@
 									"",
 									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -1205,7 +1205,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "041768ec-6480-4f18-a52b-be20ebc2c073",
+								"id": "feff7983-fdbd-4297-92d0-9528e876763d",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1215,7 +1215,7 @@
 									"",
 									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") == 5;"
 								]
 							}
 						}
@@ -1325,7 +1325,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c84c5377-a80a-4aab-b485-4c34352374f2",
+								"id": "a7ba9204-8235-4a1d-a1c0-1a37a7519214",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1342,7 +1342,7 @@
 									"",
 									"",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -1390,7 +1390,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8dec3d46-fc58-45aa-8416-18863704b399",
+								"id": "4925ca99-4652-4e55-9fd8-1f066231af4e",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1406,7 +1406,7 @@
 									"tests[\"4th PatientName FELIX\"] = jsonObject[3]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
 									"tests[\"5th PatientName ENTERIX\"] = jsonObject[4]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -1460,7 +1460,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "449da539-63b6-4925-9316-0d06c762cca2",
+								"id": "149ec483-05b3-4c82-b86f-932f718b3e9f",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1470,7 +1470,7 @@
 									"",
 									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\") === 2;"
 								]
 							}
 						}
@@ -1518,7 +1518,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bc2a8adb-6502-487c-a3bd-cbc089773a3e",
+								"id": "0b915478-bcdf-4f9b-af56-514805973dc9",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1528,7 +1528,7 @@
 									"",
 									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
 									"",
-									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\") === 0;"
 								]
 							}
 						}
@@ -1576,7 +1576,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "449da539-63b6-4925-9316-0d06c762cca2",
+								"id": "4cd54d72-01c1-4ddd-bc8a-d86d806f7763",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1586,7 +1586,7 @@
 									"",
 									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\") === 2;"
 								]
 							}
 						}
@@ -1634,7 +1634,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6c0b2ee3-5e10-4293-82bc-95068ea3bd0c",
+								"id": "adfe2398-ecb1-4f9b-af61-e6c262ab5990",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1644,7 +1644,7 @@
 									"",
 									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
 									"",
-									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") === 3;"
 								]
 							}
 						}
@@ -1692,7 +1692,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c1a2caed-05ba-49a0-a863-549337a19c51",
+								"id": "def794fe-8dbd-4f54-8c5e-eaf09a196ab3",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1702,7 +1702,7 @@
 									"",
 									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
 									"",
-									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") === 1;"
 								]
 							}
 						}
@@ -1750,7 +1750,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c1a2caed-05ba-49a0-a863-549337a19c51",
+								"id": "62ef64a1-20b6-47fd-95c2-89207e6bd83e",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1760,7 +1760,7 @@
 									"",
 									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
 									"",
-									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") === 1;"
 								]
 							}
 						}
@@ -1808,7 +1808,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "41d05cfa-1c20-4aea-8782-0ecf3b5e7052",
+								"id": "2770464d-b828-4ade-856f-d9d765bec483",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1818,7 +1818,7 @@
 									"",
 									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
 									"",
-									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") === 3;"
 								]
 							}
 						}
@@ -1866,7 +1866,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "756ad23d-9cfb-444a-ac6a-3f5eab72a8ff",
+								"id": "ba439201-a199-4775-bd3b-185bf8c85374",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1876,7 +1876,7 @@
 									"",
 									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
 									"",
-									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\") === 0;"
 								]
 							}
 						}
@@ -1930,7 +1930,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8e0d1adf-31fa-4924-9361-d9883b1391ec",
+								"id": "7bfc4d43-7651-4b1e-ae1b-fd741401ea2e",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -1943,7 +1943,7 @@
 									"tests[\"PatientName FELIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
 									"",
 									"",
-									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") === 1;"
 								]
 							}
 						}
@@ -1991,7 +1991,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c0aec866-9927-4a30-81c4-63733afe31d3",
+								"id": "e171115d-6bad-426a-ba9d-c840965e6e10",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2003,7 +2003,7 @@
 									"",
 									"tests[\"PatientName MAGIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
 									"",
-									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") === 1;"
 								]
 							}
 						}
@@ -2051,7 +2051,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ba050acb-8a76-4fc9-a9f7-3c521264ac43",
+								"id": "1fb6c6db-33c7-470e-85b3-8e4c932bf04e",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2063,7 +2063,7 @@
 									"",
 									"tests[\"PatientName FELIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"FELIX\";",
 									"",
-									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") === 1;"
 								]
 							}
 						}
@@ -2111,7 +2111,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4c256778-7441-42d1-a779-108ce2cfb8e0",
+								"id": "1313cbd7-2c22-4d51-83f0-99290c051a15",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2121,7 +2121,7 @@
 									"",
 									"tests[\"Return 3 studies\"] = jsonObject.length === 3;",
 									"",
-									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") === 3;"
 								]
 							}
 						}
@@ -2169,7 +2169,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6d85eb83-9ca9-45d7-b1eb-fe79b9f05986",
+								"id": "b3c41d0c-b5e4-4d11-816a-ed1e0bb07b0a",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2179,7 +2179,7 @@
 									"",
 									"tests[\"Return 2 studies\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\") === 2;"
 								]
 							}
 						}
@@ -2384,7 +2384,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"id": "832137d4-4cd2-42df-ae84-87f7e376c002",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2394,7 +2394,7 @@
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -2442,7 +2442,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"id": "2d8d9cb9-825f-43ef-8c0c-2ca79734dcce",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2452,7 +2452,7 @@
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -2500,7 +2500,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d5211171-af1b-443a-bfd1-1df1e400186c",
+								"id": "545743ae-5dbd-43fe-b7be-aa798a9db595",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2510,7 +2510,7 @@
 									"",
 									"tests[\"Return 5 studies\"] = jsonObject.length === 5;",
 									"",
-									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") === 5;"
 								]
 							}
 						}
@@ -2669,7 +2669,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "71455e08-5485-43dc-a548-3461f4e9198f",
+								"id": "48147d7b-51c8-4373-a540-0205d8a36c76",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
@@ -2682,7 +2682,7 @@
 									"tests[\"2th PatientName MAGIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
 									"",
 									"",
-									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\");"
+									"tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\") === 2;"
 								]
 							}
 						}
