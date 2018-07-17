@@ -158,7 +158,75 @@
 			"response": []
 		},
 		{
-			"name": "Create a capability tokens user1-OK Copy",
+			"name": "user1 get studies list-1studie",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5055b06-d516-4117-b4f9-60329a2c6126",
+						"type": "text/javascript",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+							"",
+							"pm.environment.set(\"tempDicomData\", responseBody);"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
+						"type": "text/javascript",
+						"exec": [
+							"function wait(ms)",
+							"{",
+							"    var d = new Date();",
+							"    var d2 = null;",
+							"    do { d2 = new Date(); }",
+							"    while(d2-d < ms);",
+							"}",
+							"",
+							"wait(15000);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/dicom+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"authorization",
+						"users",
+						"{{user1}}",
+						"studies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a capability tokens user1-OK",
 			"event": [
 				{
 					"listen": "test",
@@ -234,13 +302,104 @@
 			"response": []
 		},
 		{
-			"name": "Download zip",
+			"name": "Download zip stream",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
 						"value": "Bearer {{secret_capability_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}/zipper/studies/{{study_UID}}/stream",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"zipper",
+						"studies",
+						"{{study_UID}}",
+						"stream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download zip stream Bad study UID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0248e8c8-9462-4bce-b7da-d191e4afb22f",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{secret_capability_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}/zipper/studies/{{study_UID}}1/stream",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"zipper",
+						"studies",
+						"{{study_UID}}1",
+						"stream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download zip stream Bad token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8097f253-9943-476c-b05e-fdb97addd36e",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 123456789"
 					}
 				],
 				"body": {},
