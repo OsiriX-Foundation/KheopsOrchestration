@@ -91,6 +91,17 @@ services:
       - kheops_auth_hmasecret
       - mysql_password
 
+  kheops-zipper:
+    container_name: kheopszipper
+    image: osirixfoundation/kheops-zipper:${KHEOPS_ZIPPER_IMAGE_TAG}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
+    restart: on-failure
+    env_file: docker-compose.env
+    depends_on:
+      - arc
+
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
     image: osirixfoundation/kheops-dicomweb-proxy:${KHEOPS_DICOMWEB_PROXY_IMAGE_TAG}
