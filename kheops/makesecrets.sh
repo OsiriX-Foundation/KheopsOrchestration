@@ -1,7 +1,7 @@
 #!/bin/bash
 
 secretsFolder=secrets
-secretsFile=(kheops_auth_hmasecret kheops_superuser_hmasecret mysql_password mysql_root_password OAuth2_secret)
+secretsFile=(kheops_auth_hmasecret kheops_auth_hmasecret_post kheops_superuser_hmasecret mysql_password mysql_root_password OAuth2_secret)
 
 if [ ! -d $secretsFolder ]; then
     mkdir $secretsFolder
