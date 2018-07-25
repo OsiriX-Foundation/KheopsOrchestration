@@ -167,7 +167,7 @@ services:
       - arc
     secrets:
       - kheops_auth_hmasecret
-      - kheops_auth_hmasecret_post:
+      - kheops_auth_hmasecret_post
 
 
 
