@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f8bc652a-8643-4785-9665-f6d10c0b4579",
+		"_postman_id": "4061eea2-205e-4f52-9615-912d545a09a4",
 		"name": "kheops-DICOMweb_Capability_Tokens",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1250,7 +1250,6 @@
 						{
 							"key": "return_user",
 							"value": "true",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1331,7 +1330,6 @@
 						{
 							"key": "return_user",
 							"value": "true",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -1422,11 +1420,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fca21610-4c8c-4651-a8cb-96379b8ee9f4",
+						"id": "944c509b-25e2-44b9-9709-782c8d32daee",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
-							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;",
 							"",
 							"var jsonObject = JSON.parse(responseBody);",
 							"",
