@@ -1420,15 +1420,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "944c509b-25e2-44b9-9709-782c8d32daee",
+						"id": "44aef2e6-7196-4070-9926-8e159fcba1b9",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
-							"tests[\"Status code is 401\"] = responseCode.code === 401;",
-							"",
-							"var jsonObject = JSON.parse(responseBody);",
-							"",
-							"tests[\"Unknown capability token\"] = jsonObject.error_description === \"Unknown capability token\";"
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
 						]
 					}
 				},
