@@ -6,6 +6,7 @@
 	},
 	"item": [
 		{
+			"_postman_id": "8438e8a6-231a-413c-ad27-32cf23458f30",
 			"name": "create user1-create",
 			"event": [
 				{
@@ -71,6 +72,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "032be5b7-f228-4ce9-bb44-361f938fd9cf",
 			"name": "dcm4chee STOW RS",
 			"event": [
 				{
@@ -114,6 +116,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "2a8670e3-8a35-440a-b027-0c46eec2b3b1",
 			"name": "Give an user access to a specific series (first time)",
 			"event": [
 				{
@@ -140,14 +143,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -158,6 +159,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "c8b36c9a-15d5-45c6-928c-65ce54670068",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -211,14 +213,12 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies"
 					]
 				}
@@ -226,6 +226,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "ab1a895d-f33c-4147-b005-790d22c41a7f",
 			"name": "Create a capability tokens user1-OK",
 			"event": [
 				{
@@ -287,14 +288,12 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/capabilities",
+					"raw": "{{URL}}/authorization/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"capabilities"
 					]
 				}
@@ -302,6 +301,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "d12812f6-4709-4636-b219-b8764388c9a6",
 			"name": "Download zip stream",
 			"event": [
 				{
@@ -342,6 +342,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "fc41d991-7d6c-4d15-908b-4acbd3f0cd7f",
 			"name": "Download zip stream Bad study UID",
 			"event": [
 				{
@@ -381,6 +382,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "8a505bae-9142-400e-ac56-6fecc91dfae0",
 			"name": "Download zip stream Bad token",
 			"event": [
 				{

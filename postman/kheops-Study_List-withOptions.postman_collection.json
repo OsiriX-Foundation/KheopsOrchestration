@@ -6,10 +6,11 @@
 	},
 	"item": [
 		{
+			"_postman_id": "b83d8ef4-7d7e-4173-97f9-f0ac55ab949e",
 			"name": "Initialisation",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "0f670042-b9ad-49cd-9c04-d24ba463c1d2",
 					"name": "create user1-create",
 					"event": [
 						{
@@ -75,6 +76,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "816e1b3d-c0a0-4f57-bcf1-9f1e255c4bcc",
 					"name": "user1 get studies list-Empty",
 					"event": [
 						{
@@ -108,14 +110,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							]
 						}
@@ -123,6 +123,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "458e75ef-207f-4eeb-809e-73ca61f2005a",
 					"name": "dcm4chee STOW RS-study1",
 					"event": [
 						{
@@ -166,6 +167,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "e6d589a9-8eac-439d-96a4-a64bbb900028",
 					"name": "Give an user access to a specific series",
 					"event": [
 						{
@@ -192,14 +194,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000314223/series/1.3.12.2.1107.5.1.4.48545.30000006100307470634300004693",
+							"raw": "{{URL}}/authorization/studies/2.16.840.1.113669.632.20.1211.10000314223/series/1.3.12.2.1107.5.1.4.48545.30000006100307470634300004693",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies",
 								"2.16.840.1.113669.632.20.1211.10000314223",
 								"series",
@@ -210,6 +210,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "44f2b1d5-9c68-4bcc-b50e-413288dcb56e",
 					"name": "dcm4chee STOW RS-study2",
 					"event": [
 						{
@@ -253,6 +254,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "1d000116-56e9-4a0c-a873-4961aa8e8101",
 					"name": "Give an user access to a specific series",
 					"event": [
 						{
@@ -279,14 +281,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies/1.2.840.113745.101000.1008000.38446.6272.7138759/series/1.3.12.2.1107.5.2.13.20561.30000005042216091690600001946",
+							"raw": "{{URL}}/authorization/studies/1.2.840.113745.101000.1008000.38446.6272.7138759/series/1.3.12.2.1107.5.2.13.20561.30000005042216091690600001946",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies",
 								"1.2.840.113745.101000.1008000.38446.6272.7138759",
 								"series",
@@ -297,6 +297,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "216a4f1e-a20c-4166-9198-c27638c41fe8",
 					"name": "dcm4chee STOW RS-study3",
 					"event": [
 						{
@@ -340,6 +341,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "d6e4f89e-f9d4-4ad1-bde6-2e4572408248",
 					"name": "Give an user access to a specific series",
 					"event": [
 						{
@@ -366,14 +368,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000231621/series/1.3.12.2.1107.5.1.4.54693.30000006053107175587500014744",
+							"raw": "{{URL}}/authorization/studies/2.16.840.1.113669.632.20.1211.10000231621/series/1.3.12.2.1107.5.1.4.54693.30000006053107175587500014744",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies",
 								"2.16.840.1.113669.632.20.1211.10000231621",
 								"series",
@@ -384,6 +384,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "74a7ce79-37c4-453a-8388-107f350ec2c6",
 					"name": "dcm4chee STOW RS-study4",
 					"event": [
 						{
@@ -427,6 +428,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "e9616827-e3db-4ea5-bbba-a72efa911f6b",
 					"name": "Give an user access to a specific series",
 					"event": [
 						{
@@ -453,14 +455,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000307912/series/1.3.6.1.4.1.19291.2.1.2.13214421782916617324360484294967295589745577",
+							"raw": "{{URL}}/authorization/studies/2.16.840.1.113669.632.20.1211.10000307912/series/1.3.6.1.4.1.19291.2.1.2.13214421782916617324360484294967295589745577",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies",
 								"2.16.840.1.113669.632.20.1211.10000307912",
 								"series",
@@ -471,6 +471,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "0afd4873-1ac9-458b-af6c-dbc3585bfc17",
 					"name": "dcm4chee STOW RS-study5",
 					"event": [
 						{
@@ -514,6 +515,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "7e7f1100-960b-427b-9f7e-7030092c61cb",
 					"name": "Give an user access to a specific series",
 					"event": [
 						{
@@ -540,14 +542,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies/2.16.840.1.113669.632.20.1211.10000329900/series/1.3.12.2.1107.5.1.4.54693.30000006102508593206200000003",
+							"raw": "{{URL}}/authorization/studies/2.16.840.1.113669.632.20.1211.10000329900/series/1.3.12.2.1107.5.1.4.54693.30000006102508593206200000003",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies",
 								"2.16.840.1.113669.632.20.1211.10000329900",
 								"series",
@@ -558,6 +558,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "4f6df66c-4339-48a2-986b-ce14b9525d8e",
 					"name": "user1 get studies list-5 elements",
 					"event": [
 						{
@@ -606,14 +607,12 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+							"raw": "{{URL}}/authorization/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							]
 						}
@@ -623,10 +622,11 @@
 			]
 		},
 		{
+			"_postman_id": "5274f94f-3b92-4c91-b0ec-4290f32af361",
 			"name": "Limit",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "1f016596-0bdc-45bf-958f-fc041d97a150",
 					"name": "user1 get studies list-limit-2 result",
 					"event": [
 						{
@@ -664,14 +664,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=2",
+							"raw": "{{URL}}/authorization/studies?limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -685,6 +683,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "0579e6e2-edaa-4193-9225-e6e63fc3f888",
 					"name": "user1 get studies list-limit-3 result",
 					"event": [
 						{
@@ -722,14 +721,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=3",
+							"raw": "{{URL}}/authorization/studies?limit=3",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -743,6 +740,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "c81d9e67-3b7c-4aa1-b0d1-31afd7d6050c",
 					"name": "user1 get studies list-limit-0",
 					"event": [
 						{
@@ -775,14 +773,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=0",
+							"raw": "{{URL}}/authorization/studies?limit=0",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -796,6 +792,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "8c3bdde7-0303-41a3-a0e2-9c54c18e1488",
 					"name": "user1 get studies list-limit-Big value",
 					"event": [
 						{
@@ -833,14 +830,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=999",
+							"raw": "{{URL}}/authorization/studies?limit=999",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -854,6 +849,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "d1c700af-0d1d-487f-b60e-9f48c401b552",
 					"name": "user1 get studies list-limit-Bad value",
 					"event": [
 						{
@@ -885,14 +881,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=badLimit",
+							"raw": "{{URL}}/authorization/studies?limit=badLimit",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -908,10 +902,11 @@
 			]
 		},
 		{
+			"_postman_id": "b40de1ea-2765-44c9-979b-30d2ca3c924a",
 			"name": "Offset",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "9adefac6-89e8-44d7-be1b-19f65dc61156",
 					"name": "user1 get studies list-offset-2 results",
 					"event": [
 						{
@@ -949,14 +944,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=3",
+							"raw": "{{URL}}/authorization/studies?offset=3",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -970,6 +963,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "12cb053f-5749-437c-9cf2-5c4a3363b7d7",
 					"name": "user1 get studies list-offset-No result",
 					"event": [
 						{
@@ -1007,14 +1001,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=33",
+							"raw": "{{URL}}/authorization/studies?offset=33",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1028,6 +1020,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "c9adde68-52e2-44e6-a520-5bc9c1a059f2",
 					"name": "user1 get studies list-offset-Bad offset1",
 					"event": [
 						{
@@ -1059,14 +1052,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=badOffset",
+							"raw": "{{URL}}/authorization/studies?offset=badOffset",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1080,6 +1071,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "aa89a1de-2df3-4a36-991f-259cc6bec0d1",
 					"name": "user1 get studies list-offset-Bad offset2",
 					"event": [
 						{
@@ -1111,14 +1103,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?offset=-1",
+							"raw": "{{URL}}/authorization/studies?offset=-1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1134,10 +1124,11 @@
 			]
 		},
 		{
+			"_postman_id": "c70bdbaa-1aa8-449b-a1e5-693d06d5d591",
 			"name": "Limit and offset",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "53647375-b661-4c86-b958-f5493387872e",
 					"name": "user1 get studies list-limit-offset-2 results",
 					"event": [
 						{
@@ -1175,14 +1166,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=2&offset=2",
+							"raw": "{{URL}}/authorization/studies?limit=2&offset=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1200,6 +1189,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "c88cc38e-c380-462a-af18-a3065af203be",
 					"name": "user1 get studies list-limit-offset-3 results",
 					"event": [
 						{
@@ -1237,14 +1227,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?limit=999&offset=2",
+							"raw": "{{URL}}/authorization/studies?limit=999&offset=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1264,10 +1252,11 @@
 			]
 		},
 		{
+			"_postman_id": "81913366-2b77-4699-80ef-fe7f2ea6d362",
 			"name": "Sort",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "b6d4a38c-8756-40f5-9248-8d1e8fca462d",
 					"name": "user1 get studies list-sort-Bad key",
 					"event": [
 						{
@@ -1299,14 +1288,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=badKey",
+							"raw": "{{URL}}/authorization/studies?sort=badKey",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1320,6 +1307,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "7d0a745d-f898-468b-9eff-7e93dfdf68e3",
 					"name": "user1 get studies list-sort by PatientName",
 					"event": [
 						{
@@ -1364,14 +1352,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=PatientName",
+							"raw": "{{URL}}/authorization/studies?sort=PatientName",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1385,6 +1371,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "7b2365b7-57f9-4cb4-b630-602271e4e986",
 					"name": "user1 get studies list-sort by  -PatientName",
 					"event": [
 						{
@@ -1428,14 +1415,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=-00100010",
+							"raw": "{{URL}}/authorization/studies?sort=-00100010",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1451,10 +1436,11 @@
 			]
 		},
 		{
+			"_postman_id": "bbffe2e7-b89c-48d7-87f0-cc77650234eb",
 			"name": "Filter",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "591dc0da-2b6e-42c3-aaaa-eb47ddac41d3",
 					"name": "user1 get studies list-filter-PatientName* 2 result",
 					"event": [
 						{
@@ -1492,14 +1478,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?PatientName=mA*",
+							"raw": "{{URL}}/authorization/studies?PatientName=mA*",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1513,6 +1497,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "872f38f8-f9b5-424d-ae54-8fe6aeb50ef9",
 					"name": "user1 get studies list-filter-PatientName* No result",
 					"event": [
 						{
@@ -1550,14 +1535,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?PatientName=NOresult",
+							"raw": "{{URL}}/authorization/studies?PatientName=NOresult",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1571,6 +1554,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "9dca7e7b-6a1a-4288-8fda-abd9d151ec33",
 					"name": "user1 get studies list-filter-*PatientName 2 result",
 					"event": [
 						{
@@ -1608,14 +1592,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?PatientName=*six",
+							"raw": "{{URL}}/authorization/studies?PatientName=*six",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1629,6 +1611,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "ef56f4dc-62a7-4c09-b8d9-a55269a96d81",
 					"name": "user1 get studies list-filter-*PatientName* 3 result",
 					"event": [
 						{
@@ -1666,14 +1649,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?PatientName=*e*",
+							"raw": "{{URL}}/authorization/studies?PatientName=*e*",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1687,6 +1668,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "b3ba3443-e8fd-4918-b756-133853aaa687",
 					"name": "user1 get studies list-filter-PatientName 1 result",
 					"event": [
 						{
@@ -1724,14 +1706,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?PatientName=FeLiX",
+							"raw": "{{URL}}/authorization/studies?PatientName=FeLiX",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1745,6 +1725,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "af684bb4-4232-47c2-929f-e441c2ae9b31",
 					"name": "user1 get studies list-filter-ModalitiesInStudy 1 result",
 					"event": [
 						{
@@ -1782,14 +1763,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?00080061=MR",
+							"raw": "{{URL}}/authorization/studies?00080061=MR",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1803,6 +1782,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "32df6755-0c01-4e9f-98a2-45d09571585c",
 					"name": "user1 get studies list-filter-ModalitiesInStudy 3 result",
 					"event": [
 						{
@@ -1840,14 +1820,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?00080061=cT",
+							"raw": "{{URL}}/authorization/studies?00080061=cT",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1861,6 +1839,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "e167f0d6-f4db-48f8-87b8-49d7a826ea29",
 					"name": "user1 get studies list-filter-ModalitiesInStudy 0 result",
 					"event": [
 						{
@@ -1898,14 +1877,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?00080061=XX",
+							"raw": "{{URL}}/authorization/studies?00080061=XX",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1921,10 +1898,11 @@
 			]
 		},
 		{
+			"_postman_id": "8ae3e333-226d-427c-ba51-6753f3147534",
 			"name": "DateTimeFilter",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "394c5c0f-feb2-4b38-b55b-c7162ec0b2e3",
 					"name": "user1 get studies list-filter date",
 					"event": [
 						{
@@ -1965,14 +1943,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20050422",
+							"raw": "{{URL}}/authorization/studies?StudyDate=20050422",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -1986,6 +1962,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "c64ea9d4-c5d8-414e-a6a2-cd54a9d8cc7d",
 					"name": "user1 get studies list-filter date-",
 					"event": [
 						{
@@ -2025,14 +2002,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061010-",
+							"raw": "{{URL}}/authorization/studies?StudyDate=20061010-",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2046,6 +2021,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "bfb33df0-7c80-4c0d-9453-facdf8a432fb",
 					"name": "user1 get studies list-filter -date",
 					"event": [
 						{
@@ -2085,14 +2061,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=-20051231",
+							"raw": "{{URL}}/authorization/studies?StudyDate=-20051231",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2106,6 +2080,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "5fd97568-e75f-4df5-b08e-349245325dde",
 					"name": "user1 get studies list-filter date-date",
 					"event": [
 						{
@@ -2143,14 +2118,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061001-20061031",
+							"raw": "{{URL}}/authorization/studies?StudyDate=20061001-20061031",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2164,6 +2137,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "2190e38b-1c63-48ae-a0ae-140356116366",
 					"name": "user1 get studies list-filter date-date 2",
 					"event": [
 						{
@@ -2201,14 +2175,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061005-20061019",
+							"raw": "{{URL}}/authorization/studies?StudyDate=20061005-20061019",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2222,6 +2194,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "2fe5dafe-75ea-4577-8168-dae77d0e1f89",
 					"name": "user1 get studies list-filter date badDate",
 					"event": [
 						{
@@ -2254,14 +2227,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061301",
+							"raw": "{{URL}}/authorization/studies?StudyDate=20061301",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2275,6 +2246,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "5d8ee0a5-00ce-49cb-9c67-4087ffcc7f4b",
 					"name": "user1 get studies list-filter date badRequest",
 					"event": [
 						{
@@ -2306,14 +2278,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061001-abcd",
+							"raw": "{{URL}}/authorization/studies?StudyDate=20061001-abcd",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2327,6 +2297,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "697a411e-d42c-4e63-bca0-5f41aac371fe",
 					"name": "user1 get studies list-filter date badRequest",
 					"event": [
 						{
@@ -2358,14 +2329,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyDate=20061001*20061212",
+							"raw": "{{URL}}/authorization/studies?StudyDate=20061001*20061212",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2379,6 +2348,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "3e5383bb-d028-49de-8dc6-29a2f585d0a4",
 					"name": "user1 get studies list-filter time",
 					"event": [
 						{
@@ -2416,14 +2386,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=000000.000000-235959.999999",
+							"raw": "{{URL}}/authorization/studies?StudyTime=000000.000000-235959.999999",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2437,6 +2405,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "93892077-116f-4c45-af62-6210301f9760",
 					"name": "user1 get studies list-filter time-",
 					"event": [
 						{
@@ -2474,14 +2443,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=000000.000000-",
+							"raw": "{{URL}}/authorization/studies?StudyTime=000000.000000-",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2495,6 +2462,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "1f7566a2-bbb6-45eb-9fad-2dbfcc1f3fbf",
 					"name": "user1 get studies list-filter -time",
 					"event": [
 						{
@@ -2532,14 +2500,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=-235959.999999",
+							"raw": "{{URL}}/authorization/studies?StudyTime=-235959.999999",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2553,6 +2519,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "841417b9-4f05-49b0-9afa-6614ac68f5a7",
 					"name": "user1 get studies list-filter time badTime",
 					"event": [
 						{
@@ -2585,14 +2552,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=000000.000000-255978.999999",
+							"raw": "{{URL}}/authorization/studies?StudyTime=000000.000000-255978.999999",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2606,6 +2571,7 @@
 					"response": []
 				},
 				{
+					"_postman_id": "2b5df8c8-2acb-4bb7-8be3-cf93ca9dc1ba",
 					"name": "user1 get studies list-filter time badTime",
 					"event": [
 						{
@@ -2637,14 +2603,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?StudyTime=time",
+							"raw": "{{URL}}/authorization/studies?StudyTime=time",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [
@@ -2660,10 +2624,11 @@
 			]
 		},
 		{
+			"_postman_id": "f6d814f9-9635-4c15-9928-f1991f81cce9",
 			"name": "Combo",
-			"description": "",
 			"item": [
 				{
+					"_postman_id": "b620fe7c-a773-4a02-ad6d-3f1c28140ca5",
 					"name": "user1 get studies list-combo",
 					"event": [
 						{
@@ -2704,14 +2669,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/users/{{user1}}/studies?sort=PatientName&limit=3&offset=0&PatientName=*iX&StudyDate=20060701-20061231&ModalitiesInStudy=CT",
+							"raw": "{{URL}}/authorization/studies?sort=PatientName&limit=3&offset=0&PatientName=*iX&StudyDate=20060701-20061231&ModalitiesInStudy=CT",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
-								"users",
-								"{{user1}}",
 								"studies"
 							],
 							"query": [

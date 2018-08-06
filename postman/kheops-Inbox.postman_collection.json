@@ -1,11 +1,12 @@
 {
 	"info": {
-		"_postman_id": "8477774e-a908-4fcc-a599-c74d55ff03ff",
+		"_postman_id": "1378e21a-4a87-4503-9e0f-2775110ae27e",
 		"name": "kheops-Inbox",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
+			"_postman_id": "03f639ed-fcca-4ef9-9e49-c49623e16788",
 			"name": "create user-Bad assertion",
 			"event": [
 				{
@@ -35,13 +36,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "123456789",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -60,6 +59,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "3c536a7e-28b5-47ba-8c65-65c3b68aeb7f",
 			"name": "create user-Bad grant_type",
 			"event": [
 				{
@@ -99,13 +99,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:ietf:params:oauth:grant-type:jwt-beare",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "123456789",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -124,6 +122,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "d491eaa7-7e25-42ae-9092-0f23e0b5712e",
 			"name": "create user1-create",
 			"event": [
 				{
@@ -166,13 +165,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiIxMjM0NTY3ODkiLCJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.916Xn1BnUwdhOvuWErWWOh_AkYXeS36mVRTP06VWsVA",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -191,6 +188,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "d66f5522-1b7a-43f4-b42a-ccb617cbfdad",
 			"name": "create user1-OK",
 			"event": [
 				{
@@ -233,13 +231,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiIxMjM0NTY3ODkiLCJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.916Xn1BnUwdhOvuWErWWOh_AkYXeS36mVRTP06VWsVA",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -258,6 +254,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "0e87f68b-0946-4c0c-b567-03b447408131",
 			"name": "create user2-create",
 			"event": [
 				{
@@ -301,13 +298,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5ODc2NTQzMjEiLCJlbWFpbCI6InRpdGlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.Csj6WCBDwZlXeUOE0nX6SmReZhGZayw2yZFKWzlwysE",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -326,6 +321,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "878d2c7a-7dc3-4fbe-8cb0-90e0d76577a3",
 			"name": "create user2-OK",
 			"event": [
 				{
@@ -368,13 +364,11 @@
 						{
 							"key": "grant_type",
 							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-							"description": "",
 							"type": "text"
 						},
 						{
 							"key": "assertion",
 							"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5ODc2NTQzMjEiLCJlbWFpbCI6InRpdGlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.Csj6WCBDwZlXeUOE0nX6SmReZhGZayw2yZFKWzlwysE",
-							"description": "",
 							"type": "text"
 						}
 					]
@@ -393,6 +387,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "9da8eec4-7bc8-4c29-9509-e19d1f73c778",
 			"name": "dcm4chee STOW RS",
 			"event": [
 				{
@@ -436,6 +431,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "01b72379-023c-4062-860f-2e04a25b20a7",
 			"name": "Give an user access to a specific series (first time)",
 			"event": [
 				{
@@ -457,16 +453,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -477,6 +474,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "732032b9-90e8-44ce-b056-5d3ec7ae624f",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -525,16 +523,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies"
 					]
 				}
@@ -542,6 +541,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "5618514e-1a83-49e0-a6b4-8afe6292db37",
 			"name": "user2 get studies list-Empty",
 			"event": [
 				{
@@ -570,16 +570,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies"
 					]
 				}
@@ -587,6 +588,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "d569f9ab-29ce-4d8e-be68-a636cbe5c489",
 			"name": "Give to user2 an access to a specific series from user1",
 			"event": [
 				{
@@ -608,26 +610,30 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"users",
+						"{{user2}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "090bb6d3-366d-43b7-bbba-1144cf281106",
 			"name": "user2 get studies list-1 studie",
 			"event": [
 				{
@@ -659,16 +665,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies"
 					]
 				}
@@ -676,6 +683,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "bdc418d2-82cf-48e5-89e2-60e40622daf0",
 			"name": "Give an access to a specific series from user1-Bad user id",
 			"event": [
 				{
@@ -697,26 +705,30 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/999999/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}/user/999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"999999",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"user",
+						"999999"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "12c0029c-696c-489a-93fd-db59feea0f51",
 			"name": "Give an access to a specific series from user1-Bad study_UID",
 			"event": [
 				{
@@ -738,26 +750,30 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies/999999/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/999999/series/{{series_UID}}/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies",
 						"999999",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"users",
+						"{{user2}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "73f6e3c1-1fb8-4522-b2b2-adb2e7a0c13f",
 			"name": "Give an access to a specific series from user1-Bad study_UID_2",
 			"event": [
 				{
@@ -779,26 +795,30 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{studie_UID}}99/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{studie_UID}}99/series/{{series_UID}}/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies",
 						"{{studie_UID}}99",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"users",
+						"{{user2}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "bf90934c-8a35-434b-9cdc-30d1ded5f202",
 			"name": "Give an access to a specific series from user1-Bad series_UID",
 			"event": [
 				{
@@ -820,26 +840,30 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/999999",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/999999/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"999999"
+						"999999",
+						"users",
+						"{{user2}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "ea0b9e43-b5d4-4c99-9733-060c651ac073",
 			"name": "Give an access to a specific series from user1-Bad series_UID_2",
 			"event": [
 				{
@@ -861,26 +885,30 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}99",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}99/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}99"
+						"{{series_UID}}99",
+						"users",
+						"{{user2}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "5d707145-ce17-4b5b-b061-e04d9e9568bb",
 			"name": "Give an access to a specific series from user1-Bad Authorization",
 			"event": [
 				{
@@ -902,26 +930,30 @@
 						"value": "Bearer 99999999"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"users",
+						"{{user2}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "4cd95eda-f954-46c3-a545-e0e451f201a3",
 			"name": "Removes a specific series-study_UID not valid",
 			"event": [
 				{
@@ -943,16 +975,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/9999999/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/9999999/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"9999999",
 						"series",
@@ -963,6 +996,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "209bc72e-d1fe-49c2-9bed-6054fbbcef89",
 			"name": "Removes a specific series-series_UID not valid",
 			"event": [
 				{
@@ -984,16 +1018,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/999999",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -1004,6 +1039,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "534d5f4b-3e75-4da9-86b7-53295d08f34a",
 			"name": "Removes a specific series (No Authorization)-Unauthorized",
 			"event": [
 				{
@@ -1020,16 +1056,17 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -1040,6 +1077,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "3a088fa2-48b1-4fee-9bac-f55671aefa95",
 			"name": "Removes a specific series (Bad Authorisation)-Unauthorized",
 			"event": [
 				{
@@ -1061,16 +1099,17 @@
 						"value": "Bearer 99999999999"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -1081,6 +1120,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "a5dd1fbe-8490-46f5-83f8-b1154d63e660",
 			"name": "Removes a specific series (user2 remove for user1)-Forbidden",
 			"event": [
 				{
@@ -1102,16 +1142,17 @@
 						"value": "Bearer {{access_token_user2}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -1122,6 +1163,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "0e0c1ef2-6eb9-4333-bf55-8e77b228b9a3",
 			"name": "Removes a specific series-study_UID doesn't exist",
 			"event": [
 				{
@@ -1143,16 +1185,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}9/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}9/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}9",
 						"series",
@@ -1163,6 +1206,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "a1e9ff65-fd51-48d1-9f32-f780fdb1e8cd",
 			"name": "Removes a specific series-series_UID doesn't exist",
 			"event": [
 				{
@@ -1184,16 +1228,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}9",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}9",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -1204,6 +1249,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "2e3e0f6b-fe88-4b74-bb50-1b25efacc414",
 			"name": "Removes a specific series from the user's Inbox-OK",
 			"event": [
 				{
@@ -1225,16 +1271,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -1245,6 +1292,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "253008fa-5589-484b-a2ee-d6e0b9c47a6f",
 			"name": "Removes a specific series when user doesn't have access",
 			"event": [
 				{
@@ -1266,16 +1314,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -1286,6 +1335,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "de08acfc-90dc-4685-af5f-3576676e4a18",
 			"name": "user1 get studies list-Empty after Delete",
 			"event": [
 				{
@@ -1314,16 +1364,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies"
 					]
 				}
@@ -1331,6 +1382,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "0e1860aa-656a-4bf0-8048-3357c7b51b5e",
 			"name": "user2 get studies list-1 studie",
 			"event": [
 				{
@@ -1359,16 +1411,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies"
 					]
 				}
@@ -1376,6 +1429,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "14363f2e-5aca-4a9f-9e37-364a2f759447",
 			"name": "Give to user2 an access to a specific series from user1 who doesn't have access",
 			"event": [
 				{
@@ -1397,26 +1451,30 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user2}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user2}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"users",
+						"{{user2}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "72504fce-4e49-43f1-a346-5fe794b2b31c",
 			"name": "Give to user1 an access to a specific series from user2",
 			"event": [
 				{
@@ -1438,26 +1496,30 @@
 						"value": "Bearer {{access_token_user2}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}/users/{{user1}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"users",
+						"{{user1}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "7e994653-65c2-44be-bcbb-94be88ba5eb7",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -1506,16 +1568,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies"
 					]
 				}
@@ -1523,6 +1586,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "5aed93ff-64e6-4b2a-9fd9-f003b7fc6d2e",
 			"name": "Removes a specific study-study_UID not valid",
 			"event": [
 				{
@@ -1544,16 +1608,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/9999999",
+					"raw": "{{URL}}/authorization/studies/9999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"9999999"
 					]
@@ -1562,6 +1627,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "31ff517e-1a7e-4318-a770-fe0321aa6da9",
 			"name": "Removes a specific study (No Authorization)-Unauthorized",
 			"event": [
 				{
@@ -1578,16 +1644,17 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}"
 					]
@@ -1596,6 +1663,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "4fa804d3-419e-4c1d-af3a-7e0f92d6ee8b",
 			"name": "Removes a specific study (Bad Authorization)-Unauthorized",
 			"event": [
 				{
@@ -1617,16 +1685,17 @@
 						"value": "Bearer 9999999"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}"
 					]
@@ -1635,6 +1704,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "01469c73-dfdd-40f7-a140-361326751d1d",
 			"name": "Removes a specific study (user2 remove for user1)-Forbidden",
 			"event": [
 				{
@@ -1656,16 +1726,17 @@
 						"value": "Bearer {{access_token_user2}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}"
 					]
@@ -1674,6 +1745,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "d24cda96-b87a-4dc8-b9cb-4ed79f02309c",
 			"name": "Removes a specific study-study_UID doesn't exist",
 			"event": [
 				{
@@ -1695,16 +1767,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}9",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}9",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}9"
 					]
@@ -1713,6 +1786,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "24fbd43c-d401-4f1e-b1d3-4cdc20d332f6",
 			"name": "Removes a specific study from the user's Inbox-OK",
 			"event": [
 				{
@@ -1734,16 +1808,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}"
 					]
@@ -1752,6 +1827,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "5ed75ca1-1b97-424b-9bba-a40d819c5db8",
 			"name": "Removes a specific study when user doesn't have access",
 			"event": [
 				{
@@ -1773,16 +1849,17 @@
 						"value": "Bearer {{access_token_user1}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}"
 					]
@@ -1791,6 +1868,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "6485636e-5ab1-4396-a67b-6ecb379ce43b",
 			"name": "user1 get studies list-Empty after Delete",
 			"event": [
 				{
@@ -1819,16 +1897,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies"
 					]
 				}
@@ -1836,6 +1915,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "426dc397-ad71-4faf-b6fd-51aebbe5466d",
 			"name": "Give to user1 an access to a specific series from user2",
 			"event": [
 				{
@@ -1857,26 +1937,30 @@
 						"value": "Bearer {{access_token_user2}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}/users/{{user1}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
 						"{{study_UID}}",
 						"series",
-						"{{series_UID}}"
+						"{{series_UID}}",
+						"users",
+						"{{user1}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "a1955183-7e6b-4bda-8144-419ad296e51a",
 			"name": "user1 get studies list-1 studie",
 			"event": [
 				{
@@ -1908,16 +1992,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies"
 					]
 				}
@@ -1925,6 +2010,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "bba66f5d-5514-4612-a36a-070b50a2f2bb",
 			"name": "Give an access to a specific study from user2-Bad user id",
 			"event": [
 				{
@@ -1946,56 +2032,20 @@
 						"value": "Bearer {{access_token_user2}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/999999/studies/{{study_UID}}",
+					"raw": "{{URL}}/authorization/studies/{{study_UID}}/users/999999",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"999999",
 						"studies",
-						"{{study_UID}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Give an access to a specific series from user2-Bad study_UID",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "e0df1af4-d60d-483c-8f80-daf27eda7d88",
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is 400\"] = responseCode.code === 400;"
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{access_token_user2}}"
-					}
-				],
-				"body": {},
-				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/999999",
-					"host": [
-						"{{URL}}"
-					],
-					"path": [
-						"authorization",
+						"{{study_UID}}",
 						"users",
-						"{{user1}}",
-						"studies",
 						"999999"
 					]
 				}
@@ -2003,6 +2053,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "9b4acd30-4ddc-4124-b6bd-60acc091f8ee",
 			"name": "Give an access to a specific series from user2-Bad study_UID_2",
 			"event": [
 				{
@@ -2024,24 +2075,28 @@
 						"value": "Bearer {{access_token_user2}}"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies/{{studie_UID}}99",
+					"raw": "{{URL}}/authorization/studies/{{studie_UID}}99/users/{{user1}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies",
-						"{{studie_UID}}99"
+						"{{studie_UID}}99",
+						"users",
+						"{{user1}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
+			"_postman_id": "111e0081-f1b4-4391-b76f-e3a101221417",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -2090,16 +2145,17 @@
 						"value": "application/dicom+json"
 					}
 				],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "{{URL}}/authorization/users/{{user1}}/studies",
+					"raw": "{{URL}}/authorization/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
-						"users",
-						"{{user1}}",
 						"studies"
 					]
 				}
