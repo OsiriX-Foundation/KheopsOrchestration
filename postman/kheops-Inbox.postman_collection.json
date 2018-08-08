@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"_postman_id": "e786c7c6-d6d0-4106-8f59-1177f0cc92de",
+			"_postman_id": "2c01975f-f15a-4b69-8d9a-07fe9f4d58fe",
 			"name": "create user-Bad assertion",
 			"event": [
 				{
@@ -59,7 +59,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7c5b0995-109a-41c3-abe1-7e00363d2bea",
+			"_postman_id": "6b361d96-ee8b-4003-a224-e6cfa089dc19",
 			"name": "create user-Bad grant_type",
 			"event": [
 				{
@@ -122,7 +122,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "6bd25d5f-d679-4bfe-9637-586662b99940",
+			"_postman_id": "de2c4ae1-118e-4996-9864-d94a8c27127e",
 			"name": "create user1-create",
 			"event": [
 				{
@@ -188,7 +188,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b2d7388b-49e3-4c26-b13f-2bf571e9d1d8",
+			"_postman_id": "0b7d490f-7825-47f0-adc7-c1fe0db4af5e",
 			"name": "create user1-OK",
 			"event": [
 				{
@@ -254,7 +254,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "32566d3a-5394-49f1-a3cd-34facd07818f",
+			"_postman_id": "0d8aa5a2-24b7-4020-a9df-0f0ca2758838",
 			"name": "create user2-create",
 			"event": [
 				{
@@ -321,7 +321,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "4ee0bfd2-2ea2-4aec-84d3-0d2ead46bd05",
+			"_postman_id": "4798c6b6-8126-4993-8079-0fe7038753b2",
 			"name": "create user2-OK",
 			"event": [
 				{
@@ -387,7 +387,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d4dea977-4113-4abb-b48f-9f672a426111",
+			"_postman_id": "03df89bb-7b0c-4858-90aa-b48648fdd4fc",
 			"name": "dcm4chee STOW RS",
 			"event": [
 				{
@@ -431,7 +431,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ccc4c2c4-0199-4442-b4ae-ed9ce115f6a2",
+			"_postman_id": "0a47278f-3183-4967-8f24-3738c2975439",
 			"name": "Give an user access to a specific series (first time)",
 			"event": [
 				{
@@ -474,7 +474,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "db47ab7b-a954-45b7-b445-b785ff474536",
+			"_postman_id": "75f3dab4-7c53-4d80-9946-90a1bd3ab8fa",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -541,7 +541,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "501d2c50-ae8a-465c-a2af-529842c0198d",
+			"_postman_id": "2122b246-7090-48d1-af9c-fa3832f3486e",
 			"name": "user2 get studies list-Empty",
 			"event": [
 				{
@@ -588,7 +588,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "883d23ba-38e5-40b4-aad5-709bead68c86",
+			"_postman_id": "5c58d191-72cf-429f-bce7-f24ad2f1312f",
 			"name": "Give to user2 an access to a specific series from user1",
 			"event": [
 				{
@@ -633,7 +633,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "14a81e97-bbe8-4b72-add7-3c5997860065",
+			"_postman_id": "676c4ada-a826-4eef-92a6-321582c296ea",
 			"name": "user2 get studies list-1 studie",
 			"event": [
 				{
@@ -683,7 +683,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "88a8b424-ac31-4db3-8bc5-963f498d4edf",
+			"_postman_id": "95bbe015-a87a-42bc-91f6-28ce59a40169",
 			"name": "Give an access to a specific series from user1-Bad user id",
 			"event": [
 				{
@@ -728,7 +728,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "da68e7eb-7288-47bd-90ed-ac8520901d14",
+			"_postman_id": "dc476938-c04e-4692-a577-ca385ea7016e",
 			"name": "Give an access to a specific series from user1-Bad study_UID",
 			"event": [
 				{
@@ -773,7 +773,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "32826493-5ea3-4908-a1b0-bb184fb2face",
+			"_postman_id": "6f016379-f945-4a1b-8c58-57343505fba4",
 			"name": "Give an access to a specific series from user1-Bad study_UID_2",
 			"event": [
 				{
@@ -818,7 +818,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9f47f9e9-9abe-4e85-8ed6-803bdc02b9c7",
+			"_postman_id": "caf52eb4-cd44-4f87-b53e-f1ea742cc6e6",
 			"name": "Give an access to a specific series from user1-Bad series_UID",
 			"event": [
 				{
@@ -863,7 +863,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "fe8ea020-5af0-4850-9fd1-a98252928580",
+			"_postman_id": "91da4d00-0079-4cb7-b5b6-9d3063cca335",
 			"name": "Give an access to a specific series from user1-Bad series_UID_2",
 			"event": [
 				{
@@ -908,7 +908,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "17fd655a-c05c-4a02-b370-4f7ccdcc06a9",
+			"_postman_id": "2a05075f-3ded-4e6c-95fd-0198f1e98597",
 			"name": "Give an access to a specific series from user1-Bad Authorization",
 			"event": [
 				{
@@ -953,7 +953,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c1a5ec28-1c7c-48d3-b5b5-bebc7e1e643f",
+			"_postman_id": "9311053e-ef0a-441a-ae8c-71152153d758",
 			"name": "Removes a specific series-study_UID not valid",
 			"event": [
 				{
@@ -996,7 +996,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f6889874-3df7-4ed9-8e61-50f37a7bd83d",
+			"_postman_id": "44972d79-9c16-409a-a1b3-2682ee4b83ed",
 			"name": "Removes a specific series-series_UID not valid",
 			"event": [
 				{
@@ -1039,7 +1039,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f56c114e-18a8-45c2-ade6-b525103acdae",
+			"_postman_id": "7ef4ab99-85a7-4d42-a6e0-2e44b6ed13ee",
 			"name": "Removes a specific series (No Authorization)-Unauthorized",
 			"event": [
 				{
@@ -1077,7 +1077,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c49f7279-99b4-434b-a6bf-b8c7f33ac613",
+			"_postman_id": "298d338e-9e3c-4968-9d38-809f67eb66dd",
 			"name": "Removes a specific series (Bad Authorisation)-Unauthorized",
 			"event": [
 				{
@@ -1120,7 +1120,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "49dc2770-a34d-41d6-897b-9397939ade82",
+			"_postman_id": "27621337-ee15-45a1-83d3-59d80e42a47d",
 			"name": "Removes a specific series-study_UID doesn't exist",
 			"event": [
 				{
@@ -1163,7 +1163,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ce5da0b4-e166-4ecd-ac6c-62d7a82a83fa",
+			"_postman_id": "41898ecb-7b49-4b50-b551-3e38f44af7a8",
 			"name": "Removes a specific series-series_UID doesn't exist",
 			"event": [
 				{
@@ -1206,7 +1206,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a217c9cc-2920-48b5-8113-b2216402474b",
+			"_postman_id": "d8571f10-4481-4fec-815b-956d181beb04",
 			"name": "Removes a specific series from the user's Inbox-OK",
 			"event": [
 				{
@@ -1249,7 +1249,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "51978634-8255-477f-9520-ec8bd2be109e",
+			"_postman_id": "985b43c7-63d9-4a09-9b21-6d5f62d6f102",
 			"name": "Removes a specific series when user doesn't have access",
 			"event": [
 				{
@@ -1292,7 +1292,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8a3c205b-2786-4736-8183-a33779ba93cb",
+			"_postman_id": "331b9cd4-953a-40e1-9620-4900b768302b",
 			"name": "user1 get studies list-Empty after Delete",
 			"event": [
 				{
@@ -1339,7 +1339,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "a112d5e1-81c2-4f56-a0c2-fb591e390378",
+			"_postman_id": "de80fd8e-f29a-4e32-a796-313267040902",
 			"name": "user2 get studies list-1 studie",
 			"event": [
 				{
@@ -1386,7 +1386,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c88d1983-459d-44c7-996c-95713adf5546",
+			"_postman_id": "b30f8ae5-946c-4c2c-9199-b3a6206b3a4d",
 			"name": "Give to user2 an access to a specific series from user1 who doesn't have access",
 			"event": [
 				{
@@ -1431,7 +1431,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "abfaee84-10d9-4e91-b59e-8d2e0f63bbfe",
+			"_postman_id": "6fe8e9c6-7251-48e3-a103-edbe216677fa",
 			"name": "Give to user1 an access to a specific series from user2",
 			"event": [
 				{
@@ -1476,7 +1476,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9f389f1a-5c9f-4323-8b0e-a23b968a0c72",
+			"_postman_id": "01555cb3-be59-4c5d-89ac-932fc70dddd8",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -1543,7 +1543,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "35ca8633-5ec0-48e0-9171-45cb1fd84a35",
+			"_postman_id": "edd47f35-dbf5-4f4a-8466-63513833ce66",
 			"name": "Removes a specific study-study_UID not valid",
 			"event": [
 				{
@@ -1584,7 +1584,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2f9931df-5da3-4212-9caf-ac11d7eeada9",
+			"_postman_id": "40166f66-74a5-47e6-bf46-34defd6becdb",
 			"name": "Removes a specific study (No Authorization)-Unauthorized",
 			"event": [
 				{
@@ -1620,7 +1620,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "feea07b7-aa07-4926-9ea9-f3b0836bd3d7",
+			"_postman_id": "84123909-ee8b-4f6f-b5f6-d827381d45b3",
 			"name": "Removes a specific study (Bad Authorization)-Unauthorized",
 			"event": [
 				{
@@ -1661,7 +1661,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3427ea24-5c42-4711-b692-fefc5aeb9a04",
+			"_postman_id": "dc4a892a-ce51-4583-87c1-ab0d2bf2c064",
 			"name": "Removes a specific study-study_UID doesn't exist",
 			"event": [
 				{
@@ -1702,7 +1702,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2b98d9ef-d682-4baf-b721-2301aeee0b45",
+			"_postman_id": "400a96aa-1e58-475e-bba1-31bca307964c",
 			"name": "Removes a specific study from the user's Inbox-OK",
 			"event": [
 				{
@@ -1743,7 +1743,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9e366946-56c6-4d6b-918c-3bb269889367",
+			"_postman_id": "5ab2cd27-5b5c-47db-8412-a884d75238dc",
 			"name": "Removes a specific study when user doesn't have access",
 			"event": [
 				{
@@ -1784,7 +1784,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e3b96865-a2da-4fc9-bbae-b41c47ce15fd",
+			"_postman_id": "cf8ca017-1805-4a48-b130-a16167e20b0a",
 			"name": "user1 get studies list-Empty after Delete",
 			"event": [
 				{
@@ -1831,7 +1831,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "4211074c-e3ff-4542-b291-d3590c8681a3",
+			"_postman_id": "b6e323fb-cd00-4168-9c70-b51501ffcd90",
 			"name": "Give to user1 an access to a specific series from user2",
 			"event": [
 				{
@@ -1876,7 +1876,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2439d4d7-357f-4b05-a359-9cd182feb0bf",
+			"_postman_id": "1a145210-ddf6-49f9-8e33-6f306c4a9b51",
 			"name": "user1 get studies list-1 studie",
 			"event": [
 				{
@@ -1926,7 +1926,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "30ab1db5-b70f-4224-b4a0-e1d973480332",
+			"_postman_id": "caf3945d-60dc-44b2-8c04-bf9e35dca59d",
 			"name": "Give an access to a specific study from user2-Bad user id",
 			"event": [
 				{
@@ -1969,7 +1969,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "48e6591a-f141-4f22-8a7a-00c616325479",
+			"_postman_id": "faaac039-90c6-411d-bbbf-79767c759443",
 			"name": "Give an access to a specific series from user2-Bad study_UID_2",
 			"event": [
 				{
@@ -2012,7 +2012,7 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f59cdb59-4684-4c80-af76-c92d88db7ce1",
+			"_postman_id": "bc78865b-0d4e-4dd5-8dee-418ce6b9cb6c",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
