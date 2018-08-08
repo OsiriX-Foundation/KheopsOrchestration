@@ -19,7 +19,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   
 install:
-  - npm install newman  
+  - npm install newman@3.10.0  
 
 before_script:
   - node --version
