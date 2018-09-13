@@ -16,7 +16,7 @@
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
-							"tests[\"Status code is 400\"] = responseCode.code === 400;",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;",
 							""
 						]
 					}
