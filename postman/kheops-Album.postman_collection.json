@@ -661,7 +661,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "249f6ce7-1740-4225-a317-c1e3b7fa710a",
+								"id": "f6698b3b-cc5a-4a63-a295-334a788f3710",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -673,7 +673,8 @@
 									"tests[\"name\"] = jsonObject.name == \"test name\"",
 									"",
 									"tests[\"description\"] = jsonObject.description == \"test description\"",
-									""
+									"",
+									"tests[\"is_favorite\"] = jsonObject.description === false"
 								]
 							}
 						},
@@ -898,6 +899,487 @@
 								"authorization",
 								"album",
 								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "favorite",
+			"item": [
+				{
+					"name": "add to favorites-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "122408ad-933b-431d-ba75-89c12faa1e82",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/favorites",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album-OK favorite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4c47169b-2b18-4e93-a3e6-d1809a60c8b9",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.description === true"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove favorites-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f0d1cb22-78d9-4734-a4a3-4895760285af",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/favorites",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album-OK not favorite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ed955e35-6262-4cc3-8e44-3aea55f7e28b",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.description === false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to favorites-bad album id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d3b90213-a197-4ffe-9762-459a881dfb56",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/1/favorites",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"1",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to favorites-user not a member",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d3b90213-a197-4ffe-9762-459a881dfb56",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/favorites",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove favorites-bad album id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d41e922-fa78-43f3-a346-3bd2e2be4d75",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/99/favorites",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"99",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove favorites-user not a member",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7d41e922-fa78-43f3-a346-3bd2e2be4d75",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/favorites",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"favorites"
 							]
 						}
 					},
