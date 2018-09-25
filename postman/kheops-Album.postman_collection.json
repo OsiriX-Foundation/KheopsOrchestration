@@ -365,10 +365,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "66dda91e-2965-46d0-a220-af4b29d4dc53",
+								"id": "e51e3ace-d604-4635-82cd-3f75845bb30c",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
 								]
 							}
 						},
@@ -453,10 +453,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8e520ea7-9468-436c-88dd-075327bd9de6",
+								"id": "02d369c0-0e1b-4bf2-9fb3-ff161075bcca",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
 								]
 							}
 						},
