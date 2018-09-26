@@ -1526,7 +1526,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4b38975e-b3b2-4cbb-8dc7-dc60147e204d",
+								"id": "b68a5933-dd5b-4ecb-965e-a71d8987ded8",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1535,13 +1535,13 @@
 									"",
 									"tests[\"Return 2 users\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"toto@gmail.com\"",
+									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == \"true\"",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
 									"",
-									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"titi@gmail.com\"",
+									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
 									"",
-									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == \"false\""
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == false"
 								]
 							}
 						},
@@ -1661,7 +1661,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f8d50e95-c94f-4914-b328-4d79a9b14f71",
+								"id": "d7f17c48-ba99-4eea-a130-2acd1f1fa552",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1670,13 +1670,13 @@
 									"",
 									"tests[\"Return 2 users\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"toto@gmail.com\"",
+									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == \"true\"",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
 									"",
-									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"titi@gmail.com\"",
+									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
 									"",
-									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == \"true\""
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
 								]
 							}
 						},
@@ -1796,7 +1796,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0cfc71b7-ac90-45fa-b8cd-4002efe30248",
+								"id": "355843b1-94f4-40ea-84ae-25161168a6c7",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1805,13 +1805,13 @@
 									"",
 									"tests[\"Return 2 users\"] = jsonObject.length === 2;",
 									"",
-									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"toto@gmail.com\"",
+									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == \"true\"",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == false",
 									"",
-									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"titi@gmail.com\"",
+									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
 									"",
-									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == \"false\""
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
 								]
 							}
 						},
@@ -1930,7 +1930,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e33acdf9-b1d2-4164-b812-1533169533af",
+								"id": "25a12489-954b-4946-9281-873708866221",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1941,7 +1941,7 @@
 									"",
 									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"toto@gmail.com\"",
 									"",
-									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == \"true\"",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
 									""
 								]
 							}
