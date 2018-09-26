@@ -5,6 +5,7 @@
  sed -i "s|\"file\": {}|\"file\": \"testStudy.dcm\"|" postman/kheops-DICOMweb_Capability_Tokens.postman_collection.json
  sed -i "s|\"file\": {}|\"file\": \"testStudy.dcm\"|" postman/kheops-proxy_pacs.postman_collection.json
  sed -i "s|\"file\": {}|\"file\": \"testStudy.dcm\"|" postman/kheops-Zipper.postman_collection.json
+ sed -i "s|\"file\": {}|\"file\": \"testStudy.dcm\"|" postman/kheops-Album.postman_collection.json
  
  
  sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testStudy.dcm\"/" postman/kheops-Study_List-withOptions.postman_collection.json
