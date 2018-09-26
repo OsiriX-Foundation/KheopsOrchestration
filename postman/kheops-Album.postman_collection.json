@@ -5604,7 +5604,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e76f385d-e19d-4a2e-8b94-b945c4497c38",
+								"id": "6a54aa50-5077-4f2b-8034-9df7a7776ab2",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -5621,7 +5621,7 @@
 									"",
 									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"PROMOTE_ADMIN\"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"DEMOTE_ADMIN\"",
 									"",
 									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
@@ -6016,16 +6016,16 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ec2aa32a-f691-4994-814f-b206dc81fa6d",
+								"id": "0a9ea5ee-9bf3-4af9-b089-6045bfa8941d",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"Return 6 mutations\"] = jsonObject.length === 6;",
+									"tests[\"Return 7 mutations\"] = jsonObject.length === 7;",
 									"",
-									"//tests[\"X-Total-Count = 6\"] = postman.getResponseHeader(\"X-Total-Count\") == 6;",
+									"//tests[\"X-Total-Count = 7\"] = postman.getResponseHeader(\"X-Total-Count\") == 7;",
 									""
 								]
 							}
@@ -6378,7 +6378,7 @@
 					"response": []
 				},
 				{
-					"name": "get all mutations and comments",
+					"name": "get all mutations and comments with types",
 					"event": [
 						{
 							"listen": "test",
@@ -6459,7 +6459,7 @@
 					"response": []
 				},
 				{
-					"name": "get all mutations and comments",
+					"name": "get all mutations and comments without types",
 					"event": [
 						{
 							"listen": "test",
