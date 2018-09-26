@@ -4803,7 +4803,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eeb519d0-e7d7-4684-ac4c-c8926f0fab51",
+								"id": "99f5081a-80c7-4483-a2b6-d3641d693abe",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -4886,6 +4886,906 @@
 								},
 								{
 									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mutation",
+			"item": [
+				{
+					"name": "Create an album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e10c7f58-c696-43e7-979b-9c28b899124a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_comment\", jsonObject.album_id);"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "a name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "a description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get CREATE_ALBUM mutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4fa9120-c032-41f0-b6a9-ac84fb70e1f7",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"CREATE_ALBUM\"",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6767f85f-4f99-43d7-872c-186d740dae12",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"users",
+								"{{user2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get ADD_USER mutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9ea520d1-e803-4a9c-9b77-5b1c0eefff7f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\") == 2;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"ADD_USER\""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user 2 quit album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "42c61bda-274a-498c-bc85-243b637c6fef",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"users",
+								"{{user2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get LEAVE_ALBUM mutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0f41a460-1e31-4843-a458-e9bde5e9cf73",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"LEAVE_ALBUM \""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "promote user 2 admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6f486ad-c871-4592-93ca-50e771b50037",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}/admin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"users",
+								"{{user2}}",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get PROMOTE_ADMIN mutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7bb0ec66-7b36-471a-b6a0-3934477df2e3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 4\"] = postman.getResponseHeader(\"X-Total-Count\") == 4;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"PROMOTE_ADMIN \""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demote user 2 admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8ce76431-c502-4b35-bb2f-cdecefac9307",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}/admin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"users",
+								"{{user2}}",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get DEOMOTE_ADMIN mutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "709632a7-717d-44f6-84df-1bdbbf77fec1",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") == 5;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"PROMOTE_ADMIN \""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43ce39fd-02e9-4fd1-9f27-f20b3cacd05d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"users",
+								"{{user2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get REMOVE_USER mutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "853771ba-8656-49dd-8e9b-0317d73b9f57",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 6\"] = postman.getResponseHeader(\"X-Total-Count\") == 6;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"REMOVE_USER \""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "limit",
 									"value": "1"
 								}
 							]
