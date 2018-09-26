@@ -3082,6 +3082,1290 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "Create an album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e5669ee7-7a58-4a9d-acac-f547c3ae76ca",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "a name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "a description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album post comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8b3700d9-fd48-4314-88bb-42ed82595f37",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 comment\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[0].comment == \"comment 1\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[0].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album post comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album post private comment-User not a member",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "df6a6d48-2274-46b3-bd9b-a3016c472d11",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment 3",
+									"type": "text"
+								},
+								{
+									"key": "to_user",
+									"value": "{{user2}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6f486ad-c871-4592-93ca-50e771b50037",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"users",
+								"{{user2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album post private comment-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment 3",
+									"type": "text"
+								},
+								{
+									"key": "to_user",
+									"value": "{{user2}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments by user 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d36f3d9e-494f-43d1-b907-48e5723c4959",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 comment\"] = jsonObject.length === 3;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[0].comment == \"comment 3\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[0].is_private == true",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"toto@gmail.com\"",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false",
+									"",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[2].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[2].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[2].comment == \"comment 1\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[2].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments by user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d36f3d9e-494f-43d1-b907-48e5723c4959",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 comment\"] = jsonObject.length === 3;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[0].comment == \"comment 3\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[0].is_private == true",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"toto@gmail.com\"",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false",
+									"",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[2].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[2].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[2].comment == \"comment 1\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[2].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments limit by user 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1721b06-1180-42ff-bde0-a408b981ba3d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 comment\"] = jsonObject.length === 2;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[0].comment == \"comment 3\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[0].is_private == true",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"toto@gmail.com\"",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments limit by user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c1721b06-1180-42ff-bde0-a408b981ba3d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 comment\"] = jsonObject.length === 2;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[0].comment == \"comment 3\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[0].is_private == true",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"toto@gmail.com\"",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments offset by user 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6b649c68-0666-4072-9930-3263f674517c",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 comment\"] = jsonObject.length === 2;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[2].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[2].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[2].comment == \"comment 1\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[2].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments&offset=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments offset by user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6b649c68-0666-4072-9930-3263f674517c",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 comment\"] = jsonObject.length === 2;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false",
+									"",
+									"",
+									"tests[\"event_type\"] = jsonObject[2].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[2].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[2].comment == \"comment 1\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[2].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments&offset=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments by user 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b4ee8f2-3b9e-4937-add3-fb52372a60b7",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 comment\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=1&offset=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments by user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b4ee8f2-3b9e-4937-add3-fb52372a60b7",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 comment\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"event_type\"] = jsonObject[1].event_type ==  \"Comment\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[1].origin_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"comment\"] = jsonObject[1].comment == \"comment 2\"",
+									"",
+									"tests[\"is_private\"] = jsonObject[1].is_private == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=1&offset=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"4",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
