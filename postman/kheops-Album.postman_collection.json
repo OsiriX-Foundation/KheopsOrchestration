@@ -957,7 +957,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/authorization/album/6/events",
 							"host": [
 								"{{URL}}"
 							],
@@ -966,20 +966,6 @@
 								"album",
 								"6",
 								"events"
-							],
-							"query": [
-								{
-									"key": "types",
-									"value": "comments"
-								},
-								{
-									"key": "limit",
-									"value": "1"
-								},
-								{
-									"key": "offset",
-									"value": "1"
-								}
 							]
 						}
 					},
