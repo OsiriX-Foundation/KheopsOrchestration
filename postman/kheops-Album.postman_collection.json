@@ -5004,10 +5004,18 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"id": "0479eddd-7f7e-4276-8774-f83e696f7700",
 								"type": "text/javascript",
 								"exec": [
-									""
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(1000);"
 								]
 							}
 						}
@@ -5150,10 +5158,18 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"id": "3c05c113-44bc-4a5e-a4b0-9b27462fb503",
 								"type": "text/javascript",
 								"exec": [
-									""
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(1000);"
 								]
 							}
 						}
@@ -5272,7 +5288,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0f41a460-1e31-4843-a458-e9bde5e9cf73",
+								"id": "c2a2f4d7-958f-4ae6-a166-0d6e146918c8",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -5294,10 +5310,18 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"id": "14347f08-081d-41b1-a333-fa92c86a0cac",
 								"type": "text/javascript",
 								"exec": [
-									""
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(1000);"
 								]
 							}
 						}
@@ -5441,10 +5465,18 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"id": "d3c8bad7-478a-48f5-b047-76ee722c88d4",
 								"type": "text/javascript",
 								"exec": [
-									""
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(1000);"
 								]
 							}
 						}
@@ -5588,10 +5620,18 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"id": "6993994e-1900-494e-b47c-768143b508b8",
 								"type": "text/javascript",
 								"exec": [
-									""
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(1000);"
 								]
 							}
 						}
@@ -5734,10 +5774,18 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"id": "aad46e9a-0f1b-48b2-a924-49ac01ad802f",
 								"type": "text/javascript",
 								"exec": [
-									""
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(1000);"
 								]
 							}
 						}
