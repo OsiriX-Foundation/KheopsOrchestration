@@ -3158,11 +3158,14 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1c2232ed-5f57-4dc7-a144-347fb18c2469",
+								"id": "1836cd6a-afb3-49bd-a3df-19c768ffd167",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
-									""
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_comment\", jsonObject.pk);"
 								]
 							}
 						},
@@ -3277,14 +3280,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"comments"
 							]
 						}
@@ -3356,14 +3359,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -3427,14 +3430,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"comments"
 							]
 						}
@@ -3497,14 +3500,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"comments"
 							]
 						}
@@ -3553,14 +3556,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/users/{{user2}}",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"users",
 								"{{user2}}"
 							]
@@ -3624,14 +3627,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"comments"
 							]
 						}
@@ -3724,14 +3727,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -3830,14 +3833,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -3926,14 +3929,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=2",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -4026,14 +4029,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=2",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -4124,14 +4127,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments&offset=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -4222,14 +4225,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments&offset=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -4311,14 +4314,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
@@ -4345,7 +4348,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b0484b99-2b75-46ee-ac9c-e1387661d94a",
+								"id": "f6bcb324-5927-4fe2-9830-65868a588a37",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -4362,7 +4365,10 @@
 									"",
 									"tests[\"comment\"] = jsonObject[0].comment == \"comment 2\"",
 									"",
-									"tests[\"is_private\"] = jsonObject[0].is_private == false"
+									"tests[\"is_private\"] = jsonObject[0].is_private == false",
+									"",
+									"",
+									"pm.environment.unset(\"album_id_comment\");"
 								]
 							}
 						},
@@ -4404,14 +4410,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
+								"{{album_id_comment}}",
 								"events"
 							],
 							"query": [
