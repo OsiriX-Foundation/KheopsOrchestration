@@ -4904,14 +4904,14 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e10c7f58-c696-43e7-979b-9c28b899124a",
+								"id": "378ddc80-87e5-4e0b-a65c-faefcd6e7b23",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"pm.environment.set(\"album_id_comment\", jsonObject.album_id);"
+									"pm.environment.set(\"album_id_mutation\", jsonObject.album_id);"
 								]
 							}
 						},
@@ -5049,14 +5049,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -5115,14 +5115,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"users",
 								"{{user2}}"
 							]
@@ -5205,14 +5205,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -5271,14 +5271,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"users",
 								"{{user2}}"
 							]
@@ -5359,14 +5359,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutations}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutations}}",
 								"events"
 							],
 							"query": [
@@ -5425,14 +5425,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"users",
 								"{{user2}}",
 								"admin"
@@ -5516,14 +5516,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -5582,14 +5582,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"users",
 								"{{user2}}",
 								"admin"
@@ -5673,14 +5673,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -5739,14 +5739,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"users",
 								"{{user2}}",
 								"admin"
@@ -5830,14 +5830,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -5896,14 +5896,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"users",
 								"{{user2}}"
 							]
@@ -5986,14 +5986,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -6076,14 +6076,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -6147,14 +6147,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"comments"
 							]
 						}
@@ -6212,14 +6212,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"comments"
 							]
 						}
@@ -6277,14 +6277,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"comments"
 							]
 						}
@@ -6357,14 +6357,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -6434,14 +6434,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&types=comments",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -6516,14 +6516,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_comment}}",
+								"{{album_id_mutation}}",
 								"events"
 							]
 						}
@@ -6534,7 +6534,655 @@
 		},
 		{
 			"name": "sharing",
-			"item": []
+			"item": [
+				{
+					"name": "Create an album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "99c69f67-f218-4f61-8724-5c0e8004e0a9",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_sharing\", jsonObject.album_id);"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "a name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "a description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dcm4chee STOW RS",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7524252c-94ee-4cd1-8780-15785472765a",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{URL_PACS}}/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
+							"host": [
+								"{{URL_PACS}}"
+							],
+							"path": [
+								"dcm4chee-arc",
+								"aets",
+								"DCM4CHEE",
+								"rs",
+								"studies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list-Empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ecfbfd8c-6ada-4524-bfcc-b227972a4a14",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Empty response []\"] = responseBody == \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "33ba6afb-79c2-48b1-bead-9aef63edcdb4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/?inbox",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								""
+							],
+							"query": [
+								{
+									"key": "inbox",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appropriate series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								"{{study_UID}}",
+								"series",
+								"{{series_UID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user1 get studies list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ec827ea4-26ee-4f3d-9b96-bf373cb9b0aa",
+								"type": "text/javascript",
+								"exec": [
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(5000);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/?inbox",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								""
+							],
+							"query": [
+								{
+									"key": "inbox",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send study to an album from inbox",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing}}?inbox=",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								"{{study_UID}}",
+								"albums",
+								"{{album_id_sharing}}"
+							],
+							"query": [
+								{
+									"key": "inbox",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album get studies list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/?albums={{album_id_sharing}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								""
+							],
+							"query": [
+								{
+									"key": "albums",
+									"value": "{{album_id_sharing}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user2 get studies list-Empty",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ecfbfd8c-6ada-4524-bfcc-b227972a4a14",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Empty response []\"] = responseBody == \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "33ba6afb-79c2-48b1-bead-9aef63edcdb4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/?inbox",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								""
+							],
+							"query": [
+								{
+									"key": "inbox",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send study to an user from inbox",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}/users/{{user2}}?inbox=true",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								"{{study_UID}}",
+								"users",
+								"{{user2}}"
+							],
+							"query": [
+								{
+									"key": "inbox",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user2 get studies list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f90964a-56ec-4149-a3a1-09b3d351d4e2",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 study\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete studies from album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "838738eb-cf68-4af4-80d3-b96e9d1d8928",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								"{{study_UID}}",
+								"albums",
+								"{{album_id_sharing}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete studies from inbox",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da5aed77-382c-424e-92a7-cb21be055b26",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								"{{study_UID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
