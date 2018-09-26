@@ -903,14 +903,14 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "da905fbe-c6b4-4583-bc73-f9b6f0d1ae3a",
+								"id": "c9557964-0553-4bfc-99ef-ab614e65de8c",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
+									"tests[\"album_id\"] = jsonObject.album_id == \"6\"",
 									"",
 									"tests[\"name\"] = jsonObject.name == \"rename\"",
 									"",
