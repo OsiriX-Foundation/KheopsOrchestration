@@ -5359,14 +5359,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutations}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"{{album_id_mutations}}",
+								"{{album_id_mutation}}",
 								"events"
 							],
 							"query": [
@@ -6613,145 +6613,6 @@
 					"response": []
 				},
 				{
-					"name": "Create an album without add permission-OK",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "866e67b5-63ea-421c-9fe8-24189a2f9855",
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Status code is 201\"] = responseCode.code === 201;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"pm.environment.set(\"album_id_sharing2\", jsonObject.album_id);"
-								]
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "sendSeries",
-									"value": "false",
-									"type": "text"
-								},
-								{
-									"key": "addSeries",
-									"value": "false",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "a name",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "a description",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{URL}}/authorization/album",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"album"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "add user 2",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Status code is 201\"] = responseCode.code === 201;"
-								]
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/x-www-form-urlencoded"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_sharing2}} /users/{{user2}}",
-							"host": [
-								"{{URL}}"
-							],
-							"path": [
-								"authorization",
-								"album",
-								"{{album_id_sharing2}} ",
-								"users",
-								"{{user2}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "dcm4chee STOW RS",
 					"event": [
 						{
@@ -7234,6 +7095,145 @@
 								"authorization",
 								"studies",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an album without add permission-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "866e67b5-63ea-421c-9fe8-24189a2f9855",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_sharing2\", jsonObject.album_id);"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "addSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "a name",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "a description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_sharing2}}/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_sharing2}}",
+								"users",
+								"{{user2}}"
 							]
 						}
 					},
