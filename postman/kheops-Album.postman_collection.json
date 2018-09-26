@@ -957,15 +957,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6/events",
+							"raw": "{{URL}}/authorization/album/6",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6",
-								"events"
+								"6"
 							]
 						}
 					},
@@ -3159,10 +3158,11 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "e5669ee7-7a58-4a9d-acac-f547c3ae76ca",
+								"id": "1c2232ed-5f57-4dc7-a144-347fb18c2469",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									""
 								]
 							}
 						},
