@@ -282,15 +282,21 @@
 					"response": []
 				},
 				{
-					"name": "Create an album-OK",
+					"name": "Create an album(1)-OK",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "e5669ee7-7a58-4a9d-acac-f547c3ae76ca",
+								"id": "ac18f9bd-8e2b-4239-9726-8fab5f49a2e8",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_1\", jsonObject.album_id);"
 								]
 							}
 						},
@@ -331,12 +337,12 @@
 								},
 								{
 									"key": "name",
-									"value": "a name",
+									"value": "name 1",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "a description",
+									"value": "description 1",
 									"type": "text"
 								}
 							]
@@ -426,15 +432,21 @@
 					"response": []
 				},
 				{
-					"name": "Create an album-OK",
+					"name": "Create an album(2)-OK",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "e51e3ace-d604-4635-82cd-3f75845bb30c",
+								"id": "aa556bb7-4c91-4db5-900f-4d6d4bd65abd",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_2\", jsonObject.album_id);"
 								]
 							}
 						},
@@ -497,6 +509,16 @@
 									"key": "writeComments",
 									"value": "false",
 									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "name 2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description 2",
+									"type": "text"
 								}
 							]
 						},
@@ -514,15 +536,21 @@
 					"response": []
 				},
 				{
-					"name": "Create an album-OK",
+					"name": "Create an album(3)-OK",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "02d369c0-0e1b-4bf2-9fb3-ff161075bcca",
+								"id": "9f834958-d338-4c50-a38f-99b83bb6d640",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_3\", jsonObject.album_id);"
 								]
 							}
 						},
@@ -557,18 +585,13 @@
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
-									"key": "sendSeries",
-									"value": "false",
-									"type": "text"
-								},
-								{
 									"key": "name",
-									"value": "test name",
+									"value": "name 3",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "test description",
+									"value": "description 3",
 									"type": "text"
 								}
 							]
@@ -581,6 +604,102 @@
 							"path": [
 								"authorization",
 								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f25b9925-b6a4-4e8a-9e1c-bc18a0877788",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_3\");",
+									"",
+									"tests[\"name\"] = jsonObject.name == \"name 3\"",
+									"",
+									"tests[\"description\"] = jsonObject.description == \"description 3\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == false",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == true",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == true",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == false",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == true",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == true",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_3}}"
 							]
 						}
 					},
@@ -658,7 +777,7 @@
 					"response": []
 				},
 				{
-					"name": "get album (inbox)",
+					"name": "get album (inbox)-Not Found",
 					"event": [
 						{
 							"listen": "test",
@@ -722,25 +841,15 @@
 					"response": []
 				},
 				{
-					"name": "get album-OK",
+					"name": "get album non existing-Not Found",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "f4ce861b-dcc5-47c5-b688-fe35e1cab864",
+								"id": "41ddf687-9de9-452d-aea2-346c9f5da091",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"album_id\"] = jsonObject.album_id == \"6\"",
-									"",
-									"tests[\"name\"] = jsonObject.name == \"test name\"",
-									"",
-									"tests[\"description\"] = jsonObject.description == \"test description\"",
-									"",
-									"tests[\"is_favorite\"] = jsonObject.is_favorite == false"
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
 								]
 							}
 						},
@@ -782,21 +891,21 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6",
+							"raw": "{{URL}}/authorization/album/999",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6"
+								"999"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "delete album (inbox)",
+					"name": "delete album (inbox)-Not Found",
 					"event": [
 						{
 							"listen": "test",
@@ -847,6 +956,57 @@
 					"response": []
 				},
 				{
+					"name": "delete album non existing-Not Found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51f01b33-4f6c-4c26-84c9-391daee1b8c6",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/999",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "delete album-OK",
 					"event": [
 						{
@@ -884,14 +1044,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4",
+							"raw": "{{URL}}/authorization/album/{{album_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4"
+								"{{album_id_1}}"
 							]
 						}
 					},
@@ -903,18 +1063,42 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c9557964-0553-4bfc-99ef-ab614e65de8c",
+								"id": "18b0b50b-f4b2-4495-b525-64006dec6912",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"album_id\"] = jsonObject.album_id == \"6\"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_3\");",
 									"",
 									"tests[\"name\"] = jsonObject.name == \"rename\"",
 									"",
-									"tests[\"description\"] = jsonObject.description == \"test description\"",
+									"tests[\"description\"] = jsonObject.description == \"redescription\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == true",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == false",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == false",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == true",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == false",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == false",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
 									""
 								]
 							}
@@ -953,18 +1137,53 @@
 									"key": "name",
 									"value": "rename",
 									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "redescription",
+									"type": "text"
+								},
+								{
+									"key": "addUser",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "downloadSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "deleteSeries",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "addSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "writeComments",
+									"value": "false",
+									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/6",
+							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"6"
+								"{{album_id_3}}"
 							]
 						}
 					},
@@ -1163,7 +1382,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6cc7f55f-dfd7-4cb3-9fe7-29ca8819eced",
+								"id": "b066dbb7-d040-400f-9609-c99d52dbd91e",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -6828,7 +7047,7 @@
 					"response": []
 				},
 				{
-					"name": "Send study to an album from inbox",
+					"name": "Send study to an album from inbox user 1",
 					"event": [
 						{
 							"listen": "test",
@@ -6998,7 +7217,7 @@
 					"response": []
 				},
 				{
-					"name": "Send study to an user from inbox",
+					"name": "Send study to user 2 from inbox user 1",
 					"event": [
 						{
 							"listen": "test",
@@ -7101,7 +7320,49 @@
 					"response": []
 				},
 				{
-					"name": "Create an album without add permission-OK",
+					"name": "Delete studies from album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "838738eb-cf68-4af4-80d3-b96e9d1d8928",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								"{{study_UID}}",
+								"albums",
+								"{{album_id_sharing}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an album without add and delete permission-OK",
 					"event": [
 						{
 							"listen": "test",
@@ -7154,6 +7415,11 @@
 								},
 								{
 									"key": "addSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "deleteSeries",
 									"value": "false",
 									"type": "text"
 								},
@@ -7288,21 +7554,21 @@
 					"response": []
 				},
 				{
-					"name": "Delete studies from album",
+					"name": "Send study to an album from inbox by an admin-OK",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "838738eb-cf68-4af4-80d3-b96e9d1d8928",
+								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
 								]
 							}
 						}
 					],
 					"request": {
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
@@ -7314,7 +7580,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing}}",
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing2}}?inbox=",
 							"host": [
 								"{{URL}}"
 							],
@@ -7323,14 +7589,62 @@
 								"studies",
 								"{{study_UID}}",
 								"albums",
-								"{{album_id_sharing}}"
+								"{{album_id_sharing2}}"
+							],
+							"query": [
+								{
+									"key": "inbox",
+									"value": ""
+								}
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete studies from inbox",
+					"name": "Delete studies from album without delete permission",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "38ad1edc-20bd-4940-89fa-953608b93017",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 403\"] = responseCode.code === 403;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"studies",
+								"{{study_UID}}",
+								"albums",
+								"{{album_id_sharing2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete studies from inbox (user 2)",
 					"event": [
 						{
 							"listen": "test",
@@ -7348,7 +7662,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
+								"value": "Bearer {{access_token_user2}}"
 							}
 						],
 						"body": {
