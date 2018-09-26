@@ -661,7 +661,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "08efa0eb-74dd-47c8-841e-d226ed1cd661",
+								"id": "51d1d006-b0f5-43e8-8f6e-c4023d0cdd47",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -674,7 +674,7 @@
 									"",
 									"tests[\"description\"] = jsonObject.description == \"test description\"",
 									"",
-									"tests[\"is_favorite\"] = jsonObject.description == false"
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false"
 								]
 							}
 						},
@@ -971,7 +971,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f9eaacb3-32ed-4b6e-abfd-a8038f38a92a",
+								"id": "5866853b-20dd-49bc-b9b7-5eb9694662f5",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -980,7 +980,7 @@
 									"",
 									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
 									"",
-									"tests[\"is_favorite\"] = jsonObject.description == true"
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == true"
 								]
 							}
 						},
@@ -1097,7 +1097,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c1f322cc-0c1d-4c1c-91f6-e4b590dde5d3",
+								"id": "6cc7f55f-dfd7-4cb3-9fe7-29ca8819eced",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1106,7 +1106,7 @@
 									"",
 									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
 									"",
-									"tests[\"is_favorite\"] = jsonObject.description == false"
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false"
 								]
 							}
 						},
@@ -1526,7 +1526,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b68a5933-dd5b-4ecb-965e-a71d8987ded8",
+								"id": "f8a173a0-4429-45da-b816-42f05e667f1e",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1537,11 +1537,11 @@
 									"",
 									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == false",
 									"",
 									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
 									"",
-									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == false"
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
 								]
 							}
 						},
@@ -2061,7 +2061,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b68a5933-dd5b-4ecb-965e-a71d8987ded8",
+								"id": "e03a4977-98f1-4ce2-ba36-4001a5a7aa9d",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -2072,11 +2072,11 @@
 									"",
 									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == false",
 									"",
 									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
 									"",
-									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == false"
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
 								]
 							}
 						},
@@ -2195,16 +2195,16 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fcbb1dc5-1988-4c93-82b7-623e25dfbfb5",
+								"id": "f79d5626-5f03-4f85-bef1-2a948f63051d",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"Return 2 users\"] = jsonObject.length === 2;",
+									"tests[\"Return 2 users\"] = jsonObject.length === 1;",
 									"",
-									"tests[\"user_name\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
+									"tests[\"user_name\"] = jsonObject[0].user_name == \"toto@gmail.com\"",
 									"",
 									"tests[\"is_admin\"] = jsonObject[0].is_admin == true"
 								]
@@ -2325,10 +2325,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9549a1ed-562c-4975-9209-0e6b440a72ea",
+								"id": "4e82ae60-e445-4f90-9a8a-f5448eb9e452",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+									"tests[\"Status code is 403\"] = responseCode.code === 403;"
 								]
 							}
 						},
@@ -2439,7 +2439,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b68a5933-dd5b-4ecb-965e-a71d8987ded8",
+								"id": "67dbddfb-9184-42d0-b69e-8aa0a577d7c2",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -2450,11 +2450,11 @@
 									"",
 									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == false",
 									"",
 									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
 									"",
-									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == false"
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
 								]
 							}
 						},
@@ -2621,6 +2621,461 @@
 								"users",
 								"{{user1}}",
 								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user 2 directly admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6f486ad-c871-4592-93ca-50e771b50037",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/users/{{user2}}/admin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"users",
+								"{{user2}}",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d7f17c48-ba99-4eea-a130-2acd1f1fa552",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 users\"] = jsonObject.length === 2;",
+									"",
+									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
+									"",
+									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "demote user 2 admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8ce76431-c502-4b35-bb2f-cdecefac9307",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/users/{{user2}}/admin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"users",
+								"{{user2}}",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit album (addUser permission)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e6afead-6281-49a5-b9d9-f50fabd9fb90",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == true",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "addUser",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user 1 quit album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "42c61bda-274a-498c-bc85-243b637c6fef",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/users/{{user1}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"users",
+								"{{user1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6f486ad-c871-4592-93ca-50e771b50037",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/users/{{user1}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"users",
+								"{{user1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get users album",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "926f0d1c-7ca5-4e0e-9bb2-35eeddda6cea",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 2 users\"] = jsonObject.length === 2;",
+									"",
+									"tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"is_admin_0\"] = jsonObject[0].is_admin == false",
+									"",
+									"tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"is_admin_1\"] = jsonObject[1].is_admin == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/5/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"5",
+								"users"
 							]
 						}
 					},
