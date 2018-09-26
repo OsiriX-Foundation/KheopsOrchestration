@@ -5004,7 +5004,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "0479eddd-7f7e-4276-8774-f83e696f7700",
+								"id": "2b17e94a-964d-4ee5-b898-92d5614240ac",
 								"type": "text/javascript",
 								"exec": [
 									"function wait(ms)",
@@ -5015,7 +5015,7 @@
 									"    while(d2-d < ms);",
 									"}",
 									"",
-									"wait(1000);"
+									"wait(3000);"
 								]
 							}
 						}
@@ -5158,7 +5158,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "3c05c113-44bc-4a5e-a4b0-9b27462fb503",
+								"id": "e3489fc7-e27c-44eb-9b6e-cb1a5b3c4d38",
 								"type": "text/javascript",
 								"exec": [
 									"function wait(ms)",
@@ -5169,7 +5169,7 @@
 									"    while(d2-d < ms);",
 									"}",
 									"",
-									"wait(1000);"
+									"wait(3000);"
 								]
 							}
 						}
@@ -5310,7 +5310,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "14347f08-081d-41b1-a333-fa92c86a0cac",
+								"id": "e254f57d-41e7-42b3-a7ab-22ef4c94304f",
 								"type": "text/javascript",
 								"exec": [
 									"function wait(ms)",
@@ -5321,7 +5321,7 @@
 									"    while(d2-d < ms);",
 									"}",
 									"",
-									"wait(1000);"
+									"wait(3000);"
 								]
 							}
 						}
@@ -5465,7 +5465,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d3c8bad7-478a-48f5-b047-76ee722c88d4",
+								"id": "de75bd05-025f-4f7e-bb2d-660ffc9bc1aa",
 								"type": "text/javascript",
 								"exec": [
 									"function wait(ms)",
@@ -5476,7 +5476,7 @@
 									"    while(d2-d < ms);",
 									"}",
 									"",
-									"wait(1000);"
+									"wait(3000);"
 								]
 							}
 						}
@@ -5620,7 +5620,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "6993994e-1900-494e-b47c-768143b508b8",
+								"id": "b0c6bb40-637a-4c28-85c6-9d5c308c2444",
 								"type": "text/javascript",
 								"exec": [
 									"function wait(ms)",
@@ -5631,7 +5631,7 @@
 									"    while(d2-d < ms);",
 									"}",
 									"",
-									"wait(1000);"
+									"wait(3000);"
 								]
 							}
 						}
@@ -5774,7 +5774,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "aad46e9a-0f1b-48b2-a924-49ac01ad802f",
+								"id": "93296f51-f95e-435b-bee2-46b9f377a49c",
 								"type": "text/javascript",
 								"exec": [
 									"function wait(ms)",
@@ -5785,7 +5785,7 @@
 									"    while(d2-d < ms);",
 									"}",
 									"",
-									"wait(1000);"
+									"wait(3000);"
 								]
 							}
 						}
@@ -5840,8 +5840,533 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get all mutations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ec2aa32a-f691-4994-814f-b206dc81fa6d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 6 mutations\"] = jsonObject.length === 6;",
+									"",
+									"//tests[\"X-Total-Count = 6\"] = postman.getResponseHeader(\"X-Total-Count\") == 6;",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "aad46e9a-0f1b-48b2-a924-49ac01ad802f",
+								"type": "text/javascript",
+								"exec": [
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(1000);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album post comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album post comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "album post comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "81c46b78-6051-403a-b41d-10343c01a237",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "comment 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1012950b-ee4b-42d0-82ce-73908a0e3c1f",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 comments\"] = jsonObject.length === 3;",
+									"",
+									"//tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "cbe7e1c5-9fb8-4146-9f6a-83bc48738c9e",
+								"type": "text/javascript",
+								"exec": [
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(3000);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all mutations and comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d43c685-6666-49c6-a5d9-7694acbc3819",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 9 events\"] = jsonObject.length === 9;",
+									"",
+									"//tests[\"X-Total-Count = 9\"] = postman.getResponseHeader(\"X-Total-Count\") == 9;",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "096d3ad4-998f-4842-9148-2544e2da7732",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&types=comments",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "types",
+									"value": "comments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all mutations and comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0d43c685-6666-49c6-a5d9-7694acbc3819",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 9 events\"] = jsonObject.length === 9;",
+									"",
+									"//tests[\"X-Total-Count = 9\"] = postman.getResponseHeader(\"X-Total-Count\") == 9;",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d77d1d2d-4d70-4808-8d25-466774295116",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							]
+						}
+					},
+					"response": []
 				}
 			]
+		},
+		{
+			"name": "sharing",
+			"item": []
 		}
 	]
 }
