@@ -138,6 +138,72 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "create user3-create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6ea2d7bb-b849-4327-b8fe-c5003480b2d6",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"access_token_user3\", jsonObject.access_token);",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+									"type": "text"
+								},
+								{
+									"key": "assertion",
+									"value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5OTg4Nzc2NjU1IiwiZW1haWwiOiJ0YXRhQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJleHAiOjI1MjI5NDM1NzIsImlzcyI6ImF1dGhvcml6YXRpb24ua2hlb3BzLm9ubGluZSIsImlhdCI6MTUyMjkzOTk3Mn0.i8D9zxg1aQBjIMCBS921v7PBQ6Me2trR2a5TtVk0_Xs",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/token",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"token"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2953,10 +3019,10 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a6f486ad-c871-4592-93ca-50e771b50037",
+								"id": "482ed9e7-17d2-4a7f-aa1d-23849eb41124",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
 								]
 							}
 						},
@@ -3210,14 +3276,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/comments",
+							"raw": "{{URL}}/authorization/album/6/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"comments"
 							]
 						}
@@ -3289,14 +3355,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -3360,14 +3426,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/comments",
+							"raw": "{{URL}}/authorization/album/6/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"comments"
 							]
 						}
@@ -3430,14 +3496,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/comments",
+							"raw": "{{URL}}/authorization/album/6/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"comments"
 							]
 						}
@@ -3486,14 +3552,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/users/{{user2}}",
+							"raw": "{{URL}}/authorization/album/6/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"users",
 								"{{user2}}"
 							]
@@ -3557,14 +3623,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/comments",
+							"raw": "{{URL}}/authorization/album/6/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"comments"
 							]
 						}
@@ -3657,14 +3723,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -3763,14 +3829,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -3859,14 +3925,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=2",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -3959,14 +4025,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=2",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -4057,14 +4123,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments&offset=1",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -4155,14 +4221,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments&offset=1",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -4244,14 +4310,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
@@ -4337,14 +4403,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/4/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"4",
+								"6",
 								"events"
 							],
 							"query": [
