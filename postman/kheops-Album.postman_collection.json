@@ -727,14 +727,14 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "51d1d006-b0f5-43e8-8f6e-c4023d0cdd47",
+								"id": "f4ce861b-dcc5-47c5-b688-fe35e1cab864",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
+									"tests[\"album_id\"] = jsonObject.album_id == \"6\"",
 									"",
 									"tests[\"name\"] = jsonObject.name == \"test name\"",
 									"",
@@ -782,14 +782,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5",
+							"raw": "{{URL}}/authorization/album/6",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5"
+								"6"
 							]
 						}
 					},
@@ -884,14 +884,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/3",
+							"raw": "{{URL}}/authorization/album/4",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -957,14 +957,29 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5",
+							"raw": "{{URL}}/authorization/album/6/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5"
+								"6",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "comments"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
 							]
 						}
 					},
