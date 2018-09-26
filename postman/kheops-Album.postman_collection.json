@@ -5591,7 +5591,7 @@
 					"response": []
 				},
 				{
-					"name": "get DEOMOTE_ADMIN mutation",
+					"name": "get DEMOTE_ADMIN mutation",
 					"event": [
 						{
 							"listen": "test",
@@ -6128,7 +6128,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "1012950b-ee4b-42d0-82ce-73908a0e3c1f",
+								"id": "2e5492b0-8545-4878-94ae-34c947c25f86",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -6214,7 +6214,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0d43c685-6666-49c6-a5d9-7694acbc3819",
+								"id": "240f6369-d731-4d13-8377-f1383a8f4fe9",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -6224,6 +6224,10 @@
 									"tests[\"Return 9 events\"] = jsonObject.length === 9;",
 									"",
 									"//tests[\"X-Total-Count = 9\"] = postman.getResponseHeader(\"X-Total-Count\") == 9;",
+									"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"tests[\"[INFO] Response: \" + jsonObject] = true;",
 									""
 								]
 							}
