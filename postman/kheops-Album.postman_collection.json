@@ -4981,7 +4981,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c4fa9120-c032-41f0-b6a9-ac84fb70e1f7",
+								"id": "1235a138-bf5d-4bcd-8fe2-aaad67580acb",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -4997,6 +4997,8 @@
 									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
 									"",
 									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"CREATE_ALBUM\"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									""
 								]
 							}
@@ -5134,7 +5136,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9ea520d1-e803-4a9c-9b77-5b1c0eefff7f",
+								"id": "7bb8f0a2-50e0-480e-b6f2-e46b64651722",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -5151,7 +5153,9 @@
 									"",
 									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"ADD_USER\""
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"ADD_USER\"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -5288,7 +5292,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "c2a2f4d7-958f-4ae6-a166-0d6e146918c8",
+								"id": "a1b79a87-9ae5-400a-9c19-794a1596c505",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -5303,7 +5307,9 @@
 									"",
 									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"LEAVE_ALBUM \""
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"LEAVE_ALBUM\"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -5378,7 +5384,7 @@
 					"response": []
 				},
 				{
-					"name": "promote user 2 admin",
+					"name": "add user 2 admin",
 					"event": [
 						{
 							"listen": "test",
@@ -5436,12 +5442,12 @@
 					"response": []
 				},
 				{
-					"name": "get PROMOTE_ADMIN mutation",
+					"name": "get ADD_ADMIN mutation",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "7bb0ec66-7b36-471a-b6a0-3934477df2e3",
+								"id": "61196b2f-f948-4837-9440-facec0223518",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -5458,7 +5464,9 @@
 									"",
 									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"PROMOTE_ADMIN \""
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"ADD_ADMIN\"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -5596,7 +5604,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "709632a7-717d-44f6-84df-1bdbbf77fec1",
+								"id": "e76f385d-e19d-4a2e-8b94-b945c4497c38",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -5613,7 +5621,9 @@
 									"",
 									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"PROMOTE_ADMIN \""
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"PROMOTE_ADMIN\"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -5621,6 +5631,163 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "b0c6bb40-637a-4c28-85c6-9d5c308c2444",
+								"type": "text/javascript",
+								"exec": [
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(3000);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment",
+									"value": "my first comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=mutations&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"events"
+							],
+							"query": [
+								{
+									"key": "types",
+									"value": "mutations"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "promote user 2 admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a6f486ad-c871-4592-93ca-50e771b50037",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}/admin",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}",
+								"users",
+								"{{user2}}",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get PROMOTE_ADMIN mutation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3754b3e3-643d-4f42-ae33-ca5b628a8e57",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
+									"",
+									"//tests[\"X-Total-Count = 4\"] = postman.getResponseHeader(\"X-Total-Count\") == 4;",
+									"",
+									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
+									"",
+									"tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+									"",
+									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+									"",
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"PROMOTE_ADMIN\"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "de75bd05-025f-4f7e-bb2d-660ffc9bc1aa",
 								"type": "text/javascript",
 								"exec": [
 									"function wait(ms)",
@@ -5750,7 +5917,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "853771ba-8656-49dd-8e9b-0317d73b9f57",
+								"id": "7a0b94c6-9c85-43a9-92af-121b1264b45a",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -5767,7 +5934,9 @@
 									"",
 									"tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
 									"",
-									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"REMOVE_USER \""
+									"tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"REMOVE_USER\"",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -6214,21 +6383,16 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "240f6369-d731-4d13-8377-f1383a8f4fe9",
+								"id": "a31d7acf-adaf-4153-a184-85c52badab73",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"Return 9 events\"] = jsonObject.length === 9;",
+									"tests[\"Return 10 events\"] = jsonObject.length === 10;",
 									"",
-									"//tests[\"X-Total-Count = 9\"] = postman.getResponseHeader(\"X-Total-Count\") == 9;",
-									"",
-									"",
-									"tests[\"[INFO] Response: \" + responseBody] = true;",
-									"tests[\"[INFO] Response: \" + jsonObject] = true;",
-									""
+									"//tests[\"X-Total-Count = 10\"] = postman.getResponseHeader(\"X-Total-Count\") == 10;"
 								]
 							}
 						},
@@ -6300,16 +6464,16 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0d43c685-6666-49c6-a5d9-7694acbc3819",
+								"id": "222dae27-4578-4058-bdfa-67a89d9a94bc",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"Return 9 events\"] = jsonObject.length === 9;",
+									"tests[\"Return 10 events\"] = jsonObject.length === 10;",
 									"",
-									"//tests[\"X-Total-Count = 9\"] = postman.getResponseHeader(\"X-Total-Count\") == 9;",
+									"//tests[\"X-Total-Count = 10\"] = postman.getResponseHeader(\"X-Total-Count\") == 10;",
 									""
 								]
 							}
