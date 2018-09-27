@@ -8470,14 +8470,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d11d0152-b818-447d-9943-3066c34ca468",
+								"id": "2ec051c1-37ee-4782-bda8-50e2de355ac4",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"[INFO] Response HEADER: X-Total-Count\" + postman.getResponseHeader(\"X-Total-Count\")] = true;",
 									"",
 									"tests[\"Return 3 comments\"] = jsonObject.length === 3;",
 									"",
