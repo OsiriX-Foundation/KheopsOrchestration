@@ -398,7 +398,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dcedc6f1-836d-441d-95ea-20f0fb6d5f51",
+								"id": "efde00cf-ddfb-4347-a721-351f0f476f4f",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -411,33 +411,33 @@
 									"",
 									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;",
 									"",
-									"tests[\"name\"] = jsonObject.name == \"name 1\"",
+									"tests[\"name\"] = jsonObject[0].name == \"name 1\"",
 									"",
-									"tests[\"description\"] = jsonObject.description == \"description 1\"",
+									"tests[\"description\"] = jsonObject[0].description == \"description 1\"",
 									"",
-									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"tests[\"is_favorite\"] = jsonObject[0].is_favorite == false",
 									"",
-									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"tests[\"number_of_users\"] = jsonObject[0].number_of_users == 1",
 									"",
-									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"tests[\"number_of_comments\"] = jsonObject[0].number_of_comments == 0",
 									"",
-									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"tests[\"number_of_studies\"] = jsonObject[0].number_of_studies == 0",
 									"",
-									"tests[\"add_user\"] = jsonObject.add_user == false",
+									"tests[\"add_user\"] = jsonObject[0].add_user == false",
 									"",
-									"tests[\"download_series\"] = jsonObject.download_series == true",
+									"tests[\"download_series\"] = jsonObject[0].download_series == true",
 									"",
-									"tests[\"send_series\"] = jsonObject.send_series == false",
+									"tests[\"send_series\"] = jsonObject[0].send_series == false",
 									"",
-									"tests[\"delete_series\"] = jsonObject.delete_series == false",
+									"tests[\"delete_series\"] = jsonObject[0].delete_series == false",
 									"",
-									"tests[\"add_series\"] = jsonObject.add_series == true",
+									"tests[\"add_series\"] = jsonObject[0].add_series == true",
 									"",
-									"tests[\"write_comments\"] = jsonObject.write_comments == true",
+									"tests[\"write_comments\"] = jsonObject[0].write_comments == true",
 									"",
-									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"tests[\"notification_new_series\"] = jsonObject[0].notification_new_series == true",
 									"",
-									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
+									"tests[\"notification_new_comment\"] = jsonObject[0].notification_new_comment == true"
 								]
 							}
 						},
@@ -1181,7 +1181,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "00fec861-f0b7-4b50-86d7-607104d83c0a",
+								"id": "56a493ec-206c-4c5f-ab79-d845db2e79cd",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1218,8 +1218,7 @@
 									"",
 									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
 									"",
-									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
-									""
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
 								]
 							}
 						},
@@ -1304,6 +1303,322 @@
 								"authorization",
 								"album",
 								"{{album_id_3}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list filter by {name}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4deb9d3f-bb04-4cbe-ae57-f1d0bdd611c3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 album\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"album_id\"] = jsonObject[0].album_id == pm.environment.get(\"album_id_1\");",
+									"",
+									"tests[\"name\"] = jsonObject[0].name == \"name 1\"",
+									"",
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?name=name 1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "name 1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list filter by {name}*",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61dc00de-c511-4c5b-bf49-605d2f3d7bae",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 album\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?name=name*",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "name*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list filter by *{name}",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4591b9c4-50df-4e3d-b62b-04e1ff74afc3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 album\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"album_id\"] = jsonObject[0].album_id == pm.environment.get(\"album_id_1\");",
+									"",
+									"tests[\"name\"] = jsonObject[0].name == \"name 1\"",
+									"",
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?name=*me 1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "*me 1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list filter by *{name}*",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "61dc00de-c511-4c5b-bf49-605d2f3d7bae",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 album\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?name=*me*",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "*me*"
+								}
 							]
 						}
 					},
