@@ -216,10 +216,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "5e9ed0fe-ef10-4ca3-8047-97c182c16e34",
+								"id": "543e2bf6-98c6-433b-9c2e-f19f8a3c9ecc",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"tests[\"Empty response []\"] = responseBody == \"[]\"",
 									"",
@@ -287,7 +289,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ac18f9bd-8e2b-4239-9726-8fab5f49a2e8",
+								"id": "8c434938-5b6a-4c44-8e30-4ca78739a4e6",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -296,7 +298,37 @@
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"pm.environment.set(\"album_id_1\", jsonObject.album_id);"
+									"pm.environment.set(\"album_id_1\", jsonObject.album_id);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
+									"",
+									"tests[\"name\"] = jsonObject.name == \"name 1\"",
+									"",
+									"tests[\"description\"] = jsonObject.description == \"description 1\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == false",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == true",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == false",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == false",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == true",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == true",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
 								]
 							}
 						},
@@ -366,18 +398,46 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4fe76b8c-3060-4f7d-8bda-289381be272d",
+								"id": "dcedc6f1-836d-441d-95ea-20f0fb6d5f51",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
-									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
 									"tests[\"Return 1 album\"] = jsonObject.length === 1;",
 									"",
-									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;",
+									"",
+									"tests[\"name\"] = jsonObject.name == \"name 1\"",
+									"",
+									"tests[\"description\"] = jsonObject.description == \"description 1\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == false",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == true",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == false",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == false",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == true",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == true",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
 								]
 							}
 						},
@@ -437,7 +497,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "aa556bb7-4c91-4db5-900f-4d6d4bd65abd",
+								"id": "b16081d3-bff0-48a0-889a-cc43d92f323b",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -446,7 +506,35 @@
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"pm.environment.set(\"album_id_2\", jsonObject.album_id);"
+									"pm.environment.set(\"album_id_2\", jsonObject.album_id);",
+									"",
+									"tests[\"name\"] = jsonObject.name == \"name 2\"",
+									"",
+									"tests[\"description\"] = jsonObject.description == \"description 2\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == true",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == false",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == false",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == false",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == false",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == false",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
 								]
 							}
 						},
@@ -541,7 +629,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "9f834958-d338-4c50-a38f-99b83bb6d640",
+								"id": "b14e9bba-8b2b-4eb5-8a3e-19e4bb6036e9",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -550,7 +638,35 @@
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"pm.environment.set(\"album_id_3\", jsonObject.album_id);"
+									"pm.environment.set(\"album_id_3\", jsonObject.album_id);",
+									"",
+									"tests[\"name\"] = jsonObject.name == \"name 3\"",
+									"",
+									"tests[\"description\"] = jsonObject.description == \"description 3\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == false",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == true",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == true",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == false",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == true",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == true",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
 								]
 							}
 						},
@@ -615,10 +731,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f25b9925-b6a4-4e8a-9e1c-bc18a0877788",
+								"id": "20c49142-79b4-448c-9d8b-1633832040e2",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
@@ -1063,10 +1181,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "18b0b50b-f4b2-4495-b525-64006dec6912",
+								"id": "00fec861-f0b7-4b50-86d7-607104d83c0a",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
