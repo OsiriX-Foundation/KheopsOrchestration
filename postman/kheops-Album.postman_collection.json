@@ -1768,6 +1768,85 @@
 					"response": []
 				},
 				{
+					"name": "get album list filter by {favorite}=false",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "11bae21f-a5bc-49f3-9756-56026b4354bb",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"tests[\"Empty response []\"] = responseBody == \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 album\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?favorite=false",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "favorite",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "get album list filter by limit offset",
 					"event": [
 						{
@@ -2509,7 +2588,174 @@
 			"name": "favorite",
 			"item": [
 				{
-					"name": "add to favorites-OK",
+					"name": "Create an album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43a3b1f5-cfdd-4f83-b1e9-77a3a85330e6",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"pm.environment.set(\"album_id_1\", jsonObject.album_id);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_favorite_id_1\");",
+									"",
+									"tests[\"name\"] = jsonObject.name == \"name 1\"",
+									"",
+									"tests[\"description\"] = jsonObject.description == \"description 1\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == false",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == true",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == false",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == false",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == true",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == true",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "name 1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_favorite_id_1}}",
+								"users",
+								"{{user2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add to favorites user 1-OK",
 					"event": [
 						{
 							"listen": "test",
@@ -2550,14 +2796,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5/favorites",
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5",
+								"{{album_favorite_id_1}}",
 								"favorites"
 							]
 						}
@@ -2565,21 +2811,96 @@
 					"response": []
 				},
 				{
-					"name": "get album-OK favorite",
+					"name": "get album-OK not favorite for user 2",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "5866853b-20dd-49bc-b9b7-5eb9694662f5",
+								"id": "de8cd6bc-aa5c-4be4-95e9-01f7656a891a",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_favorite_id_1\")",
 									"",
-									"tests[\"is_favorite\"] = jsonObject.is_favorite == true"
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_favorite_id_1}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album-OK favorite for user 1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8b4e8535-0ef3-4824-b1b5-be8b78552cf2",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_favorite_id_1\");",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == true",
+									""
 								]
 							}
 						},
@@ -2621,21 +2942,104 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5",
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5"
+								"{{album_favorite_id_1}}"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "remove favorites-OK",
+					"name": "get album list filter by {favorite}=true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe810515-a16b-4263-9850-0a5490a54776",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 album\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"album_id\"] = jsonObject[0].album_id == pm.environment.get(\"album_favorite_id_1\");",
+									"",
+									"tests[\"is_favorite\"] = jsonObject[0].is_favorite == true",
+									"",
+									"tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?favorite=true",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "favorite",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove favorites user 1-OK",
 					"event": [
 						{
 							"listen": "test",
@@ -2676,14 +3080,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5/favorites",
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5",
+								"{{album_favorite_id_1}}",
 								"favorites"
 							]
 						}
@@ -2691,21 +3095,23 @@
 					"response": []
 				},
 				{
-					"name": "get album-OK not favorite",
+					"name": "get album-OK not favorite for user 1",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "b066dbb7-d040-400f-9609-c99d52dbd91e",
+								"id": "de8cd6bc-aa5c-4be4-95e9-01f7656a891a",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
 									"",
-									"tests[\"album_id\"] = jsonObject.album_id == \"5\"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_favorite_id_1\")",
 									"",
-									"tests[\"is_favorite\"] = jsonObject.is_favorite == false"
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									""
 								]
 							}
 						},
@@ -2747,14 +3153,14 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5",
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5"
+								"{{album_favorite_id_1}}"
 							]
 						}
 					},
@@ -2766,10 +3172,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d3b90213-a197-4ffe-9762-459a881dfb56",
+								"id": "6a2030e1-765e-4126-b62a-3bcd69078e55",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+									"tests[\"Status code is 404\"] = responseCode.code === 404;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -2822,10 +3230,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "d3b90213-a197-4ffe-9762-459a881dfb56",
+								"id": "d08027f1-7a2c-4ce0-849f-80015675caca",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+									"tests[\"Status code is 404\"] = responseCode.code === 404;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -2858,14 +3268,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5/favorites",
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5",
+								"{{album_favorite_id_1}}",
 								"favorites"
 							]
 						}
@@ -2878,10 +3288,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7d41e922-fa78-43f3-a346-3bd2e2be4d75",
+								"id": "d45f19ea-377b-4c93-9ddd-be14c14a6830",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+									"tests[\"Status code is 404\"] = responseCode.code === 404;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -2934,10 +3346,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7d41e922-fa78-43f3-a346-3bd2e2be4d75",
+								"id": "31edb652-4e6b-4787-9159-1ca407768685",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+									"tests[\"Status code is 404\"] = responseCode.code === 404;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;"
 								]
 							}
 						},
@@ -2970,14 +3384,14 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/5/favorites",
+							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
 								"authorization",
 								"album",
-								"5",
+								"{{album_favorite_id_1}}",
 								"favorites"
 							]
 						}
