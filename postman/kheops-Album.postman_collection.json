@@ -829,10 +829,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a2b9d99c-a43b-4abc-ac7f-d61d30af67cc",
+								"id": "62d44f57-a4bb-4ea6-a6cc-770470ff263a",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
 									"",
