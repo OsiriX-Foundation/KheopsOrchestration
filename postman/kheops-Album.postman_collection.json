@@ -1314,10 +1314,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4deb9d3f-bb04-4cbe-ae57-f1d0bdd611c3",
+								"id": "89980121-d7db-4cec-9cc0-8c6a1a7bef25",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
 									"",
@@ -1395,10 +1397,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "61dc00de-c511-4c5b-bf49-605d2f3d7bae",
+								"id": "44e781a2-1d03-4aee-a221-2093d4702083",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
 									"",
@@ -1472,10 +1476,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4591b9c4-50df-4e3d-b62b-04e1ff74afc3",
+								"id": "414d3a21-7ca8-4fe3-b8c7-eaa96b52ec95",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
 									"",
@@ -1553,10 +1559,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "61dc00de-c511-4c5b-bf49-605d2f3d7bae",
+								"id": "86d01e12-b9c4-4a16-850f-3307e96cb77c",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
 									"",
@@ -1625,15 +1633,100 @@
 					"response": []
 				},
 				{
+					"name": "get album list filter by {fuzzymatching}=true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c41f7adb-b4b9-418c-943e-85d1e7b348cf",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"tests[\"Not empty response []\"] = responseBody != \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 album\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?name=nm&fuzzymatching=true",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "nm"
+								},
+								{
+									"key": "fuzzymatching",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "get album list filter by {isFavorite}=true",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "636afdc6-eb9e-41e7-8e84-d4ca8f66cf76",
+								"id": "87d79b5a-3d4d-4863-baf4-86ff91ebe597",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
 									"",
 									"tests[\"Empty response []\"] = responseBody == \"[]\"",
 									"",
