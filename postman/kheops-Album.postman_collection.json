@@ -1623,6 +1623,330 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get album list filter by {isFavorite}=true",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "636afdc6-eb9e-41e7-8e84-d4ca8f66cf76",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"Empty response []\"] = responseBody == \"[]\"",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 0 album\"] = jsonObject.length === 0;",
+									"",
+									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\") == 0;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?isFavorite=true",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "isFavorite",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list filter by limit offset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d80deae1-e6a0-45a3-b386-1958a1d5a06d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 1 album\"] = jsonObject.length === 1;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"name\"] = jsonObject[0].name == \"name 1\"",
+									"",
+									"tests[\"description\"] = jsonObject[0].description == \"description 1\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject[0].is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject[0].number_of_users == 1",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject[0].number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject[0].number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject[0].add_user == false",
+									"",
+									"tests[\"download_series\"] = jsonObject[0].download_series == true",
+									"",
+									"tests[\"send_series\"] = jsonObject[0].send_series == false",
+									"",
+									"tests[\"delete_series\"] = jsonObject[0].delete_series == false",
+									"",
+									"tests[\"add_series\"] = jsonObject[0].add_series == true",
+									"",
+									"tests[\"write_comments\"] = jsonObject[0].write_comments == true",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject[0].notification_new_series == true",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject[0].notification_new_comment == true"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?limit=1&offset=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "offset",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list filter by limit offset-Bad Params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cbfcd49b-9eff-472e-b56c-57fa17fcebe3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?limit=aaa",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "aaa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list filter by limit offset-Bad Params",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cbfcd49b-9eff-472e-b56c-57fa17fcebe3",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?limit=-3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "-3"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
