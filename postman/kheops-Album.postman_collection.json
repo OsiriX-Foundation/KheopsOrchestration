@@ -289,7 +289,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "8c434938-5b6a-4c44-8e30-4ca78739a4e6",
+								"id": "c09cfdaa-aa57-499c-a23c-8e26fa376e1e",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -328,7 +328,18 @@
 									"",
 									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
 									"",
-									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
+									"",
+									"",
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(3000);"
 								]
 							}
 						},
@@ -497,7 +508,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b16081d3-bff0-48a0-889a-cc43d92f323b",
+								"id": "18907c18-71fe-49e7-9bb9-78e8070e402a",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -534,7 +545,17 @@
 									"",
 									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
 									"",
-									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
+									"",
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(3000);"
 								]
 							}
 						},
