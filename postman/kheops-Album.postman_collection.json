@@ -7934,7 +7934,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0419fc77-4c77-43f2-9323-57d9c7801bbc",
+								"id": "0832f5f3-d3e3-426f-82d9-9bc3afa7c6a9",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -7943,7 +7943,7 @@
 									"",
 									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
 									"",
-									"tests[\"X-Total-Count = 4\"] = postman.getResponseHeader(\"X-Total-Count\") == 4;",
+									"tests[\"X-Total-Count = 6\"] = postman.getResponseHeader(\"X-Total-Count\") == 6;",
 									"",
 									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
 									"",
@@ -8090,7 +8090,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "4cfe7816-252f-4b6e-aff1-647d3a483289",
+								"id": "52f5e3f7-e670-46fb-85e7-0046c5836bde",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -8099,7 +8099,7 @@
 									"",
 									"tests[\"Return 1 mutation\"] = jsonObject.length === 1;",
 									"",
-									"tests[\"X-Total-Count = 6\"] = postman.getResponseHeader(\"X-Total-Count\") == 6;",
+									"tests[\"X-Total-Count = 7\"] = postman.getResponseHeader(\"X-Total-Count\") == 7;",
 									"",
 									"tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
 									"",
@@ -8470,12 +8470,14 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "b950ac28-76c5-4f25-a096-2b445a5179cb",
+								"id": "d11d0152-b818-447d-9943-3066c34ca468",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
 									"",
 									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"[INFO] Response HEADER: X-Total-Count\" + postman.getResponseHeader(\"X-Total-Count\")] = true;",
 									"",
 									"tests[\"Return 3 comments\"] = jsonObject.length === 3;",
 									"",
