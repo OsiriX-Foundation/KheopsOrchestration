@@ -2015,7 +2015,7 @@
 					"response": []
 				},
 				{
-					"name": "get album list sort",
+					"name": "get album list sort by -name",
 					"event": [
 						{
 							"listen": "test",
@@ -2091,6 +2091,255 @@
 								{
 									"key": "sort",
 									"value": "-name"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list sort by name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d0abaf30-2436-4899-abc0-42353f30ce3c",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 albums\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"name_0\"] = jsonObject[0].name == \"name 1\"",
+									"",
+									"tests[\"name_1\"] = jsonObject[1].name == \"name 2\"",
+									"",
+									"tests[\"name_2\"] = jsonObject[2].name == \"name 3\""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?sort=name",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "name"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list sort by created_time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d0abaf30-2436-4899-abc0-42353f30ce3c",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 albums\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"name_0\"] = jsonObject[0].name == \"name 1\"",
+									"",
+									"tests[\"name_1\"] = jsonObject[1].name == \"name 2\"",
+									"",
+									"tests[\"name_2\"] = jsonObject[2].name == \"name 3\""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?sort=created_time",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "created_time"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album list sort by -created_time",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0404f8a3-1be0-4791-82c5-85b980a3a83b",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"Return 3 albums\"] = jsonObject.length === 3;",
+									"",
+									"tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;",
+									"",
+									"tests[\"name_0\"] = jsonObject[0].name == \"name 3\"",
+									"",
+									"tests[\"name_1\"] = jsonObject[1].name == \"name 2\"",
+									"",
+									"tests[\"name_2\"] = jsonObject[2].name == \"name 1\""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album?sort=-created_time",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-created_time"
 								}
 							]
 						}
