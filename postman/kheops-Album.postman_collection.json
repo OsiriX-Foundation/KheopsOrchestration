@@ -7496,7 +7496,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a5f6f883-141c-4527-89a3-1b298fbccff4",
+								"id": "11c6cc7d-0c9a-455f-bf4b-07f9fa50c0c2",
 								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -7513,10 +7513,7 @@
 									"",
 									"tests[\"comment\"] = jsonObject[0].comment == \"comment 1\"",
 									"",
-									"tests[\"is_private\"] = jsonObject[0].is_private == false",
-									"",
-									"",
-									"pm.environment.unset(\"album_id_comment\");"
+									"tests[\"is_private\"] = jsonObject[0].is_private == false"
 								]
 							}
 						},
