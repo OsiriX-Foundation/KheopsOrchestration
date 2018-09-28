@@ -1359,15 +1359,15 @@
 					"response": []
 				},
 				{
-					"name": "edit album-Unauthorized",
+					"name": "edit album-Forbidden",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "49637dca-09e7-4030-b4ea-e97ed14adfa4",
+								"id": "2132952d-f2f2-4dde-bda6-31380284bdd1",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 401\"] = responseCode.code === 401;"
+									"tests[\"Status code is 403\"] = responseCode.code === 403;"
 								]
 							}
 						},
@@ -1403,12 +1403,12 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "rename unauthorized",
+									"value": "rename Forbidden",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "redescription unauthorized",
+									"value": "redescription Forbidden",
 									"type": "text"
 								},
 								{
@@ -7587,7 +7587,7 @@
 					"response": []
 				},
 				{
-					"name": "get album-OK",
+					"name": "get album by user 1 3 comments-OK",
 					"event": [
 						{
 							"listen": "test",
@@ -7661,7 +7661,7 @@
 					"response": []
 				},
 				{
-					"name": "get album-OK",
+					"name": "get album by user 2 3 comments-OK",
 					"event": [
 						{
 							"listen": "test",
@@ -7735,7 +7735,7 @@
 					"response": []
 				},
 				{
-					"name": "get album-OK",
+					"name": "get album by user 3 2 comments-OK",
 					"event": [
 						{
 							"listen": "test",
