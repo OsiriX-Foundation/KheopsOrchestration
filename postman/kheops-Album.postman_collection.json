@@ -7595,6 +7595,228 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c0084c3-397f-42f0-bfce-9f5d30a6f95e",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_comment\");",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 3",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 3"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c0084c3-397f-42f0-bfce-9f5d30a6f95e",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_comment\");",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 3",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 3"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get album-OK",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3787b72b-5799-4902-83b2-d684d36f64a1",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_comment\");",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 3",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 2"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user3}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "{{description}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_comment}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_comment}}"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
