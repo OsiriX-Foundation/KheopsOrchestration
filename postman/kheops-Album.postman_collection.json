@@ -1387,7 +1387,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
+								"value": "Bearer {{access_token_user2}}"
 							},
 							{
 								"key": "Accept",
