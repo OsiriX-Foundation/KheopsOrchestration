@@ -427,7 +427,7 @@
 					"response": []
 				},
 				{
-					"name": "album get studies list Copy",
+					"name": "album get studies list",
 					"event": [
 						{
 							"listen": "test",
@@ -480,6 +480,58 @@
 							"query": [
 								{
 									"key": "albums",
+									"value": "{{album_id_1}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "STOW RS inside album same series",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7524252c-94ee-4cd1-8780-15785472765a",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{URL}}/capabilities/password/dicomweb/studies?album={{album_id_1}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"capabilities",
+								"password",
+								"dicomweb",
+								"studies"
+							],
+							"query": [
+								{
+									"key": "album",
 									"value": "{{album_id_1}}"
 								}
 							]
