@@ -1458,7 +1458,117 @@
 					"response": []
 				},
 				{
-					"name": "edit album notification and more (no effect)",
+					"name": "edit album notification and more-Forbidden",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "07108cd4-bded-49fb-abf0-db8a148e3547",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 403\"] = responseCode.code === 403;",
+									""
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user2}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "rename no effect",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "redescription no effect",
+									"type": "text"
+								},
+								{
+									"key": "addUser",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "downloadSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "deleteSeries",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "addSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "writeComments",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "notificationNewSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "notificationNewComment",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_3}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit album notification-OK",
 					"event": [
 						{
 							"listen": "test",
@@ -1534,46 +1644,6 @@
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
-								{
-									"key": "name",
-									"value": "rename no effect",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "redescription no effect",
-									"type": "text"
-								},
-								{
-									"key": "addUser",
-									"value": "true",
-									"type": "text"
-								},
-								{
-									"key": "downloadSeries",
-									"value": "false",
-									"type": "text"
-								},
-								{
-									"key": "sendSeries",
-									"value": "false",
-									"type": "text"
-								},
-								{
-									"key": "deleteSeries",
-									"value": "true",
-									"type": "text"
-								},
-								{
-									"key": "addSeries",
-									"value": "false",
-									"type": "text"
-								},
-								{
-									"key": "writeComments",
-									"value": "false",
-									"type": "text"
-								},
 								{
 									"key": "notificationNewSeries",
 									"value": "false",
