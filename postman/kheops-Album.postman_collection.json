@@ -1440,16 +1440,6 @@
 									"key": "writeComments",
 									"value": "false",
 									"type": "text"
-								},
-								{
-									"key": "notificationNewSeries",
-									"value": "false",
-									"type": "text"
-								},
-								{
-									"key": "notificationNewComment",
-									"value": "false",
-									"type": "text"
 								}
 							]
 						},
