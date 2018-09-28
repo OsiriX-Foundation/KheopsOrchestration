@@ -99,6 +99,10 @@
 							{
 								"key": "Content-Type",
 								"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
 							}
 						],
 						"body": {
@@ -119,23 +123,18 @@
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "STOW album",
-			"item": [
+				},
 				{
-					"name": "STOW RS Copy",
+					"name": "STOW RS-Unauthorized",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "7524252c-94ee-4cd1-8780-15785472765a",
+								"id": "7c6b5635-769a-474c-9995-b6ef6e1efc07",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"tests[\"Status code is 401\"] = responseCode.code === 401;"
 								]
 							}
 						}
@@ -167,6 +166,57 @@
 					},
 					"response": []
 				},
+				{
+					"name": "STOW RS series already exist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7524252c-94ee-4cd1-8780-15785472765a",
+								"type": "text/javascript",
+								"exec": [
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "{{URL}}/capabilities/password/dicomweb/studies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"capabilities",
+								"password",
+								"dicomweb",
+								"studies"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "STOW album",
+			"item": [
 				{
 					"name": "Create an album(1)-OK",
 					"event": [
