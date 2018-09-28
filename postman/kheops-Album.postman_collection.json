@@ -1520,7 +1520,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{access_token_user1}}"
+								"value": "Bearer {{access_token_user2}}"
 							},
 							{
 								"key": "Accept",
@@ -1536,12 +1536,12 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "rename",
+									"value": "rename no effect",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "redescription",
+									"value": "redescription no effect",
 									"type": "text"
 								},
 								{
