@@ -1302,6 +1302,372 @@
 					"response": []
 				},
 				{
+					"name": "add user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_3}}/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_3}}",
+								"users",
+								"{{user2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit album-Unauthorized",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "49637dca-09e7-4030-b4ea-e97ed14adfa4",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 401\"] = responseCode.code === 401;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "rename",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "redescription",
+									"type": "text"
+								},
+								{
+									"key": "addUser",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "downloadSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "deleteSeries",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "addSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "writeComments",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "notificationNewSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "notificationNewComment",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_3}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit album notification and more (no effect)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f21ce5cc-4b72-430f-a4e7-f33e56b06d3a",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"var jsonObject = JSON.parse(responseBody);",
+									"",
+									"tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_3\");",
+									"",
+									"tests[\"name\"] = jsonObject.name == \"name 3\"",
+									"",
+									"tests[\"description\"] = jsonObject.description == \"description 3\"",
+									"",
+									"tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+									"",
+									"tests[\"number_of_users\"] = jsonObject.number_of_users == 2",
+									"",
+									"tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+									"",
+									"tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+									"",
+									"tests[\"add_user\"] = jsonObject.add_user == true",
+									"",
+									"tests[\"download_series\"] = jsonObject.download_series == false",
+									"",
+									"tests[\"send_series\"] = jsonObject.send_series == false",
+									"",
+									"tests[\"delete_series\"] = jsonObject.delete_series == true",
+									"",
+									"tests[\"add_series\"] = jsonObject.add_series == false",
+									"",
+									"tests[\"write_comments\"] = jsonObject.write_comments == false",
+									"",
+									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == false",
+									"",
+									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == false"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "rename",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "redescription",
+									"type": "text"
+								},
+								{
+									"key": "addUser",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "downloadSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "sendSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "deleteSeries",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "addSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "writeComments",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "notificationNewSeries",
+									"value": "false",
+									"type": "text"
+								},
+								{
+									"key": "notificationNewComment",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_3}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove user 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "43ce39fd-02e9-4fd1-9f27-f20b3cacd05d",
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"Status code is 204\"] = responseCode.code === 204;"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{access_token_user1}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{URL}}/authorization/album/{{album_id_3}}/users/{{user2}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"authorization",
+								"album",
+								"{{album_id_3}}",
+								"users",
+								"{{user2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "get album list filter by {name}",
 					"event": [
 						{
