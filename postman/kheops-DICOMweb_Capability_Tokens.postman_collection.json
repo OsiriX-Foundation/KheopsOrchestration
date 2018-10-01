@@ -6,7 +6,6 @@
 	},
 	"item": [
 		{
-			"_postman_id": "558f08bd-f436-4c37-b3e4-cf427c585594",
 			"name": "create user1-OK",
 			"event": [
 				{
@@ -72,7 +71,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8aa72309-a631-4a16-81e2-14c24069a713",
 			"name": "Get a capability tokens user1-no token",
 			"event": [
 				{
@@ -115,13 +113,12 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ae8223bf-bb39-469c-8413-4dbca397d407",
 			"name": "Create a capability tokens user1-OK",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "44360ffc-dcfe-4475-95d2-f679d53359af",
+						"id": "d9c71b70-4aeb-4b2e-83a9-fded292ac274",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
@@ -135,7 +132,7 @@
 							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
 							"",
 							"",
-							"pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
+							"pm.environment.set(\"secret_capability_token_id\", jsonObject.id);"
 						]
 					}
 				},
@@ -190,7 +187,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "da2b25cc-ddf8-4b54-b118-8108e6f1a431",
 			"name": "Get a capability tokens user1-OK",
 			"event": [
 				{
@@ -239,7 +235,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b6b3e8c1-6c6d-43f5-9d56-7b3049814255",
 			"name": "STOW with proxy RS-OK",
 			"event": [
 				{
@@ -282,7 +277,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e5bd4b95-7d26-47e5-a84e-02a9df497c1c",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -349,7 +343,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "b5640eb9-14f5-4a8f-bd54-f0216069380e",
 			"name": "STOW with proxy RS-Bad token",
 			"event": [
 				{
@@ -392,7 +385,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d3c79efb-293a-4f4f-82e8-58ea15f36b90",
 			"name": "Create a capability tokens user1 with expiration date-OK",
 			"event": [
 				{
@@ -450,13 +442,18 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
 							"type": "text"
 						},
 						{
 							"key": "expiration",
 							"value": "{{expiration}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -475,7 +472,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "1dcfbcd1-d19d-4e3f-9caf-9f7d0e1f9dce",
 			"name": "Revoke a capability tokens user1-OK",
 			"event": [
 				{
@@ -509,14 +505,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities/{{secret_capability_token}}/revoke",
+					"raw": "{{URL}}/authorization/capabilities/{{secret_capability_token_id}}/revoke",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
 						"authorization",
 						"capabilities",
-						"{{secret_capability_token}}",
+						"{{secret_capability_token_id}}",
 						"revoke"
 					]
 				}
@@ -524,7 +520,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e4898f5d-dc2d-497b-bf12-d323dee20c04",
 			"name": "Create a capability tokens-Bad user1 access token",
 			"event": [
 				{
@@ -570,8 +565,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -590,7 +590,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f44d6b8e-2d16-4519-ae7b-f4ae3747cdfd",
 			"name": "Create a capability tokens-Bad expiration date",
 			"event": [
 				{
@@ -635,13 +634,18 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
 							"type": "text"
 						},
 						{
 							"key": "expiration",
 							"value": "1st mai 2018",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -660,7 +664,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "7c74030c-6872-4228-9748-44f8398b81f9",
 			"name": "Create a capability tokens-Bad expiration date (old date)",
 			"event": [
 				{
@@ -718,13 +721,18 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
 							"type": "text"
 						},
 						{
 							"key": "expiration",
 							"value": "{{expiration}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -743,7 +751,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "114d3d38-9e7a-4008-a281-cbbc96864baa",
 			"name": "Create a capability tokens-Bad header accept",
 			"event": [
 				{
@@ -788,8 +795,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -808,7 +820,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "6e8b74da-3aac-4945-b27e-0424532046c8",
 			"name": "Create a capability tokens-Empty description",
 			"event": [
 				{
@@ -863,8 +874,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -883,7 +899,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "1cc9f79b-cb11-4910-8b5d-16a885d70bed",
 			"name": "Create a capability tokens-Bad description",
 			"event": [
 				{
@@ -938,8 +953,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -958,7 +978,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8d72a797-05a1-4a47-a6ad-aed8c71b0f09",
 			"name": "Get a capability tokens-Bad user1 access token",
 			"event": [
 				{
@@ -999,7 +1018,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "5b76c69d-d0b1-496a-a15d-c0e4c5d3ae8b",
 			"name": "Create a capability tokens user1-OK (for next step)",
 			"event": [
 				{
@@ -1054,8 +1072,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
@@ -1074,7 +1097,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "6c8e7464-68dc-4d85-b917-4da5ab506fbb",
 			"name": "Request capability tokens-OK",
 			"event": [
 				{
@@ -1150,7 +1172,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "37803f94-04a5-42a1-8ee3-2111a9f3a1f8",
 			"name": "Request capability tokens with scope-OK",
 			"event": [
 				{
@@ -1231,7 +1252,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "162b96e7-84de-4b50-a46b-fad307c33fef",
 			"name": "Request capability tokens-Bad scope",
 			"event": [
 				{
@@ -1299,7 +1319,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "bdd70e4c-b3be-417b-b961-0272e462f722",
 			"name": "Request capability tokens-Unknown capability token",
 			"event": [
 				{
@@ -1361,7 +1380,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "77e34ab4-cde3-4dbc-9869-e9e89b0b70bc",
 			"name": "Request capability tokens-Unknown grant type",
 			"event": [
 				{
