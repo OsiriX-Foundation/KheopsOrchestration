@@ -118,7 +118,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d9c71b70-4aeb-4b2e-83a9-fded292ac274",
+						"id": "07de49d5-4292-43e1-b4d9-2666ac439fc0",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
@@ -132,7 +132,8 @@
 							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
 							"",
 							"",
-							"pm.environment.set(\"secret_capability_token_id\", jsonObject.id);"
+							"pm.environment.set(\"secret_capability_token_id\", jsonObject.id);",
+							"pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
 						]
 					}
 				},
