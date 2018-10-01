@@ -168,8 +168,13 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
 							"type": "text"
 						}
 					]
