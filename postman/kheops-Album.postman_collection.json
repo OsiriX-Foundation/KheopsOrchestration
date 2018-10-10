@@ -9471,49 +9471,6 @@
 					"response": []
 				},
 				{
-					"name": "dcm4chee STOW RS",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"id": "7524252c-94ee-4cd1-8780-15785472765a",
-								"type": "text/javascript",
-								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-							}
-						],
-						"body": {
-							"mode": "file",
-							"file": {}
-						},
-						"url": {
-							"raw": "{{URL_PACS}}/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
-							"host": [
-								"{{URL_PACS}}"
-							],
-							"path": [
-								"dcm4chee-arc",
-								"aets",
-								"DCM4CHEE",
-								"rs",
-								"studies"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "user1 get studies list-Empty",
 					"event": [
 						{
@@ -9574,41 +9531,43 @@
 					"response": []
 				},
 				{
-					"name": "Appropriate series",
+					"name": "STOW RS inside inbox",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+								"id": "7524252c-94ee-4cd1-8780-15785472765a",
 								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 201\"] = responseCode.code === 201;"
+									"// ensure healthy response code",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
 								]
 							}
 						}
 					],
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+							},
 							{
 								"key": "Authorization",
 								"value": "Bearer {{access_token_user1}}"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": ""
+							"mode": "file",
+							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}",
+							"raw": "{{URL}}/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"studies",
-								"{{study_UID}}",
-								"series",
-								"{{series_UID}}"
+								"studies"
 							]
 						}
 					},
