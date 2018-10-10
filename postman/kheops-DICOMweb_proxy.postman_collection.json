@@ -61,12 +61,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/token",
+							"raw": "{{URL}}/token",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"token"
 							]
 						}
@@ -110,14 +109,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/capabilities/password/dicomweb/studies",
+							"raw": "{{URL}}/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"capabilities",
-								"password",
-								"dicomweb",
 								"studies"
 							]
 						}
@@ -152,14 +148,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/capabilities/password/dicomweb/studies",
+							"raw": "{{URL}}/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"capabilities",
-								"password",
-								"dicomweb",
 								"studies"
 							]
 						}
@@ -198,14 +191,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/capabilities/password/dicomweb/studies",
+							"raw": "{{URL}}/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"capabilities",
-								"password",
-								"dicomweb",
 								"studies"
 							]
 						}
@@ -262,12 +252,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/?inbox",
+							"raw": "{{URL}}/studies/?inbox",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								""
 							],
@@ -362,12 +351,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -406,14 +394,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/capabilities/password/dicomweb/studies?album={{album_id_1}}",
+							"raw": "{{URL}}/studies?album={{album_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"capabilities",
-								"password",
-								"dicomweb",
 								"studies"
 							],
 							"query": [
@@ -468,12 +453,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/?albums={{album_id_1}}",
+							"raw": "{{URL}}/studies/?albums={{album_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								""
 							],
@@ -519,14 +503,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/capabilities/password/dicomweb/studies?album={{album_id_1}}",
+							"raw": "{{URL}}/studies?album={{album_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"capabilities",
-								"password",
-								"dicomweb",
 								"studies"
 							],
 							"query": [

@@ -6,7 +6,6 @@
 	},
 	"item": [
 		{
-			"_postman_id": "8438e8a6-231a-413c-ad27-32cf23458f30",
 			"name": "create user1-create",
 			"event": [
 				{
@@ -59,12 +58,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -72,7 +70,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "032be5b7-f228-4ce9-bb44-361f938fd9cf",
 			"name": "dcm4chee STOW RS",
 			"event": [
 				{
@@ -116,7 +113,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2a8670e3-8a35-440a-b027-0c46eec2b3b1",
 			"name": "Give an user access to a specific series (first time)",
 			"event": [
 				{
@@ -143,12 +139,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -159,7 +154,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "c8b36c9a-15d5-45c6-928c-65ce54670068",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -213,12 +207,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -226,7 +219,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ab1a895d-f33c-4147-b005-790d22c41a7f",
 			"name": "Create a capability tokens user1-OK",
 			"event": [
 				{
@@ -288,12 +280,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -301,7 +292,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "d12812f6-4709-4636-b219-b8764388c9a6",
 			"name": "Download zip stream",
 			"event": [
 				{
@@ -319,30 +309,35 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{secret_capability_token}}"
-					}
-				],
+				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/zipper/studies/{{study_UID}}/stream",
+					"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=ZIP",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"zipper",
-						"studies",
-						"{{study_UID}}",
-						"stream"
+						"wado"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{JWT_study_series}}"
+						},
+						{
+							"key": "studyUID",
+							"value": "{{study_UID}}"
+						},
+						{
+							"key": "requestType",
+							"value": "ZIP"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"_postman_id": "fc41d991-7d6c-4d15-908b-4acbd3f0cd7f",
 			"name": "Download zip stream Bad study UID",
 			"event": [
 				{
@@ -359,30 +354,35 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{secret_capability_token}}"
-					}
-				],
+				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/zipper/studies/{{study_UID}}1/stream",
+					"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}11&requestType=WADO",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"zipper",
-						"studies",
-						"{{study_UID}}1",
-						"stream"
+						"wado"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{JWT_study_series}}"
+						},
+						{
+							"key": "studyUID",
+							"value": "{{study_UID}}11"
+						},
+						{
+							"key": "requestType",
+							"value": "WADO"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"_postman_id": "8a505bae-9142-400e-ac56-6fecc91dfae0",
 			"name": "Download zip stream Bad token",
 			"event": [
 				{
@@ -398,23 +398,29 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer 123456789"
-					}
-				],
+				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/zipper/studies/{{study_UID}}/stream",
+					"raw": "{{URL}}/wado?access_token=123456789&studyUID={{study_UID}}&requestType=WADO",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"zipper",
-						"studies",
-						"{{study_UID}}",
-						"stream"
+						"wado"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "123456789"
+						},
+						{
+							"key": "studyUID",
+							"value": "{{study_UID}}"
+						},
+						{
+							"key": "requestType",
+							"value": "WADO"
+						}
 					]
 				}
 			},

@@ -1,13 +1,12 @@
 {
 	"info": {
-		"_postman_id": "85ae828f-49f1-4e65-9174-8d222ea1da59",
+		"_postman_id": "af0b4dc3-7757-4968-95ab-c3f884b12934",
 		"name": "kheops-proxy_pacs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "post",
-			"description": "",
 			"item": [
 				{
 					"name": "STOW-RS Store Instances-OK",
@@ -41,12 +40,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies",
+							"raw": "{{URL}}/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies"
 							]
 						}
@@ -85,12 +83,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -130,12 +127,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -175,12 +171,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -220,12 +215,11 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -237,7 +231,6 @@
 		},
 		{
 			"name": "wado-uri",
-			"description": "",
 			"item": [
 				{
 					"name": "studyUID-OK",
@@ -257,14 +250,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=WADO",
+							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -303,14 +298,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&requestType=WADO",
+							"raw": "{{URL}}/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -349,14 +346,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -399,14 +398,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -449,14 +450,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_study_badSeries}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/wado?access_token={{JWT_study_badSeries}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -499,14 +502,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}&requestType=WADO",
+							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -553,14 +558,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}33&requestType=WADO",
+							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}33&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -607,14 +614,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}",
+							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -649,14 +658,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=XXX",
+							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=XXX",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"wado"
 							],
 							"query": [
@@ -681,7 +692,6 @@
 		},
 		{
 			"name": "wado-rs",
-			"description": "",
 			"item": [
 				{
 					"name": "studyUID-OK",
@@ -706,14 +716,16 @@
 								"value": "Bearer {{JWT_study_allAccess}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -744,14 +756,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -782,14 +796,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -822,14 +838,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}99/series/{{series_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}99/series/{{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}99",
 								"series",
@@ -862,14 +880,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}99",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -902,14 +922,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -944,14 +966,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}99",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -986,14 +1010,16 @@
 								"value": "Bearer {{JWT_study_allAccess}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/metadata",
+							"raw": "{{URL}}/studies/{{study_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"metadata"
@@ -1025,14 +1051,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/metadata",
+							"raw": "{{URL}}/studies/{{study_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"metadata"
@@ -1064,14 +1092,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}/metadata",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1105,14 +1135,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}99/series/{{series_UID}}/metadata",
+							"raw": "{{URL}}/studies/{{study_UID}}99/series/{{series_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}99",
 								"series",
@@ -1146,14 +1178,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}99",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1186,14 +1220,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}/metadata",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1210,7 +1246,6 @@
 		},
 		{
 			"name": "qido-rs",
-			"description": "",
 			"item": [
 				{
 					"name": "studyUID-OK",
@@ -1235,14 +1270,16 @@
 								"value": "Bearer {{JWT_study_allAccess}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies?StudyInstanceUID={{study_UID}}",
+							"raw": "{{URL}}/studies?StudyInstanceUID={{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies"
 							],
 							"query": [
@@ -1278,14 +1315,16 @@
 								"value": "Bearer {{JWT_study_allAccess}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies?StudyInstanceUID={{study_UID}}99",
+							"raw": "{{URL}}/studies?StudyInstanceUID={{study_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies"
 							],
 							"query": [
@@ -1321,14 +1360,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series"
@@ -1366,14 +1407,16 @@
 								"value": "Bearer {{JWT_study_series}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}99",
+							"raw": "{{URL}}/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series"
@@ -1392,7 +1435,6 @@
 		},
 		{
 			"name": "other",
-			"description": "",
 			"item": [
 				{
 					"name": "accessToken in query parameter-OK",
@@ -1412,14 +1454,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_study_series}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_study_series}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1453,14 +1497,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "{{URL}}/dicomweb/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_expired}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_expired}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"dicomweb",
 								"studies",
 								"{{study_UID}}",
 								"series",

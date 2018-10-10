@@ -6,7 +6,6 @@
 	},
 	"item": [
 		{
-			"_postman_id": "e5c2ac5e-8f49-4ec0-ab31-741c22e9b742",
 			"name": "create user1-create",
 			"event": [
 				{
@@ -59,12 +58,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -72,7 +70,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f43f8be2-8e08-4913-86df-4a65a47c3162",
 			"name": "create user2-create",
 			"event": [
 				{
@@ -126,12 +123,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -139,7 +135,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "84e17493-3437-4166-b3ca-f266d95718be",
 			"name": "user1 get studies list-Empty",
 			"event": [
 				{
@@ -173,12 +168,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -186,7 +180,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "95982980-bf83-4bac-8868-c017672bf584",
 			"name": "user1 get studies list-Bad access_token",
 			"event": [
 				{
@@ -219,12 +212,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -232,7 +224,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "226f92d3-8d45-42be-935d-c519134c75fb",
 			"name": "user1 get studies list-Bad accept",
 			"event": [
 				{
@@ -264,12 +255,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -277,7 +267,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "62eb0e58-de21-43fd-a378-7965c56c98c9",
 			"name": "dcm4chee STOW RS",
 			"event": [
 				{
@@ -321,7 +310,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "016b481a-3561-4685-9101-2afb5291ccd7",
 			"name": "Give an user access to a specific series (first time)",
 			"event": [
 				{
@@ -348,12 +336,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -364,7 +351,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "658d1824-b0fd-4bb2-b167-eb50cb53de09",
 			"name": "user1 get studies list-1studie",
 			"event": [
 				{
@@ -418,12 +404,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -431,7 +416,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "04e2f40c-3c8c-4413-ac7b-67dab017c6ac",
 			"name": "user2 get studies list-Empty",
 			"event": [
 				{
@@ -465,12 +449,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -478,7 +461,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3a6ef5bf-c36e-4710-943e-25ac167da566",
 			"name": "Give to user2 an access to a specific series from user1",
 			"event": [
 				{
@@ -505,12 +487,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}",
+					"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"{{study_UID}}",
 						"series",
@@ -523,7 +504,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "2ecb15fc-2569-42cc-8772-1b877640749b",
 			"name": "user2 get studies list-1 studie",
 			"event": [
 				{
@@ -560,12 +540,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -573,7 +552,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "8fe7d770-a0e1-414a-bbff-c9032d24790c",
 			"name": "Study Metadata",
 			"event": [
 				{
@@ -608,12 +586,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"{{study_UID}}",
 						"metadata"
@@ -623,7 +600,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "e990a61f-fb62-402f-801b-79dde8b1273b",
 			"name": "Study Metadata-study_UID doesn't existe",
 			"event": [
 				{
@@ -656,12 +632,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/{{study_UID}}99/metadata",
+					"raw": "{{URL}}/studies/{{study_UID}}99/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"{{study_UID}}99",
 						"metadata"
@@ -671,7 +646,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "9d9f9ffd-1289-4058-856f-bc6daa1d9982",
 			"name": "Study Metadata-study_UID not valid",
 			"event": [
 				{
@@ -704,12 +678,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/9999/metadata",
+					"raw": "{{URL}}/studies/9999/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"9999",
 						"metadata"
@@ -719,7 +692,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "be649db3-4572-4a2e-a3f2-77c24eb49d50",
 			"name": "Study Metadata-Bad access token",
 			"event": [
 				{
@@ -752,12 +724,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"{{study_UID}}",
 						"metadata"
@@ -767,7 +738,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "ce0c4a35-7661-440a-b46e-6031fa9bb072",
 			"name": "Study Metadata-Bad accept",
 			"event": [
 				{
@@ -800,12 +770,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies/{{study_UID}}/metadata",
+					"raw": "{{URL}}/studies/{{study_UID}}/metadata",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies",
 						"{{study_UID}}",
 						"metadata"

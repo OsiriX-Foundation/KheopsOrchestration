@@ -58,12 +58,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -100,12 +99,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -180,12 +178,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -228,12 +225,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -268,14 +264,13 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL}}/capabilities/{{secret_capability_token}}/dicomweb/studies",
+					"raw": "{{URL}}/link/{{secret_capability_token}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"capabilities",
+						"link",
 						"{{secret_capability_token}}",
-						"dicomweb",
 						"studies"
 					]
 				}
@@ -336,12 +331,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/studies",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"studies"
 					]
 				}
@@ -376,14 +370,13 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL}}/capabilities/9999999/dicomweb/studies",
+					"raw": "{{URL}}/link/9999999/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"capabilities",
+						"link",
 						"9999999",
-						"dicomweb",
 						"studies"
 					]
 				}
@@ -465,12 +458,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -511,12 +503,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities/{{secret_capability_token_id}}/revoke",
+					"raw": "{{URL}}/capabilities/{{secret_capability_token_id}}/revoke",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities",
 						"{{secret_capability_token_id}}",
 						"revoke"
@@ -583,12 +574,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -657,12 +647,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -744,12 +733,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -813,12 +801,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -892,12 +879,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -971,12 +957,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -1011,12 +996,11 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -1090,12 +1074,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/capabilities",
+					"raw": "{{URL}}/capabilities",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"capabilities"
 					]
 				}
@@ -1165,12 +1148,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -1245,12 +1227,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -1312,12 +1293,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -1373,12 +1353,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
@@ -1438,12 +1417,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{URL}}/authorization/token",
+					"raw": "{{URL}}/token",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"authorization",
 						"token"
 					]
 				}
