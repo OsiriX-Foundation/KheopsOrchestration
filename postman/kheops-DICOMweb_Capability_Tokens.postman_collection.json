@@ -348,11 +348,11 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "46b2a9a0-7b01-4c06-881e-f187487eb856",
+						"id": "b14b7732-6f86-408e-91c2-81d0546f12e6",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
-							"tests[\"Status code is 500\"] = responseCode.code === 500;"
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
 						]
 					}
 				}

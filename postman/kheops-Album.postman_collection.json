@@ -9597,18 +9597,10 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "ec827ea4-26ee-4f3d-9b96-bf373cb9b0aa",
+								"id": "ae9ce291-c4c8-45b5-87f3-d8dda0da528f",
 								"type": "text/javascript",
 								"exec": [
-									"function wait(ms)",
-									"{",
-									"    var d = new Date();",
-									"    var d2 = null;",
-									"    do { d2 = new Date(); }",
-									"    while(d2-d < ms);",
-									"}",
-									"",
-									"wait(5000);"
+									""
 								]
 							}
 						}
