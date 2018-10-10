@@ -61,12 +61,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/token",
+							"raw": "{{URL}}/token",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"token"
 							]
 						}
@@ -127,12 +126,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/token",
+							"raw": "{{URL}}/token",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"token"
 							]
 						}
@@ -193,12 +191,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/token",
+							"raw": "{{URL}}/token",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"token"
 							]
 						}
@@ -271,12 +268,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -391,12 +387,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -490,12 +485,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -632,12 +626,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -734,12 +727,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -831,12 +823,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"raw": "{{URL}}/album/{{album_id_3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}"
 							]
@@ -905,12 +896,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -968,12 +958,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/1",
+							"raw": "{{URL}}/album/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"1"
 							]
@@ -1032,12 +1021,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/999",
+							"raw": "{{URL}}/album/999",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"999"
 							]
@@ -1175,12 +1163,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"raw": "{{URL}}/album/{{album_id_3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}"
 							]
@@ -1288,12 +1275,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"raw": "{{URL}}/album/{{album_id_3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}"
 							]
@@ -1343,12 +1329,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_id_3}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}",
 								"users",
@@ -1444,12 +1429,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"raw": "{{URL}}/album/{{album_id_3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}"
 							]
@@ -1554,12 +1538,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"raw": "{{URL}}/album/{{album_id_3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}"
 							]
@@ -1657,12 +1640,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}",
+							"raw": "{{URL}}/album/{{album_id_3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}"
 							]
@@ -1712,12 +1694,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_3}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_id_3}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_3}}",
 								"users",
@@ -1792,12 +1773,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?name=name 1",
+							"raw": "{{URL}}/album?name=name 1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -1871,12 +1851,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?name=name*",
+							"raw": "{{URL}}/album?name=name*",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -1954,12 +1933,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?name=*me 1",
+							"raw": "{{URL}}/album?name=*me 1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2033,12 +2011,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?name=*me*",
+							"raw": "{{URL}}/album?name=*me*",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2112,12 +2089,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?name=nm&fuzzymatching=true",
+							"raw": "{{URL}}/album?name=nm&fuzzymatching=true",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2195,12 +2171,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?favorite=true",
+							"raw": "{{URL}}/album?favorite=true",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2274,12 +2249,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?favorite=false",
+							"raw": "{{URL}}/album?favorite=false",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2379,12 +2353,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?limit=1&offset=1",
+							"raw": "{{URL}}/album?limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2452,12 +2425,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?limit=aaa",
+							"raw": "{{URL}}/album?limit=aaa",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2521,12 +2493,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?limit=-3",
+							"raw": "{{URL}}/album?limit=-3",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2604,12 +2575,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?sort=-name",
+							"raw": "{{URL}}/album?sort=-name",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2687,12 +2657,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?sort=name",
+							"raw": "{{URL}}/album?sort=name",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2770,12 +2739,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?sort=created_time",
+							"raw": "{{URL}}/album?sort=created_time",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2853,12 +2821,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?sort=-created_time",
+							"raw": "{{URL}}/album?sort=-created_time",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -2911,12 +2878,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/1",
+							"raw": "{{URL}}/album/1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"1"
 							]
@@ -2964,12 +2930,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/999",
+							"raw": "{{URL}}/album/999",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"999"
 							]
@@ -3015,12 +2980,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_1}}",
+							"raw": "{{URL}}/album/{{album_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_1}}"
 							]
@@ -3131,12 +3095,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -3185,12 +3148,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}",
 								"users",
@@ -3242,12 +3204,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}",
 								"favorites"
@@ -3315,12 +3276,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}"
 							]
@@ -3388,12 +3348,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}"
 							]
@@ -3466,12 +3425,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album?favorite=true",
+							"raw": "{{URL}}/album?favorite=true",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							],
 							"query": [
@@ -3526,12 +3484,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}",
 								"favorites"
@@ -3599,12 +3556,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}"
 							]
@@ -3656,12 +3612,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/1/favorites",
+							"raw": "{{URL}}/album/1/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"1",
 								"favorites"
@@ -3712,12 +3667,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}",
 								"users",
@@ -3771,12 +3725,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}",
 								"favorites"
@@ -3829,12 +3782,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/99/favorites",
+							"raw": "{{URL}}/album/99/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"99",
 								"favorites"
@@ -3887,12 +3839,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_favorite_id_1}}/favorites",
+							"raw": "{{URL}}/album/{{album_favorite_id_1}}/favorites",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_favorite_id_1}}",
 								"favorites"
@@ -4004,12 +3955,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -4075,12 +4025,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -4131,12 +4080,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -4205,12 +4153,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}"
 							]
@@ -4281,12 +4228,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -4337,12 +4283,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -4416,12 +4361,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -4472,12 +4416,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -4551,12 +4494,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -4607,12 +4549,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -4681,12 +4622,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}"
 							]
@@ -4754,12 +4694,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -4810,12 +4749,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -4888,12 +4826,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -4944,12 +4881,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5018,12 +4954,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -5074,12 +5009,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5131,12 +5065,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5188,12 +5121,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5266,12 +5198,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -5322,12 +5253,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5380,12 +5310,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user1}}/admin",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user1}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5438,12 +5367,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5517,12 +5445,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -5573,12 +5500,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5647,12 +5573,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}"
 							]
@@ -5702,12 +5627,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user1}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5759,12 +5683,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/{{user1}}",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/{{user1}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5818,12 +5741,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users/11111111",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users/11111111",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users",
@@ -5896,12 +5818,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_user_id_1}}/users",
+							"raw": "{{URL}}/album/{{album_user_id_1}}/users",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_user_id_1}}",
 								"users"
@@ -5980,12 +5901,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -6043,12 +5963,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"comments"
@@ -6122,12 +6041,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -6211,12 +6129,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"comments"
@@ -6281,12 +6198,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"comments"
@@ -6337,12 +6253,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_id_comment}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"users",
@@ -6394,12 +6309,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/users/{{user3}}",
+							"raw": "{{URL}}/album/{{album_id_comment}}/users/{{user3}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"users",
@@ -6465,12 +6379,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"comments"
@@ -6565,12 +6478,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -6671,12 +6583,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -6767,12 +6678,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -6863,12 +6773,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=2",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -6963,12 +6872,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=2",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7064,12 +6972,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=2",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7162,12 +7069,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&offset=1",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7260,12 +7166,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&offset=1",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7349,12 +7254,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&offset=1",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7438,12 +7342,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7532,12 +7435,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7625,12 +7527,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
+							"raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}",
 								"events"
@@ -7714,12 +7615,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}",
+							"raw": "{{URL}}/album/{{album_id_comment}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}"
 							]
@@ -7788,12 +7688,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}",
+							"raw": "{{URL}}/album/{{album_id_comment}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}"
 							]
@@ -7862,12 +7761,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_comment}}",
+							"raw": "{{URL}}/album/{{album_id_comment}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_comment}}"
 							]
@@ -7945,12 +7843,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -8031,12 +7928,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -8097,12 +7993,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"users",
@@ -8187,12 +8082,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -8253,12 +8147,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"users",
@@ -8341,12 +8234,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -8407,12 +8299,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"users",
@@ -8498,12 +8389,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -8564,12 +8454,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"users",
@@ -8655,12 +8544,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -8721,12 +8609,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}/admin",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/users/{{user2}}/admin",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"users",
@@ -8812,12 +8699,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -8878,12 +8764,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"users",
@@ -8968,12 +8853,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -9058,12 +8942,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -9129,12 +9012,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/comments",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"comments"
@@ -9194,12 +9076,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/comments",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"comments"
@@ -9259,12 +9140,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/comments",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"comments"
@@ -9339,12 +9219,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=comments",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -9416,12 +9295,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events?types=mutations&types=comments",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&types=comments",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -9498,12 +9376,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_mutation}}/events",
+							"raw": "{{URL}}/album/{{album_id_mutation}}/events",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_mutation}}",
 								"events"
@@ -9582,12 +9459,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -9679,12 +9555,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/?inbox",
+							"raw": "{{URL}}/studies/?inbox",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								""
 							],
@@ -9725,12 +9600,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/series/{{series_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -9790,12 +9664,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/?inbox",
+							"raw": "{{URL}}/studies/?inbox",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								""
 							],
@@ -9836,12 +9709,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing}}?inbox=",
+							"raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_sharing}}?inbox=",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}",
 								"albums",
@@ -9899,12 +9771,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/?albums={{album_id_sharing}}",
+							"raw": "{{URL}}/studies/?albums={{album_id_sharing}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								""
 							],
@@ -9960,12 +9831,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/?inbox",
+							"raw": "{{URL}}/studies/?inbox",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								""
 							],
@@ -10006,12 +9876,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/users/{{user2}}?inbox=true",
+							"raw": "{{URL}}/studies/{{study_UID}}/users/{{user2}}?inbox=true",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}",
 								"users",
@@ -10069,12 +9938,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/",
+							"raw": "{{URL}}/studies/",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								""
 							]
@@ -10109,12 +9977,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_sharing}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}",
 								"albums",
@@ -10199,12 +10066,11 @@
 							]
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/album",
+							"raw": "{{URL}}/album",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album"
 							]
 						}
@@ -10253,12 +10119,11 @@
 						],
 						"body": {},
 						"url": {
-							"raw": "{{URL}}/authorization/album/{{album_id_sharing2}}/users/{{user2}}",
+							"raw": "{{URL}}/album/{{album_id_sharing2}}/users/{{user2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"album",
 								"{{album_id_sharing2}}",
 								"users",
@@ -10295,12 +10160,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing2}}?inbox=",
+							"raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_sharing2}}?inbox=",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}",
 								"albums",
@@ -10343,12 +10207,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing2}}?inbox=",
+							"raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_sharing2}}?inbox=",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}",
 								"albums",
@@ -10391,12 +10254,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}/albums/{{album_id_sharing2}}",
+							"raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_sharing2}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}",
 								"albums",
@@ -10433,12 +10295,11 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/authorization/studies/{{study_UID}}",
+							"raw": "{{URL}}/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"authorization",
 								"studies",
 								"{{study_UID}}"
 							]
