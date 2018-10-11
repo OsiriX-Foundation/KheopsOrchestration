@@ -273,8 +273,23 @@
 					"mode": "urlencoded",
 					"urlencoded": [
 						{
-							"key": "description",
+							"key": "title",
 							"value": "{{description}}",
+							"type": "text"
+						},
+						{
+							"key": "scope_type",
+							"value": "user",
+							"type": "text"
+						},
+						{
+							"key": "read_permission",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "write_permission",
+							"value": "true",
 							"type": "text"
 						}
 					]
@@ -357,7 +372,7 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}11&requestType=WADO",
+					"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}11&requestType=ZIP",
 					"host": [
 						"{{URL}}"
 					],
@@ -375,7 +390,7 @@
 						},
 						{
 							"key": "requestType",
-							"value": "WADO"
+							"value": "ZIP"
 						}
 					]
 				}
@@ -401,7 +416,7 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/wado?access_token=123456789&studyUID={{study_UID}}&requestType=WADO",
+					"raw": "{{URL}}/wado?access_token=123456789&studyUID={{study_UID}}&requestType=ZIP",
 					"host": [
 						"{{URL}}"
 					],
@@ -419,7 +434,7 @@
 						},
 						{
 							"key": "requestType",
-							"value": "WADO"
+							"value": "ZIP"
 						}
 					]
 				}
