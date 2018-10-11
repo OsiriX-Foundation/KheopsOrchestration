@@ -9536,11 +9536,23 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "7524252c-94ee-4cd1-8780-15785472765a",
+								"id": "1f0b6411-85a8-4d45-af56-a6b98543d42e",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"",
+									"tests[\"[INFO] Response: \" + responseBody] = true;",
+									"",
+									"function wait(ms)",
+									"{",
+									"    var d = new Date();",
+									"    var d2 = null;\",",
+									"    do { d2 = new Date(); }",
+									"    while(d2-d < ms);",
+									"}",
+									"",
+									"wait(3000)"
 								]
 							}
 						}
