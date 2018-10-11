@@ -324,10 +324,15 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{secret_capability_token}}"
+					}
+				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=ZIP",
+					"raw": "{{URL}}/wado?studyUID={{study_UID}}&requestType=ZIP",
 					"host": [
 						"{{URL}}"
 					],
@@ -336,9 +341,54 @@
 					],
 					"query": [
 						{
-							"key": "access_token",
-							"value": "{{JWT_study_series}}"
+							"key": "studyUID",
+							"value": "{{study_UID}}"
 						},
+						{
+							"key": "requestType",
+							"value": "ZIP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download zip stream link",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{secret_capability_token}}"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{URL}}/link/{{secret_capability_token}}/wado?studyUID={{study_UID}}&requestType=ZIP",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"link",
+						"{{secret_capability_token}}",
+						"wado"
+					],
+					"query": [
 						{
 							"key": "studyUID",
 							"value": "{{study_UID}}"
@@ -369,10 +419,15 @@
 			],
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{secret_capability_token}}"
+					}
+				],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}11&requestType=ZIP",
+					"raw": "{{URL}}/wado?studyUID={{study_UID}}11&requestType=ZIP",
 					"host": [
 						"{{URL}}"
 					],
@@ -381,16 +436,16 @@
 					],
 					"query": [
 						{
-							"key": "access_token",
-							"value": "{{JWT_study_series}}"
-						},
-						{
 							"key": "studyUID",
 							"value": "{{study_UID}}11"
 						},
 						{
 							"key": "requestType",
 							"value": "ZIP"
+						},
+						{
+							"key": null,
+							"value": null
 						}
 					]
 				}
@@ -416,18 +471,16 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "{{URL}}/wado?access_token=123456789&studyUID={{study_UID}}&requestType=ZIP",
+					"raw": "{{URL}}/link/12345678/wado?studyUID={{study_UID}}&requestType=ZIP",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
+						"link",
+						"12345678",
 						"wado"
 					],
 					"query": [
-						{
-							"key": "access_token",
-							"value": "123456789"
-						},
 						{
 							"key": "studyUID",
 							"value": "{{study_UID}}"
@@ -435,6 +488,10 @@
 						{
 							"key": "requestType",
 							"value": "ZIP"
+						},
+						{
+							"key": null,
+							"value": null
 						}
 					]
 				}
