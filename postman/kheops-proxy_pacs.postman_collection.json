@@ -40,12 +40,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/testauthorizationproxy /studies",
+							"raw": "{{URL}}/testauthorizationproxy/studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
-								"testauthorizationproxy ",
+								"testauthorizationproxy",
 								"studies"
 							]
 						}
