@@ -238,16 +238,16 @@
 			"name": "wado-uri",
 			"item": [
 				{
-					"name": "studyUID-OK",
+					"name": "studyUID only -Unauthorized",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
-								"id": "1fd02f40-3341-4b6e-a249-95989351e8e7",
+								"id": "724638c7-7c03-45f7-acfd-f4bc4a47c0b3",
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"tests[\"Status code is 401\"] = responseCode.code === 401;"
 								]
 							}
 						}
@@ -309,7 +309,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
@@ -325,6 +325,10 @@
 								{
 									"key": "studyUID",
 									"value": "{{study_UID}}"
+								},
+								{
+									"key": "seriesUID",
+									"value": "{{series_UID}}"
 								},
 								{
 									"key": "requestType",
