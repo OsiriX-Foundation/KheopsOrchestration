@@ -40,11 +40,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/studies",
+							"raw": "{{URL}}/testauthorizationproxy /studies",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy ",
 								"studies"
 							]
 						}
@@ -83,11 +84,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -127,11 +129,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -171,11 +174,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -215,11 +219,12 @@
 							"file": {}
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -255,11 +260,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -303,11 +309,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -351,11 +358,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -403,11 +411,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -455,11 +464,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_study_badSeries}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_badSeries}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -507,11 +517,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -563,11 +574,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}33&requestType=WADO",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}33&requestType=WADO",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -619,11 +631,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -663,11 +676,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=XXX",
+							"raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=XXX",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"wado"
 							],
 							"query": [
@@ -721,11 +735,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -761,11 +776,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}"
 							]
@@ -801,11 +817,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -843,11 +860,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}99/series/{{series_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}99/series/{{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}99",
 								"series",
@@ -885,11 +903,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}99",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -927,11 +946,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -971,11 +991,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}99",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1015,11 +1036,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/metadata",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"metadata"
@@ -1056,11 +1078,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/metadata",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"metadata"
@@ -1097,11 +1120,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/metadata",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1140,11 +1164,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}99/series/{{series_UID}}/metadata",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}99/series/{{series_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}99",
 								"series",
@@ -1183,11 +1208,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}99",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1225,11 +1251,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}/metadata",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}/metadata",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1275,11 +1302,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies?StudyInstanceUID={{study_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies?StudyInstanceUID={{study_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies"
 							],
 							"query": [
@@ -1320,11 +1348,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies?StudyInstanceUID={{study_UID}}99",
+							"raw": "{{URL}}/testauthorizationproxy/studies?StudyInstanceUID={{study_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies"
 							],
 							"query": [
@@ -1365,11 +1394,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series"
@@ -1412,11 +1442,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}99",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}99",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series"
@@ -1459,11 +1490,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_study_series}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_study_series}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",
@@ -1502,11 +1534,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_expired}}",
+							"raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_expired}}",
 							"host": [
 								"{{URL}}"
 							],
 							"path": [
+								"testauthorizationproxy",
 								"studies",
 								"{{study_UID}}",
 								"series",

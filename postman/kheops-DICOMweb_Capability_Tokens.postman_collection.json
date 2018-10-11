@@ -389,7 +389,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f00dd5f5-8c8a-4329-9740-48b23c7fbeac",
+						"id": "bba8cff6-16b9-48bc-98e2-ae189febdd3b",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
@@ -400,7 +400,7 @@
 							"",
 							"var jsonObject = JSON.parse(responseBody);",
 							"",
-							"tests[\"Expiration date is correct\"] = jsonObject.expiration === pm.environment.get(\"expiration\");",
+							"tests[\"Expiration date is correct\"] = jsonObject.expiration_date === pm.environment.get(\"expiration\");",
 							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"description\");",
 							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
 							"",
@@ -664,7 +664,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f00dd5f5-8c8a-4329-9740-48b23c7fbeac",
+						"id": "bc16fcb7-f6c9-4a7d-9eaf-247fadc0cdc8",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
@@ -675,7 +675,7 @@
 							"",
 							"var jsonObject = JSON.parse(responseBody);",
 							"",
-							"tests[\"Expiration date is correct\"] = jsonObject.expiration === pm.environment.get(\"expiration\");",
+							"tests[\"Expiration date is correct\"] = jsonObject.expiration_date === pm.environment.get(\"expiration\");",
 							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"description\");",
 							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
 							"",
