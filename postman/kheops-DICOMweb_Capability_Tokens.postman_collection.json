@@ -1111,11 +1111,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "54963654-bd26-4abe-ab25-b608f724ebff",
+						"id": "7effe4f5-4f58-4c23-b974-3712291280d5",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"[INFO] Response: \" + responseBody] = true;",
 							"",
 							"var jsonObject = JSON.parse(responseBody);",
 							"",
