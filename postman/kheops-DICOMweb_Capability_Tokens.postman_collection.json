@@ -1111,9 +1111,18 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+						"id": "6e3972b6-2088-44cf-9983-853b049d15b5",
 						"type": "text/javascript",
 						"exec": [
+							"function wait(ms)",
+							"{",
+							"    var d = new Date();",
+							"    var d2 = null;\",",
+							"    do { d2 = new Date(); }",
+							"    while(d2-d < ms);",
+							"}",
+							"",
+							"wait(3000)",
 							""
 						]
 					}
