@@ -1131,7 +1131,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "bf5e8c83-bbe9-4360-a946-cedfcd0c348f",
+						"id": "393268b9-cedb-4163-8a03-f660a9373da6",
 						"type": "text/javascript",
 						"exec": [
 							"function wait(ms)",
@@ -1142,7 +1142,7 @@
 							"    while(d2-d < ms);",
 							"}",
 							"",
-							"wait(3000)",
+							"wait(1000)",
 							""
 						]
 					}
