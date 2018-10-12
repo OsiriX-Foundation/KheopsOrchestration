@@ -456,7 +456,7 @@
 							"type": "text"
 						},
 						{
-							"key": "expiration",
+							"key": "expiration_time",
 							"value": "{{expiration}}",
 							"type": "text"
 						},
