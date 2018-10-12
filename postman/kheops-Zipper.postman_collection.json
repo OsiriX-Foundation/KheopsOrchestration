@@ -175,7 +175,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "44360ffc-dcfe-4475-95d2-f679d53359af",
+						"id": "45c0c8f5-b3d4-4cec-9f0f-d39d256dd371",
 						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
@@ -185,7 +185,7 @@
 							"",
 							"var jsonObject = JSON.parse(responseBody);",
 							"",
-							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"description\");",
+							"tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
 							"tests[\"Revoked is false\"] = jsonObject.revoked === false;",
 							"",
 							"",
