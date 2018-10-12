@@ -70,7 +70,7 @@
 			"response": []
 		},
 		{
-			"name": "dcm4chee STOW RS",
+			"name": "STOW RS inside inbox user 1",
 			"event": [
 				{
 					"listen": "test",
@@ -90,6 +90,10 @@
 					{
 						"key": "Content-Type",
 						"value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token_user1}}"
 					}
 				],
 				"body": {
@@ -97,57 +101,12 @@
 					"file": {}
 				},
 				"url": {
-					"raw": "{{URL_PACS}}/dcm4chee-arc/aets/DCM4CHEE/rs/studies",
-					"host": [
-						"{{URL_PACS}}"
-					],
-					"path": [
-						"dcm4chee-arc",
-						"aets",
-						"DCM4CHEE",
-						"rs",
-						"studies"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Give an user access to a specific series (first time)",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is 201\"] = responseCode.code === 201;"
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer {{access_token_user1}}"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
-				"url": {
-					"raw": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}",
+					"raw": "{{URL}}/studies",
 					"host": [
 						"{{URL}}"
 					],
 					"path": [
-						"studies",
-						"{{study_UID}}",
-						"series",
-						"{{series_UID}}"
+						"studies"
 					]
 				}
 			},
@@ -174,18 +133,10 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
+						"id": "fbf4e0e6-dc5f-4d19-8857-6ec861ef624e",
 						"type": "text/javascript",
 						"exec": [
-							"function wait(ms)",
-							"{",
-							"    var d = new Date();",
-							"    var d2 = null;",
-							"    do { d2 = new Date(); }",
-							"    while(d2-d < ms);",
-							"}",
-							"",
-							"wait(15000);"
+							""
 						]
 					}
 				}
