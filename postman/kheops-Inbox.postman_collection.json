@@ -481,13 +481,13 @@
 					"listen": "test",
 					"script": {
 						"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
-						"type": "text/javascript",
 						"exec": [
-							"// ensure healthy response code",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Status code is 204\"] = responseCode.code === 204;",
 							"",
-							"tests[\"Empty response []\"] = responseBody === \"[]\""
-						]
+							"tests[\"Empty response\"] = responseBody == \"\"",
+							""
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1198,13 +1198,13 @@
 					"listen": "test",
 					"script": {
 						"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
-						"type": "text/javascript",
 						"exec": [
-							"// ensure healthy response code",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Status code is 204\"] = responseCode.code === 204;",
 							"",
-							"tests[\"Empty response []\"] = responseBody === \"[]\""
-						]
+							"tests[\"Empty response\"] = responseBody == \"\"",
+							""
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -1668,13 +1668,13 @@
 					"listen": "test",
 					"script": {
 						"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
-						"type": "text/javascript",
 						"exec": [
-							"// ensure healthy response code",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Status code is 204\"] = responseCode.code === 204;",
 							"",
-							"tests[\"Empty response []\"] = responseBody === \"[]\""
-						]
+							"tests[\"Empty response\"] = responseBody == \"\"",
+							""
+						],
+						"type": "text/javascript"
 					}
 				}
 			],

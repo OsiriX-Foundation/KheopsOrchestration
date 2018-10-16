@@ -9477,28 +9477,23 @@
 							"listen": "test",
 							"script": {
 								"id": "ecfbfd8c-6ada-4524-bfcc-b227972a4a14",
-								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"Status code is 204\"] = responseCode.code === 204;",
 									"",
-									"tests[\"Empty response []\"] = responseBody == \"[]\"",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
-									"",
-									"tests[\"[INFO] Response: \" + responseBody] = true;"
-								]
+									"tests[\"Empty response\"] = responseBody == \"\"",
+									""
+								],
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "33ba6afb-79c2-48b1-bead-9aef63edcdb4",
-								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -9747,28 +9742,23 @@
 							"listen": "test",
 							"script": {
 								"id": "ecfbfd8c-6ada-4524-bfcc-b227972a4a14",
-								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"Status code is 204\"] = responseCode.code === 204;",
 									"",
-									"tests[\"Empty response []\"] = responseBody == \"[]\"",
-									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
-									"",
-									"tests[\"[INFO] Response: \" + responseBody] = true;"
-								]
+									"tests[\"Empty response\"] = responseBody == \"\"",
+									""
+								],
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "33ba6afb-79c2-48b1-bead-9aef63edcdb4",
-								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],

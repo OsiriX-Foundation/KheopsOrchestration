@@ -79,13 +79,13 @@
 							"listen": "test",
 							"script": {
 								"id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
-								"type": "text/javascript",
 								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"Status code is 204\"] = responseCode.code === 204;",
 									"",
-									"tests[\"Empty response []\"] = responseBody === \"[]\""
-								]
+									"tests[\"Empty response\"] = responseBody == \"\"",
+									""
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1233,17 +1233,14 @@
 							"listen": "test",
 							"script": {
 								"id": "9f9144db-ae09-4371-bded-8c178c076427",
-								"type": "text/javascript",
 								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"Status code is 204\"] = responseCode.code === 204;",
 									"",
-									"var jsonObject = JSON.parse(responseBody);",
-									"",
-									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
+									"tests[\"Empty response\"] = responseBody == \"\"",
 									"",
 									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\") == 0;"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -1563,17 +1560,15 @@
 							"listen": "test",
 							"script": {
 								"id": "779207c9-2dd8-4093-8523-1e56e8ba983a",
-								"type": "text/javascript",
 								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;",
+									"tests[\"Status code is 204\"] = responseCode.code === 204;",
 									"",
-									"var jsonObject = JSON.parse(responseBody);",
+									"tests[\"Empty response\"] = responseBody == \"\"",
 									"",
-									"tests[\"Return 0 study\"] = jsonObject.length === 0;",
 									"",
 									"tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\") == 0;"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
