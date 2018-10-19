@@ -375,7 +375,7 @@
 			"response": []
 		},
 		{
-			"name": "STOW RS insiide inbox user 1",
+			"name": "STOW RS inside inbox user 1",
 			"event": [
 				{
 					"listen": "test",
