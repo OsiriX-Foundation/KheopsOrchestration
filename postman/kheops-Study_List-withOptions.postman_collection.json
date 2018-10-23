@@ -827,7 +827,7 @@
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 401\"] = responseCode.code === 401;"
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
 								]
 							}
 						}
