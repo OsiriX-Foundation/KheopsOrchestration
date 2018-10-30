@@ -61,16 +61,19 @@ services:
 #      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: /run/secrets/mysql_root_password
-#      KHEOPS_MYSQL_USER: /run/secrets/mysql_user
-#      KHEOPS_MYSQL_PASSWORD: /run/secrets/mysql_password
+      #POSTGRES_PASSWORD_FILE: /run/secrets/psql_root_password
+      POSTGRES_PASSWORD: mypwd
+      POSTGRES_USER: kheopsuser
+      POSTGRES_DB: kheops
     secrets:
       - mysql_root_password
       - mysql_password
+      #- psql_root_password
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
-      - kheops-mysql-volume:/var/lib/mysql
+      - kheops-mysql-volume:/var/lib/postgresql/data
     restart: on-failure
 
 
@@ -178,6 +181,8 @@ secrets:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret_post
+  psql_root_password:
+    file: ${SECRETS_PATH}/psql_root_password
   mysql_root_password:
     file: ${SECRETS_PATH}/mysql_root_password
   mysql_password:
