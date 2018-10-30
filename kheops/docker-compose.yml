@@ -56,7 +56,7 @@ services:
 
   kheops-authorization-database:
     container_name: kheopsauthorizationdatabase
-    image: osirixfoundation/kheops-authorization-database:${KHEOPS_AUTHORIZATION_DATABASE_IMAGE_TAG}
+    image: osirixfoundation/kheops-autorization-database-postgres:${KHEOPS_AUTHORIZATION_DATABASE_IMAGE_TAG}
 #    ports:
 #      - "3306:3306"
     environment:
