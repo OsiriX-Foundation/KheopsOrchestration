@@ -1,30 +1,26 @@
-version: "3.1"
-
+version: '3.1'
+#https://github.com/docker-library/postgres/issues/151
 services:
 
   ldap:
     container_name: pacsldap
     image: dcm4che/slapd-dcm4chee:2.4.44-13.0
-#    ports:
-#      - "389:389"
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
-      - ${DCM4CHEE_PATH}/ldap:/var/lib/ldap
-      - ${DCM4CHEE_PATH}/slapd.d:/etc/ldap/slapd.d
+      - dcm4chee-ldap-ldap:/var/lib/ldap
+      - dcm4chee-ldap-slapdd:/etc/ldap/slapd.d
     restart: on-failure
 
-  db:
-    container_name: pacsdb
-    image: dcm4che/postgres-dcm4chee:10.0-13
-#    ports:
-#      - "5432:5432"
-    env_file: docker-compose.env
+  kheops-database:
+    container_name: db
+    image: osirixfoundation/kheops-database:${KHEOPS_AUTHORIZATION_DATABASE_IMAGE_TAG}
+    ports:
+      - "5432:5432"
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
-      - ${DCM4CHEE_PATH}/db:/var/lib/postgresql/data
+      - kheops-db-data:/var/lib/postgresql/data
+    env_file: docker-compose.env
     restart: on-failure
 
   arc:
@@ -44,39 +40,13 @@ services:
       JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
     depends_on:
       - ldap
-      - db
+      - kheops-database
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
-      - ${DCM4CHEE_PATH}/wildfly:/opt/wildfly/standalone
-      - ${DCM4CHEE_PATH}/storage:/storage
+      - dcm4chee-arc-wildfly:/opt/wildfly/standalone
+      - /dcm4chee-arc/storage:/storage
     restart: on-failure
-
-
-
-  kheops-authorization-database:
-    container_name: kheopsauthorizationdatabase
-    image: osirixfoundation/kheops-autorization-database-postgres:${KHEOPS_AUTHORIZATION_DATABASE_IMAGE_TAG}
-#    ports:
-#      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: /run/secrets/mysql_root_password
-      #POSTGRES_PASSWORD_FILE: /run/secrets/psql_root_password
-      POSTGRES_PASSWORD: mypwd
-      POSTGRES_USER: kheopsuser
-      POSTGRES_DB: kheops
-    secrets:
-      - mysql_root_password
-      - mysql_password
-      #- psql_root_password
-    env_file: docker-compose.env
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
-      - kheops-mysql-volume:/var/lib/postgresql/data
-    restart: on-failure
-
-
 
   kheops-authorization:
     container_name: kheopsauthorization
@@ -87,12 +57,12 @@ services:
     restart: on-failure
     env_file: docker-compose.env
     depends_on:
-      - kheops-authorization-database
+      - kheops-database
       - arc
     secrets:
       - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
-      - mysql_password
+      - psql_root_password
 
   kheops-zipper:
     container_name: kheopszipper
@@ -172,8 +142,6 @@ services:
       - kheops_auth_hmasecret
       - kheops_auth_hmasecret_post
 
-
-
 secrets:
   kheops_superuser_hmasecret:
     file: ${SECRETS_PATH}/kheops_superuser_hmasecret
@@ -183,10 +151,6 @@ secrets:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret_post
   psql_root_password:
     file: ${SECRETS_PATH}/psql_root_password
-  mysql_root_password:
-    file: ${SECRETS_PATH}/mysql_root_password
-  mysql_password:
-    file: ${SECRETS_PATH}/mysql_password
   privkey1.pem:
     file: ${NGINX_KEY}/privkey1.pem
   fullchain1.pem:
@@ -195,4 +159,8 @@ secrets:
     file: ${SECRETS_PATH}/OAuth2_secret
 
 volumes:
-  kheops-mysql-volume:
+  dcm4chee-ldap-ldap:
+  dcm4chee-ldap-slapdd:
+  dcm4chee-db-data:
+  dcm4chee-arc-wildfly:
+  kheops-db-data:
