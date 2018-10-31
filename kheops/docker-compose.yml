@@ -16,8 +16,8 @@ services:
   kheops-database:
     container_name: db
     image: osirixfoundation/kheops-database:${KHEOPS_AUTHORIZATION_DATABASE_IMAGE_TAG}
-    ports:
-      - "5432:5432"
+    #ports:
+    #  - "5432:5432"
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
     env_file: docker-compose.env
