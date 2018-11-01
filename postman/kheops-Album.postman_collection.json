@@ -286,7 +286,6 @@
 							"listen": "test",
 							"script": {
 								"id": "c09cfdaa-aa57-499c-a23c-8e26fa376e1e",
-								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
 									"",
@@ -325,28 +324,19 @@
 									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
 									"",
 									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
-									"",
-									"",
-									"function wait(ms)",
-									"{",
-									"    var d = new Date();",
-									"    var d2 = null;",
-									"    do { d2 = new Date(); }",
-									"    while(d2-d < ms);",
-									"}",
-									"",
-									"wait(3000);"
-								]
+									""
+								],
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -503,7 +493,6 @@
 							"listen": "test",
 							"script": {
 								"id": "18907c18-71fe-49e7-9bb9-78e8070e402a",
-								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
 									"",
@@ -540,27 +529,29 @@
 									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
 									"",
 									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
-									"",
-									"function wait(ms)",
-									"{",
-									"    var d = new Date();",
-									"    var d2 = null;",
-									"    do { d2 = new Date(); }",
-									"    while(d2-d < ms);",
-									"}",
-									"",
-									"wait(3000);"
-								]
+									""
+								],
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "9622a218-2116-4991-9b69-e3643e174be3",
-								"type": "text/javascript",
 								"exec": [
-									""
-								]
+									"//wait before creation for the sort filter",
+									"",
+									"function wait(ms)",
+									"{",
+									"\tvar d = new Date();",
+									"\tvar d2 = null;",
+									"\tdo { d2 = new Date(); }",
+									"\twhile(d2-d < ms);",
+									"}",
+									"",
+									"wait(3000)"
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -644,7 +635,6 @@
 							"listen": "test",
 							"script": {
 								"id": "b14e9bba-8b2b-4eb5-8a3e-19e4bb6036e9",
-								"type": "text/javascript",
 								"exec": [
 									"tests[\"Status code is 201\"] = responseCode.code === 201;",
 									"",
@@ -681,17 +671,28 @@
 									"tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
 									"",
 									"tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
-								]
+								],
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "4e40b534-ff02-4471-a1d6-6b0fe48c59c3",
-								"type": "text/javascript",
 								"exec": [
-									""
-								]
+									"//wait before creation for the sort filter",
+									"",
+									"function wait(ms)",
+									"{",
+									"\tvar d = new Date();",
+									"\tvar d2 = null;",
+									"\tdo { d2 = new Date(); }",
+									"\twhile(d2-d < ms);",
+									"}",
+									"",
+									"wait(3000)"
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -5030,20 +5031,20 @@
 							"listen": "test",
 							"script": {
 								"id": "4e82ae60-e445-4f90-9a8a-f5448eb9e452",
-								"type": "text/javascript",
 								"exec": [
-									"tests[\"Status code is 403\"] = responseCode.code === 403;"
-								]
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								],
+								"type": "text/javascript"
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "34930514-9077-47db-bf12-4dbf2c425f62",
-								"type": "text/javascript",
 								"exec": [
 									""
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],

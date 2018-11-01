@@ -1374,7 +1374,6 @@
 					"listen": "test",
 					"script": {
 						"id": "a5055b06-d516-4117-b4f9-60329a2c6126",
-						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1382,25 +1381,18 @@
 							"tests[\"Not empty response []\"] = responseBody != \"[]\"",
 							"",
 							"pm.environment.set(\"tempDicomData\", responseBody);"
-						]
+						],
+						"type": "text/javascript"
 					}
 				},
 				{
 					"listen": "prerequest",
 					"script": {
 						"id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
-						"type": "text/javascript",
 						"exec": [
-							"function wait(ms)",
-							"{",
-							"    var d = new Date();",
-							"    var d2 = null;",
-							"    do { d2 = new Date(); }",
-							"    while(d2-d < ms);",
-							"}",
-							"",
-							"wait(15000);"
-						]
+							""
+						],
+						"type": "text/javascript"
 					}
 				}
 			],

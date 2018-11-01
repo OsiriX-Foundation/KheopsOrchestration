@@ -200,7 +200,6 @@
 					"listen": "test",
 					"script": {
 						"id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
-						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -214,7 +213,8 @@
 							"",
 							"tests[\"Secrect is correct\"] = jsonObject[0].secret === pm.environment.get(\"secret_capability_token\");",
 							"tests[\"Description is correct\"] = jsonObject[0].description === pm.environment.get(\"title\");"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -237,6 +237,86 @@
 					],
 					"path": [
 						"capabilities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get capability token info",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"[INFO] Response: \" + responseBody] = true;",
+							"",
+							"var jsonObject = JSON.parse(responseBody);",
+							"",
+							"tests[\"revoked = false\"] = jsonObject.revoked === false;",
+							"",
+							"tests[\"scope_type = user\"] = jsonObject.scope_type === \"user\";",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/capabilities/{{secret_capability_token}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"capabilities",
+						"{{secret_capability_token}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get capability token info-Bad token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
+						"exec": [
+							"// ensure healthy response code",
+							"tests[\"Status code is 404\"] = responseCode.code === 404;",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/capabilities/12345678901234567890zZ",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"capabilities",
+						"12345678901234567890zZ"
 					]
 				}
 			},

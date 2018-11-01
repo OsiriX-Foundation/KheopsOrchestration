@@ -5,7 +5,7 @@ sudo: required
 
 services:
   - docker
-  
+
 notifications:
   email: false
 
@@ -17,9 +17,9 @@ before_install:
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  
+
 install:
-  - npm install newman@3.10.0  
+  - npm install newman@3.10.0
 
 before_script:
   - node --version
@@ -29,8 +29,11 @@ before_script:
   - chmod +x script_run_docker.sh
   - ./script.sh
 
-  
 script:
+  - ./script_run_docker.sh
+  - node_modules/.bin/newman run postman/kheops_Capabilities_tokens_Delete.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - ./script_run_docker.sh
+  - node_modules/.bin/newman run postman/kheops-Capabilities_tokens_albums.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
   - node_modules/.bin/newman run postman/kheops-DICOMweb_Capability_Tokens.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
@@ -47,4 +50,5 @@ script:
   - node_modules/.bin/newman run postman/kheops-Study_List-withOptions.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
   - node_modules/.bin/newman run postman/kheops-Zipper.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+
 
