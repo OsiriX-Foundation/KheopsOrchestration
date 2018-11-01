@@ -775,11 +775,11 @@
 							"listen": "test",
 							"script": {
 								"id": "c114b845-d8fc-4f44-8071-d1164dcd68d0",
-								"type": "text/javascript",
 								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 400\"] = responseCode.code === 400;"
-								]
+									"//404 Because offset is an integer not a string and jax-rs return 404",
+									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -827,7 +827,7 @@
 								"type": "text/javascript",
 								"exec": [
 									"// ensure healthy response code",
-									"tests[\"Status code is 404\"] = responseCode.code === 404;"
+									"tests[\"Status code is 400\"] = responseCode.code === 400;"
 								]
 							}
 						}

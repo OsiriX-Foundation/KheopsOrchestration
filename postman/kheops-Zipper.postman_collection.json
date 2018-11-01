@@ -176,7 +176,6 @@
 					"listen": "test",
 					"script": {
 						"id": "45c0c8f5-b3d4-4cec-9f0f-d39d256dd371",
-						"type": "text/javascript",
 						"exec": [
 							"// ensure healthy response code",
 							"tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -190,17 +189,18 @@
 							"",
 							"",
 							"pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
-						]
+						],
+						"type": "text/javascript"
 					}
 				},
 				{
 					"listen": "prerequest",
 					"script": {
 						"id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
-						"type": "text/javascript",
 						"exec": [
 							"pm.environment.set(\"description\", \"some description\");"
-						]
+						],
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -231,16 +231,6 @@
 						{
 							"key": "scope_type",
 							"value": "user",
-							"type": "text"
-						},
-						{
-							"key": "read_permission",
-							"value": "true",
-							"type": "text"
-						},
-						{
-							"key": "write_permission",
-							"value": "true",
 							"type": "text"
 						}
 					]

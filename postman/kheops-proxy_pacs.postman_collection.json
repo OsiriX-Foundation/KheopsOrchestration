@@ -720,8 +720,8 @@
 								"id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
 								"type": "text/javascript",
 								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+									"// wado-rs is blocked",
+									"tests[\"Status code is 405\"] = responseCode.code === 405;"
 								]
 							}
 						}
@@ -761,8 +761,8 @@
 								"id": "98f9e250-ce56-4197-aa5a-18a04bda03eb",
 								"type": "text/javascript",
 								"exec": [
-									"// ensure healthy response code",
-									"tests[\"Status code is 401\"] = responseCode.code === 401;"
+									"// wado-rs is blocked",
+									"tests[\"Status code is 405\"] = responseCode.code === 405;"
 								]
 							}
 						}
