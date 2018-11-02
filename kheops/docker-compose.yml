@@ -16,9 +16,6 @@ services:
   db:
     container_name: db
     image: osirixfoundation/kheops-database:${KHEOPS_DATABASE_IMAGE_TAG}
-    #image: psql:latest
-    #ports:
-    #  - "5432:5432"
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
     env_file: docker-compose.env
@@ -56,8 +53,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
-    environment:
-      KHEOPS_POSTGRESQL_PASSWORD: mypwd
     env_file: docker-compose.env
     depends_on:
       - db
@@ -65,7 +60,7 @@ services:
     secrets:
       - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
-      - psql_root_password
+      - kheops_postgresql_password
 
   kheops-zipper:
     container_name: kheopszipper
@@ -152,8 +147,8 @@ secrets:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret_post
-  psql_root_password:
-    file: ${SECRETS_PATH}/psql_root_password
+  kheops_postgresql_password:
+    file: ${SECRETS_PATH}/kheops_postgresql_password
   privkey1.pem:
     file: ${NGINX_KEY}/privkey1.pem
   fullchain1.pem:
