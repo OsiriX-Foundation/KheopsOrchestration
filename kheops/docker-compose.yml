@@ -13,11 +13,12 @@ services:
       - dcm4chee-ldap-slapdd:/etc/ldap/slapd.d
     restart: on-failure
 
-  kheops-database:
+  db:
     container_name: db
-    image: osirixfoundation/kheops-database:${KHEOPS_DATABASE_IMAGE_TAG}
-    #ports:
-    #  - "5432:5432"
+    #image: osirixfoundation/kheops-database:${KHEOPS_DATABASE_IMAGE_TAG}
+    image: psql:latest
+    ports:
+      - "5432:5432"
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
     env_file: docker-compose.env
@@ -40,7 +41,7 @@ services:
       JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
     depends_on:
       - ldap
-      - kheops-database
+      - db
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -55,9 +56,11 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
+    environment:
+      KHEOPS_POSTGRESQL_PASSWORD: mypwd
     env_file: docker-compose.env
     depends_on:
-      - kheops-database
+      - db
       - arc
     secrets:
       - kheops_superuser_hmasecret
