@@ -19,6 +19,9 @@ services:
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
     env_file: docker-compose.env
+    secrets:
+      - authdb_pass
+      - keycloakdb_pass
     restart: on-failure
 
   arc:
@@ -60,7 +63,7 @@ services:
     secrets:
       - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
-      - kheops_postgresql_password
+      - authdb_pass
 
   kheops-zipper:
     container_name: kheopszipper
@@ -141,6 +144,10 @@ services:
       - kheops_auth_hmasecret_post
 
 secrets:
+  authdb_pass:
+    file: ${SECRETS_PATH}/authdb_pass
+  keycloakdb_pass:
+    file: ${SECRETS_PATH}/keycloakdb_pass
   kheops_superuser_hmasecret:
     file: ${SECRETS_PATH}/kheops_superuser_hmasecret
   kheops_auth_hmasecret:
