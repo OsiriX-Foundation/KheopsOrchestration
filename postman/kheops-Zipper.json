@@ -280,12 +280,12 @@
           "listen": "test",
           "script": {
             "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -301,27 +301,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": {
-          "raw": "{{URL}}/wado?studyUID={{study_UID}}&requestType=ZIP",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "wado"
-          ],
-          "query": [
-            {
-              "key": "studyUID",
-              "value": "{{study_UID}}",
-              "equals": true
-            },
-            {
-              "key": "requestType",
-              "value": "ZIP",
-              "equals": true
-            }
-          ]
-        }
+        "url": "{{URL}}/studies/{{study_UID}}&accept=application%2Fzip"
       },
       "response": []
     },
@@ -333,12 +313,12 @@
           "listen": "test",
           "script": {
             "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -348,32 +328,18 @@
           {
             "key": "Authorization",
             "value": "Bearer {{secret_capability_token}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/zip",
+            "type": "text"
           }
         ],
-        "body": {},
-        "url": {
-          "raw": "{{URL}}/link/{{secret_capability_token}}/wado?studyUID={{study_UID}}&requestType=ZIP",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "link",
-            "{{secret_capability_token}}",
-            "wado"
-          ],
-          "query": [
-            {
-              "key": "studyUID",
-              "value": "{{study_UID}}",
-              "equals": true
-            },
-            {
-              "key": "requestType",
-              "value": "ZIP",
-              "equals": true
-            }
-          ]
-        }
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/link/{{secret_capability_token}}/studies/{{study_UID}}"
       },
       "response": []
     },
