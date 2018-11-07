@@ -31,24 +31,24 @@ before_script:
 
 script:
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops_Capabilities_tokens_Delete.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops_Capabilities_tokens_Delete.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-Capabilities_tokens_albums.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-Capabilities_tokens_albums.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-DICOMweb_Capability_Tokens.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-DICOMweb_Capability_Tokens.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-Album.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-Album.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-DICOMweb_proxy.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-DICOMweb_proxy.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-Inbox.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-Inbox.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-Study_List.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-Study_List.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-proxy_pacs.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-proxy_pacs.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-Study_List-withOptions.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-Study_List-withOptions.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-Zipper.postman_collection.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-Zipper.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
 
 
