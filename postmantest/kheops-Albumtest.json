@@ -76,7 +76,7 @@
               "script": {
                 "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
                 "exec": [
-                  "// ensure healthy response code change change",
+                  "// ensure healthy response code change change change",
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
