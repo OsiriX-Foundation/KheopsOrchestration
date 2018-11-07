@@ -1291,6 +1291,46 @@
         },
         {
           "_postman_id": "3b6fd1fc-82bd-4254-9a14-8279b2828c43",
+          "name": "Download wado from album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ee40e062-cf9b-49bd-930a-b92735c566d3",
           "name": "Download zip stream from album",
           "event": [
             {
