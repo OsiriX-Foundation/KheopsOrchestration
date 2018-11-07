@@ -8972,7 +8972,9 @@
             ],
             "body": {
               "mode": "file",
-              "file": "testStudy.dcm"
+              "file": {
+                "src": "testStudy.dcm"
+              }
             },
             "url": "{{URL}}/studies"
           },
