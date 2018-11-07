@@ -215,11 +215,11 @@
               "listen": "test",
               "script": {
                 "id": "724638c7-7c03-45f7-acfd-f4bc4a47c0b3",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
-                  "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                  "tests[\"Status code is 400\"] = responseCode.code === 400;"
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -242,15 +242,18 @@
               "query": [
                 {
                   "key": "access_token",
-                  "value": "{{JWT_study_series}}"
+                  "value": "{{JWT_study_series}}",
+                  "equals": true
                 },
                 {
                   "key": "studyUID",
-                  "value": "{{study_UID}}"
+                  "value": "{{study_UID}}",
+                  "equals": true
                 },
                 {
                   "key": "requestType",
-                  "value": "WADO"
+                  "value": "WADO",
+                  "equals": true
                 }
               ]
             }
