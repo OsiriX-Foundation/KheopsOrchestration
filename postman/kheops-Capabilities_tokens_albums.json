@@ -1,0 +1,1452 @@
+{
+  "info": {
+    "_postman_id": "a80fdf0f-8ea3-4ce1-8ad2-c15655907312",
+    "name": "kheops-Capabilities_tokens_albums",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "e47dcf1a-f6a0-4587-b8b4-905cb8eeb708",
+      "name": "Initialisation",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "03f0dbdf-7ed9-4ad7-ac3e-d37d99c7c93f",
+          "name": "create user1-create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  "type": "text"
+                },
+                {
+                  "key": "assertion",
+                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiIxMjM0NTY3ODkiLCJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.916Xn1BnUwdhOvuWErWWOh_AkYXeS36mVRTP06VWsVA",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d47a13ac-419c-4bdc-8e70-1eafc127fc70",
+          "name": "create user2-create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"access_token_user2\", jsonObject.access_token);",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  "type": "text"
+                },
+                {
+                  "key": "assertion",
+                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5ODc2NTQzMjEiLCJlbWFpbCI6InRpdGlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.Csj6WCBDwZlXeUOE0nX6SmReZhGZayw2yZFKWzlwysE",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "efec6895-1a18-4f25-bcac-31ba8bba9607",
+          "name": "create user3-create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6ea2d7bb-b849-4327-b8fe-c5003480b2d6",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"access_token_user3\", jsonObject.access_token);",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  "type": "text"
+                },
+                {
+                  "key": "assertion",
+                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5OTg4Nzc2NjU1IiwiZW1haWwiOiJ0YXRhQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJleHAiOjI1MjI5NDM1NzIsImlzcyI6ImF1dGhvcml6YXRpb24ua2hlb3BzLm9ubGluZSIsImlhdCI6MTUyMjkzOTk3Mn0.i8D9zxg1aQBjIMCBS921v7PBQ6Me2trR2a5TtVk0_Xs",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "eedf2349-2443-497c-bed4-070bbdceb9a9",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "6ca5f33e-5df8-441f-8fe1-d3ad6c95e633",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "72abffad-4af2-430a-9704-9287ebb4f253",
+      "name": "Album",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "c10b3565-5711-4ebd-9103-abd1ba619740",
+          "name": "Create an album(1)-OK",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c09cfdaa-aa57-499c-a23c-8e26fa376e1e",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"album_id_1\", jsonObject.album_id);",
+                  "",
+                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
+                  "",
+                  "tests[\"name\"] = jsonObject.name == \"name 1\"",
+                  "",
+                  "tests[\"description\"] = jsonObject.description == \"description 1\"",
+                  "",
+                  "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+                  "",
+                  "tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+                  "",
+                  "tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+                  "",
+                  "tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+                  "",
+                  "tests[\"add_user\"] = jsonObject.add_user == false",
+                  "",
+                  "tests[\"download_series\"] = jsonObject.download_series == true",
+                  "",
+                  "tests[\"send_series\"] = jsonObject.send_series == false",
+                  "",
+                  "tests[\"delete_series\"] = jsonObject.delete_series == false",
+                  "",
+                  "tests[\"add_series\"] = jsonObject.add_series == true",
+                  "",
+                  "tests[\"write_comments\"] = jsonObject.write_comments == true",
+                  "",
+                  "tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+                  "",
+                  "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "sendSeries",
+                  "value": "false",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "name 1",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "description 1",
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/album"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1331779a-00aa-4b8f-9a1f-cab3764f0c92",
+          "name": "add user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {},
+            "url": "{{URL}}/album/{{album_id_1}}/users/{{user2}}"
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "bf04770b-6343-401e-b74e-a27e83b50470",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "e9125da5-7530-4937-8728-1e66c8d4a698",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "805de5d4-2ab2-4236-aae6-1f872bac0a07",
+      "name": "Generate capability token by user 2-Forbidden",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "e8dd53c2-c079-4da3-9b74-600b0f0aafe6",
+          "name": "Create a capability tokens user2-Forbidden",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+                "exec": [
+                  "pm.environment.set(\"description\", \"some description\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "type": "text",
+                  "value": "{{description}}"
+                },
+                {
+                  "description": "",
+                  "key": "scope_type",
+                  "type": "text",
+                  "value": "album"
+                },
+                {
+                  "description": "",
+                  "key": "album",
+                  "type": "text",
+                  "value": "{{album_id_1}}"
+                },
+                {
+                  "description": "",
+                  "key": "read_permission",
+                  "type": "text",
+                  "value": "true"
+                },
+                {
+                  "description": "",
+                  "key": "write_permission",
+                  "type": "text",
+                  "value": "true"
+                },
+                {
+                  "description": "",
+                  "key": "appropriate_permission",
+                  "type": "text",
+                  "value": "true"
+                },
+                {
+                  "description": "",
+                  "key": "download_permission",
+                  "type": "text",
+                  "value": "true"
+                }
+              ]
+            },
+            "url": "{{URL}}/capabilities"
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "a89f3378-fc2f-4cac-b4f7-96989cfd551c",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "id": "6d148eb2-3c7c-4e2b-9d3f-438426f84df5",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "6b4a9e08-513a-4300-b271-8ee8c04c8311",
+      "name": "STOW RS with capability token-No write permission",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "70d6b2ae-02b9-460d-a975-7704f042d9af",
+          "name": "Create album capability tokens-No write permission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
+                  "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+                  "",
+                  "",
+                  "pm.environment.set(\"secret_capability_token_id_1\", jsonObject.id);",
+                  "pm.environment.set(\"secret_capability_token_1\", jsonObject.secret);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+                "exec": [
+                  "pm.environment.set(\"description\", \"some description\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "type": "text",
+                  "value": "{{description}}"
+                },
+                {
+                  "description": "",
+                  "key": "scope_type",
+                  "type": "text",
+                  "value": "album"
+                },
+                {
+                  "description": "",
+                  "key": "album",
+                  "type": "text",
+                  "value": "{{album_id_1}}"
+                },
+                {
+                  "description": "",
+                  "key": "read_permission",
+                  "type": "text",
+                  "value": "true"
+                },
+                {
+                  "description": "",
+                  "key": "write_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "appropriate_permission",
+                  "type": "text",
+                  "value": "true"
+                },
+                {
+                  "description": "",
+                  "key": "download_permission",
+                  "type": "text",
+                  "value": "true"
+                }
+              ]
+            },
+            "url": "{{URL}}/capabilities"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b1b52d2d-8330-44c3-b1af-75a05772d951",
+          "name": "STOW RS inside album capability token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 409\"] = responseCode.code === 409;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_1}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "845c4c6a-a1f9-4f63-acdd-4dadfe9f998c",
+      "name": "STOW RS with capability-OK",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "d224bc4e-60c6-4e30-b5bd-7859c41d55fb",
+          "name": "Create album capability tokens-write permission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
+                  "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+                  "",
+                  "",
+                  "pm.environment.set(\"secret_capability_token_id_1\", jsonObject.id);",
+                  "pm.environment.set(\"secret_capability_token_1\", jsonObject.secret);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+                "exec": [
+                  "pm.environment.set(\"description\", \"some description\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "type": "text",
+                  "value": "{{description}}"
+                },
+                {
+                  "description": "",
+                  "key": "scope_type",
+                  "type": "text",
+                  "value": "album"
+                },
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "read_permission",
+                  "value": "false",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "write_permission",
+                  "value": "true",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "appropriate_permission",
+                  "value": "false",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "download_permission",
+                  "value": "false",
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/capabilities"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "508e7306-b66f-4086-8439-2b357904cef0",
+          "name": "STOW RS inside album capability token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_1}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "437f8426-603c-4b6b-9a39-808595155f6e",
+          "name": "album get studies list by user 1 (not capability token)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{URL}}/studies?album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f1b30e63-5d4e-45aa-ac5b-675c25c3345d",
+      "name": "Get studies list album no read_permission",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "670bd216-72d0-40a3-8dbb-175d26935d1c",
+          "name": "Create a capability tokens user1-OK no read permission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
+                  "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+                  "",
+                  "",
+                  "pm.environment.set(\"secret_capability_token_id_1\", jsonObject.id);",
+                  "pm.environment.set(\"secret_capability_token_1\", jsonObject.secret);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+                "exec": [
+                  "pm.environment.set(\"description\", \"some description\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "type": "text",
+                  "value": "{{description}}"
+                },
+                {
+                  "description": "",
+                  "key": "scope_type",
+                  "type": "text",
+                  "value": "album"
+                },
+                {
+                  "description": "",
+                  "key": "album",
+                  "type": "text",
+                  "value": "{{album_id_1}}"
+                },
+                {
+                  "description": "",
+                  "key": "read_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "write_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "appropriate_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "download_permission",
+                  "type": "text",
+                  "value": "false"
+                }
+              ]
+            },
+            "url": "{{URL}}/capabilities"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "90cffb5e-27be-4653-b5f0-e3f0706afee4",
+          "name": "album get studies list",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "exec": [
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_1}}"
+              }
+            ],
+            "body": {},
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "5cc7e9da-b64a-40fd-a889-dbaea3a2d903",
+      "name": "Get studies list album read_permission",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "4f5bc4ea-2f9b-4baa-9d2a-b610a553a6b8",
+          "name": "Create album capability tokens-read permission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
+                  "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+                  "",
+                  "",
+                  "pm.environment.set(\"secret_capability_token_id_1\", jsonObject.id);",
+                  "pm.environment.set(\"secret_capability_token_1\", jsonObject.secret);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+                "exec": [
+                  "pm.environment.set(\"description\", \"some description\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "type": "text",
+                  "value": "{{description}}"
+                },
+                {
+                  "description": "",
+                  "key": "scope_type",
+                  "type": "text",
+                  "value": "album"
+                },
+                {
+                  "description": "",
+                  "key": "album",
+                  "type": "text",
+                  "value": "{{album_id_1}}"
+                },
+                {
+                  "description": "",
+                  "key": "read_permission",
+                  "type": "text",
+                  "value": "true"
+                },
+                {
+                  "description": "",
+                  "key": "write_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "appropriate_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "download_permission",
+                  "type": "text",
+                  "value": "false"
+                }
+              ]
+            },
+            "url": "{{URL}}/capabilities"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3ff76f3e-5d78-42f3-808a-64c8d428364d",
+          "name": "album get studies list",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_1}}"
+              }
+            ],
+            "body": {},
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "cb9c53d0-3986-436d-bfc0-66184c521bf7",
+      "name": "Download study album download permission",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "69057f5d-f83b-43fd-b8bc-593d854d2227",
+          "name": "Create album capability tokens-download permission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
+                  "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+                  "",
+                  "",
+                  "pm.environment.set(\"secret_capability_token_id_1\", jsonObject.id);",
+                  "pm.environment.set(\"secret_capability_token_1\", jsonObject.secret);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+                "exec": [
+                  "pm.environment.set(\"description\", \"some description\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "type": "text",
+                  "value": "{{description}}"
+                },
+                {
+                  "description": "",
+                  "key": "scope_type",
+                  "type": "text",
+                  "value": "album"
+                },
+                {
+                  "description": "",
+                  "key": "album",
+                  "type": "text",
+                  "value": "{{album_id_1}}"
+                },
+                {
+                  "description": "",
+                  "key": "read_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "write_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "appropriate_permission",
+                  "type": "text",
+                  "value": "false"
+                },
+                {
+                  "description": "",
+                  "key": "download_permission",
+                  "type": "text",
+                  "value": "true"
+                }
+              ]
+            },
+            "url": "{{URL}}/capabilities"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3b6fd1fc-82bd-4254-9a14-8279b2828c43",
+          "name": "Download zip stream from album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_1}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{URL}}/wado?studyUID={{study_UID}}&requestType=ZIP",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "wado"
+              ],
+              "query": [
+                {
+                  "key": "studyUID",
+                  "value": "{{study_UID}}",
+                  "equals": true
+                },
+                {
+                  "key": "requestType",
+                  "value": "ZIP",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "fcf6d128-5dea-4f40-9e30-77f6dbfce707",
+      "name": "other",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "e44023d9-e0fe-4ff0-bc6f-a39b4aa25826",
+          "name": "get studies list (inbox) by user 1 (not capability token)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "{{URL}}/studies?inbox=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "75956d90-daf1-42c8-bdc3-97ed6e8a5a46",
+          "name": "album get studies list by user 1 (inbox + album) (not capability token) Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {},
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
