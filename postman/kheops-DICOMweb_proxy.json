@@ -194,7 +194,6 @@
               "listen": "test",
               "script": {
                 "id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -205,14 +204,14 @@
                   "tests[\"Return 1 study\"] = jsonObject.length === 1;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "ec827ea4-26ee-4f3d-9b96-bf373cb9b0aa",
-                "type": "text/javascript",
                 "exec": [
                   "function wait(ms)",
                   "{",
@@ -223,7 +222,8 @@
                   "}",
                   "",
                   "wait(5000);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -240,18 +240,18 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/?inbox",
+              "raw": "{{URL}}/studies?inbox",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "studies",
-                ""
+                "studies"
               ],
               "query": [
                 {
                   "key": "inbox",
-                  "value": null
+                  "value": "",
+                  "equals": false
                 }
               ]
             }
@@ -405,7 +405,6 @@
               "listen": "test",
               "script": {
                 "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -416,17 +415,18 @@
                   "tests[\"Return 1 study\"] = jsonObject.length === 1;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -443,18 +443,18 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/?albums={{album_id_1}}",
+              "raw": "{{URL}}/studies?albums={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "studies",
-                ""
+                "studies"
               ],
               "query": [
                 {
                   "key": "albums",
-                  "value": "{{album_id_1}}"
+                  "value": "{{album_id_1}}",
+                  "equals": true
                 }
               ]
             }
