@@ -1314,11 +1314,6 @@
               {
                 "key": "Authorization",
                 "value": "Bearer {{secret_capability_token_1}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/zip",
-                "type": "text"
               }
             ],
             "body": {
@@ -1331,7 +1326,7 @@
         },
         {
           "_postman_id": "ee40e062-cf9b-49bd-930a-b92735c566d3",
-          "name": "Download zip stream from album",
+          "name": "Download zip from album",
           "event": [
             {
               "listen": "test",
@@ -1357,8 +1352,8 @@
               },
               {
                 "key": "Accept",
-                "value": "application/zip",
-                "type": "text"
+                "type": "text",
+                "value": "application/zip"
               }
             ],
             "body": {
