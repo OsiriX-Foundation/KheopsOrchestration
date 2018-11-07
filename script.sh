@@ -14,8 +14,8 @@
 
 
 
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testStudy.dcm\"/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testFelix.dcm\"/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testIncisix.dcm\"/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testMaceosix.dcm\"/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {}/\"file\": \"testMagix.dcm\"/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testStudy.dcm\"/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testFelix.dcm\"/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testIncisix.dcm\"/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testMaceosix.dcm\"/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testMagix.dcm\"/" postman/kheops-Study_List-withOptions.json
