@@ -273,6 +273,59 @@
       "response": []
     },
     {
+      "_postman_id": "b4492f4d-c747-436f-9383-69be6ffe7835",
+      "name": "Download zip stream using an accept query parameter",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{secret_capability_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{URL}}/wado?studyUID={{study_UID}}&requestType=ZIP",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "wado"
+          ],
+          "query": [
+            {
+              "key": "studyUID",
+              "value": "{{study_UID}}",
+              "equals": true
+            },
+            {
+              "key": "requestType",
+              "value": "ZIP",
+              "equals": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "_postman_id": "61d99d62-d41d-409a-9264-a5930685264e",
       "name": "Download zip stream link",
       "event": [
@@ -420,59 +473,6 @@
             {
               "key": null,
               "value": null
-            }
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "b4492f4d-c747-436f-9383-69be6ffe7835",
-      "name": "Download zip stream Copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{secret_capability_token}}"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": {
-          "raw": "{{URL}}/wado?studyUID={{study_UID}}&requestType=ZIP",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "wado"
-          ],
-          "query": [
-            {
-              "key": "studyUID",
-              "value": "{{study_UID}}",
-              "equals": true
-            },
-            {
-              "key": "requestType",
-              "value": "ZIP",
-              "equals": true
             }
           ]
         }
