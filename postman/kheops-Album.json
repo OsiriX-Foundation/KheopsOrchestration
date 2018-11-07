@@ -8987,7 +8987,6 @@
               "listen": "test",
               "script": {
                 "id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -8998,17 +8997,18 @@
                   "tests[\"Return 1 study\"] = jsonObject.length === 1;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "ae9ce291-c4c8-45b5-87f3-d8dda0da528f",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -9022,13 +9022,12 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{URL}}/studies/?inbox",
+              "raw": "{{URL}}/studies?inbox",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "studies",
-                ""
+                "studies"
               ],
               "query": [
                 {
@@ -9098,7 +9097,6 @@
               "listen": "test",
               "script": {
                 "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -9109,17 +9107,18 @@
                   "tests[\"Return 1 study\"] = jsonObject.length === 1;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -9133,13 +9132,12 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{URL}}/studies/?albums={{album_id_sharing}}",
+              "raw": "{{URL}}/studies?albums={{album_id_sharing}}",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "studies",
-                ""
+                "studies"
               ],
               "query": [
                 {
@@ -9190,13 +9188,12 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{URL}}/studies/?inbox",
+              "raw": "{{URL}}/studies?inbox",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "studies",
-                ""
+                "studies"
               ],
               "query": [
                 {
