@@ -10,6 +10,8 @@
  sed -i "s|{\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Capabilities_tokens_albums.json
  sed -i "s|{\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops_Capabilities_tokens_Delete.json
  
+ cat postman/kheops-Album.json
+ 
 
 
 
