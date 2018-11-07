@@ -1312,30 +1312,18 @@
               {
                 "key": "Authorization",
                 "value": "Bearer {{secret_capability_token_1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip",
+                "type": "text"
               }
             ],
-            "body": {},
-            "url": {
-              "raw": "{{URL}}/wado?studyUID={{study_UID}}&requestType=ZIP",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "wado"
-              ],
-              "query": [
-                {
-                  "key": "studyUID",
-                  "value": "{{study_UID}}",
-                  "equals": true
-                },
-                {
-                  "key": "requestType",
-                  "value": "ZIP",
-                  "equals": true
-                }
-              ]
-            }
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}"
           },
           "response": []
         }
