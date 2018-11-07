@@ -1,0 +1,519 @@
+{
+  "info": {
+    "_postman_id": "4ed8cc06-4bb1-49dd-93ed-cc8ffeb3823e",
+    "name": "kheops-DICOMweb_proxy",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "465ad2ce-6df8-480f-954c-4fe2163eb5b6",
+      "name": "Initialisation",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "79a0e79d-8a95-4b6f-a516-7500a224016f",
+          "name": "create user1-create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  "type": "text"
+                },
+                {
+                  "key": "assertion",
+                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiIxMjM0NTY3ODkiLCJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.916Xn1BnUwdhOvuWErWWOh_AkYXeS36mVRTP06VWsVA",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "b2fce66e-cbb2-4401-9023-b03ccb3ab9e0",
+      "name": "STOW inbox",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "7bfdb3d6-cd2a-4eeb-8584-76486f4d09c2",
+          "name": "STOW RS",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "de419117-5a7b-4dc8-b703-048810d53473",
+          "name": "STOW RS-Unauthorized",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7c6b5635-769a-474c-9995-b6ef6e1efc07",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 401\"] = responseCode.code === 401;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d0acd195-07a9-4496-976c-b64e438ba7df",
+          "name": "STOW RS series already exist",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8aa7f827-65c7-4170-bb62-1163878de01a",
+          "name": "user1 get studies list",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "ec827ea4-26ee-4f3d-9b96-bf373cb9b0aa",
+                "type": "text/javascript",
+                "exec": [
+                  "function wait(ms)",
+                  "{",
+                  "    var d = new Date();",
+                  "    var d2 = null;",
+                  "    do { d2 = new Date(); }",
+                  "    while(d2-d < ms);",
+                  "}",
+                  "",
+                  "wait(5000);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies/?inbox",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f9989327-b9ff-4b8c-93ad-c6f93084387a",
+      "name": "STOW album",
+      "description": null,
+      "item": [
+        {
+          "_postman_id": "16c92d94-d3a6-4de0-9099-6625f456046d",
+          "name": "Create an album(1)-OK",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8a8b88a2-92e1-49c5-9a11-fd7956ea0823",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"album_id_1\", jsonObject.album_id);",
+                  "",
+                  "",
+                  "function wait(ms)",
+                  "{",
+                  "    var d = new Date();",
+                  "    var d2 = null;",
+                  "    do { d2 = new Date(); }",
+                  "    while(d2-d < ms);",
+                  "}",
+                  "",
+                  "wait(3000);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "sendSeries",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "name 1",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "description 1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/album"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fc0caceb-ca93-4d0e-be44-22b284da0dcc",
+          "name": "STOW RS inside album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/studies?album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "88baa120-df0d-489c-b085-a2ae4acb9f74",
+          "name": "album get studies list",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies/?albums={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                ""
+              ],
+              "query": [
+                {
+                  "key": "albums",
+                  "value": "{{album_id_1}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5ca61534-fa62-4b58-ae8c-13da85f717d8",
+          "name": "STOW RS inside album same series",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/studies?album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
