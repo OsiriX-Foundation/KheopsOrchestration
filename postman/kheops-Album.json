@@ -8923,13 +8923,12 @@
             ],
             "body": {},
             "url": {
-              "raw": "{{URL}}/studies/?inbox",
+              "raw": "{{URL}}/studies?inbox",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "studies",
-                ""
+                "studies"
               ],
               "query": [
                 {
