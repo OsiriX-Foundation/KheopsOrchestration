@@ -392,44 +392,21 @@
           "listen": "test",
           "script": {
             "id": "8097f253-9943-476c-b05e-fdb97addd36e",
-            "type": "text/javascript",
             "exec": [
-              "tests[\"Status code is 401\"] = responseCode.code === 401;"
-            ]
+              "tests[\"Status code is 401\"] = responseCode.code === 401; "
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
         "method": "GET",
         "header": [],
-        "body": {},
-        "url": {
-          "raw": "{{URL}}/link/12345678/wado?&studyUID={{study_UID}}&requestType=ZIP",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "link",
-            "12345678",
-            "wado"
-          ],
-          "query": [
-            {
-              "key": "studyUID",
-              "value": "{{study_UID}}",
-              "equals": true
-            },
-            {
-              "key": "requestType",
-              "value": "ZIP",
-              "equals": true
-            },
-            {
-              "key": null,
-              "value": null
-            }
-          ]
-        }
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/link/12345678/studies/{{study_UID}}"
       },
       "response": []
     }
