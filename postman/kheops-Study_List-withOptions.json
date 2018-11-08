@@ -303,23 +303,30 @@
               "listen": "test",
               "script": {
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\");"
-                ]
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 5) {",
+                  "    tests[\"X-Total-Count = 5\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 5\"] = postman.getResponseHeader(\"X-Total-Count\");",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -335,7 +342,10 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "{{URL}}/studies"
           },
           "response": []
