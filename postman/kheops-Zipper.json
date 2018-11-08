@@ -248,8 +248,8 @@
           },
           {
             "key": "Accept",
-            "value": "application/zip",
-            "type": "text"
+            "type": "text",
+            "value": "application/zip"
           }
         ],
         "body": {
@@ -262,7 +262,7 @@
     },
     {
       "_postman_id": "b4492f4d-c747-436f-9383-69be6ffe7835",
-      "name": "Download zip stream using an accept query parameter",
+      "name": "Download zip using an accept query parameter",
       "event": [
         {
           "listen": "test",
