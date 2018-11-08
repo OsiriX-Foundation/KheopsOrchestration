@@ -224,18 +224,18 @@
     },
     {
       "_postman_id": "b297540b-7719-4360-99ab-4cc0ffb55b18",
-      "name": "Download zip stream",
+      "name": "Download zip",
       "event": [
         {
           "listen": "test",
           "script": {
             "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -245,30 +245,18 @@
           {
             "key": "Authorization",
             "value": "Bearer {{secret_capability_token}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/zip",
+            "type": "text"
           }
         ],
-        "body": {},
-        "url": {
-          "raw": "{{URL}}/wado?studyUID={{study_UID}}&requestType=ZIP",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "wado"
-          ],
-          "query": [
-            {
-              "key": "studyUID",
-              "value": "{{study_UID}}",
-              "equals": true
-            },
-            {
-              "key": "requestType",
-              "value": "ZIP",
-              "equals": true
-            }
-          ]
-        }
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}"
       },
       "response": []
     },
@@ -301,7 +289,23 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}&accept=application%2Fzip"
+        "url": {
+          "raw": "{{URL}}/studies/{{study_UID}}?accept=application%2Fzip",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "studies",
+            "{{study_UID}}"
+          ],
+          "query": [
+            {
+              "key": "accept",
+              "value": "application%2Fzip",
+              "equals": true
+            }
+          ]
+        }
       },
       "response": []
     },
