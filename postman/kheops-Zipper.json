@@ -393,7 +393,7 @@
           "script": {
             "id": "8097f253-9943-476c-b05e-fdb97addd36e",
             "exec": [
-              "tests[\"Status code is 401\"] = responseCode.code === 401; "
+              "tests[\"Status code is 401\"] = responseCode.code === 401;"
             ],
             "type": "text/javascript"
           }
