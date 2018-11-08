@@ -1290,6 +1290,40 @@
           "response": []
         },
         {
+          "_postman_id": "8a7f4ffb-f3ae-415d-90b2-33aaf40dcbe3",
+          "name": "Download wado from album Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "3b6fd1fc-82bd-4254-9a14-8279b2828c43",
           "name": "Download wado from album",
           "event": [
