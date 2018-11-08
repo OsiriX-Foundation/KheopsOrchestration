@@ -1263,7 +1263,7 @@
                   "description": "",
                   "key": "read_permission",
                   "type": "text",
-                  "value": "false"
+                  "value": "true"
                 },
                 {
                   "description": "",
