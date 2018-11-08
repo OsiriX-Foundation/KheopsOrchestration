@@ -1335,7 +1335,6 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -1370,7 +1369,6 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;",
                   ""
                 ],
                 "type": "text/javascript"
