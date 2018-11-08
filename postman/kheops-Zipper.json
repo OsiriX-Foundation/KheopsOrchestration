@@ -355,11 +355,11 @@
           "listen": "test",
           "script": {
             "id": "0248e8c8-9462-4bce-b7da-d191e4afb22f",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 404\"] = responseCode.code === 404;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -369,34 +369,18 @@
           {
             "key": "Authorization",
             "value": "Bearer {{secret_capability_token}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/zip",
+            "type": "text"
           }
         ],
-        "body": {},
-        "url": {
-          "raw": "{{URL}}/wado?&studyUID={{study_UID}}11&requestType=ZIP",
-          "host": [
-            "{{URL}}"
-          ],
-          "path": [
-            "wado"
-          ],
-          "query": [
-            {
-              "key": "studyUID",
-              "value": "{{study_UID}}11",
-              "equals": true
-            },
-            {
-              "key": "requestType",
-              "value": "ZIP",
-              "equals": true
-            },
-            {
-              "key": null,
-              "value": null
-            }
-          ]
-        }
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}11"
       },
       "response": []
     },
