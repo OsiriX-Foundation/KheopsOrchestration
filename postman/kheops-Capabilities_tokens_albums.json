@@ -1291,7 +1291,7 @@
         },
         {
           "_postman_id": "8a7f4ffb-f3ae-415d-90b2-33aaf40dcbe3",
-          "name": "Download wado from album Copy",
+          "name": "QIDO from album",
           "event": [
             {
               "listen": "test",
@@ -1319,7 +1319,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/"
+            "url": "{{URL}}/studies"
           },
           "response": []
         },
