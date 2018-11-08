@@ -1333,8 +1333,6 @@
                 "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");",
                   ""
                 ],
                 "type": "text/javascript"
