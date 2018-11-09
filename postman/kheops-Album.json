@@ -1949,7 +1949,6 @@
               "listen": "test",
               "script": {
                 "id": "c41f7adb-b4b9-418c-943e-85d1e7b348cf",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1962,17 +1961,18 @@
                   "tests[\"Return 3 album\"] = jsonObject.length === 3;",
                   "",
                   "tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -2003,7 +2003,7 @@
               ]
             },
             "url": {
-              "raw": "{{URL}}/album?name=nm&fuzzymatching=true",
+              "raw": "{{URL}}/album?name=nme&fuzzymatching=true",
               "host": [
                 "{{URL}}"
               ],
@@ -2013,7 +2013,7 @@
               "query": [
                 {
                   "key": "name",
-                  "value": "nm",
+                  "value": "nme",
                   "equals": true
                 },
                 {
