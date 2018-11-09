@@ -618,18 +618,18 @@
     },
     {
       "_postman_id": "2f029ee3-06a5-41de-9f1c-c8390bf91e24",
-      "name": "Study Metadata-Bad accept Copy",
+      "name": "Study WADO-RS",
       "event": [
         {
           "listen": "test",
           "script": {
             "id": "97662cae-805a-4a4b-86fa-dce666f33834",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 406\"] = responseCode.code === 406;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -639,17 +639,13 @@
           {
             "key": "Authorization",
             "value": "Bearer {{access_token_user2}}"
-          },
-          {
-            "key": "Accept",
-            "value": "application/dicom+json+txt"
           }
         ],
         "body": {
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/metadata"
+        "url": "{{URL}}/studies/{{study_UID}}"
       },
       "response": []
     }
