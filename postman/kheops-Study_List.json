@@ -672,6 +672,11 @@
           {
             "key": "Authorization",
             "value": "Bearer {{access_token_user2}}"
+          },
+          {
+            "key": "Accept",
+            "value": "multipart/related;type=\"application/dicom\"",
+            "type": "text"
           }
         ],
         "body": {
