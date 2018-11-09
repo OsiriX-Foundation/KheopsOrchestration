@@ -651,7 +651,7 @@
     },
     {
       "_postman_id": "0d060de4-a8db-4bf6-a947-3059bebc5552",
-      "name": "Study WADO-RS Copy",
+      "name": "Study WADO-RS application/dicom",
       "event": [
         {
           "listen": "test",
