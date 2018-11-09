@@ -628,7 +628,11 @@
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "let contentTypeLower = postman.getResponseHeader('Content-Type').toLowerCase();",
-              "tests['Content-Type is multipart/related;type=\"application/octet-stream\"'] = contentTypeLower.indexOf('multipart/related;') != -1 && contentTypeLower.indexOf('type=\"application/octet-stream\"') != -1;"
+              "if (contentTypeLower.indexOf('multipart/related;') != -1 && contentTypeLower.indexOf('type=\"application/octet-stream\"') != -1) {",
+              "    tests['Content-Type is multipart/related;type=\"application/octet-stream\"'] = true;",
+              "} else {",
+              "    tests['Content-Type: ' + postman.getResponseHeader('Content-Type') + ' should multipart/related;type=\"application/octet-stream\"'] = false;",
+              "}"
             ],
             "type": "text/javascript"
           }
