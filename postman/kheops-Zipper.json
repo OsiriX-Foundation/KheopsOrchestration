@@ -311,7 +311,7 @@
     },
     {
       "_postman_id": "61d99d62-d41d-409a-9264-a5930685264e",
-      "name": "Download zip stream link",
+      "name": "Download zip link",
       "event": [
         {
           "listen": "test",
