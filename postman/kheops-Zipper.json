@@ -409,6 +409,55 @@
         "url": "{{URL}}/link/12345678/studies/{{study_UID}}"
       },
       "response": []
+    },
+    {
+      "_postman_id": "f76e8c7f-28d0-418d-b6e7-8f8ec7e83c0f",
+      "name": "Download zip using an accept query parameter Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "46b155ae-da60-4c38-974f-fd99e1b9add8",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"Content-Type = application/zip\"] = \"application/zip\" === postman.getResponseHeader(\"Content-Type\");"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{secret_capability_token}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{URL}}/studies/{{study_UID}}?accept=application%2Fzip",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "studies",
+            "{{study_UID}}"
+          ],
+          "query": [
+            {
+              "key": "accept",
+              "value": "application%2Fzip",
+              "equals": true
+            }
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }
