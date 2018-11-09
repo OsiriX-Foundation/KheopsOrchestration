@@ -659,8 +659,9 @@
             "id": "97662cae-805a-4a4b-86fa-dce666f33834",
             "exec": [
               "// ensure healthy response code",
-              "tests[\"Status code is 406\"] = responseCode.code === 406;",
-              ""
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "let contentTypeLower = postman.getResponseHeader('Content-Type').toLowerCase();",
+              "tests['Content-Type is multipart/related;type=\"application/dicom\"'] = contentTypeLower.indexOf('multipart/related;') != -1 && contentTypeLower.indexOf('type=\"application/dicom\"') != -1;"
             ],
             "type": "text/javascript"
           }
