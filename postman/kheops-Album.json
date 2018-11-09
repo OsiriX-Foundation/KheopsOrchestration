@@ -2003,7 +2003,7 @@
               ]
             },
             "url": {
-              "raw": "{{URL}}/album?name=nme&fuzzymatching=true",
+              "raw": "{{URL}}/album?name=nam&fuzzymatching=true",
               "host": [
                 "{{URL}}"
               ],
@@ -2013,7 +2013,7 @@
               "query": [
                 {
                   "key": "name",
-                  "value": "nme",
+                  "value": "nam",
                   "equals": true
                 },
                 {
