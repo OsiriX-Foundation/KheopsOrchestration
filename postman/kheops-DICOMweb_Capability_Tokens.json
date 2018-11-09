@@ -381,11 +381,14 @@
           "listen": "test",
           "script": {
             "id": "b14b7732-6f86-408e-91c2-81d0546f12e6",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
-              "tests[\"Status code is 401\"] = responseCode.code === 401;"
-            ]
+              "tests['Status code is 401'] = responseCode.code === 401;",
+              "",
+              "let contentTypeLower = postman.getResponseHeader('Content-Type').toLowerCase();",
+              "tests['Content-Type is multipart/related;type=\"application/dicom\"'] = contentTypeLower.indexOf('multipart/related;') != -1 && contentTypeLower.indexOf('type=\"application/dicom\"') != -1;"
+            ],
+            "type": "text/javascript"
           }
         }
       ],
