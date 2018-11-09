@@ -5,7 +5,7 @@ services:
   ldap:
     container_name: pacsldap
     image: dcm4che/slapd-dcm4chee:2.4.44-13.0
-    env_file: docker-compose.env
+    env_file: ${ENV_VARIABLES_PATH}/pacs-variables.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -18,10 +18,11 @@ services:
     image: osirixfoundation/kheops-database:${KHEOPS_DATABASE_IMAGE_TAG}
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
-    env_file: docker-compose.env
+    env_file: ${ENV_VARIABLES_PATH}/db-variables.env
     secrets:
       - authdb_pass
       - keycloakdb_pass
+      - pacsdb_pass
     restart: on-failure
 
   arc:
@@ -34,11 +35,13 @@ services:
       - "8787:8787"
       - "11112:11112"
       - "2575:2575"
-    env_file: docker-compose.env
+    env_file: ${ENV_VARIABLES_PATH}/pacs-variables.env
     environment:
-      WILDFLY_CHOWN: /opt/wildfly/standalone /storage
+      WILDFLY_CHOWN: /storage /opt/wildfly/standalone
       WILDFLY_WAIT_FOR: ldap:389 db:5432
       JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
+    secrets:
+      - pacsdb_pass
     depends_on:
       - ldap
       - db
@@ -56,7 +59,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
-    env_file: docker-compose.env
+    env_file:
+      - ${ENV_VARIABLES_PATH}/url-variables.env
+      - ${ENV_VARIABLES_PATH}/db-variables.env
     depends_on:
       - db
       - arc
@@ -72,7 +77,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
-    env_file: docker-compose.env
+    env_file: ${ENV_VARIABLES_PATH}/url-variables.env
     depends_on:
       - arc
 
@@ -83,7 +88,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
-    env_file: docker-compose.env
+    env_file: ${ENV_VARIABLES_PATH}/url-variables.env
     ports:
       - "8049:8080"
     depends_on:
@@ -96,7 +101,7 @@ services:
     ports:
       - "3000:3000"
 
-    env_file: docker-compose.env
+    env_file: ${ENV_VARIABLES_PATH}/url-variables.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -113,7 +118,9 @@ services:
     secrets:
       - privkey1.pem
       - fullchain1.pem
-    env_file: docker-compose.env
+    env_file:
+      - ${ENV_VARIABLES_PATH}/nginx-variables.env
+      - ${ENV_VARIABLES_PATH}/url-variables.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -130,7 +137,7 @@ services:
 
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
-    env_file: docker-compose.env
+    env_file: ${ENV_VARIABLES_PATH}/url-variables.env
     image: osirixfoundation/pacs-authorization-proxy:${PACS_AUTHORIZATION_PROXY_IMAGE_TAG}
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -148,6 +155,8 @@ secrets:
     file: ${SECRETS_PATH}/authdb_pass
   keycloakdb_pass:
     file: ${SECRETS_PATH}/keycloakdb_pass
+  pacsdb_pass:
+    file: ${SECRETS_PATH}/pacsdb_pass
   kheops_superuser_hmasecret:
     file: ${SECRETS_PATH}/kheops_superuser_hmasecret
   kheops_auth_hmasecret:
