@@ -290,7 +290,7 @@
           "raw": ""
         },
         "url": {
-          "raw": "{{URL}}/studies/{{study_UID}}?accept=application%2Fzip",
+          "raw": "{{URL}}/studies/{{study_UID}}?accept=application/zip",
           "host": [
             "{{URL}}"
           ],
@@ -301,7 +301,7 @@
           "query": [
             {
               "key": "accept",
-              "value": "application%2Fzip",
+              "value": "application/zip",
               "equals": true
             }
           ]
@@ -311,7 +311,7 @@
     },
     {
       "_postman_id": "f76e8c7f-28d0-418d-b6e7-8f8ec7e83c0f",
-      "name": "Download zip using an accept query parameter with %EF",
+      "name": "Download zip using an accept query parameter with %2F",
       "event": [
         {
           "listen": "test",
