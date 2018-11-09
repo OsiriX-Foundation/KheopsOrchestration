@@ -311,7 +311,7 @@
     },
     {
       "_postman_id": "f76e8c7f-28d0-418d-b6e7-8f8ec7e83c0f",
-      "name": "Download zip using an accept query parameter Copy",
+      "name": "Download zip using an accept query parameter with %EF",
       "event": [
         {
           "listen": "test",
