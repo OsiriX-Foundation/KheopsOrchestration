@@ -1142,13 +1142,19 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "if (responseBody) {",
+                  "    tests[\"Response is not empty\"] = true;",
                   "",
-                  "var jsonObject = JSON.parse(responseBody);",
+                  "    tests[\"Not empty response []\"] = responseBody != \"[]\"",
                   "",
-                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "    var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                  "    tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "    tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "} else {",
+                  "    tests[\"Response is not empty\"] = false;",
+                  "}"
                 ],
                 "type": "text/javascript"
               }
@@ -1172,7 +1178,10 @@
                 "value": "Bearer {{secret_capability_token_1}}"
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "{{URL}}/studies"
           },
           "response": []
