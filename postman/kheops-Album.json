@@ -3841,6 +3841,63 @@
           "response": []
         },
         {
+          "_postman_id": "88aa5d2b-e6b1-4b8b-bb1c-2e904d17dde8",
+          "name": "get users album Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 user\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"user_name\"] = jsonObject[0].user_name == \"toto@gmail.com\"",
+                  "",
+                  "tests[\"is_admin\"] = jsonObject[0].is_admin == true"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "50784059-89b2-492d-b71a-2afc660a7485",
           "name": "add user 2",
           "event": [
