@@ -3849,12 +3849,7 @@
               "script": {
                 "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 1 user\"] = jsonObject.length === 1;",
-                  ""
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
                 ],
                 "type": "text/javascript"
               }
@@ -3902,7 +3897,7 @@
                 {
                   "key": "reference",
                   "value": "{{user2}}",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -3919,10 +3914,6 @@
                 "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 1 user\"] = jsonObject.length === 1;",
                   ""
                 ],
                 "type": "text/javascript"
