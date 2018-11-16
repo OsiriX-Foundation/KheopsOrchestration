@@ -3849,7 +3849,14 @@
               "script": {
                 "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"email\"] = jsonObject.email == \"titi@gmail.com\"",
+                  "",
+                  "tests[\"sub\"] = jsonObject.sub == pm.environment.get(\"user2\");",
+                  ""
                 ],
                 "type": "text/javascript"
               }
