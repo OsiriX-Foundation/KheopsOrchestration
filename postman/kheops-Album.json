@@ -3910,6 +3910,75 @@
           "response": []
         },
         {
+          "_postman_id": "87ff2c98-5334-4c93-9c22-a50b64f6520a",
+          "name": "Verifie if user 2 exist Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 user\"] = jsonObject.length === 1;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/users?reference={{user2}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "reference",
+                  "value": "{{user2}}",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "_postman_id": "0889b7fa-7a86-401b-b746-42acf7774db5",
           "name": "Verifie if user 4 exist-No Content",
           "event": [
