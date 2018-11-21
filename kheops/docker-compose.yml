@@ -4,7 +4,7 @@ services:
 
   ldap:
     container_name: pacsldap
-    image: dcm4che/slapd-dcm4chee:2.4.44-13.0
+    image: dcm4che/slapd-dcm4chee:2.4.44-15.0
     env_file: ${ENV_VARIABLES_PATH}/pacs-variables.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -27,7 +27,7 @@ services:
 
   arc:
     container_name: pacsarc
-    image: dcm4che/dcm4chee-arc-psql:5.13.0
+    image: dcm4che/dcm4chee-arc-psql:5.15.0
     ports:
       - "8080:8080"
       - "8443:8443"
