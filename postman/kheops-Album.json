@@ -5575,6 +5575,82 @@
             "url": "{{URL}}/album/{{album_user_id_1}}/users"
           },
           "response": []
+        },
+        {
+          "_postman_id": "682a556b-5a23-49e6-bfd5-269f3e75abc6",
+          "name": "Verifie if user 2 exist Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"email\"] = jsonObject.email == \"titi@gmail.com\"",
+                  "",
+                  "tests[\"sub\"] = jsonObject.sub == pm.variables.get(\"user2\");",
+                  "",
+                  "",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "tests[\"[INFO] sub attendu: \" + pm.variables.get(\"user2\")] = true;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/users?reference={{user2}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "reference",
+                  "value": "{{user2}}",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
