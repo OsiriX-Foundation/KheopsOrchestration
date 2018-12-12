@@ -3855,10 +3855,12 @@
                   "",
                   "tests[\"email\"] = jsonObject.email == \"titi@gmail.com\"",
                   "",
-                  "tests[\"sub\"] = jsonObject.sub == pm.environment.get(\"user2\");",
+                  "tests[\"sub\"] = jsonObject.sub == pm.variables.get(\"user2\");",
+                  "",
+                  "",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;",
-                  "tests[\"[INFO] sub attendu: \" + pm.environment.get(\"user2\")] = true;",
+                  "tests[\"[INFO] sub attendu: \" + pm.variables.get(\"user2\")] = true;",
                   ""
                 ],
                 "type": "text/javascript"
