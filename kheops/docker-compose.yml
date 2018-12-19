@@ -131,6 +131,8 @@ services:
       - kheops-dicomweb-proxy
       - arc
       - pacs-authorization-proxy
+    extra_hosts:
+      - "${ROOT_URL}:127.0.0.1"
 
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
