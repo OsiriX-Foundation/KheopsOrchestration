@@ -5,7 +5,7 @@ services:
   ldap:
     container_name: pacsldap
     image: dcm4che/slapd-dcm4chee:2.4.44-13.3
-    env_file: ${ENV_VARIABLES_PATH}/pacs-variables.env
+    env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -18,16 +18,15 @@ services:
     image: osirixfoundation/kheops-database:${KHEOPS_DATABASE_IMAGE_TAG}
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
-    env_file: ${ENV_VARIABLES_PATH}/db-variables.env
+    env_file: docker-compose.env
     secrets:
-      - authdb_pass
-      - keycloakdb_pass
-      - pacsdb_pass
+      - kheops_authdb_pass
+      - kheops_pacsdb_pass
     restart: on-failure
 
   arc:
     container_name: pacsarc
-    image: dcm4che/dcm4chee-arc-psql:5.13.3
+    image: osirixfoundation/kheops-dcm4chee-arc-psql:${KHEOPS_ARC_IMAGE_TAG}
     ports:
       - "8080:8080"
       - "8443:8443"
@@ -35,7 +34,7 @@ services:
       - "8787:8787"
       - "11112:11112"
       - "2575:2575"
-    env_file: ${ENV_VARIABLES_PATH}/pacs-variables.env
+    env_file: docker-compose.env
     environment:
       WILDFLY_CHOWN: /storage /opt/wildfly/standalone
       WILDFLY_WAIT_FOR: ldap:389 db:5432
@@ -59,16 +58,14 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
-    env_file:
-      - ${ENV_VARIABLES_PATH}/url-variables.env
-      - ${ENV_VARIABLES_PATH}/db-variables.env
+    env_file: docker-compose.env
     depends_on:
       - db
       - arc
     secrets:
       - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
-      - authdb_pass
+      - kheops_authdb_pass
 
   kheops-zipper:
     container_name: kheopszipper
@@ -77,7 +74,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
-    env_file: ${ENV_VARIABLES_PATH}/url-variables.env
+    env_file: docker-compose.env
     depends_on:
       - arc
 
@@ -88,7 +85,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
-    env_file: ${ENV_VARIABLES_PATH}/url-variables.env
+    env_file: docker-compose.env
     ports:
       - "8049:8080"
     depends_on:
@@ -103,7 +100,7 @@ services:
     ports:
       - "3000:3000"
 
-    env_file: ${ENV_VARIABLES_PATH}/url-variables.env
+    env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -120,9 +117,7 @@ services:
     secrets:
       - privkey1.pem
       - fullchain1.pem
-    env_file:
-      - ${ENV_VARIABLES_PATH}/nginx-variables.env
-      - ${ENV_VARIABLES_PATH}/url-variables.env
+    env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${TIME_ZONE}:/etc/timezone:ro
@@ -153,20 +148,16 @@ services:
       - kheops_auth_hmasecret_post
 
 secrets:
-  authdb_pass:
-    file: ${SECRETS_PATH}/authdb_pass
-  keycloakdb_pass:
-    file: ${SECRETS_PATH}/keycloakdb_pass
-  pacsdb_pass:
-    file: ${SECRETS_PATH}/pacsdb_pass
+  kheops_authdb_pass:
+    file: ${SECRETS_PATH}/kheops_authdb_pass
+  kheops_pacsdb_pass:
+    file: ${SECRETS_PATH}/kheops_pacsdb_pass
   kheops_superuser_hmasecret:
     file: ${SECRETS_PATH}/kheops_superuser_hmasecret
   kheops_auth_hmasecret:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret_post
-  kheops_postgresql_password:
-    file: ${SECRETS_PATH}/kheops_postgresql_password
   privkey1.pem:
     file: ${NGINX_KEY}/privkey1.pem
   fullchain1.pem:
