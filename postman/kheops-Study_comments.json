@@ -792,6 +792,15 @@
               "// ensure healthy response code debug",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
+              "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+              "if (totalCount === 2) {",
+              "    tests[\"X-Total-Count = 2\"] = true;",
+              "} else {",
+              "    tests[\"X-Total-Count = \" + totalCount + \" instead of 2\"] = false;",
+              "}",
+              "",
+              "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+              "",
               "tests[\"[INFO] Response: \" + responseBody] = true;"
             ],
             "type": "text/javascript"
