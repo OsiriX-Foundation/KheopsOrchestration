@@ -1,0 +1,814 @@
+{
+  "info": {
+    "_postman_id": "7ff6ccfe-e3c3-492d-b719-46d76c047e86",
+    "name": "kheops-Study_comments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "d3ee1d28-42c0-45ac-b75d-d46c62060847",
+      "name": "Initialisation",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "99725630-a99b-4641-b5c6-5646cc933356",
+          "name": "create user1-create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  "type": "text"
+                },
+                {
+                  "key": "assertion",
+                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiIxMjM0NTY3ODkiLCJlbWFpbCI6InRvdG9AZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.916Xn1BnUwdhOvuWErWWOh_AkYXeS36mVRTP06VWsVA",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a62d057a-acb3-46ef-908f-2dc7db5052fc",
+          "name": "create user2-create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"access_token_user2\", jsonObject.access_token);",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  "type": "text"
+                },
+                {
+                  "key": "assertion",
+                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5ODc2NTQzMjEiLCJlbWFpbCI6InRpdGlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.Csj6WCBDwZlXeUOE0nX6SmReZhGZayw2yZFKWzlwysE",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "66fc4e34-7416-480a-b231-d31f47737b7b",
+          "name": "create user3-create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6ea2d7bb-b849-4327-b8fe-c5003480b2d6",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"access_token_user3\", jsonObject.access_token);",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                  "type": "text"
+                },
+                {
+                  "key": "assertion",
+                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5OTg4Nzc2NjU1IiwiZW1haWwiOiJ0YXRhQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJleHAiOjI1MjI5NDM1NzIsImlzcyI6ImF1dGhvcml6YXRpb24ua2hlb3BzLm9ubGluZSIsImlhdCI6MTUyMjkzOTk3Mn0.i8D9zxg1aQBjIMCBS921v7PBQ6Me2trR2a5TtVk0_Xs",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4994abf6-9c31-45bd-9be7-4c6d593a587a",
+          "name": "user1 get studies list-Empty",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "828f735b-2926-4ab7-9ba2-968da5b9365d",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
+                  "",
+                  "tests[\"Empty response\"] = responseBody == \"\"",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f6999c99-e537-4e87-b6e1-9bebf80a358a",
+          "name": "STOW RS inside inbox user 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "type": "text/javascript",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c9d76cda-4932-417a-9446-5b25bab5aee9",
+          "name": "Give to user2 an access to a specific series from user1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "237d5a44-04e3-47d8-9adc-aec44d849a6e",
+          "name": "Give to user3 an access to a specific series from user1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user3}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "54c97b68-d2bf-4d50-b7e6-ad92b73c3017",
+          "name": "user1 get studies list-1 element",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 1) {",
+                  "    tests[\"X-Total-Count = 1\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5984b06d-354c-4bf6-87aa-7b22f0e1bf14",
+          "name": "user2 get studies list-1 element",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 1) {",
+                  "    tests[\"X-Total-Count = 1\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "509fd1b5-38f3-4f17-84c9-797bd5d3c58f",
+      "name": "user1 get comments study-0 comment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "1aeb3699-aaa1-4081-a222-6ccf190704c7",
+      "name": "user1 post comment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "comment",
+              "value": "a comment",
+              "description": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "455501d0-dcac-46c5-ac0b-f597fbfcda9c",
+      "name": "user1 post comment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "comment",
+              "value": "a second comment",
+              "description": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "1138e466-53d3-4f7f-a210-8c0eb52d1df7",
+      "name": "user1 post private comment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          },
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "description": "",
+              "key": "comment",
+              "type": "text",
+              "value": "a private comment"
+            },
+            {
+              "key": "to_user",
+              "value": "{{user2}}",
+              "description": "",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "272702bd-c96b-4b9f-9646-41440e35b770",
+      "name": "user1 get comments study-3 comments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"[INFO] Response: \" + responseBody] = true;"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "2dc3f88b-137d-451a-aea9-2226910f2c44",
+      "name": "user2 get comments study-3 comments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"[INFO] Response: \" + responseBody] = true;"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "3c5980c3-70f5-46d0-8b88-09c3c24c05e0",
+      "name": "user3 get comments study-2 comments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"[INFO] Response: \" + responseBody] = true;"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    }
+  ]
+}
