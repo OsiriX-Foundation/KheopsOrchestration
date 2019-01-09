@@ -775,7 +775,7 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
+                  "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -814,14 +814,16 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "description": "",
                   "key": "comment",
                   "type": "text",
                   "value": "a private comment"
                 },
                 {
+                  "description": "",
                   "key": "to_user",
                   "type": "text",
-                  "value": "{{user2}}"
+                  "value": "5555555"
                 }
               ]
             },
