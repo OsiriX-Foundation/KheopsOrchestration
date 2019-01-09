@@ -837,7 +837,7 @@
         "header": [
           {
             "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+            "value": "Bearer {{access_token_user3}}"
           },
           {
             "key": "Accept",
@@ -862,7 +862,7 @@
             "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
             "exec": [
               "// ensure healthy response code debug",
-              "tests[\"Status code is 204\"] = responseCode.code === 204;",
+              "tests[\"Status code is 403\"] = responseCode.code === 403;",
               ""
             ],
             "type": "text/javascript"
@@ -884,7 +884,7 @@
         "header": [
           {
             "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+            "value": "Bearer {{access_token_user3}}"
           },
           {
             "key": "Accept",
@@ -893,17 +893,18 @@
           {
             "key": "Content-Type",
             "name": "Content-Type",
-            "value": "application/x-www-form-urlencoded",
-            "type": "text"
+            "type": "text",
+            "value": "application/x-www-form-urlencoded"
           }
         ],
         "body": {
           "mode": "urlencoded",
           "urlencoded": [
             {
+              "description": "",
               "key": "comment",
-              "value": "a comment",
-              "type": "text"
+              "type": "text",
+              "value": "a comment"
             }
           ]
         },
