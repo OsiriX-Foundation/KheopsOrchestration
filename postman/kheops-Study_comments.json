@@ -763,7 +763,7 @@
       "item": [
         {
           "_postman_id": "e16b4692-be13-4fb2-ac99-1b93beaaaa97",
-          "name": "user1 get comments study-3 comments Copy",
+          "name": "user1 get comments study-limit",
           "event": [
             {
               "listen": "test",
@@ -774,10 +774,10 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 3) {",
-                  "    tests[\"X-Total-Count = 3\"] = true;",
+                  "if (totalCount === 2) {",
+                  "    tests[\"X-Total-Count = 2\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 2\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -814,7 +814,24 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{study_UID}}/comments"
+            "url": {
+              "raw": "{{URL}}/studies/{{study_UID}}/comments?limit=2",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{study_UID}}",
+                "comments"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "2",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         }
