@@ -922,10 +922,10 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 2) {",
-                  "    tests[\"X-Total-Count = 2\"] = true;",
+                  "if (totalCount === 1) {",
+                  "    tests[\"X-Total-Count = 1\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 2\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -963,7 +963,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/comments?limit=2",
+              "raw": "{{URL}}/studies/{{study_UID}}/comments?limit=2&offset=1",
               "host": [
                 "{{URL}}"
               ],
@@ -976,6 +976,11 @@
                 {
                   "key": "limit",
                   "value": "2",
+                  "equals": true
+                },
+                {
+                  "key": "offset",
+                  "value": "1",
                   "type": "text"
                 }
               ]
@@ -984,6 +989,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "9a7e0305-501f-4247-a6a0-b78997854016",
+      "name": "user3",
+      "description": "",
+      "item": []
     },
     {
       "_postman_id": "bff0f45d-ebf7-4da3-9155-b9d8d39ae0d0",
