@@ -994,55 +994,56 @@
       "_postman_id": "9a7e0305-501f-4247-a6a0-b78997854016",
       "name": "user3",
       "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "bff0f45d-ebf7-4da3-9155-b9d8d39ae0d0",
-      "name": "user3 get comments study-Forbidden",
-      "event": [
+      "item": [
         {
-          "listen": "test",
-          "script": {
-            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-            "exec": [
-              "// ensure healthy response code debug",
-              "tests[\"Status code is 403\"] = responseCode.code === 403;",
-              "",
-              "tests[\"[INFO] Response: \" + responseBody] = true;"
+          "_postman_id": "bff0f45d-ebf7-4da3-9155-b9d8d39ae0d0",
+          "name": "user3 get comments study-Forbidden",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user3}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
             ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user3}}"
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/comments"
           },
-          {
-            "key": "Accept",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/comments"
-      },
-      "response": []
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "374d82d2-6dfc-4d7d-88ab-62921f112e88",
