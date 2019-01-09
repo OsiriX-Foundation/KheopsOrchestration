@@ -750,39 +750,8 @@
       "response": []
     },
     {
-      "_postman_id": "237d5a44-04e3-47d8-9adc-aec44d849a6e",
-      "name": "Give to user3 an access to a specific series from user1",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-            "exec": [
-              "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user3}}"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "3c5980c3-70f5-46d0-8b88-09c3c24c05e0",
-      "name": "user3 get comments study-2 comments",
+      "_postman_id": "bff0f45d-ebf7-4da3-9155-b9d8d39ae0d0",
+      "name": "user3 get comments study",
       "event": [
         {
           "listen": "test",
@@ -838,8 +807,39 @@
       "response": []
     },
     {
-      "_postman_id": "bff0f45d-ebf7-4da3-9155-b9d8d39ae0d0",
-      "name": "user3 get comments study-2 comments Copy",
+      "_postman_id": "237d5a44-04e3-47d8-9adc-aec44d849a6e",
+      "name": "Give to user3 an access to a specific series from user1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+            "exec": [
+              "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user3}}"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "3c5980c3-70f5-46d0-8b88-09c3c24c05e0",
+      "name": "user3 get comments study-2 comments",
       "event": [
         {
           "listen": "test",
