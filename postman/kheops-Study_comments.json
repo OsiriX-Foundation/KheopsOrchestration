@@ -799,7 +799,7 @@
     },
     {
       "_postman_id": "374d82d2-6dfc-4d7d-88ab-62921f112e88",
-      "name": "user1 get studies list-1 element Copy",
+      "name": "user1 get studies list-0 element",
       "event": [
         {
           "listen": "test",
@@ -810,10 +810,10 @@
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-              "if (totalCount === 1) {",
-              "    tests[\"X-Total-Count = 1\"] = true;",
+              "if (totalCount === 0) {",
+              "    tests[\"X-Total-Count = 0\"] = true;",
               "} else {",
-              "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+              "    tests[\"X-Total-Count = \" + totalCount + \" instead of 0\"] = false;",
               "}",
               "",
               "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
