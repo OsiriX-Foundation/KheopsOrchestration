@@ -1097,68 +1097,68 @@
             "url": "{{URL}}/studies"
           },
           "response": []
+        },
+        {
+          "_postman_id": "a8f8a443-318b-4566-a1d2-cf553128e1f9",
+          "name": "user3 post comment-Forbidden",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user3}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "description": "",
+                  "key": "comment",
+                  "type": "text",
+                  "value": "a comment"
+                }
+              ]
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/comments"
+          },
+          "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "a8f8a443-318b-4566-a1d2-cf553128e1f9",
-      "name": "user3 post comment-Forbidden",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-            "exec": [
-              "// ensure healthy response code debug",
-              "tests[\"Status code is 403\"] = responseCode.code === 403;",
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user3}}"
-          },
-          {
-            "key": "Accept",
-            "value": "application/json"
-          },
-          {
-            "key": "Content-Type",
-            "name": "Content-Type",
-            "type": "text",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "description": "",
-              "key": "comment",
-              "type": "text",
-              "value": "a comment"
-            }
-          ]
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/comments"
-      },
-      "response": []
     },
     {
       "_postman_id": "237d5a44-04e3-47d8-9adc-aec44d849a6e",
