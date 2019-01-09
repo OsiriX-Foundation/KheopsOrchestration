@@ -644,8 +644,7 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
-                  ""
+                  "tests[\"Status code is 400\"] = responseCode.code === 400;"
                 ],
                 "type": "text/javascript"
               }
@@ -692,7 +691,7 @@
                   "description": "",
                   "key": "to_user",
                   "type": "text",
-                  "value": "{{user2}}"
+                  "value": "{{user1}}"
                 }
               ]
             },
@@ -883,6 +882,70 @@
             "body": {
               "mode": "raw",
               "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/comments"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9fb6f1c9-2c68-4407-a406-02188f1c0f91",
+          "name": "user1 post private comment to user 2 Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "comment",
+                  "type": "text",
+                  "value": "a private comment"
+                },
+                {
+                  "key": "to_user",
+                  "type": "text",
+                  "value": "{{user2}}"
+                }
+              ]
             },
             "url": "{{URL}}/studies/{{study_UID}}/comments"
           },
