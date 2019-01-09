@@ -751,7 +751,7 @@
     },
     {
       "_postman_id": "bff0f45d-ebf7-4da3-9155-b9d8d39ae0d0",
-      "name": "user3 get comments study-2 comments Copy",
+      "name": "user3 get comments study-Forbidden",
       "event": [
         {
           "listen": "test",
