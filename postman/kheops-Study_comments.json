@@ -576,7 +576,7 @@
         },
         {
           "_postman_id": "1138e466-53d3-4f7f-a210-8c0eb52d1df7",
-          "name": "user1 post private comment",
+          "name": "user1 post private comment to user 2",
           "event": [
             {
               "listen": "test",
@@ -689,13 +689,15 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "description": "",
                   "key": "comment",
                   "type": "text",
                   "value": "a private comment"
                 },
                 {
                   "key": "to_user",
-                  "value": "{{user2}}",
+                  "value": "{{user3}}",
+                  "description": "",
                   "type": "text"
                 }
               ]
