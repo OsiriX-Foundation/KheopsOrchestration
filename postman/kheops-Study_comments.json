@@ -1592,6 +1592,10 @@
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
                   "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 2 comments\"] = jsonObject.length === 2;",
+                  "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
                 "type": "text/javascript"
