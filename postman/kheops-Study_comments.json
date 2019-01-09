@@ -767,7 +767,7 @@
         },
         {
           "_postman_id": "9fb6f1c9-2c68-4407-a406-02188f1c0f91",
-          "name": "user1 post private comment to user 2 Copy",
+          "name": "user1 post private comment to user X",
           "event": [
             {
               "listen": "test",
