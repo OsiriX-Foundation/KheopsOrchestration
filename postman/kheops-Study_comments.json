@@ -291,37 +291,6 @@
           "response": []
         },
         {
-          "_postman_id": "237d5a44-04e3-47d8-9adc-aec44d849a6e",
-          "name": "Give to user3 an access to a specific series from user1",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "exec": [
-                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user3}}"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "54c97b68-d2bf-4d50-b7e6-ad92b73c3017",
           "name": "user1 get studies list-1 element",
           "event": [
@@ -777,6 +746,37 @@
           "raw": ""
         },
         "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "237d5a44-04e3-47d8-9adc-aec44d849a6e",
+      "name": "Give to user3 an access to a specific series from user1",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+            "exec": [
+              "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user3}}"
       },
       "response": []
     },
