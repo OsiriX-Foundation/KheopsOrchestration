@@ -579,74 +579,74 @@
             "url": "{{URL}}/studies/{{study_UID}}/comments"
           },
           "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "1138e466-53d3-4f7f-a210-8c0eb52d1df7",
-      "name": "user1 post private comment",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-            "exec": [
-              "// ensure healthy response code debug",
-              "tests[\"Status code is 204\"] = responseCode.code === 204;",
-              ""
-            ],
-            "type": "text/javascript"
-          }
         },
         {
-          "listen": "prerequest",
-          "script": {
-            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
-          {
-            "key": "Accept",
-            "value": "application/json"
-          },
-          {
-            "key": "Content-Type",
-            "name": "Content-Type",
-            "type": "text",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
+          "_postman_id": "1138e466-53d3-4f7f-a210-8c0eb52d1df7",
+          "name": "user1 post private comment",
+          "event": [
             {
-              "description": "",
-              "key": "comment",
-              "type": "text",
-              "value": "a private comment"
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
             },
             {
-              "key": "to_user",
-              "value": "{{user2}}",
-              "description": "",
-              "type": "text"
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
             }
-          ]
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/comments"
-      },
-      "response": []
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "description": "",
+                  "key": "comment",
+                  "type": "text",
+                  "value": "a private comment"
+                },
+                {
+                  "key": "to_user",
+                  "value": "{{user2}}",
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/comments"
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "272702bd-c96b-4b9f-9646-41440e35b770",
