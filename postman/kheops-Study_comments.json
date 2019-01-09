@@ -990,7 +990,7 @@
         },
         {
           "_postman_id": "65f010d3-479e-4e11-9087-72dee5a74569",
-          "name": "user1 get comments study-limit and offset Copy",
+          "name": "user1 get comments study-bad limit",
           "event": [
             {
               "listen": "test",
