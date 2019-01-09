@@ -403,6 +403,12 @@
       ]
     },
     {
+      "_postman_id": "b01fbaf0-9142-49eb-bda5-4684fbf7b1e3",
+      "name": "limit and offset",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "509fd1b5-38f3-4f17-84c9-797bd5d3c58f",
       "name": "user1 get comments study-0 comment",
       "event": [
