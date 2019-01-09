@@ -813,6 +813,65 @@
             "url": "{{URL}}/studies/{{study_UID}}/comments"
           },
           "response": []
+        },
+        {
+          "_postman_id": "eda7e760-b4e2-4945-8f47-635ea519bd02",
+          "name": "user1 post comment Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "comment",
+                  "value": "a second comment",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/comments"
+          },
+          "response": []
         }
       ]
     },
@@ -1195,7 +1254,7 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
+                  "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   ""
                 ],
                 "type": "text/javascript"
