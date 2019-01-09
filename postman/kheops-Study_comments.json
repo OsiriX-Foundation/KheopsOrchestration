@@ -399,61 +399,6 @@
             "url": "{{URL}}/studies"
           },
           "response": []
-        },
-        {
-          "_postman_id": "374d82d2-6dfc-4d7d-88ab-62921f112e88",
-          "name": "user1 get studies list-1 element Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-                "exec": [
-                  "// ensure healthy response code debug",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 1) {",
-                  "    tests[\"X-Total-Count = 1\"] = true;",
-                  "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
-                  "}",
-                  "",
-                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/dicom+json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies"
-          },
-          "response": []
         }
       ]
     },
@@ -853,6 +798,61 @@
       "response": []
     },
     {
+      "_postman_id": "374d82d2-6dfc-4d7d-88ab-62921f112e88",
+      "name": "user1 get studies list-1 element Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+              "if (totalCount === 1) {",
+              "    tests[\"X-Total-Count = 1\"] = true;",
+              "} else {",
+              "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+              "}",
+              "",
+              "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/dicom+json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "237d5a44-04e3-47d8-9adc-aec44d849a6e",
       "name": "Give to user3 an access to a specific series from user1",
       "event": [
@@ -937,6 +937,61 @@
           "raw": ""
         },
         "url": "{{URL}}/studies/{{study_UID}}/comments"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "b4eaaa1e-b610-459d-8209-bba639d81a51",
+      "name": "user1 get studies list-1 element Copy Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+            "exec": [
+              "// ensure healthy response code debug",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+              "if (totalCount === 1) {",
+              "    tests[\"X-Total-Count = 1\"] = true;",
+              "} else {",
+              "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+              "}",
+              "",
+              "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{access_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/dicom+json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies"
       },
       "response": []
     }
