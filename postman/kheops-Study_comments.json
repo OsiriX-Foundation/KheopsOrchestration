@@ -945,7 +945,7 @@
     },
     {
       "_postman_id": "b4eaaa1e-b610-459d-8209-bba639d81a51",
-      "name": "user1 get studies list-1 element",
+      "name": "user3 get studies list-1 element",
       "event": [
         {
           "listen": "test",
@@ -983,7 +983,7 @@
         "header": [
           {
             "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+            "value": "Bearer {{access_token_user3}}"
           },
           {
             "key": "Accept",
