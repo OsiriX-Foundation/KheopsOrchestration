@@ -911,7 +911,7 @@
         },
         {
           "_postman_id": "33f7165c-12a1-4367-a466-c16353468299",
-          "name": "user1 get comments study-limit Copy Copy",
+          "name": "user1 get comments study-limit and offset",
           "event": [
             {
               "listen": "test",
