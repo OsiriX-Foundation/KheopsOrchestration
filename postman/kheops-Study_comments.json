@@ -701,6 +701,72 @@
           "response": []
         },
         {
+          "_postman_id": "fc963724-053e-436f-8ccc-e0b46cd4221b",
+          "name": "user1 post private comment to user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "description": "",
+                  "key": "comment",
+                  "type": "text",
+                  "value": "a private comment"
+                },
+                {
+                  "description": "",
+                  "key": "to_user",
+                  "type": "text",
+                  "value": "{{user2}}"
+                }
+              ]
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/comments"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "272702bd-c96b-4b9f-9646-41440e35b770",
           "name": "user1 get comments study-3 comments",
           "event": [
