@@ -412,54 +412,55 @@
       "_postman_id": "b2a46159-4e96-4dc9-ae98-eed289ffaf3d",
       "name": "Post comments",
       "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "509fd1b5-38f3-4f17-84c9-797bd5d3c58f",
-      "name": "user1 get comments study-0 comment",
-      "event": [
+      "item": [
         {
-          "listen": "test",
-          "script": {
-            "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-            "exec": [
-              "// ensure healthy response code debug",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              ""
+          "_postman_id": "509fd1b5-38f3-4f17-84c9-797bd5d3c58f",
+          "name": "user1 get comments study-0 comment",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
             ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/comments"
           },
-          {
-            "key": "Accept",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/comments"
-      },
-      "response": []
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "1aeb3699-aaa1-4081-a222-6ccf190704c7",
