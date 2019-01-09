@@ -774,10 +774,10 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 2) {",
-                  "    tests[\"X-Total-Count = 2\"] = true;",
+                  "if (totalCount === 3) {",
+                  "    tests[\"X-Total-Count = 3\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 2\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -828,7 +828,7 @@
                 {
                   "key": "limit",
                   "value": "2",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -922,10 +922,10 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 1) {",
-                  "    tests[\"X-Total-Count = 1\"] = true;",
+                  "if (totalCount === 3) {",
+                  "    tests[\"X-Total-Count = 3\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -981,7 +981,7 @@
                 {
                   "key": "offset",
                   "value": "1",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -998,16 +998,7 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 1) {",
-                  "    tests[\"X-Total-Count = 1\"] = true;",
-                  "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
-                  "}",
-                  "",
-                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
@@ -1042,7 +1033,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/comments?limit=2&offset=1",
+              "raw": "{{URL}}/studies/{{study_UID}}/comments?limit=-5",
               "host": [
                 "{{URL}}"
               ],
@@ -1054,13 +1045,8 @@
               "query": [
                 {
                   "key": "limit",
-                  "value": "2",
+                  "value": "-5",
                   "equals": true
-                },
-                {
-                  "key": "offset",
-                  "value": "1",
-                  "type": "text"
                 }
               ]
             }
@@ -1069,7 +1055,7 @@
         },
         {
           "_postman_id": "00f81094-bdd7-4479-a2c1-3b75002c0700",
-          "name": "user1 get comments study-limit and offset Copy Copy",
+          "name": "user1 get comments study-bad offset",
           "event": [
             {
               "listen": "test",
@@ -1077,16 +1063,7 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 1) {",
-                  "    tests[\"X-Total-Count = 1\"] = true;",
-                  "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
-                  "}",
-                  "",
-                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
@@ -1121,7 +1098,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/comments?limit=2&offset=1",
+              "raw": "{{URL}}/studies/{{study_UID}}/comments?offset=-9",
               "host": [
                 "{{URL}}"
               ],
@@ -1132,14 +1109,9 @@
               ],
               "query": [
                 {
-                  "key": "limit",
-                  "value": "2",
-                  "equals": true
-                },
-                {
                   "key": "offset",
-                  "value": "1",
-                  "type": "text"
+                  "value": "-9",
+                  "equals": true
                 }
               ]
             }
