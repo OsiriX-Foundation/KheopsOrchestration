@@ -695,7 +695,7 @@
         },
         {
           "_postman_id": "1138e466-53d3-4f7f-a210-8c0eb52d1df7",
-          "name": "user1 post private comment to user 2",
+          "name": "user1 post private comment to user 1",
           "event": [
             {
               "listen": "test",
@@ -703,7 +703,6 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -748,10 +747,10 @@
                   "value": "a private comment"
                 },
                 {
-                  "key": "to_user",
-                  "value": "{{user2}}",
                   "description": "",
-                  "type": "text"
+                  "key": "to_user",
+                  "type": "text",
+                  "value": "{{user2}}"
                 }
               ]
             },
