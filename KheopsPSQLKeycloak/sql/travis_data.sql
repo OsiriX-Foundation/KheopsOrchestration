@@ -2331,6 +2331,7 @@ COPY public.group_attribute (id, name, value, group_id) FROM stdin;
 --
 
 COPY public.group_role_mapping (role_id, group_id) FROM stdin;
+33115a85-d17c-4316-b881-48f919810a00	625e921a-814f-4a9c-a4bf-36168f706f9d
 \.
 
 

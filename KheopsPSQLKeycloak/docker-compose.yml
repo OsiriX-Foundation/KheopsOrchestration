@@ -5,7 +5,7 @@ services:
     env_file: docker-compose.env
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - /home/vandoo/Documents/Kheops/KheopsPSQLKeycloak/sql:/docker-entrypoint-initdb.d
+      - ./sql:/docker-entrypoint-initdb.d
     secrets:
       - psql_password
 
