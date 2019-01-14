@@ -1,0 +1,36 @@
+version: "3.1"
+services:
+  postgres:
+    image: postgres:9.6
+    env_file: docker-compose.env
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - /home/vandoo/Documents/Kheops/KheopsPSQLKeycloak/sql:/docker-entrypoint-initdb.d
+    secrets:
+      - psql_password
+
+  keycloak:
+    image: nicolasvandooren/kheopskeycloak:keycloak_secrets
+    ports:
+      - "8180:8080"
+    env_file: docker-compose.env
+    depends_on:
+      - postgres
+    volumes:
+      - keycloak-standalone:/opt/keycloak/standalone
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+    secrets:
+      - psql_password
+      - keycloak_password
+secrets:
+  psql_password:
+    file: secrets/psql_password
+  keycloak_password:
+    file: secrets/keycloak_password
+
+volumes:
+  keycloak-standalone:
+  postgres_data:
