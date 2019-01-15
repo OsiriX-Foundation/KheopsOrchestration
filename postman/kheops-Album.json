@@ -6028,20 +6028,20 @@
               "listen": "test",
               "script": {
                 "id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -6071,7 +6071,7 @@
                 },
                 {
                   "key": "to_user",
-                  "value": "{{user2}}",
+                  "value": "{{user2_mail}}",
                   "description": "",
                   "type": "text"
                 }
