@@ -8394,20 +8394,20 @@
               "listen": "test",
               "script": {
                 "id": "43ce39fd-02e9-4fd1-9f27-f20b3cacd05d",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -8428,7 +8428,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_mutation}}/users/{{user2}}"
+            "url": "{{URL}}/album/{{album_id_mutation}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -9425,10 +9425,10 @@
               "listen": "test",
               "script": {
                 "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -9445,7 +9445,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2}}?inbox=true",
+              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?inbox=true",
               "host": [
                 "{{URL}}"
               ],
@@ -9453,7 +9453,7 @@
                 "studies",
                 "{{study_UID}}",
                 "users",
-                "{{user2}}"
+                "{{user2_mail}}"
               ],
               "query": [
                 {
