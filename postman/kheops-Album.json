@@ -3968,7 +3968,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/users?reference=titi@gmail.com",
+              "raw": "{{URL}}/users?reference={{user2_mail}}",
               "host": [
                 "{{URL}}"
               ],
@@ -3978,7 +3978,7 @@
               "query": [
                 {
                   "key": "reference",
-                  "value": "titi@gmail.com",
+                  "value": "{{user2_mail}}",
                   "equals": true
                 }
               ]
