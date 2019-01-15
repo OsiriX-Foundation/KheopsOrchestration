@@ -4948,20 +4948,20 @@
               "listen": "test",
               "script": {
                 "id": "d9f47810-b5c0-4c3e-bf3e-058307df3914",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -4982,7 +4982,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}"
+            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -5061,20 +5061,20 @@
               "listen": "test",
               "script": {
                 "id": "38990284-96e1-4bdc-a21b-11ed93122674",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5095,7 +5095,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2}}/admin"
+            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}/admin"
           },
           "response": []
         },
@@ -5107,20 +5107,20 @@
               "listen": "test",
               "script": {
                 "id": "9267969e-8d15-4677-a4f9-f950a4f6f62a",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5141,7 +5141,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user1}}/admin"
+            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user1_mail}}/admin"
           },
           "response": []
         },
