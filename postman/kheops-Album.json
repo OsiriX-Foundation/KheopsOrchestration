@@ -1575,20 +1575,20 @@
               "listen": "test",
               "script": {
                 "id": "43ce39fd-02e9-4fd1-9f27-f20b3cacd05d",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1609,7 +1609,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_3}}/users/{{user2}}"
+            "url": "{{URL}}/album/{{album_id_3}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -3023,20 +3023,20 @@
               "listen": "test",
               "script": {
                 "id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3057,7 +3057,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2}}"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
