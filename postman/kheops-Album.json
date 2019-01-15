@@ -5421,20 +5421,20 @@
               "listen": "test",
               "script": {
                 "id": "482ed9e7-17d2-4a7f-aa1d-23849eb41124",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5455,7 +5455,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user1}}"
+            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user1_id}}"
           },
           "response": []
         },
@@ -5875,20 +5875,20 @@
               "listen": "test",
               "script": {
                 "id": "df6a6d48-2274-46b3-bd9b-a3016c472d11",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5918,7 +5918,7 @@
                 },
                 {
                   "key": "to_user",
-                  "value": "{{user2}}",
+                  "value": "{{user2_id}}",
                   "description": "",
                   "type": "text"
                 }
