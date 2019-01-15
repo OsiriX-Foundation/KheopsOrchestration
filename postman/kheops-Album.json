@@ -3896,7 +3896,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/users?reference={{user2}}",
+              "raw": "{{URL}}/users?reference={{user2_id}}",
               "host": [
                 "{{URL}}"
               ],
@@ -3906,7 +3906,7 @@
               "query": [
                 {
                   "key": "reference",
-                  "value": "{{user2}}",
+                  "value": "{{user2_id}}",
                   "equals": true
                 }
               ]
