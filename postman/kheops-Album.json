@@ -5375,20 +5375,20 @@
               "listen": "test",
               "script": {
                 "id": "42c61bda-274a-498c-bc85-243b637c6fef",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5409,7 +5409,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user1}}"
+            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user1_mail}}"
           },
           "response": []
         },
