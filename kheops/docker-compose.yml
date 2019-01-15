@@ -66,6 +66,8 @@ services:
       - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
       - kheops_authdb_pass
+      - kheops_keycloak_clientsecret
+      - kheops_keycloak_password
 
   kheops-zipper:
     container_name: kheopszipper
@@ -166,6 +168,10 @@ secrets:
     file: ${NGINX_KEY}/fullchain1.pem
   OAuth2_secret:
     file: ${SECRETS_PATH}/OAuth2_secret
+  kheops_keycloak_clientsecret:
+    file: ${SECRETS_PATH}/kheops_keycloak_clientsecret
+  kheops_keycloak_password:
+    file: ${SECRETS_PATH}/kheops_keycloak_password
 
 volumes:
   dcm4chee-ldap-ldap:
