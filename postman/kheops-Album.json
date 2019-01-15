@@ -5982,20 +5982,20 @@
               "listen": "test",
               "script": {
                 "id": "6767f85f-4f99-43d7-872c-186d740dae12",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -6016,7 +6016,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_comment}}/users/{{user3}}"
+            "url": "{{URL}}/album/{{album_id_comment}}/users/{{user3_id}}"
           },
           "response": []
         },
