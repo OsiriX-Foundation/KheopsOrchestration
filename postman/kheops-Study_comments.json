@@ -133,7 +133,6 @@
               "listen": "test",
               "script": {
                 "id": "6ea2d7bb-b849-4327-b8fe-c5003480b2d6",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -142,17 +141,18 @@
                   "",
                   "pm.environment.set(\"access_token_user3\", jsonObject.access_token);",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -174,7 +174,7 @@
                 },
                 {
                   "key": "assertion",
-                  "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5OTg4Nzc2NjU1IiwiZW1haWwiOiJ0YXRhQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJleHAiOjI1MjI5NDM1NzIsImlzcyI6ImF1dGhvcml6YXRpb24ua2hlb3BzLm9ubGluZSIsImlhdCI6MTUyMjkzOTk3Mn0.i8D9zxg1aQBjIMCBS921v7PBQ6Me2trR2a5TtVk0_Xs",
+                  "value": "{{user3_token}}",
                   "type": "text"
                 }
               ]
@@ -267,10 +267,10 @@
               "listen": "test",
               "script": {
                 "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -286,7 +286,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}"
+            "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -691,7 +691,7 @@
                   "description": "",
                   "key": "to_user",
                   "type": "text",
-                  "value": "{{user1}}"
+                  "value": "{{user1_id}}"
                 }
               ]
             },
