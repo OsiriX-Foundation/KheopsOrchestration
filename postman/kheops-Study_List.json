@@ -70,26 +70,25 @@
           "listen": "test",
           "script": {
             "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
-            "type": "text/javascript",
             "exec": [
-              "// ensure healthy response code",
               "tests[\"Status code is 201\"] = responseCode.code === 201;",
               "",
               "var jsonObject = JSON.parse(responseBody);",
               "",
               "pm.environment.set(\"access_token_user2\", jsonObject.access_token);",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-            "type": "text/javascript",
             "exec": [
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -111,7 +110,7 @@
             },
             {
               "key": "assertion",
-              "value": "eyJhbGciOiJIUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJhdXRob3JpemF0aW9uLmtoZW9wcy5vbmxpbmUiLCJzdWIiOiI5ODc2NTQzMjEiLCJlbWFpbCI6InRpdGlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImV4cCI6MjUyMjk0MzU3MiwiaXNzIjoiYXV0aG9yaXphdGlvbi5raGVvcHMub25saW5lIiwiaWF0IjoxNTIyOTM5OTcyfQ.Csj6WCBDwZlXeUOE0nX6SmReZhGZayw2yZFKWzlwysE",
+              "value": "{{user2_token}}",
               "type": "text"
             }
           ]
@@ -365,10 +364,10 @@
           "listen": "test",
           "script": {
             "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -384,7 +383,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}"
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2_mail}}"
       },
       "response": []
     },
