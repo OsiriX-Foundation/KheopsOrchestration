@@ -6148,7 +6148,6 @@
               "listen": "test",
               "script": {
                 "id": "f0e82f41-5bb9-421b-b91b-c214e12285f5",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -6160,18 +6159,18 @@
                   "",
                   "tests[\"event_type_0\"] = jsonObject[0].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_0\"] = jsonObject[0].comment == \"comment 3\"",
                   "",
                   "tests[\"is_private_0\"] = jsonObject[0].is_private == true",
                   "",
-                  "tests[\"target_name_0\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+                  "tests[\"target_name_0\"] = jsonObject[0].target_name == pm.variables.get(\"user2_mail\");",
                   "",
                   "",
                   "tests[\"event_type_1\"] = jsonObject[1].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_1\"] = jsonObject[1].comment == \"comment 2\"",
                   "",
@@ -6181,22 +6180,23 @@
                   "",
                   "tests[\"event_type_2\"] = jsonObject[2].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_2\"] = jsonObject[2].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_2\"] = jsonObject[2].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_2\"] = jsonObject[2].comment == \"comment 1\"",
                   "",
                   "tests[\"is_private_2\"] = jsonObject[2].is_private == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -6217,14 +6217,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
@@ -6255,7 +6249,6 @@
               "listen": "test",
               "script": {
                 "id": "a9a343de-4a7e-4cc1-9e42-9ced07b09750",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -6268,7 +6261,7 @@
                   "",
                   "tests[\"event_type_0\"] = jsonObject[0].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_0\"] = jsonObject[0].comment == \"comment 2\"",
                   "",
@@ -6278,22 +6271,23 @@
                   "",
                   "tests[\"event_type_1\"] = jsonObject[1].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_1\"] = jsonObject[1].comment == \"comment 1\"",
                   "",
                   "tests[\"is_private_1\"] = jsonObject[1].is_private == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -6314,14 +6308,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
