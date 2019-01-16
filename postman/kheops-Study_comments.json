@@ -757,7 +757,7 @@
                   "description": "",
                   "key": "to_user",
                   "type": "text",
-                  "value": "{{user2}}"
+                  "value": "{{user2_mail}}"
                 }
               ]
             },
@@ -1392,7 +1392,7 @@
                 },
                 {
                   "key": "to_user",
-                  "value": "{{user3}}",
+                  "value": "{{user3_id}}",
                   "description": "",
                   "type": "text"
                 }
@@ -1592,7 +1592,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user3}}"
+            "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user3_id}}"
           },
           "response": []
         },
