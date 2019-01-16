@@ -662,10 +662,10 @@
           "listen": "test",
           "script": {
             "id": "e6a9dcd2-7f11-4482-8ad8-e4d66d189468",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 404\"] = responseCode.code === 404;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -681,7 +681,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}99/users/{{user2}}"
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}99/users/{{user2_mail}}"
       },
       "response": []
     },
