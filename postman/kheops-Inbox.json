@@ -693,10 +693,10 @@
           "listen": "test",
           "script": {
             "id": "869eb9c0-0153-4a03-96e9-27a943d41fc2",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 401\"] = responseCode.code === 401;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -712,7 +712,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}"
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2_mail}}"
       },
       "response": []
     },
