@@ -4546,7 +4546,6 @@
               "listen": "test",
               "script": {
                 "id": "25a12489-954b-4946-9281-873708866221",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -4554,21 +4553,22 @@
                   "",
                   "tests[\"Return 1 user\"] = jsonObject.length === 1;",
                   "",
-                  "tests[\"user_name_0\"] = jsonObject[0].user_name == \"toto@gmail.com\"",
+                  "tests[\"user_name_0\"] = jsonObject[0].user_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -4589,14 +4589,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": "{{URL}}/album/{{album_user_id_1}}/users"
           },
