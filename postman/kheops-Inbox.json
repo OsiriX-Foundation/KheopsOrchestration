@@ -1043,10 +1043,10 @@
           "listen": "test",
           "script": {
             "id": "6317996c-4645-4546-82ad-9a1fa34f2de7",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 404\"] = responseCode.code === 404;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -1062,7 +1062,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2}}"
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2_id}}"
       },
       "response": []
     },
@@ -1074,10 +1074,10 @@
           "listen": "test",
           "script": {
             "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -1093,7 +1093,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user1}}"
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user1_id}}"
       },
       "response": []
     },
@@ -1106,7 +1106,6 @@
           "script": {
             "id": "a5055b06-d516-4117-b4f9-60329a2c6126",
             "exec": [
-              "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "tests[\"Not empty response []\"] = responseBody != \"[]\"",
@@ -1374,10 +1373,10 @@
           "listen": "test",
           "script": {
             "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -1393,7 +1392,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user1}}"
+        "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user1_mail}}"
       },
       "response": []
     },
@@ -1477,10 +1476,10 @@
           "listen": "test",
           "script": {
             "id": "176d6e9b-ba29-40d3-a30f-b19557579d19",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 404\"] = responseCode.code === 404;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -1496,7 +1495,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}99/users/{{user1}}"
+        "url": "{{URL}}/studies/{{study_UID}}99/users/{{user1_id}}"
       },
       "response": []
     },
