@@ -4650,7 +4650,6 @@
               "listen": "test",
               "script": {
                 "id": "e03a4977-98f1-4ce2-ba36-4001a5a7aa9d",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -4658,24 +4657,25 @@
                   "",
                   "tests[\"Return 2 users\"] = jsonObject.length === 2;",
                   "",
-                  "tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
+                  "tests[\"user_name_0\"] = jsonObject[0].user_name == pm.variables.get(\"user1_mail\");",
                   "",
-                  "tests[\"is_admin_0\"] = jsonObject[0].is_admin == false",
+                  "tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
                   "",
-                  "tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
+                  "tests[\"user_name_1\"] = jsonObject[1].user_name == pm.variables.get(\"user2_mail\");",
                   "",
-                  "tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
-                ]
+                  "tests[\"is_admin_1\"] = jsonObject[1].is_admin == false"
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -4696,14 +4696,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": "{{URL}}/album/{{album_user_id_1}}/users"
           },
@@ -5686,7 +5680,6 @@
               "listen": "test",
               "script": {
                 "id": "0b2cbfe7-a935-4df8-a287-a6ce721b6b4d",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -5698,22 +5691,23 @@
                   "",
                   "tests[\"event_type\"] = jsonObject[0].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment\"] = jsonObject[0].comment == \"comment 1\"",
                   "",
                   "tests[\"is_private\"] = jsonObject[0].is_private == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5734,14 +5728,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
@@ -6059,7 +6047,6 @@
               "listen": "test",
               "script": {
                 "id": "4cf72b03-1be4-47ed-a0c5-e19362705733",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -6071,18 +6058,18 @@
                   "",
                   "tests[\"event_type_0\"] = jsonObject[0].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_0\"] = jsonObject[0].comment == \"comment 3\"",
                   "",
                   "tests[\"is_private_0\"] = jsonObject[0].is_private == true",
                   "",
-                  "tests[\"target_name_0\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+                  "tests[\"target_name_0\"] = jsonObject[0].target_name == pm.variables.get(\"user2_mail\");",
                   "",
                   "",
                   "tests[\"event_type_1\"] = jsonObject[1].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_1\"] = jsonObject[1].comment == \"comment 2\"",
                   "",
@@ -6092,22 +6079,23 @@
                   "",
                   "tests[\"event_type_2\"] = jsonObject[2].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_2\"] = jsonObject[2].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_2\"] = jsonObject[2].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_2\"] = jsonObject[2].comment == \"comment 1\"",
                   "",
                   "tests[\"is_private_2\"] = jsonObject[2].is_private == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -6128,14 +6116,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
