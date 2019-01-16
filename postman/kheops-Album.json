@@ -7728,7 +7728,6 @@
               "listen": "test",
               "script": {
                 "id": "c6b242b9-cc21-42d9-9640-46557d1f8edf",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -7740,19 +7739,19 @@
                   "",
                   "tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
                   "",
-                  "tests[\"origin_name\"] = jsonObject[0].origin_name == \"titi@gmail.com\"",
+                  "tests[\"origin_name\"] = jsonObject[0].origin_name == pm.variables.get(\"user2_mail\");",
                   "",
                   "tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"LEAVE_ALBUM\"",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "e254f57d-41e7-42b3-a7ab-22ef4c94304f",
-                "type": "text/javascript",
                 "exec": [
                   "function wait(ms)",
                   "{",
@@ -7763,7 +7762,8 @@
                   "}",
                   "",
                   "wait(3000);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -7784,14 +7784,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
