@@ -7587,7 +7587,6 @@
               "listen": "test",
               "script": {
                 "id": "5422f18f-a8bc-4469-b61e-473615c3f6c1",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -7599,21 +7598,21 @@
                   "",
                   "tests[\"event_type\"] = jsonObject[0].event_type ==  \"Mutation\"",
                   "",
-                  "tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
-                  "tests[\"target_name\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+                  "tests[\"target_name\"] = jsonObject[0].target_name == pm.variables.get(\"user2_mail\");",
                   "",
                   "tests[\"mutation_type\"] = jsonObject[0].mutation_type == \"ADD_USER\"",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "e3489fc7-e27c-44eb-9b6e-cb1a5b3c4d38",
-                "type": "text/javascript",
                 "exec": [
                   "function wait(ms)",
                   "{",
@@ -7624,7 +7623,8 @@
                   "}",
                   "",
                   "wait(3000);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -7645,14 +7645,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
