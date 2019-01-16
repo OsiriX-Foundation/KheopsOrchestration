@@ -1065,7 +1065,6 @@
           "listen": "test",
           "script": {
             "id": "7effe4f5-4f58-4c23-b974-3712291280d5",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1074,23 +1073,24 @@
               "",
               "var jsonObject = JSON.parse(responseBody);",
               "",
-              "tests[\"User is correct\"] = jsonObject.user === pm.globals.get(\"user1\");",
+              "tests[\"User is correct\"] = jsonObject.user === pm.globals.get(\"user1_id\");",
               "tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
               "",
               "pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);",
               "",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "89f0f91f-0f60-4b44-a06f-f16fdaacb3f4",
-            "type": "text/javascript",
             "exec": [
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
