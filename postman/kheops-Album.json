@@ -6436,7 +6436,6 @@
               "listen": "test",
               "script": {
                 "id": "9ed86b3e-3539-4789-b567-c7a9545d1b78",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -6448,33 +6447,34 @@
                   "",
                   "tests[\"event_type_0\"] = jsonObject[0].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_0\"] = jsonObject[0].comment == \"comment 3\"",
                   "",
                   "tests[\"is_private_0\"] = jsonObject[0].is_private == true",
                   "",
-                  "tests[\"target_name_0\"] = jsonObject[0].target_name == \"titi@gmail.com\"",
+                  "tests[\"target_name_0\"] = jsonObject[0].target_name == pm.variables.get(\"user2_mail\");",
                   "",
                   "",
                   "tests[\"event_type_1\"] = jsonObject[1].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_1\"] = jsonObject[1].comment == \"comment 2\"",
                   "",
                   "tests[\"is_private_1\"] = jsonObject[1].is_private == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -6495,14 +6495,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
