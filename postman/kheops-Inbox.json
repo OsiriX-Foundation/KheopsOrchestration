@@ -631,10 +631,10 @@
           "listen": "test",
           "script": {
             "id": "7e86d12d-13a0-40e2-ad8d-ebdf34f38359",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 400\"] = responseCode.code === 400;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -650,7 +650,7 @@
           "mode": "raw",
           "raw": ""
         },
-        "url": "{{URL}}/studies/{{study_UID}}/series/999999/users/{{user2}}"
+        "url": "{{URL}}/studies/{{study_UID}}/series/999999/users/{{user2_mail}}"
       },
       "response": []
     },
