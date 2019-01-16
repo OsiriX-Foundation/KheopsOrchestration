@@ -6817,7 +6817,6 @@
               "listen": "test",
               "script": {
                 "id": "a909510f-ba23-4a78-a626-6343a8dc54d1",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -6829,22 +6828,23 @@
                   "",
                   "tests[\"event_type\"] = jsonObject[0].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name\"] = jsonObject[0].origin_name == \"toto@gmail.com\"",
+                  "tests[\"origin_name\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment\"] = jsonObject[0].comment == \"comment 1\"",
                   "",
                   "tests[\"is_private\"] = jsonObject[0].is_private == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -6865,14 +6865,8 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "comment",
-                  "value": "my first comment",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
               "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&offset=1",
