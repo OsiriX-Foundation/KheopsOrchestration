@@ -4156,7 +4156,7 @@
         },
         {
           "_postman_id": "b7b7d61d-f636-4af1-bf97-6593437fb669",
-          "name": "get album-OK Copy",
+          "name": "get album with usersList-OK",
           "event": [
             {
               "listen": "test",
