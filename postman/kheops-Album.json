@@ -4155,6 +4155,63 @@
           "response": []
         },
         {
+          "_postman_id": "b7b7d61d-f636-4af1-bf97-6593437fb669",
+          "name": "get album-OK Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "28d0c565-ef9e-44df-9557-32886bb8cef9",
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_user_id_1\");",
+                  "",
+                  "tests[\"number_of_users\"] = jsonObject.number_of_users == 2"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/album/{{album_user_id_1}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "01745200-04d4-461b-bdc9-6dae15da604b",
           "name": "get users album",
           "event": [
