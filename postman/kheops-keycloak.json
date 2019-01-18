@@ -72,7 +72,7 @@
               "script": {
                 "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
                 "exec": [
-                  "tests[\"Status code is 401\"] = responseCode.code === 401;",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -125,7 +125,7 @@
               "script": {
                 "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
                 "exec": [
-                  "tests[\"Status code is 401\"] = responseCode.code === 401;",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -325,7 +325,7 @@
               "script": {
                 "id": "105209f3-5569-4454-989a-77f2de5d06e3",
                 "exec": [
-                  "tests[\"Status code is 401\"] = responseCode.code === 401;",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   "",
                   ""
                 ],
@@ -363,16 +363,19 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "description": "",
                   "key": "sendSeries",
                   "type": "text",
                   "value": "false"
                 },
                 {
+                  "description": "",
                   "key": "name",
                   "type": "text",
                   "value": "name 1"
                 },
                 {
+                  "description": "",
                   "key": "description",
                   "type": "text",
                   "value": "description 1"
