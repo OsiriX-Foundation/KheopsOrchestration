@@ -35,6 +35,8 @@ script:
   - ./script_run_docker.sh
   - node_modules/.bin/newman run postman/kheops-Album.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
+  - node_modules/.bin/newman run postman/kheops-keycloak.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
+  - ./script_run_docker.sh
   - node_modules/.bin/newman run postman/kheops_Capabilities_tokens_Delete.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
   - node_modules/.bin/newman run postman/kheops-Capabilities_tokens_albums.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
