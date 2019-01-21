@@ -161,64 +161,6 @@
       "response": []
     },
     {
-      "_postman_id": "d6ee61da-a9f3-4d85-af93-6cc20946daa7",
-      "name": "create user2-create",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
-            "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 201\"] = responseCode.code === 201;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "pm.environment.set(\"access_token_user2\", jsonObject.access_token);",
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-              "type": "text"
-            },
-            {
-              "key": "assertion",
-              "value": "{{user2_token}}",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "109ba363-ba06-49ec-8ea3-0405fba85c1d",
       "name": "create user2-OK",
       "event": [
