@@ -135,7 +135,7 @@
                 "id": "6ea2d7bb-b849-4327-b8fe-c5003480b2d6",
                 "exec": [
                   "// ensure healthy response code",
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
