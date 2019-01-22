@@ -14,8 +14,7 @@
           "script": {
             "id": "7d254f79-8603-4eab-9239-23ac1867331a",
             "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 201\"] = responseCode.code === 201;",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "var jsonObject = JSON.parse(responseBody);",
               "",
@@ -70,15 +69,14 @@
           "listen": "test",
           "script": {
             "id": "2c3a517b-1be2-4dca-af8b-f462136ad3b4",
-            "type": "text/javascript",
             "exec": [
-              "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "tests[\"[INFO] Response: \" + responseBody] = true;",
               "",
               "tests[\"Empty response []\"] = responseBody === \"[]\""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
@@ -106,14 +104,12 @@
           "listen": "test",
           "script": {
             "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
-            "type": "text/javascript",
             "exec": [
-              "// ensure healthy response code",
               "tests[\"Status code is 201\"] = responseCode.code === 201;",
               "",
               "tests[\"[INFO] Response: \" + responseBody] = true;",
               "",
-              "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+              "tests[\"Not empty response []\"] = responseBody != \"[]\";",
               "",
               "var jsonObject = JSON.parse(responseBody);",
               "",
@@ -123,17 +119,18 @@
               "",
               "pm.environment.set(\"secret_capability_token_id\", jsonObject.id);",
               "pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
-            "type": "text/javascript",
             "exec": [
               "pm.environment.set(\"description\", \"some description\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
