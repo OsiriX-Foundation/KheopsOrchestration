@@ -188,8 +188,6 @@
               "",
               "var jsonObject = JSON.parse(responseBody);",
               "",
-              "",
-              "tests[\"Secrect is correct\"] = jsonObject[0].secret === pm.environment.get(\"secret_capability_token\");",
               "tests[\"Description is correct\"] = jsonObject[0].description === pm.environment.get(\"title\");"
             ],
             "type": "text/javascript"
