@@ -1721,7 +1721,7 @@
       "item": [
         {
           "_postman_id": "04b09345-4012-4e53-acb7-84b812c1381f",
-          "name": "user1 get studies list-1 element Copy",
+          "name": "user1 get studies list-3 comments",
           "event": [
             {
               "listen": "test",
@@ -1738,7 +1738,11 @@
                   "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
                   "}",
                   "",
-                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"commentField is present(00012346) and contain value = 3\"] = jsonObject[0][\"00012346\"].Value == 3;"
                 ],
                 "type": "text/javascript"
               }
@@ -1770,7 +1774,27 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies"
+            "url": {
+              "raw": "{{URL}}/studies?inbox=true&includefield=12346",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "includefield",
+                  "value": "12346",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         },
