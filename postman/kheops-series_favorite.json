@@ -3358,7 +3358,7 @@
       "item": [
         {
           "_postman_id": "5c599fd1-4e35-4fcd-9c8e-87ccd1f9f2ee",
-          "name": "user1 get study 1-includefield favorite Copy",
+          "name": "user1 get study 1-no source",
           "event": [
             {
               "listen": "test",
