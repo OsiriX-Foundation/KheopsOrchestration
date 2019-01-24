@@ -1775,7 +1775,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?inbox=true&includefield=12346",
+              "raw": "{{URL}}/studies?inbox=true&includefield=comments",
               "host": [
                 "{{URL}}"
               ],
@@ -1786,12 +1786,12 @@
                 {
                   "key": "inbox",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 },
                 {
                   "key": "includefield",
-                  "value": "12346",
-                  "type": "text"
+                  "value": "comments",
+                  "equals": true
                 }
               ]
             }
