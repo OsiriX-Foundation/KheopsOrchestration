@@ -3951,7 +3951,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=12345&album={{album_id_1}}",
+              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -3963,7 +3963,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -4031,7 +4031,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}&favorite=true",
+              "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
                 "{{URL}}"
               ],
@@ -4041,7 +4041,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -4124,7 +4124,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
+              "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4134,7 +4134,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -4205,7 +4205,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}&favorite=true",
+              "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
                 "{{URL}}"
               ],
@@ -4215,7 +4215,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -4296,7 +4296,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&album={{album_id_1}}",
+              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4308,7 +4308,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -4379,7 +4379,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=12345&album={{album_id_1}}",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4391,7 +4391,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -4462,7 +4462,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=12345&album={{album_id_1}}",
+              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4474,7 +4474,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -4595,7 +4595,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
+              "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4605,7 +4605,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
