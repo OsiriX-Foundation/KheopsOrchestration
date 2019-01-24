@@ -806,13 +806,13 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
+              "raw": "{{URL}}/studies/{{study_UID}}/favorites?inbox=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{IncisixStudyUID}}",
+                "{{study_UID}}",
                 "favorites"
               ],
               "query": [
