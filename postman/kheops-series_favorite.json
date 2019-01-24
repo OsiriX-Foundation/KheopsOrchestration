@@ -6107,7 +6107,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -6118,8 +6118,8 @@
               ],
               "query": [
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 }
               ]
