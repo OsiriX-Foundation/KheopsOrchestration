@@ -1449,7 +1449,7 @@
         },
         {
           "_postman_id": "a014ba6a-a6b9-4f88-b1d5-90a54477d17d",
-          "name": "user2 get studies list-3 elements Copy",
+          "name": "user2 get studies list-3 elements",
           "event": [
             {
               "listen": "test",
