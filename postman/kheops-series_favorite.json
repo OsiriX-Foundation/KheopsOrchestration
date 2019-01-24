@@ -1189,7 +1189,7 @@
         },
         {
           "_postman_id": "bd94d4b6-0ee1-4c46-83b9-b5d3ac39bbc2",
-          "name": "user2 get study 1-includefield favorite",
+          "name": "user2 get study 2-includefield favorite",
           "event": [
             {
               "listen": "test",
