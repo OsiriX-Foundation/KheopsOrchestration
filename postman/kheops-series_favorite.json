@@ -4489,7 +4489,7 @@
         },
         {
           "_postman_id": "48d7a483-c190-4ae2-9fc8-35663f43c47f",
-          "name": "User2 *",
+          "name": "User2 **",
           "event": [
             {
               "listen": "test",
@@ -4551,7 +4551,7 @@
                   "if (totalCount === 3) {",
                   "    tests[\"X-Total-Count = 3\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 2\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
