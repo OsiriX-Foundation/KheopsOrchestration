@@ -6363,7 +6363,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -6382,8 +6382,8 @@
                   "equals": true
                 },
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 }
               ]
@@ -6474,6 +6474,68 @@
                 }
               ]
             }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "492fa7ae-3e80-47eb-9c09-d5883092b167",
+          "name": "edit album remove add series permission",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3bf4a4c9-3d98-4ad5-8bf0-82eae7f4e148",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"add_series\"] = jsonObject.add_series == false;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "addSeries",
+                  "type": "text",
+                  "value": "false"
+                }
+              ]
+            },
+            "url": "{{URL}}/album/{{album_id_1}}"
           },
           "response": []
         }
