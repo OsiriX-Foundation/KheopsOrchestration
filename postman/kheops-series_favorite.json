@@ -1062,7 +1062,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"First study non favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
+                  "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
                   "",
                   "tests[\"Second study non favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
                   "",
