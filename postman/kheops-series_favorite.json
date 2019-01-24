@@ -514,7 +514,6 @@
               "script": {
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
-                  "// ensure healthy response code debug",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
@@ -602,7 +601,6 @@
               "script": {
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
-                  "// ensure healthy response code debug",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
@@ -5567,7 +5565,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
+              "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -5577,7 +5575,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
@@ -5648,7 +5646,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}&favorite=true",
+              "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
                 "{{URL}}"
               ],
@@ -5658,7 +5656,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
