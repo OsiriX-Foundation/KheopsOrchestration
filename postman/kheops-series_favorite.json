@@ -2185,7 +2185,7 @@
         },
         {
           "_postman_id": "62a27039-586d-43a0-aa98-92599928ad54",
-          "name": "user1 get studies list-only favorites Copy Copy",
+          "name": "user1 get studies list-only favorites",
           "event": [
             {
               "listen": "test",
