@@ -6603,7 +6603,7 @@
             }
           ],
           "request": {
-            "method": "PUT",
+            "method": "DELETE",
             "header": [
               {
                 "key": "Authorization",
