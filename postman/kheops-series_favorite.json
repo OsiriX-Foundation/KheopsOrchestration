@@ -5906,7 +5906,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
+              "raw": "{{URL}}/studies?includefield=favorite&sort=PatientName&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -5916,7 +5916,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "favorite",
                   "equals": true
                 },
                 {
@@ -5994,7 +5994,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
+              "raw": "{{URL}}/studies?includefield=favorite&sort=PatientName&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -6004,7 +6004,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "favorite",
                   "equals": true
                 },
                 {
