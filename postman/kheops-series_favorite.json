@@ -458,6 +458,37 @@
           "response": []
         },
         {
+          "_postman_id": "44800650-1775-4af4-be4d-9924f106a7ac",
+          "name": "Share with user2 study3 Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{FelixStudyUID}}/users/{{user2_mail}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "3b04f72b-8325-44da-930d-a1e39a098bbb",
           "name": "user2 get studies list-3 elements",
           "event": [
