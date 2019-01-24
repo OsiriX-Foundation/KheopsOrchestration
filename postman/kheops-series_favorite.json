@@ -215,7 +215,7 @@
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "pm.variables.set(\"IncisixStudyUID\",\"2.16.840.1.113669.632.20.1211.10000231621\");",
+                  "pm.environment.set(\"IncisixStudyUID\",\"2.16.840.1.113669.632.20.1211.10000231621\");",
                   "",
                   ""
                 ],
@@ -609,7 +609,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"First study favorite\"] = jsonObject[0][\"000012345\"].Value !== 0;",
+                  "tests[\"First study non favorite\"] = jsonObject[0][\"000012345\"].Value === 0;",
                   "",
                   "tests[\"Second study non favorite\"] = jsonObject[1][\"000012345\"].Value === 0;",
                   "",
@@ -634,7 +634,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+                "value": "Bearer {{access_token_user2}}"
               },
               {
                 "key": "Accept",
