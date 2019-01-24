@@ -1264,6 +1264,54 @@
           "response": []
         },
         {
+          "_postman_id": "d3901233-6c57-4776-acdf-f63a89db3fab",
+          "name": "User1 **",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{IncisixStudyUID}}",
+                "favorites"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "_postman_id": "97830c56-e38a-41f9-8033-c8910949dcce",
           "name": "user2 get studies list-3 elements Copy Copy",
           "event": [
@@ -1341,54 +1389,6 @@
                   "value": "PatientName",
                   "equals": true
                 },
-                {
-                  "key": "inbox",
-                  "value": "true",
-                  "equals": true
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d3901233-6c57-4776-acdf-f63a89db3fab",
-          "name": "User1 **",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "exec": [
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies",
-                "{{IncisixStudyUID}}",
-                "favorites"
-              ],
-              "query": [
                 {
                   "key": "inbox",
                   "value": "true",
