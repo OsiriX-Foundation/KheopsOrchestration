@@ -6080,54 +6080,6 @@
           "response": []
         },
         {
-          "_postman_id": "e309a137-01ea-4e6b-ad00-4fd25aac9c8e",
-          "name": "User2 **",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "exec": [
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?album={{album_id_1}}",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies",
-                "{{IncisixStudyUID}}",
-                "favorites"
-              ],
-              "query": [
-                {
-                  "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
           "_postman_id": "ab58d963-8ac9-418f-b1b4-12da3c275190",
           "name": "user1 get studies list-3 elements",
           "event": [
