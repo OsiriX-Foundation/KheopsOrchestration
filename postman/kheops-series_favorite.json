@@ -4678,7 +4678,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&album={{album_id_1}}",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
                 "{{URL}}"
               ],
@@ -4697,13 +4697,13 @@
                   "equals": true
                 },
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 },
                 {
-                  "key": "album",
-                  "value": "{{album_id_1}}",
+                  "key": "favorite",
+                  "value": "true",
                   "equals": true
                 }
               ]
@@ -4852,7 +4852,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&album={{album_id_1}}",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
                 "{{URL}}"
               ],
@@ -4871,13 +4871,13 @@
                   "equals": true
                 },
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 },
                 {
-                  "key": "album",
-                  "value": "{{album_id_1}}",
+                  "key": "favorite",
+                  "value": "true",
                   "equals": true
                 }
               ]
