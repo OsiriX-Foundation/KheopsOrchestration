@@ -5210,10 +5210,10 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 1) {",
-                  "    tests[\"X-Total-Count = 1\"] = true;",
+                  "if (totalCount === 3) {",
+                  "    tests[\"X-Total-Count = 3\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -5285,7 +5285,7 @@
         },
         {
           "_postman_id": "5f20181c-6c4b-4aaf-96f8-c0d8faa88880",
-          "name": "User1 **",
+          "name": "User2 **",
           "event": [
             {
               "listen": "test",
@@ -5303,7 +5303,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+                "value": "Bearer {{access_token_user2}}"
               }
             ],
             "body": {
