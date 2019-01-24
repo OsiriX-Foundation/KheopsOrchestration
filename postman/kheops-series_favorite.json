@@ -3951,13 +3951,13 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&album={{album_id_1}}",
+              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=12345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{study_UID}}",
+                "{{FelixStudyUID}}",
                 "series"
               ],
               "query": [
