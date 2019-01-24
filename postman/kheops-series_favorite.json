@@ -817,13 +817,13 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=12345&inbox=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{study_UID}}",
+                "{{FelixStudyUID}}",
                 "series"
               ],
               "query": [
@@ -6548,7 +6548,7 @@
               "script": {
                 "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
                 "exec": [
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;"
                 ],
                 "type": "text/javascript"
               }
@@ -6596,7 +6596,7 @@
               "script": {
                 "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
                 "exec": [
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;"
                 ],
                 "type": "text/javascript"
               }
