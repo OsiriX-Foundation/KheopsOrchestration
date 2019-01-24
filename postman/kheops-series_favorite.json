@@ -334,37 +334,6 @@
           "response": []
         },
         {
-          "_postman_id": "9c81a6d8-4d81-4bec-b2d4-c28023d267c3",
-          "name": "Put study 1 in album",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "exec": [
-                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "eac270a3-cfec-41b4-966f-2d76d5b3abcd",
           "name": "Share with user2 study2",
           "event": [
@@ -396,70 +365,8 @@
           "response": []
         },
         {
-          "_postman_id": "9aaa1e88-77ab-42a0-a04b-2ff83e71c6f9",
-          "name": "Put study 2 in album",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "exec": [
-                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "cd39463d-61e7-42b9-a14f-3293f72f2b99",
           "name": "Share with user2 study3",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "exec": [
-                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies/{{FelixStudyUID}}/users/{{user2_mail}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "44800650-1775-4af4-be4d-9924f106a7ac",
-          "name": "Share with user2 study3 Copy",
           "event": [
             {
               "listen": "test",
@@ -3542,6 +3449,99 @@
               ]
             },
             "url": "{{URL}}/album"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9c81a6d8-4d81-4bec-b2d4-c28023d267c3",
+          "name": "Put study 1 in album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/album/{{album_id_1}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9aaa1e88-77ab-42a0-a04b-2ff83e71c6f9",
+          "name": "Put study 2 in album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "44800650-1775-4af4-be4d-9924f106a7ac",
+          "name": "Put study 3 in album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{FelixStudyUID}}/users/{{user2_mail}}"
           },
           "response": []
         },
