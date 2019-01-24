@@ -594,7 +594,7 @@
         },
         {
           "_postman_id": "29935355-bf59-44d1-90fc-8751e5b0beb6",
-          "name": "user1 get studies list-3 elements Copy",
+          "name": "user1 get study 1-includefield favorite",
           "event": [
             {
               "listen": "test",
