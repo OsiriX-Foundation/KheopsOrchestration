@@ -5848,7 +5848,7 @@
       "item": [
         {
           "_postman_id": "e82b2058-74a8-4cca-8f17-01cc285d5ad0",
-          "name": "user1 get studies list-3 elements Copy",
+          "name": "user1 get studies list-3 elements-from album",
           "event": [
             {
               "listen": "test",
