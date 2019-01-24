@@ -1389,7 +1389,7 @@
         },
         {
           "_postman_id": "217c3d25-b7e2-47bd-b0cf-2f8a1470cd50",
-          "name": "user1 get studies list-only favorites Copy",
+          "name": "user1 get studies list-only favorites",
           "event": [
             {
               "listen": "test",
@@ -1565,7 +1565,7 @@
         },
         {
           "_postman_id": "31572930-1834-4775-8eae-3c0028092f3c",
-          "name": "user2 get studies list-only favorites Copy",
+          "name": "user2 get studies list-only favorites",
           "event": [
             {
               "listen": "test",
@@ -1573,13 +1573,13 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 0) {",
-                  "    tests[\"X-Total-Count = 0\"] = true;",
+                  "if (totalCount === 1) {",
+                  "    tests[\"X-Total-Count = 1\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 0\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -1642,7 +1642,7 @@
                 {
                   "key": "favorite",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -2313,6 +2313,92 @@
                 },
                 {
                   "key": "inbox",
+                  "value": "true",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "734ee161-689c-466f-99cd-741f9b1eda8a",
+          "name": "user2 get studies list-only favorites Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 1) {",
+                  "    tests[\"X-Total-Count = 1\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&favorite=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "includefield",
+                  "value": "12345",
+                  "equals": true
+                },
+                {
+                  "key": "sort",
+                  "value": "PatientName",
+                  "equals": true
+                },
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "equals": true
+                },
+                {
+                  "key": "favorite",
                   "value": "true",
                   "equals": true
                 }
