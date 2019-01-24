@@ -699,7 +699,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"true\";",
+                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"false\";",
                   "",
                   ""
                 ],
@@ -734,13 +734,13 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=12345&inbox=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{study_UID}}",
+                "{{IncisixStudyUID}}",
                 "series"
               ],
               "query": [
@@ -782,7 +782,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"true\";",
+                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"false\";",
                   "",
                   ""
                 ],
