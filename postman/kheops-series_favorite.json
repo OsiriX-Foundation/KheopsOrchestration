@@ -1972,6 +1972,94 @@
             }
           },
           "response": []
+        },
+        {
+          "_postman_id": "86c3d55a-5772-4972-a3fc-29af57b14d5a",
+          "name": "user1 get studies list-only favorites Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 1) {",
+                  "    tests[\"X-Total-Count = 1\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&favorite=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "includefield",
+                  "value": "12345",
+                  "equals": true
+                },
+                {
+                  "key": "sort",
+                  "value": "PatientName",
+                  "equals": true
+                },
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "equals": true
+                },
+                {
+                  "key": "favorite",
+                  "value": "true",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
