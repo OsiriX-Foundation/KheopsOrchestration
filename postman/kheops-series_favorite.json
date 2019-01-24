@@ -3366,21 +3366,7 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 1) {",
-                  "    tests[\"X-Total-Count = 1\"] = true;",
-                  "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
-                  "}",
-                  "",
-                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"true\";",
-                  "",
+                  "tests[\"Status code is 400\"] = responseCode.code === 400;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -3414,7 +3400,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345",
               "host": [
                 "{{URL}}"
               ],
@@ -3432,7 +3418,8 @@
                 {
                   "key": "inbox",
                   "value": "true",
-                  "equals": true
+                  "equals": true,
+                  "disabled": true
                 }
               ]
             }
