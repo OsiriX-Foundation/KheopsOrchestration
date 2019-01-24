@@ -3515,37 +3515,6 @@
           "response": []
         },
         {
-          "_postman_id": "9aaa1e88-77ab-42a0-a04b-2ff83e71c6f9",
-          "name": "Put study 2 in album",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
-                "exec": [
-                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "ab4f87b0-8060-47c3-8e66-4a7de578d417",
           "name": "User1 *",
           "event": [
@@ -6428,6 +6397,37 @@
                 }
               ]
             }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9aaa1e88-77ab-42a0-a04b-2ff83e71c6f9",
+          "name": "Put study 2 in album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}"
           },
           "response": []
         }
