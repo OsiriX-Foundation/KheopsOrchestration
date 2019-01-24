@@ -1798,10 +1798,10 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 2) {",
-                  "    tests[\"X-Total-Count = 2\"] = true;",
+                  "if (totalCount === 3) {",
+                  "    tests[\"X-Total-Count = 3\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 2\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -2583,7 +2583,7 @@
         },
         {
           "_postman_id": "bda5e645-c435-486a-a2f7-f82b8decd80a",
-          "name": "user1 get studies list-only favorites Copy Copy Copy",
+          "name": "user1 get studies list-only favorites",
           "event": [
             {
               "listen": "test",
