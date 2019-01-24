@@ -1728,7 +1728,6 @@
               "script": {
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
-                  "// ensure healthy response code debug",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
@@ -1854,7 +1853,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12346",
+              "raw": "{{URL}}/studies?includefield=00012346",
               "host": [
                 "{{URL}}"
               ],
@@ -1864,7 +1863,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12346",
+                  "value": "00012346",
                   "equals": true
                 }
               ]
@@ -1928,7 +1927,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?inbox=true&includefield=12346",
+              "raw": "{{URL}}/studies?inbox=true&includefield=00012346",
               "host": [
                 "{{URL}}"
               ],
@@ -1939,12 +1938,12 @@
                 {
                   "key": "inbox",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 },
                 {
                   "key": "includefield",
-                  "value": "12346",
-                  "type": "text"
+                  "value": "00012346",
+                  "equals": true
                 }
               ]
             }
