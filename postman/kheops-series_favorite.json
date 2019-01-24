@@ -3546,6 +3546,52 @@
           "response": []
         },
         {
+          "_postman_id": "786fca5c-d4dc-47d9-8884-083c0f3a04a5",
+          "name": "add user 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {},
+            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "ab4f87b0-8060-47c3-8e66-4a7de578d417",
           "name": "User1 *",
           "event": [
@@ -6428,52 +6474,6 @@
                 }
               ]
             }
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "786fca5c-d4dc-47d9-8884-083c0f3a04a5",
-          "name": "add user 2",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
-                "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
           },
           "response": []
         }
