@@ -604,10 +604,10 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 3) {",
-                  "    tests[\"X-Total-Count = 3\"] = true;",
+                  "if (totalCount === 2) {",
+                  "    tests[\"X-Total-Count = 2\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 2\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -615,10 +615,7 @@
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
                   "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
-                  "",
-                  "tests[\"Second study non favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
-                  "",
-                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -651,7 +648,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&favorite=true",
               "host": [
                 "{{URL}}"
               ],
@@ -673,6 +670,11 @@
                   "key": "inbox",
                   "value": "true",
                   "equals": true
+                },
+                {
+                  "key": "favorite",
+                  "value": "true",
+                  "type": "text"
                 }
               ]
             }
