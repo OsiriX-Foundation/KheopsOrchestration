@@ -1736,7 +1736,7 @@
                   "",
                   "tests[\"First study non favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
                   "",
-                  "tests[\"Second study non favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
+                  "tests[\"Second study favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
                   "",
                   "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 1;"
                 ],
