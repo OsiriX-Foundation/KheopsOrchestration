@@ -3738,7 +3738,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -3755,6 +3755,16 @@
                   "key": "sort",
                   "value": "PatientName",
                   "equals": true
+                },
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
+                },
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "type": "text"
                 }
               ]
             }
