@@ -4852,7 +4852,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&favorite=true",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4876,9 +4876,9 @@
                   "equals": true
                 },
                 {
-                  "key": "favorite",
-                  "value": "true",
-                  "type": "text"
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "equals": true
                 }
               ]
             }
@@ -4913,7 +4913,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/favorites?inbox=true",
+              "raw": "{{URL}}/studies/{{study_UID}}/favorites?album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4924,8 +4924,8 @@
               ],
               "query": [
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 }
               ]
