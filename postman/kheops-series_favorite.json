@@ -5838,7 +5838,14 @@
             }
           },
           "response": []
-        },
+        }
+      ]
+    },
+    {
+      "_postman_id": "a26e0a35-10fa-4fd5-9593-bf871f42d5c8",
+      "name": "validation",
+      "description": "",
+      "item": [
         {
           "_postman_id": "e82b2058-74a8-4cca-8f17-01cc285d5ad0",
           "name": "user1 get studies list-3 elements Copy",
@@ -5928,12 +5935,6 @@
           "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "a26e0a35-10fa-4fd5-9593-bf871f42d5c8",
-      "name": "validation",
-      "description": "",
-      "item": []
     },
     {
       "_postman_id": "15e159d7-3d06-4bd0-aab9-561de212ab85",
