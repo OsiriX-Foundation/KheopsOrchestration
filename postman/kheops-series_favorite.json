@@ -1106,7 +1106,7 @@
         },
         {
           "_postman_id": "a4996102-5c1f-4500-9237-4b21b01b0be2",
-          "name": "user1 get study 1-includefield favorite Copy",
+          "name": "user2 get study 1-includefield favorite",
           "event": [
             {
               "listen": "test",
@@ -1127,7 +1127,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"true\";",
+                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"false\";",
                   "",
                   ""
                 ],
@@ -1150,7 +1150,7 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+                "value": "Bearer {{access_token_user2}}"
               },
               {
                 "key": "Accept",
