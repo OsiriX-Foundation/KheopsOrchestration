@@ -5420,94 +5420,6 @@
           "response": []
         },
         {
-          "_postman_id": "e82b2058-74a8-4cca-8f17-01cc285d5ad0",
-          "name": "user1 get studies list-3 elements Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-                "exec": [
-                  "// ensure healthy response code debug",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 3) {",
-                  "    tests[\"X-Total-Count = 3\"] = true;",
-                  "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
-                  "}",
-                  "",
-                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
-                  "",
-                  "tests[\"Second study favorite\"] = jsonObject[1][\"00012345\"].Value == 1;",
-                  "",
-                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/dicom+json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies"
-              ],
-              "query": [
-                {
-                  "key": "includefield",
-                  "value": "12345",
-                  "equals": true
-                },
-                {
-                  "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
-                },
-                {
-                  "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
           "_postman_id": "08f288a2-8595-44b7-bf64-419e13ce32c9",
           "name": "user1 get studies list-only favorites",
           "event": [
@@ -5926,6 +5838,94 @@
             }
           },
           "response": []
+        },
+        {
+          "_postman_id": "a18719de-f478-4a7b-8332-a0d58a5bb2be",
+          "name": "user2 get studies list-3 elements Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 3) {",
+                  "    tests[\"X-Total-Count = 3\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
+                  "",
+                  "tests[\"Second study favorite\"] = jsonObject[1][\"00012345\"].Value == 1;",
+                  "",
+                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "includefield",
+                  "value": "12345",
+                  "equals": true
+                },
+                {
+                  "key": "sort",
+                  "value": "PatientName",
+                  "equals": true
+                },
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
@@ -5933,7 +5933,96 @@
       "_postman_id": "a26e0a35-10fa-4fd5-9593-bf871f42d5c8",
       "name": "validation",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "e82b2058-74a8-4cca-8f17-01cc285d5ad0",
+          "name": "user1 get studies list-3 elements Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 3) {",
+                  "    tests[\"X-Total-Count = 3\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
+                  "",
+                  "tests[\"Second study favorite\"] = jsonObject[1][\"00012345\"].Value == 1;",
+                  "",
+                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "includefield",
+                  "value": "12345",
+                  "equals": true
+                },
+                {
+                  "key": "sort",
+                  "value": "PatientName",
+                  "equals": true
+                },
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "15e159d7-3d06-4bd0-aab9-561de212ab85",
