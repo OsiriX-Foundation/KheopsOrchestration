@@ -734,7 +734,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=00012345&inbox=true",
               "host": [
                 "{{URL}}"
               ],
@@ -746,7 +746,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
