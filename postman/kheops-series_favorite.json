@@ -6538,6 +6538,102 @@
             "url": "{{URL}}/album/{{album_id_1}}"
           },
           "response": []
+        },
+        {
+          "_postman_id": "6d1cb37b-8234-4dd0-b525-3a84555b2e9b",
+          "name": "User2 ***",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies/{{FelixStudyUID}}/favorites?album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{FelixStudyUID}}",
+                "favorites"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3afee357-7613-4361-b657-4736fd6f9433",
+          "name": "User2 **",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{IncisixStudyUID}}",
+                "favorites"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
