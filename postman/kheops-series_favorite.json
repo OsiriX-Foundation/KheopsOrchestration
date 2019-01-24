@@ -1245,13 +1245,13 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=12345&inbox=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{study_UID}}",
+                "{{IncisixStudyUID}}",
                 "series"
               ],
               "query": [
