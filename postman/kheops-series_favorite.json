@@ -174,7 +174,7 @@
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "pm.variables.set(\"FelixStudyUID\",\"1.2.840.113745.101000.1008000.38446.6272.7138759\");",
+                  "pm.environment.set(\"FelixStudyUID\",\"1.2.840.113745.101000.1008000.38446.6272.7138759\");",
                   ""
                 ],
                 "type": "text/javascript"
