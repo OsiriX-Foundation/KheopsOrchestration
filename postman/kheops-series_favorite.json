@@ -710,20 +710,20 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/favorites?inbox=true",
+              "raw": "{{URL}}/studies/{{FelixStudyUID}}/favorites?inbox=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{study_UID}}",
+                "{{FelixStudyUID}}",
                 "favorites"
               ],
               "query": [
                 {
                   "key": "inbox",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -806,13 +806,13 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/favorites?inbox=true",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{study_UID}}",
+                "{{IncisixStudyUID}}",
                 "favorites"
               ],
               "query": [
