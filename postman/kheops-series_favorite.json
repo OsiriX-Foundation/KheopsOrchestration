@@ -3414,12 +3414,6 @@
                   "key": "includefield",
                   "value": "12345",
                   "equals": true
-                },
-                {
-                  "key": "inbox",
-                  "value": "true",
-                  "equals": true,
-                  "disabled": true
                 }
               ]
             }
@@ -3628,7 +3622,7 @@
         },
         {
           "_postman_id": "d771d9b3-05db-4bca-af11-faefbdeff201",
-          "name": "user1 get study 1-no source Copy",
+          "name": "user1 get study 1-too many sources",
           "event": [
             {
               "listen": "test",
@@ -3670,7 +3664,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345",
+              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&inbox=true&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -3688,8 +3682,12 @@
                 {
                   "key": "inbox",
                   "value": "true",
-                  "equals": true,
-                  "disabled": true
+                  "equals": true
+                },
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "type": "text"
                 }
               ]
             }
