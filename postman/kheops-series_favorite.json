@@ -334,8 +334,70 @@
           "response": []
         },
         {
+          "_postman_id": "9c81a6d8-4d81-4bec-b2d4-c28023d267c3",
+          "name": "Share with user2 study1 Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "eac270a3-cfec-41b4-966f-2d76d5b3abcd",
           "name": "Share with user2 study2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
+                "exec": [
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "9aaa1e88-77ab-42a0-a04b-2ff83e71c6f9",
+          "name": "Share with user2 study2 Copy",
           "event": [
             {
               "listen": "test",
@@ -3351,6 +3413,108 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "8e401ecf-bcec-4897-9d6e-716d43963d74",
+          "name": "Create an album(1)-OK",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "c09cfdaa-aa57-499c-a23c-8e26fa376e1e",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"album_id_1\", jsonObject.album_id);",
+                  "",
+                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
+                  "",
+                  "tests[\"name\"] = jsonObject.name == \"name 1\"",
+                  "",
+                  "tests[\"description\"] = jsonObject.description == \"description 1\"",
+                  "",
+                  "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
+                  "",
+                  "tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
+                  "",
+                  "tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
+                  "",
+                  "tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
+                  "",
+                  "tests[\"add_user\"] = jsonObject.add_user == false",
+                  "",
+                  "tests[\"download_series\"] = jsonObject.download_series == true",
+                  "",
+                  "tests[\"send_series\"] = jsonObject.send_series == false",
+                  "",
+                  "tests[\"delete_series\"] = jsonObject.delete_series == false",
+                  "",
+                  "tests[\"add_series\"] = jsonObject.add_series == true",
+                  "",
+                  "tests[\"write_comments\"] = jsonObject.write_comments == true",
+                  "",
+                  "tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
+                  "",
+                  "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "sendSeries",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "name 1",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "description 1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/album"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "ab4f87b0-8060-47c3-8e66-4a7de578d417",
           "name": "User1 *",
           "event": [
@@ -4689,108 +4853,6 @@
                 }
               ]
             }
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8e401ecf-bcec-4897-9d6e-716d43963d74",
-          "name": "Create an album(1)-OK Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "c09cfdaa-aa57-499c-a23c-8e26fa376e1e",
-                "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"album_id_1\", jsonObject.album_id);",
-                  "",
-                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
-                  "",
-                  "tests[\"name\"] = jsonObject.name == \"name 1\"",
-                  "",
-                  "tests[\"description\"] = jsonObject.description == \"description 1\"",
-                  "",
-                  "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
-                  "",
-                  "tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
-                  "",
-                  "tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
-                  "",
-                  "tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
-                  "",
-                  "tests[\"add_user\"] = jsonObject.add_user == false",
-                  "",
-                  "tests[\"download_series\"] = jsonObject.download_series == true",
-                  "",
-                  "tests[\"send_series\"] = jsonObject.send_series == false",
-                  "",
-                  "tests[\"delete_series\"] = jsonObject.delete_series == false",
-                  "",
-                  "tests[\"add_series\"] = jsonObject.add_series == true",
-                  "",
-                  "tests[\"write_comments\"] = jsonObject.write_comments == true",
-                  "",
-                  "tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
-                  "",
-                  "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "sendSeries",
-                  "value": "false",
-                  "type": "text"
-                },
-                {
-                  "key": "name",
-                  "value": "name 1",
-                  "type": "text"
-                },
-                {
-                  "key": "description",
-                  "value": "description 1",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/album"
           },
           "response": []
         },
