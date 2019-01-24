@@ -6082,7 +6082,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
+              "raw": "{{URL}}/studies?includefield=favorite&sort=PatientName&inbox=true",
               "host": [
                 "{{URL}}"
               ],
@@ -6092,7 +6092,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "favorite",
                   "equals": true
                 },
                 {
