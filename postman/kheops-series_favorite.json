@@ -1272,7 +1272,7 @@
         },
         {
           "_postman_id": "513d5a47-7d5f-4ce2-9f8a-0b7b864f488d",
-          "name": "user2 get study 1-includefield favorite Copy Copy",
+          "name": "user2 get study 3-includefield favorite",
           "event": [
             {
               "listen": "test",
