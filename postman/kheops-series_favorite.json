@@ -729,7 +729,7 @@
         },
         {
           "_postman_id": "d3397f06-cfca-4a4c-ab6b-f43b82f855d8",
-          "name": "user1 get studies list-3 elements Copy",
+          "name": "user1 get studies list-3 elements",
           "event": [
             {
               "listen": "test",
@@ -817,7 +817,7 @@
         },
         {
           "_postman_id": "0e475a6f-23ae-4fef-a59f-8375226f663c",
-          "name": "user2 get studies list-3 elements Copy",
+          "name": "user2 get studies list-3 elements",
           "event": [
             {
               "listen": "test",
