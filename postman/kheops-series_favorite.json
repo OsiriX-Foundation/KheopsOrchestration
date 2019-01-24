@@ -526,11 +526,11 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"First study favorite\"] = jsonObject[0][\"000012345\"].Value !== 0;",
+                  "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value !== 0;",
                   "",
-                  "tests[\"Second study non favorite\"] = jsonObject[1][\"000012345\"].Value === 0;",
+                  "tests[\"Second study non favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
                   "",
-                  "tests[\"Third study non favorite\"] = jsonObject[2][\"000012345\"].Value === 0;"
+                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
                 ],
                 "type": "text/javascript"
               }
@@ -563,7 +563,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includifield=12345&sort=PatientName",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
               "host": [
                 "{{URL}}"
               ],
@@ -572,7 +572,7 @@
               ],
               "query": [
                 {
-                  "key": "includifield",
+                  "key": "includefield",
                   "value": "12345",
                   "equals": true
                 },
@@ -580,6 +580,11 @@
                   "key": "sort",
                   "value": "PatientName",
                   "equals": true
+                },
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
                 }
               ]
             }
@@ -609,11 +614,11 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"First study non favorite\"] = jsonObject[0][\"000012345\"].Value === 0;",
+                  "tests[\"First study non favorite\"] = jsonObject[0][\"00012345\"].Value == 0;",
                   "",
-                  "tests[\"Second study non favorite\"] = jsonObject[1][\"000012345\"].Value === 0;",
+                  "tests[\"Second study non favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
                   "",
-                  "tests[\"Third study non favorite\"] = jsonObject[2][\"000012345\"].Value === 0;"
+                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
                 ],
                 "type": "text/javascript"
               }
@@ -646,7 +651,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includifield=12345&sort=PatientName",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
               "host": [
                 "{{URL}}"
               ],
@@ -655,7 +660,7 @@
               ],
               "query": [
                 {
-                  "key": "includifield",
+                  "key": "includefield",
                   "value": "12345",
                   "equals": true
                 },
@@ -663,6 +668,11 @@
                   "key": "sort",
                   "value": "PatientName",
                   "equals": true
+                },
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
                 }
               ]
             }
