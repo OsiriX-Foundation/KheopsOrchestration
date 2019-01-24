@@ -4261,7 +4261,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"false\";",
+                  "tests[\"Study is favorite\"] = jsonObject[0][\"00012345\"].Value == \"true\";",
                   "",
                   ""
                 ],
