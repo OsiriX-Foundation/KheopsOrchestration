@@ -3479,7 +3479,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{study_UID}}/album/{{album_id_1}}"
+            "url": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
@@ -3510,7 +3510,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{IncisixStudyUID}}/album/{{album_id_1}}"
+            "url": "{{URL}}/studies/{{IncisixStudyUID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
@@ -3541,7 +3541,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{FelixStudyUID}}/users/{{user2_mail}}"
+            "url": "{{URL}}/studies/{{FelixStudyUID}}/album/{{album_id_1}}"
           },
           "response": []
         },
