@@ -3486,7 +3486,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName",
               "host": [
                 "{{URL}}"
               ],
@@ -3502,11 +3502,6 @@
                 {
                   "key": "sort",
                   "value": "PatientName",
-                  "equals": true
-                },
-                {
-                  "key": "inbox",
-                  "value": "true",
                   "equals": true
                 }
               ]
