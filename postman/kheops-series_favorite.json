@@ -777,24 +777,17 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 3) {",
-                  "    tests[\"X-Total-Count = 3\"] = true;",
+                  "if (totalCount === 0) {",
+                  "    tests[\"X-Total-Count = 0\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 0\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"First study non favorite\"] = jsonObject[0][\"00012345\"].Value == 0;",
-                  "",
-                  "tests[\"Second study non favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
-                  "",
-                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -827,7 +820,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true&favorite=true",
               "host": [
                 "{{URL}}"
               ],
@@ -847,6 +840,11 @@
                 },
                 {
                   "key": "inbox",
+                  "value": "true",
+                  "equals": true
+                },
+                {
+                  "key": "favorite",
                   "value": "true",
                   "type": "text"
                 }
