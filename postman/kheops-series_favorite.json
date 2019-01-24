@@ -3696,7 +3696,7 @@
         },
         {
           "_postman_id": "f0ca8d65-b766-4a24-b763-ab7a61f4edde",
-          "name": "user1 get studies list-no source Copy",
+          "name": "user1 get studies list-too many sources",
           "event": [
             {
               "listen": "test",
