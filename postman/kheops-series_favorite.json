@@ -4296,7 +4296,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=12345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4312,8 +4312,8 @@
                   "equals": true
                 },
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 }
               ]
@@ -4379,7 +4379,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=12345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4395,8 +4395,8 @@
                   "equals": true
                 },
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 }
               ]
@@ -4462,7 +4462,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=12345&inbox=true",
+              "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=12345&album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4478,8 +4478,8 @@
                   "equals": true
                 },
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 }
               ]
@@ -4515,7 +4515,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?album={{album_id_1}}",
               "host": [
                 "{{URL}}"
               ],
@@ -4526,8 +4526,8 @@
               ],
               "query": [
                 {
-                  "key": "inbox",
-                  "value": "true",
+                  "key": "album",
+                  "value": "{{album_id_1}}",
                   "equals": true
                 }
               ]
