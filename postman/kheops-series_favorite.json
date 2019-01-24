@@ -613,8 +613,6 @@
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -674,7 +672,7 @@
                 {
                   "key": "favorite",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
