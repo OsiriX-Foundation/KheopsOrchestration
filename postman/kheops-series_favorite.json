@@ -175,6 +175,7 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "pm.environment.set(\"FelixStudyUID\",\"1.2.840.113745.101000.1008000.38446.6272.7138759\");",
+                  "pm.environment.set(\"FelixSeriesUID\",\"1.3.12.2.1107.5.2.13.20561.30000005042216091690600001946\");",
                   ""
                 ],
                 "type": "text/javascript"
@@ -506,6 +507,94 @@
         {
           "_postman_id": "57565cb2-2d01-4257-a638-7c4e24a623c2",
           "name": "user1 get studies list-3 elements",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "if (totalCount === 3) {",
+                  "    tests[\"X-Total-Count = 3\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"First study favorite\"] = jsonObject[0][\"00012345\"].Value == 1;",
+                  "",
+                  "tests[\"Second study non favorite\"] = jsonObject[1][\"00012345\"].Value == 0;",
+                  "",
+                  "tests[\"Third study non favorite\"] = jsonObject[2][\"00012345\"].Value == 0;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName&inbox=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "includefield",
+                  "value": "12345",
+                  "equals": true
+                },
+                {
+                  "key": "sort",
+                  "value": "PatientName",
+                  "equals": true
+                },
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "29935355-bf59-44d1-90fc-8751e5b0beb6",
+          "name": "user1 get studies list-3 elements Copy",
           "event": [
             {
               "listen": "test",
@@ -2849,110 +2938,7 @@
       "_postman_id": "476c0c29-3761-4df7-b836-5ae98f63ef95",
       "name": "from album",
       "description": "",
-      "item": [
-        {
-          "_postman_id": "3dfb651b-930b-40c1-bf98-95f870dcfc12",
-          "name": "Create an album(1)-OK Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "c09cfdaa-aa57-499c-a23c-8e26fa376e1e",
-                "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"album_id_1\", jsonObject.album_id);",
-                  "",
-                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
-                  "",
-                  "tests[\"name\"] = jsonObject.name == \"name 1\"",
-                  "",
-                  "tests[\"description\"] = jsonObject.description == \"description 1\"",
-                  "",
-                  "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
-                  "",
-                  "tests[\"number_of_users\"] = jsonObject.number_of_users == 1",
-                  "",
-                  "tests[\"number_of_comments\"] = jsonObject.number_of_comments == 0",
-                  "",
-                  "tests[\"number_of_studies\"] = jsonObject.number_of_studies == 0",
-                  "",
-                  "tests[\"add_user\"] = jsonObject.add_user == false",
-                  "",
-                  "tests[\"download_series\"] = jsonObject.download_series == true",
-                  "",
-                  "tests[\"send_series\"] = jsonObject.send_series == false",
-                  "",
-                  "tests[\"delete_series\"] = jsonObject.delete_series == false",
-                  "",
-                  "tests[\"add_series\"] = jsonObject.add_series == true",
-                  "",
-                  "tests[\"write_comments\"] = jsonObject.write_comments == true",
-                  "",
-                  "tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
-                  "",
-                  "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "sendSeries",
-                  "value": "false",
-                  "type": "text"
-                },
-                {
-                  "key": "name",
-                  "value": "name 1",
-                  "type": "text"
-                },
-                {
-                  "key": "description",
-                  "value": "description 1",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/album"
-          },
-          "response": []
-        }
-      ]
+      "item": []
     },
     {
       "_postman_id": "15e159d7-3d06-4bd0-aab9-561de212ab85",
