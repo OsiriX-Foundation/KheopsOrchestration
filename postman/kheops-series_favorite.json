@@ -6275,7 +6275,6 @@
               "script": {
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
-                  "// ensure healthy response code debug",
                   "tests[\"Status code is 400\"] = responseCode.code === 400;",
                   ""
                 ],
@@ -6310,7 +6309,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies?includefield=12345&sort=PatientName",
+              "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName",
               "host": [
                 "{{URL}}"
               ],
@@ -6320,7 +6319,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "12345",
+                  "value": "00012345",
                   "equals": true
                 },
                 {
