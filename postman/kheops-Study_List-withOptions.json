@@ -702,17 +702,13 @@
               "listen": "test",
               "script": {
                 "id": "78277cb9-9ed8-4ba8-8978-c0355a7fc79b",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 0 study\"] = jsonObject.length === 0;",
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;",
                   "",
                   "tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") == 5;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
