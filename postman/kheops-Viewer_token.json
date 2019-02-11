@@ -661,7 +661,7 @@
         },
         {
           "_postman_id": "71c640bc-6961-4514-a04f-9be63ab6c3c3",
-          "name": "create viewer token from capability token",
+          "name": "Create viewer token from capability token",
           "event": [
             {
               "listen": "test",
@@ -933,7 +933,7 @@
     },
     {
       "_postman_id": "c7b0e2a5-8b68-4da6-9233-91f100c73508",
-      "name": "create album viewer token",
+      "name": "Create album viewer token fromo access token",
       "event": [
         {
           "listen": "test",
