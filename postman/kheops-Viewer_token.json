@@ -890,7 +890,7 @@
     },
     {
       "_postman_id": "df391572-91d8-44d6-b415-6a2596eee880",
-      "name": "create album viewer token Copy",
+      "name": "pep token from viewer token",
       "event": [
         {
           "listen": "test",
@@ -936,27 +936,25 @@
             {
               "key": "assertion",
               "type": "text",
-              "value": "{{user1_token}}"
+              "value": "{{viewer_token_user1}}"
             },
             {
+              "description": "",
               "key": "scope",
               "type": "text",
-              "value": "viewer"
+              "value": "pep"
             },
             {
+              "description": "",
               "key": "studyInstanceUID",
               "type": "text",
               "value": "{{study_UID}}"
             },
             {
-              "key": "sourceType",
-              "type": "text",
-              "value": "album"
-            },
-            {
-              "key": "sourceId",
-              "type": "text",
-              "value": "{{album_id_1}}"
+              "key": "seriesInstanceUID",
+              "value": "{{series_UID}}",
+              "description": "",
+              "type": "text"
             }
           ]
         },
