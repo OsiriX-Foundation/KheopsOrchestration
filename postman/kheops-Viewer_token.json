@@ -426,43 +426,50 @@
       ]
     },
     {
-      "_postman_id": "bc2dd49b-e3ca-41dc-95b1-7ac99435c31c",
-      "name": "Study Metadata access token",
-      "event": [
+      "_postman_id": "17024496-e4be-4132-82e8-cc2a75eaf542",
+      "name": "inbox",
+      "description": "",
+      "item": [
         {
-          "listen": "test",
-          "script": {
-            "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
-            "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-              ""
+          "_postman_id": "bc2dd49b-e3ca-41dc-95b1-7ac99435c31c",
+          "name": "Study Metadata access token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
             ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/metadata"
           },
-          {
-            "key": "Accept",
-            "value": "application/dicom+json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/metadata"
-      },
-      "response": []
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "fec52602-155b-4dd9-bdf6-2d7b6ea4ea36",
@@ -590,7 +597,7 @@
               "",
               "var jsonObject = JSON.parse(responseBody);",
               "",
-              "pm.environment.set(\"viewer_token_user1\", jsonObject.access_token);"
+              "pm.environment.set(\"viewer_token_capability\", jsonObject.access_token);"
             ],
             "type": "text/javascript"
           }
@@ -659,7 +666,7 @@
     },
     {
       "_postman_id": "0a032642-fd7f-4cbf-8534-06573af24c76",
-      "name": "Study Metadata with viewer token Copy",
+      "name": "Study Metadata with viewer token from capability",
       "event": [
         {
           "listen": "test",
@@ -928,6 +935,45 @@
       "response": []
     },
     {
+      "_postman_id": "63dce699-179d-49d4-9d1e-2dae46fda9d9",
+      "name": "Study Metadata with viewer token from album",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
+            "exec": [
+              "// ensure healthy response code",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{album_viewer_token_user1}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/dicom+json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/metadata"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "df391572-91d8-44d6-b415-6a2596eee880",
       "name": "pep token from viewer token",
       "event": [
@@ -940,7 +986,7 @@
               "",
               "var jsonObject = JSON.parse(responseBody);",
               "",
-              "pm.environment.set(\"album_viewer_token_user1\", jsonObject.access_token);"
+              "pm.environment.set(\"album_pep_token_user1\", jsonObject.access_token);"
             ],
             "type": "text/javascript"
           }
@@ -998,45 +1044,6 @@
           ]
         },
         "url": "{{URL}}/token"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "63dce699-179d-49d4-9d1e-2dae46fda9d9",
-      "name": "Study Metadata with viewer token from album",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
-            "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{album_viewer_token_user1}}"
-          },
-          {
-            "key": "Accept",
-            "value": "application/dicom+json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/metadata"
       },
       "response": []
     }
