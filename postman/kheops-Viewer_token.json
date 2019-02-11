@@ -468,47 +468,47 @@
             "url": "{{URL}}/studies/{{study_UID}}/metadata"
           },
           "response": []
+        },
+        {
+          "_postman_id": "fec52602-155b-4dd9-bdf6-2d7b6ea4ea36",
+          "name": "Study Metadata with viewer token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{viewer_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}/metadata"
+          },
+          "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "fec52602-155b-4dd9-bdf6-2d7b6ea4ea36",
-      "name": "Study Metadata with viewer token",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
-            "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{viewer_token_user1}}"
-          },
-          {
-            "key": "Accept",
-            "value": "application/dicom+json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{URL}}/studies/{{study_UID}}/metadata"
-      },
-      "response": []
     },
     {
       "_postman_id": "438bc3ee-b0d1-42aa-a9ca-859c2cb9890e",
