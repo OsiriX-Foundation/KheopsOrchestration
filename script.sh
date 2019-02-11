@@ -9,10 +9,7 @@
  sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Album.json
  sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-DICOMweb_proxy.json
  sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Capabilities_tokens_albums.json
- sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops_Capabilities_tokens_Delete.json
- sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Study_comments.json
- 
-
+ sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Viewer_token.json
 
 
  sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testStudy.dcm\"/" postman/kheops-Study_List-withOptions.json
