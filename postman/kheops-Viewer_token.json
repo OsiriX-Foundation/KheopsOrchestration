@@ -586,46 +586,6 @@
           "response": []
         },
         {
-          "_postman_id": "c5d90b93-d172-4fa4-9b37-8ead697adbe2",
-          "name": "get capability token",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
-                "exec": [
-                  "// ensure healthy response code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
-              {
-                "key": "Accept",
-                "value": "application/dicom+json",
-                "disabled": true
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/capabilities/OV88LQUuMP"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "d829c181-edd4-4a8f-8d25-b8094f706368",
           "name": "get capability token Copy",
           "event": [
