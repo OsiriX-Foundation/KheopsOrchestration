@@ -889,6 +889,82 @@
       "response": []
     },
     {
+      "_postman_id": "df391572-91d8-44d6-b415-6a2596eee880",
+      "name": "create album viewer token Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "var jsonObject = JSON.parse(responseBody);",
+              "",
+              "pm.environment.set(\"album_viewer_token_user1\", jsonObject.access_token);"
+            ],
+            "type": "text/javascript"
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "type": "text",
+              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            },
+            {
+              "key": "assertion",
+              "type": "text",
+              "value": "{{user1_token}}"
+            },
+            {
+              "key": "scope",
+              "type": "text",
+              "value": "viewer"
+            },
+            {
+              "key": "studyInstanceUID",
+              "type": "text",
+              "value": "{{study_UID}}"
+            },
+            {
+              "key": "sourceType",
+              "type": "text",
+              "value": "album"
+            },
+            {
+              "key": "sourceId",
+              "type": "text",
+              "value": "{{album_id_1}}"
+            }
+          ]
+        },
+        "url": "{{URL}}/token"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "63dce699-179d-49d4-9d1e-2dae46fda9d9",
       "name": "Study Metadata with viewer token from album",
       "event": [
