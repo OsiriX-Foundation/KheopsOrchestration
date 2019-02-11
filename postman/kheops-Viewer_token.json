@@ -226,7 +226,7 @@
       "item": [
         {
           "_postman_id": "902edbd4-1fe2-4a9e-8ee7-80872ac7c7b1",
-          "name": "create viewer token",
+          "name": "Create viewer token",
           "event": [
             {
               "listen": "test",
