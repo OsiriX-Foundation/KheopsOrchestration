@@ -507,162 +507,162 @@
             "url": "{{URL}}/studies/{{study_UID}}/metadata"
           },
           "response": []
+        },
+        {
+          "_postman_id": "438bc3ee-b0d1-42aa-a9ca-859c2cb9890e",
+          "name": "Create a capability tokens user1-OK",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\";",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
+                  "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
+                  "",
+                  "",
+                  "pm.environment.set(\"secret_capability_token_id\", jsonObject.id);",
+                  "pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
+                "exec": [
+                  "pm.environment.set(\"description\", \"some description\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "title",
+                  "value": "a description",
+                  "type": "text"
+                },
+                {
+                  "key": "scope_type",
+                  "value": "user",
+                  "description": "",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/capabilities"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "71c640bc-6961-4514-a04f-9be63ab6c3c3",
+          "name": "create viewer token from capability token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"viewer_token_capability\", jsonObject.access_token);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "type": "text",
+                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
+                },
+                {
+                  "key": "assertion",
+                  "type": "text",
+                  "value": "{{secret_capability_token}}"
+                },
+                {
+                  "description": "",
+                  "key": "scope",
+                  "type": "text",
+                  "value": "viewer"
+                },
+                {
+                  "description": "",
+                  "key": "study_instance_uid",
+                  "type": "text",
+                  "value": "{{study_UID}}"
+                },
+                {
+                  "description": "",
+                  "key": "source_type",
+                  "type": "text",
+                  "value": "inbox"
+                },
+                {
+                  "description": "",
+                  "key": "source_id",
+                  "type": "text",
+                  "value": "xx"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "438bc3ee-b0d1-42aa-a9ca-859c2cb9890e",
-      "name": "Create a capability tokens user1-OK",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
-            "exec": [
-              "tests[\"Status code is 201\"] = responseCode.code === 201;",
-              "",
-              "tests[\"[INFO] Response: \" + responseBody] = true;",
-              "",
-              "tests[\"Not empty response []\"] = responseBody != \"[]\";",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
-              "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
-              "",
-              "",
-              "pm.environment.set(\"secret_capability_token_id\", jsonObject.id);",
-              "pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
-            "exec": [
-              "pm.environment.set(\"description\", \"some description\");"
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
-          {
-            "key": "Accept",
-            "value": "application/json"
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "title",
-              "value": "a description",
-              "type": "text"
-            },
-            {
-              "key": "scope_type",
-              "value": "user",
-              "description": "",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/capabilities"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "71c640bc-6961-4514-a04f-9be63ab6c3c3",
-      "name": "create viewer token from capability token",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "pm.environment.set(\"viewer_token_capability\", jsonObject.access_token);"
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "type": "text",
-              "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
-            },
-            {
-              "key": "assertion",
-              "type": "text",
-              "value": "{{secret_capability_token}}"
-            },
-            {
-              "description": "",
-              "key": "scope",
-              "type": "text",
-              "value": "viewer"
-            },
-            {
-              "description": "",
-              "key": "study_instance_uid",
-              "type": "text",
-              "value": "{{study_UID}}"
-            },
-            {
-              "description": "",
-              "key": "source_type",
-              "type": "text",
-              "value": "inbox"
-            },
-            {
-              "description": "",
-              "key": "source_id",
-              "type": "text",
-              "value": "xx"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
-      },
-      "response": []
     },
     {
       "_postman_id": "0a032642-fd7f-4cbf-8534-06573af24c76",
