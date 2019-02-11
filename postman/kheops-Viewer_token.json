@@ -274,13 +274,13 @@
                   "type": "text"
                 },
                 {
-                  "key": "studyInstanceUID",
+                  "key": "study_instance_uid",
                   "value": "{{study_UID}}",
                   "description": "",
                   "type": "text"
                 },
                 {
-                  "key": "sourceType",
+                  "key": "source_type",
                   "value": "inbox",
                   "description": "",
                   "type": "text"
@@ -635,19 +635,19 @@
             },
             {
               "description": "",
-              "key": "studyInstanceUID",
+              "key": "study_instance_uid",
               "type": "text",
               "value": "{{study_UID}}"
             },
             {
               "description": "",
-              "key": "sourceType",
+              "key": "source_type",
               "type": "text",
               "value": "inbox"
             },
             {
               "description": "",
-              "key": "sourceId",
+              "key": "source_id",
               "type": "text",
               "value": "xx"
             }
@@ -931,7 +931,7 @@
             {
               "key": "grant_type",
               "type": "text",
-              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+              "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
             },
             {
               "key": "assertion",
