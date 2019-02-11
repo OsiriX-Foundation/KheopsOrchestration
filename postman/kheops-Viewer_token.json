@@ -609,18 +609,19 @@
             "header": [
               {
                 "key": "Authorization",
-                "value": "Bearer {{viewer_token_user1}}"
+                "value": "Bearer {{access_token_user1}}"
               },
               {
                 "key": "Accept",
-                "value": "application/dicom+json"
+                "value": "application/dicom+json",
+                "disabled": true
               }
             ],
             "body": {
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{study_UID}}/metadata"
+            "url": "{{URL}}/capabilities/OV88LQUuMP"
           },
           "response": []
         },
