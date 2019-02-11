@@ -658,6 +658,45 @@
       "response": []
     },
     {
+      "_postman_id": "0a032642-fd7f-4cbf-8534-06573af24c76",
+      "name": "Study Metadata with viewer token Copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
+            "exec": [
+              "// ensure healthy response code",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{viewer_token_capability}}"
+          },
+          {
+            "key": "Accept",
+            "value": "application/dicom+json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/studies/{{study_UID}}/metadata"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "224dd1c6-716e-44dd-b6db-6310ab9d5244",
       "name": "Create an album(1)-OK",
       "event": [
@@ -866,19 +905,19 @@
             },
             {
               "description": "",
-              "key": "studyInstanceUID",
+              "key": "study_instance_uid",
               "type": "text",
               "value": "{{study_UID}}"
             },
             {
               "description": "",
-              "key": "sourceType",
+              "key": "source_type",
               "type": "text",
               "value": "album"
             },
             {
               "description": "",
-              "key": "sourceId",
+              "key": "source_id",
               "type": "text",
               "value": "{{album_id_1}}"
             }
@@ -946,12 +985,12 @@
             },
             {
               "description": "",
-              "key": "studyInstanceUID",
+              "key": "study_instance_uid",
               "type": "text",
               "value": "{{study_UID}}"
             },
             {
-              "key": "seriesInstanceUID",
+              "key": "series_instance_uid",
               "value": "{{series_UID}}",
               "description": "",
               "type": "text"
