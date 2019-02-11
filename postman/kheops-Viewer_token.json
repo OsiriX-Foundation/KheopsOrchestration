@@ -23,7 +23,10 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
+                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);",
+                  "",
+                  "//debug",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
                 "type": "text/javascript"
               }
