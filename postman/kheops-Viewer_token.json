@@ -226,7 +226,7 @@
       "item": [
         {
           "_postman_id": "902edbd4-1fe2-4a9e-8ee7-80872ac7c7b1",
-          "name": "Create viewer token",
+          "name": "Create viewer token from access token",
           "event": [
             {
               "listen": "test",
@@ -432,7 +432,7 @@
       "item": [
         {
           "_postman_id": "7c3f4a63-0418-420a-aee8-98dd1c97a249",
-          "name": "Create viewer token",
+          "name": "Create viewer token from access token",
           "event": [
             {
               "listen": "test",
