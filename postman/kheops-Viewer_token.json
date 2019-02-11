@@ -225,6 +225,87 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "902edbd4-1fe2-4a9e-8ee7-80872ac7c7b1",
+          "name": "create viewer token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"viewer_token_user1\", jsonObject.access_token);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "type": "text",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+                },
+                {
+                  "key": "assertion",
+                  "type": "text",
+                  "value": "{{user1_token}}"
+                },
+                {
+                  "key": "scope",
+                  "value": "viewer",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "study_instance_uid",
+                  "value": "{{study_UID}}",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "source_type",
+                  "value": "inbox",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "sourceId",
+                  "value": "xx",
+                  "description": "",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "2c97862b-e14e-46ce-b6f0-f4899828aa82",
           "name": "get studies list-viewer token",
           "event": [
@@ -319,9 +400,38 @@
             "url": "{{URL}}/album"
           },
           "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "7bdb618c-4f8e-4cd8-b5d3-2f2cb8d8ff56",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
         },
         {
-          "_postman_id": "902edbd4-1fe2-4a9e-8ee7-80872ac7c7b1",
+          "listen": "test",
+          "script": {
+            "id": "a649f059-1043-4778-a3ea-7e6f9b385275",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "_postman_id": "17024496-e4be-4132-82e8-cc2a75eaf542",
+      "name": "inbox",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "7c3f4a63-0418-420a-aee8-98dd1c97a249",
           "name": "create viewer token",
           "event": [
             {
@@ -373,87 +483,6 @@
                 {
                   "key": "scope",
                   "value": "viewer",
-                  "description": "",
-                  "type": "text"
-                },
-                {
-                  "key": "study_instance_uid",
-                  "value": "{{study_UID}}",
-                  "description": "",
-                  "type": "text"
-                },
-                {
-                  "key": "source_type",
-                  "value": "inbox",
-                  "description": "",
-                  "type": "text"
-                },
-                {
-                  "key": "sourceId",
-                  "value": "xx",
-                  "description": "",
-                  "type": "text",
-                  "disabled": true
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7c3f4a63-0418-420a-aee8-98dd1c97a249",
-          "name": "create viewer token Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"viewer_token_user1\", jsonObject.access_token);"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
-                },
-                {
-                  "key": "assertion",
-                  "type": "text",
-                  "value": "{{user1_token}}"
-                },
-                {
-                  "key": "scope",
-                  "value": "viewer",
                   "type": "text"
                 },
                 {
@@ -477,36 +506,7 @@
             "url": "{{URL}}/token"
           },
           "response": []
-        }
-      ],
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "7bdb618c-4f8e-4cd8-b5d3-2f2cb8d8ff56",
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
-          }
         },
-        {
-          "listen": "test",
-          "script": {
-            "id": "a649f059-1043-4778-a3ea-7e6f9b385275",
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "_postman_id": "17024496-e4be-4132-82e8-cc2a75eaf542",
-      "name": "inbox",
-      "description": "",
-      "item": [
         {
           "_postman_id": "bc2dd49b-e3ca-41dc-95b1-7ac99435c31c",
           "name": "Study Metadata access token",
