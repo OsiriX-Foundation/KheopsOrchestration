@@ -19,6 +19,7 @@
               "script": {
                 "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
                 "exec": [
+                  "//force git push",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
@@ -75,7 +76,6 @@
               "script": {
                 "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
                 "exec": [
-                  "// ensure healthy response code change",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
@@ -132,11 +132,13 @@
               "listen": "test",
               "script": {
                 "id": "7524252c-94ee-4cd1-8780-15785472765a",
-                "type": "text/javascript",
                 "exec": [
-                  "// ensure healthy response code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -171,7 +173,6 @@
               "script": {
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
-                  "// ensure healthy response code debug",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
@@ -933,7 +934,7 @@
     },
     {
       "_postman_id": "c7b0e2a5-8b68-4da6-9233-91f100c73508",
-      "name": "Create album viewer token fromo access token",
+      "name": "Create album viewer token from access token",
       "event": [
         {
           "listen": "test",
