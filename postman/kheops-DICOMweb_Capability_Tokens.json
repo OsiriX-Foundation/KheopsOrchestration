@@ -1131,7 +1131,6 @@
           "script": {
             "id": "54963654-bd26-4abe-ab25-b608f724ebff",
             "exec": [
-              "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "var jsonObject = JSON.parse(responseBody);",
@@ -1183,12 +1182,24 @@
             },
             {
               "key": "scope",
-              "value": "StudyInstanceUID={{study_UID}} SeriesInstanceUID={{series_UID}}",
+              "value": "pep",
               "type": "text"
             },
             {
               "key": "return_user",
               "value": "true",
+              "type": "text"
+            },
+            {
+              "key": "study_instance_uid",
+              "value": "{{study_UID}}",
+              "description": "",
+              "type": "text"
+            },
+            {
+              "key": "series_instance_uid",
+              "value": "{{series_UID}}",
+              "description": "",
               "type": "text"
             }
           ]
