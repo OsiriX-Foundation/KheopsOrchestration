@@ -7809,12 +7809,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+              "raw": "{{URL}}/albums/{{album_id_mutation}}/events?types=mutations&limit=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_mutation}}",
                 "events"
               ],
@@ -7876,7 +7876,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_mutation}}/users/{{user2_mail}}/admin"
+            "url": "{{URL}}/albums/{{album_id_mutation}}/users/{{user2_mail}}/admin"
           },
           "response": []
         },
@@ -7950,12 +7950,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+              "raw": "{{URL}}/albums/{{album_id_mutation}}/events?types=mutations&limit=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_mutation}}",
                 "events"
               ],
