@@ -324,9 +324,7 @@
               "script": {
                 "id": "6caac9ee-c5de-4c2a-a071-187a3ddf168b",
                 "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
-                  "",
-                  ""
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
                 ],
                 "type": "text/javascript"
               }
