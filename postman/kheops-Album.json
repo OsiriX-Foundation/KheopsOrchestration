@@ -197,7 +197,6 @@
               "listen": "test",
               "script": {
                 "id": "543e2bf6-98c6-433b-9c2e-f19f8a3c9ecc",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -210,17 +209,18 @@
                   "tests[\"Return 0 album\"] = jsonObject.length === 0;",
                   "",
                   "tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\") == 0;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -241,16 +241,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -355,7 +349,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -367,7 +361,6 @@
               "listen": "test",
               "script": {
                 "id": "efde00cf-ddfb-4347-a721-351f0f476f4f",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -406,17 +399,18 @@
                   "tests[\"notification_new_series\"] = jsonObject[0].notification_new_series == true",
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject[0].notification_new_comment == true"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -437,16 +431,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -589,7 +577,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -695,7 +683,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -707,7 +695,6 @@
               "listen": "test",
               "script": {
                 "id": "20c49142-79b4-448c-9d8b-1633832040e2",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -744,17 +731,18 @@
                   "tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -775,16 +763,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_id_3}}"
+            "url": "{{URL}}/albums/{{album_id_3}}"
           },
           "response": []
         },
@@ -796,7 +778,6 @@
               "listen": "test",
               "script": {
                 "id": "62d44f57-a4bb-4ea6-a6cc-770470ff263a",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -809,17 +790,18 @@
                   "tests[\"Return 3 album\"] = jsonObject.length === 3;",
                   "",
                   "tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -840,16 +822,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -861,20 +837,20 @@
               "listen": "test",
               "script": {
                 "id": "41ddf687-9de9-452d-aea2-346c9f5da091",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -895,16 +871,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/1"
+            "url": "{{URL}}/albums/1"
           },
           "response": []
         },
@@ -916,20 +886,20 @@
               "listen": "test",
               "script": {
                 "id": "41ddf687-9de9-452d-aea2-346c9f5da091",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -950,16 +920,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/999"
+            "url": "{{URL}}/albums/999"
           },
           "response": []
         },
@@ -971,7 +935,6 @@
               "listen": "test",
               "script": {
                 "id": "3bf4a4c9-3d98-4ad5-8bf0-82eae7f4e148",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1008,17 +971,18 @@
                   "tests[\"notification_new_series\"] = jsonObject.notification_new_series == false",
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1103,7 +1067,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_3}}"
+            "url": "{{URL}}/albums/{{album_id_3}}"
           },
           "response": []
         },
@@ -1115,7 +1079,6 @@
               "listen": "test",
               "script": {
                 "id": "57711bc3-5dd3-40f1-81ac-fb2455340cb4",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1152,17 +1115,18 @@
                   "tests[\"notification_new_series\"] = jsonObject.notification_new_series == true",
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1211,7 +1175,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_3}}"
+            "url": "{{URL}}/albums/{{album_id_3}}"
           },
           "response": []
         },
@@ -1257,7 +1221,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_3}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_id_3}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -1269,20 +1233,20 @@
               "listen": "test",
               "script": {
                 "id": "2132952d-f2f2-4dde-bda6-31380284bdd1",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1355,7 +1319,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_3}}"
+            "url": "{{URL}}/albums/{{album_id_3}}"
           },
           "response": []
         },
@@ -3571,7 +3535,6 @@
               "listen": "test",
               "script": {
                 "id": "105209f3-5569-4454-989a-77f2de5d06e3",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   "",
@@ -3611,17 +3574,18 @@
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3664,7 +3628,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -3721,7 +3685,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -3978,7 +3942,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -3990,7 +3954,6 @@
               "listen": "test",
               "script": {
                 "id": "28d0c565-ef9e-44df-9557-32886bb8cef9",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -4001,17 +3964,18 @@
                   "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_user_id_1\");",
                   "",
                   "tests[\"number_of_users\"] = jsonObject.number_of_users == 2"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -4032,16 +3996,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}"
           },
           "response": []
         },
@@ -4105,19 +4063,19 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_user_id_1}}?includeUsers=true",
+              "raw": "{{URL}}/albums/{{album_user_id_1}}?includeUsers=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_user_id_1}}"
               ],
               "query": [
                 {
                   "key": "includeUsers",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -4181,7 +4139,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -4227,7 +4185,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}/admin"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}/admin"
           },
           "response": []
         },
@@ -4288,7 +4246,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -4334,7 +4292,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}/admin"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}/admin"
           },
           "response": []
         },
@@ -4395,7 +4353,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -4441,7 +4399,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -4453,7 +4411,6 @@
               "listen": "test",
               "script": {
                 "id": "05fc8eae-50e7-4f37-ad29-c6bbff1dc4fe",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -4464,17 +4421,18 @@
                   "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_user_id_1\");",
                   "",
                   "tests[\"number_of_users\"] = jsonObject.number_of_users == 1"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -4495,16 +4453,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}"
           },
           "response": []
         },
@@ -4562,7 +4514,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -4608,7 +4560,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -4669,7 +4621,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -4715,7 +4667,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -4772,7 +4724,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -4818,7 +4770,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -4864,7 +4816,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -4910,7 +4862,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -4971,7 +4923,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -5017,7 +4969,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}/admin"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}/admin"
           },
           "response": []
         },
@@ -5063,7 +5015,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user1_mail}}/admin"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user1_mail}}/admin"
           },
           "response": []
         },
@@ -5109,7 +5061,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}/admin"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}/admin"
           },
           "response": []
         },
@@ -5121,7 +5073,6 @@
               "listen": "test",
               "script": {
                 "id": "d7f17c48-ba99-4eea-a130-2acd1f1fa552",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -5136,17 +5087,18 @@
                   "tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
                   "",
                   "tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5167,16 +5119,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
@@ -5222,7 +5168,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}/admin"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}/admin"
           },
           "response": []
         },
@@ -5234,7 +5180,6 @@
               "listen": "test",
               "script": {
                 "id": "c53cac0a-cb06-494f-afdb-5d3503f53346",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -5244,17 +5189,18 @@
                   "",
                   "tests[\"add_user\"] = jsonObject.add_user == true",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5285,7 +5231,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}"
           },
           "response": []
         },
