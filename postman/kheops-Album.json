@@ -3371,7 +3371,6 @@
               "listen": "test",
               "script": {
                 "id": "de8cd6bc-aa5c-4be4-95e9-01f7656a891a",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3382,17 +3381,18 @@
                   "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
                   "",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3413,16 +3413,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_favorite_id_1}}"
+            "url": "{{URL}}/albums/{{album_favorite_id_1}}"
           },
           "response": []
         },
@@ -3434,22 +3428,22 @@
               "listen": "test",
               "script": {
                 "id": "6a2030e1-765e-4126-b62a-3bcd69078e55",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3470,7 +3464,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/1/favorites"
+            "url": "{{URL}}/albums/1/favorites"
           },
           "response": []
         },
@@ -3516,7 +3510,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_favorite_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -3528,22 +3522,22 @@
               "listen": "test",
               "script": {
                 "id": "d08027f1-7a2c-4ce0-849f-80015675caca",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3564,7 +3558,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_favorite_id_1}}/favorites"
+            "url": "{{URL}}/albums/{{album_favorite_id_1}}/favorites"
           },
           "response": []
         },
