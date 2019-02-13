@@ -1572,7 +1572,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_3}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_id_3}}/users/{{user2_mail}}"
           },
           "response": []
         },
