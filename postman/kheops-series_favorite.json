@@ -3431,21 +3431,24 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
+                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
+                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
+                  "description": "",
                   "type": "text"
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -3584,7 +3587,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -6447,21 +6450,24 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
+                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
+                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
+                  "description": "",
                   "type": "text"
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -6678,7 +6684,7 @@
               "script": {
                 "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
                 "exec": [
-                  "tests[\"Status code is 404\"] = responseCode.code === 404;"
+                  "tests[\"Status code is 404 cause : \"+ responseBody] = responseCode.code === 404;"
                 ],
                 "type": "text/javascript"
               }
