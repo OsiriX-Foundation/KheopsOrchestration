@@ -5523,20 +5523,20 @@
               "listen": "test",
               "script": {
                 "id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -5566,7 +5566,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/albums/{{album_id_comment}}/comments"
+            "url": "{{URL}}/album/{{album_id_comment}}/comments"
           },
           "response": []
         },
@@ -5630,12 +5630,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments",
+              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums",
+                "album",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -5658,6 +5658,7 @@
               "listen": "test",
               "script": {
                 "id": "208217ca-f974-42b5-af20-4d5bbe3b0af9",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;",
                   "",
@@ -5670,14 +5671,14 @@
                   "}",
                   "",
                   "wait(3000);"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "811ae163-12e2-478b-a5ae-0901f29d67ff",
+                "type": "text/javascript",
                 "exec": [
                   "function wait(ms)",
                   "{",
@@ -5688,8 +5689,7 @@
                   "}",
                   "",
                   "wait(3000);"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -5719,7 +5719,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/albums/{{album_id_comment}}/comments"
+            "url": "{{URL}}/album/{{album_id_comment}}/comments"
           },
           "response": []
         },
@@ -5780,7 +5780,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/albums/{{album_id_comment}}/comments"
+            "url": "{{URL}}/album/{{album_id_comment}}/comments"
           },
           "response": []
         },
@@ -5826,7 +5826,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_id_comment}}/users/{{user2_mail}}"
+            "url": "{{URL}}/album/{{album_id_comment}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -5872,7 +5872,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_id_comment}}/users/{{user3_id}}"
+            "url": "{{URL}}/album/{{album_id_comment}}/users/{{user3_id}}"
           },
           "response": []
         },
