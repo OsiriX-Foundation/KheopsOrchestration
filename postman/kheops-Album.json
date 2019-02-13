@@ -2193,6 +2193,7 @@
               "listen": "test",
               "script": {
                 "id": "16bf7745-f4e6-4e2c-84d3-a921ee55b73b",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -2231,18 +2232,17 @@
                   "tests[\"notification_new_series\"] = jsonObject[0].notification_new_series == true",
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject[0].notification_new_comment == true"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2263,16 +2263,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?limit=1&offset=1",
+              "raw": "{{URL}}/album?limit=1&offset=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
@@ -2298,20 +2304,20 @@
               "listen": "test",
               "script": {
                 "id": "cbfcd49b-9eff-472e-b56c-57fa17fcebe3",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 400\"] = responseCode.code === 400;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2332,16 +2338,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?limit=aaa",
+              "raw": "{{URL}}/album?limit=aaa",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
@@ -2362,20 +2374,20 @@
               "listen": "test",
               "script": {
                 "id": "cbfcd49b-9eff-472e-b56c-57fa17fcebe3",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 400\"] = responseCode.code === 400;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2396,16 +2408,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?limit=-3",
+              "raw": "{{URL}}/album?limit=-3",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
