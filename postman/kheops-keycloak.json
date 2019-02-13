@@ -242,7 +242,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -255,9 +255,8 @@
               "script": {
                 "id": "105209f3-5569-4454-989a-77f2de5d06e3",
                 "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
-                  "",
-                  ""
+                  "//response code 201",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
                 ],
                 "type": "text/javascript"
               }
