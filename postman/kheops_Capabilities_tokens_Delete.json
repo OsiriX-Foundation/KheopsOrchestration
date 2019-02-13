@@ -1087,7 +1087,7 @@
     },
     {
       "_postman_id": "4780da58-a742-4fb6-a828-a2929c171447",
-      "name": "Delete /study/.../series/.../album/...",
+      "name": "Delete /study/.../series/.../albums/...",
       "description": "",
       "item": [
         {
@@ -1726,7 +1726,7 @@
     },
     {
       "_postman_id": "f091ecf5-a7b1-49db-acf0-9ed105077d2f",
-      "name": "Delete /study/.../album/...",
+      "name": "Delete /study/.../albums/...",
       "description": "",
       "item": [
         {
