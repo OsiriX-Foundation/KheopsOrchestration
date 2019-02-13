@@ -6494,12 +6494,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&limit=2",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
