@@ -5451,24 +5451,24 @@
               "listen": "test",
               "script": {
                 "id": "e10c7f58-c696-43e7-979b-9c28b899124a",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
                   "pm.environment.set(\"album_id_comment\", jsonObject.album_id);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5511,7 +5511,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -5523,20 +5523,20 @@
               "listen": "test",
               "script": {
                 "id": "6394d760-a827-4bb3-9b2b-327181c02fcd",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "81c46b78-6051-403a-b41d-10343c01a237",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5566,7 +5566,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_comment}}/comments"
+            "url": "{{URL}}/albums/{{album_id_comment}}/comments"
           },
           "response": []
         },
@@ -5630,12 +5630,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -5658,7 +5658,6 @@
               "listen": "test",
               "script": {
                 "id": "208217ca-f974-42b5-af20-4d5bbe3b0af9",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;",
                   "",
@@ -5671,14 +5670,14 @@
                   "}",
                   "",
                   "wait(3000);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "811ae163-12e2-478b-a5ae-0901f29d67ff",
-                "type": "text/javascript",
                 "exec": [
                   "function wait(ms)",
                   "{",
@@ -5689,7 +5688,8 @@
                   "}",
                   "",
                   "wait(3000);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -5719,7 +5719,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_comment}}/comments"
+            "url": "{{URL}}/albums/{{album_id_comment}}/comments"
           },
           "response": []
         },
@@ -5780,7 +5780,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_comment}}/comments"
+            "url": "{{URL}}/albums/{{album_id_comment}}/comments"
           },
           "response": []
         },
@@ -5826,7 +5826,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_comment}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_id_comment}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -5872,7 +5872,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_comment}}/users/{{user3_id}}"
+            "url": "{{URL}}/albums/{{album_id_comment}}/users/{{user3_id}}"
           },
           "response": []
         },
@@ -5933,7 +5933,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_comment}}/comments"
+            "url": "{{URL}}/albums/{{album_id_comment}}/comments"
           },
           "response": []
         },
@@ -6018,12 +6018,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6119,12 +6119,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6210,12 +6210,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6301,12 +6301,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&limit=2",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6397,12 +6397,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&limit=2",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6494,12 +6494,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=2",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&limit=2",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6588,12 +6588,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&offset=1",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&offset=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6682,12 +6682,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&offset=1",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&offset=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6767,12 +6767,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&offset=1",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&offset=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6852,12 +6852,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -6943,12 +6943,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -7033,12 +7033,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
+              "raw": "{{URL}}/albums/{{album_id_comment}}/events?types=comments&limit=1&offset=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_comment}}",
                 "events"
               ],
@@ -7071,7 +7071,6 @@
               "listen": "test",
               "script": {
                 "id": "5c0084c3-397f-42f0-bfce-9f5d30a6f95e",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -7084,17 +7083,18 @@
                   "tests[\"number_of_users\"] = jsonObject.number_of_users == 3",
                   "",
                   "tests[\"number_of_comments\"] = jsonObject.number_of_comments == 3"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -7115,16 +7115,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_id_comment}}"
+            "url": "{{URL}}/albums/{{album_id_comment}}"
           },
           "response": []
         },
@@ -7136,7 +7130,6 @@
               "listen": "test",
               "script": {
                 "id": "5c0084c3-397f-42f0-bfce-9f5d30a6f95e",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -7149,17 +7142,18 @@
                   "tests[\"number_of_users\"] = jsonObject.number_of_users == 3",
                   "",
                   "tests[\"number_of_comments\"] = jsonObject.number_of_comments == 3"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -7180,16 +7174,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_id_comment}}"
+            "url": "{{URL}}/albums/{{album_id_comment}}"
           },
           "response": []
         },
@@ -7201,7 +7189,6 @@
               "listen": "test",
               "script": {
                 "id": "3787b72b-5799-4902-83b2-d684d36f64a1",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -7214,17 +7201,18 @@
                   "tests[\"number_of_users\"] = jsonObject.number_of_users == 3",
                   "",
                   "tests[\"number_of_comments\"] = jsonObject.number_of_comments == 2"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -7245,16 +7233,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_id_comment}}"
+            "url": "{{URL}}/albums/{{album_id_comment}}"
           },
           "response": []
         }
@@ -7273,24 +7255,24 @@
               "listen": "test",
               "script": {
                 "id": "378ddc80-87e5-4e0b-a65c-faefcd6e7b23",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
                   "pm.environment.set(\"album_id_mutation\", jsonObject.album_id);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -7333,7 +7315,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -7406,12 +7388,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
+              "raw": "{{URL}}/albums/{{album_id_mutation}}/events?types=mutations&limit=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_id_mutation}}",
                 "events"
               ],
