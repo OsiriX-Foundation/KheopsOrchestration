@@ -9369,7 +9369,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_sharing2}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_id_sharing2}}/users/{{user2_id}}"
           },
           "response": []
         },
