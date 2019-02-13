@@ -295,21 +295,24 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
+                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
+                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
+                  "description": "",
                   "type": "text"
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         }
