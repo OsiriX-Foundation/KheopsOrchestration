@@ -2528,6 +2528,7 @@
               "listen": "test",
               "script": {
                 "id": "d0abaf30-2436-4899-abc0-42353f30ce3c",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -2544,18 +2545,17 @@
                   "tests[\"name_1\"] = jsonObject[1].name == \"name 2\"",
                   "",
                   "tests[\"name_2\"] = jsonObject[2].name == \"name 3\""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2576,16 +2576,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?sort=name",
+              "raw": "{{URL}}/album?sort=name",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
@@ -2606,6 +2612,7 @@
               "listen": "test",
               "script": {
                 "id": "d0abaf30-2436-4899-abc0-42353f30ce3c",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -2622,18 +2629,17 @@
                   "tests[\"name_1\"] = jsonObject[1].name == \"name 2\"",
                   "",
                   "tests[\"name_2\"] = jsonObject[2].name == \"name 3\""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2654,16 +2660,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?sort=created_time",
+              "raw": "{{URL}}/album?sort=created_time",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
@@ -2684,6 +2696,7 @@
               "listen": "test",
               "script": {
                 "id": "0404f8a3-1be0-4791-82c5-85b980a3a83b",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -2700,18 +2713,17 @@
                   "tests[\"name_1\"] = jsonObject[1].name == \"name 2\"",
                   "",
                   "tests[\"name_2\"] = jsonObject[2].name == \"name 1\""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2732,16 +2744,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?sort=-created_time",
+              "raw": "{{URL}}/album?sort=-created_time",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
@@ -2762,22 +2780,22 @@
               "listen": "test",
               "script": {
                 "id": "a5c0e200-6fca-449d-9f8b-0f818553621d",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2794,7 +2812,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/1"
+            "url": "{{URL}}/album/1"
           },
           "response": []
         },
@@ -2806,22 +2824,22 @@
               "listen": "test",
               "script": {
                 "id": "c63fb886-ca4a-461b-943f-e5adfab39a62",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2838,7 +2856,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/999"
+            "url": "{{URL}}/album/999"
           },
           "response": []
         },
@@ -2850,20 +2868,20 @@
               "listen": "test",
               "script": {
                 "id": "11bfe9a2-844b-4bff-99ed-5a9bff8e4c77",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2880,7 +2898,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_id_1}}"
+            "url": "{{URL}}/album/{{album_id_1}}"
           },
           "response": []
         }
@@ -2899,6 +2917,7 @@
               "listen": "test",
               "script": {
                 "id": "f18fac9a-2516-4078-a31c-943917641cf5",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   "",
@@ -2938,18 +2957,17 @@
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -2992,7 +3010,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/albums"
+            "url": "{{URL}}/album"
           },
           "response": []
         },
@@ -3038,7 +3056,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -3050,20 +3068,20 @@
               "listen": "test",
               "script": {
                 "id": "122408ad-933b-431d-ba75-89c12faa1e82",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3084,7 +3102,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}/favorites"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}/favorites"
           },
           "response": []
         },
@@ -3096,6 +3114,7 @@
               "listen": "test",
               "script": {
                 "id": "de8cd6bc-aa5c-4be4-95e9-01f7656a891a",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3106,18 +3125,17 @@
                   "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
                   "",
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3138,10 +3156,16 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}"
           },
           "response": []
         },
@@ -3153,6 +3177,7 @@
               "listen": "test",
               "script": {
                 "id": "8b4e8535-0ef3-4824-b1b5-be8b78552cf2",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3164,18 +3189,17 @@
                   "",
                   "tests[\"is_favorite\"] = jsonObject.is_favorite == true",
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3196,10 +3220,16 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}"
           },
           "response": []
         },
@@ -3211,6 +3241,7 @@
               "listen": "test",
               "script": {
                 "id": "fe810515-a16b-4263-9850-0a5490a54776",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3227,18 +3258,17 @@
                   "tests[\"is_favorite\"] = jsonObject[0].is_favorite == true",
                   "",
                   "tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3259,16 +3289,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?favorite=true",
+              "raw": "{{URL}}/album?favorite=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
@@ -3289,20 +3325,20 @@
               "listen": "test",
               "script": {
                 "id": "f0d1cb22-78d9-4734-a4a3-4895760285af",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3323,7 +3359,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}/favorites"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}/favorites"
           },
           "response": []
         },
@@ -3335,6 +3371,7 @@
               "listen": "test",
               "script": {
                 "id": "de8cd6bc-aa5c-4be4-95e9-01f7656a891a",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3345,18 +3382,17 @@
                   "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
                   "",
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3377,10 +3413,16 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}"
           },
           "response": []
         },
@@ -3392,22 +3434,22 @@
               "listen": "test",
               "script": {
                 "id": "6a2030e1-765e-4126-b62a-3bcd69078e55",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3428,7 +3470,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/1/favorites"
+            "url": "{{URL}}/album/1/favorites"
           },
           "response": []
         },
@@ -3474,7 +3516,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}/users/{{user2_mail}}"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -3486,22 +3528,22 @@
               "listen": "test",
               "script": {
                 "id": "d08027f1-7a2c-4ce0-849f-80015675caca",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3522,7 +3564,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}/favorites"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}/favorites"
           },
           "response": []
         },
