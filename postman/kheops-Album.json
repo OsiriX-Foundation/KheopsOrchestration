@@ -3942,7 +3942,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -3954,7 +3954,6 @@
               "listen": "test",
               "script": {
                 "id": "28d0c565-ef9e-44df-9557-32886bb8cef9",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3965,17 +3964,18 @@
                   "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_user_id_1\");",
                   "",
                   "tests[\"number_of_users\"] = jsonObject.number_of_users == 2"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3996,16 +3996,10 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}"
           },
           "response": []
         },
@@ -4069,19 +4063,19 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album/{{album_user_id_1}}?includeUsers=true",
+              "raw": "{{URL}}/albums/{{album_user_id_1}}?includeUsers=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album",
+                "albums",
                 "{{album_user_id_1}}"
               ],
               "query": [
                 {
                   "key": "includeUsers",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -4145,7 +4139,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
