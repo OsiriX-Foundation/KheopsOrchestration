@@ -2824,22 +2824,22 @@
               "listen": "test",
               "script": {
                 "id": "c63fb886-ca4a-461b-943f-e5adfab39a62",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 404\"] = responseCode.code === 404;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -2856,7 +2856,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/999"
+            "url": "{{URL}}/albums/999"
           },
           "response": []
         },
@@ -2868,20 +2868,20 @@
               "listen": "test",
               "script": {
                 "id": "11bfe9a2-844b-4bff-99ed-5a9bff8e4c77",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -2898,7 +2898,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_id_1}}"
+            "url": "{{URL}}/albums/{{album_id_1}}"
           },
           "response": []
         }
@@ -2917,7 +2917,6 @@
               "listen": "test",
               "script": {
                 "id": "f18fac9a-2516-4078-a31c-943917641cf5",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
                   "",
@@ -2957,17 +2956,18 @@
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == true",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3010,7 +3010,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album"
+            "url": "{{URL}}/albums"
           },
           "response": []
         },
@@ -3056,7 +3056,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_favorite_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_favorite_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -3068,20 +3068,20 @@
               "listen": "test",
               "script": {
                 "id": "122408ad-933b-431d-ba75-89c12faa1e82",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -3102,7 +3102,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_favorite_id_1}}/favorites"
+            "url": "{{URL}}/albums/{{album_favorite_id_1}}/favorites"
           },
           "response": []
         },
