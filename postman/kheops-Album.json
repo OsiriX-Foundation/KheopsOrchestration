@@ -7668,12 +7668,12 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/albums/{{album_id_mutation}}/events?types=mutations&limit=1",
+              "raw": "{{URL}}/album/{{album_id_mutation}}/events?types=mutations&limit=1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums",
+                "album",
                 "{{album_id_mutation}}",
                 "events"
               ],
