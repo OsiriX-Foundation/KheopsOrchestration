@@ -1367,21 +1367,21 @@
               "listen": "test",
               "script": {
                 "id": "07108cd4-bded-49fb-abf0-db8a148e3547",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1466,7 +1466,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_3}}"
+            "url": "{{URL}}/albums/{{album_id_3}}"
           },
           "response": []
         },
@@ -1478,7 +1478,6 @@
               "listen": "test",
               "script": {
                 "id": "f21ce5cc-4b72-430f-a4e7-f33e56b06d3a",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1515,17 +1514,18 @@
                   "tests[\"notification_new_series\"] = jsonObject.notification_new_series == false",
                   "",
                   "tests[\"notification_new_comment\"] = jsonObject.notification_new_comment == false"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1562,7 +1562,7 @@
                 }
               ]
             },
-            "url": "{{URL}}/album/{{album_id_3}}"
+            "url": "{{URL}}/albums/{{album_id_3}}"
           },
           "response": []
         },
@@ -1620,7 +1620,6 @@
               "listen": "test",
               "script": {
                 "id": "89980121-d7db-4cec-9cc0-8c6a1a7bef25",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1637,17 +1636,18 @@
                   "tests[\"name\"] = jsonObject[0].name == \"name 1\"",
                   "",
                   "tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1668,22 +1668,16 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album?name=name 1",
+              "raw": "{{URL}}/albums?name=name 1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album"
+                "albums"
               ],
               "query": [
                 {
@@ -1704,7 +1698,6 @@
               "listen": "test",
               "script": {
                 "id": "44e781a2-1d03-4aee-a221-2093d4702083",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1717,17 +1710,18 @@
                   "tests[\"Return 3 album\"] = jsonObject.length === 3;",
                   "",
                   "tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1748,22 +1742,16 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album?name=name*",
+              "raw": "{{URL}}/albums?name=name*",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album"
+                "albums"
               ],
               "query": [
                 {
@@ -1784,7 +1772,6 @@
               "listen": "test",
               "script": {
                 "id": "414d3a21-7ca8-4fe3-b8c7-eaa96b52ec95",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1801,17 +1788,18 @@
                   "tests[\"name\"] = jsonObject[0].name == \"name 1\"",
                   "",
                   "tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1832,22 +1820,16 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album?name=*me 1",
+              "raw": "{{URL}}/albums?name=*me 1",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album"
+                "albums"
               ],
               "query": [
                 {
@@ -1868,7 +1850,6 @@
               "listen": "test",
               "script": {
                 "id": "86d01e12-b9c4-4a16-850f-3307e96cb77c",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -1881,17 +1862,18 @@
                   "tests[\"Return 3 album\"] = jsonObject.length === 3;",
                   "",
                   "tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "type": "text/javascript",
                 "exec": [
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -1912,22 +1894,16 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album?name=*me*",
+              "raw": "{{URL}}/albums?name=*me*",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album"
+                "albums"
               ],
               "query": [
                 {
@@ -1992,22 +1968,16 @@
               }
             ],
             "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "{{description}}",
-                  "type": "text"
-                }
-              ]
+              "mode": "raw",
+              "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/album?name=nam&fuzzymatching=true",
+              "raw": "{{URL}}/albums?name=nam&fuzzymatching=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "album"
+                "albums"
               ],
               "query": [
                 {
