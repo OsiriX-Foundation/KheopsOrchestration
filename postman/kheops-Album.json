@@ -3241,6 +3241,7 @@
               "listen": "test",
               "script": {
                 "id": "fe810515-a16b-4263-9850-0a5490a54776",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3257,18 +3258,17 @@
                   "tests[\"is_favorite\"] = jsonObject[0].is_favorite == true",
                   "",
                   "tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3289,16 +3289,22 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
             "url": {
-              "raw": "{{URL}}/albums?favorite=true",
+              "raw": "{{URL}}/album?favorite=true",
               "host": [
                 "{{URL}}"
               ],
               "path": [
-                "albums"
+                "album"
               ],
               "query": [
                 {
@@ -3319,20 +3325,20 @@
               "listen": "test",
               "script": {
                 "id": "f0d1cb22-78d9-4734-a4a3-4895760285af",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3353,7 +3359,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}/favorites"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}/favorites"
           },
           "response": []
         },
@@ -3365,6 +3371,7 @@
               "listen": "test",
               "script": {
                 "id": "de8cd6bc-aa5c-4be4-95e9-01f7656a891a",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
@@ -3375,18 +3382,17 @@
                   "tests[\"is_favorite\"] = jsonObject.is_favorite == false",
                   "",
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             },
             {
               "listen": "prerequest",
               "script": {
                 "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "type": "text/javascript",
                 "exec": [
                   ""
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
@@ -3407,10 +3413,16 @@
               }
             ],
             "body": {
-              "mode": "raw",
-              "raw": ""
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "description",
+                  "value": "{{description}}",
+                  "type": "text"
+                }
+              ]
             },
-            "url": "{{URL}}/albums/{{album_favorite_id_1}}"
+            "url": "{{URL}}/album/{{album_favorite_id_1}}"
           },
           "response": []
         },
