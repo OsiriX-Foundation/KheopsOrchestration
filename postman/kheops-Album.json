@@ -4770,7 +4770,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_id}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
@@ -4816,7 +4816,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -4862,7 +4862,7 @@
               }
             ],
             "body": {},
-            "url": "{{URL}}/album/{{album_user_id_1}}/users/{{user2_mail}}"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}"
           },
           "response": []
         },
@@ -4923,7 +4923,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/album/{{album_user_id_1}}/users"
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users"
           },
           "response": []
         },
