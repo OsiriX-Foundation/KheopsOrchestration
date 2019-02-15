@@ -388,13 +388,14 @@
         }
       ],
       "request": {
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer 99999999"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "999999"
           }
-        ],
+        },
+        "method": "PUT",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
@@ -411,21 +412,22 @@
           "listen": "test",
           "script": {
             "id": "06412370-2a49-4170-be9c-65a49f8e062e",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 400\"] = responseCode.code === 400;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
           }
-        ],
+        },
+        "method": "DELETE",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
@@ -442,21 +444,22 @@
           "listen": "test",
           "script": {
             "id": "8dd1bb4e-3e1a-4342-bcae-e4b6974029b0",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 400\"] = responseCode.code === 400;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
           }
-        ],
+        },
+        "method": "DELETE",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
