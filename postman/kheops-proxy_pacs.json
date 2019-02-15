@@ -944,22 +944,23 @@
               "listen": "test",
               "script": {
                 "id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_allAccess}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_allAccess}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
