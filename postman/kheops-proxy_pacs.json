@@ -845,22 +845,23 @@
               "listen": "test",
               "script": {
                 "id": "1d4676ee-10e8-4582-9168-6475495c503c",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -877,22 +878,23 @@
               "listen": "test",
               "script": {
                 "id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -909,22 +911,23 @@
               "listen": "test",
               "script": {
                 "id": "45510171-c86b-4aae-a974-1fa9ac044173",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 404\"] = responseCode.code === 404;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
