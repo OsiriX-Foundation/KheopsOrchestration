@@ -60,12 +60,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "999999"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer 9999999"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -87,21 +89,23 @@
           "listen": "test",
           "script": {
             "id": "88f6ab14-b0a6-4687-8bdc-8756d725a2d6",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 406\"] = responseCode.code === 406;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json+txt"
@@ -123,24 +127,26 @@
           "listen": "test",
           "script": {
             "id": "7524252c-94ee-4cd1-8780-15785472765a",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
             "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-          },
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
           }
         ],
         "body": {
