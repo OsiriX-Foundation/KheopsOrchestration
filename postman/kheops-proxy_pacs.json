@@ -977,22 +977,23 @@
               "listen": "test",
               "script": {
                 "id": "98f9e250-ce56-4197-aa5a-18a04bda03eb",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
