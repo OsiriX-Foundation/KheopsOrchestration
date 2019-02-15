@@ -366,12 +366,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{secret_capability_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{secret_capability_token}}"
-          },
           {
             "key": "Accept",
             "value": "application/zip",
