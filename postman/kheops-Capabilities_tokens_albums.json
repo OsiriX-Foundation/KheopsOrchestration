@@ -889,14 +889,18 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
               }
-            ],
-            "body": {},
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "{{URL}}/studies"
           },
           "response": []
@@ -948,12 +952,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
