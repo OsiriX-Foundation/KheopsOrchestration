@@ -27,15 +27,17 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
               }
             ],
             "body": {
@@ -69,15 +71,17 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
               }
             ],
             "body": {
