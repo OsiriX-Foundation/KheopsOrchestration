@@ -6,50 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "4354ddc0-ab38-4c20-9cb3-c2f3de40a28b",
-      "name": "create user-Bad assertion",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "dd3b67c8-14b1-4380-a019-f47dc147c974",
-            "exec": [
-              "// ensure healthy response code change",
-              "tests[\"Status code is 401\"] = responseCode.code === 401;",
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content_Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-              "type": "text"
-            },
-            {
-              "key": "assertion",
-              "value": "123456789",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "b20f912f-1b25-4fda-9276-0e35a5fcac4f",
       "name": "create user-Bad grant_type",
       "event": [
