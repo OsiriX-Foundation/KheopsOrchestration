@@ -1453,14 +1453,13 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
