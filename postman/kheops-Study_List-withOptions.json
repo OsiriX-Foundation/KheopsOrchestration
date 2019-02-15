@@ -1883,7 +1883,6 @@
               "listen": "test",
               "script": {
                 "id": "0f5f9ebc-6ce3-4c3c-b948-a80d05c77030",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1893,17 +1892,20 @@
                   "tests[\"Return 2 studies\"] = jsonObject.length === 2;",
                   "",
                   "tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\") == 2;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -1940,22 +1942,24 @@
               "listen": "test",
               "script": {
                 "id": "0b4ab95d-d04b-46c3-a0c9-1b2d80243aff",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 400\"] = responseCode.code === 400;",
                   ""
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
