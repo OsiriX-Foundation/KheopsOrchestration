@@ -6,62 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "8c52347c-f3f3-48cb-b941-a80a8a9ea4b8",
-      "name": "create user2-create",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "pm.environment.set(\"access_token_user2\", jsonObject.access_token);"
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-              "type": "text"
-            },
-            {
-              "key": "assertion",
-              "value": "{{user2_token}}",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "3dae336e-ffc4-4b44-af40-8005da204eb0",
       "name": "user1 get studies list-Empty",
       "event": [
@@ -79,12 +23,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
