@@ -693,7 +693,7 @@
               "script": {
                 "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -714,7 +714,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{secret_capability_token_1}}"
               }
             },
             "method": "GET",
@@ -1269,12 +1269,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_1}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_1}}"
-              },
               {
                 "key": "Accept",
                 "type": "text",
@@ -1326,7 +1328,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{access_token_user1}}"
+                "token": "{{user1_token}}"
               }
             },
             "method": "GET",
