@@ -927,12 +927,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{album_viewer_token_user1}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{album_viewer_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
