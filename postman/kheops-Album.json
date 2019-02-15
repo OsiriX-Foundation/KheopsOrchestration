@@ -9481,21 +9481,22 @@
               "listen": "test",
               "script": {
                 "id": "afb2e99f-0222-41ba-91e3-24c25a5cbe1d",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
               }
-            ],
+            },
+            "method": "PUT",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9530,21 +9531,22 @@
               "listen": "test",
               "script": {
                 "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
               }
-            ],
+            },
+            "method": "PUT",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9579,21 +9581,22 @@
               "listen": "test",
               "script": {
                 "id": "38ad1edc-20bd-4940-89fa-953608b93017",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
               }
-            ],
+            },
+            "method": "DELETE",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9610,21 +9613,22 @@
               "listen": "test",
               "script": {
                 "id": "da5aed77-382c-424e-92a7-cb21be055b26",
-                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
               }
-            ],
+            },
+            "method": "DELETE",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
