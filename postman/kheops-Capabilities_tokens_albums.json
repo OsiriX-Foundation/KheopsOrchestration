@@ -6,206 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "e47dcf1a-f6a0-4587-b8b4-905cb8eeb708",
-      "name": "Initialisation",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "03f0dbdf-7ed9-4ad7-ac3e-d37d99c7c93f",
-          "name": "create user1-create",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-                  "type": "text"
-                },
-                {
-                  "key": "assertion",
-                  "value": "{{user1_token}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d47a13ac-419c-4bdc-8e70-1eafc127fc70",
-          "name": "create user2-create",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"access_token_user2\", jsonObject.access_token);",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-                  "type": "text"
-                },
-                {
-                  "key": "assertion",
-                  "value": "{{user2_token}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "efec6895-1a18-4f25-bcac-31ba8bba9607",
-          "name": "create user3-create",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "6ea2d7bb-b849-4327-b8fe-c5003480b2d6",
-                "exec": [
-                  "// ensure healthy response code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"access_token_user3\", jsonObject.access_token);",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-                  "type": "text"
-                },
-                {
-                  "key": "assertion",
-                  "value": "{{user3_token}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        }
-      ],
-      "event": [
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "eedf2349-2443-497c-bed4-070bbdceb9a9",
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
-          }
-        },
-        {
-          "listen": "test",
-          "script": {
-            "id": "6ca5f33e-5df8-441f-8fe1-d3ad6c95e633",
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
-          }
-        }
-      ]
-    },
-    {
       "_postman_id": "72abffad-4af2-430a-9704-9287ebb4f253",
       "name": "Album",
       "description": "",
@@ -273,12 +73,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -341,12 +143,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "PUT",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -416,12 +220,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -550,12 +356,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -634,15 +442,17 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_1}}"
               }
             ],
             "body": {
@@ -702,12 +512,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -784,15 +596,17 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_1}}"
               }
             ],
             "body": {
@@ -839,14 +653,18 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
               }
-            ],
-            "body": {},
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": {
               "raw": "{{URL}}/studies?album={{album_id_1}}",
               "host": [
@@ -859,7 +677,7 @@
                 {
                   "key": "album",
                   "value": "{{album_id_1}}",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
@@ -900,13 +718,14 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -923,7 +742,7 @@
                 {
                   "key": "album",
                   "value": "{{album_id_1}}",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
