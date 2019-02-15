@@ -885,7 +885,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{secret_capability_token_1}}"
               }
             },
             "method": "GET",
@@ -1055,7 +1055,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{secret_capability_token_1}}"
               }
             },
             "method": "GET",
