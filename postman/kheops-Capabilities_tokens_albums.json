@@ -1201,13 +1201,14 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_1}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -1233,13 +1234,14 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_1}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
