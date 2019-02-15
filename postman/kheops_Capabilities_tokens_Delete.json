@@ -1158,17 +1158,15 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_write}}"
-              }
-            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_write}}"
               }
             ],
             "body": {
@@ -1215,18 +1213,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_read}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_read}}"
+              }
+            ],
+            "body": {},
             "url": "{{URL}}/studies"
           },
           "response": []
