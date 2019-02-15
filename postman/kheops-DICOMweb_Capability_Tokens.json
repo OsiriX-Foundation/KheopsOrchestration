@@ -952,7 +952,6 @@
           "listen": "test",
           "script": {
             "id": "b5e6bb80-fec4-42e7-9170-228cebb6642e",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -968,27 +967,30 @@
               "",
               "",
               "pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "c99d50c0-13a7-4b5a-a1f7-2389cbc16232",
-            "type": "text/javascript",
             "exec": [
               "pm.environment.set(\"description\", \"some description\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "POST",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/json"
@@ -1015,76 +1017,6 @@
           ]
         },
         "url": "{{URL}}/capabilities"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "006aa682-f1bc-43ba-ae51-d9a00e3bcfbe",
-      "name": "Request capability tokens-OK",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "7effe4f5-4f58-4c23-b974-3712291280d5",
-            "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "tests[\"[INFO] Response: \" + responseBody] = true;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "tests[\"User is correct\"] = jsonObject.user === pm.globals.get(\"user1_id\");",
-              "tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
-              "",
-              "pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);",
-              "",
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "89f0f91f-0f60-4b44-a06f-f16fdaacb3f4",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "value": "urn:x-kheops:params:oauth:grant-type:capability",
-              "type": "text"
-            },
-            {
-              "key": "assertion",
-              "value": "{{secret_capability_token}}",
-              "type": "text"
-            },
-            {
-              "key": "return_user",
-              "value": "true",
-              "description": "",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
       },
       "response": []
     },
@@ -1276,63 +1208,6 @@
             {
               "key": "assertion",
               "value": "99999999",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "a0460c72-2b60-400e-8292-19e7b0c51c57",
-      "name": "Request capability tokens-Unknown grant type",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "c0c20e4a-03c5-44f6-ab26-a3f133d51b76",
-            "type": "text/javascript",
-            "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 400\"] = responseCode.code === 400;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "tests[\"Unknown grant typen\"] = jsonObject.error_description === \"Unknown grant type: urn:x-kheops:params:oauth:grant-type:capabilityyyyy\";"
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-            "type": "text/javascript",
-            "exec": [
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "value": "urn:x-kheops:params:oauth:grant-type:capabilityyyyy",
-              "type": "text"
-            },
-            {
-              "key": "assertion",
-              "value": "{{secret_capability_token}}",
               "type": "text"
             }
           ]
