@@ -11,64 +11,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "a75bdf9c-1ea4-4f12-9466-aefac7faa987",
-          "name": "create user2-create",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
-                "exec": [
-                  "// ensure healthy response code change",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"access_token_user2\", jsonObject.access_token);",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
-                },
-                {
-                  "key": "assertion",
-                  "type": "text",
-                  "value": "{{user2_token}}"
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "42b233cc-a56a-40f0-9719-3e56045c3fb0",
           "name": "STOW RS inside inbox user 1",
           "event": [
