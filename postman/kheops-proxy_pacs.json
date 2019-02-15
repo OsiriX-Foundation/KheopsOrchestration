@@ -150,7 +150,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{JWT_expired}}"
+                "token": "{{JWT_badSecret}}"
               }
             },
             "method": "POST",
@@ -178,21 +178,23 @@
               "listen": "test",
               "script": {
                 "id": "ecf75c63-5d75-46c8-82fd-a584294cad04",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_badStudy_series}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_badStudy_series}}"
-              },
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
@@ -711,22 +713,23 @@
               "listen": "test",
               "script": {
                 "id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
-                "type": "text/javascript",
                 "exec": [
                   "// wado-rs is blocked",
                   "tests[\"Status code is 405\"] = responseCode.code === 405;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_allAccess}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_allAccess}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
