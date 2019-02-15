@@ -502,21 +502,22 @@
           "listen": "test",
           "script": {
             "id": "5e25238c-c3fa-444b-a693-b99ee4e8760c",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 401\"] = responseCode.code === 401;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer 99999999999"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "99999999"
           }
-        ],
+        },
+        "method": "DELETE",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
@@ -533,21 +534,22 @@
           "listen": "test",
           "script": {
             "id": "61b44274-be92-4aad-89f6-2636e2ece7bb",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 404\"] = responseCode.code === 404;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
           }
-        ],
+        },
+        "method": "DELETE",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
@@ -564,21 +566,22 @@
           "listen": "test",
           "script": {
             "id": "198f926b-7142-48cd-b00c-0848900aa03c",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 404\"] = responseCode.code === 404;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
           }
-        ],
+        },
+        "method": "DELETE",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
@@ -595,21 +598,22 @@
           "listen": "test",
           "script": {
             "id": "58b76520-f7cd-40dd-87c1-c9bb822f6d8d",
-            "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 204\"] = responseCode.code === 204;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
           }
-        ],
+        },
+        "method": "DELETE",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
