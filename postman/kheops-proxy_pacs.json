@@ -1010,22 +1010,23 @@
               "listen": "test",
               "script": {
                 "id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -1042,22 +1043,23 @@
               "listen": "test",
               "script": {
                 "id": "1b9d9dcd-d19c-4ce3-87ca-aa844c294c16",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -1074,22 +1076,23 @@
               "listen": "test",
               "script": {
                 "id": "099d4d4d-5ea5-47c1-a2e7-f523fbde2d67",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -1106,22 +1109,23 @@
               "listen": "test",
               "script": {
                 "id": "9cb0b5b8-a6c8-4534-b4ca-e439606a43d6",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
