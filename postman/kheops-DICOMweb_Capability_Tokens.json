@@ -6,62 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "a602e128-08f6-47d1-9e4d-39b15768d19d",
-      "name": "create user1-OK",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "7d254f79-8603-4eab-9239-23ac1867331a",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-              "type": "text"
-            },
-            {
-              "key": "assertion",
-              "value": "{{user1_token}}",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "1b491c9c-b17b-4f0f-b801-0ad6e04f8516",
       "name": "Get a capability tokens user1-no token",
       "event": [
@@ -1141,9 +1085,7 @@
               "",
               "tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
               "",
-              "pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);",
-              "",
-              ""
+              "pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);"
             ],
             "type": "text/javascript"
           }
