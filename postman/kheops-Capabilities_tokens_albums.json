@@ -1330,7 +1330,10 @@
                 "value": "Bearer {{access_token_user1}}"
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": {
               "raw": "{{URL}}/studies?inbox=true",
               "host": [
@@ -1343,7 +1346,7 @@
                 {
                   "key": "inbox",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
