@@ -840,7 +840,6 @@
               "listen": "test",
               "script": {
                 "id": "57e262e4-3482-4ce9-954a-6a1da1ec675f",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -850,17 +849,20 @@
                   "tests[\"Return 2 studies\"] = jsonObject.length === 2;",
                   "",
                   "tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") == 5;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -902,7 +904,6 @@
               "listen": "test",
               "script": {
                 "id": "feff7983-fdbd-4297-92d0-9528e876763d",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -912,17 +913,20 @@
                   "tests[\"Return 3 studies\"] = jsonObject.length === 3;",
                   "",
                   "tests[\"X-Total-Count = 5\"] = postman.getResponseHeader(\"X-Total-Count\") == 5;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -971,21 +975,23 @@
               "listen": "test",
               "script": {
                 "id": "79350662-00d0-47d6-80d1-1a08d8bd0c92",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 400\"] = responseCode.code === 400;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
