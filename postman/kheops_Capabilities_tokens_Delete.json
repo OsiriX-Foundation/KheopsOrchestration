@@ -289,12 +289,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -392,12 +394,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -503,15 +507,17 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_write}}"
+              }
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_write}}"
               }
             ],
             "body": {
@@ -558,14 +564,18 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_read}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_read}}"
               }
-            ],
-            "body": {},
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "{{URL}}/studies"
           },
           "response": []
@@ -615,13 +625,14 @@
             }
           ],
           "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_write}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_write}}"
               }
-            ],
+            },
+            "method": "DELETE",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -646,13 +657,14 @@
             }
           ],
           "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_read}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_read}}"
               }
-            ],
+            },
+            "method": "DELETE",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -695,14 +707,18 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_read}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_read}}"
               }
-            ],
-            "body": {},
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "{{URL}}/studies"
           },
           "response": []
@@ -723,13 +739,14 @@
             }
           ],
           "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_read_write}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_read_write}}"
               }
-            ],
+            },
+            "method": "DELETE",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -764,14 +781,18 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_read}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_read}}"
               }
-            ],
-            "body": {},
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "{{URL}}/studies"
           },
           "response": []
@@ -800,15 +821,17 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_write}}"
+              }
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_write}}"
               }
             ],
             "body": {
