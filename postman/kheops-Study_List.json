@@ -453,22 +453,24 @@
           "listen": "test",
           "script": {
             "id": "f1ac53b1-8679-4c47-b489-77dfe4f4f8fc",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 401\"] = responseCode.code === 401;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "999999999"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer 99999999"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
