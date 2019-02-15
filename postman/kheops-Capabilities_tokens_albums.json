@@ -686,7 +686,7 @@
         },
         {
           "_postman_id": "433da338-1364-4a0c-b7b3-a1d6dfd026eb",
-          "name": "album get studies list by user 1 (not capability token) Copy",
+          "name": "album get studies list with capability token",
           "event": [
             {
               "listen": "test",
@@ -694,14 +694,7 @@
                 "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                  ""
                 ],
                 "type": "text/javascript"
               }
