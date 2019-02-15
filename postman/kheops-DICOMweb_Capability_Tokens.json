@@ -919,22 +919,23 @@
           "listen": "test",
           "script": {
             "id": "1e0fa343-9a79-4987-b884-b712b6bd0c32",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 401\"] = responseCode.code === 401;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer 9999999"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "999999"
           }
-        ],
+        },
+        "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
