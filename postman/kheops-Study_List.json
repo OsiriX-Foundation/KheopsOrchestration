@@ -492,22 +492,24 @@
           "listen": "test",
           "script": {
             "id": "97662cae-805a-4a4b-86fa-dce666f33834",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 406\"] = responseCode.code === 406;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json+txt"
@@ -544,13 +546,14 @@
         }
       ],
       "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
           }
-        ],
+        },
+        "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
