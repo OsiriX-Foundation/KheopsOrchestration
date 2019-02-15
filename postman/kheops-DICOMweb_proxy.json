@@ -6,69 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "465ad2ce-6df8-480f-954c-4fe2163eb5b6",
-      "name": "Initialisation",
-      "description": null,
-      "item": [
-        {
-          "_postman_id": "79a0e79d-8a95-4b6f-a516-7500a224016f",
-          "name": "create user1-create",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-                  "type": "text"
-                },
-                {
-                  "key": "assertion",
-                  "value": "{{user1_token}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "b2fce66e-cbb2-4401-9023-b03ccb3ab9e0",
       "name": "STOW inbox",
       "description": null,
