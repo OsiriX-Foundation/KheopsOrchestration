@@ -7903,14 +7903,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "DELETE",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -7975,14 +7973,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8048,14 +8044,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "PUT",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8120,14 +8114,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8193,14 +8185,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "DELETE",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8265,14 +8255,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8353,14 +8341,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8421,14 +8407,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "POST",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8478,14 +8462,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "POST",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8535,14 +8517,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "POST",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8607,14 +8587,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8681,14 +8659,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8761,14 +8737,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8823,14 +8797,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "POST",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -8896,18 +8868,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {},
             "url": {
               "raw": "{{URL}}/studies?inbox",
               "host": [
@@ -8935,26 +8903,24 @@
               "listen": "test",
               "script": {
                 "id": "10934521-c04a-4f45-9aa9-60e322018d4c",
+                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
               }
             ],
             "body": {
@@ -9001,18 +8967,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {},
             "url": {
               "raw": "{{URL}}/studies?inbox",
               "host": [
@@ -9040,22 +9002,21 @@
               "listen": "test",
               "script": {
                 "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9116,18 +9077,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
+            "body": {},
             "url": {
               "raw": "{{URL}}/studies?albums={{album_id_sharing}}",
               "host": [
@@ -9176,18 +9133,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user2_token}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              }
+            ],
+            "body": {},
             "url": {
               "raw": "{{URL}}/studies?inbox",
               "host": [
@@ -9223,14 +9176,13 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9291,18 +9243,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user2_token}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              }
+            ],
+            "body": {},
             "url": "{{URL}}/studies"
           },
           "response": []
@@ -9315,22 +9263,21 @@
               "listen": "test",
               "script": {
                 "id": "838738eb-cf68-4af4-80d3-b96e9d1d8928",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9369,14 +9316,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "POST",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -9451,14 +9396,12 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "PUT",
             "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -9481,22 +9424,21 @@
               "listen": "test",
               "script": {
                 "id": "afb2e99f-0222-41ba-91e3-24c25a5cbe1d",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user2_token}}"
-              }
-            },
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9531,22 +9473,21 @@
               "listen": "test",
               "script": {
                 "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
             "method": "PUT",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user1}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9581,22 +9522,21 @@
               "listen": "test",
               "script": {
                 "id": "38ad1edc-20bd-4940-89fa-953608b93017",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user2_token}}"
-              }
-            },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -9613,22 +9553,21 @@
               "listen": "test",
               "script": {
                 "id": "da5aed77-382c-424e-92a7-cb21be055b26",
+                "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
+                ]
               }
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user2_token}}"
-              }
-            },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{access_token_user2}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
