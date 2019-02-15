@@ -507,17 +507,15 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_write}}"
-              }
-            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_write}}"
               }
             ],
             "body": {
@@ -564,18 +562,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_read}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_read}}"
+              }
+            ],
+            "body": {},
             "url": "{{URL}}/studies"
           },
           "response": []
@@ -625,14 +619,13 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_write}}"
-              }
-            },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_write}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -657,14 +650,13 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_read}}"
-              }
-            },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_read}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -707,18 +699,14 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_read}}"
-              }
-            },
             "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_read}}"
+              }
+            ],
+            "body": {},
             "url": "{{URL}}/studies"
           },
           "response": []
@@ -739,14 +727,13 @@
             }
           ],
           "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{secret_capability_token_read_write}}"
-              }
-            },
             "method": "DELETE",
-            "header": [],
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{secret_capability_token_read_write}}"
+              }
+            ],
             "body": {
               "mode": "raw",
               "raw": ""
