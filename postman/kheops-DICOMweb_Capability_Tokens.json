@@ -1162,6 +1162,59 @@
         "url": "{{URL}}/token"
       },
       "response": []
+    },
+    {
+      "_postman_id": "cd844cdc-c029-41df-b479-dcf68da4fec8",
+      "name": "Request capability tokens-Unknown capability token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "44aef2e6-7196-4070-9926-8e159fcba1b9",
+            "type": "text/javascript",
+            "exec": [
+              "// ensure healthy response code",
+              "tests[\"Status code is 401\"] = responseCode.code === 401;"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+            "type": "text/javascript",
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "urn:x-kheops:params:oauth:grant-type:capability",
+              "type": "text"
+            },
+            {
+              "key": "assertion",
+              "value": "99999999",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{URL}}/token"
+      },
+      "response": []
     }
   ]
 }
