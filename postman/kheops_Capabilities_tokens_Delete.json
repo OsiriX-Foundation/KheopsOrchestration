@@ -739,13 +739,14 @@
             }
           ],
           "request": {
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{secret_capability_token_read_write}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{secret_capability_token_read_write}}"
               }
-            ],
+            },
+            "method": "DELETE",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
