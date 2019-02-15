@@ -11,65 +11,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "c691414d-0e2c-4641-beb1-0e6d2b4bd9ab",
-          "name": "create user1-create",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"access_token_user1\", jsonObject.access_token);",
-                  "",
-                  "//debug",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
-                },
-                {
-                  "key": "assertion",
-                  "type": "text",
-                  "value": "{{user1_token}}"
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "bb178bb5-a3c9-46e1-8949-3009979b8174",
           "name": "create user2-create",
           "event": [
