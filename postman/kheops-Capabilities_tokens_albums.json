@@ -1323,13 +1323,14 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{access_token_user1}}"
               }
-            ],
+            },
+            "method": "GET",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -1387,14 +1388,18 @@
             }
           ],
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{access_token_user1}}"
               }
-            ],
-            "body": {},
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
             "url": "{{URL}}/studies"
           },
           "response": []
