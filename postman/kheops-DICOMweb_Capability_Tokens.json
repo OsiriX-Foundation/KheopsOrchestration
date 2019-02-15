@@ -619,7 +619,6 @@
           "listen": "test",
           "script": {
             "id": "abe2ef5f-180b-4376-a030-ef27172a15f8",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -637,28 +636,31 @@
               "",
               "",
               "pm.environment.unset(\"expiration\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "df5fb1bb-a79b-4a21-880e-c0ac7bbeef16",
-            "type": "text/javascript",
             "exec": [
               "pm.environment.set(\"expiration\", \"2015-12-01T08:35:50Z\");",
               "pm.environment.set(\"description\", \"some description 2\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "POST",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/json"
@@ -701,31 +703,33 @@
           "listen": "test",
           "script": {
             "id": "97d4a0d1-28c6-4a75-bb65-dca8a377901a",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 406\"] = responseCode.code === 406;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "08d10ca2-3a65-4fff-85cc-b66f9c7ae8bc",
-            "type": "text/javascript",
             "exec": [
               "pm.environment.set(\"description\", \"some description\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "POST",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/json+dicom"
@@ -763,7 +767,6 @@
           "listen": "test",
           "script": {
             "id": "a4d54ab9-e33c-48f1-abf4-4f2360f420a6",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -779,27 +782,30 @@
               "",
               "",
               "pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "bec3dcb0-f9a0-4f28-8b53-9cf1de3874c5",
-            "type": "text/javascript",
             "exec": [
               "pm.environment.set(\"description\", \"\");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "POST",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/json"
@@ -837,7 +843,6 @@
           "listen": "test",
           "script": {
             "id": "1d0e0b72-85c8-4d79-809b-d20126f73f9c",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 201\"] = responseCode.code === 201;",
@@ -853,27 +858,30 @@
               "",
               "",
               "pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "9a26a64b-3c3e-492a-83bc-eabde92455f0",
-            "type": "text/javascript",
             "exec": [
               "pm.environment.set(\"description\", \"\u00e8\u00a8\u00e9\u00e0$-.,_:;\u00a3\u00e4\u00f6!\u00fc`^'^'0{}[]//\\\\<<>>  \u7e41\u4f53\u5b57 / \u7e41\u9ad4\u5b57, f\u00e1nt\u01d0z\u00ec, \");"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "POST",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/json"
