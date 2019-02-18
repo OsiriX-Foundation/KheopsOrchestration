@@ -5499,6 +5499,77 @@
           "response": []
         },
         {
+          "_postman_id": "ffb14721-ab16-4376-bf61-7a957fb9ada3",
+          "name": "Create an album-OK Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "e10c7f58-c696-43e7-979b-9c28b899124a",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "pm.environment.set(\"album_id_comment\", jsonObject.album_id);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "sendSeries",
+                  "value": "false",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "a name",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "a description",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/albums"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "52cc13b9-2e1a-46dc-9d93-ecd25f514e19",
           "name": "album post comment",
           "event": [
@@ -7264,77 +7335,6 @@
               "raw": ""
             },
             "url": "{{URL}}/albums/{{album_id_comment}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ffb14721-ab16-4376-bf61-7a957fb9ada3",
-          "name": "Create an album-OK Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "e10c7f58-c696-43e7-979b-9c28b899124a",
-                "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"album_id_comment\", jsonObject.album_id);"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "9779808a-2ba5-42f3-a7a1-2d91cb976010",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "sendSeries",
-                  "value": "false",
-                  "type": "text"
-                },
-                {
-                  "key": "name",
-                  "value": "a name",
-                  "type": "text"
-                },
-                {
-                  "key": "description",
-                  "value": "a description",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/albums"
           },
           "response": []
         }
