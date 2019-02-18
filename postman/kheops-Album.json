@@ -5500,7 +5500,7 @@
         },
         {
           "_postman_id": "ffb14721-ab16-4376-bf61-7a957fb9ada3",
-          "name": "Create an album-OK (by user 3)",
+          "name": "Create an album-OK (by user 3) for init user 3",
           "event": [
             {
               "listen": "test",
@@ -5508,10 +5508,7 @@
                 "id": "e10c7f58-c696-43e7-979b-9c28b899124a",
                 "exec": [
                   "tests[\"Status code is 201\"] = responseCode.code === 201;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "pm.environment.set(\"album_id_comment\", jsonObject.album_id);"
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -5531,7 +5528,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{user3_token}}"
               }
             },
             "method": "POST",
@@ -5549,19 +5546,22 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "description": "",
                   "key": "sendSeries",
-                  "value": "false",
-                  "type": "text"
+                  "type": "text",
+                  "value": "false"
                 },
                 {
+                  "description": "",
                   "key": "name",
-                  "value": "a name",
-                  "type": "text"
+                  "type": "text",
+                  "value": "a name"
                 },
                 {
+                  "description": "",
                   "key": "description",
-                  "value": "a description",
-                  "type": "text"
+                  "type": "text",
+                  "value": "a description"
                 }
               ]
             },
