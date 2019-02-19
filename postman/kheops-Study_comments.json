@@ -21,20 +21,21 @@
                 "exec": [
                   "tests[\"Status code is 204\"] = responseCode.code === 204;",
                   "",
-                  "tests[\"Empty response\"] = responseBody == \"\"",
-                  ""
+                  "tests[\"Empty response\"] = responseBody == \"\""
                 ],
                 "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -56,24 +57,25 @@
               "listen": "test",
               "script": {
                 "id": "7524252c-94ee-4cd1-8780-15785472765a",
-                "type": "text/javascript",
                 "exec": [
-                  "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
                 "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
               }
             ],
             "body": {
@@ -102,13 +104,14 @@
             }
           ],
           "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
               }
-            ],
+            },
+            "method": "PUT",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -153,12 +156,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -208,12 +213,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -262,12 +269,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -309,12 +318,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -369,12 +380,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -429,12 +442,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -488,12 +503,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -554,12 +571,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -620,12 +639,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -700,12 +721,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -761,12 +784,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -829,12 +854,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -907,12 +934,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -985,12 +1014,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -1055,12 +1086,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -1120,12 +1153,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -1191,12 +1226,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -1258,12 +1295,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user3_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user3}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -1313,12 +1352,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user3_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user3}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -1360,12 +1401,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user3_token}}"
+              }
+            },
             "method": "POST",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user3}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -1408,13 +1451,14 @@
             }
           ],
           "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
               }
-            ],
+            },
+            "method": "PUT",
+            "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
@@ -1459,12 +1503,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user3_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user3}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -1520,12 +1566,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user3_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user3}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/json"
@@ -1585,12 +1633,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -1664,12 +1714,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user2}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -1738,12 +1790,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user3_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user3}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
