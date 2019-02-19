@@ -119,7 +119,7 @@
         "auth": {
           "type": "bearer",
           "bearer": {
-            "token": "{{user1_token}}"
+            "token": "{{user2_token}}"
           }
         },
         "method": "GET",
@@ -1221,7 +1221,6 @@
           "listen": "test",
           "script": {
             "id": "a5055b06-d516-4117-b4f9-60329a2c6126",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -1229,14 +1228,14 @@
               "tests[\"Not empty response []\"] = responseBody != \"[]\"",
               "",
               "pm.environment.set(\"tempDicomData\", responseBody);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "f20f2c04-9f39-4f84-8a01-0d8770a7ecc4",
-            "type": "text/javascript",
             "exec": [
               "function wait(ms)",
               "{",
@@ -1247,17 +1246,20 @@
               "}",
               "",
               "wait(15000);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
