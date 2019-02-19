@@ -292,7 +292,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{user3_token}}"
               }
             },
             "method": "GET",
