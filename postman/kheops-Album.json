@@ -2668,6 +2668,67 @@
             "url": "{{URL}}/albums/{{album_id_1}}"
           },
           "response": []
+        },
+        {
+          "_postman_id": "a2b7920f-ac66-4e76-910c-30d97e122d1d",
+          "name": "get album list-Empty Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "543e2bf6-98c6-433b-9c2e-f19f8a3c9ecc",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Empty response []\"] = responseBody == \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 0 album\"] = jsonObject.length === 0;",
+                  "",
+                  "tests[\"X-Total-Count = 0\"] = postman.getResponseHeader(\"X-Total-Count\") == 0;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/albums"
+          },
+          "response": []
         }
       ]
     },
@@ -5507,9 +5568,8 @@
               "script": {
                 "id": "e10c7f58-c696-43e7-979b-9c28b899124a",
                 "exec": [
-                  "",
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
-                  ""
+                  "//test status code",
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
                 ],
                 "type": "text/javascript"
               }
