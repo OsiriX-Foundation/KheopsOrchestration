@@ -6,62 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "8c52347c-f3f3-48cb-b941-a80a8a9ea4b8",
-      "name": "create user2-create",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "id": "3366818a-20f6-439d-bb8c-8a7d4fc40b9d",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "pm.environment.set(\"access_token_user2\", jsonObject.access_token);"
-            ],
-            "type": "text/javascript"
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-            "exec": [
-              ""
-            ],
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/x-www-form-urlencoded"
-          }
-        ],
-        "body": {
-          "mode": "urlencoded",
-          "urlencoded": [
-            {
-              "key": "grant_type",
-              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
-              "type": "text"
-            },
-            {
-              "key": "assertion",
-              "value": "{{user2_token}}",
-              "type": "text"
-            }
-          ]
-        },
-        "url": "{{URL}}/token"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "3dae336e-ffc4-4b44-af40-8005da204eb0",
       "name": "user1 get studies list-Empty",
       "event": [
@@ -72,6 +16,8 @@
             "exec": [
               "tests[\"Status code is 204\"] = responseCode.code === 204;",
               "",
+              "",
+              "",
               "tests[\"Empty response\"] = responseBody == \"\";"
             ],
             "type": "text/javascript"
@@ -79,12 +25,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -114,12 +62,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "999999"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer 9999999"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -141,21 +91,23 @@
           "listen": "test",
           "script": {
             "id": "88f6ab14-b0a6-4687-8bdc-8756d725a2d6",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 406\"] = responseCode.code === 406;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json+txt"
@@ -177,24 +129,26 @@
           "listen": "test",
           "script": {
             "id": "7524252c-94ee-4cd1-8780-15785472765a",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "POST",
         "header": [
           {
             "key": "Content-Type",
             "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-          },
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
           }
         ],
         "body": {
@@ -215,7 +169,6 @@
           "listen": "test",
           "script": {
             "id": "a5055b06-d516-4117-b4f9-60329a2c6126",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -223,27 +176,30 @@
               "tests[\"Not empty response []\"] = responseBody != \"[]\"",
               "",
               "pm.environment.set(\"tempDicomData\", responseBody);"
-            ]
+            ],
+            "type": "text/javascript"
           }
         },
         {
           "listen": "prerequest",
           "script": {
             "id": "c80877a3-58f6-4d51-a002-459f992072c8",
-            "type": "text/javascript",
             "exec": [
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -276,12 +232,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -311,13 +269,14 @@
         }
       ],
       "request": {
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user1}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user1_token}}"
           }
-        ],
+        },
+        "method": "PUT",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
@@ -334,7 +293,6 @@
           "listen": "test",
           "script": {
             "id": "85349a90-80e8-4fc6-9185-d3c97888c39a",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -343,17 +301,20 @@
               "",
               "tests[\"responseBody OK\"] = responseBody === pm.environment.get(\"tempDicomData\");;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -375,24 +336,26 @@
           "listen": "test",
           "script": {
             "id": "3e349554-08a9-4b88-a4ca-cda1f293fc83",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "tests[\"Not empty response []\"] = responseBody != \"[]\"",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -414,22 +377,24 @@
           "listen": "test",
           "script": {
             "id": "1dd13f16-1f6d-437a-8e11-7a593501dcfb",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 404\"] = responseCode.code === 404;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -451,22 +416,24 @@
           "listen": "test",
           "script": {
             "id": "ae1f6a44-38dc-4602-9cd2-700cb8ab8976",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 400\"] = responseCode.code === 400;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -488,22 +455,24 @@
           "listen": "test",
           "script": {
             "id": "f1ac53b1-8679-4c47-b489-77dfe4f4f8fc",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 401\"] = responseCode.code === 401;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "999999999"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer 99999999"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json"
@@ -525,22 +494,24 @@
           "listen": "test",
           "script": {
             "id": "97662cae-805a-4a4b-86fa-dce666f33834",
-            "type": "text/javascript",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 406\"] = responseCode.code === 406;",
               ""
-            ]
+            ],
+            "type": "text/javascript"
           }
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "application/dicom+json+txt"
@@ -577,13 +548,14 @@
         }
       ],
       "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
           }
-        ],
+        },
+        "method": "GET",
+        "header": [],
         "body": {
           "mode": "raw",
           "raw": ""
@@ -611,12 +583,14 @@
         }
       ],
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "{{user2_token}}"
+          }
+        },
         "method": "GET",
         "header": [
-          {
-            "key": "Authorization",
-            "value": "Bearer {{access_token_user2}}"
-          },
           {
             "key": "Accept",
             "value": "multipart/related;type=\"application/dicom\"",
