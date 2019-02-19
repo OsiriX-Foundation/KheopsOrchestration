@@ -132,7 +132,6 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
                   "",
                   "tests[\"name\"] = jsonObject.name == \"name 1\"",
                   "",
@@ -181,7 +180,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{user2_token}}"
               }
             },
             "method": "POST",
