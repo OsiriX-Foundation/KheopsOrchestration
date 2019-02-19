@@ -21,9 +21,10 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
+                  "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;",
                   "",
-                  "tests[\"[INFO] token: \" + pm.environment.get(\"user1_token\")] = true;",
+                  "tests[\"[INFO] token: \" + pm.environment.get(\"access_token_user1\")] = true;",
                   ""
                 ],
                 "type": "text/javascript"
