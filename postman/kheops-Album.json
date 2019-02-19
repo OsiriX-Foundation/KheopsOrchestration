@@ -73,7 +73,7 @@
         },
         {
           "_postman_id": "a2b7920f-ac66-4e76-910c-30d97e122d1d",
-          "name": "get album list-Empty Copy",
+          "name": "get album list-Empty user 2",
           "event": [
             {
               "listen": "test",
@@ -110,7 +110,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{user2_token}}"
               }
             },
             "method": "GET",
