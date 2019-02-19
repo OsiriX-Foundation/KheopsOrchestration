@@ -66,6 +66,7 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "",
                   "if (totalCount === 1) {",
                   "    tests[\"X-Total-Count = 1\"] = true;",
                   "} else {",
@@ -109,6 +110,50 @@
             "url": "{{URL}}/studies"
           },
           "response": []
+        },
+        {
+          "_postman_id": "b0b7fbbc-d5dc-4b9d-906e-3e692eb5a1bc",
+          "name": "STOW RS inside inbox user 1 Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"[INFO] token: \" + pm.environment.get(\"user1_token\")] = true;",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
         }
       ]
     },
@@ -130,6 +175,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
+                  "//save the viewer token in an env var",
                   "pm.environment.set(\"viewer_token_user1\", jsonObject.access_token);"
                 ],
                 "type": "text/javascript"
