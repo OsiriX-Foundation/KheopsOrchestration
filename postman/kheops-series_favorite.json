@@ -198,7 +198,7 @@
         },
         {
           "_postman_id": "54655aae-f94a-41ef-90b3-09450362c4a8",
-          "name": "user get studies list-3 elements",
+          "name": "user2 get studies list-3 elements",
           "event": [
             {
               "listen": "test",
