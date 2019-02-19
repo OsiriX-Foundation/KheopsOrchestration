@@ -21,10 +21,9 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;",
                   "",
-                  "tests[\"[INFO] token: \" + pm.environment.get(\"access_token_user1\")] = true;",
+                  "tests[\"[INFO] token: \" + pm.environment.get(\"user1_token\")] = true;",
                   ""
                 ],
                 "type": "text/javascript"
@@ -64,6 +63,7 @@
               "script": {
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
+                  "//test status code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
