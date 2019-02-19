@@ -12,7 +12,7 @@
       "item": [
         {
           "_postman_id": "0869973e-821b-4f9c-bf6f-83e7acab218e",
-          "name": "get album list-Empty",
+          "name": "get album list-Empty user 1",
           "event": [
             {
               "listen": "test",
