@@ -110,50 +110,6 @@
             "url": "{{URL}}/studies"
           },
           "response": []
-        },
-        {
-          "_postman_id": "b0b7fbbc-d5dc-4b9d-906e-3e692eb5a1bc",
-          "name": "STOW RS inside inbox user 1 Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "7524252c-94ee-4cd1-8780-15785472765a",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;",
-                  "",
-                  "tests[\"[INFO] token: \" + pm.environment.get(\"user1_token\")] = true;",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              }
-            ],
-            "body": {
-              "mode": "file",
-              "file": {
-                "src": null
-              }
-            },
-            "url": "{{URL}}/studies"
-          },
-          "response": []
         }
       ]
     },
@@ -463,12 +419,14 @@
             }
           ],
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
             "method": "GET",
             "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{access_token_user1}}"
-              },
               {
                 "key": "Accept",
                 "value": "application/dicom+json"
@@ -733,6 +691,7 @@
               "",
               "pm.environment.set(\"album_id_1\", jsonObject.album_id);",
               "",
+              "//get the album id",
               "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
               "",
               "tests[\"name\"] = jsonObject.name == \"name 1\"",
