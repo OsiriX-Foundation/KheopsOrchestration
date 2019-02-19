@@ -23,7 +23,7 @@
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;",
                   "",
-                  "tests[\"[INFO] token: \" + pm.environment.get(\"access_token_user1\")] = true;",
+                  "tests[\"[INFO] token: \" + pm.environment.get(\"user1_token\")] = true;",
                   ""
                 ],
                 "type": "text/javascript"
