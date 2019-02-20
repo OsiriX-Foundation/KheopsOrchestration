@@ -537,7 +537,7 @@
                 "id": "7524252c-94ee-4cd1-8780-15785472765a",
                 "exec": [
                   "// ensure healthy response code",
-                  "tests[\"Status code is 409\"] = responseCode.code === 409;",
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
