@@ -1398,6 +1398,65 @@
             "url": "{{URL}}/token"
           },
           "response": []
+        },
+        {
+          "_postman_id": "6363a6f3-79da-4d05-bb82-26c4b0a126a0",
+          "name": "capability token read introspect",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Active = true\"] = jsonObject.active === true;",
+                  "tests[\"Scope = read\"] = jsonObject.scope.includes(\"read\") && jsonObject.scope.includes(\"write\") == false;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "type": "text",
+                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
+                },
+                {
+                  "key": "assertion",
+                  "type": "text",
+                  "value": "{{secret_capability_token_read}}"
+                }
+              ]
+            },
+            "url": "{{URL}}/token/introspect"
+          },
+          "response": []
         }
       ]
     },
