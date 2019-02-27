@@ -1459,8 +1459,74 @@
           "response": []
         },
         {
+          "_postman_id": "05792a38-6fc0-4b0d-bd00-aa0eed3235c3",
+          "name": "viewer token introspect Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Active = true\"] = jsonObject.active === true;",
+                  "tests[\"Scope = read\"] = jsonObject.scope.includes(\"read\") && jsonObject.scope.includes(\"write\") == false;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "type": "text",
+                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
+                },
+                {
+                  "key": "assertion",
+                  "type": "text",
+                  "value": "{{viewer_token_user1}}"
+                }
+              ]
+            },
+            "url": "{{URL}}/token/introspect"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "f706b53e-5cc3-4bea-96dc-5461141e396a",
+      "name": "Introspect pep token",
+      "description": "",
+      "item": [
+        {
           "_postman_id": "08811377-6e2b-446e-8888-91945125a9d4",
-          "name": "Create viewer token from access token Copy",
+          "name": "Create pep token from access token",
           "event": [
             {
               "listen": "test",
@@ -1531,12 +1597,6 @@
           "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "f706b53e-5cc3-4bea-96dc-5461141e396a",
-      "name": "Introspect pep token",
-      "description": "",
-      "item": []
     }
   ]
 }
