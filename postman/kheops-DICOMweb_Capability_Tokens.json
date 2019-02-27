@@ -945,6 +945,39 @@
       "response": []
     },
     {
+      "_postman_id": "1b68fba8-d99c-4e7f-b195-34dae64a20c1",
+      "name": "Get a capability tokens-OK",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "1e0fa343-9a79-4987-b884-b712b6bd0c32",
+            "exec": [
+              "// ensure healthy response code",
+              "tests[\"Status code is 401\"] = responseCode.code === 401;"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "token": "999999"
+          }
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "{{URL}}/capabilities"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "7bb638c0-1b3e-4eb5-a7c0-1d7901f26d92",
       "name": "Create a capability tokens user1-OK (for next step)",
       "event": [
