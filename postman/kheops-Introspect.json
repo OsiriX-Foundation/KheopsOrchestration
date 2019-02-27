@@ -1269,6 +1269,63 @@
             "url": "{{URL}}/studies"
           },
           "response": []
+        },
+        {
+          "_postman_id": "04bdeb80-afcb-4664-9cea-0785a429caa3",
+          "name": "user1 get studies list-1 element",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
+                  "",
+                  "if (totalCount === 1) {",
+                  "    tests[\"X-Total-Count = 1\"] = true;",
+                  "} else {",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 1\"] = false;",
+                  "}",
+                  "",
+                  "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
         }
       ]
     },
