@@ -1229,7 +1229,48 @@
       "_postman_id": "b554405e-91a4-4eee-9650-016cd5da3ffe",
       "name": "Introspect Viewer token",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "0ac7c15d-7280-4194-8f70-d8bc2ddc6eb1",
+          "name": "STOW RS inside inbox user 1",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "f706b53e-5cc3-4bea-96dc-5461141e396a",
