@@ -5555,7 +5555,7 @@
             "auth": {
               "type": "bearer",
               "bearer": {
-                "token": "{{user1_token}}"
+                "token": "{{user2_token}}"
               }
             },
             "method": "DELETE",
