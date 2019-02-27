@@ -1114,7 +1114,7 @@
                 "id": "31a1a60d-9293-4452-8e38-5f54a7c164db",
                 "exec": [
                   "// ensure healthy response code",
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;",
                   "",
@@ -1123,7 +1123,7 @@
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
                   "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
-                  "tests[\"Revoked is false\"] = jsonObject.revoked === false;"
+                  "tests[\"Revoked is true\"] = jsonObject.revoked === true;"
                 ],
                 "type": "text/javascript"
               }
