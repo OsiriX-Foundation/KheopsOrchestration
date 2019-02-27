@@ -1401,7 +1401,7 @@
         },
         {
           "_postman_id": "6363a6f3-79da-4d05-bb82-26c4b0a126a0",
-          "name": "capability token read introspect",
+          "name": "viewer token introspect",
           "event": [
             {
               "listen": "test",
@@ -1450,7 +1450,7 @@
                 {
                   "key": "assertion",
                   "type": "text",
-                  "value": "{{secret_capability_token_read}}"
+                  "value": "{{viewer_token_user1}}"
                 }
               ]
             },
