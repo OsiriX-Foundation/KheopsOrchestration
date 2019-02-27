@@ -1478,8 +1478,8 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "//save the viewer token in an env var",
-                  "pm.environment.set(\"viewer_token_user1\", jsonObject.access_token);"
+                  "//save the pep token in an env var",
+                  "pm.environment.set(\"pep_token_user1\", jsonObject.access_token);"
                 ],
                 "type": "text/javascript"
               }
@@ -1517,18 +1517,21 @@
                   "value": "{{user1_token}}"
                 },
                 {
+                  "description": "",
                   "key": "scope",
-                  "value": "viewer",
-                  "type": "text"
+                  "type": "text",
+                  "value": "pep"
                 },
                 {
+                  "description": "",
                   "key": "study_instance_uid",
-                  "value": "{{study_UID}}",
-                  "type": "text"
+                  "type": "text",
+                  "value": "{{study_UID}}"
                 },
                 {
-                  "key": "source_type",
-                  "value": "inbox",
+                  "key": "series_instance_uid",
+                  "value": "{{series_UID}}",
+                  "description": "",
                   "type": "text"
                 }
               ]
