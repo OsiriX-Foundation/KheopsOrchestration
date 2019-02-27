@@ -1591,7 +1591,7 @@
                 {
                   "key": "assertion",
                   "type": "text",
-                  "value": "{{viewer_token_user1}}"
+                  "value": "{{pep_token_user1}}"
                 }
               ]
             },
