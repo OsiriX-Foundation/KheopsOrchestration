@@ -1326,6 +1326,78 @@
             "url": "{{URL}}/studies"
           },
           "response": []
+        },
+        {
+          "_postman_id": "0a77bfe9-3bed-40dd-a181-c7db863f1fdb",
+          "name": "Create viewer token from access token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "//save the viewer token in an env var",
+                  "pm.environment.set(\"viewer_token_user1\", jsonObject.access_token);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "type": "text",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+                },
+                {
+                  "key": "assertion",
+                  "type": "text",
+                  "value": "{{user1_token}}"
+                },
+                {
+                  "key": "scope",
+                  "value": "viewer",
+                  "type": "text"
+                },
+                {
+                  "key": "study_instance_uid",
+                  "value": "{{study_UID}}",
+                  "type": "text"
+                },
+                {
+                  "key": "source_type",
+                  "value": "inbox",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
         }
       ]
     },
