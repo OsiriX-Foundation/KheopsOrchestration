@@ -769,19 +769,7 @@
             "id": "a4d54ab9-e33c-48f1-abf4-4f2360f420a6",
             "exec": [
               "// ensure healthy response code",
-              "tests[\"Status code is 201\"] = responseCode.code === 201;",
-              "",
-              "tests[\"[INFO] Response: \" + responseBody] = true;",
-              "",
-              "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "tests[\"Description is correct\"] = jsonObject.description === pm.environment.get(\"title\");",
-              "tests[\"Revoked is false\"] = jsonObject.revoked === false;",
-              "",
-              "",
-              "pm.environment.set(\"secret_capability_token\", jsonObject.secret);"
+              "tests[\"Status code is 400\"] = responseCode.code === 400;"
             ],
             "type": "text/javascript"
           }
