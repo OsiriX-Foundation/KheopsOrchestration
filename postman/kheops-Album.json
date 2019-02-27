@@ -5318,102 +5318,6 @@
           "response": []
         },
         {
-          "_postman_id": "6565e7a4-e7ac-41b7-8736-7346a065b346",
-          "name": "user 1 quit album Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "42c61bda-274a-498c-bc85-243b637c6fef",
-                "exec": [
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {},
-            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user1_mail}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7ba73aaa-8b6e-42c3-bf31-023fdc19db50",
-          "name": "user 1 quit album Copy Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "42c61bda-274a-498c-bc85-243b637c6fef",
-                "exec": [
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {},
-            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user1_mail}}"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "729c49dd-3f4b-4528-b470-ea89c0aabfd0",
           "name": "add user 1",
           "event": [
@@ -5571,6 +5475,102 @@
               "raw": ""
             },
             "url": "{{URL}}/albums/{{album_user_id_1}}/users"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "6565e7a4-e7ac-41b7-8736-7346a065b346",
+          "name": "user 1 quit album Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "42c61bda-274a-498c-bc85-243b637c6fef",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {},
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user1_mail}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7ba73aaa-8b6e-42c3-bf31-023fdc19db50",
+          "name": "user 1 quit album Copy Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "42c61bda-274a-498c-bc85-243b637c6fef",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {},
+            "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user1_mail}}"
           },
           "response": []
         }
