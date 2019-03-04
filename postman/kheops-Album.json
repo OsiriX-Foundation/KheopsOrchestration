@@ -10155,7 +10155,22 @@
                 "src": null
               }
             },
-            "url": "{{URL}}/studies"
+            "url": {
+              "raw": "{{URL}}/studies?album={{album_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_1}}",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         },
@@ -10235,7 +10250,22 @@
                 "src": null
               }
             },
-            "url": "{{URL}}/studies"
+            "url": {
+              "raw": "{{URL}}/studies?album={{album_id_2}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_2}}",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         },
