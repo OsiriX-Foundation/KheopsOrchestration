@@ -10198,6 +10198,46 @@
             "url": "{{URL}}/studies"
           },
           "response": []
+        },
+        {
+          "_postman_id": "9a6f0bc4-89eb-44a8-a9b7-8c7d04aecc85",
+          "name": "STOW RS inside inbox Copy Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "10934521-c04a-4f45-9aa9-60e322018d4c",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
         }
       ]
     }
