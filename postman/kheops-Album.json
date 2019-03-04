@@ -9922,9 +9922,9 @@
                   "",
                   "pm.environment.set(\"album_id_2\", jsonObject.album_id);",
                   "",
-                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
+                  "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_2\");",
                   "",
-                  "tests[\"name\"] = jsonObject.name == \"name 1\"",
+                  "tests[\"name\"] = jsonObject.name == \"name 2\"",
                   "",
                   "tests[\"description\"] = jsonObject.description == \"description 1\"",
                   "",
@@ -9989,16 +9989,19 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "description": "",
                   "key": "sendSeries",
                   "type": "text",
                   "value": "false"
                 },
                 {
+                  "description": "",
                   "key": "name",
                   "type": "text",
-                  "value": "name 1"
+                  "value": "name 2"
                 },
                 {
+                  "description": "",
                   "key": "description",
                   "type": "text",
                   "value": "description 1"
