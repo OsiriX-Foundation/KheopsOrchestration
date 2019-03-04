@@ -10432,9 +10432,9 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Return 3 album\"] = jsonObject.length === 3;",
+                  "tests[\"Return 1 album\"] = jsonObject.length === 1;",
                   "",
-                  "tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
+                  "tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
                 ],
                 "type": "text/javascript"
               }
@@ -10473,7 +10473,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/albums?modality=ct",
+              "raw": "{{URL}}/albums?modality=MR",
               "host": [
                 "{{URL}}"
               ],
@@ -10483,7 +10483,7 @@
               "query": [
                 {
                   "key": "modality",
-                  "value": "ct",
+                  "value": "MR",
                   "equals": true
                 }
               ]
