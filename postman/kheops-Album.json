@@ -10410,6 +10410,78 @@
             }
           },
           "response": []
+        },
+        {
+          "_postman_id": "ae858bb2-652f-47d8-912e-e5a014c6d70a",
+          "name": "get album list-modality filter Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "62d44f57-a4bb-4ea6-a6cc-770470ff263a",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/albums?modality=ct",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "albums"
+              ],
+              "query": [
+                {
+                  "key": "modality",
+                  "value": "ct",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     }
