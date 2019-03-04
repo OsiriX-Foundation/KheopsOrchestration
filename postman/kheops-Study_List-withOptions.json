@@ -2405,7 +2405,6 @@
                   "tests[\"1st PatientName ENTERIX\"] = jsonObject[0]['00100010']['Value'][0]['Alphabetic'] === \"ENTERIX\";",
                   "tests[\"2th PatientName MAGIX\"] = jsonObject[1]['00100010']['Value'][0]['Alphabetic'] === \"MAGIX\";",
                   "",
-                  "",
                   "tests[\"X-Total-Count = 2\"] = postman.getResponseHeader(\"X-Total-Count\") == 2;"
                 ],
                 "type": "text/javascript"
