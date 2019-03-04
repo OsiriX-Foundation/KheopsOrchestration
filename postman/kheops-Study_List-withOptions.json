@@ -2600,7 +2600,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "pm.environment.set(\"album_id_1\", jsonObject.album_id);",
+                  "pm.environment.set(\"album_id_2\", jsonObject.album_id);",
                   "",
                   "tests[\"album_id\"] = jsonObject.album_id == pm.environment.get(\"album_id_1\");",
                   "",
@@ -2669,19 +2669,22 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "description": "",
                   "key": "sendSeries",
-                  "value": "false",
-                  "type": "text"
+                  "type": "text",
+                  "value": "false"
                 },
                 {
+                  "description": "",
                   "key": "name",
-                  "value": "name 1",
-                  "type": "text"
+                  "type": "text",
+                  "value": "name 1"
                 },
                 {
+                  "description": "",
                   "key": "description",
-                  "value": "description 1",
-                  "type": "text"
+                  "type": "text",
+                  "value": "description 1"
                 }
               ]
             },
