@@ -2587,7 +2587,7 @@
         },
         {
           "_postman_id": "30c8e16a-a929-4421-80a0-e555ec7bdc7c",
-          "name": "Create an album(1)-OK Copy",
+          "name": "Create an album(1)-OK",
           "event": [
             {
               "listen": "test",
