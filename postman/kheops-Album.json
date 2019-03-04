@@ -10121,7 +10121,7 @@
         },
         {
           "_postman_id": "58015ee1-b1ec-4a40-a04b-da0f4b49698f",
-          "name": "STOW RS inside inbox",
+          "name": "STOW RS inside album 1",
           "event": [
             {
               "listen": "test",
@@ -10161,7 +10161,7 @@
         },
         {
           "_postman_id": "01444032-5e8f-4a5d-856f-5aaa67298c12",
-          "name": "STOW RS inside inbox Copy",
+          "name": "STOW RS inside album 1",
           "event": [
             {
               "listen": "test",
