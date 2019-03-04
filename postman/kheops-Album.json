@@ -10489,7 +10489,7 @@
         },
         {
           "_postman_id": "23c5d02d-61a7-4168-9cda-89443666fa0a",
-          "name": "get album list-modality filter Copy",
+          "name": "get album list-modality filter-SC",
           "event": [
             {
               "listen": "test",
