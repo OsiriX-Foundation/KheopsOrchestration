@@ -10285,61 +10285,6 @@
           "response": []
         },
         {
-          "_postman_id": "3446dc3c-9dd8-4af2-828c-950ffba513fb",
-          "name": "STOW RS inside album 2",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "10934521-c04a-4f45-9aa9-60e322018d4c",
-                "exec": [
-                  "// ensure healthy response code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
-              }
-            ],
-            "body": {
-              "mode": "file",
-              "file": {
-                "src": null
-              }
-            },
-            "url": {
-              "raw": "{{URL}}/studies?album={{album_id_2}}",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies"
-              ],
-              "query": [
-                {
-                  "key": "album",
-                  "value": "{{album_id_2}}",
-                  "type": "text"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
           "_postman_id": "fd6e8177-eb63-495d-859b-a8b165a381d1",
           "name": "get album list-3 albums Copy",
           "event": [
@@ -10397,6 +10342,61 @@
               "raw": ""
             },
             "url": "{{URL}}/albums"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3446dc3c-9dd8-4af2-828c-950ffba513fb",
+          "name": "STOW RS inside album 2",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "10934521-c04a-4f45-9aa9-60e322018d4c",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/studies?album={{album_id_2}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "{{album_id_2}}",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         }
