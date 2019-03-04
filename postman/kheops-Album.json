@@ -10356,9 +10356,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Return 3 album\"] = jsonObject.length === 3;",
-                  "",
-                  "tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
+                  "tests[\"Return 3 album\"] = jsonObject.length === 3;"
                 ],
                 "type": "text/javascript"
               }
