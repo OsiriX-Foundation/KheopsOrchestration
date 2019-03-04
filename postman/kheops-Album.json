@@ -10504,9 +10504,7 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Return 1 album\"] = jsonObject.length === 1;",
-                  "",
-                  "tests[\"X-Total-Count = 1\"] = postman.getResponseHeader(\"X-Total-Count\") == 1;"
+                  "tests[\"Return 1 album\"] = jsonObject.length === 1;"
                 ],
                 "type": "text/javascript"
               }
