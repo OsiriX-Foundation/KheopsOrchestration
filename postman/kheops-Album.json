@@ -10341,7 +10341,7 @@
         },
         {
           "_postman_id": "60500465-001b-4201-8351-9745cda3e7aa",
-          "name": "get album list-modality filter",
+          "name": "get album list-modality filter-CT",
           "event": [
             {
               "listen": "test",
@@ -10356,7 +10356,8 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"Return 3 album\"] = jsonObject.length === 3;"
+                  "tests[\"Return 3 album\"] = jsonObject.length === 3;",
+                  ""
                 ],
                 "type": "text/javascript"
               }
