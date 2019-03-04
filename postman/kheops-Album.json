@@ -10118,6 +10118,46 @@
             "url": "{{URL}}/albums"
           },
           "response": []
+        },
+        {
+          "_postman_id": "58015ee1-b1ec-4a40-a04b-da0f4b49698f",
+          "name": "STOW RS inside inbox",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "10934521-c04a-4f45-9aa9-60e322018d4c",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
         }
       ]
     }
