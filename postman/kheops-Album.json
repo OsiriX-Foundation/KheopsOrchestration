@@ -10285,67 +10285,6 @@
           "response": []
         },
         {
-          "_postman_id": "fd6e8177-eb63-495d-859b-a8b165a381d1",
-          "name": "get album list-3 albums Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "62d44f57-a4bb-4ea6-a6cc-770470ff263a",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;",
-                  "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 3 album\"] = jsonObject.length === 3;",
-                  "",
-                  "tests[\"X-Total-Count = 3\"] = postman.getResponseHeader(\"X-Total-Count\") == 3;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/albums"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "3446dc3c-9dd8-4af2-828c-950ffba513fb",
           "name": "STOW RS inside album 2",
           "event": [
@@ -10397,6 +10336,63 @@
                 }
               ]
             }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fd6e8177-eb63-495d-859b-a8b165a381d1",
+          "name": "get album list-3 albums",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "62d44f57-a4bb-4ea6-a6cc-770470ff263a",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/albums"
           },
           "response": []
         }
