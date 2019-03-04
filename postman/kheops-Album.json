@@ -10415,7 +10415,7 @@
         },
         {
           "_postman_id": "576e0d42-6516-49d3-ae4c-e7a893fdd515",
-          "name": "get album list-modality filter",
+          "name": "get album list-modality filter-MR",
           "event": [
             {
               "listen": "test",
