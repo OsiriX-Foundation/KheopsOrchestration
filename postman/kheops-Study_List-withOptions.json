@@ -2475,6 +2475,12 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "b62c70a8-aa05-4e10-9431-377c8b7aea9f",
+      "name": "Album modality filter",
+      "description": "",
+      "item": []
     }
   ]
 }
