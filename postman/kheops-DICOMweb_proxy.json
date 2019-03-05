@@ -469,7 +469,48 @@
       "_postman_id": "ac08c53f-9918-464b-9672-766b0a8a3f23",
       "name": "Odd requests",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "5a28242a-d18f-4794-9d59-ac9f3a89641d",
+          "name": "STOW RS",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/related; type=\"application/dicom\"; boundary=myboundary"
+              }
+            ],
+            "body": {
+              "mode": "file",
+              "file": {
+                "src": null
+              }
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
