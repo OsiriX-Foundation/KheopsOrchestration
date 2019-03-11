@@ -9850,7 +9850,7 @@
               "raw": ""
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_sharing2}}?inbox=",
+              "raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_sharing2}}?inbox=true",
               "host": [
                 "{{URL}}"
               ],
@@ -9863,7 +9863,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "",
+                  "value": "true",
                   "equals": true
                 }
               ]
