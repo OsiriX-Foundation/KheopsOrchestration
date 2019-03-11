@@ -9593,6 +9593,69 @@
           "response": []
         },
         {
+          "_postman_id": "082ffb0a-0ca6-4f2c-a6c9-c3c0f6ec6d9f",
+          "name": "Send study to inbox from album (user1)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "album\n",
+                  "value": "{{album_id_sharing}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?album=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{study_UID}}",
+                "users",
+                "{{user2_mail}}"
+              ],
+              "query": [
+                {
+                  "key": "album",
+                  "value": "true",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "_postman_id": "b53da79e-4ba9-48b7-bff8-89416ff564f4",
           "name": "Delete studies from album",
           "event": [
@@ -9919,69 +9982,6 @@
               "raw": ""
             },
             "url": "{{URL}}/studies/{{study_UID}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "082ffb0a-0ca6-4f2c-a6c9-c3c0f6ec6d9f",
-          "name": "Send study to user 2 from album user 1 Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
-                "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "value": "application/x-www-form-urlencoded",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "album\n",
-                  "value": "{{album_id_sharing}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?album=true",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies",
-                "{{study_UID}}",
-                "users",
-                "{{user2_mail}}"
-              ],
-              "query": [
-                {
-                  "key": "album",
-                  "value": "true",
-                  "equals": true
-                }
-              ]
-            }
           },
           "response": []
         }
