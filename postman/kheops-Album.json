@@ -9465,38 +9465,6 @@
           "response": []
         },
         {
-          "_postman_id": "0660ed82-dace-4282-8887-56cddc71bcdd",
-          "name": "Delete studies from inbox (user 2) Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "da5aed77-382c-424e-92a7-cb21be055b26",
-                "exec": [
-                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user2_token}}"
-              }
-            },
-            "method": "DELETE",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies/{{study_UID}}"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "b53da79e-4ba9-48b7-bff8-89416ff564f4",
           "name": "Delete studies from album",
           "event": [
@@ -9797,6 +9765,38 @@
         {
           "_postman_id": "224cb2d0-db7a-45b7-afdb-bee1e793409e",
           "name": "Delete studies from inbox (user 2)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "da5aed77-382c-424e-92a7-cb21be055b26",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
+              }
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0660ed82-dace-4282-8887-56cddc71bcdd",
+          "name": "Delete studies from inbox (user 2) Copy",
           "event": [
             {
               "listen": "test",
