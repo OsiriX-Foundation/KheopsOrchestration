@@ -9465,33 +9465,15 @@
           "response": []
         },
         {
-          "_postman_id": "ad5a98c3-c7be-4c7d-9157-8bb0de85f2d0",
-          "name": "user 2 delete study from inbox",
+          "_postman_id": "0660ed82-dace-4282-8887-56cddc71bcdd",
+          "name": "Delete studies from inbox (user 2) Copy",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "8f90964a-56ec-4149-a3a1-09b3d351d4e2",
+                "id": "da5aed77-382c-424e-92a7-cb21be055b26",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
-                "exec": [
-                  ""
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
                 ],
                 "type": "text/javascript"
               }
@@ -9504,13 +9486,13 @@
                 "token": "{{user2_token}}"
               }
             },
-            "method": "GET",
+            "method": "DELETE",
             "header": [],
             "body": {
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies"
+            "url": "{{URL}}/studies/{{study_UID}}"
           },
           "response": []
         },
