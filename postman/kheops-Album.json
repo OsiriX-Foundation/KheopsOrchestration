@@ -9497,6 +9497,38 @@
           "response": []
         },
         {
+          "_postman_id": "e5506841-5beb-4ebc-9ab1-4f9207e6ce1e",
+          "name": "Delete studies from inbox (user 2) Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "da5aed77-382c-424e-92a7-cb21be055b26",
+                "exec": [
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
+              }
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies/{{study_UID}}"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "67eef960-3897-456a-ad5a-c197ae72ab4a",
           "name": "Send study to an album (user2) from inbox (user 1)",
           "event": [
