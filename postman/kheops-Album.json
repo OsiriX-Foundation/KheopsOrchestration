@@ -9529,6 +9529,56 @@
           "response": []
         },
         {
+          "_postman_id": "999773cf-a085-4cf9-b357-b676c922c999",
+          "name": "Send study to user 2 from inbox user 1 Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
+                "exec": [
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?inbox=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{study_UID}}",
+                "users",
+                "{{user2_mail}}"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "_postman_id": "67eef960-3897-456a-ad5a-c197ae72ab4a",
           "name": "Send study (user2) from inbox (user 1)",
           "event": [
@@ -9905,56 +9955,6 @@
               "raw": ""
             },
             "url": "{{URL}}/studies/{{study_UID}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "999773cf-a085-4cf9-b357-b676c922c999",
-          "name": "Send study to user 2 from inbox user 1 Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
-                "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "PUT",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?inbox=true",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies",
-                "{{study_UID}}",
-                "users",
-                "{{user2_mail}}"
-              ],
-              "query": [
-                {
-                  "key": "inbox",
-                  "value": "true",
-                  "equals": true
-                }
-              ]
-            }
           },
           "response": []
         }
