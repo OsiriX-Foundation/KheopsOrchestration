@@ -9657,7 +9657,7 @@
         },
         {
           "_postman_id": "b53da79e-4ba9-48b7-bff8-89416ff564f4",
-          "name": "Delete studies from album",
+          "name": "Delete album",
           "event": [
             {
               "listen": "test",
