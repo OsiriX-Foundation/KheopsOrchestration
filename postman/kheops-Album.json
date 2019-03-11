@@ -9530,7 +9530,7 @@
         },
         {
           "_postman_id": "999773cf-a085-4cf9-b357-b676c922c999",
-          "name": "Send study to user 2 from inbox user 1 Copy",
+          "name": "Send study to user 2 from album user 1",
           "event": [
             {
               "listen": "test",
