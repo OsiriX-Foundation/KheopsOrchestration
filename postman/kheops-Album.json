@@ -9559,19 +9559,9 @@
                 "type": "text"
               }
             ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "album\n",
-                  "value": "{{album_id_sharing}}",
-                  "description": "",
-                  "type": "text"
-                }
-              ]
-            },
+            "body": {},
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?album=true",
+              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?album={{album_id_sharing}}",
               "host": [
                 "{{URL}}"
               ],
@@ -9584,7 +9574,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "true",
+                  "value": "{{album_id_sharing}}",
                   "equals": true
                 }
               ]
