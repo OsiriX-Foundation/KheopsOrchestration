@@ -9609,22 +9609,23 @@
               {
                 "key": "Content-Type",
                 "name": "Content-Type",
-                "value": "application/x-www-form-urlencoded",
-                "type": "text"
+                "type": "text",
+                "value": "application/x-www-form-urlencoded"
               }
             ],
             "body": {
               "mode": "urlencoded",
               "urlencoded": [
                 {
+                  "description": "",
                   "key": "album\n",
-                  "value": "{{album_id_sharing}}",
-                  "type": "text"
+                  "type": "text",
+                  "value": "{{album_id_sharing}}"
                 }
               ]
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?album=true",
+              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?album={{album_id_sharing}}",
               "host": [
                 "{{URL}}"
               ],
@@ -9637,7 +9638,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "true",
+                  "value": "{{album_id_sharing}}",
                   "equals": true
                 }
               ]
