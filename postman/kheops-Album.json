@@ -9466,7 +9466,7 @@
         },
         {
           "_postman_id": "0660ed82-dace-4282-8887-56cddc71bcdd",
-          "name": "Delete studies from inbox (user 2) Copy",
+          "name": "Delete studies from inbox (user 2)",
           "event": [
             {
               "listen": "test",
