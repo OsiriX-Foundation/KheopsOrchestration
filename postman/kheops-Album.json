@@ -9498,7 +9498,7 @@
         },
         {
           "_postman_id": "67eef960-3897-456a-ad5a-c197ae72ab4a",
-          "name": "Send study to an album from inbox user 1 Copy",
+          "name": "Send study to an album (user2) from inbox (user 1)",
           "event": [
             {
               "listen": "test",
