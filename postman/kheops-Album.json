@@ -9793,6 +9793,56 @@
             "url": "{{URL}}/studies/{{study_UID}}"
           },
           "response": []
+        },
+        {
+          "_postman_id": "ad5a98c3-c7be-4c7d-9157-8bb0de85f2d0",
+          "name": "user2 get studies list Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "8f90964a-56ec-4149-a3a1-09b3d351d4e2",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user2_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "{{URL}}/studies"
+          },
+          "response": []
         }
       ]
     },
