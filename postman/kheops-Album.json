@@ -9873,11 +9873,6 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
