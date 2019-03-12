@@ -9864,7 +9864,7 @@
         },
         {
           "_postman_id": "053c5f4c-86c0-401d-b7ea-61ea4db0247c",
-          "name": "user1 get studies list Copy",
+          "name": "user1 get studies list debug",
           "event": [
             {
               "listen": "test",
