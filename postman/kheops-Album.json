@@ -9190,71 +9190,6 @@
           "response": []
         },
         {
-          "_postman_id": "053c5f4c-86c0-401d-b7ea-61ea4db0247c",
-          "name": "user1 get studies list Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "ae9ce291-c4c8-45b5-87f3-d8dda0da528f",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{URL}}/studies?inbox",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies"
-              ],
-              "query": [
-                {
-                  "key": "inbox",
-                  "value": "",
-                  "equals": false
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
           "_postman_id": "74bb0bc4-b768-428b-b1bd-d7299a3bd8c0",
           "name": "Send study to an album from inbox user 1",
           "event": [
@@ -9921,6 +9856,71 @@
                   "key": "inbox",
                   "value": "true",
                   "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "053c5f4c-86c0-401d-b7ea-61ea4db0247c",
+          "name": "user1 get studies list Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "ae9ce291-c4c8-45b5-87f3-d8dda0da528f",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?inbox",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "",
+                  "equals": false
                 }
               ]
             }
