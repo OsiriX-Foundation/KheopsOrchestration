@@ -9709,7 +9709,7 @@
         },
         {
           "_postman_id": "1cf2f481-492e-42a2-b803-f29ec295d806",
-          "name": "user1 get studies list debug Copy",
+          "name": "user2 get studies list debug",
           "event": [
             {
               "listen": "test",
