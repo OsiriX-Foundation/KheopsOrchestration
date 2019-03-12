@@ -9625,7 +9625,7 @@
               ]
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?album={{album_id_sharing}}",
+              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user1_mail}}?album={{album_id_sharing}}",
               "host": [
                 "{{URL}}"
               ],
@@ -9633,7 +9633,7 @@
                 "studies",
                 "{{study_UID}}",
                 "users",
-                "{{user2_mail}}"
+                "{{user1_mail}}"
               ],
               "query": [
                 {
