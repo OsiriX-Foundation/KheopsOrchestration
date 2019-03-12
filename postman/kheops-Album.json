@@ -9591,7 +9591,8 @@
               "script": {
                 "id": "910b5a1b-c53f-452d-b508-6170179cf2a3",
                 "exec": [
-                  "tests[\"Status code is 201\"] = responseCode.code === 201;"
+                  "tests[\"Status code is 201\"] = responseCode.code === 201;",
+                  ""
                 ],
                 "type": "text/javascript"
               }
