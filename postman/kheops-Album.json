@@ -9530,7 +9530,7 @@
         },
         {
           "_postman_id": "1eb25a95-6983-46d7-9c31-39bc10e036b5",
-          "name": "album get studies list Copy",
+          "name": "album get studies list debug",
           "event": [
             {
               "listen": "test",
