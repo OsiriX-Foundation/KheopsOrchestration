@@ -9648,6 +9648,66 @@
           "response": []
         },
         {
+          "_postman_id": "d903ec06-5411-4177-a048-819ecf031669",
+          "name": "user1 get studies list debug",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "ae9ce291-c4c8-45b5-87f3-d8dda0da528f",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?inbox",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "",
+                  "equals": false
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "_postman_id": "b53da79e-4ba9-48b7-bff8-89416ff564f4",
           "name": "Delete album",
           "event": [
@@ -9866,66 +9926,6 @@
         {
           "_postman_id": "053c5f4c-86c0-401d-b7ea-61ea4db0247c",
           "name": "user1 get studies list debug",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "a72f8b1c-898f-4cda-97d9-eb1a11636b72",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "ae9ce291-c4c8-45b5-87f3-d8dda0da528f",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{URL}}/studies?inbox",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "studies"
-              ],
-              "query": [
-                {
-                  "key": "inbox",
-                  "value": "",
-                  "equals": false
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "d903ec06-5411-4177-a048-819ecf031669",
-          "name": "user1 get studies list debug Copy",
           "event": [
             {
               "listen": "test",
