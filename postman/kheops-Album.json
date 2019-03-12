@@ -10158,6 +10158,71 @@
             "url": "{{URL}}/studies/{{study_UID}}"
           },
           "response": []
+        },
+        {
+          "_postman_id": "1eb25a95-6983-46d7-9c31-39bc10e036b5",
+          "name": "album get studies list Copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/studies?albums={{album_id_sharing}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies"
+              ],
+              "query": [
+                {
+                  "key": "albums",
+                  "value": "{{album_id_sharing}}",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
         }
       ]
     },
