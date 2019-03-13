@@ -9694,15 +9694,13 @@
               ]
             },
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user1_mail}}?album={{album_id_sharing}}",
+              "raw": "{{URL}}/studies/{{study_UID}}?album={{album_id_sharing}}",
               "host": [
                 "{{URL}}"
               ],
               "path": [
                 "studies",
-                "{{study_UID}}",
-                "users",
-                "{{user1_mail}}"
+                "{{study_UID}}"
               ],
               "query": [
                 {
