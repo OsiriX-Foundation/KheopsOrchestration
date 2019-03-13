@@ -351,7 +351,8 @@
               "script": {
                 "id": "902ac2e1-2bd5-4dc2-88d5-6a4a50fab1ef",
                 "exec": [
-                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;"
+                  "tests[\"Status code is 200 ou 201\"] = responseCode.code === 200 | responseCode.code === 201;",
+                  ""
                 ],
                 "type": "text/javascript"
               }
@@ -385,7 +386,7 @@
                 {
                   "key": "inbox",
                   "value": "true",
-                  "type": "text"
+                  "equals": true
                 }
               ]
             }
