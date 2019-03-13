@@ -3598,7 +3598,25 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}"
+            "url": {
+              "raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}?inbox=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{study_UID}}",
+                "albums",
+                "{{album_id_1}}"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         },
