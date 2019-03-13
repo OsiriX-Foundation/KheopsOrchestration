@@ -320,7 +320,25 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}"
+            "url": {
+              "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?inbox=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{study_UID}}",
+                "users",
+                "{{user2_mail}}"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         },
@@ -352,7 +370,25 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}"
+            "url": {
+              "raw": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}?inbox=true",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "studies",
+                "{{IncisixStudyUID}}",
+                "users",
+                "{{user2_mail}}"
+              ],
+              "query": [
+                {
+                  "key": "inbox",
+                  "value": "true",
+                  "type": "text"
+                }
+              ]
+            }
           },
           "response": []
         },
