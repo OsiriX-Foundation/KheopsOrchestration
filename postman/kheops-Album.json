@@ -4016,6 +4016,87 @@
           "response": []
         },
         {
+          "_postman_id": "bde73213-0682-4418-bb74-524e11da4a59",
+          "name": "Verifie if user 2 can access album",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"email\"] = jsonObject.email == pm.variables.get(\"user2_mail\");",
+                  "",
+                  "tests[\"sub\"] = jsonObject.sub == pm.variables.get(\"user2_id\");",
+                  "",
+                  "tests[\"album_access\"] = jsonObject.album_access == true;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{user1_token}}"
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{URL}}/users?reference={{user2_id}}&album={{album_user_id_1}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "reference",
+                  "value": "{{user2_id}}",
+                  "equals": true
+                },
+                {
+                  "key": "album",
+                  "value": "{{album_user_id_1}}",
+                  "equals": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
           "_postman_id": "b8a2268d-61e6-4b71-a032-2b554503e7ce",
           "name": "get album-OK",
           "event": [
@@ -5654,89 +5735,6 @@
             ],
             "body": {},
             "url": "{{URL}}/albums/{{album_user_id_1}}/users/{{user2_mail}}"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bde73213-0682-4418-bb74-524e11da4a59",
-          "name": "Verifie if user 2 can access album Copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "af79aff8-0cf1-48cb-be26-9fcaebc2f2a6",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"email\"] = jsonObject.email == pm.variables.get(\"user2_mail\");",
-                  "",
-                  "tests[\"sub\"] = jsonObject.sub == pm.variables.get(\"user2_id\");",
-                  "",
-                  "tests[\"album_access\"] = jsonObject.album_access == false;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;",
-                  "",
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "34930514-9077-47db-bf12-4dbf2c425f62",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{user1_token}}"
-              }
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": {
-              "raw": "{{URL}}/users?reference={{user2_id}}&album={{album_user_id_1}}",
-              "host": [
-                "{{URL}}"
-              ],
-              "path": [
-                "users"
-              ],
-              "query": [
-                {
-                  "key": "reference",
-                  "value": "{{user2_id}}",
-                  "equals": true
-                },
-                {
-                  "key": "album",
-                  "value": "{{album_user_id_1}}",
-                  "type": "text"
-                }
-              ]
-            }
           },
           "response": []
         }
