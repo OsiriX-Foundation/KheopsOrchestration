@@ -80,6 +80,18 @@ services:
     depends_on:
       - arc
 
+  kheops-ui:
+    container_name: kheopsui
+    image: osirixfoundation/kheops-ui:${KHEOPS_UI_IMAGE_TAG}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${TIME_ZONE}:/etc/timezone:ro
+    env_file: docker-compose.env
+    restart: on-failure
+    depends_on:
+      - kheops-authorization
+      - arc
+
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
     image: osirixfoundation/kheops-dicomweb-proxy:${KHEOPS_DICOMWEB_PROXY_IMAGE_TAG}
@@ -95,23 +107,6 @@ services:
       - arc
     secrets:
       - kheops_auth_hmasecret_post
-
-  kheops-viewer:
-    container_name: kheopsviewer
-    image: osirixfoundation/kheops-viewer:${KHEOPS_VIEWER_IMAGE_TAG}
-    ports:
-      - "3000:3000"
-
-    env_file: docker-compose.env
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
-    restart: on-failure
-    secrets:
-      - OAuth2_secret
-    depends_on:
-      - kheops-authorization
-      - arc
 
   kheops-reverse-proxy:
     image: osirixfoundation/kheops-reverse-proxy:${KHEOPS_REVERSE_PROXY_IMAGE_TAG}
