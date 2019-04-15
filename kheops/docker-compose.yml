@@ -160,8 +160,6 @@ secrets:
     file: ${NGINX_KEY}/privkey1.pem
   fullchain1.pem:
     file: ${NGINX_KEY}/fullchain1.pem
-  OAuth2_secret:
-    file: ${SECRETS_PATH}/OAuth2_secret
   kheops_keycloak_clientsecret:
     file: ${SECRETS_PATH}/kheops_keycloak_clientsecret
 
