@@ -6,12 +6,9 @@
   },
   "item": [
     {
-      "_postman_id": "e612aef8-9ba7-4147-8b17-7f59e9f52974",
       "name": "Initialisation",
-      "description": "",
       "item": [
         {
-          "_postman_id": "c2e5a87c-6dca-41e9-9c83-04683d00df54",
           "name": "user1 introspect",
           "event": [
             {
@@ -42,6 +39,10 @@
               }
             }
           ],
+          "_postman_id": "c2e5a87c-6dca-41e9-9c83-04683d00df54",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -70,6 +71,7 @@
           "response": []
         }
       ],
+      "_postman_id": "e612aef8-9ba7-4147-8b17-7f59e9f52974",
       "event": [
         {
           "listen": "prerequest",
@@ -94,12 +96,9 @@
       ]
     },
     {
-      "_postman_id": "42773c29-749f-44e5-a8c3-e700015887fd",
       "name": "Introspect capabilities tokens from album",
-      "description": "",
       "item": [
         {
-          "_postman_id": "0d1d9b84-a8b1-4c6f-9982-b8cf4485625a",
           "name": "Create an album(1)-OK",
           "event": [
             {
@@ -160,6 +159,10 @@
               }
             }
           ],
+          "_postman_id": "0d1d9b84-a8b1-4c6f-9982-b8cf4485625a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -184,19 +187,16 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -206,7 +206,6 @@
           "response": []
         },
         {
-          "_postman_id": "565f6d06-ce2e-4907-a3b7-54a60f6c55bd",
           "name": "Create a capability token write",
           "event": [
             {
@@ -242,6 +241,10 @@
               }
             }
           ],
+          "_postman_id": "565f6d06-ce2e-4907-a3b7-54a60f6c55bd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -269,37 +272,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "false"
@@ -311,7 +308,6 @@
           "response": []
         },
         {
-          "_postman_id": "1557b24c-baa9-415c-a2e0-b18130045824",
           "name": "capability token write introspect",
           "event": [
             {
@@ -342,6 +338,10 @@
               }
             }
           ],
+          "_postman_id": "1557b24c-baa9-415c-a2e0-b18130045824",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -370,7 +370,6 @@
           "response": []
         },
         {
-          "_postman_id": "d3e976fb-30d4-4679-8969-335037afeab0",
           "name": "Create a capability token read",
           "event": [
             {
@@ -406,6 +405,10 @@
               }
             }
           ],
+          "_postman_id": "d3e976fb-30d4-4679-8969-335037afeab0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -433,37 +436,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "false"
@@ -475,7 +472,6 @@
           "response": []
         },
         {
-          "_postman_id": "58357ad4-d977-4634-bdbe-7cb45683148b",
           "name": "capability token read introspect",
           "event": [
             {
@@ -506,6 +502,10 @@
               }
             }
           ],
+          "_postman_id": "58357ad4-d977-4634-bdbe-7cb45683148b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -534,7 +534,6 @@
           "response": []
         },
         {
-          "_postman_id": "51deb8ce-7919-47aa-a0a7-284912838541",
           "name": "Create a capability token read (download appropriate)",
           "event": [
             {
@@ -570,6 +569,10 @@
               }
             }
           ],
+          "_postman_id": "51deb8ce-7919-47aa-a0a7-284912838541",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -597,37 +600,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "true"
@@ -639,7 +636,6 @@
           "response": []
         },
         {
-          "_postman_id": "e94a132a-c626-416f-a133-c7b40536b98a",
           "name": "capability token read (download appropriate) introspect",
           "event": [
             {
@@ -670,6 +666,10 @@
               }
             }
           ],
+          "_postman_id": "e94a132a-c626-416f-a133-c7b40536b98a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -698,7 +698,6 @@
           "response": []
         },
         {
-          "_postman_id": "4d42033f-33c4-46ab-8b25-5c631223f6ed",
           "name": "Create a capability token read write",
           "event": [
             {
@@ -735,6 +734,10 @@
               }
             }
           ],
+          "_postman_id": "4d42033f-33c4-46ab-8b25-5c631223f6ed",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -762,37 +765,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "false"
@@ -804,7 +801,6 @@
           "response": []
         },
         {
-          "_postman_id": "c7cdd678-85c0-4aa6-8693-60d52feac1c2",
           "name": "capability token read write introspect",
           "event": [
             {
@@ -835,6 +831,10 @@
               }
             }
           ],
+          "_postman_id": "c7cdd678-85c0-4aa6-8693-60d52feac1c2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -863,6 +863,7 @@
           "response": []
         }
       ],
+      "_postman_id": "42773c29-749f-44e5-a8c3-e700015887fd",
       "event": [
         {
           "listen": "prerequest",
@@ -887,12 +888,9 @@
       ]
     },
     {
-      "_postman_id": "92080316-d2f3-46bc-993a-8fccb77435c0",
       "name": "Introspect revoked capability token",
-      "description": "",
       "item": [
         {
-          "_postman_id": "9d50a285-d426-4fa5-9f09-dca248825045",
           "name": "Create an album(1)-OK",
           "event": [
             {
@@ -953,6 +951,10 @@
               }
             }
           ],
+          "_postman_id": "9d50a285-d426-4fa5-9f09-dca248825045",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -977,19 +979,16 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -999,7 +998,6 @@
           "response": []
         },
         {
-          "_postman_id": "214f121c-884f-4a26-9c40-3c1731a6dc8c",
           "name": "Create a capability token read write",
           "event": [
             {
@@ -1036,6 +1034,10 @@
               }
             }
           ],
+          "_postman_id": "214f121c-884f-4a26-9c40-3c1731a6dc8c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1063,37 +1065,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "false"
@@ -1105,7 +1101,6 @@
           "response": []
         },
         {
-          "_postman_id": "33e11d54-3e45-4106-96ad-40d99e8e7d0d",
           "name": "Revoke capability token read write",
           "event": [
             {
@@ -1139,6 +1134,10 @@
               }
             }
           ],
+          "_postman_id": "33e11d54-3e45-4106-96ad-40d99e8e7d0d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1157,16 +1156,11 @@
                 "value": "application/x-www-form-urlencoded"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/capabilities/{{secret_capability_token_read_write_id}}/revoke"
           },
           "response": []
         },
         {
-          "_postman_id": "59a97d44-9c7e-414e-bd89-8abad4ab5086",
           "name": "capability token read write introspect-revoked",
           "event": [
             {
@@ -1196,6 +1190,10 @@
               }
             }
           ],
+          "_postman_id": "59a97d44-9c7e-414e-bd89-8abad4ab5086",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -1223,15 +1221,13 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "92080316-d2f3-46bc-993a-8fccb77435c0"
     },
     {
-      "_postman_id": "b554405e-91a4-4eee-9650-016cd5da3ffe",
       "name": "Introspect Viewer token",
-      "description": "",
       "item": [
         {
-          "_postman_id": "0ac7c15d-7280-4194-8f70-d8bc2ddc6eb1",
           "name": "STOW RS inside inbox user 1",
           "event": [
             {
@@ -1246,6 +1242,10 @@
               }
             }
           ],
+          "_postman_id": "0ac7c15d-7280-4194-8f70-d8bc2ddc6eb1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1262,16 +1262,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "04bdeb80-afcb-4664-9cea-0785a429caa3",
           "name": "user1 get studies list-1 element",
           "event": [
             {
@@ -1305,6 +1302,10 @@
               }
             }
           ],
+          "_postman_id": "04bdeb80-afcb-4664-9cea-0785a429caa3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1319,17 +1320,12 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "0a77bfe9-3bed-40dd-a181-c7db863f1fdb",
-          "name": "Create viewer token from access token",
+          "name": "Create report_provider_code token from access token",
           "event": [
             {
               "listen": "test",
@@ -1357,6 +1353,10 @@
               }
             }
           ],
+          "_postman_id": "0a77bfe9-3bed-40dd-a181-c7db863f1fdb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -1400,7 +1400,6 @@
           "response": []
         },
         {
-          "_postman_id": "6363a6f3-79da-4d05-bb82-26c4b0a126a0",
           "name": "viewer token introspect",
           "event": [
             {
@@ -1431,6 +1430,10 @@
               }
             }
           ],
+          "_postman_id": "6363a6f3-79da-4d05-bb82-26c4b0a126a0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -1458,15 +1461,13 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "b554405e-91a4-4eee-9650-016cd5da3ffe"
     },
     {
-      "_postman_id": "f706b53e-5cc3-4bea-96dc-5461141e396a",
       "name": "Introspect pep token",
-      "description": "",
       "item": [
         {
-          "_postman_id": "08811377-6e2b-446e-8888-91945125a9d4",
           "name": "Create pep token from access token",
           "event": [
             {
@@ -1495,6 +1496,10 @@
               }
             }
           ],
+          "_postman_id": "08811377-6e2b-446e-8888-91945125a9d4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -1517,13 +1522,11 @@
                   "value": "{{user1_token}}"
                 },
                 {
-                  "description": "",
                   "key": "scope",
                   "type": "text",
                   "value": "pep"
                 },
                 {
-                  "description": "",
                   "key": "study_instance_uid",
                   "type": "text",
                   "value": "{{study_UID}}"
@@ -1531,7 +1534,6 @@
                 {
                   "key": "series_instance_uid",
                   "value": "{{series_UID}}",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -1541,7 +1543,6 @@
           "response": []
         },
         {
-          "_postman_id": "05792a38-6fc0-4b0d-bd00-aa0eed3235c3",
           "name": "pep token introspect",
           "event": [
             {
@@ -1572,6 +1573,10 @@
               }
             }
           ],
+          "_postman_id": "05792a38-6fc0-4b0d-bd00-aa0eed3235c3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -1599,7 +1604,8 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "f706b53e-5cc3-4bea-96dc-5461141e396a"
     }
   ]
 }
