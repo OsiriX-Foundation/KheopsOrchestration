@@ -1380,17 +1380,17 @@
                 },
                 {
                   "key": "scope",
-                  "value": "viewer",
-                  "type": "text"
+                  "type": "text",
+                  "value": "report_provider_code"
                 },
                 {
                   "key": "study_instance_uid",
-                  "value": "{{study_UID}}",
-                  "type": "text"
+                  "type": "text",
+                  "value": "{{study_UID}}"
                 },
                 {
-                  "key": "source_type",
-                  "value": "inbox",
+                  "key": "source_id",
+                  "value": "{{album_id_1}}",
                   "type": "text"
                 }
               ]
