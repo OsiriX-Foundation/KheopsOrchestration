@@ -1528,6 +1528,81 @@
             "url": "{{URL}}/token/introspect"
           },
           "response": []
+        },
+        {
+          "name": "Create pep token from access token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "//save the pep token in an env var",
+                  "pm.environment.set(\"pep_token_user1\", jsonObject.access_token);"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "1be3fe85-8269-4712-afd9-1337de1944a3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "type": "text",
+                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+                },
+                {
+                  "key": "assertion",
+                  "type": "text",
+                  "value": "{{user1_token}}"
+                },
+                {
+                  "key": "scope",
+                  "type": "text",
+                  "value": "pep"
+                },
+                {
+                  "key": "study_instance_uid",
+                  "type": "text",
+                  "value": "{{study_UID}}"
+                },
+                {
+                  "key": "series_instance_uid",
+                  "value": "{{series_UID}}",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": "{{URL}}/token"
+          },
+          "response": []
         }
       ],
       "_postman_id": "f706b53e-5cc3-4bea-96dc-5461141e396a"
