@@ -1325,81 +1325,6 @@
           "response": []
         },
         {
-          "name": "Create report_provider_code token from access token",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "//save the viewer token in an env var",
-                  "pm.environment.set(\"viewer_token_user1\", jsonObject.access_token);"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "_postman_id": "0a77bfe9-3bed-40dd-a181-c7db863f1fdb",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
-                },
-                {
-                  "key": "assertion",
-                  "type": "text",
-                  "value": "{{user1_token}}"
-                },
-                {
-                  "key": "scope",
-                  "type": "text",
-                  "value": "report_provider_code"
-                },
-                {
-                  "key": "study_instance_uid",
-                  "type": "text",
-                  "value": "{{study_UID}}"
-                },
-                {
-                  "key": "source_id",
-                  "value": "{{album_id_1}}",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": "{{URL}}/token"
-          },
-          "response": []
-        },
-        {
           "name": "viewer token introspect",
           "event": [
             {
@@ -1467,68 +1392,6 @@
     {
       "name": "Introspect pep token",
       "item": [
-        {
-          "name": "pep token introspect",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Active = true\"] = jsonObject.active === true;",
-                  "tests[\"Scope = read write\"] = jsonObject.scope.includes(\"read\") && jsonObject.scope.includes(\"write\");",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "_postman_id": "05792a38-6fc0-4b0d-bd00-aa0eed3235c3",
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          },
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/x-www-form-urlencoded"
-              }
-            ],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
-                },
-                {
-                  "key": "assertion",
-                  "type": "text",
-                  "value": "{{pep_token_user1}}"
-                }
-              ]
-            },
-            "url": "{{URL}}/token/introspect"
-          },
-          "response": []
-        },
         {
           "name": "Create pep token from access token",
           "event": [
@@ -1601,6 +1464,68 @@
               ]
             },
             "url": "{{URL}}/token"
+          },
+          "response": []
+        },
+        {
+          "name": "pep token introspect",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "83822f04-38b7-400f-bc35-7a638a6d5e26",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Active = true\"] = jsonObject.active === true;",
+                  "tests[\"Scope = read write\"] = jsonObject.scope.includes(\"read\") && jsonObject.scope.includes(\"write\");",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "794cf6b5-3c58-4f4f-b14b-e1a551b617dc",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "05792a38-6fc0-4b0d-bd00-aa0eed3235c3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "type": "text",
+                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
+                },
+                {
+                  "key": "assertion",
+                  "type": "text",
+                  "value": "{{pep_token_user1}}"
+                }
+              ]
+            },
+            "url": "{{URL}}/token/introspect"
           },
           "response": []
         }
