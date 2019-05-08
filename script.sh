@@ -11,7 +11,7 @@
  sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Study_comments.json
  sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Viewer_token.json
  sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops_Capabilities_tokens_Delete.json
- sed -i "s|\"src\": null|\"src\": \"testStudy.dcm\"|" postman/kheops-Introspect.json
+ sed -i "s|\"file\": {}|\"file\": {\"testStudy.dcm\"}|" postman/kheops-Introspect.json
 
 
  sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testStudy.dcm\"/" postman/kheops-Study_List-withOptions.json
