@@ -6,12 +6,9 @@
   },
   "item": [
     {
-      "_postman_id": "3a4dd054-a0fc-436c-bd19-69d0c0d04859",
       "name": "Initialisation",
-      "description": "",
       "item": [
         {
-          "_postman_id": "293c7289-c177-43ae-ad07-10e3a8f744b2",
           "name": "STOW RS inside inbox user 1",
           "event": [
             {
@@ -30,6 +27,10 @@
               }
             }
           ],
+          "_postman_id": "293c7289-c177-43ae-ad07-10e3a8f744b2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -46,16 +47,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "f4e9f41d-fa1d-4cb8-8501-a4ef01083abc",
           "name": "user1 get studies list-1 element",
           "event": [
             {
@@ -89,6 +87,10 @@
               }
             }
           ],
+          "_postman_id": "f4e9f41d-fa1d-4cb8-8501-a4ef01083abc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -103,23 +105,17 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "3a4dd054-a0fc-436c-bd19-69d0c0d04859"
     },
     {
-      "_postman_id": "18494b01-abf7-4a57-9b31-bca23f62cc88",
       "name": "Forbidden resource with a viewerToken",
-      "description": "",
       "item": [
         {
-          "_postman_id": "902edbd4-1fe2-4a9e-8ee7-80872ac7c7b1",
           "name": "Create viewer token from access token",
           "event": [
             {
@@ -148,6 +144,10 @@
               }
             }
           ],
+          "_postman_id": "902edbd4-1fe2-4a9e-8ee7-80872ac7c7b1",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -172,19 +172,16 @@
                 {
                   "key": "scope",
                   "value": "viewer",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "study_instance_uid",
                   "value": "{{study_UID}}",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "source_type",
                   "value": "inbox",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -194,55 +191,6 @@
           "response": []
         },
         {
-          "_postman_id": "2c97862b-e14e-46ce-b6f0-f4899828aa82",
-          "name": "get studies list-viewer token",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
-                "exec": [
-                  "// ensure healthy response code debug",
-                  "tests[\"Status code is 403\"] = responseCode.code === 403;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": {
-                "token": "{{viewer_token_user1}}"
-              }
-            },
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/dicom+json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "{{URL}}/studies"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "25168b67-3e3a-4f02-bbbe-12db8c0cafc5",
           "name": "get album list-Forbidden",
           "event": [
             {
@@ -267,6 +215,10 @@
               }
             }
           ],
+          "_postman_id": "25168b67-3e3a-4f02-bbbe-12db8c0cafc5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -285,15 +237,12 @@
                 "value": "application/x-www-form-urlencoded"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/albums"
           },
           "response": []
         }
       ],
+      "_postman_id": "18494b01-abf7-4a57-9b31-bca23f62cc88",
       "event": [
         {
           "listen": "prerequest",
@@ -318,12 +267,9 @@
       ]
     },
     {
-      "_postman_id": "17024496-e4be-4132-82e8-cc2a75eaf542",
       "name": "inbox",
-      "description": "",
       "item": [
         {
-          "_postman_id": "7c3f4a63-0418-420a-aee8-98dd1c97a249",
           "name": "Create viewer token from access token",
           "event": [
             {
@@ -351,6 +297,10 @@
               }
             }
           ],
+          "_postman_id": "7c3f4a63-0418-420a-aee8-98dd1c97a249",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -400,7 +350,6 @@
           "response": []
         },
         {
-          "_postman_id": "bc2dd49b-e3ca-41dc-95b1-7ac99435c31c",
           "name": "Study Metadata access token",
           "event": [
             {
@@ -418,6 +367,10 @@
               }
             }
           ],
+          "_postman_id": "bc2dd49b-e3ca-41dc-95b1-7ac99435c31c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -432,16 +385,11 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/metadata"
           },
           "response": []
         },
         {
-          "_postman_id": "fec52602-155b-4dd9-bdf6-2d7b6ea4ea36",
           "name": "Study Metadata with viewer token",
           "event": [
             {
@@ -459,6 +407,10 @@
               }
             }
           ],
+          "_postman_id": "fec52602-155b-4dd9-bdf6-2d7b6ea4ea36",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -473,16 +425,11 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/metadata"
           },
           "response": []
         },
         {
-          "_postman_id": "438bc3ee-b0d1-42aa-a9ca-859c2cb9890e",
           "name": "Create a capability tokens user1-OK",
           "event": [
             {
@@ -519,6 +466,10 @@
               }
             }
           ],
+          "_postman_id": "438bc3ee-b0d1-42aa-a9ca-859c2cb9890e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -548,7 +499,6 @@
                 {
                   "key": "scope_type",
                   "value": "user",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -558,7 +508,6 @@
           "response": []
         },
         {
-          "_postman_id": "71c640bc-6961-4514-a04f-9be63ab6c3c3",
           "name": "Create viewer token from capability token",
           "event": [
             {
@@ -586,6 +535,10 @@
               }
             }
           ],
+          "_postman_id": "71c640bc-6961-4514-a04f-9be63ab6c3c3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "method": "POST",
             "header": [
@@ -608,25 +561,21 @@
                   "value": "{{secret_capability_token}}"
                 },
                 {
-                  "description": "",
                   "key": "scope",
                   "type": "text",
                   "value": "viewer"
                 },
                 {
-                  "description": "",
                   "key": "study_instance_uid",
                   "type": "text",
                   "value": "{{study_UID}}"
                 },
                 {
-                  "description": "",
                   "key": "source_type",
                   "type": "text",
                   "value": "inbox"
                 },
                 {
-                  "description": "",
                   "key": "source_id",
                   "type": "text",
                   "value": "xx"
@@ -638,7 +587,6 @@
           "response": []
         },
         {
-          "_postman_id": "0a032642-fd7f-4cbf-8534-06573af24c76",
           "name": "Study Metadata with viewer token from capability",
           "event": [
             {
@@ -656,6 +604,10 @@
               }
             }
           ],
+          "_postman_id": "0a032642-fd7f-4cbf-8534-06573af24c76",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -670,18 +622,61 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/metadata"
           },
           "response": []
+        },
+        {
+          "name": "get studies list-viewer token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
+                "exec": [
+                  "// ensure healthy response code debug",
+                  "tests[\"Status code is 403\"] = responseCode.code === 403;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4f41b5a2-2751-45af-aba5-a23c0c837907",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "_postman_id": "2c97862b-e14e-46ce-b6f0-f4899828aa82",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{viewer_token_user1}}"
+              }
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/dicom+json"
+              }
+            ],
+            "url": "{{URL}}/studies"
+          },
+          "response": []
         }
-      ]
+      ],
+      "_postman_id": "17024496-e4be-4132-82e8-cc2a75eaf542"
     },
     {
-      "_postman_id": "224dd1c6-716e-44dd-b6db-6310ab9d5244",
       "name": "Create an album(1)-OK",
       "event": [
         {
@@ -743,6 +738,10 @@
           }
         }
       ],
+      "_postman_id": "224dd1c6-716e-44dd-b6db-6310ab9d5244",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "auth": {
           "type": "bearer",
@@ -767,19 +766,16 @@
             {
               "key": "sendSeries",
               "value": "false",
-              "description": "",
               "type": "text"
             },
             {
               "key": "name",
               "value": "name 1",
-              "description": "",
               "type": "text"
             },
             {
               "key": "description",
               "value": "description 1",
-              "description": "",
               "type": "text"
             }
           ]
@@ -789,7 +785,6 @@
       "response": []
     },
     {
-      "_postman_id": "476378a3-e292-4649-8240-9f81b62ac852",
       "name": "Send study to an album from inbox user 1",
       "event": [
         {
@@ -803,6 +798,10 @@
           }
         }
       ],
+      "_postman_id": "476378a3-e292-4649-8240-9f81b62ac852",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "auth": {
           "type": "bearer",
@@ -812,10 +811,6 @@
         },
         "method": "PUT",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": {
           "raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}?inbox",
           "host": [
@@ -830,8 +825,7 @@
           "query": [
             {
               "key": "inbox",
-              "value": "",
-              "equals": false
+              "value": null
             }
           ]
         }
@@ -839,7 +833,6 @@
       "response": []
     },
     {
-      "_postman_id": "c7b0e2a5-8b68-4da6-9233-91f100c73508",
       "name": "Create album viewer token from access token",
       "event": [
         {
@@ -867,6 +860,10 @@
           }
         }
       ],
+      "_postman_id": "c7b0e2a5-8b68-4da6-9233-91f100c73508",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "POST",
         "header": [
@@ -889,25 +886,21 @@
               "value": "{{user1_token}}"
             },
             {
-              "description": "",
               "key": "scope",
               "type": "text",
               "value": "viewer"
             },
             {
-              "description": "",
               "key": "study_instance_uid",
               "type": "text",
               "value": "{{study_UID}}"
             },
             {
-              "description": "",
               "key": "source_type",
               "type": "text",
               "value": "album"
             },
             {
-              "description": "",
               "key": "source_id",
               "type": "text",
               "value": "{{album_id_1}}"
@@ -919,7 +912,6 @@
       "response": []
     },
     {
-      "_postman_id": "63dce699-179d-49d4-9d1e-2dae46fda9d9",
       "name": "Study Metadata with viewer token from album",
       "event": [
         {
@@ -937,6 +929,10 @@
           }
         }
       ],
+      "_postman_id": "63dce699-179d-49d4-9d1e-2dae46fda9d9",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "auth": {
           "type": "bearer",
@@ -951,16 +947,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}/metadata"
       },
       "response": []
     },
     {
-      "_postman_id": "df391572-91d8-44d6-b415-6a2596eee880",
       "name": "pep token from viewer token",
       "event": [
         {
@@ -988,6 +979,10 @@
           }
         }
       ],
+      "_postman_id": "df391572-91d8-44d6-b415-6a2596eee880",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "POST",
         "header": [
@@ -1010,13 +1005,11 @@
               "value": "{{viewer_token_user1}}"
             },
             {
-              "description": "",
               "key": "scope",
               "type": "text",
               "value": "pep"
             },
             {
-              "description": "",
               "key": "study_instance_uid",
               "type": "text",
               "value": "{{study_UID}}"
@@ -1024,7 +1017,6 @@
             {
               "key": "series_instance_uid",
               "value": "{{series_UID}}",
-              "description": "",
               "type": "text"
             }
           ]
