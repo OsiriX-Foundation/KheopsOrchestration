@@ -14,11 +14,11 @@
  sed -i "s|\"file\": {}|\"file\": {\"src\": \"testStudy.dcm\"}|" postman/kheops-Introspect.json
 
 
- sed -i "0,/\"file\": {}/ s/\"file\": {\"src\": \"testStudy.dcm\"}/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {\"src\": \"testFelix.dcm\"}/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {\"src\": \"testIncisix.dcm\"}/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {\"src\": \"testMaceosix.dcm\"}/" postman/kheops-Study_List-withOptions.json
- sed -i "0,/\"file\": {}/ s/\"file\": {\"src\": \"testMagix.dcm\"}/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testStudy.dcm\"}/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testFelix.dcm\"}/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testIncisix.dcm\"}/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMaceosix.dcm\"}/" postman/kheops-Study_List-withOptions.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMagix.dcm\"}/" postman/kheops-Study_List-withOptions.json
  cat postman/kheops-Study_List-withOptions.json
  
  
