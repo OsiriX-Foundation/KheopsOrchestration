@@ -873,6 +873,9 @@
         "disableBodyPruning": true
       },
       "request": {
+        "auth": {
+          "type": "noauth"
+        },
         "method": "POST",
         "header": [
           {
@@ -886,12 +889,17 @@
             {
               "key": "grant_type",
               "type": "text",
-              "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+              "value": "urn:ietf:params:oauth:grant-type:token-exchange"
             },
             {
-              "key": "assertion",
+              "key": "subject_token",
               "type": "text",
               "value": "{{user1_token}}"
+            },
+            {
+              "key": "subject_token_type",
+              "value": " urn:ietf:params:oauth:token-type:access_token",
+              "type": "text"
             },
             {
               "key": "scope",
@@ -899,7 +907,7 @@
               "value": "viewer"
             },
             {
-              "key": "study_instance_uid",
+              "key": "studyUID",
               "type": "text",
               "value": "{{study_UID}}"
             },
