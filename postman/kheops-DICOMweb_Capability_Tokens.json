@@ -6,7 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "1b491c9c-b17b-4f0f-b801-0ad6e04f8516",
       "name": "Get a capability tokens user1-no token",
       "event": [
         {
@@ -24,6 +23,7 @@
           }
         }
       ],
+      "_postman_id": "1b491c9c-b17b-4f0f-b801-0ad6e04f8516",
       "request": {
         "auth": {
           "type": "bearer",
@@ -33,16 +33,11 @@
         },
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/capabilities"
       },
       "response": []
     },
     {
-      "_postman_id": "ad0dcc66-1a96-4c81-a538-ced135b2932e",
       "name": "Create a capability tokens user1-OK",
       "event": [
         {
@@ -79,6 +74,7 @@
           }
         }
       ],
+      "_postman_id": "ad0dcc66-1a96-4c81-a538-ced135b2932e",
       "request": {
         "auth": {
           "type": "bearer",
@@ -108,7 +104,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -118,7 +113,6 @@
       "response": []
     },
     {
-      "_postman_id": "574744bd-65fc-4537-9b4f-6aac21d7dcbc",
       "name": "Get a capability tokens user1-OK",
       "event": [
         {
@@ -141,6 +135,7 @@
           }
         }
       ],
+      "_postman_id": "574744bd-65fc-4537-9b4f-6aac21d7dcbc",
       "request": {
         "auth": {
           "type": "bearer",
@@ -150,16 +145,11 @@
         },
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/capabilities"
       },
       "response": []
     },
     {
-      "_postman_id": "57bf5273-0480-44ec-8e3e-032d07b7c533",
       "name": "Get capability token info",
       "event": [
         {
@@ -183,6 +173,7 @@
           }
         }
       ],
+      "_postman_id": "57bf5273-0480-44ec-8e3e-032d07b7c533",
       "request": {
         "method": "GET",
         "header": [],
@@ -195,7 +186,6 @@
       "response": []
     },
     {
-      "_postman_id": "fa0f4fbe-d640-43f5-871a-90678cd1b498",
       "name": "Get capability token info-Bad token",
       "event": [
         {
@@ -211,6 +201,7 @@
           }
         }
       ],
+      "_postman_id": "fa0f4fbe-d640-43f5-871a-90678cd1b498",
       "request": {
         "method": "GET",
         "header": [],
@@ -223,7 +214,6 @@
       "response": []
     },
     {
-      "_postman_id": "2298c7a8-cff8-4c5b-9204-12aefdbd5d0d",
       "name": "STOW with proxy RS-OK",
       "event": [
         {
@@ -238,6 +228,7 @@
           }
         }
       ],
+      "_postman_id": "2298c7a8-cff8-4c5b-9204-12aefdbd5d0d",
       "request": {
         "method": "POST",
         "header": [
@@ -248,16 +239,13 @@
         ],
         "body": {
           "mode": "file",
-          "file": {
-            "src": null
-          }
+          "file": {}
         },
         "url": "{{URL}}/link/{{secret_capability_token}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "2e975077-99c6-4a12-9434-a1b7cfac409e",
       "name": "user1 get studies list-1studie",
       "event": [
         {
@@ -296,6 +284,7 @@
           }
         }
       ],
+      "_postman_id": "2e975077-99c6-4a12-9434-a1b7cfac409e",
       "request": {
         "auth": {
           "type": "bearer",
@@ -310,16 +299,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "7d7aafc8-5c1e-405b-b644-4a4df6bcb287",
       "name": "STOW with proxy RS-Bad token",
       "event": [
         {
@@ -334,6 +318,7 @@
           }
         }
       ],
+      "_postman_id": "7d7aafc8-5c1e-405b-b644-4a4df6bcb287",
       "request": {
         "method": "POST",
         "header": [
@@ -344,16 +329,13 @@
         ],
         "body": {
           "mode": "file",
-          "file": {
-            "src": null
-          }
+          "file": {}
         },
         "url": "{{URL}}/link/9999999/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "f9ead999-aaf3-4542-8f91-b4826fe4e68f",
       "name": "Create a capability tokens user1 with expiration date-OK",
       "event": [
         {
@@ -393,6 +375,7 @@
           }
         }
       ],
+      "_postman_id": "f9ead999-aaf3-4542-8f91-b4826fe4e68f",
       "request": {
         "auth": {
           "type": "bearer",
@@ -427,7 +410,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -437,7 +419,6 @@
       "response": []
     },
     {
-      "_postman_id": "44a0ecb0-393a-41da-ac46-05bc6940a9a0",
       "name": "Revoke a capability tokens user1-OK",
       "event": [
         {
@@ -460,6 +441,7 @@
           }
         }
       ],
+      "_postman_id": "44a0ecb0-393a-41da-ac46-05bc6940a9a0",
       "request": {
         "auth": {
           "type": "bearer",
@@ -478,7 +460,6 @@
       "response": []
     },
     {
-      "_postman_id": "4f493389-74b1-4fd1-b57e-a7fd822ad479",
       "name": "Create a capability tokens-Bad user1 access token",
       "event": [
         {
@@ -504,6 +485,7 @@
           }
         }
       ],
+      "_postman_id": "4f493389-74b1-4fd1-b57e-a7fd822ad479",
       "request": {
         "auth": {
           "type": "bearer",
@@ -533,7 +515,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -543,7 +524,6 @@
       "response": []
     },
     {
-      "_postman_id": "557e4d31-d91d-44b7-bbdf-436ecf00368f",
       "name": "Create a capability tokens-Bad expiration date",
       "event": [
         {
@@ -568,6 +548,7 @@
           }
         }
       ],
+      "_postman_id": "557e4d31-d91d-44b7-bbdf-436ecf00368f",
       "request": {
         "auth": {
           "type": "bearer",
@@ -602,7 +583,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -612,7 +592,6 @@
       "response": []
     },
     {
-      "_postman_id": "dcbf9106-7259-49e6-9614-1acf1a7e0a57",
       "name": "Create a capability tokens-Bad expiration date (old date)",
       "event": [
         {
@@ -652,6 +631,7 @@
           }
         }
       ],
+      "_postman_id": "dcbf9106-7259-49e6-9614-1acf1a7e0a57",
       "request": {
         "auth": {
           "type": "bearer",
@@ -686,7 +666,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -696,7 +675,6 @@
       "response": []
     },
     {
-      "_postman_id": "a696f8c9-0479-44f8-b7e3-edd291aff14c",
       "name": "Create a capability tokens-Bad header accept",
       "event": [
         {
@@ -721,6 +699,7 @@
           }
         }
       ],
+      "_postman_id": "a696f8c9-0479-44f8-b7e3-edd291aff14c",
       "request": {
         "auth": {
           "type": "bearer",
@@ -750,7 +729,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -760,7 +738,6 @@
       "response": []
     },
     {
-      "_postman_id": "a9c61dd6-1203-4455-bc37-52fb218a93f1",
       "name": "Create a capability tokens-Empty description",
       "event": [
         {
@@ -785,6 +762,7 @@
           }
         }
       ],
+      "_postman_id": "a9c61dd6-1203-4455-bc37-52fb218a93f1",
       "request": {
         "auth": {
           "type": "bearer",
@@ -814,7 +792,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -824,7 +801,6 @@
       "response": []
     },
     {
-      "_postman_id": "ca8f195c-cd8e-41db-a479-f652644d49ec",
       "name": "Create a capability tokens-Bad description",
       "event": [
         {
@@ -861,6 +837,7 @@
           }
         }
       ],
+      "_postman_id": "ca8f195c-cd8e-41db-a479-f652644d49ec",
       "request": {
         "auth": {
           "type": "bearer",
@@ -890,7 +867,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -900,7 +876,6 @@
       "response": []
     },
     {
-      "_postman_id": "ea3ab4d7-5cbc-494e-bed0-bd6085313a7e",
       "name": "Get a capability tokens-Bad user1 access token",
       "event": [
         {
@@ -915,6 +890,7 @@
           }
         }
       ],
+      "_postman_id": "ea3ab4d7-5cbc-494e-bed0-bd6085313a7e",
       "request": {
         "auth": {
           "type": "bearer",
@@ -924,16 +900,11 @@
         },
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/capabilities"
       },
       "response": []
     },
     {
-      "_postman_id": "7bb638c0-1b3e-4eb5-a7c0-1d7901f26d92",
       "name": "Create a capability tokens user1-OK (for next step)",
       "event": [
         {
@@ -970,6 +941,7 @@
           }
         }
       ],
+      "_postman_id": "7bb638c0-1b3e-4eb5-a7c0-1d7901f26d92",
       "request": {
         "auth": {
           "type": "bearer",
@@ -999,7 +971,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -1009,7 +980,6 @@
       "response": []
     },
     {
-      "_postman_id": "0e1930bd-2918-4bd7-a194-3060cc1b51dc",
       "name": "Request capability tokens with scope-OK",
       "event": [
         {
@@ -1022,8 +992,6 @@
               "var jsonObject = JSON.parse(responseBody);",
               "",
               "tests[\"[INFO] Response: \" + responseBody] = true;",
-              "",
-              "tests[\"User is correct\"] = jsonObject.user === pm.variables.get(\"user1_id\");",
               "",
               "tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
               "",
@@ -1043,7 +1011,15 @@
           }
         }
       ],
+      "_postman_id": "0e1930bd-2918-4bd7-a194-3060cc1b51dc",
       "request": {
+        "auth": {
+          "type": "basic",
+          "basic": {
+            "password": "dicomwebproxyclientpassword",
+            "username": "DICOMWebProxy"
+          }
+        },
         "method": "POST",
         "header": [
           {
@@ -1056,12 +1032,17 @@
           "urlencoded": [
             {
               "key": "grant_type",
-              "value": "urn:x-kheops:params:oauth:grant-type:capability",
+              "value": "urn:ietf:params:oauth:grant-type:token-exchange",
               "type": "text"
             },
             {
-              "key": "assertion",
+              "key": "subject_token",
               "value": "{{secret_capability_token}}",
+              "type": "text"
+            },
+            {
+              "key": "subject_token_type",
+              "value": " urn:ietf:params:oauth:token-type:access_token",
               "type": "text"
             },
             {
@@ -1070,20 +1051,13 @@
               "type": "text"
             },
             {
-              "key": "return_user",
-              "value": "true",
-              "type": "text"
-            },
-            {
-              "key": "study_instance_uid",
+              "key": "studyUID",
               "value": "{{study_UID}}",
-              "description": "",
               "type": "text"
             },
             {
-              "key": "series_instance_uid",
+              "key": "seriesUID",
               "value": "{{series_UID}}",
-              "description": "",
               "type": "text"
             }
           ]
