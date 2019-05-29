@@ -44,6 +44,13 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "password": "dicomwebproxyclientpassword",
+                "username": "DICOMWebProxy"
+              }
+            },
             "method": "POST",
             "header": [
               {
@@ -55,12 +62,7 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
-                },
-                {
-                  "key": "assertion",
+                  "key": "token",
                   "type": "text",
                   "value": "{{user1_token}}"
                 }
@@ -343,6 +345,13 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "password": "dicomwebproxyclientpassword",
+                "username": "DICOMWebProxy"
+              }
+            },
             "method": "POST",
             "header": [
               {
@@ -354,12 +363,7 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
-                },
-                {
-                  "key": "assertion",
+                  "key": "token",
                   "type": "text",
                   "value": "{{secret_capability_token_write}}"
                 }
@@ -507,6 +511,13 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "password": "dicomwebproxyclientpassword",
+                "username": "DICOMWebProxy"
+              }
+            },
             "method": "POST",
             "header": [
               {
@@ -518,12 +529,7 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
-                },
-                {
-                  "key": "assertion",
+                  "key": "token",
                   "type": "text",
                   "value": "{{secret_capability_token_read}}"
                 }
@@ -1199,6 +1205,13 @@
             "disableBodyPruning": true
           },
           "request": {
+            "auth": {
+              "type": "basic",
+              "basic": {
+                "password": "dicomwebproxyclientpassword",
+                "username": "DICOMWebProxy"
+              }
+            },
             "method": "POST",
             "header": [
               {
@@ -1210,12 +1223,7 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "key": "grant_type",
-                  "type": "text",
-                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
-                },
-                {
-                  "key": "assertion",
+                  "key": "token",
                   "type": "text",
                   "value": "{{secret_capability_token_read_write}}"
                 }
