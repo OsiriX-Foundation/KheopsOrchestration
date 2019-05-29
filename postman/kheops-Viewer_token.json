@@ -332,7 +332,7 @@
                 },
                 {
                   "key": "subject_token_type",
-                  "value": " urn:ietf:params:oauth:token-type:access_token",
+                  "value": "urn:ietf:params:oauth:token-type:access_token",
                   "type": "text"
                 },
                 {
@@ -616,7 +616,7 @@
                 },
                 {
                   "key": "subject_token_type",
-                  "value": " urn:ietf:params:oauth:token-type:access_token",
+                  "value": "urn:ietf:params:oauth:token-type:access_token",
                   "type": "text"
                 },
                 {
