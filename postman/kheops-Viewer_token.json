@@ -165,7 +165,7 @@
                 {
                   "key": "grant_type",
                   "type": "text",
-                  "value": "urn:ietf:params:oauth:grant-type:token-exchanged"
+                  "value": "urn:ietf:params:oauth:grant-type:token-exchange"
                 },
                 {
                   "key": "subject_token",
