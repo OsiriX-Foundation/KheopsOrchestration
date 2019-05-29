@@ -323,12 +323,17 @@
                 {
                   "key": "grant_type",
                   "type": "text",
-                  "value": "urn:ietf:params:oauth:grant-type:jwt-bearer"
+                  "value": "urn:ietf:params:oauth:grant-type:token-exchange"
                 },
                 {
-                  "key": "assertion",
+                  "key": "subject_token",
                   "type": "text",
                   "value": "{{user1_token}}"
+                },
+                {
+                  "key": "subject_token_type",
+                  "value": " urn:ietf:params:oauth:token-type:access_token",
+                  "type": "text"
                 },
                 {
                   "key": "scope",
@@ -336,7 +341,7 @@
                   "type": "text"
                 },
                 {
-                  "key": "study_instance_uid",
+                  "key": "studyUID",
                   "value": "{{study_UID}}",
                   "type": "text"
                 },
@@ -344,12 +349,6 @@
                   "key": "source_type",
                   "value": "inbox",
                   "type": "text"
-                },
-                {
-                  "key": "sourceId",
-                  "value": "xx",
-                  "type": "text",
-                  "disabled": true
                 }
               ]
             },
@@ -608,12 +607,17 @@
                 {
                   "key": "grant_type",
                   "type": "text",
-                  "value": "urn:x-kheops:params:oauth:grant-type:unknown-bearer"
+                  "value": "urn:ietf:params:oauth:grant-type:token-exchange"
                 },
                 {
-                  "key": "assertion",
+                  "key": "subject_token",
                   "type": "text",
                   "value": "{{secret_capability_token}}"
+                },
+                {
+                  "key": "subject_token_type",
+                  "value": " urn:ietf:params:oauth:token-type:access_token",
+                  "type": "text"
                 },
                 {
                   "key": "scope",
@@ -621,19 +625,14 @@
                   "value": "viewer"
                 },
                 {
-                  "key": "study_instance_uid",
+                  "key": "studyUID",
                   "type": "text",
                   "value": "{{study_UID}}"
                 },
                 {
                   "key": "source_type",
-                  "type": "text",
-                  "value": "inbox"
-                },
-                {
-                  "key": "source_id",
-                  "type": "text",
-                  "value": "xx"
+                  "value": "inbox",
+                  "type": "text"
                 }
               ]
             },
