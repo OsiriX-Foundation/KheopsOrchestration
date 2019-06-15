@@ -1586,7 +1586,6 @@
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
                   "tests[\"Active = true\"] = jsonObject.active === true;",
-                  "tests[\"Scope = read write\"] = jsonObject.scope.includes(\"read\") && jsonObject.scope.includes(\"write\");",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
