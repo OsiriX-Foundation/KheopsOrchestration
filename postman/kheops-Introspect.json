@@ -654,7 +654,7 @@
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
                   "tests[\"Active = true\"] = jsonObject.active === true;",
-                  "tests[\"Scope = read download appropriate\"] = jsonObject.scope.includes(\"read\") && jsonObject.scope.includes(\"download\") && jsonObject.scope.includes(\"appropriate\") && jsonObject.scope.includes(\"write\") == false;",
+                  "tests[\"Scope = read downloadbutton send\"] = jsonObject.scope.includes(\"read\") && jsonObject.scope.includes(\"downloadbutton\") && jsonObject.scope.includes(\"send\") && jsonObject.scope.includes(\"write\") == false;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
