@@ -26,6 +26,6 @@
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMaceosix.dcm\"}/" postman/kheops-Album.json
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMagix.dcm\"}/" postman/kheops-Album.json
  
-  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testStudy.dcm\"}/" postman/kheops-series_favorite.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testStudy.dcm\"}/" postman/kheops-series_favorite.json
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testFelix.dcm\"}/" postman/kheops-series_favorite.json
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testIncisix.dcm\"}/" postman/kheops-series_favorite.json
