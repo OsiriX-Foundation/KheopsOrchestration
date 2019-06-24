@@ -1392,23 +1392,23 @@
                 },
                 {
                   "key": "subject_token_type",
-                  "type": "text",
-                  "value": "urn:ietf:params:oauth:token-type:access_token"
+                  "value": "urn:ietf:params:oauth:token-type:access_token",
+                  "type": "text"
                 },
                 {
                   "key": "scope",
-                  "type": "text",
-                  "value": "viewer"
+                  "value": "viewer",
+                  "type": "text"
                 },
                 {
                   "key": "studyUID",
-                  "type": "text",
-                  "value": "{{study_UID}}"
+                  "value": "{{study_UID}}",
+                  "type": "text"
                 },
                 {
                   "key": "source_type",
-                  "type": "text",
-                  "value": "inbox"
+                  "value": "inbox",
+                  "type": "text"
                 }
               ]
             },
@@ -1549,8 +1549,8 @@
                 },
                 {
                   "key": "subject_token_type",
-                  "type": "text",
-                  "value": "urn:ietf:params:oauth:token-type:access_token"
+                  "value": "urn:ietf:params:oauth:token-type:access_token",
+                  "type": "text"
                 },
                 {
                   "key": "scope",
@@ -1564,8 +1564,8 @@
                 },
                 {
                   "key": "seriesUID",
-                  "type": "text",
-                  "value": "{{series_UID}}"
+                  "value": "{{series_UID}}",
+                  "type": "text"
                 }
               ]
             },
