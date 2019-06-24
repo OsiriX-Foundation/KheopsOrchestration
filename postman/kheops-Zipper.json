@@ -6,7 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "3bf87818-430e-4896-8860-f561afbb21f1",
       "name": "STOW RS inside inbox user 1",
       "event": [
         {
@@ -21,6 +20,7 @@
           }
         }
       ],
+      "_postman_id": "3bf87818-430e-4896-8860-f561afbb21f1",
       "request": {
         "auth": {
           "type": "bearer",
@@ -37,16 +37,13 @@
         ],
         "body": {
           "mode": "file",
-          "file": {
-            "src": null
-          }
+          "file": {}
         },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "1b6d126e-86fc-417b-bcd3-1dd40670370b",
       "name": "user1 get studies list-1studie",
       "event": [
         {
@@ -75,6 +72,7 @@
           }
         }
       ],
+      "_postman_id": "1b6d126e-86fc-417b-bcd3-1dd40670370b",
       "request": {
         "auth": {
           "type": "bearer",
@@ -89,16 +87,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "5eb0de34-361d-492f-96a8-4ce78c52f5e0",
       "name": "Create a capability tokens user1-OK",
       "event": [
         {
@@ -133,6 +126,7 @@
           }
         }
       ],
+      "_postman_id": "5eb0de34-361d-492f-96a8-4ce78c52f5e0",
       "request": {
         "auth": {
           "type": "bearer",
@@ -162,7 +156,6 @@
             {
               "key": "scope_type",
               "value": "user",
-              "description": "",
               "type": "text"
             }
           ]
@@ -172,7 +165,6 @@
       "response": []
     },
     {
-      "_postman_id": "b297540b-7719-4360-99ab-4cc0ffb55b18",
       "name": "Download zip",
       "event": [
         {
@@ -188,6 +180,7 @@
           }
         }
       ],
+      "_postman_id": "b297540b-7719-4360-99ab-4cc0ffb55b18",
       "request": {
         "auth": {
           "type": "bearer",
@@ -203,16 +196,11 @@
             "value": "application/zip"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}"
       },
       "response": []
     },
     {
-      "_postman_id": "b4492f4d-c747-436f-9383-69be6ffe7835",
       "name": "Download zip using an accept query parameter",
       "event": [
         {
@@ -228,6 +216,7 @@
           }
         }
       ],
+      "_postman_id": "b4492f4d-c747-436f-9383-69be6ffe7835",
       "request": {
         "auth": {
           "type": "bearer",
@@ -237,10 +226,6 @@
         },
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": {
           "raw": "{{URL}}/studies/{{study_UID}}?accept=application/zip",
           "host": [
@@ -253,8 +238,7 @@
           "query": [
             {
               "key": "accept",
-              "value": "application/zip",
-              "equals": true
+              "value": "application/zip"
             }
           ]
         }
@@ -262,7 +246,6 @@
       "response": []
     },
     {
-      "_postman_id": "f76e8c7f-28d0-418d-b6e7-8f8ec7e83c0f",
       "name": "Download zip using an accept query parameter with %2F",
       "event": [
         {
@@ -278,6 +261,7 @@
           }
         }
       ],
+      "_postman_id": "f76e8c7f-28d0-418d-b6e7-8f8ec7e83c0f",
       "request": {
         "auth": {
           "type": "bearer",
@@ -287,10 +271,6 @@
         },
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": {
           "raw": "{{URL}}/studies/{{study_UID}}?accept=application%2Fzip",
           "host": [
@@ -303,8 +283,7 @@
           "query": [
             {
               "key": "accept",
-              "value": "application%2Fzip",
-              "equals": true
+              "value": "application%2Fzip"
             }
           ]
         }
@@ -312,7 +291,6 @@
       "response": []
     },
     {
-      "_postman_id": "61d99d62-d41d-409a-9264-a5930685264e",
       "name": "Download zip link",
       "event": [
         {
@@ -328,6 +306,7 @@
           }
         }
       ],
+      "_postman_id": "61d99d62-d41d-409a-9264-a5930685264e",
       "request": {
         "method": "GET",
         "header": [
@@ -341,16 +320,11 @@
             "type": "text"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/link/{{secret_capability_token}}/studies/{{study_UID}}"
       },
       "response": []
     },
     {
-      "_postman_id": "90d77de9-1665-4074-b29a-f1d7db0632a5",
       "name": "Download zip stream Bad study UID",
       "event": [
         {
@@ -365,6 +339,7 @@
           }
         }
       ],
+      "_postman_id": "90d77de9-1665-4074-b29a-f1d7db0632a5",
       "request": {
         "auth": {
           "type": "bearer",
@@ -380,16 +355,11 @@
             "type": "text"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}11"
       },
       "response": []
     },
     {
-      "_postman_id": "db202b48-dc42-4019-9637-2d6b33aae6f4",
       "name": "Download zip stream Bad token",
       "event": [
         {
@@ -403,13 +373,10 @@
           }
         }
       ],
+      "_postman_id": "db202b48-dc42-4019-9637-2d6b33aae6f4",
       "request": {
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/link/12345678/studies/{{study_UID}}"
       },
       "response": []
