@@ -191,12 +191,12 @@
         {
           "listen": "test",
           "script": {
-            "id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 404\"] = responseCode.code === 404;",
               ""
             ],
+            "id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
             "type": "text/javascript"
           }
         }
