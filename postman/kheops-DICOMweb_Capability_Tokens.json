@@ -155,7 +155,6 @@
         {
           "listen": "test",
           "script": {
-            "id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
             "exec": [
               "// ensure healthy response code",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -169,6 +168,7 @@
               "tests[\"scope_type = user\"] = jsonObject.scope_type === \"user\";",
               ""
             ],
+            "id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
             "type": "text/javascript"
           }
         }
@@ -993,8 +993,6 @@
               "",
               "tests[\"[INFO] Response: \" + responseBody] = true;",
               "",
-              "tests[\"User is correct\"] = jsonObject.user === pm.variables.get(\"user1_id\");",
-              "",
               "tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
               "",
               "pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);"
@@ -1034,33 +1032,33 @@
           "urlencoded": [
             {
               "key": "grant_type",
-              "type": "text",
-              "value": "urn:ietf:params:oauth:grant-type:token-exchange"
+              "value": "urn:ietf:params:oauth:grant-type:token-exchange",
+              "type": "text"
             },
             {
               "key": "subject_token",
-              "type": "text",
-              "value": "{{secret_capability_token}}"
+              "value": "{{secret_capability_token}}",
+              "type": "text"
             },
             {
               "key": "subject_token_type",
-              "type": "text",
-              "value": "urn:ietf:params:oauth:token-type:access_token"
+              "value": "urn:ietf:params:oauth:token-type:access_token",
+              "type": "text"
             },
             {
               "key": "scope",
-              "type": "text",
-              "value": "pep"
+              "value": "pep",
+              "type": "text"
             },
             {
               "key": "studyUID",
-              "type": "text",
-              "value": "{{study_UID}}"
+              "value": "{{study_UID}}",
+              "type": "text"
             },
             {
               "key": "seriesUID",
-              "type": "text",
-              "value": "{{series_UID}}"
+              "value": "{{series_UID}}",
+              "type": "text"
             }
           ]
         },
