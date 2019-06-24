@@ -174,23 +174,23 @@
                 },
                 {
                   "key": "subject_token_type",
-                  "value": "urn:ietf:params:oauth:token-type:access_token",
-                  "type": "text"
+                  "type": "text",
+                  "value": "urn:ietf:params:oauth:token-type:access_token"
                 },
                 {
                   "key": "scope",
-                  "value": "viewer",
-                  "type": "text"
+                  "type": "text",
+                  "value": "viewer"
                 },
                 {
                   "key": "studyUID",
-                  "value": "{{study_UID}}",
-                  "type": "text"
+                  "type": "text",
+                  "value": "{{study_UID}}"
                 },
                 {
                   "key": "source_type",
-                  "value": "inbox",
-                  "type": "text"
+                  "type": "text",
+                  "value": "inbox"
                 }
               ]
             },
