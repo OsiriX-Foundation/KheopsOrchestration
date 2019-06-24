@@ -6,12 +6,9 @@
   },
   "item": [
     {
-      "_postman_id": "42779351-a022-4c92-bec8-7f2b07dda88d",
       "name": "post",
-      "description": null,
       "item": [
         {
-          "_postman_id": "4a0d8b5d-fb43-42b3-8682-e6eea9d2bd62",
           "name": "STOW-RS Store Instances-OK",
           "event": [
             {
@@ -26,6 +23,7 @@
               }
             }
           ],
+          "_postman_id": "4a0d8b5d-fb43-42b3-8682-e6eea9d2bd62",
           "request": {
             "auth": {
               "type": "bearer",
@@ -42,16 +40,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/testauthorizationproxy/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "571b8779-516c-4fe0-91c9-efd6963d1e66",
           "name": "STOW-RS Store Instances of Study-OK",
           "event": [
             {
@@ -66,6 +61,7 @@
               }
             }
           ],
+          "_postman_id": "571b8779-516c-4fe0-91c9-efd6963d1e66",
           "request": {
             "auth": {
               "type": "bearer",
@@ -82,16 +78,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "67bd5375-a500-45eb-94f3-189674bd3f8d",
           "name": "STOW-RS Store Instances of Study-JWT expired",
           "event": [
             {
@@ -106,6 +99,7 @@
               }
             }
           ],
+          "_postman_id": "67bd5375-a500-45eb-94f3-189674bd3f8d",
           "request": {
             "auth": {
               "type": "bearer",
@@ -122,16 +116,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "9d652ed5-74ea-4cbf-be9f-9d381fb80652",
           "name": "STOW-RS Store Instances of Study-JWT bad secret",
           "event": [
             {
@@ -146,6 +137,7 @@
               }
             }
           ],
+          "_postman_id": "9d652ed5-74ea-4cbf-be9f-9d381fb80652",
           "request": {
             "auth": {
               "type": "bearer",
@@ -162,16 +154,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "952047c6-52ea-4d8c-b89d-f4c9700d61f8",
           "name": "STOW-RS Store Instances of Study-Bad study UID (JWT-request)",
           "event": [
             {
@@ -186,6 +175,7 @@
               }
             }
           ],
+          "_postman_id": "952047c6-52ea-4d8c-b89d-f4c9700d61f8",
           "request": {
             "auth": {
               "type": "bearer",
@@ -202,23 +192,19 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "42779351-a022-4c92-bec8-7f2b07dda88d"
     },
     {
-      "_postman_id": "4b73d547-72e6-4847-811e-ac89fa704dbc",
       "name": "wado-uri",
-      "description": null,
       "item": [
         {
-          "_postman_id": "9fa1f82b-b0b9-4772-9f3d-989d7494239a",
           "name": "studyUID only -Unauthorized",
           "event": [
             {
@@ -233,13 +219,10 @@
               }
             }
           ],
+          "_postman_id": "9fa1f82b-b0b9-4772-9f3d-989d7494239a",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=WADO",
               "host": [
@@ -252,18 +235,15 @@
               "query": [
                 {
                   "key": "access_token",
-                  "value": "{{JWT_study_series}}",
-                  "equals": true
+                  "value": "{{JWT_study_series}}"
                 },
                 {
                   "key": "studyUID",
-                  "value": "{{study_UID}}",
-                  "equals": true
+                  "value": "{{study_UID}}"
                 },
                 {
                   "key": "requestType",
-                  "value": "WADO",
-                  "equals": true
+                  "value": "WADO"
                 }
               ]
             }
@@ -271,7 +251,6 @@
           "response": []
         },
         {
-          "_postman_id": "f855289e-8255-4cec-96be-fae253c9b0d5",
           "name": "studyUID-JWT bad studyUID",
           "event": [
             {
@@ -286,13 +265,10 @@
               }
             }
           ],
+          "_postman_id": "f855289e-8255-4cec-96be-fae253c9b0d5",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
               "host": [
@@ -325,7 +301,6 @@
           "response": []
         },
         {
-          "_postman_id": "b9ea1ff0-9b68-48ee-8bb0-422a494a893e",
           "name": "studyUID seriesUID-OK",
           "event": [
             {
@@ -340,13 +315,10 @@
               }
             }
           ],
+          "_postman_id": "b9ea1ff0-9b68-48ee-8bb0-422a494a893e",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
               "host": [
@@ -379,7 +351,6 @@
           "response": []
         },
         {
-          "_postman_id": "0e3800e4-72ff-44b2-97a4-ae7b02b289ec",
           "name": "studyUID seriesUID-JWT bad studyUID",
           "event": [
             {
@@ -394,13 +365,10 @@
               }
             }
           ],
+          "_postman_id": "0e3800e4-72ff-44b2-97a4-ae7b02b289ec",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_badStudy_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
               "host": [
@@ -433,7 +401,6 @@
           "response": []
         },
         {
-          "_postman_id": "7a7b06ca-282a-4547-a744-27f6df4eab8b",
           "name": "studyUID seriesUID-JWT bad seriesUID",
           "event": [
             {
@@ -448,13 +415,10 @@
               }
             }
           ],
+          "_postman_id": "7a7b06ca-282a-4547-a744-27f6df4eab8b",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_badSeries}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&requestType=WADO",
               "host": [
@@ -487,7 +451,6 @@
           "response": []
         },
         {
-          "_postman_id": "e6692d84-c66c-4fa7-aef9-1f606b67b441",
           "name": "studyUID seriesUID objectUID-OK",
           "event": [
             {
@@ -502,13 +465,10 @@
               }
             }
           ],
+          "_postman_id": "e6692d84-c66c-4fa7-aef9-1f606b67b441",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}&requestType=WADO",
               "host": [
@@ -545,7 +505,6 @@
           "response": []
         },
         {
-          "_postman_id": "fa3b4474-7015-4ccc-b7ce-8ab89c4ea844",
           "name": "studyUID seriesUID objectUID-Bad object_UID",
           "event": [
             {
@@ -560,13 +519,10 @@
               }
             }
           ],
+          "_postman_id": "fa3b4474-7015-4ccc-b7ce-8ab89c4ea844",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&seriesUID={{series_UID}}&objectUID={{object_UID}}33&requestType=WADO",
               "host": [
@@ -603,7 +559,6 @@
           "response": []
         },
         {
-          "_postman_id": "782137ff-8ebc-42eb-8159-6f983309c3a9",
           "name": "No request type",
           "event": [
             {
@@ -618,13 +573,10 @@
               }
             }
           ],
+          "_postman_id": "782137ff-8ebc-42eb-8159-6f983309c3a9",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}",
               "host": [
@@ -649,7 +601,6 @@
           "response": []
         },
         {
-          "_postman_id": "e6dd9c92-6910-45fc-9de4-b6189bbf4fd2",
           "name": "Bad request type",
           "event": [
             {
@@ -664,13 +615,10 @@
               }
             }
           ],
+          "_postman_id": "e6dd9c92-6910-45fc-9de4-b6189bbf4fd2",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/wado?access_token={{JWT_study_series}}&studyUID={{study_UID}}&requestType=XXX",
               "host": [
@@ -698,15 +646,13 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "4b73d547-72e6-4847-811e-ac89fa704dbc"
     },
     {
-      "_postman_id": "01b0c50e-323e-4cf2-bccc-a4b2595f6ac6",
       "name": "wado-rs",
-      "description": null,
       "item": [
         {
-          "_postman_id": "c6dc7688-e949-4752-8753-cbd5dbf08df0",
           "name": "studyUID-OK",
           "event": [
             {
@@ -721,6 +667,7 @@
               }
             }
           ],
+          "_postman_id": "c6dc7688-e949-4752-8753-cbd5dbf08df0",
           "request": {
             "auth": {
               "type": "bearer",
@@ -730,16 +677,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "b829321d-4b0c-4cf2-819b-a8cf6a91ad6b",
           "name": "studyUID-NOT all access",
           "event": [
             {
@@ -754,6 +696,7 @@
               }
             }
           ],
+          "_postman_id": "b829321d-4b0c-4cf2-819b-a8cf6a91ad6b",
           "request": {
             "auth": {
               "type": "bearer",
@@ -763,16 +706,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "bcb2b6a5-abd7-4496-8b74-fc914426b1c1",
           "name": "studyUID seriesUID-OK",
           "event": [
             {
@@ -787,6 +725,7 @@
               }
             }
           ],
+          "_postman_id": "bcb2b6a5-abd7-4496-8b74-fc914426b1c1",
           "request": {
             "auth": {
               "type": "bearer",
@@ -796,16 +735,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "2ef978ce-0ac5-4e03-8ade-de5eef2abf80",
           "name": "studyUID seriesUID-Bad studyUID",
           "event": [
             {
@@ -820,6 +754,7 @@
               }
             }
           ],
+          "_postman_id": "2ef978ce-0ac5-4e03-8ade-de5eef2abf80",
           "request": {
             "auth": {
               "type": "bearer",
@@ -829,16 +764,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}99/series/{{series_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "5c8902e5-cdd4-4c21-9a2a-a2465fe1a2b1",
           "name": "studyUID seriesUID-Bad seriesUID",
           "event": [
             {
@@ -853,6 +783,7 @@
               }
             }
           ],
+          "_postman_id": "5c8902e5-cdd4-4c21-9a2a-a2465fe1a2b1",
           "request": {
             "auth": {
               "type": "bearer",
@@ -862,16 +793,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}99"
           },
           "response": []
         },
         {
-          "_postman_id": "4868a580-a95c-4e0a-814c-8ea181d36273",
           "name": "studyUID seriesUID objectUID-OK",
           "event": [
             {
@@ -886,6 +812,7 @@
               }
             }
           ],
+          "_postman_id": "4868a580-a95c-4e0a-814c-8ea181d36273",
           "request": {
             "auth": {
               "type": "bearer",
@@ -895,16 +822,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "76cdc3fc-9cc4-4663-8bdd-b5a8530ce977",
           "name": "studyUID seriesUID objectUID-Bad objectUID",
           "event": [
             {
@@ -919,6 +841,7 @@
               }
             }
           ],
+          "_postman_id": "76cdc3fc-9cc4-4663-8bdd-b5a8530ce977",
           "request": {
             "auth": {
               "type": "bearer",
@@ -928,16 +851,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}99"
           },
           "response": []
         },
         {
-          "_postman_id": "097d03f5-bb3a-40f7-851d-31d0eb70be2b",
           "name": "studyUID metadata-OK",
           "event": [
             {
@@ -952,6 +870,7 @@
               }
             }
           ],
+          "_postman_id": "097d03f5-bb3a-40f7-851d-31d0eb70be2b",
           "request": {
             "auth": {
               "type": "bearer",
@@ -961,16 +880,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/metadata"
           },
           "response": []
         },
         {
-          "_postman_id": "249c5b7a-fe69-4def-af17-ed8dfb18f871",
           "name": "studyUID metadata-NOT all access",
           "event": [
             {
@@ -985,6 +899,7 @@
               }
             }
           ],
+          "_postman_id": "249c5b7a-fe69-4def-af17-ed8dfb18f871",
           "request": {
             "auth": {
               "type": "bearer",
@@ -994,16 +909,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/metadata"
           },
           "response": []
         },
         {
-          "_postman_id": "c564c6d0-76e4-4031-ba06-ab3ce172d01a",
           "name": "studyUID seriesUID metadata-OK",
           "event": [
             {
@@ -1018,6 +928,7 @@
               }
             }
           ],
+          "_postman_id": "c564c6d0-76e4-4031-ba06-ab3ce172d01a",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1027,16 +938,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/metadata"
           },
           "response": []
         },
         {
-          "_postman_id": "57b471bc-993c-4b0f-a1f7-ca928ba26064",
           "name": "studyUID seriesUID metadata-Bad studyUID",
           "event": [
             {
@@ -1051,6 +957,7 @@
               }
             }
           ],
+          "_postman_id": "57b471bc-993c-4b0f-a1f7-ca928ba26064",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1060,16 +967,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}99/series/{{series_UID}}/metadata"
           },
           "response": []
         },
         {
-          "_postman_id": "20f8b4fc-af3e-4c2f-8ec9-fb0bc97f6609",
           "name": "studyUID seriesUID metadata-Bad seriesUID",
           "event": [
             {
@@ -1084,6 +986,7 @@
               }
             }
           ],
+          "_postman_id": "20f8b4fc-af3e-4c2f-8ec9-fb0bc97f6609",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1093,16 +996,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}99"
           },
           "response": []
         },
         {
-          "_postman_id": "10ff369e-1db0-4f25-bb0e-872930cd631b",
           "name": "studyUID seriesUID objectUID metadata-OK",
           "event": [
             {
@@ -1117,6 +1015,7 @@
               }
             }
           ],
+          "_postman_id": "10ff369e-1db0-4f25-bb0e-872930cd631b",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1126,49 +1025,41 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}/instances/{{object_UID}}/metadata"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "01b0c50e-323e-4cf2-bccc-a4b2595f6ac6"
     },
     {
-      "_postman_id": "16ba3a78-b020-45c6-8e02-af369298d7cf",
       "name": "qido-rs",
-      "description": null,
       "item": [
         {
-          "_postman_id": "ef4611f2-f958-4d74-a381-23fd39e64b7e",
           "name": "studyUID-OK",
           "event": [
             {
               "listen": "test",
               "script": {
                 "id": "63bc0761-e9b6-4391-93da-2d5f8a259a4c",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
+          "_postman_id": "ef4611f2-f958-4d74-a381-23fd39e64b7e",
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_allAccess}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_allAccess}}"
               }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
             },
+            "method": "GET",
+            "header": [],
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/studies?StudyInstanceUID={{study_UID}}",
               "host": [
@@ -1189,33 +1080,30 @@
           "response": []
         },
         {
-          "_postman_id": "72df8028-8929-4266-8d6b-1fc548a93bd5",
           "name": "StudyUID-Bad studiesUID (JWT-request)",
           "event": [
             {
               "listen": "test",
               "script": {
                 "id": "0de51ec1-47c9-44ee-9cdb-a11acaf045e2",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
+          "_postman_id": "72df8028-8929-4266-8d6b-1fc548a93bd5",
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_allAccess}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_allAccess}}"
               }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
             },
+            "method": "GET",
+            "header": [],
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/studies?StudyInstanceUID={{study_UID}}99",
               "host": [
@@ -1236,33 +1124,30 @@
           "response": []
         },
         {
-          "_postman_id": "06fa5c56-d8ff-4361-a5d5-d5f56583dff1",
           "name": "studyUID seriesUID-OK",
           "event": [
             {
               "listen": "test",
               "script": {
                 "id": "469789e8-14fc-40d7-9104-160495e92f49",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
+          "_postman_id": "06fa5c56-d8ff-4361-a5d5-d5f56583dff1",
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
             },
+            "method": "GET",
+            "header": [],
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}",
               "host": [
@@ -1285,33 +1170,30 @@
           "response": []
         },
         {
-          "_postman_id": "7e2768ec-bc8e-4228-a2a3-38156842879a",
           "name": "studyUID seriesUID-Bad seriesUID (JWT-request)",
           "event": [
             {
               "listen": "test",
               "script": {
                 "id": "b1f34a2c-9ccd-486c-be0e-3abbbe250707",
-                "type": "text/javascript",
                 "exec": [
                   "// ensure healthy response code",
                   "tests[\"Status code is 401\"] = responseCode.code === 401;"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
+          "_postman_id": "7e2768ec-bc8e-4228-a2a3-38156842879a",
           "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Authorization",
-                "value": "Bearer {{JWT_study_series}}"
+            "auth": {
+              "type": "bearer",
+              "bearer": {
+                "token": "{{JWT_study_series}}"
               }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
             },
+            "method": "GET",
+            "header": [],
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series?SeriesInstanceUID={{series_UID}}99",
               "host": [
@@ -1333,15 +1215,13 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "16ba3a78-b020-45c6-8e02-af369298d7cf"
     },
     {
-      "_postman_id": "6e5b5c7b-f19a-406f-825e-02655adcd3f9",
       "name": "other",
-      "description": null,
       "item": [
         {
-          "_postman_id": "cfc5dd6a-62fb-4890-8ebd-12f1151818cc",
           "name": "accessToken in query parameter-OK",
           "event": [
             {
@@ -1356,13 +1236,10 @@
               }
             }
           ],
+          "_postman_id": "cfc5dd6a-62fb-4890-8ebd-12f1151818cc",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_study_series}}",
               "host": [
@@ -1386,7 +1263,6 @@
           "response": []
         },
         {
-          "_postman_id": "170f13c9-0514-4316-9bf8-9ed12b57231b",
           "name": "accessToken in query parameter-Expired",
           "event": [
             {
@@ -1401,13 +1277,10 @@
               }
             }
           ],
+          "_postman_id": "170f13c9-0514-4316-9bf8-9ed12b57231b",
           "request": {
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/testauthorizationproxy/studies/{{study_UID}}/series/{{series_UID}}?access_token={{JWT_expired}}",
               "host": [
@@ -1430,7 +1303,8 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "6e5b5c7b-f19a-406f-825e-02655adcd3f9"
     }
   ]
 }
