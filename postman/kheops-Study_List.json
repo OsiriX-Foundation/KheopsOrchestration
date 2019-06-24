@@ -6,7 +6,6 @@
   },
   "item": [
     {
-      "_postman_id": "3dae336e-ffc4-4b44-af40-8005da204eb0",
       "name": "user1 get studies list-Empty",
       "event": [
         {
@@ -24,6 +23,7 @@
           }
         }
       ],
+      "_postman_id": "3dae336e-ffc4-4b44-af40-8005da204eb0",
       "request": {
         "auth": {
           "type": "bearer",
@@ -38,16 +38,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "08a92b6f-6681-476c-a12c-11f40373657f",
       "name": "user1 get studies list-Bad access_token",
       "event": [
         {
@@ -61,6 +56,7 @@
           }
         }
       ],
+      "_postman_id": "08a92b6f-6681-476c-a12c-11f40373657f",
       "request": {
         "auth": {
           "type": "bearer",
@@ -75,16 +71,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "bee4fb0f-1b5e-4415-b91f-d8735f4f430a",
       "name": "user1 get studies list-Bad accept",
       "event": [
         {
@@ -99,6 +90,7 @@
           }
         }
       ],
+      "_postman_id": "bee4fb0f-1b5e-4415-b91f-d8735f4f430a",
       "request": {
         "auth": {
           "type": "bearer",
@@ -113,16 +105,11 @@
             "value": "application/dicom+json+txt"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "db361119-7a02-4eb9-8dd7-371939906147",
       "name": "STOW RS inside inbox user 1",
       "event": [
         {
@@ -137,6 +124,7 @@
           }
         }
       ],
+      "_postman_id": "db361119-7a02-4eb9-8dd7-371939906147",
       "request": {
         "auth": {
           "type": "bearer",
@@ -153,16 +141,13 @@
         ],
         "body": {
           "mode": "file",
-          "file": {
-            "src": null
-          }
+          "file": {}
         },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "bb756943-6195-407a-813e-b032872fd132",
       "name": "user1 get studies list-1studie",
       "event": [
         {
@@ -191,6 +176,7 @@
           }
         }
       ],
+      "_postman_id": "bb756943-6195-407a-813e-b032872fd132",
       "request": {
         "auth": {
           "type": "bearer",
@@ -205,16 +191,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "2d26755a-0650-41cc-9932-cf50f4ea0974",
       "name": "user2 get studies list-Empty",
       "event": [
         {
@@ -231,6 +212,7 @@
           }
         }
       ],
+      "_postman_id": "2d26755a-0650-41cc-9932-cf50f4ea0974",
       "request": {
         "auth": {
           "type": "bearer",
@@ -245,16 +227,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "20664217-985a-4437-9839-65a6cb8f5170",
       "name": "Give to user2 an access to a specific series from user1",
       "event": [
         {
@@ -268,6 +245,7 @@
           }
         }
       ],
+      "_postman_id": "20664217-985a-4437-9839-65a6cb8f5170",
       "request": {
         "auth": {
           "type": "bearer",
@@ -277,16 +255,11 @@
         },
         "method": "PUT",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/users/{{user2_mail}}"
       },
       "response": []
     },
     {
-      "_postman_id": "a0c45f3d-b23e-4580-b0cd-4b13664a7c40",
       "name": "user2 get studies list-1 studie",
       "event": [
         {
@@ -306,6 +279,7 @@
           }
         }
       ],
+      "_postman_id": "a0c45f3d-b23e-4580-b0cd-4b13664a7c40",
       "request": {
         "auth": {
           "type": "bearer",
@@ -320,16 +294,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies"
       },
       "response": []
     },
     {
-      "_postman_id": "4f77bd60-14e4-497e-9da0-0bc9e84281d0",
       "name": "Study Metadata",
       "event": [
         {
@@ -347,6 +316,7 @@
           }
         }
       ],
+      "_postman_id": "4f77bd60-14e4-497e-9da0-0bc9e84281d0",
       "request": {
         "auth": {
           "type": "bearer",
@@ -361,16 +331,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}/metadata"
       },
       "response": []
     },
     {
-      "_postman_id": "e8959474-7d8f-415e-b9ef-7c3519158948",
       "name": "Study Metadata-study_UID doesn't existe",
       "event": [
         {
@@ -386,6 +351,7 @@
           }
         }
       ],
+      "_postman_id": "e8959474-7d8f-415e-b9ef-7c3519158948",
       "request": {
         "auth": {
           "type": "bearer",
@@ -400,16 +366,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}99/metadata"
       },
       "response": []
     },
     {
-      "_postman_id": "4829911a-2883-46cd-930c-7f20bb056dca",
       "name": "Study Metadata-study_UID not valid",
       "event": [
         {
@@ -425,6 +386,7 @@
           }
         }
       ],
+      "_postman_id": "4829911a-2883-46cd-930c-7f20bb056dca",
       "request": {
         "auth": {
           "type": "bearer",
@@ -439,16 +401,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/9999/metadata"
       },
       "response": []
     },
     {
-      "_postman_id": "38851317-0fb8-4472-ad10-ed51140b228d",
       "name": "Study Metadata-Bad access token",
       "event": [
         {
@@ -464,6 +421,7 @@
           }
         }
       ],
+      "_postman_id": "38851317-0fb8-4472-ad10-ed51140b228d",
       "request": {
         "auth": {
           "type": "bearer",
@@ -478,16 +436,11 @@
             "value": "application/dicom+json"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}/metadata"
       },
       "response": []
     },
     {
-      "_postman_id": "1f1875ca-1c23-45a7-8f43-b8910631e21b",
       "name": "Study Metadata-Bad accept",
       "event": [
         {
@@ -503,6 +456,7 @@
           }
         }
       ],
+      "_postman_id": "1f1875ca-1c23-45a7-8f43-b8910631e21b",
       "request": {
         "auth": {
           "type": "bearer",
@@ -517,16 +471,11 @@
             "value": "application/dicom+json+txt"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}/metadata"
       },
       "response": []
     },
     {
-      "_postman_id": "2f029ee3-06a5-41de-9f1c-c8390bf91e24",
       "name": "Study WADO-RS",
       "event": [
         {
@@ -547,6 +496,7 @@
           }
         }
       ],
+      "_postman_id": "2f029ee3-06a5-41de-9f1c-c8390bf91e24",
       "request": {
         "auth": {
           "type": "bearer",
@@ -556,16 +506,11 @@
         },
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}"
       },
       "response": []
     },
     {
-      "_postman_id": "0d060de4-a8db-4bf6-a947-3059bebc5552",
       "name": "Study WADO-RS application/dicom",
       "event": [
         {
@@ -582,6 +527,7 @@
           }
         }
       ],
+      "_postman_id": "0d060de4-a8db-4bf6-a947-3059bebc5552",
       "request": {
         "auth": {
           "type": "bearer",
@@ -597,10 +543,6 @@
             "type": "text"
           }
         ],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
         "url": "{{URL}}/studies/{{study_UID}}"
       },
       "response": []
