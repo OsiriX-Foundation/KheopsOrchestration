@@ -6,12 +6,9 @@
   },
   "item": [
     {
-      "_postman_id": "e18272e7-25ed-44da-805d-ec121aef822d",
       "name": "initialisation",
-      "description": "",
       "item": [
         {
-          "_postman_id": "42b233cc-a56a-40f0-9719-3e56045c3fb0",
           "name": "STOW RS inside inbox user 1",
           "event": [
             {
@@ -26,6 +23,10 @@
               }
             }
           ],
+          "_postman_id": "42b233cc-a56a-40f0-9719-3e56045c3fb0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -42,16 +43,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "a12cc045-5947-40bb-af36-13d01a87b5cb",
           "name": "STOW RS inside inbox user 1",
           "event": [
             {
@@ -70,6 +68,10 @@
               }
             }
           ],
+          "_postman_id": "a12cc045-5947-40bb-af36-13d01a87b5cb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -86,16 +88,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "b26a2664-83fd-4828-9464-aff6b75a76be",
           "name": "STOW RS inside inbox user 1",
           "event": [
             {
@@ -115,6 +114,10 @@
               }
             }
           ],
+          "_postman_id": "b26a2664-83fd-4828-9464-aff6b75a76be",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -131,16 +134,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "69b4cb19-ec6b-4165-ad78-bac85ae3371a",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -174,6 +174,10 @@
               }
             }
           ],
+          "_postman_id": "69b4cb19-ec6b-4165-ad78-bac85ae3371a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -188,16 +192,11 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "54655aae-f94a-41ef-90b3-09450362c4a8",
           "name": "user2 get studies list-empty",
           "event": [
             {
@@ -222,6 +221,10 @@
               }
             }
           ],
+          "_postman_id": "54655aae-f94a-41ef-90b3-09450362c4a8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -236,16 +239,11 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "9b52e1d7-72a6-4d4d-b658-71636f153425",
           "name": "user3 get studies list-empty",
           "event": [
             {
@@ -270,6 +268,10 @@
               }
             }
           ],
+          "_postman_id": "9b52e1d7-72a6-4d4d-b658-71636f153425",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -284,16 +286,11 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "97c93148-e468-4aff-8615-92a35031d09e",
           "name": "Share with user2 study1",
           "event": [
             {
@@ -307,6 +304,10 @@
               }
             }
           ],
+          "_postman_id": "97c93148-e468-4aff-8615-92a35031d09e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -316,10 +317,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/users/{{user2_mail}}?inbox=true",
               "host": [
@@ -343,7 +340,6 @@
           "response": []
         },
         {
-          "_postman_id": "eac270a3-cfec-41b4-966f-2d76d5b3abcd",
           "name": "Share with user2 study2",
           "event": [
             {
@@ -358,6 +354,10 @@
               }
             }
           ],
+          "_postman_id": "eac270a3-cfec-41b4-966f-2d76d5b3abcd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -367,10 +367,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/users/{{user2_mail}}?inbox=true",
               "host": [
@@ -385,8 +381,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -394,7 +389,6 @@
           "response": []
         },
         {
-          "_postman_id": "cd39463d-61e7-42b9-a14f-3293f72f2b99",
           "name": "Share with user2 study3",
           "event": [
             {
@@ -408,6 +402,10 @@
               }
             }
           ],
+          "_postman_id": "cd39463d-61e7-42b9-a14f-3293f72f2b99",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -417,10 +415,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/users/{{user2_mail}}?inbox=true",
               "host": [
@@ -444,7 +438,6 @@
           "response": []
         },
         {
-          "_postman_id": "3b04f72b-8325-44da-930d-a1e39a098bbb",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -478,6 +471,10 @@
               }
             }
           ],
+          "_postman_id": "3b04f72b-8325-44da-930d-a1e39a098bbb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -492,23 +489,17 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "e18272e7-25ed-44da-805d-ec121aef822d"
     },
     {
-      "_postman_id": "df8e1632-cbf4-4418-8e40-a6b43f6dada9",
       "name": "from inbox",
-      "description": "",
       "item": [
         {
-          "_postman_id": "abefae33-877c-44d8-b2d1-8fce1bdcba19",
           "name": "User1 *",
           "event": [
             {
@@ -522,6 +513,10 @@
               }
             }
           ],
+          "_postman_id": "abefae33-877c-44d8-b2d1-8fce1bdcba19",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -531,10 +526,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/favorites?inbox=true",
               "host": [
@@ -548,8 +539,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -557,7 +547,6 @@
           "response": []
         },
         {
-          "_postman_id": "57565cb2-2d01-4257-a638-7c4e24a623c2",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -598,6 +587,10 @@
               }
             }
           ],
+          "_postman_id": "57565cb2-2d01-4257-a638-7c4e24a623c2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -612,10 +605,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -627,18 +616,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -646,7 +632,6 @@
           "response": []
         },
         {
-          "_postman_id": "29935355-bf59-44d1-90fc-8751e5b0beb6",
           "name": "user1 get study 1-includefield favorite",
           "event": [
             {
@@ -685,6 +670,10 @@
               }
             }
           ],
+          "_postman_id": "29935355-bf59-44d1-90fc-8751e5b0beb6",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -699,10 +688,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=00012345&inbox=true",
               "host": [
@@ -716,13 +701,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -730,7 +713,6 @@
           "response": []
         },
         {
-          "_postman_id": "4ace7369-a423-4a6f-8c52-a3ec62caa1bb",
           "name": "user1 get study 2-includefield favorite",
           "event": [
             {
@@ -769,6 +751,10 @@
               }
             }
           ],
+          "_postman_id": "4ace7369-a423-4a6f-8c52-a3ec62caa1bb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -783,10 +769,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=00012345&inbox=true",
               "host": [
@@ -800,13 +782,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -814,7 +794,6 @@
           "response": []
         },
         {
-          "_postman_id": "00962aa6-7329-4114-a4d2-d181e1a073cd",
           "name": "user1 get study 3-includefield favorite",
           "event": [
             {
@@ -854,6 +833,10 @@
               }
             }
           ],
+          "_postman_id": "00962aa6-7329-4114-a4d2-d181e1a073cd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -868,10 +851,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=00012345&inbox=true",
               "host": [
@@ -885,13 +864,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -899,7 +876,6 @@
           "response": []
         },
         {
-          "_postman_id": "6e04d83d-f1a4-406d-b2b2-dbf535ecad8a",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -936,6 +912,10 @@
               }
             }
           ],
+          "_postman_id": "6e04d83d-f1a4-406d-b2b2-dbf535ecad8a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -950,10 +930,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -965,23 +941,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -989,7 +961,6 @@
           "response": []
         },
         {
-          "_postman_id": "4d2206f1-e7cf-452f-bd97-7eeee5ae7265",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -1031,6 +1002,10 @@
               }
             }
           ],
+          "_postman_id": "4d2206f1-e7cf-452f-bd97-7eeee5ae7265",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1045,10 +1020,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -1060,18 +1031,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1079,7 +1047,6 @@
           "response": []
         },
         {
-          "_postman_id": "61ae6afc-7bab-41a8-86d7-97e2f0605d12",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -1114,6 +1081,10 @@
               }
             }
           ],
+          "_postman_id": "61ae6afc-7bab-41a8-86d7-97e2f0605d12",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1128,10 +1099,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -1143,23 +1110,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1167,7 +1130,6 @@
           "response": []
         },
         {
-          "_postman_id": "a4996102-5c1f-4500-9237-4b21b01b0be2",
           "name": "user2 get study 1-includefield favorite",
           "event": [
             {
@@ -1207,6 +1169,10 @@
               }
             }
           ],
+          "_postman_id": "a4996102-5c1f-4500-9237-4b21b01b0be2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1221,10 +1187,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=00012345&inbox=true",
               "host": [
@@ -1238,13 +1200,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1252,7 +1212,6 @@
           "response": []
         },
         {
-          "_postman_id": "bd94d4b6-0ee1-4c46-83b9-b5d3ac39bbc2",
           "name": "user2 get study 2-includefield favorite",
           "event": [
             {
@@ -1292,6 +1251,10 @@
               }
             }
           ],
+          "_postman_id": "bd94d4b6-0ee1-4c46-83b9-b5d3ac39bbc2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1306,10 +1269,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=00012345&inbox=true",
               "host": [
@@ -1323,13 +1282,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1337,7 +1294,6 @@
           "response": []
         },
         {
-          "_postman_id": "513d5a47-7d5f-4ce2-9f8a-0b7b864f488d",
           "name": "user2 get study 3-includefield favorite",
           "event": [
             {
@@ -1377,6 +1333,10 @@
               }
             }
           ],
+          "_postman_id": "513d5a47-7d5f-4ce2-9f8a-0b7b864f488d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1391,10 +1351,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=00012345&inbox=true",
               "host": [
@@ -1408,13 +1364,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1422,7 +1376,6 @@
           "response": []
         },
         {
-          "_postman_id": "edb53c57-6fb5-4e63-80d4-9160fe08dffc",
           "name": "User1 **",
           "event": [
             {
@@ -1436,6 +1389,10 @@
               }
             }
           ],
+          "_postman_id": "edb53c57-6fb5-4e63-80d4-9160fe08dffc",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1445,10 +1402,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
               "host": [
@@ -1462,8 +1415,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1471,7 +1423,6 @@
           "response": []
         },
         {
-          "_postman_id": "d3397f06-cfca-4a4c-ab6b-f43b82f855d8",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -1513,6 +1464,10 @@
               }
             }
           ],
+          "_postman_id": "d3397f06-cfca-4a4c-ab6b-f43b82f855d8",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1527,10 +1482,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -1542,18 +1493,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1561,7 +1509,6 @@
           "response": []
         },
         {
-          "_postman_id": "86c3d55a-5772-4972-a3fc-29af57b14d5a",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -1598,6 +1545,10 @@
               }
             }
           ],
+          "_postman_id": "86c3d55a-5772-4972-a3fc-29af57b14d5a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1612,10 +1563,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -1627,23 +1574,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1651,7 +1594,6 @@
           "response": []
         },
         {
-          "_postman_id": "0e475a6f-23ae-4fef-a59f-8375226f663c",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -1693,6 +1635,10 @@
               }
             }
           ],
+          "_postman_id": "0e475a6f-23ae-4fef-a59f-8375226f663c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1707,10 +1653,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -1722,18 +1664,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1741,7 +1680,6 @@
           "response": []
         },
         {
-          "_postman_id": "6eb4780b-86bd-4d43-b7b2-7c3a754504e0",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -1776,6 +1714,10 @@
               }
             }
           ],
+          "_postman_id": "6eb4780b-86bd-4d43-b7b2-7c3a754504e0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1790,10 +1732,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -1805,23 +1743,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1829,7 +1763,6 @@
           "response": []
         },
         {
-          "_postman_id": "128395d9-ba40-43c9-bbd2-c1632639e783",
           "name": "User2 *",
           "event": [
             {
@@ -1843,6 +1776,10 @@
               }
             }
           ],
+          "_postman_id": "128395d9-ba40-43c9-bbd2-c1632639e783",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1852,10 +1789,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/favorites?inbox=true",
               "host": [
@@ -1869,8 +1802,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1878,7 +1810,6 @@
           "response": []
         },
         {
-          "_postman_id": "6dba96bc-675f-406d-8e43-a5b72a9ce68d",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -1920,6 +1851,10 @@
               }
             }
           ],
+          "_postman_id": "6dba96bc-675f-406d-8e43-a5b72a9ce68d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -1934,10 +1869,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -1949,18 +1880,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -1968,7 +1896,6 @@
           "response": []
         },
         {
-          "_postman_id": "217c3d25-b7e2-47bd-b0cf-2f8a1470cd50",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -2005,6 +1932,10 @@
               }
             }
           ],
+          "_postman_id": "217c3d25-b7e2-47bd-b0cf-2f8a1470cd50",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2019,10 +1950,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -2034,23 +1961,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2058,7 +1981,6 @@
           "response": []
         },
         {
-          "_postman_id": "adff5913-843a-46a9-903f-7c80f7e07bd2",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -2100,6 +2022,10 @@
               }
             }
           ],
+          "_postman_id": "adff5913-843a-46a9-903f-7c80f7e07bd2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2114,10 +2040,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -2129,18 +2051,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2148,7 +2067,6 @@
           "response": []
         },
         {
-          "_postman_id": "31572930-1834-4775-8eae-3c0028092f3c",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -2183,6 +2101,10 @@
               }
             }
           ],
+          "_postman_id": "31572930-1834-4775-8eae-3c0028092f3c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2197,10 +2119,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -2212,23 +2130,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2236,7 +2150,6 @@
           "response": []
         },
         {
-          "_postman_id": "7a0dee03-f519-49af-9e77-741c758feddb",
           "name": "User1 ***",
           "event": [
             {
@@ -2250,6 +2163,10 @@
               }
             }
           ],
+          "_postman_id": "7a0dee03-f519-49af-9e77-741c758feddb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2259,10 +2176,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/favorites?inbox=true",
               "host": [
@@ -2276,8 +2189,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2285,7 +2197,6 @@
           "response": []
         },
         {
-          "_postman_id": "021722fd-e032-42a2-bf3d-abafa387ef84",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -2327,6 +2238,10 @@
               }
             }
           ],
+          "_postman_id": "021722fd-e032-42a2-bf3d-abafa387ef84",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2341,10 +2256,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -2356,18 +2267,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2375,7 +2283,6 @@
           "response": []
         },
         {
-          "_postman_id": "1f56de1f-7ae5-4e6b-8d82-add381da9037",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -2412,6 +2319,10 @@
               }
             }
           ],
+          "_postman_id": "1f56de1f-7ae5-4e6b-8d82-add381da9037",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2426,10 +2337,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -2441,23 +2348,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2465,7 +2368,6 @@
           "response": []
         },
         {
-          "_postman_id": "74512f23-64d6-4c86-9aa3-fa221ef806ba",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -2507,6 +2409,10 @@
               }
             }
           ],
+          "_postman_id": "74512f23-64d6-4c86-9aa3-fa221ef806ba",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2521,10 +2427,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -2536,18 +2438,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2555,7 +2454,6 @@
           "response": []
         },
         {
-          "_postman_id": "734ee161-689c-466f-99cd-741f9b1eda8a",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -2590,6 +2488,10 @@
               }
             }
           ],
+          "_postman_id": "734ee161-689c-466f-99cd-741f9b1eda8a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2604,10 +2506,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -2619,23 +2517,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2643,7 +2537,6 @@
           "response": []
         },
         {
-          "_postman_id": "d3901233-6c57-4776-acdf-f63a89db3fab",
           "name": "User1 **",
           "event": [
             {
@@ -2657,6 +2550,10 @@
               }
             }
           ],
+          "_postman_id": "d3901233-6c57-4776-acdf-f63a89db3fab",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2666,10 +2563,6 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
               "host": [
@@ -2683,8 +2576,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2692,7 +2584,6 @@
           "response": []
         },
         {
-          "_postman_id": "5702acfb-f974-4c86-922d-8749efa73bca",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -2734,6 +2625,10 @@
               }
             }
           ],
+          "_postman_id": "5702acfb-f974-4c86-922d-8749efa73bca",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2748,10 +2643,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -2763,18 +2654,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2782,7 +2670,6 @@
           "response": []
         },
         {
-          "_postman_id": "62a27039-586d-43a0-aa98-92599928ad54",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -2819,6 +2706,10 @@
               }
             }
           ],
+          "_postman_id": "62a27039-586d-43a0-aa98-92599928ad54",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2833,10 +2724,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -2848,23 +2735,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2872,7 +2755,6 @@
           "response": []
         },
         {
-          "_postman_id": "97830c56-e38a-41f9-8033-c8910949dcce",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -2914,6 +2796,10 @@
               }
             }
           ],
+          "_postman_id": "97830c56-e38a-41f9-8033-c8910949dcce",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -2928,10 +2814,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -2943,18 +2825,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -2962,7 +2841,6 @@
           "response": []
         },
         {
-          "_postman_id": "9bef604f-a5a0-4756-a018-9f227d5d0414",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -2997,6 +2875,10 @@
               }
             }
           ],
+          "_postman_id": "9bef604f-a5a0-4756-a018-9f227d5d0414",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3011,10 +2893,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -3026,23 +2904,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -3050,7 +2924,6 @@
           "response": []
         },
         {
-          "_postman_id": "3002c871-4ff2-43f9-a3f8-2d9e184ef20e",
           "name": "User2 **",
           "event": [
             {
@@ -3064,6 +2937,10 @@
               }
             }
           ],
+          "_postman_id": "3002c871-4ff2-43f9-a3f8-2d9e184ef20e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3073,10 +2950,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?inbox=true",
               "host": [
@@ -3090,8 +2963,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -3099,7 +2971,6 @@
           "response": []
         },
         {
-          "_postman_id": "86d9c39f-6ee4-40c9-9187-e1147d04e6c3",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -3141,6 +3012,10 @@
               }
             }
           ],
+          "_postman_id": "86d9c39f-6ee4-40c9-9187-e1147d04e6c3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3155,10 +3030,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -3170,18 +3041,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -3189,7 +3057,6 @@
           "response": []
         },
         {
-          "_postman_id": "bda5e645-c435-486a-a2f7-f82b8decd80a",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -3226,6 +3093,10 @@
               }
             }
           ],
+          "_postman_id": "bda5e645-c435-486a-a2f7-f82b8decd80a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3240,10 +3111,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -3255,23 +3122,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -3279,7 +3142,6 @@
           "response": []
         },
         {
-          "_postman_id": "a014ba6a-a6b9-4f88-b1d5-90a54477d17d",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -3321,6 +3183,10 @@
               }
             }
           ],
+          "_postman_id": "a014ba6a-a6b9-4f88-b1d5-90a54477d17d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3335,10 +3201,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true",
               "host": [
@@ -3350,18 +3212,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -3369,7 +3228,6 @@
           "response": []
         },
         {
-          "_postman_id": "20edbff4-1914-4aa1-9019-819a45301bf0",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -3404,6 +3262,10 @@
               }
             }
           ],
+          "_postman_id": "20edbff4-1914-4aa1-9019-819a45301bf0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3418,10 +3280,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&favorite=true",
               "host": [
@@ -3433,38 +3291,32 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "df8e1632-cbf4-4418-8e40-a6b43f6dada9"
     },
     {
-      "_postman_id": "cecb44d2-ffd0-4cee-b7c5-900c33b86f08",
       "name": "from album",
-      "description": "",
       "item": [
         {
-          "_postman_id": "8e401ecf-bcec-4897-9d6e-716d43963d74",
           "name": "Create an album(1)-OK",
           "event": [
             {
@@ -3525,6 +3377,10 @@
               }
             }
           ],
+          "_postman_id": "8e401ecf-bcec-4897-9d6e-716d43963d74",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3549,19 +3405,16 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -3571,7 +3424,6 @@
           "response": []
         },
         {
-          "_postman_id": "9c81a6d8-4d81-4bec-b2d4-c28023d267c3",
           "name": "Put study 1 in album",
           "event": [
             {
@@ -3585,6 +3437,10 @@
               }
             }
           ],
+          "_postman_id": "9c81a6d8-4d81-4bec-b2d4-c28023d267c3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3594,10 +3450,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}?inbox=true",
               "host": [
@@ -3621,7 +3473,6 @@
           "response": []
         },
         {
-          "_postman_id": "9aaa1e88-77ab-42a0-a04b-2ff83e71c6f9",
           "name": "Put study 2 in album",
           "event": [
             {
@@ -3635,6 +3486,10 @@
               }
             }
           ],
+          "_postman_id": "9aaa1e88-77ab-42a0-a04b-2ff83e71c6f9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3644,10 +3499,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/albums/{{album_id_1}}?inbox=true",
               "host": [
@@ -3671,7 +3522,6 @@
           "response": []
         },
         {
-          "_postman_id": "44800650-1775-4af4-be4d-9924f106a7ac",
           "name": "Put study 3 in album",
           "event": [
             {
@@ -3686,6 +3536,10 @@
               }
             }
           ],
+          "_postman_id": "44800650-1775-4af4-be4d-9924f106a7ac",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3695,10 +3549,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/albums/{{album_id_1}}?inbox=true",
               "host": [
@@ -3713,8 +3563,7 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -3722,7 +3571,6 @@
           "response": []
         },
         {
-          "_postman_id": "786fca5c-d4dc-47d9-8884-083c0f3a04a5",
           "name": "add user 2",
           "event": [
             {
@@ -3746,6 +3594,10 @@
               }
             }
           ],
+          "_postman_id": "786fca5c-d4dc-47d9-8884-083c0f3a04a5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3764,13 +3616,15 @@
                 "value": "application/x-www-form-urlencoded"
               }
             ],
-            "body": {},
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": []
+            },
             "url": "{{URL}}/albums/{{album_id_1}}/users/{{user2_id}}"
           },
           "response": []
         },
         {
-          "_postman_id": "ab4f87b0-8060-47c3-8e66-4a7de578d417",
           "name": "User1 *",
           "event": [
             {
@@ -3784,6 +3638,10 @@
               }
             }
           ],
+          "_postman_id": "ab4f87b0-8060-47c3-8e66-4a7de578d417",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3793,10 +3651,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -3810,8 +3664,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -3819,7 +3672,6 @@
           "response": []
         },
         {
-          "_postman_id": "29f61f17-c15f-4792-a2cf-25657269a171",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -3861,6 +3713,10 @@
               }
             }
           ],
+          "_postman_id": "29f61f17-c15f-4792-a2cf-25657269a171",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3875,10 +3731,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -3890,18 +3742,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -3909,7 +3758,6 @@
           "response": []
         },
         {
-          "_postman_id": "ab685754-b3a9-4250-8b9c-f3bcc6b92ec0",
           "name": "user1 get study 1-includefield favorite",
           "event": [
             {
@@ -3949,6 +3797,10 @@
               }
             }
           ],
+          "_postman_id": "ab685754-b3a9-4250-8b9c-f3bcc6b92ec0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -3963,10 +3815,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
@@ -3980,13 +3828,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -3994,7 +3840,6 @@
           "response": []
         },
         {
-          "_postman_id": "186981a7-2ec0-4507-896d-d557a6aadcaa",
           "name": "user1 get study 2-includefield favorite",
           "event": [
             {
@@ -4034,6 +3879,10 @@
               }
             }
           ],
+          "_postman_id": "186981a7-2ec0-4507-896d-d557a6aadcaa",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4048,10 +3897,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
@@ -4065,13 +3910,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4079,7 +3922,6 @@
           "response": []
         },
         {
-          "_postman_id": "c7ceda0b-00b0-43ee-96d0-fdace7b44032",
           "name": "user1 get study 3-includefield favorite",
           "event": [
             {
@@ -4119,6 +3961,10 @@
               }
             }
           ],
+          "_postman_id": "c7ceda0b-00b0-43ee-96d0-fdace7b44032",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4133,10 +3979,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
@@ -4150,13 +3992,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4164,7 +4004,6 @@
           "response": []
         },
         {
-          "_postman_id": "c22aa879-ca7b-4ec2-8294-019f6c618c0e",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -4201,6 +4040,10 @@
               }
             }
           ],
+          "_postman_id": "c22aa879-ca7b-4ec2-8294-019f6c618c0e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4215,10 +4058,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -4230,23 +4069,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -4254,7 +4089,6 @@
           "response": []
         },
         {
-          "_postman_id": "58c1e625-acb2-49d9-b5a5-5ac1a0f7f006",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -4296,6 +4130,10 @@
               }
             }
           ],
+          "_postman_id": "58c1e625-acb2-49d9-b5a5-5ac1a0f7f006",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4310,10 +4148,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -4325,18 +4159,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4344,7 +4175,6 @@
           "response": []
         },
         {
-          "_postman_id": "c9486d6d-f7e9-4cfd-946a-74834ce6cb1f",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -4379,6 +4209,10 @@
               }
             }
           ],
+          "_postman_id": "c9486d6d-f7e9-4cfd-946a-74834ce6cb1f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4393,10 +4227,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -4408,23 +4238,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -4432,7 +4258,6 @@
           "response": []
         },
         {
-          "_postman_id": "2293bfdc-6922-44ae-9cf4-91711192f59d",
           "name": "user2 get study 1-includefield favorite",
           "event": [
             {
@@ -4472,6 +4297,10 @@
               }
             }
           ],
+          "_postman_id": "2293bfdc-6922-44ae-9cf4-91711192f59d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4486,10 +4315,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
@@ -4503,13 +4328,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4517,7 +4340,6 @@
           "response": []
         },
         {
-          "_postman_id": "978a4dcd-8c01-42ab-b280-0c088d16c361",
           "name": "user2 get study 2-includefield favorite",
           "event": [
             {
@@ -4557,6 +4379,10 @@
               }
             }
           ],
+          "_postman_id": "978a4dcd-8c01-42ab-b280-0c088d16c361",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4571,10 +4397,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
@@ -4588,13 +4410,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4602,7 +4422,6 @@
           "response": []
         },
         {
-          "_postman_id": "2ccca0dc-6f34-45d9-bba7-9e28c10772ea",
           "name": "user2 get study 3-includefield favorite",
           "event": [
             {
@@ -4642,6 +4461,10 @@
               }
             }
           ],
+          "_postman_id": "2ccca0dc-6f34-45d9-bba7-9e28c10772ea",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4656,10 +4479,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/series?includefield=00012345&album={{album_id_1}}",
               "host": [
@@ -4673,13 +4492,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4687,7 +4504,6 @@
           "response": []
         },
         {
-          "_postman_id": "48d7a483-c190-4ae2-9fc8-35663f43c47f",
           "name": "User2 **",
           "event": [
             {
@@ -4701,6 +4517,10 @@
               }
             }
           ],
+          "_postman_id": "48d7a483-c190-4ae2-9fc8-35663f43c47f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4710,10 +4530,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -4727,8 +4543,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4736,7 +4551,6 @@
           "response": []
         },
         {
-          "_postman_id": "c4121c29-63e0-48c3-976a-f6b16ec966f4",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -4778,6 +4592,10 @@
               }
             }
           ],
+          "_postman_id": "c4121c29-63e0-48c3-976a-f6b16ec966f4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4792,10 +4610,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -4807,18 +4621,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -4826,7 +4637,6 @@
           "response": []
         },
         {
-          "_postman_id": "5edd4edb-9963-4dab-8d15-cf853f36b1ad",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -4863,6 +4673,10 @@
               }
             }
           ],
+          "_postman_id": "5edd4edb-9963-4dab-8d15-cf853f36b1ad",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4877,10 +4691,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -4892,23 +4702,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -4916,7 +4722,6 @@
           "response": []
         },
         {
-          "_postman_id": "31f4a342-978e-45e0-89ba-8b049deecce2",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -4958,6 +4763,10 @@
               }
             }
           ],
+          "_postman_id": "31f4a342-978e-45e0-89ba-8b049deecce2",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -4972,10 +4781,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -4987,18 +4792,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -5006,7 +4808,6 @@
           "response": []
         },
         {
-          "_postman_id": "5e3e9d29-d7a7-4e53-a4a9-664cfa27b641",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -5041,6 +4842,10 @@
               }
             }
           ],
+          "_postman_id": "5e3e9d29-d7a7-4e53-a4a9-664cfa27b641",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5055,10 +4860,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -5070,23 +4871,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -5094,7 +4891,6 @@
           "response": []
         },
         {
-          "_postman_id": "8d7fa90b-dd67-4a1a-b50a-bdba1c382b58",
           "name": "User1 ***",
           "event": [
             {
@@ -5108,6 +4904,10 @@
               }
             }
           ],
+          "_postman_id": "8d7fa90b-dd67-4a1a-b50a-bdba1c382b58",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5117,10 +4917,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -5134,8 +4930,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -5143,7 +4938,6 @@
           "response": []
         },
         {
-          "_postman_id": "75d4541b-9b70-44bf-a987-b75586038548",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -5185,6 +4979,10 @@
               }
             }
           ],
+          "_postman_id": "75d4541b-9b70-44bf-a987-b75586038548",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5199,10 +4997,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -5214,18 +5008,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -5233,7 +5024,6 @@
           "response": []
         },
         {
-          "_postman_id": "d9bdc8d7-b9db-417f-8913-adffcaf34ef3",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -5270,6 +5060,10 @@
               }
             }
           ],
+          "_postman_id": "d9bdc8d7-b9db-417f-8913-adffcaf34ef3",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5284,10 +5078,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -5299,23 +5089,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -5323,7 +5109,6 @@
           "response": []
         },
         {
-          "_postman_id": "964adccc-8a5f-4cde-a9dd-3d48c449fc97",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -5365,6 +5150,10 @@
               }
             }
           ],
+          "_postman_id": "964adccc-8a5f-4cde-a9dd-3d48c449fc97",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5379,10 +5168,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -5394,18 +5179,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -5413,7 +5195,6 @@
           "response": []
         },
         {
-          "_postman_id": "feca3a04-f287-41b0-a3fd-8ef5f8c8ec7a",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -5448,6 +5229,10 @@
               }
             }
           ],
+          "_postman_id": "feca3a04-f287-41b0-a3fd-8ef5f8c8ec7a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5462,10 +5247,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -5477,23 +5258,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -5501,7 +5278,6 @@
           "response": []
         },
         {
-          "_postman_id": "5f20181c-6c4b-4aaf-96f8-c0d8faa88880",
           "name": "User2 **",
           "event": [
             {
@@ -5515,6 +5291,10 @@
               }
             }
           ],
+          "_postman_id": "5f20181c-6c4b-4aaf-96f8-c0d8faa88880",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5524,10 +5304,6 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -5541,8 +5317,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -5550,7 +5325,6 @@
           "response": []
         },
         {
-          "_postman_id": "a9397339-eb82-4c4c-8a0e-372eb76f9c8c",
           "name": "user1 get studies list-3 elements",
           "event": [
             {
@@ -5592,6 +5366,10 @@
               }
             }
           ],
+          "_postman_id": "a9397339-eb82-4c4c-8a0e-372eb76f9c8c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5606,10 +5384,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -5621,18 +5395,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -5640,7 +5411,6 @@
           "response": []
         },
         {
-          "_postman_id": "08f288a2-8595-44b7-bf64-419e13ce32c9",
           "name": "user1 get studies list-only favorites",
           "event": [
             {
@@ -5677,6 +5447,10 @@
               }
             }
           ],
+          "_postman_id": "08f288a2-8595-44b7-bf64-419e13ce32c9",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5691,10 +5465,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -5706,23 +5476,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -5730,7 +5496,6 @@
           "response": []
         },
         {
-          "_postman_id": "6f3cfa78-5509-4fb7-a01c-25548d9c55df",
           "name": "user2 get studies list-3 elements",
           "event": [
             {
@@ -5772,6 +5537,10 @@
               }
             }
           ],
+          "_postman_id": "6f3cfa78-5509-4fb7-a01c-25548d9c55df",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5786,10 +5555,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -5801,18 +5566,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -5820,7 +5582,6 @@
           "response": []
         },
         {
-          "_postman_id": "9f28a113-df96-4354-bca5-6964a41e79cd",
           "name": "user2 get studies list-only favorites",
           "event": [
             {
@@ -5855,6 +5616,10 @@
               }
             }
           ],
+          "_postman_id": "9f28a113-df96-4354-bca5-6964a41e79cd",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5869,10 +5634,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&album={{album_id_1}}&favorite=true",
               "host": [
@@ -5884,23 +5645,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 },
                 {
                   "key": "favorite",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -5908,7 +5665,6 @@
           "response": []
         },
         {
-          "_postman_id": "492fa7ae-3e80-47eb-9c09-d5883092b167",
           "name": "edit album remove add series permission",
           "event": [
             {
@@ -5939,6 +5695,10 @@
               }
             }
           ],
+          "_postman_id": "492fa7ae-3e80-47eb-9c09-d5883092b167",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5961,7 +5721,6 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "description": "",
                   "key": "addSeries",
                   "type": "text",
                   "value": "false"
@@ -5973,7 +5732,6 @@
           "response": []
         },
         {
-          "_postman_id": "6d1cb37b-8234-4dd0-b525-3a84555b2e9b",
           "name": "User2 ***",
           "event": [
             {
@@ -5987,6 +5745,10 @@
               }
             }
           ],
+          "_postman_id": "6d1cb37b-8234-4dd0-b525-3a84555b2e9b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -5996,10 +5758,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{FelixStudyUID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -6013,8 +5771,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -6022,7 +5779,6 @@
           "response": []
         },
         {
-          "_postman_id": "3afee357-7613-4361-b657-4736fd6f9433",
           "name": "User2 **",
           "event": [
             {
@@ -6036,6 +5792,10 @@
               }
             }
           ],
+          "_postman_id": "3afee357-7613-4361-b657-4736fd6f9433",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6045,10 +5805,6 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{IncisixStudyUID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -6062,23 +5818,20 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "cecb44d2-ffd0-4cee-b7c5-900c33b86f08"
     },
     {
-      "_postman_id": "a26e0a35-10fa-4fd5-9593-bf871f42d5c8",
       "name": "validation",
-      "description": "",
       "item": [
         {
-          "_postman_id": "e82b2058-74a8-4cca-8f17-01cc285d5ad0",
           "name": "user1 get studies list-3 elements-from album",
           "event": [
             {
@@ -6120,6 +5873,10 @@
               }
             }
           ],
+          "_postman_id": "e82b2058-74a8-4cca-8f17-01cc285d5ad0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6134,10 +5891,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=favorite&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -6149,18 +5902,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "favorite",
-                  "equals": true
+                  "value": "favorite"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -6168,7 +5918,6 @@
           "response": []
         },
         {
-          "_postman_id": "a18719de-f478-4a7b-8332-a0d58a5bb2be",
           "name": "user2 get studies list-3 elements-from album",
           "event": [
             {
@@ -6210,6 +5959,10 @@
               }
             }
           ],
+          "_postman_id": "a18719de-f478-4a7b-8332-a0d58a5bb2be",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6224,10 +5977,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=favorite&sort=PatientName&album={{album_id_1}}",
               "host": [
@@ -6239,18 +5988,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "favorite",
-                  "equals": true
+                  "value": "favorite"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -6258,7 +6004,6 @@
           "response": []
         },
         {
-          "_postman_id": "fd3677f3-b2e8-40bf-b48d-4ab8e84a2aaf",
           "name": "user1 get studies list-3 elements-from inbox",
           "event": [
             {
@@ -6300,6 +6045,10 @@
               }
             }
           ],
+          "_postman_id": "fd3677f3-b2e8-40bf-b48d-4ab8e84a2aaf",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6314,10 +6063,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=favorite&sort=PatientName&inbox=true",
               "host": [
@@ -6329,18 +6074,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "favorite",
-                  "equals": true
+                  "value": "favorite"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
@@ -6348,7 +6090,6 @@
           "response": []
         },
         {
-          "_postman_id": "19fdcb2c-e997-4ba7-83f3-60e57d00af7b",
           "name": "user2 get studies list-3 elements-from inbox",
           "event": [
             {
@@ -6390,6 +6131,10 @@
               }
             }
           ],
+          "_postman_id": "19fdcb2c-e997-4ba7-83f3-60e57d00af7b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6404,10 +6149,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=favorite&sort=PatientName&inbox=true",
               "host": [
@@ -6419,33 +6160,28 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "favorite",
-                  "equals": true
+                  "value": "favorite"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "a26e0a35-10fa-4fd5-9593-bf871f42d5c8"
     },
     {
-      "_postman_id": "15e159d7-3d06-4bd0-aab9-561de212ab85",
       "name": "error",
-      "description": "",
       "item": [
         {
-          "_postman_id": "5c599fd1-4e35-4fcd-9c8e-87ccd1f9f2ee",
           "name": "user1 get study 1-no source",
           "event": [
             {
@@ -6471,6 +6207,10 @@
               }
             }
           ],
+          "_postman_id": "5c599fd1-4e35-4fcd-9c8e-87ccd1f9f2ee",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6485,10 +6225,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=00012345",
               "host": [
@@ -6502,8 +6238,7 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 }
               ]
             }
@@ -6511,7 +6246,6 @@
           "response": []
         },
         {
-          "_postman_id": "e71751c7-59e0-4837-8795-52377df1102d",
           "name": "user1 get studies list-no source",
           "event": [
             {
@@ -6536,6 +6270,10 @@
               }
             }
           ],
+          "_postman_id": "e71751c7-59e0-4837-8795-52377df1102d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6550,10 +6288,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName",
               "host": [
@@ -6565,13 +6299,11 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 }
               ]
             }
@@ -6579,7 +6311,6 @@
           "response": []
         },
         {
-          "_postman_id": "21a57b55-667d-4c07-955e-59201f7e58c7",
           "name": "Add fav no source",
           "event": [
             {
@@ -6593,6 +6324,10 @@
               }
             }
           ],
+          "_postman_id": "21a57b55-667d-4c07-955e-59201f7e58c7",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6602,16 +6337,11 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/favorites"
           },
           "response": []
         },
         {
-          "_postman_id": "ee23dd5e-0e59-4b5b-a247-3309eade793c",
           "name": "Create an album(1)-OK",
           "event": [
             {
@@ -6672,6 +6402,10 @@
               }
             }
           ],
+          "_postman_id": "ee23dd5e-0e59-4b5b-a247-3309eade793c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6696,19 +6430,16 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -6718,7 +6449,6 @@
           "response": []
         },
         {
-          "_postman_id": "d771d9b3-05db-4bca-af11-faefbdeff201",
           "name": "user1 get study 1-too many sources",
           "event": [
             {
@@ -6744,6 +6474,10 @@
               }
             }
           ],
+          "_postman_id": "d771d9b3-05db-4bca-af11-faefbdeff201",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6758,10 +6492,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/series?includefield=00012345&inbox=true&album={{album_id_1}}",
               "host": [
@@ -6775,18 +6505,15 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -6794,7 +6521,6 @@
           "response": []
         },
         {
-          "_postman_id": "f0ca8d65-b766-4a24-b763-ab7a61f4edde",
           "name": "user1 get studies list-too many sources",
           "event": [
             {
@@ -6820,6 +6546,10 @@
               }
             }
           ],
+          "_postman_id": "f0ca8d65-b766-4a24-b763-ab7a61f4edde",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6834,10 +6564,6 @@
                 "value": "application/dicom+json"
               }
             ],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies?includefield=00012345&sort=PatientName&inbox=true&album={{album_id_1}}",
               "host": [
@@ -6849,23 +6575,19 @@
               "query": [
                 {
                   "key": "includefield",
-                  "value": "00012345",
-                  "equals": true
+                  "value": "00012345"
                 },
                 {
                   "key": "sort",
-                  "value": "PatientName",
-                  "equals": true
+                  "value": "PatientName"
                 },
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -6873,7 +6595,6 @@
           "response": []
         },
         {
-          "_postman_id": "7d6404b7-6b59-4190-9e80-ec3e3dd5ef3c",
           "name": "Add fav album and inbox source",
           "event": [
             {
@@ -6887,6 +6608,10 @@
               }
             }
           ],
+          "_postman_id": "7d6404b7-6b59-4190-9e80-ec3e3dd5ef3c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6896,10 +6621,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/favorites?inbox=true&album={{album_id_1}}",
               "host": [
@@ -6913,13 +6634,11 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 },
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -6927,7 +6646,6 @@
           "response": []
         },
         {
-          "_postman_id": "ba56547d-54be-4da1-9150-fa3cb59ca65f",
           "name": "Add fav album not a member",
           "event": [
             {
@@ -6941,6 +6659,10 @@
               }
             }
           ],
+          "_postman_id": "ba56547d-54be-4da1-9150-fa3cb59ca65f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6950,10 +6672,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -6967,8 +6685,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -6976,7 +6693,6 @@
           "response": []
         },
         {
-          "_postman_id": "67bca478-a13e-4ea9-891b-c1ca43d83f22",
           "name": "Add fav album no study",
           "event": [
             {
@@ -6990,6 +6706,10 @@
               }
             }
           ],
+          "_postman_id": "67bca478-a13e-4ea9-891b-c1ca43d83f22",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -6999,10 +6719,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}/favorites?album={{album_id_1}}",
               "host": [
@@ -7016,8 +6732,7 @@
               "query": [
                 {
                   "key": "album",
-                  "value": "{{album_id_1}}",
-                  "equals": true
+                  "value": "{{album_id_1}}"
                 }
               ]
             }
@@ -7025,7 +6740,6 @@
           "response": []
         },
         {
-          "_postman_id": "47c793ab-ec38-4d80-8c5a-1e0df91934a0",
           "name": "Add fav inbox no study",
           "event": [
             {
@@ -7039,6 +6753,10 @@
               }
             }
           ],
+          "_postman_id": "47c793ab-ec38-4d80-8c5a-1e0df91934a0",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -7048,10 +6766,6 @@
             },
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": {
               "raw": "{{URL}}/studies/{{study_UID}}23/favorites?inbox=true",
               "host": [
@@ -7065,15 +6779,15 @@
               "query": [
                 {
                   "key": "inbox",
-                  "value": "true",
-                  "equals": true
+                  "value": "true"
                 }
               ]
             }
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "15e159d7-3d06-4bd0-aab9-561de212ab85"
     }
   ]
 }
