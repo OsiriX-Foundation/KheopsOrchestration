@@ -10144,18 +10144,18 @@
               "urlencoded": [
                 {
                   "key": "sendSeries",
-                  "type": "text",
-                  "value": "false"
+                  "value": "false",
+                  "type": "text"
                 },
                 {
                   "key": "name",
-                  "type": "text",
-                  "value": "name 1"
+                  "value": "name 1",
+                  "type": "text"
                 },
                 {
                   "key": "description",
-                  "type": "text",
-                  "value": "description 1"
+                  "value": "description 1",
+                  "type": "text"
                 }
               ]
             },
