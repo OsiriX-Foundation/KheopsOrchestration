@@ -6,12 +6,9 @@
   },
   "item": [
     {
-      "_postman_id": "1195e98a-f9a8-4b8d-b2c3-6d2ade14965e",
       "name": "secure filter",
-      "description": "",
       "item": [
         {
-          "_postman_id": "7f74dabe-7c65-4d37-89a2-6fa544be984d",
           "name": "Create an album-unknown user-Unauthorized",
           "event": [
             {
@@ -37,6 +34,10 @@
               }
             }
           ],
+          "_postman_id": "7f74dabe-7c65-4d37-89a2-6fa544be984d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -61,19 +62,16 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -83,7 +81,6 @@
           "response": []
         },
         {
-          "_postman_id": "00cefa22-fd2d-4f1f-8e0c-2a5fd0adc580",
           "name": "Create an album-unknown user for kheops but known by keycloak",
           "event": [
             {
@@ -108,6 +105,10 @@
               }
             }
           ],
+          "_postman_id": "00cefa22-fd2d-4f1f-8e0c-2a5fd0adc580",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -130,19 +131,16 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "description": "",
                   "key": "sendSeries",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "name",
                   "type": "text",
                   "value": "name 1"
                 },
                 {
-                  "description": "",
                   "key": "description",
                   "type": "text",
                   "value": "description 1"
@@ -154,7 +152,6 @@
           "response": []
         },
         {
-          "_postman_id": "d3e75e4a-97f9-4897-aa79-50d0d52e8f9a",
           "name": "Create an album-known user",
           "event": [
             {
@@ -178,6 +175,10 @@
               }
             }
           ],
+          "_postman_id": "d3e75e4a-97f9-4897-aa79-50d0d52e8f9a",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
             "auth": {
               "type": "bearer",
@@ -200,19 +201,16 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "description": "",
                   "key": "sendSeries",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "name",
                   "type": "text",
                   "value": "name 1"
                 },
                 {
-                  "description": "",
                   "key": "description",
                   "type": "text",
                   "value": "description 1"
@@ -223,7 +221,8 @@
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "1195e98a-f9a8-4b8d-b2c3-6d2ade14965e"
     }
   ]
 }
