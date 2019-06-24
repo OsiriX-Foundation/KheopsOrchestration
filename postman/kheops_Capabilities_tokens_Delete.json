@@ -6,12 +6,9 @@
   },
   "item": [
     {
-      "_postman_id": "1be3f6f5-ec31-4d70-b5e3-2c2fe643fada",
       "name": "Album",
-      "description": "",
       "item": [
         {
-          "_postman_id": "22df5bbd-48a3-4c22-b68d-a8005bee8598",
           "name": "Create an album(1)-OK",
           "event": [
             {
@@ -72,6 +69,7 @@
               }
             }
           ],
+          "_postman_id": "22df5bbd-48a3-4c22-b68d-a8005bee8598",
           "request": {
             "auth": {
               "type": "bearer",
@@ -96,19 +94,16 @@
                 {
                   "key": "sendSeries",
                   "value": "false",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "name",
                   "value": "name 1",
-                  "description": "",
                   "type": "text"
                 },
                 {
                   "key": "description",
                   "value": "description 1",
-                  "description": "",
                   "type": "text"
                 }
               ]
@@ -118,6 +113,7 @@
           "response": []
         }
       ],
+      "_postman_id": "1be3f6f5-ec31-4d70-b5e3-2c2fe643fada",
       "event": [
         {
           "listen": "prerequest",
@@ -142,12 +138,9 @@
       ]
     },
     {
-      "_postman_id": "07290694-4200-4a42-91f6-76ac016a6f80",
       "name": "Generate capabilities tokens",
-      "description": "",
       "item": [
         {
-          "_postman_id": "eae062e4-cde8-48e6-97bf-7dce5c8f37bc",
           "name": "Create a capability token write",
           "event": [
             {
@@ -183,6 +176,7 @@
               }
             }
           ],
+          "_postman_id": "eae062e4-cde8-48e6-97bf-7dce5c8f37bc",
           "request": {
             "auth": {
               "type": "bearer",
@@ -210,37 +204,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "false"
@@ -252,7 +240,6 @@
           "response": []
         },
         {
-          "_postman_id": "7e139b7f-0844-4142-ba64-b26750969724",
           "name": "Create a capability token read",
           "event": [
             {
@@ -288,6 +275,7 @@
               }
             }
           ],
+          "_postman_id": "7e139b7f-0844-4142-ba64-b26750969724",
           "request": {
             "auth": {
               "type": "bearer",
@@ -315,37 +303,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "false"
@@ -357,7 +339,6 @@
           "response": []
         },
         {
-          "_postman_id": "e46b6000-a9fd-473d-b8f4-54dd28d8c66d",
           "name": "Create a capability token read write",
           "event": [
             {
@@ -393,6 +374,7 @@
               }
             }
           ],
+          "_postman_id": "e46b6000-a9fd-473d-b8f4-54dd28d8c66d",
           "request": {
             "auth": {
               "type": "bearer",
@@ -420,37 +402,31 @@
                   "value": "{{description}}"
                 },
                 {
-                  "description": "",
                   "key": "scope_type",
                   "type": "text",
                   "value": "album"
                 },
                 {
-                  "description": "",
                   "key": "album",
                   "type": "text",
                   "value": "{{album_id_1}}"
                 },
                 {
-                  "description": "",
                   "key": "read_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "write_permission",
                   "type": "text",
                   "value": "true"
                 },
                 {
-                  "description": "",
                   "key": "appropriate_permission",
                   "type": "text",
                   "value": "false"
                 },
                 {
-                  "description": "",
                   "key": "download_permission",
                   "type": "text",
                   "value": "false"
@@ -462,6 +438,7 @@
           "response": []
         }
       ],
+      "_postman_id": "07290694-4200-4a42-91f6-76ac016a6f80",
       "event": [
         {
           "listen": "prerequest",
@@ -486,26 +463,24 @@
       ]
     },
     {
-      "_postman_id": "411b35e0-0a97-4317-a8e9-87f48e92a73d",
       "name": "STOW RS",
-      "description": "",
       "item": [
         {
+          "name": "STOW RS inside album capability token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7524252c-94ee-4cd1-8780-15785472765a",
+                "exec": [
+                  "// ensure healthy response code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
           "_postman_id": "8467db10-42f1-4f2a-b941-69a8ffd96148",
-          "name": "STOW RS inside album capability token",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "7524252c-94ee-4cd1-8780-15785472765a",
-                "exec": [
-                  "// ensure healthy response code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
           "request": {
             "auth": {
               "type": "bearer",
@@ -522,47 +497,45 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
+          "name": "album get studies list",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
+                  "",
+                  "var jsonObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
+                  "",
+                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
           "_postman_id": "c7dadf1d-0bcd-474b-a39b-ff409ac58170",
-          "name": "album get studies list",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "128dde23-feee-4f1e-a16a-0f5249f5a7ec",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "tests[\"Not empty response []\"] = responseBody != \"[]\"",
-                  "",
-                  "var jsonObject = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Return 1 study\"] = jsonObject.length === 1;",
-                  "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
-                ],
-                "type": "text/javascript"
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "433061e1-5fc1-4ead-8d1d-c7aa6cd7c5f4",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
           "request": {
             "auth": {
               "type": "bearer",
@@ -572,15 +545,12 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
       ],
+      "_postman_id": "411b35e0-0a97-4317-a8e9-87f48e92a73d",
       "event": [
         {
           "listen": "prerequest",
@@ -605,12 +575,9 @@
       ]
     },
     {
-      "_postman_id": "45a1c966-f069-41ef-aa35-560e1030a7a1",
       "name": "Delete /study/.../series/...",
-      "description": "",
       "item": [
         {
-          "_postman_id": "19fae0d7-bad3-4c5d-8dcc-efd8325eff56",
           "name": "Delete studies from album-write",
           "event": [
             {
@@ -624,6 +591,7 @@
               }
             }
           ],
+          "_postman_id": "19fae0d7-bad3-4c5d-8dcc-efd8325eff56",
           "request": {
             "auth": {
               "type": "bearer",
@@ -633,16 +601,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "1e2a8d98-bccb-4b24-8378-d0d44b9a8b5a",
           "name": "Delete studies from album-read",
           "event": [
             {
@@ -656,6 +619,7 @@
               }
             }
           ],
+          "_postman_id": "1e2a8d98-bccb-4b24-8378-d0d44b9a8b5a",
           "request": {
             "auth": {
               "type": "bearer",
@@ -665,16 +629,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "c83b76ca-dd3a-46fd-9ceb-01591396a195",
           "name": "album get studies list",
           "event": [
             {
@@ -706,6 +665,7 @@
               }
             }
           ],
+          "_postman_id": "c83b76ca-dd3a-46fd-9ceb-01591396a195",
           "request": {
             "auth": {
               "type": "bearer",
@@ -715,16 +675,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "71412691-7899-4e74-806b-1130af0dac64",
           "name": "Delete studies from album-read-write",
           "event": [
             {
@@ -738,6 +693,7 @@
               }
             }
           ],
+          "_postman_id": "71412691-7899-4e74-806b-1130af0dac64",
           "request": {
             "auth": {
               "type": "bearer",
@@ -747,16 +703,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "8c16b989-54f2-42ad-9cdd-b1e771ddcd59",
           "name": "album get studies list",
           "event": [
             {
@@ -780,6 +731,7 @@
               }
             }
           ],
+          "_postman_id": "8c16b989-54f2-42ad-9cdd-b1e771ddcd59",
           "request": {
             "auth": {
               "type": "bearer",
@@ -789,23 +741,17 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
-      ]
+      ],
+      "_postman_id": "45a1c966-f069-41ef-aa35-560e1030a7a1"
     },
     {
-      "_postman_id": "8de25ada-7b4e-47a2-8a39-edeadcd9677c",
       "name": "STOW RS",
-      "description": "",
       "item": [
         {
-          "_postman_id": "9d611f56-797a-4f65-8ff6-9445b71f8b7a",
           "name": "STOW RS inside album capability token",
           "event": [
             {
@@ -820,6 +766,7 @@
               }
             }
           ],
+          "_postman_id": "9d611f56-797a-4f65-8ff6-9445b71f8b7a",
           "request": {
             "auth": {
               "type": "bearer",
@@ -836,16 +783,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "61daaae0-7631-42f2-b064-87e0907b05f3",
           "name": "album get studies list",
           "event": [
             {
@@ -877,6 +821,7 @@
               }
             }
           ],
+          "_postman_id": "61daaae0-7631-42f2-b064-87e0907b05f3",
           "request": {
             "auth": {
               "type": "bearer",
@@ -886,15 +831,12 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
       ],
+      "_postman_id": "8de25ada-7b4e-47a2-8a39-edeadcd9677c",
       "event": [
         {
           "listen": "prerequest",
@@ -919,12 +861,9 @@
       ]
     },
     {
-      "_postman_id": "4780da58-a742-4fb6-a828-a2929c171447",
       "name": "Delete /study/.../series/.../albums/...",
-      "description": "",
       "item": [
         {
-          "_postman_id": "93a3a684-015c-4b1e-abc7-cd9876f3243e",
           "name": "Delete studies from album-write",
           "event": [
             {
@@ -938,6 +877,7 @@
               }
             }
           ],
+          "_postman_id": "93a3a684-015c-4b1e-abc7-cd9876f3243e",
           "request": {
             "auth": {
               "type": "bearer",
@@ -947,16 +887,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
         {
-          "_postman_id": "4490a892-4a42-4031-b7de-c0612bd551d1",
           "name": "Delete studies from album-read",
           "event": [
             {
@@ -970,6 +905,7 @@
               }
             }
           ],
+          "_postman_id": "4490a892-4a42-4031-b7de-c0612bd551d1",
           "request": {
             "auth": {
               "type": "bearer",
@@ -979,16 +915,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
         {
-          "_postman_id": "26871681-092c-4ad5-934e-c4a46f5e4dca",
           "name": "album get studies list",
           "event": [
             {
@@ -1020,6 +951,7 @@
               }
             }
           ],
+          "_postman_id": "26871681-092c-4ad5-934e-c4a46f5e4dca",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1029,16 +961,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "1beeb46f-85d0-469a-9220-402d95a8b57a",
           "name": "Delete studies from album-read-write",
           "event": [
             {
@@ -1052,6 +979,7 @@
               }
             }
           ],
+          "_postman_id": "1beeb46f-85d0-469a-9220-402d95a8b57a",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1061,16 +989,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/series/{{series_UID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
         {
-          "_postman_id": "e39e3790-9a72-4efe-ae82-731181d55292",
           "name": "album get studies list",
           "event": [
             {
@@ -1095,6 +1018,7 @@
               }
             }
           ],
+          "_postman_id": "e39e3790-9a72-4efe-ae82-731181d55292",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1104,15 +1028,12 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
       ],
+      "_postman_id": "4780da58-a742-4fb6-a828-a2929c171447",
       "event": [
         {
           "listen": "prerequest",
@@ -1137,12 +1058,9 @@
       ]
     },
     {
-      "_postman_id": "14d8cc70-fbcd-4513-a392-d14d5bff6ae0",
       "name": "STOW RS",
-      "description": "",
       "item": [
         {
-          "_postman_id": "d51a4990-6c42-4601-a995-4f57003d3de3",
           "name": "STOW RS inside album capability token",
           "event": [
             {
@@ -1157,6 +1075,7 @@
               }
             }
           ],
+          "_postman_id": "d51a4990-6c42-4601-a995-4f57003d3de3",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1173,16 +1092,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "7b0ede27-21cb-4366-836e-f65fa59bbfd8",
           "name": "album get studies list",
           "event": [
             {
@@ -1214,6 +1130,7 @@
               }
             }
           ],
+          "_postman_id": "7b0ede27-21cb-4366-836e-f65fa59bbfd8",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1223,15 +1140,12 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
       ],
+      "_postman_id": "14d8cc70-fbcd-4513-a392-d14d5bff6ae0",
       "event": [
         {
           "listen": "prerequest",
@@ -1256,12 +1170,9 @@
       ]
     },
     {
-      "_postman_id": "6d3561e9-040b-419c-ad16-c25b0a2a0672",
       "name": "Delete /study/...",
-      "description": "",
       "item": [
         {
-          "_postman_id": "a390afb8-d7c6-496c-b0b0-13534d5a8675",
           "name": "Delete studies from album-write",
           "event": [
             {
@@ -1275,6 +1186,7 @@
               }
             }
           ],
+          "_postman_id": "a390afb8-d7c6-496c-b0b0-13534d5a8675",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1284,16 +1196,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "f6d43e38-729f-4c9e-be9e-d8182b2945bf",
           "name": "Delete studies from album-read",
           "event": [
             {
@@ -1307,6 +1214,7 @@
               }
             }
           ],
+          "_postman_id": "f6d43e38-729f-4c9e-be9e-d8182b2945bf",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1316,16 +1224,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "1e665026-64dd-4dfc-aa8b-7b9178eff60f",
           "name": "album get studies list",
           "event": [
             {
@@ -1357,6 +1260,7 @@
               }
             }
           ],
+          "_postman_id": "1e665026-64dd-4dfc-aa8b-7b9178eff60f",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1366,16 +1270,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "1fc0df55-f8e2-4d88-a048-adaddfe1fc08",
           "name": "Delete studies from album-read-write",
           "event": [
             {
@@ -1389,6 +1288,7 @@
               }
             }
           ],
+          "_postman_id": "1fc0df55-f8e2-4d88-a048-adaddfe1fc08",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1398,16 +1298,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}"
           },
           "response": []
         },
         {
-          "_postman_id": "754d4044-c4ab-49a3-a648-fc2d8eba8e1c",
           "name": "album get studies list",
           "event": [
             {
@@ -1431,6 +1326,7 @@
               }
             }
           ],
+          "_postman_id": "754d4044-c4ab-49a3-a648-fc2d8eba8e1c",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1440,15 +1336,12 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
       ],
+      "_postman_id": "6d3561e9-040b-419c-ad16-c25b0a2a0672",
       "event": [
         {
           "listen": "prerequest",
@@ -1473,12 +1366,9 @@
       ]
     },
     {
-      "_postman_id": "9f3b73fe-69b8-4412-8323-54f72017d42b",
       "name": "STOW RS",
-      "description": "",
       "item": [
         {
-          "_postman_id": "11c44617-8f5b-4620-a060-e272f615f904",
           "name": "STOW RS inside album capability token",
           "event": [
             {
@@ -1493,6 +1383,7 @@
               }
             }
           ],
+          "_postman_id": "11c44617-8f5b-4620-a060-e272f615f904",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1509,16 +1400,13 @@
             ],
             "body": {
               "mode": "file",
-              "file": {
-                "src": null
-              }
+              "file": {}
             },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "16742311-74f1-47d3-8ee4-1f220679e4f4",
           "name": "album get studies list",
           "event": [
             {
@@ -1550,6 +1438,7 @@
               }
             }
           ],
+          "_postman_id": "16742311-74f1-47d3-8ee4-1f220679e4f4",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1559,15 +1448,12 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
       ],
+      "_postman_id": "9f3b73fe-69b8-4412-8323-54f72017d42b",
       "event": [
         {
           "listen": "prerequest",
@@ -1592,12 +1478,9 @@
       ]
     },
     {
-      "_postman_id": "f091ecf5-a7b1-49db-acf0-9ed105077d2f",
       "name": "Delete /study/.../albums/...",
-      "description": "",
       "item": [
         {
-          "_postman_id": "59d7ba31-844f-4672-a669-459ef7dded75",
           "name": "Delete studies from album-write",
           "event": [
             {
@@ -1611,6 +1494,7 @@
               }
             }
           ],
+          "_postman_id": "59d7ba31-844f-4672-a669-459ef7dded75",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1620,16 +1504,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
         {
-          "_postman_id": "3edb29e1-64cd-486e-a2a8-9bad9503e635",
           "name": "Delete studies from album-read",
           "event": [
             {
@@ -1643,6 +1522,7 @@
               }
             }
           ],
+          "_postman_id": "3edb29e1-64cd-486e-a2a8-9bad9503e635",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1652,16 +1532,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
         {
-          "_postman_id": "fbe0a822-b36f-44cd-a561-1dc970143ae4",
           "name": "album get studies list",
           "event": [
             {
@@ -1693,6 +1568,7 @@
               }
             }
           ],
+          "_postman_id": "fbe0a822-b36f-44cd-a561-1dc970143ae4",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1702,16 +1578,11 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         },
         {
-          "_postman_id": "b8734a66-a721-4c1e-90fd-859e275eb457",
           "name": "Delete studies from album-read-write",
           "event": [
             {
@@ -1725,6 +1596,7 @@
               }
             }
           ],
+          "_postman_id": "b8734a66-a721-4c1e-90fd-859e275eb457",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1734,16 +1606,11 @@
             },
             "method": "DELETE",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies/{{study_UID}}/albums/{{album_id_1}}"
           },
           "response": []
         },
         {
-          "_postman_id": "fc1ef5df-e2f8-43ef-b0f3-0bbbe689c8d5",
           "name": "album get studies list",
           "event": [
             {
@@ -1768,6 +1635,7 @@
               }
             }
           ],
+          "_postman_id": "fc1ef5df-e2f8-43ef-b0f3-0bbbe689c8d5",
           "request": {
             "auth": {
               "type": "bearer",
@@ -1777,15 +1645,12 @@
             },
             "method": "GET",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
             "url": "{{URL}}/studies"
           },
           "response": []
         }
       ],
+      "_postman_id": "f091ecf5-a7b1-49db-acf0-9ed105077d2f",
       "event": [
         {
           "listen": "prerequest",
