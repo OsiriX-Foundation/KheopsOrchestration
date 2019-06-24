@@ -993,9 +993,7 @@
               "",
               "tests[\"[INFO] Response: \" + responseBody] = true;",
               "",
-              "tests[\"User is correct\"] = jsonObject.user === pm.variables.get(\"user1_id\");",
-              "",
-              "tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"Bearer\";",
+              "tests[\"token_type is \\\"Bearer\\\"\"] = jsonObject.token_type === \"bearer\";",
               "",
               "pm.environment.set(\"capability_access_token_user1\", jsonObject.access_token);"
             ],
