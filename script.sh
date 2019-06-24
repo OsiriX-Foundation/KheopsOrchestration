@@ -19,14 +19,12 @@
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testIncisix.dcm\"}/" postman/kheops-Study_List-withOptions.json
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMaceosix.dcm\"}/" postman/kheops-Study_List-withOptions.json
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMagix.dcm\"}/" postman/kheops-Study_List-withOptions.json
- 
- 
- sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testStudy.dcm\"/" postman/kheops-Album.json
- sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testFelix.dcm\"/" postman/kheops-Album.json
- sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testIncisix.dcm\"/" postman/kheops-Album.json
- sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testMaceosix.dcm\"/" postman/kheops-Album.json
- sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testMagix.dcm\"/" postman/kheops-Album.json
- 
+
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testStudy.dcm\"}/" postman/kheops-Album.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testFelix.dcm\"}/" postman/kheops-Album.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testIncisix.dcm\"}/" postman/kheops-Album.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMaceosix.dcm\"}/" postman/kheops-Album.json
+ sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testMagix.dcm\"}/" postman/kheops-Album.json
  
  sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testStudy.dcm\"/" postman/kheops-series_favorite.json
  sed -i "0,/\"src\": null/ s/\"src\": null/\"src\": \"testFelix.dcm\"/" postman/kheops-series_favorite.json
