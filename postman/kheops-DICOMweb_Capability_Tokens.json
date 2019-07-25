@@ -150,42 +150,6 @@
       "response": []
     },
     {
-      "name": "Get capability token info",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "exec": [
-              "// ensure healthy response code",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "tests[\"[INFO] Response: \" + responseBody] = true;",
-              "",
-              "var jsonObject = JSON.parse(responseBody);",
-              "",
-              "tests[\"revoked = false\"] = jsonObject.revoked === false;",
-              "",
-              "tests[\"scope_type = user\"] = jsonObject.scope_type === \"user\";",
-              ""
-            ],
-            "id": "1f93fefa-54d3-401d-a81d-60eb67e082d2",
-            "type": "text/javascript"
-          }
-        }
-      ],
-      "_postman_id": "57bf5273-0480-44ec-8e3e-032d07b7c533",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": ""
-        },
-        "url": "{{URL}}/capabilities/{{secret_capability_token}}"
-      },
-      "response": []
-    },
-    {
       "name": "Get capability token info-Bad token",
       "event": [
         {
