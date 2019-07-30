@@ -1182,7 +1182,6 @@
                   "",
                   "tests[\"Empty response\"] = JSON.parse(responseBody).active === false;",
                   "",
-                  "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
                 "type": "text/javascript"
