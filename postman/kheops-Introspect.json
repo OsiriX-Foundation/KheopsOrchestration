@@ -1180,7 +1180,11 @@
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
-                  "tests[\"Empty response\"] = JSON.parse(responseBody).active === false;",
+                  "const responseObject = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"active is false\"] = responseObject.active === false;",
+                  "",
+                  "tests[\"only one property\"] = Object.keys(responseObject).length === 1;",
                   "",
                   "tests[\"[INFO] Response: \" + responseBody] = true;"
                 ],
