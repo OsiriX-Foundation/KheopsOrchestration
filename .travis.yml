@@ -31,7 +31,7 @@ script:
 ### Must be first
   - cat postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
-  - node_modules/.bin/newman run postman/kheops-Get_tokens.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json --export-environment postman/Workspace.postman_globals.json
+  - node_modules/.bin/newman run postman/kheops-Get_tokens.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json --export-globals postman/Workspace.postman_globals.json
   - cat postman/Workspace.postman_globals.json
 #### 
   - ./script_run_docker.sh
