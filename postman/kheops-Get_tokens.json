@@ -1,0 +1,218 @@
+{
+  "info": {
+    "_postman_id": "d0aa26a1-d91b-4f92-9ded-72c00b2e8a5c",
+    "name": "kheops-Get_tokens",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "well-known",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "ddcb929e-d97b-43a0-8d3c-d8af22b21dc1",
+            "exec": [
+              "var jsonObject = JSON.parse(responseBody);",
+              "",
+              "pm.globals.set(\"issuer\", jsonObject.issuer);",
+              "pm.globals.set(\"authorization_endpoint\", jsonObject.authorization_endpoint);",
+              "pm.globals.set(\"token_endpoint\", jsonObject.token_endpoint);",
+              "pm.globals.set(\"token_introspection_endpoint\", jsonObject.token_introspection_endpoint);",
+              "pm.globals.set(\"userinfo_endpoint\", jsonObject.userinfo_endpoint);",
+              "pm.globals.set(\"end_session_endpoint\", jsonObject.end_session_endpoint);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "fcdb8193-2f2a-4eec-9f38-4fee663e4f99",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://keycloak.kheops.online/auth/realms/travis/.well-known/openid-configuration"
+      },
+      "response": []
+    },
+    {
+      "name": "get token user 1 (titi)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "50c68d5b-2494-46c3-bda5-9e12fad984ca",
+            "exec": [
+              "var jsonObject = JSON.parse(responseBody);",
+              "",
+              "pm.globals.set(\"user1_token\", jsonObject.access_token);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "6bbb7de9-4cfa-4e78-9de4-312f1476093f",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "titi",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "titi",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "loginConnect",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{token_endpoint}}"
+      },
+      "response": []
+    },
+    {
+      "name": "get token user 2 (toto)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "50c68d5b-2494-46c3-bda5-9e12fad984ca",
+            "exec": [
+              "var jsonObject = JSON.parse(responseBody);",
+              "",
+              "pm.globals.set(\"user2_token\", jsonObject.access_token);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "3dc5308f-da71-47a8-a005-84d2d807b593",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "type": "text",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "type": "text",
+              "value": "password"
+            },
+            {
+              "key": "username",
+              "type": "text",
+              "value": "toto"
+            },
+            {
+              "key": "password",
+              "type": "text",
+              "value": "toto"
+            },
+            {
+              "key": "client_id",
+              "type": "text",
+              "value": "loginConnect"
+            }
+          ]
+        },
+        "url": "{{token_endpoint}}"
+      },
+      "response": []
+    },
+    {
+      "name": "get token user 3 (tata)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "50c68d5b-2494-46c3-bda5-9e12fad984ca",
+            "exec": [
+              "var jsonObject = JSON.parse(responseBody);",
+              "",
+              "pm.globals.set(\"user3_token\", jsonObject.access_token);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "122f7513-e4a3-48a5-93e2-04bd41ccc6c8",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/x-www-form-urlencoded",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "tata",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "tata",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "loginConnect",
+              "type": "text"
+            }
+          ]
+        },
+        "url": "{{token_endpoint}}"
+      },
+      "response": []
+    }
+  ]
+}
