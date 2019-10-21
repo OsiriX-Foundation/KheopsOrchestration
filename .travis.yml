@@ -28,9 +28,6 @@ before_script:
   - ./script.sh
 
 script:
-### Must be first
-  - node_modules/.bin/newman run postman/kheops-Get_tokens.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json --export-globals postman/Workspace.postman_globals.json
-#### 
   - ./script_run_docker.sh
   - node_modules/.bin/newman run postman/kheops-Album.json -e postman/kheops_localhost.postman_environment.json -g postman/Workspace.postman_globals.json
   - ./script_run_docker.sh
