@@ -560,7 +560,7 @@
           "script": {
             "id": "089d91ab-3ba4-4b6b-929f-09c0dfaadf9d",
             "exec": [
-              "tests[\"Status code is 404\"] = responseCode.code === 404;"
+              "tests[\"Status code is 403\"] = responseCode.code === 403;"
             ],
             "type": "text/javascript"
           }
@@ -660,7 +660,7 @@
           "script": {
             "id": "6317996c-4645-4546-82ad-9a1fa34f2de7",
             "exec": [
-              "tests[\"Status code is 404\"] = responseCode.code === 404;"
+              "tests[\"Status code is 403\"] = responseCode.code === 403;"
             ],
             "type": "text/javascript"
           }
