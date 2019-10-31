@@ -4100,11 +4100,11 @@
                   "",
                   "tests[\"Return 2 users\"] = jsonObject.length === 2;",
                   "",
-                  "tests[\"user_name_0\"] = jsonObject[0].user_name == pm.variables.get(\"user1_mail\");",
+                  "tests[\"user_name_0\"] = jsonObject[0].email == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
                   "",
-                  "tests[\"user_name_1\"] = jsonObject[1].user_name == pm.variables.get(\"user2_mail\");",
+                  "tests[\"user_name_1\"] = jsonObject[1].email == pm.variables.get(\"user2_mail\");",
                   "",
                   "tests[\"is_admin_1\"] = jsonObject[1].is_admin == false"
                 ],
