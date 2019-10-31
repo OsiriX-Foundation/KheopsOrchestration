@@ -6521,7 +6521,7 @@
                   "",
                   "tests[\"event_type_1\"] = jsonObject[1].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_1\"] = jsonObject[1].origin_name == pm.variables.get(\"user1_mail\");",
+                  "tests[\"origin_name_1\"] = jsonObject[1].origin.email == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_1\"] = jsonObject[1].comment == \"comment 2\"",
                   "",
