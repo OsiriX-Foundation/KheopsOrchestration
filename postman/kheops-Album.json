@@ -3490,7 +3490,7 @@
                   "",
                   "tests[\"Return 1 user\"] = jsonObject.length === 1;",
                   "",
-                  "tests[\"user_name\"] = jsonObject[0].user_name == pm.globals.get(\"user1_mail\"); ",
+                  "tests[\"user_name\"] = jsonObject[0].email == pm.globals.get(\"user1_mail\"); ",
                   "",
                   "tests[\"is_admin\"] = jsonObject[0].is_admin == true"
                 ],
@@ -4027,9 +4027,9 @@
                   "",
                   "tests[\"users List size = 2\"] = jsonObject.users.length == 2;",
                   "",
-                  "tests[\"users List user 1\"] = jsonObject.users[0].user_name == pm.variables.get(\"user1_mail\"); ",
+                  "tests[\"users List user 1\"] = jsonObject.users[0].email == pm.variables.get(\"user1_mail\"); ",
                   "",
-                  "tests[\"users List user 2\"] = jsonObject.users[1].user_name == pm.variables.get(\"user2_mail\"); "
+                  "tests[\"users List user 2\"] = jsonObject.users[1].email == pm.variables.get(\"user2_mail\"); "
                 ],
                 "type": "text/javascript"
               }
@@ -10144,18 +10144,18 @@
               "urlencoded": [
                 {
                   "key": "sendSeries",
-                  "value": "false",
-                  "type": "text"
+                  "type": "text",
+                  "value": "false"
                 },
                 {
                   "key": "name",
-                  "value": "name 1",
-                  "type": "text"
+                  "type": "text",
+                  "value": "name 1"
                 },
                 {
                   "key": "description",
-                  "value": "description 1",
-                  "type": "text"
+                  "type": "text",
+                  "value": "description 1"
                 }
               ]
             },
