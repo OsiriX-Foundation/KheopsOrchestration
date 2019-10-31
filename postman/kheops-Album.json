@@ -4702,7 +4702,7 @@
                   "",
                   "tests[\"Return 2 users\"] = jsonObject.length === 1;",
                   "",
-                  "tests[\"user_name\"] = jsonObject[0].user_name == pm.variables.get(\"user1_mail\");",
+                  "tests[\"user_name\"] = jsonObject[0].email == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"is_admin\"] = jsonObject[0].is_admin == true"
                 ],
