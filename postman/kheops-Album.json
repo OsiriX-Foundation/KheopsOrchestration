@@ -5122,11 +5122,11 @@
                   "",
                   "tests[\"Return 2 users\"] = jsonObject.length === 2;",
                   "",
-                  "tests[\"user_name_0\"] = jsonObject[0].user_name == \"titi@gmail.com\"",
+                  "tests[\"user_name_0\"] = jsonObject[0].email == \"titi@gmail.com\"",
                   "",
                   "tests[\"is_admin_0\"] = jsonObject[0].is_admin == true",
                   "",
-                  "tests[\"user_name_1\"] = jsonObject[1].user_name == \"toto@gmail.com\"",
+                  "tests[\"user_name_1\"] = jsonObject[1].email == \"toto@gmail.com\"",
                   "",
                   "tests[\"is_admin_1\"] = jsonObject[1].is_admin == true"
                 ],
