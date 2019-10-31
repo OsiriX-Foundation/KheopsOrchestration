@@ -6331,7 +6331,7 @@
                   "",
                   "tests[\"event_type_0\"] = jsonObject[0].event_type ==  \"Comment\"",
                   "",
-                  "tests[\"origin_name_0\"] = jsonObject[0].origin_name == pm.variables.get(\"user1_mail\");",
+                  "tests[\"origin_name_0\"] = jsonObject[0].origin.email == pm.variables.get(\"user1_mail\");",
                   "",
                   "tests[\"comment_0\"] = jsonObject[0].comment == \"comment 2\"",
                   "",
