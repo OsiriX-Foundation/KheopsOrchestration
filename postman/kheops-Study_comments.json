@@ -882,7 +882,8 @@
                   "",
                   "tests[\"Return 2 comments\"] = jsonObject.length === 2;",
                   "",
-                  "tests[\"[INFO] Response: \" + responseBody] = true;"
+                  "tests[\"[INFO] Response: \" + responseBody] = true;",
+                  ""
                 ],
                 "type": "text/javascript"
               }
