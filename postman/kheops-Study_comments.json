@@ -1646,7 +1646,8 @@
                   "",
                   "var jsonObject = JSON.parse(responseBody);",
                   "",
-                  "tests[\"commentField is present(00012346) and contain value = 4\"] = jsonObject[0][\"00012346\"].Value == 4;"
+                  "tests[\"commentField is present(00012346) and contain value = 4\"] = jsonObject[0][\"00012346\"].Value == 4;",
+                  ""
                 ],
                 "type": "text/javascript"
               }
