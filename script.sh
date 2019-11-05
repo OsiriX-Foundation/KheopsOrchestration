@@ -13,7 +13,7 @@
  sed -i "s|\"file\": {}|\"file\": {\"src\": \"testStudy.dcm\"}|" postman/kheops_Capabilities_tokens_Delete.json
  sed -i "s|\"file\": {}|\"file\": {\"src\": \"testStudy.dcm\"}|" postman/kheops-Introspect.json
  
- echo postman/kheops_Capabilities_tokens_Delete.json
+ cat postman/kheops_Capabilities_tokens_Delete.json
 
 
  sed -i "0,/\"file\": {}/s//\"file\": {\"src\": \"testStudy.dcm\"}/" postman/kheops-Study_List-withOptions.json
