@@ -531,7 +531,7 @@
                 "id": "5ff53cd5-f3a8-4802-8eab-b6f709895551",
                 "exec": [
                   "// ensure healthy response code debug",
-                  "tests[\"Status code is 400\"] = responseCode.code === 400;"
+                  "tests[\"Status code is 204\"] = responseCode.code === 204;"
                 ],
                 "type": "text/javascript"
               }
