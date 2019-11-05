@@ -949,9 +949,9 @@
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
                   "if (totalCount === 3) {",
-                  "    tests[\"X-Total-Count = 3\"] = true;",
+                  "    tests[\"X-Total-Count = 4\"] = true;",
                   "} else {",
-                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 3\"] = false;",
+                  "    tests[\"X-Total-Count = \" + totalCount + \" instead of 4\"] = false;",
                   "}",
                   "",
                   "tests[\"X-Total-Count exposed\"] = postman.getResponseHeader(\"Access-Control-Expose-Headers\").indexOf(\"X-Total-Count\") !== -1;",
@@ -995,7 +995,7 @@
               }
             ],
             "url": {
-              "raw": "{{URL}}/studies/{{study_UID}}/comments?offset=2",
+              "raw": "{{URL}}/studies/{{study_UID}}/comments?offset=3",
               "host": [
                 "{{URL}}"
               ],
@@ -1007,7 +1007,7 @@
               "query": [
                 {
                   "key": "offset",
-                  "value": "2"
+                  "value": "3"
                 }
               ]
             }
