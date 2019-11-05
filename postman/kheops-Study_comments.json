@@ -949,7 +949,7 @@
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
                   "",
                   "let totalCount = parseInt(postman.getResponseHeader(\"X-Total-Count\"));",
-                  "if (totalCount === 3) {",
+                  "if (totalCount === 4) {",
                   "    tests[\"X-Total-Count = 4\"] = true;",
                   "} else {",
                   "    tests[\"X-Total-Count = \" + totalCount + \" instead of 4\"] = false;",
