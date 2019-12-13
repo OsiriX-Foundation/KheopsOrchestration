@@ -116,9 +116,6 @@ services:
   kheops-reverse-proxy:
     image: osirixfoundation/kheops-reverse-proxy:${KHEOPS_REVERSE_PROXY_IMAGE_TAG}
     container_name: kheopsreverseproxy
-    secrets:
-      - privkey1.pem
-      - fullchain1.pem
     env_file: docker-compose.env
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -162,10 +159,6 @@ secrets:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret_post
-  privkey1.pem:
-    file: ${NGINX_KEY}/privkey1.pem
-  fullchain1.pem:
-    file: ${NGINX_KEY}/fullchain1.pem
   kheops_keycloak_clientsecret:
     file: ${SECRETS_PATH}/kheops_keycloak_clientsecret
   kheops_client_dicomwebproxysecret:
