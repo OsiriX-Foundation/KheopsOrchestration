@@ -1,8 +1,36 @@
 #!/bin/bash
 
-echo "Generate secrets"
+if [ -x "$(command -v docker)" ];
+then
+  echo "Docker installed ?"
+else
+  echo "You must install docker"
+  echo "https://docs.docker.com/install/linux/docker-ce/centos/"
+  exit 1
+fi
+
+if [ -x "$(command -v docker-compose)" ];
+then
+  echo "Docker installed ?"
+else
+  echo "You must install docker-compose"
+  echo "https://docs.docker.com/compose/install/"
+  exit 1
+fi
+
 secretpath="kheops/secrets/"
 kheopspath="kheops/"
+
+echo "Download project docker"
+if [[ ! -d "$kheopspath" ]]
+then
+  mkdir $kheopspath
+  (cd $kheopspath && wget https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/.env)
+  (cd $kheopspath && wget https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.env)
+  (cd $kheopspath && wget https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.yml)
+fi
+
+echo "Generate secrets"
 if [[ ! -d "$secretpath" ]]
 then
   mkdir $secretpath
