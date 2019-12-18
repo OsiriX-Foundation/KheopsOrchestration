@@ -1,18 +1,14 @@
 #!/bin/bash
 
-if [ -x "$(command -v docker)" ];
+if [ ! -x "$(command -v docker)" ];
 then
-  echo "Docker installed ?"
-else
   echo "You must install docker"
-  echo "https://docs.docker.com/install/linux/docker-ce/centos/"
+  echo "https://docs.docker.com/install/"
   exit 1
 fi
 
-if [ -x "$(command -v docker-compose)" ];
+if [ ! -x "$(command -v docker-compose)" ];
 then
-  echo "Docker installed ?"
-else
   echo "You must install docker-compose"
   echo "https://docs.docker.com/compose/install/"
   exit 1
@@ -25,9 +21,9 @@ echo "Download project docker"
 if [[ ! -d "$kheopspath" ]]
 then
   mkdir $kheopspath
-  (cd $kheopspath && wget https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/.env)
-  (cd $kheopspath && wget https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.env)
-  (cd $kheopspath && wget https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.yml)
+  (cd $kheopspath && curl https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/.env --output .env --silent)
+  (cd $kheopspath && curl https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.env --output docker-compose.env --silent)
+  (cd $kheopspath && curl https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.yml --output docker-compose.yml --silent)
 fi
 
 echo "Generate secrets"
@@ -47,13 +43,15 @@ docker pull andyneff/uuidgen
 for secretfile in ${secretfiles[*]}
 do
   secret=$(docker run -it frapsoft/openssl rand -base64 32)
-  echo $secret > $secretpath$secretfile
-  dos2unix $secretpath$secretfile
+  echo $secret > ${secretpath}tmp_${secretfile}
+  sed -e "s/\r//g" ${secretpath}tmp_${secretfile} > $secretpath$secretfile
+  rm ${secretpath}tmp_${secretfile}
 done
 
 keycloakclientsecret=$(docker run -it andyneff/uuidgen)
-echo $keycloakclientsecret > ${secretpath}kheops_keycloak_clientsecret
-dos2unix ${secretpath}kheops_keycloak_clientsecret
+echo $keycloakclientsecret > ${secretpath}tmp_kheops_keycloak_clientsecret
+sed -e "s/\r//g" ${secretpath}tmp_kheops_keycloak_clientsecret > ${secretpath}kheops_keycloak_clientsecret
+rm ${secretpath}tmp_kheops_keycloak_clientsecret
 
 docker rm $(docker ps -a -q)
 docker rmi frapsoft/openssl
