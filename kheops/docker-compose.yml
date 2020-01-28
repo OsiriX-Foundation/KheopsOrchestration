@@ -17,7 +17,7 @@ services:
       - keycloak_network
 
   keycloak:
-    image: osirixfoundation/kheops-keycloak:example
+    image: osirixfoundation/kheops-keycloak:${KEYCLOAK_IMAGE_TAG}
     container_name: keycloak
     ports:
       - "8080:8080"
@@ -41,8 +41,6 @@ services:
     image: dcm4che/slapd-dcm4chee:${PACS_LDAP_IMAGE_TAG}
     env_file: docker-compose.env
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
       - dcm4chee-ldap-ldap:/var/lib/ldap
       - dcm4chee-ldap-slapdd:/etc/ldap/slapd.d
     restart: on-failure
@@ -62,7 +60,6 @@ services:
       POSTGRES_PASSWORD_FILE: /run/secrets/kheops_pacsdb_pass
     env_file: docker-compose.env
     volumes:
-      - /etc/localtime:/etc/localtime:ro
       - dcm4chee-db-data:/var/lib/postgresql/data
     secrets:
       - kheops_pacsdb_pass
@@ -87,10 +84,8 @@ services:
       - ldap
       - pacs-postgres
     volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
       - dcm4chee-arc-wildfly:/opt/wildfly/standalone
-      - /dcm4chee-arc/storage:/storage
+      - dcm4chee-arc-storage:/storage
     restart: on-failure
     networks:
       - pacs_network
@@ -111,9 +106,6 @@ services:
   kheops-authorization:
     container_name: kheopsauthorization
     image: osirixfoundation/kheops-authorization:${KHEOPS_AUTHORIZATION_IMAGE_TAG}
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
     env_file: docker-compose.env
     environment:
@@ -137,9 +129,6 @@ services:
   kheops-zipper:
     container_name: kheopszipper
     image: osirixfoundation/kheops-zipper:${KHEOPS_ZIPPER_IMAGE_TAG}
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
     env_file: docker-compose.env
     depends_on:
@@ -152,9 +141,6 @@ services:
   kheops-ui:
     container_name: kheopsui
     image: osirixfoundation/kheops-ui:${KHEOPS_UI_IMAGE_TAG}
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
     environment:
       KHEOPS_KEYCLOAK_URI: http://localhost:8080
     env_file: docker-compose.env
@@ -167,9 +153,6 @@ services:
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
     image: osirixfoundation/kheops-dicomweb-proxy:${KHEOPS_DICOMWEB_PROXY_IMAGE_TAG}
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
     restart: on-failure
     env_file: docker-compose.env
     depends_on:
@@ -185,9 +168,6 @@ services:
     image: osirixfoundation/kheops-reverse-proxy:${KHEOPS_REVERSE_PROXY_IMAGE_TAG}
     container_name: kheopsreverseproxy
     env_file: docker-compose.env
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
     ports:
       - "80:8042"
       - "443:443"
@@ -204,9 +184,6 @@ services:
     container_name: pacsauthorizationproxy
     env_file: docker-compose.env
     image: osirixfoundation/pacs-authorization-proxy:${PACS_AUTHORIZATION_PROXY_IMAGE_TAG}
-    volumes:
-      - /etc/localtime:/etc/localtime:ro
-      - ${TIME_ZONE}:/etc/timezone:ro
     depends_on:
       - pacs-arc
     secrets:
