@@ -37,7 +37,10 @@ secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
   "kheops_metric_ressource_password" "kheops_superuser_hmasecret" \
   "keycloak_psql_password" "kheops_pacsdb_pass" "kheops_authdb_pass")
 
-echo "12345678" > ${secretpath}keycloak_admin_password
+echo "Enter the Keycloak administrator password (user: admin):"
+read KEYCLOAK_ADMIN_PASSWORD
+echo $KEYCLOAK_ADMIN_PASSWORD > ${secretpath}keycloak_admin_password
+
 docker pull frapsoft/openssl
 docker pull andyneff/uuidgen
 for secretfile in ${secretfiles[*]}
