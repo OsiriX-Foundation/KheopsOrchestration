@@ -27,6 +27,7 @@ services:
       - keycloakpostgres
     volumes:
       - keycloak-standalone:/opt/keycloak/standalone
+      - ./realm/realm-example.json:/realm-example.json
     secrets:
       - keycloak_psql_password
       - keycloak_admin_password

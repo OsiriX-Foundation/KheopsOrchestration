@@ -16,6 +16,7 @@ fi
 
 secretpath="kheops/secrets/"
 kheopspath="kheops/"
+realmpath="kheops/realm"
 
 echo "Download project docker"
 if [[ ! -d "$kheopspath" ]]
@@ -60,8 +61,15 @@ docker rm $(docker ps -a -q)
 docker rmi frapsoft/openssl
 docker rmi andyneff/uuidgen
 
+if [[ ! -d "$realmpath" ]]
+then
+  mkdir $realmpath
+  (cd $realmpath && curl https://raw.githubusercontent.com/OsiriX-Foundation/KheopsKeycloak/example/img/KheopsKeycloak/realm/realm-example.json --output realm-example.json --silent)
+fi
+
 (cd $kheopspath && docker-compose down -v && docker-compose pull)
 (cd $kheopspath && docker-compose up -d keycloak)
+
 while true; do
   status_code=$(curl --write-out "%{http_code}\n" --silent --output /dev/null "http://localhost:8080/auth/")
   if [ $status_code = 500 ]
@@ -74,6 +82,8 @@ while true; do
   sleep 1
 done
 
+docker exec keycloak curl https://raw.githubusercontent.com/OsiriX-Foundation/KheopsKeycloak/example/img/KheopsKeycloak/keycloakconfiguration.sh --output /keycloakconfiguration.sh --silent
+docker exec keycloak chmod +x /keycloakconfiguration.sh
 docker exec keycloak /keycloakconfiguration.sh
 
 (cd $kheopspath && docker-compose up)
