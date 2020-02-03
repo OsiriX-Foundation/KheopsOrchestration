@@ -40,20 +40,20 @@ secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
 
 echo "Enter the Keycloak administrator password (user: admin):"
 read KEYCLOAK_ADMIN_PASSWORD
-echo $KEYCLOAK_ADMIN_PASSWORD > ${secretpath}keycloak_admin_password
+echo $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]' > ${secretpath}keycloak_admin_password
 
 docker pull frapsoft/openssl
 docker pull andyneff/uuidgen
 for secretfile in ${secretfiles[*]}
 do
   secret=$(docker run -it frapsoft/openssl rand -base64 32)
-  echo $secret > ${secretpath}tmp_${secretfile}
+  echo $secret | tr -dc '[:print:]' > ${secretpath}tmp_${secretfile}
   sed -e "s/\r//g" ${secretpath}tmp_${secretfile} > $secretpath$secretfile
   rm ${secretpath}tmp_${secretfile}
 done
 
 keycloakclientsecret=$(docker run -it andyneff/uuidgen)
-echo $keycloakclientsecret > ${secretpath}tmp_kheops_keycloak_clientsecret
+echo $keycloakclientsecret | tr -dc '[:print:]' > ${secretpath}tmp_kheops_keycloak_clientsecret
 sed -e "s/\r//g" ${secretpath}tmp_kheops_keycloak_clientsecret > ${secretpath}kheops_keycloak_clientsecret
 rm ${secretpath}tmp_kheops_keycloak_clientsecret
 
