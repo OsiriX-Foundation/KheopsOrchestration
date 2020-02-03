@@ -47,11 +47,15 @@ docker pull andyneff/uuidgen
 for secretfile in ${secretfiles[*]}
 do
   secret=$(docker run -it frapsoft/openssl rand -base64 32)
-  echo $secret | tr -dc '[:print:]' > $secretpath$secretfile
+  echo $secret | tr -dc '[:print:]' > ${secretpath}tmp_${secretfile}
+  sed -e "s/\r//g" ${secretpath}tmp_${secretfile} > $secretpath$secretfile
+  rm ${secretpath}tmp_${secretfile}
 done
 
 keycloakclientsecret=$(docker run -it andyneff/uuidgen)
-echo $keycloakclientsecret | tr -dc '[:print:]' > ${secretpath}kheops_keycloak_clientsecret
+echo $keycloakclientsecret | tr -dc '[:print:]' > ${secretpath}tmp_kheops_keycloak_clientsecret
+sed -e "s/\r//g" ${secretpath}tmp_kheops_keycloak_clientsecret > ${secretpath}kheops_keycloak_clientsecret
+rm ${secretpath}tmp_kheops_keycloak_clientsecret
 
 docker rm $(docker ps -a -q)
 docker rmi frapsoft/openssl
