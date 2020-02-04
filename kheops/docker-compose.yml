@@ -106,6 +106,7 @@ services:
       - kheops_keycloak_clientsecret
       - kheops_client_dicomwebproxysecret
       - kheops_client_zippersecret
+      - kheops_metric_ressource_password
     networks:
       - kheops_network
 
@@ -193,6 +194,9 @@ secrets:
     file: ${SECRETS_PATH}/kheops_client_dicomwebproxysecret
   kheops_client_zippersecret:
     file: ${SECRETS_PATH}/kheops_client_zippersecret
+  kheops_metric_ressource_password:
+    file: ${SECRETS_PATH}/kheops_metric_ressource_password
+
 
 volumes:
   keycloak-standalone:
