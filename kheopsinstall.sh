@@ -43,7 +43,6 @@ fi
 
 secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
   "kheops_client_dicomwebproxysecret" "kheops_client_zippersecret" \
-  "kheops_metric_ressource_password" "kheops_superuser_hmasecret" \
   "keycloak_psql_password" "kheops_pacsdb_pass" "kheops_authdb_pass")
 
 echo "Enter a password for the Keycloak administrator (user: admin):"
