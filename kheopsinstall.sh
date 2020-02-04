@@ -59,7 +59,7 @@ docker rmi andyneff/uuidgen
 if [[ ! -d "$realmpath" ]]
 then
   mkdir $realmpath
-  (cd $realmpath && curl https://raw.githubusercontent.com/OsiriX-Foundation/KheopsKeycloak/example/img/KheopsKeycloak/realm/realm-example.json --output realm-example.json --silent)
+  (cd $realmpath && curl ${downloadURI}/kheops-realm.json --output kheops-realm.json --silent)
 fi
 
 (cd $kheopspath && docker-compose down -v && docker-compose pull)
@@ -77,8 +77,8 @@ while true; do
   sleep 1
 done
 
-docker exec keycloak curl https://raw.githubusercontent.com/OsiriX-Foundation/KheopsKeycloak/example/img/KheopsKeycloak/keycloakconfiguration.sh --output /keycloakconfiguration.sh --silent
-docker exec keycloak chmod +x /keycloakconfiguration.sh
-docker exec keycloak /keycloakconfiguration.sh
+# docker exec keycloak curl https://raw.githubusercontent.com/OsiriX-Foundation/KheopsKeycloak/example/img/KheopsKeycloak/keycloakconfiguration.sh --output /keycloakconfiguration.sh --silent
+# docker exec keycloak chmod +x /keycloakconfiguration.sh
+# docker exec keycloak /keycloakconfiguration.sh
 
-(cd $kheopspath && docker-compose up)
+# (cd $kheopspath && docker-compose up)
