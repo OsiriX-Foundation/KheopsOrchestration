@@ -14,6 +14,8 @@ then
   exit 1
 fi
 
+downloadURI="https://raw.githubusercontent.com/spalte/kheopsDocker/installkeycloak/kheops"
+
 secretpath="kheops/secrets/"
 kheopspath="kheops/"
 realmpath="kheops/realm"
@@ -22,9 +24,9 @@ echo "Download project docker"
 if [[ ! -d "$kheopspath" ]]
 then
   mkdir $kheopspath
-  (cd $kheopspath && curl https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/.env --output .env --silent)
-  (cd $kheopspath && curl https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.env --output docker-compose.env --silent)
-  (cd $kheopspath && curl https://raw.githubusercontent.com/OsiriX-Foundation/kheopsDocker/install/kheops/docker-compose.yml --output docker-compose.yml --silent)
+  (cd $kheopspath && curl ${downloadURI}/.env --output .env --silent)
+  (cd $kheopspath && curl ${downloadURI}/docker-compose.env --output docker-compose.env --silent)
+  (cd $kheopspath && curl ${downloadURI}docker-compose.yml --output docker-compose.yml --silent)
 fi
 
 echo "Generate secrets"
@@ -38,7 +40,7 @@ secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
   "kheops_metric_ressource_password" "kheops_superuser_hmasecret" \
   "keycloak_psql_password" "kheops_pacsdb_pass" "kheops_authdb_pass")
 
-echo "Enter the Keycloak administrator password (user: admin):"
+echo "Enter a password for the Keycloak administrator (user: admin):"
 read KEYCLOAK_ADMIN_PASSWORD
 printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > ${secretpath}keycloak_admin_password
 
@@ -46,12 +48,11 @@ docker pull frapsoft/openssl
 docker pull andyneff/uuidgen
 for secretfile in ${secretfiles[*]}
 do
-  printf "%s\n" $(docker run -it frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath$secretfile
+  printf "%s\n" $(docker run --rm frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath$secretfile
 done
 
-printf "%s\n" $(docker run -it andyneff/uuidgen | tr -dc '[:print:]') > ${secretpath}kheops_keycloak_clientsecret
+printf "%s\n" $(docker run --rm andyneff/uuidgen | tr -dc '[:print:]') > ${secretpath}kheops_keycloak_clientsecret
 
-docker rm $(docker ps -a -q)
 docker rmi frapsoft/openssl
 docker rmi andyneff/uuidgen
 

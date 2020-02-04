@@ -1,37 +1,20 @@
 ---
-# Ansible managed
 version: "3.1"
 services:
-  keycloakpostgres:
-    image: postgres:9.6
-    container_name: keycloakpostgres
-    environment:
-      POSTGRES_DB: kheops_keycloak
-      POSTGRES_USER: kheops_keycloak
-      POSTGRES_PASSWORD_FILE: /run/secrets/keycloak_psql_password
-    volumes:
-      - keycloak-postgres-data:/var/lib/postgresql/data
-    secrets:
-      - keycloak_psql_password
-    networks:
-      - keycloak_network
-
   keycloak:
-    image: osirixfoundation/kheops-keycloak:${KEYCLOAK_IMAGE_TAG}
+    image: jboss/keycloak:${KEYCLOAK_IMAGE_TAG}
     container_name: keycloak
     ports:
       - "8080:8080"
-    env_file:
-      - docker-compose.env
-    depends_on:
-      - keycloakpostgres
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD_FILE: /run/secrets/keycloak_admin_password
+      KEYCLOAK_IMPORT: /tmp/kheops-realm.json
     volumes:
       - keycloak-standalone:/opt/keycloak/standalone
-      - ./realm/realm-example.json:/realm-example.json
+      - ./realm/kheops-realm.json:/tmp/kheops-realm.json
     secrets:
-      - keycloak_psql_password
       - keycloak_admin_password
-      - kheops_keycloak_clientsecret
     networks:
       - kheops_network
       - frontend_network
@@ -195,8 +178,6 @@ services:
       - kheops_network
 
 secrets:
-  keycloak_psql_password:
-    file: secrets/keycloak_psql_password
   keycloak_admin_password:
     file: secrets/keycloak_admin_password
   kheops_authdb_pass:
@@ -209,10 +190,6 @@ secrets:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret_post
-  privkey1.pem:
-    file: ${NGINX_KEY}/privkey1.pem
-  fullchain1.pem:
-    file: ${NGINX_KEY}/fullchain1.pem
   kheops_keycloak_clientsecret:
     file: ${SECRETS_PATH}/kheops_keycloak_clientsecret
   kheops_client_dicomwebproxysecret:
