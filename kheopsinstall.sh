@@ -59,7 +59,9 @@ done
 (cd $kheopspath && docker-compose down -v && docker-compose pull)
 (cd $kheopspath && docker-compose up -d keycloak)
 
+echo "Waiting for Keycloak to startup:"
 while true; do
+  printf '.'
   status_code=$(curl --write-out "%{http_code}\n" --silent --output /dev/null "http://localhost:8080/auth/")
   if [ $status_code = 500 ]
   then
@@ -70,6 +72,50 @@ while true; do
   fi
   sleep 1
 done
+printf '\n'
+
+echo "Setting up the KHEOPS Service Account in Keycloak:"
+docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh create clients/efa56c67-85d8-4472-958a-f238bf4cc803/client-secret \
+           -r kheops 
+          --no-config \
+          --server http://localhost:8080/auth \
+          --realm master \
+          --user admin \
+          --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' )
+
+printf "%s\n" $(docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh get clients/efa56c67-85d8-4472-958a-f238bf4cc803/client-secret \
+          -r kheops \
+          --no-config \
+          --server http://localhost:8080/auth \
+          --realm master \
+          --user admin \
+          --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' ) \
+          --fields value \
+            | grep -o '"value" : *"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"') > ${secretpath}kheops_keycloak_clientsecret 
+
+# Add roles in Service Account User in client kheopsAuthorization
+docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh add-roles \
+  -r kheops \
+  --no-config \
+  --server http://localhost:8080/auth \
+  --realm master \
+  --user admin \
+  --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' ) \
+  --uusername service-account-kheopsauthorization \
+  --cclientid realm-management \
+  --rolename view-users
+
+# Remove roles in Service Account User in client kheopsAuthorization
+docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh remove-roles \
+   -r kheops \
+  --no-config \
+  --server http://localhost:8080/auth \
+  --realm master \
+  --user admin \
+  --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' ) \
+  --uusername service-account-kheopsauthorization \
+  --rolename offline_access \
+  --rolename uma_authorization
 
 # docker exec keycloak curl https://raw.githubusercontent.com/OsiriX-Foundation/KheopsKeycloak/example/img/KheopsKeycloak/keycloakconfiguration.sh --output /keycloakconfiguration.sh --silent
 # docker exec keycloak chmod +x /keycloakconfiguration.sh
