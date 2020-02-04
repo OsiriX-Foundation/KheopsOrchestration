@@ -100,7 +100,6 @@ services:
       - pacs-arc
       - keycloak
     secrets:
-      - kheops_superuser_hmasecret
       - kheops_auth_hmasecret
       - kheops_authdb_pass
       - kheops_keycloak_clientsecret
@@ -184,8 +183,6 @@ secrets:
     file: ${SECRETS_PATH}/kheops_authdb_pass
   kheops_pacsdb_pass:
     file: ${SECRETS_PATH}/kheops_pacsdb_pass
-  kheops_superuser_hmasecret:
-    file: ${SECRETS_PATH}/kheops_superuser_hmasecret
   kheops_auth_hmasecret:
     file: ${SECRETS_PATH}/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
