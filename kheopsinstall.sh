@@ -14,7 +14,7 @@ then
   exit 1
 fi
 
-downloadURI="https://raw.githubusercontent.com/spalte/kheopsDocker/installkeycloak/kheops"
+downloadURI="https://raw.githubusercontent.com/spalte/kheopsDocker/installkeycloak"
 
 secretpath="kheops/secrets/"
 kheopspath="kheops/"
@@ -24,15 +24,15 @@ echo "Downloading resources"
 if [[ ! -d "$kheopspath" ]]
 then
   mkdir $kheopspath
-  (cd $kheopspath && curl ${downloadURI}/.env --output .env --silent)
-  (cd $kheopspath && curl ${downloadURI}/docker-compose.env --output docker-compose.env --silent)
-  (cd $kheopspath && curl ${downloadURI}docker-compose.yml --output docker-compose.yml --silent)
+  (cd $kheopspath && curl ${downloadURI}/docker/.env --output .env --silent)
+  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.env --output docker-compose.env --silent)
+  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.yml --output docker-compose.yml --silent)
 fi
 
 if [[ ! -d "$realmpath" ]]
 then
   mkdir $realmpath
-  (cd $realmpath && curl ${downloadURI}/kheops-realm.json --output kheops-realm.json --silent)
+  (cd $realmpath && curl ${downloadURI}/realm/kheops-realm.json --output kheops-realm.json --silent)
 fi
 
 echo "Generating secrets"
@@ -51,13 +51,10 @@ read KEYCLOAK_ADMIN_PASSWORD
 printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > ${secretpath}keycloak_admin_password
 
 docker pull frapsoft/openssl
-docker pull andyneff/uuidgen
 for secretfile in ${secretfiles[*]}
 do
   printf "%s\n" $(docker run --rm frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath$secretfile
 done
-
-printf "%s\n" $(docker run --rm andyneff/uuidgen | tr -dc '[:print:]') > ${secretpath}kheops_keycloak_clientsecret
 
 (cd $kheopspath && docker-compose down -v && docker-compose pull)
 (cd $kheopspath && docker-compose up -d keycloak)
