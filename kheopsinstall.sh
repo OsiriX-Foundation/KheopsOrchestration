@@ -76,7 +76,7 @@ printf '\n'
 
 echo "Setting up the KHEOPS Service Account in Keycloak:"
 docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh create clients/efa56c67-85d8-4472-958a-f238bf4cc803/client-secret \
-           -r kheops 
+           -r kheops \
           --no-config \
           --server http://localhost:8080/auth \
           --realm master \
