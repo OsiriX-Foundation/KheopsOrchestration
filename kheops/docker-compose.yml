@@ -7,9 +7,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD_FILE: /run/secrets/keycloak_admin_password
-      KEYCLOAK_IMPORT: /tmp/kheops-realm.json
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD_FILE=/run/secrets/keycloak_admin_password
+      - KEYCLOAK_IMPORT=/tmp/kheops-realm.json
     volumes:
       - keycloak-standalone:/opt/keycloak/standalone
       - ./realm/kheops-realm.json:/tmp/kheops-realm.json

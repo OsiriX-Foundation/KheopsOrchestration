@@ -2,14 +2,14 @@
 
 if [ ! -x "$(command -v docker)" ];
 then
-  echo "You must install docker"
+  echo "Docker must be installed"
   echo "https://docs.docker.com/install/"
   exit 1
 fi
 
 if [ ! -x "$(command -v docker-compose)" ];
 then
-  echo "You must install docker-compose"
+  echo "Docker Compose mustbe installed"
   echo "https://docs.docker.com/compose/install/"
   exit 1
 fi
@@ -20,7 +20,7 @@ secretpath="kheops/secrets/"
 kheopspath="kheops/"
 realmpath="kheops/realm"
 
-echo "Download project docker"
+echo "Downloading resources"
 if [[ ! -d "$kheopspath" ]]
 then
   mkdir $kheopspath
@@ -29,7 +29,13 @@ then
   (cd $kheopspath && curl ${downloadURI}docker-compose.yml --output docker-compose.yml --silent)
 fi
 
-echo "Generate secrets"
+if [[ ! -d "$realmpath" ]]
+then
+  mkdir $realmpath
+  (cd $realmpath && curl ${downloadURI}/kheops-realm.json --output kheops-realm.json --silent)
+fi
+
+echo "Generating secrets"
 if [[ ! -d "$secretpath" ]]
 then
   mkdir $secretpath
@@ -52,15 +58,6 @@ do
 done
 
 printf "%s\n" $(docker run --rm andyneff/uuidgen | tr -dc '[:print:]') > ${secretpath}kheops_keycloak_clientsecret
-
-docker rmi frapsoft/openssl
-docker rmi andyneff/uuidgen
-
-if [[ ! -d "$realmpath" ]]
-then
-  mkdir $realmpath
-  (cd $realmpath && curl ${downloadURI}/kheops-realm.json --output kheops-realm.json --silent)
-fi
 
 (cd $kheopspath && docker-compose down -v && docker-compose pull)
 (cd $kheopspath && docker-compose up -d keycloak)
