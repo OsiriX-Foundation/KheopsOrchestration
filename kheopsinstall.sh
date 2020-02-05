@@ -9,7 +9,7 @@ fi
 
 if [ ! -x "$(command -v docker-compose)" ];
 then
-  echo "Docker Compose mustbe installed"
+  echo "Docker Compose must be installed"
   echo "https://docs.docker.com/compose/install/"
   exit 1
 fi
@@ -75,14 +75,17 @@ done
 printf '\n'
 
 echo "Setting up the KHEOPS Service Account in Keycloak:"
+
+echo "Regenerating the kheopsAuthorization client secret:"
 docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh create clients/efa56c67-85d8-4472-958a-f238bf4cc803/client-secret \
            -r kheops \
           --no-config \
           --server http://localhost:8080/auth \
           --realm master \
           --user admin \
-          --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' )
+          --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' ) 2> /dev/null
 
+echo "Retrieving the kheopsAuthorization client secret:"
 printf "%s\n" $(docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh get clients/efa56c67-85d8-4472-958a-f238bf4cc803/client-secret \
           -r kheops \
           --no-config \
@@ -90,10 +93,10 @@ printf "%s\n" $(docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh get client
           --realm master \
           --user admin \
           --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' ) \
-          --fields value \
+          --fields value 2> /dev/null \
             | grep -o '"value" : *"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"') > ${secretpath}kheops_keycloak_clientsecret 
 
-# Add roles in Service Account User in client kheopsAuthorization
+echo "Adding the view-users role to the kheopsAuthorization serivice account:"
 docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh add-roles \
   -r kheops \
   --no-config \
@@ -103,9 +106,9 @@ docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh add-roles \
   --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' ) \
   --uusername service-account-kheopsauthorization \
   --cclientid realm-management \
-  --rolename view-users
+  --rolename view-users 2> /dev/null
 
-# Remove roles in Service Account User in client kheopsAuthorization
+echo "Removing unused roles from the kheopsAuthorization serivice account:"
 docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh remove-roles \
    -r kheops \
   --no-config \
@@ -115,10 +118,7 @@ docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh remove-roles \
   --password $(cat ${secretpath}keycloak_admin_password | tr -dc '[:print:]' ) \
   --uusername service-account-kheopsauthorization \
   --rolename offline_access \
-  --rolename uma_authorization
+  --rolename uma_authorization 2> /dev/null
 
-# docker exec keycloak curl https://raw.githubusercontent.com/OsiriX-Foundation/KheopsKeycloak/example/img/KheopsKeycloak/keycloakconfiguration.sh --output /keycloakconfiguration.sh --silent
-# docker exec keycloak chmod +x /keycloakconfiguration.sh
-# docker exec keycloak /keycloakconfiguration.sh
-
-# (cd $kheopspath && docker-compose up)
+echo "To launch KHEOPS run the following commands"
+echo "cd kheops; docker-compose up"
