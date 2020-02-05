@@ -53,7 +53,7 @@ secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
   "kheops_metric_ressource_password" \
   "keycloak_psql_password" "kheops_pacsdb_pass" "kheops_authdb_pass")
 
-echo "Enter a password for the Keycloak administrator (user: admin):"
+echo "Enter a password to be set for the Keycloak administrator account (username: admin):"
 read KEYCLOAK_ADMIN_PASSWORD
 printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > ${secretpath}keycloak_admin_password
 
