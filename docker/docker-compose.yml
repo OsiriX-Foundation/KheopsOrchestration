@@ -12,7 +12,7 @@ services:
       KEYCLOAK_IMPORT: /tmp/kheops-realm.json
     volumes:
       - keycloak-standalone:/opt/keycloak/standalone
-      - ./realm/kheops-realm.json:/tmp/kheops-realm.json
+      - ./realm/kheops-realm.json:/tmp/kheops-realm.json:cached
     secrets:
       - keycloak_admin_password
     networks:
@@ -97,8 +97,6 @@ services:
       KHEOPS_KEYCLOAK_URI: http://keycloak:8080
     depends_on:
       - kheops-postgres
-      - pacs-arc
-      - keycloak
     secrets:
       - kheops_auth_hmasecret
       - kheops_authdb_pass
@@ -114,8 +112,6 @@ services:
     image: osirixfoundation/kheops-zipper:${KHEOPS_ZIPPER_IMAGE_TAG}
     restart: on-failure
     env_file: docker-compose.env
-    depends_on:
-      - pacs-arc
     secrets:
       - kheops_client_zippersecret
     networks:
@@ -128,8 +124,6 @@ services:
       KHEOPS_KEYCLOAK_URI: http://localhost:8080
     env_file: docker-compose.env
     restart: on-failure
-    depends_on:
-      - kheops-authorization
     networks:
       - frontend_network
 
@@ -138,9 +132,6 @@ services:
     image: osirixfoundation/kheops-dicomweb-proxy:${KHEOPS_DICOMWEB_PROXY_IMAGE_TAG}
     restart: on-failure
     env_file: docker-compose.env
-    depends_on:
-      - kheops-authorization
-      - pacs-arc
     secrets:
       - kheops_auth_hmasecret_post
       - kheops_client_dicomwebproxysecret
@@ -157,8 +148,8 @@ services:
     depends_on:
       - kheops-authorization
       - kheops-dicomweb-proxy
-      - pacs-arc
-      - pacs-authorization-proxy
+      - kheops-ui
+      - kheops-zipper
     networks:
       - kheops_network
       - frontend_network
