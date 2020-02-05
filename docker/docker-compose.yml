@@ -14,7 +14,7 @@ services:
     volumes:
       - keycloak-standalone-data:/opt/jboss/keycloak/standalone/data
       - ./realm/kheops-realm.json:/tmp/kheops-realm.json:cached
-      - ./themes:/opt/jboss/keycloak/themes:cached
+      - ./themes/kheops:/opt/jboss/keycloak/themes/kheops:cached
     secrets:
       - keycloak_admin_password
     networks:
