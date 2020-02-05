@@ -23,9 +23,6 @@ services:
     container_name: ldap
     image: dcm4che/slapd-dcm4chee:${PACS_LDAP_IMAGE_TAG}
     env_file: docker-compose.env
-    volumes:
-      - dcm4chee-ldap-ldap:/var/lib/ldap
-      - dcm4chee-ldap-slapdd:/etc/ldap/slapd.d
     networks:
       - pacs_network
 
@@ -180,9 +177,6 @@ secrets:
 
 volumes:
   keycloak-standalone-data:
-  keycloak-postgres-data:
-  dcm4chee-ldap-ldap:
-  dcm4chee-ldap-slapdd:
   dcm4chee-db-data:
   dcm4chee-arc-wildfly:
   dcm4chee-arc-storage:
