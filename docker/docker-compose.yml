@@ -17,8 +17,6 @@ services:
     secrets:
       - keycloak_admin_password
     networks:
-      - kheops_network
-      - frontend_network
       - keycloak_network
 
   ldap:
@@ -28,7 +26,6 @@ services:
     volumes:
       - dcm4chee-ldap-ldap:/var/lib/ldap
       - dcm4chee-ldap-slapdd:/etc/ldap/slapd.d
-    restart: on-failure
     networks:
       - pacs_network
 
@@ -48,7 +45,6 @@ services:
       - dcm4chee-db-data:/var/lib/postgresql/data
     secrets:
       - kheops_pacsdb_pass
-    restart: always
     networks:
       - pacs_network
 
@@ -71,7 +67,6 @@ services:
     volumes:
       - dcm4chee-arc-wildfly:/opt/wildfly/standalone
       - dcm4chee-arc-storage:/storage
-    restart: on-failure
     networks:
       - pacs_network
 
@@ -84,14 +79,12 @@ services:
     secrets:
       - kheops_authdb_pass
       - kheops_pacsdb_pass
-    restart: on-failure
     networks:
       - kheops_network
 
   kheops-authorization:
     container_name: kheopsauthorization
     image: osirixfoundation/kheops-authorization:${KHEOPS_AUTHORIZATION_IMAGE_TAG}
-    restart: on-failure
     env_file: docker-compose.env
     environment:
       CATALINA_OPTS: -Duser.timezone=UTC
@@ -107,11 +100,11 @@ services:
       - kheops_metric_ressource_password
     networks:
       - kheops_network
+      - keycloak_network
 
   kheops-zipper:
     container_name: kheopszipper
     image: osirixfoundation/kheops-zipper:${KHEOPS_ZIPPER_IMAGE_TAG}
-    restart: on-failure
     env_file: docker-compose.env
     secrets:
       - kheops_client_zippersecret
@@ -124,14 +117,12 @@ services:
     environment:
       KHEOPS_KEYCLOAK_URI: http://127.0.0.1:8080
     env_file: docker-compose.env
-    restart: on-failure
     networks:
       - frontend_network
 
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
     image: osirixfoundation/kheops-dicomweb-proxy:${KHEOPS_DICOMWEB_PROXY_IMAGE_TAG}
-    restart: on-failure
     env_file: docker-compose.env
     secrets:
       - kheops_auth_hmasecret_post
@@ -145,7 +136,6 @@ services:
     env_file: docker-compose.env
     ports:
       - "80:8042"
-      - "443:443"
     depends_on:
       - kheops-authorization
       - kheops-dicomweb-proxy
@@ -187,7 +177,6 @@ secrets:
     file: ${SECRETS_PATH}/kheops_client_zippersecret
   kheops_metric_ressource_password:
     file: ${SECRETS_PATH}/kheops_metric_ressource_password
-
 
 volumes:
   keycloak-standalone-data:
