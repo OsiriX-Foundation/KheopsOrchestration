@@ -27,7 +27,7 @@ then
   (cd $kheopspath && curl ${downloadURI}/docker/.env --output .env --silent)
   (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.env --output docker-compose.env --silent)
   (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.yml --output docker-compose.yml --silent)
-  (cd $kheopspath && curl ${downloadURI}/themes/installkeycloak/themes.tar.gz --silent | tar -xz)
+  (cd $kheopspath && curl ${downloadURI}/themes/themes.tar.gz --silent | tar -xz)
 fi
 
 if [[ ! -d "$realmpath" ]]
