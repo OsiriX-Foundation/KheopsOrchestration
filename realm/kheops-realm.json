@@ -2,6 +2,7 @@
   "id": "Kheops",
   "realm": "kheops",
   "displayName": "Kheops",
+  "displayNameHtml": "<div class=\"kc-logo-text\"></div>",
   "notBefore": 0,
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,
@@ -1310,14 +1311,14 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "oidc-address-mapper",
-            "oidc-usermodel-property-mapper",
-            "oidc-full-name-mapper",
-            "oidc-sha256-pairwise-sub-mapper",
-            "saml-user-attribute-mapper",
             "saml-user-property-mapper",
+            "oidc-full-name-mapper",
             "saml-role-list-mapper",
-            "oidc-usermodel-attribute-mapper"
+            "saml-user-attribute-mapper",
+            "oidc-usermodel-attribute-mapper",
+            "oidc-sha256-pairwise-sub-mapper",
+            "oidc-address-mapper",
+            "oidc-usermodel-property-mapper"
           ]
         }
       },
@@ -1345,12 +1346,12 @@
         "subComponents": {},
         "config": {
           "allowed-protocol-mapper-types": [
-            "saml-user-property-mapper",
-            "oidc-full-name-mapper",
-            "oidc-address-mapper",
             "oidc-usermodel-attribute-mapper",
-            "saml-user-attribute-mapper",
             "oidc-sha256-pairwise-sub-mapper",
+            "oidc-address-mapper",
+            "saml-user-property-mapper",
+            "saml-user-attribute-mapper",
+            "oidc-full-name-mapper",
             "saml-role-list-mapper",
             "oidc-usermodel-property-mapper"
           ]
@@ -1441,7 +1442,7 @@
   ],
   "authenticationFlows": [
     {
-      "id": "85ff73db-6b9c-4f14-aa9c-4c07f57cbc26",
+      "id": "7a7f6825-55c2-407c-995e-da57f3781b45",
       "alias": "Handle Existing Account",
       "description": "Handle what to do if there is existing account with same email/username like authenticated identity provider",
       "providerId": "basic-flow",
@@ -1472,7 +1473,7 @@
       ]
     },
     {
-      "id": "3799cbd1-bcab-4b0e-92fb-18cfadd3e155",
+      "id": "63e8920c-b3c0-4730-abab-5748cb8c356a",
       "alias": "Verify Existing Account by Re-authentication",
       "description": "Reauthentication of existing account",
       "providerId": "basic-flow",
@@ -1496,7 +1497,7 @@
       ]
     },
     {
-      "id": "220a2d82-c0a1-4ba0-b94a-850ed73ab0cf",
+      "id": "f8e9f822-8294-4a10-aeed-0ca548859048",
       "alias": "Verify Existing Account by Re-authentication - auth-otp-form - Conditional",
       "description": "Flow to determine if the auth-otp-form authenticator should be used or not.",
       "providerId": "basic-flow",
@@ -1520,7 +1521,7 @@
       ]
     },
     {
-      "id": "91815f94-56ae-4a7a-a953-1f53a009c9fd",
+      "id": "2cea9427-b5d9-4faf-acb4-5b2f2d7bccbe",
       "alias": "browser",
       "description": "browser based authentication",
       "providerId": "basic-flow",
@@ -1558,7 +1559,7 @@
       ]
     },
     {
-      "id": "45df78f2-578d-4f1b-bdec-b5ce052bce46",
+      "id": "afa5a2f0-c86e-4215-befc-6e761ffa8781",
       "alias": "clients",
       "description": "Base authentication for clients",
       "providerId": "client-flow",
@@ -1596,7 +1597,7 @@
       ]
     },
     {
-      "id": "2886a2ff-b362-44db-9b29-612521ff5df6",
+      "id": "a79481c0-83a7-4f20-8e76-b2994278e958",
       "alias": "direct grant",
       "description": "OpenID Connect Resource Owner Grant",
       "providerId": "basic-flow",
@@ -1627,7 +1628,7 @@
       ]
     },
     {
-      "id": "c2765908-bbff-4ea6-b328-f734ee84597f",
+      "id": "2c940a12-2faf-42e6-b4eb-0523fd066079",
       "alias": "direct grant - direct-grant-validate-otp - Conditional",
       "description": "Flow to determine if the direct-grant-validate-otp authenticator should be used or not.",
       "providerId": "basic-flow",
@@ -1651,7 +1652,7 @@
       ]
     },
     {
-      "id": "77c8d413-3fa3-4942-abd9-f391527ed7fc",
+      "id": "322aa1e9-b8e5-4488-a42a-80199fb81d08",
       "alias": "docker auth",
       "description": "Used by Docker clients to authenticate against the IDP",
       "providerId": "basic-flow",
@@ -1668,7 +1669,7 @@
       ]
     },
     {
-      "id": "72879672-c21a-4820-8e6a-63deb7cc0a19",
+      "id": "24868216-225f-4508-b5de-92f049ddb3f1",
       "alias": "first broker login",
       "description": "Actions taken after first broker login with identity provider account, which is not yet linked to any Keycloak account",
       "providerId": "basic-flow",
@@ -1701,7 +1702,7 @@
       ]
     },
     {
-      "id": "255aa24e-467d-4c6f-9f22-7814233fdbad",
+      "id": "4401ad4a-44d2-448d-9b26-6ad082ca54ed",
       "alias": "forms",
       "description": "Username, password, otp and other auth forms.",
       "providerId": "basic-flow",
@@ -1725,7 +1726,7 @@
       ]
     },
     {
-      "id": "d7f349f4-4455-4b36-bfaa-462d5d941c65",
+      "id": "e96df92f-abc8-4e55-9bf2-153603cbb1c5",
       "alias": "forms - auth-otp-form - Conditional",
       "description": "Flow to determine if the auth-otp-form authenticator should be used or not.",
       "providerId": "basic-flow",
@@ -1749,7 +1750,7 @@
       ]
     },
     {
-      "id": "26d042f0-6afa-421c-9a43-8b1d5b85e51d",
+      "id": "a04a40f8-666d-4671-8bbe-453aac6a9af1",
       "alias": "http challenge",
       "description": "An authentication flow based on challenge-response HTTP Authentication Schemes",
       "providerId": "basic-flow",
@@ -1787,7 +1788,7 @@
       ]
     },
     {
-      "id": "ae36ef9b-34f4-4ec2-82e0-356efcfcc254",
+      "id": "552c8148-15a0-4541-a03d-8c0672de737f",
       "alias": "registration",
       "description": "registration flow",
       "providerId": "basic-flow",
@@ -1805,7 +1806,7 @@
       ]
     },
     {
-      "id": "85f97ef2-a6da-4771-acac-b167dd148fa7",
+      "id": "5a7956ff-9093-4600-b106-a5adbc46a173",
       "alias": "registration form",
       "description": "registration form",
       "providerId": "form-flow",
@@ -1843,7 +1844,7 @@
       ]
     },
     {
-      "id": "87fb19e3-a707-4372-9236-f200fdd7cffb",
+      "id": "17cd8949-843e-4495-b14e-3ff5d6f8e845",
       "alias": "reset credentials",
       "description": "Reset credentials for a user if they forgot their password or something",
       "providerId": "basic-flow",
@@ -1881,7 +1882,7 @@
       ]
     },
     {
-      "id": "003e257b-4518-4090-ba12-bcb3c43730a5",
+      "id": "a7b46344-2df1-46d2-930e-893478101e32",
       "alias": "reset credentials - reset-otp - Conditional",
       "description": "Flow to determine if the reset-otp authenticator should be used or not.",
       "providerId": "basic-flow",
@@ -1905,7 +1906,7 @@
       ]
     },
     {
-      "id": "22f293da-ff32-405f-9e3a-70f5d8aba2ab",
+      "id": "25137f6c-5baa-4a56-aa80-bf1d531470b0",
       "alias": "saml ecp",
       "description": "SAML ECP Profile Authentication Flow",
       "providerId": "basic-flow",
@@ -1924,14 +1925,14 @@
   ],
   "authenticatorConfig": [
     {
-      "id": "0142c4b2-d457-45bf-b948-68654a95d1b9",
+      "id": "b3878710-d1c5-48e7-b676-9b914c6fd6ec",
       "alias": "create unique user config",
       "config": {
         "require.password.update.after.registration": "false"
       }
     },
     {
-      "id": "b1c7d5bd-3327-4cbf-a8ee-f254cdeb8902",
+      "id": "ac831b41-4eaa-443d-815b-ee086138e144",
       "alias": "review profile config",
       "config": {
         "update.profile.on.first.login": "missing"
@@ -1995,6 +1996,7 @@
     "displayName": "Kheops",
     "webAuthnPolicyAuthenticatorAttachment": "not specified",
     "_browser_header.xRobotsTag": "none",
+    "displayNameHtml": "<div class=\"kc-logo-text\"></div>",
     "webAuthnPolicyRpEntityName": "keycloak",
     "failureFactor": "30",
     "actionTokenGeneratedByUserLifespan": "300",
