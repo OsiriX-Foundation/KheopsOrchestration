@@ -19,21 +19,27 @@ downloadURI="https://raw.githubusercontent.com/spalte/kheopsDocker/installkeyclo
 secretpath="kheops/secrets/"
 kheopspath="kheops/"
 realmpath="kheops/realm"
+themespath="kheops/themes"
 
 echo "Downloading resources"
 if [[ ! -d "$kheopspath" ]]
 then
   mkdir $kheopspath
-  (cd $kheopspath && curl ${downloadURI}/docker/.env --output .env --silent -H 'Cache-Control: no-cache')
-  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.env --output docker-compose.env --silent -H 'Cache-Control: no-cache')
-  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.yml --output docker-compose.yml --silent -H 'Cache-Control: no-cache')
-  (cd $kheopspath && curl ${downloadURI}/themes/kheops.tar.gz --silent  -H 'Cache-Control: no-cache' | tar -xzC kheops)
+  curl ${downloadURI}/docker/.env --output ${kheopspath}/.env --silent
+  curl ${downloadURI}/docker/docker-compose.env --output ${kheopspath}/docker-compose.env --silent
+  curl ${downloadURI}/docker/docker-compose.yml --output ${kheopspath}/docker-compose.yml --silent
+fi
+
+if [[ ! -d "$themespath" ]]
+then
+  mkdir $themespath
+  curl ${downloadURI}/themes/kheops.tar.gz --silent | tar -xzC $themespath
 fi
 
 if [[ ! -d "$realmpath" ]]
 then
   mkdir $realmpath
-  (cd $realmpath && curl ${downloadURI}/realm/kheops-realm.json --output kheops-realm.json --silent)
+  curl ${downloadURI}/realm/kheops-realm.json --output ${realmpath}/kheops-realm.json --silent
 fi
 
 echo "Generating secrets"
