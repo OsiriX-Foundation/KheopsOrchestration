@@ -24,10 +24,10 @@ echo "Downloading resources"
 if [[ ! -d "$kheopspath" ]]
 then
   mkdir $kheopspath
-  (cd $kheopspath && curl ${downloadURI}/docker/.env --output .env --silent)
-  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.env --output docker-compose.env --silent)
-  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.yml --output docker-compose.yml --silent)
-  (cd $kheopspath && curl ${downloadURI}/themes/kheops.tar.gz --silent | tar -xzC kheops)
+  (cd $kheopspath && curl ${downloadURI}/docker/.env --output .env --silent -H 'Cache-Control: no-cache')
+  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.env --output docker-compose.env --silent -H 'Cache-Control: no-cache')
+  (cd $kheopspath && curl ${downloadURI}/docker/docker-compose.yml --output docker-compose.yml --silent -H 'Cache-Control: no-cache')
+  (cd $kheopspath && curl ${downloadURI}/themes/kheops.tar.gz --silent  -H 'Cache-Control: no-cache' | tar -xzC kheops)
 fi
 
 if [[ ! -d "$realmpath" ]]
