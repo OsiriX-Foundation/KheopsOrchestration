@@ -21,6 +21,15 @@ kheopspath="kheops/"
 realmpath="kheops/realm"
 themespath="kheops/themes"
 
+echo "Downloading resources"
+if [[ ! -d "$kheopspath" ]]
+then
+  mkdir $kheopspath
+  curl ${downloadURI}/docker/.env --output ${kheopspath}/.env --silent
+  curl ${downloadURI}/docker/docker-compose.env --output ${kheopspath}/docker-compose.env --silent
+  curl ${downloadURI}/docker/docker-compose.yml --output ${kheopspath}/docker-compose.yml --silent
+fi
+
 if [[ ! -d "$themespath" ]]
 then
   mkdir $themespath
@@ -52,15 +61,7 @@ done
 
 printf "%s\n" $(docker run -it andyneff/uuidgen | tr -dc '[:print:]') > ${secretpath}kheops_keycloak_clientsecret
 
-echo "Downloading resources"
-if [[ ! -d "$kheopspath" ]]
-then
-  mkdir $kheopspath
-  curl ${downloadURI}/docker/.env --output ${kheopspath}/.env --silent
-  curl ${downloadURI}/docker/docker-compose.env --output ${kheopspath}/docker-compose.env --silent
-  curl ${downloadURI}/docker/docker-compose.yml --output ${kheopspath}/docker-compose.yml --silent
-fi
-
+echo "Downloading realm"
 if [[ ! -d "$realmpath" ]]
 then
   mkdir $realmpath
@@ -71,4 +72,3 @@ fi
 echo ""
 echo "To launch KHEOPS run the following commands"
 echo "cd kheops; docker-compose up"
-echo "KHEOPS will be available at http://127.0.0.1"
