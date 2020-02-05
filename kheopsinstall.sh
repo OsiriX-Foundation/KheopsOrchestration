@@ -21,6 +21,10 @@ kheopspath="kheops"
 realmpath="kheops/realm"
 themespath="kheops/themes"
 
+echo "Enter a password to be set for the Keycloak administrator account"
+echo "(username will be admin):"
+read KEYCLOAK_ADMIN_PASSWORD
+
 echo "Downloading resources"
 if [[ ! -d "$kheopspath" ]]
 then
@@ -47,8 +51,6 @@ secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
   "kheops_metric_ressource_password" \
   "keycloak_psql_password" "kheops_pacsdb_pass" "kheops_authdb_pass")
 
-echo "Enter a password to be set for the Keycloak administrator account (username: admin):"
-read KEYCLOAK_ADMIN_PASSWORD
 printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > $secretpath/keycloak_admin_password
 
 docker pull frapsoft/openssl
@@ -72,4 +74,6 @@ fi
 echo ""
 echo "To launch KHEOPS run the following commands"
 echo "cd kheops; docker-compose up -d"
+echo ""
+echo "Keycloak will be available at http://127.0.0.1:8080"
 echo "KHEOPS will be available at http://127.0.0.1"
