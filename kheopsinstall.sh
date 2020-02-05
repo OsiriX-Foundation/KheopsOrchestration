@@ -127,5 +127,9 @@ docker exec keycloak /opt/jboss/keycloak/bin/kcadm.sh remove-roles \
   --rolename offline_access \
   --rolename uma_authorization 2> /dev/null
 
+echo ""
+echo "Keycloak is currently available at http://127.0.0.1:8080"
+echo "KHEOPS will be available at http://127.0.0.1"
+echo ""
 echo "To launch KHEOPS run the following commands"
 echo "cd kheops; docker-compose up"
