@@ -16,8 +16,8 @@ fi
 
 downloadURI="https://raw.githubusercontent.com/spalte/kheopsDocker/installkeycloak"
 
-secretpath="kheops/secrets/"
-kheopspath="kheops/"
+secretpath="kheops/secrets"
+kheopspath="kheops"
 realmpath="kheops/realm"
 themespath="kheops/themes"
 
@@ -25,9 +25,9 @@ echo "Downloading resources"
 if [[ ! -d "$kheopspath" ]]
 then
   mkdir $kheopspath
-  curl ${downloadURI}/docker/.env --output ${kheopspath}/.env --silent
-  curl ${downloadURI}/docker/docker-compose.env --output ${kheopspath}/docker-compose.env --silent
-  curl ${downloadURI}/docker/docker-compose.yml --output ${kheopspath}/docker-compose.yml --silent
+  curl ${downloadURI}/docker/.env --output $kheopspath/.env --silent
+  curl ${downloadURI}/docker/docker-compose.env --output $kheopspath/docker-compose.env --silent
+  curl ${downloadURI}/docker/docker-compose.yml --output $kheopspath/docker-compose.yml --silent
 fi
 
 if [[ ! -d "$themespath" ]]
@@ -49,26 +49,27 @@ secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
 
 echo "Enter a password to be set for the Keycloak administrator account (username: admin):"
 read KEYCLOAK_ADMIN_PASSWORD
-printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > ${secretpath}keycloak_admin_password
+printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > $secretpath/keycloak_admin_password
 
 docker pull frapsoft/openssl
 docker pull andyneff/uuidgen
 
 for secretfile in ${secretfiles[*]}
 do
-  printf "%s\n" $(docker run --rm frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath$secretfile
+  printf "%s\n" $(docker run --rm frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath/$secretfile
 done
 
-printf "%s\n" $(docker run -it andyneff/uuidgen | tr -dc '[:print:]') > ${secretpath}kheops_keycloak_clientsecret
+printf "%s\n" $(docker run -it andyneff/uuidgen | tr -dc '[:print:]') > $secretpath/kheops_keycloak_clientsecret
 
 echo "Downloading realm"
 if [[ ! -d "$realmpath" ]]
 then
   mkdir $realmpath
-  curl ${downloadURI}/realm/kheops-realm.json --silent | \
-    sed "s|\${CLIENT_SECRET}|$(cat ${secretpath}kheops_keycloak_clientsecret | tr -dc '[:print:]')|" > ${realmpath}/kheops-realm.json
+  curl $downloadURI/realm/kheops-realm.json --silent | \
+    sed "s|\${CLIENT_SECRET}|$(cat $secretpath/kheops_keycloak_clientsecret | tr -dc '[:print:]')|" > $realmpath/kheops-realm.json
 fi
 
 echo ""
 echo "To launch KHEOPS run the following commands"
-echo "cd kheops; docker-compose up"
+echo "cd kheops; docker-compose up -d"
+echo "KHEOPS will be available at http://127.0.0.1"
