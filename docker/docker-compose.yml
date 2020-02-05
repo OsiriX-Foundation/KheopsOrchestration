@@ -12,7 +12,7 @@ services:
       KEYCLOAK_PASSWORD_FILE: /run/secrets/keycloak_admin_password
       KEYCLOAK_IMPORT: /tmp/kheops-realm.json
     volumes:
-      - keycloak-standalone:/opt/keycloak/standalone
+      - keycloak-standalone-data:/opt/jboss/keycloak/standalone/data
       - ./realm/kheops-realm.json:/tmp/kheops-realm.json:cached
     secrets:
       - keycloak_admin_password
@@ -190,7 +190,7 @@ secrets:
 
 
 volumes:
-  keycloak-standalone:
+  keycloak-standalone-data:
   keycloak-postgres-data:
   dcm4chee-ldap-ldap:
   dcm4chee-ldap-slapdd:
