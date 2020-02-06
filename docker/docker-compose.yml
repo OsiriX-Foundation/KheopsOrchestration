@@ -70,19 +70,21 @@ services:
 
   kheops-postgres:
     container_name: kheopspostgres
-    image: osirixfoundation/kheops-database:v0.9.0
+    image: postgres:12.1-alpine
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
-    env_file: docker-compose.env
-    secrets:
+      environment:
+        POSTGRES_DB: kheops
+        POSTGRES_USER: kheopsuser
+        POSTGRES_PASSWORD_FILE: /run/secrets/kheops_authdb_pass
+      secrets:
       - kheops_authdb_pass
-      - kheops_pacsdb_pass
     networks:
       - kheops_network
 
   kheops-authorization:
     container_name: kheopsauthorization
-    image: osirixfoundation/kheops-authorization:v0.9.0-noissuer
+    image: osirixfoundation/kheops-authorization:spalte-v0.9.1-noissure
     env_file: docker-compose.env
     environment:
       CATALINA_OPTS: -Duser.timezone=UTC
