@@ -2,7 +2,7 @@
 version: "3.1"
 services:
   keycloak:
-    image: jboss/keycloak:${KEYCLOAK_IMAGE_TAG}
+    image: jboss/keycloak:8.0.1
     container_name: keycloak
     command: ["-b", "0.0.0.0", "-Dkeycloak.migration.strategy=IGNORE_EXISTING"]
     ports:
@@ -22,14 +22,14 @@ services:
 
   ldap:
     container_name: ldap
-    image: dcm4che/slapd-dcm4chee:${PACS_LDAP_IMAGE_TAG}
+    image: dcm4che/slapd-dcm4chee:2.4.48-21.0
     env_file: docker-compose.env
     networks:
       - pacs_network
 
   pacs-postgres:
     container_name: pacspostgres
-    image: dcm4che/postgres-dcm4chee:${PACS_PSQL_IMAGE_TAG}
+    image: dcm4che/postgres-dcm4chee:12.1-22
     logging:
       driver: json-file
       options:
@@ -48,7 +48,7 @@ services:
 
   pacs-arc:
     container_name: pacsarc
-    image: dcm4che/dcm4chee-arc-psql:${KHEOPS_ARC_IMAGE_TAG}
+    image: dcm4che/dcm4chee-arc-psql:5.21.0
     env_file: docker-compose.env
     environment:
       POSTGRES_DB: kheops_pacs
@@ -70,7 +70,7 @@ services:
 
   kheops-postgres:
     container_name: kheopspostgres
-    image: osirixfoundation/kheops-database:${KHEOPS_DATABASE_IMAGE_TAG}
+    image: osirixfoundation/kheops-database:v0.9.0
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
     env_file: docker-compose.env
@@ -82,7 +82,7 @@ services:
 
   kheops-authorization:
     container_name: kheopsauthorization
-    image: osirixfoundation/kheops-authorization:${KHEOPS_AUTHORIZATION_IMAGE_TAG}
+    image: osirixfoundation/kheops-authorization:v0.9.0-noissuer
     env_file: docker-compose.env
     environment:
       CATALINA_OPTS: -Duser.timezone=UTC
@@ -102,7 +102,7 @@ services:
 
   kheops-zipper:
     container_name: kheopszipper
-    image: osirixfoundation/kheops-zipper:${KHEOPS_ZIPPER_IMAGE_TAG}
+    image: osirixfoundation/kheops-zipper:v0.9.0
     env_file: docker-compose.env
     secrets:
       - kheops_client_zippersecret
@@ -111,7 +111,7 @@ services:
 
   kheops-ui:
     container_name: kheopsui
-    image: osirixfoundation/kheops-ui:${KHEOPS_UI_IMAGE_TAG}
+    image: osirixfoundation/kheops-ui:v0.9.0
     environment:
       KHEOPS_KEYCLOAK_URI: http://127.0.0.1:8080
     env_file: docker-compose.env
@@ -120,7 +120,7 @@ services:
 
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
-    image: osirixfoundation/kheops-dicomweb-proxy:${KHEOPS_DICOMWEB_PROXY_IMAGE_TAG}
+    image: osirixfoundation/kheops-dicomweb-proxy:v0.9.0
     env_file: docker-compose.env
     secrets:
       - kheops_auth_hmasecret_post
@@ -129,7 +129,7 @@ services:
       - kheops_network
 
   kheops-reverse-proxy:
-    image: osirixfoundation/kheops-reverse-proxy:${KHEOPS_REVERSE_PROXY_IMAGE_TAG}
+    image: osirixfoundation/kheops-reverse-proxy:v0.9.0-insecure
     container_name: kheopsreverseproxy
     env_file: docker-compose.env
     ports:
@@ -146,7 +146,7 @@ services:
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
     env_file: docker-compose.env
-    image: osirixfoundation/pacs-authorization-proxy:${PACS_AUTHORIZATION_PROXY_IMAGE_TAG}
+    image: osirixfoundation/pacs-authorization-proxy:v0.9.0
     depends_on:
       - pacs-arc
     secrets:
@@ -160,21 +160,21 @@ secrets:
   keycloak_admin_password:
     file: secrets/keycloak_admin_password
   kheops_authdb_pass:
-    file: ${SECRETS_PATH}/kheops_authdb_pass
+    file: secrets/kheops_authdb_pass
   kheops_pacsdb_pass:
-    file: ${SECRETS_PATH}/kheops_pacsdb_pass
+    file: secrets/kheops_pacsdb_pass
   kheops_auth_hmasecret:
-    file: ${SECRETS_PATH}/kheops_auth_hmasecret
+    file: secrets/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
-    file: ${SECRETS_PATH}/kheops_auth_hmasecret_post
+    file: secrets/kheops_auth_hmasecret_post
   kheops_keycloak_clientsecret:
-    file: ${SECRETS_PATH}/kheops_keycloak_clientsecret
+    file: secrets/kheops_keycloak_clientsecret
   kheops_client_dicomwebproxysecret:
-    file: ${SECRETS_PATH}/kheops_client_dicomwebproxysecret
+    file: secrets/kheops_client_dicomwebproxysecret
   kheops_client_zippersecret:
-    file: ${SECRETS_PATH}/kheops_client_zippersecret
+    file: secrets/kheops_client_zippersecret
   kheops_metric_ressource_password:
-    file: ${SECRETS_PATH}/kheops_metric_ressource_password
+    file: secrets/kheops_metric_ressource_password
 
 volumes:
   keycloak-standalone-data:
