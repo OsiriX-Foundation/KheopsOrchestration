@@ -73,11 +73,11 @@ services:
     image: postgres:12.1-alpine
     volumes:
       - kheops-db-data:/var/lib/postgresql/data
-      environment:
-        POSTGRES_DB: kheops
-        POSTGRES_USER: kheopsuser
-        POSTGRES_PASSWORD_FILE: /run/secrets/kheops_authdb_pass
-      secrets:
+    environment:
+      POSTGRES_DB: kheops
+      POSTGRES_USER: kheopsuser
+      POSTGRES_PASSWORD_FILE: /run/secrets/kheops_authdb_pass
+    secrets:
       - kheops_authdb_pass
     networks:
       - kheops_network
