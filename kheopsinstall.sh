@@ -61,7 +61,7 @@ do
   printf "%s\n" $(docker run --rm frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath/$secretfile
 done
 
-printf "%s\n" $(docker run -rm andyneff/uuidgen | tr -dc '[:print:]') > $secretpath/kheops_keycloak_clientsecret
+printf "%s\n" $(docker run --rm andyneff/uuidgen | tr -dc '[:print:]') > $secretpath/kheops_keycloak_clientsecret
 
 echo "Downloading realm"
 if [[ ! -d "$realmpath" ]]
