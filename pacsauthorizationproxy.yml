@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pacsauthorizationproxy
+  labels:
+    app: pacsauthorizationproxy
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: pacsauthorizationproxy
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacsauthorizationproxy
+spec:
+  selector:
+    matchLabels:
+      app: pacsauthorizationproxy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pacsauthorizationproxy
+    spec:
+      containers:
+      - name: pacsauthorizationproxy
+        image: osirixfoundation/pacs-authorization-proxy:google
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: kubeunige
+        volumeMounts:
+        - name: secrets
+          mountPath: "/run/secrets/kheops_auth_hmasecret_post"
+          subPath: kheops_auth_hmasecret_post
+        - name: secrets
+          mountPath: "/run/secrets/kheops_auth_hmasecret"
+          subPath: kheops_auth_hmasecret
+        - name: secrets
+          mountPath: "/run/secrets/privkey.pem"
+          subPath: privkey.pem
+      volumes:
+      - name: secrets
+        secret:
+          secretName: kheops.secrets
+          items:
+          - key: kheops_auth_hmasecret_post
+            path: kheops_auth_hmasecret_post
+          - key: kheops_auth_hmasecret
+            path: kheops_auth_hmasecret
+          - key: cloudhealth_serive_account_private_key
+            path: privkey.pem
