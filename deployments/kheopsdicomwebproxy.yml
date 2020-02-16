@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kheopsdicomwebproxy
+spec:
+  selector:
+    matchLabels:
+      app: kheopsdicomwebproxy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kheopsdicomwebproxy
+    spec:
+      containers:
+      - name: kheopsdicomwebproxy
+        image: osirixfoundation/kheops-dicomweb-proxy:v0.9.1-google-branch
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: kheops-config
+        - configMapRef:
+            name: kheops-config-common
+        volumeMounts:
+        - name: secrets
+          mountPath: "/run/secrets/kheops_auth_hmasecret_post"
+          subPath: kheops_auth_hmasecret_post
+        - name: secrets
+          mountPath: "/run/secrets/kheops_client_dicomwebproxysecret"
+          subPath: kheops_client_dicomwebproxysecret
+      volumes:
+      - name: secrets
+        secret:
+          secretName: kheops.secrets
+          items:
+          - key: kheops_auth_hmasecret_post
+            path: kheops_auth_hmasecret_post
+          - key: kheops_client_dicomwebproxysecret
+            path: kheops_client_dicomwebproxysecret

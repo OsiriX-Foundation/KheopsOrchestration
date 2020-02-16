@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kheops-config-common
+data:
+  KHEOPS_API_PATH: /api
+  KHEOPS_AUTHORIZATION_HOST: kheopsauthorization
+  KHEOPS_AUTHORIZATION_PATH: /authorization
+  KHEOPS_AUTHORIZATION_PORT: "8080"
+  KHEOPS_CLIENT_DICOMWEBPROXYCLIENTID: DICOMWebProxy
+  KHEOPS_CLIENT_ZIPPERCLIENTID: Zipper
+  KHEOPS_DICOMWEB_PROXY_HOST: kheopsdicomwebproxy
+  KHEOPS_DICOMWEB_PROXY_PORT: "8080"
+  KHEOPS_PACS_PEP_HOST: pacsauthorizationproxy
+  KHEOPS_PACS_PEP_PORT: "80"
+  KHEOPS_ROOT_PORT: "443"
+  KHEOPS_ROOT_SCHEME: https
+  KHEOPS_UI_HOST: kheopsui
+  KHEOPS_UI_PORT: "3000"
+  KHEOPS_UI_TITLE: KHEOPS
+  KHEOPS_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
+  KHEOPS_ZIPPER_HOST: kheopszipper
+  KHEOPS_ZIPPER_PORT: "8080"
