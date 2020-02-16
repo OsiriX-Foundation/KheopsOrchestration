@@ -42,5 +42,5 @@ spec:
             path: kheops_auth_hmasecret_post
           - key: kheops_auth_hmasecret
             path: kheops_auth_hmasecret
-          - key: cloudhealth_serive_account_private_key
+          - key: cloudhealth_service_account_private_key
             path: privkey.pem

@@ -9,9 +9,9 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: keycloak-ingress
+  name: kheops-ingress
   annotations:
-#    kubernetes.io/ingress.global-static-ip-name: keycloak-ip
+#    kubernetes.io/ingress.global-static-ip-name: kheops-ip
     kubernetes.io/ingress.allow-http: "false"
     networking.gke.io/managed-certificates: kheops-gke-certificate  
 spec:
