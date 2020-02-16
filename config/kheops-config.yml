@@ -13,5 +13,5 @@ data:
   KHEOPS_PROXY_PACS_WADO_URI: https://healthcare.googleapis.com/v1beta1/projects/kheopsdicomwebproject/locations/europe-west4/datasets/DICOMwebDataset/dicomStores/DICOMwebDatastore/dicomWeb
   KHEOPS_ROOT_HOST: gke-test.kheops.online
   KHEOPS_UI_KEYCLOAK_CLIENTID: loginConnect
-  KHEOPS_SERVICE_ACCOUNT_USER: "bogus3@kheopsdicomwebproject.iam.gserviceaccount.com"
+  KHEOPS_SERVICE_ACCOUNT_USER: "pacspep@kheopsdicomwebproject.iam.gserviceaccount.com"
   KHEOPS_VIEWER_URL: https://ohif.kheops.online
