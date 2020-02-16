@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kheopsui
+spec:
+  selector:
+    matchLabels:
+      app: kheopsui
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kheopsui
+    spec:
+      containers:
+      - name: kheopsui
+        image: osirixfoundation/kheops-ui:v0.9.1-google-branch
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: kheops-config
+        - configMapRef:
+            name: kheops-config-common

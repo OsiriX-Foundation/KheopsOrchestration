@@ -1,0 +1,20 @@
+apiVersion: networking.gke.io/v1beta1
+kind: ManagedCertificate
+metadata:
+  name: kheops-gke-certificate
+spec:
+  domains:
+    - gke-test.kheops.online
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: keycloak-ingress
+  annotations:
+#    kubernetes.io/ingress.global-static-ip-name: keycloak-ip
+    kubernetes.io/ingress.allow-http: "false"
+    networking.gke.io/managed-certificates: kheops-gke-certificate  
+spec:
+  backend:
+    serviceName: kheopsreverseproxy
+    servicePort: 80
