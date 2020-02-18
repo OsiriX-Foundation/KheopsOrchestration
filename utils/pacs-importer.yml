@@ -9,9 +9,6 @@ spec:
       - name: pacs-importer
         image: osirixfoundation/kheops-pacs-importer:v0.9.1-google-branch
         imagePullPolicy: Always
-        env:
-        - name: IMPORTER_TOKEN
-          value: $IMPORTER_TOKEN
         envFrom:
         - configMapRef:
             name: kheops-config
