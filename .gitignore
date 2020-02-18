@@ -1,3 +1,3 @@
 .DS_Store
-secrets.yml
-secrets/secrets.yml
+*secret.yml
+*secret.yaml

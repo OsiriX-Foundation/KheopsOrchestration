@@ -11,7 +11,7 @@ kind: Ingress
 metadata:
   name: kheops-ingress
   annotations:
-#    kubernetes.io/ingress.global-static-ip-name: kheops-ip
+    kubernetes.io/ingress.global-static-ip-name: kheops-ip
     kubernetes.io/ingress.allow-http: "false"
     networking.gke.io/managed-certificates: kheops-gke-certificate  
 spec:
