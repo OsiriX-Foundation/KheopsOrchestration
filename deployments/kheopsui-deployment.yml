@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kheopsui
-        image: osirixfoundation/kheops-ui:v0.9.1
+        image: osirixfoundation/kheops-ui:v0.9.1-storetoken-fix
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
