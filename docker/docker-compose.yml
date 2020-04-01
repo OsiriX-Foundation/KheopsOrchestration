@@ -29,7 +29,7 @@ services:
 
   pacs-postgres:
     container_name: pacspostgres
-    image: dcm4che/postgres-dcm4chee:12.1-22
+    image: dcm4che/postgres-dcm4chee:12.1-21
     logging:
       driver: json-file
       options:
