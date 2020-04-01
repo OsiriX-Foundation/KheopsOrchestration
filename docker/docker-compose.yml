@@ -84,7 +84,7 @@ services:
 
   kheops-authorization:
     container_name: kheopsauthorization
-    image: osirixfoundation/kheops-authorization:spalte-v0.9.2-noissure
+    image: osirixfoundation/kheops-authorization:v0.9.2-noissuer
     env_file: docker-compose.env
     environment:
       CATALINA_OPTS: -Duser.timezone=UTC
