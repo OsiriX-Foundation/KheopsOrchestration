@@ -14,7 +14,7 @@ then
   exit 1
 fi
 
-downloadURI="https://raw.githubusercontent.com/spalte/kheopsDocker/installkeycloak"
+downloadURI="https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install"
 
 secretpath="kheops/secrets"
 kheopspath="kheops"
