@@ -88,7 +88,6 @@ services:
     env_file: docker-compose.env
     environment:
       CATALINA_OPTS: -Duser.timezone=UTC
-      KHEOPS_KEYCLOAK_URI: http://keycloak:8080
     depends_on:
       - kheops-postgres
     secrets:
@@ -134,8 +133,6 @@ services:
     image: osirixfoundation/kheops-reverse-proxy:v0.9.2-insecure
     container_name: kheopsreverseproxy
     env_file: docker-compose.env
-    environment:
-      KHEOPS_KEYCLOAK_URI: http://keycloak:8080
     ports:
       - "80:8042"
     depends_on:
