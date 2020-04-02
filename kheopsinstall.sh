@@ -26,21 +26,21 @@ echo "(username will be admin):"
 read KEYCLOAK_ADMIN_PASSWORD
 
 echo "Downloading resources"
-if [[ ! -d "$kheopspath" ]]
+if [ ! -d "$kheopspath" ]
 then
   mkdir $kheopspath
   curl $downloadURI/docker/docker-compose.env --output $kheopspath/docker-compose.env --silent
   curl $downloadURI/docker/docker-compose.yml --output $kheopspath/docker-compose.yml --silent
 fi
 
-if [[ ! -d "$themespath" ]]
+if [ ! -d "$themespath" ]
 then
   mkdir $themespath
   curl $downloadURI/themes/kheops.tar.gz --silent | tar -xzC $themespath
 fi
 
 echo "Generating secrets"
-if [[ ! -d "$secretpath" ]]
+if [ ! -d "$secretpath" ]
 then
   mkdir $secretpath
 fi
