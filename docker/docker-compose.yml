@@ -1,10 +1,10 @@
 ---
 version: "3.1"
 services:
-# In a production environment, Keycloak should be set up separately from KHEOPS
+# In a production environment, Keycloak should be set up separately from KHEOPS.
 # KHEOPS interacts with Keycloak using the Authorization Code flow please
 # refer to the Keycloak documentation for instruction on how to properly
-# secure Keycloak
+# secure Keycloak.
   keycloak:
     image: jboss/keycloak:9.0.3
     container_name: keycloak
@@ -37,7 +37,7 @@ services:
     networks:
       - pacs_network
 
-#DCM4CHEE uses this PostgreSQL database
+# DCM4CHEE uses this PostgreSQL database
   pacs-postgres:
     container_name: pacspostgres
     image: dcm4che/postgres-dcm4chee:12.1-21
@@ -66,6 +66,8 @@ services:
       POSTGRES_DB: kheops_pacs
       POSTGRES_USER: kheops_pacs
       POSTGRES_PASSWORD_FILE: /run/secrets/kheops_pacsdb_pass
+      STORAGE_DIR: /storage/fs1
+      POSTGRES_HOST: pacspostgres
       WILDFLY_CHOWN: /storage /opt/wildfly/standalone
       WILDFLY_WAIT_FOR: ldap:389 pacspostgres:5432
       JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
