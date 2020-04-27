@@ -14,7 +14,8 @@ then
   exit 1
 fi
 
-downloadURI="https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install"
+download_branch="insecure-install-v0.9.4"
+downloadURI="https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/$download_branch"
 
 secretpath="kheops/secrets"
 kheopspath="kheops"
@@ -47,20 +48,16 @@ fi
 
 secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
   "kheops_client_dicomwebproxysecret" "kheops_client_zippersecret" \
-  "kheops_metric_ressource_password" \
   "keycloak_psql_password" "kheops_pacsdb_pass" "kheops_authdb_pass")
 
 printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > $secretpath/keycloak_admin_password
 
 docker pull frapsoft/openssl
-docker pull andyneff/uuidgen
 
 for secretfile in ${secretfiles[*]}
 do
   printf "%s\n" $(docker run --rm frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath/$secretfile
 done
-
-printf "%s\n" $(docker run --rm andyneff/uuidgen | tr -dc '[:print:]') > $secretpath/kheops_keycloak_clientsecret
 
 echo "Downloading realm"
 if [[ ! -d "$realmpath" ]]

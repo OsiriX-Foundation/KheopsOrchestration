@@ -1,8 +1,12 @@
 ---
 version: "3.1"
 services:
+# In a production environment, Keycloak should be set up separately from KHEOPS
+# KHEOPS interacts with Keycloak using the Authorization Code flow please
+# refer to the Keycloak documentation for instruction on how to properly
+# secure Keycloak
   keycloak:
-    image: jboss/keycloak:8.0.1
+    image: jboss/keycloak:9.0.3
     container_name: keycloak
     command: ["-b", "0.0.0.0", "-Dkeycloak.migration.strategy=IGNORE_EXISTING"]
     ports:
@@ -11,6 +15,9 @@ services:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD_FILE: /run/secrets/keycloak_admin_password
       KEYCLOAK_IMPORT: /tmp/kheops-realm.json
+# In this configuration, users of the Web UI will access KHEOPS and be
+# redirected to Keycloak using the frontend URL 
+      KEYCLOAK_FRONTEND_URL: http://127.0.0.1:8080/auth
     volumes:
       - keycloak-standalone-data:/opt/jboss/keycloak/standalone/data
       - ./realm/kheops-realm.json:/tmp/kheops-realm.json:cached
@@ -20,6 +27,9 @@ services:
     networks:
       - keycloak_network
 
+# DCM4CHEE uses the an LDAP server for configuration, as per the DICOM 
+# Application Configuration Management Profile. For this installation
+# we do not apply any custom configuration to DCM4CEE
   ldap:
     container_name: ldap
     image: dcm4che/slapd-dcm4chee:2.4.48-21.0
@@ -27,6 +37,7 @@ services:
     networks:
       - pacs_network
 
+#DCM4CHEE uses this PostgreSQL database
   pacs-postgres:
     container_name: pacspostgres
     image: dcm4che/postgres-dcm4chee:12.1-21
@@ -46,6 +57,7 @@ services:
     networks:
       - pacs_network
 
+# The main DCM4CHEE container
   pacs-arc:
     container_name: pacsarc
     image: dcm4che/dcm4chee-arc-psql:5.21.0
@@ -68,6 +80,7 @@ services:
     networks:
       - pacs_network
 
+# KHEOPS persists all data to this PostgreSQL database
   kheops-postgres:
     container_name: kheopspostgres
     image: postgres:12.1-alpine
@@ -84,26 +97,25 @@ services:
 
   kheops-authorization:
     container_name: kheopsauthorization
-    image: osirixfoundation/kheops-authorization:v0.9.2-noissuer
+    image: osirixfoundation/kheops-authorization:v0.9.4
     env_file: docker-compose.env
     environment:
+      KHEOPS_OIDC_PROVIDER: http://keycloak:8080/auth/realms/kheops
       CATALINA_OPTS: -Duser.timezone=UTC
     depends_on:
       - kheops-postgres
     secrets:
       - kheops_auth_hmasecret
       - kheops_authdb_pass
-      - kheops_keycloak_clientsecret
       - kheops_client_dicomwebproxysecret
       - kheops_client_zippersecret
-      - kheops_metric_ressource_password
     networks:
       - kheops_network
       - keycloak_network
 
   kheops-zipper:
     container_name: kheopszipper
-    image: osirixfoundation/kheops-zipper:v0.9.2
+    image: osirixfoundation/kheops-zipper:v0.9.4
     env_file: docker-compose.env
     secrets:
       - kheops_client_zippersecret
@@ -112,16 +124,14 @@ services:
 
   kheops-ui:
     container_name: kheopsui
-    image: osirixfoundation/kheops-ui:v0.9.2
-    environment:
-      KHEOPS_KEYCLOAK_URI: http://127.0.0.1:8080
+    image: osirixfoundation/kheops-ui:v0.9.4
     env_file: docker-compose.env
     networks:
       - frontend_network
 
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
-    image: osirixfoundation/kheops-dicomweb-proxy:v0.9.2
+    image: osirixfoundation/kheops-dicomweb-proxy:v0.9.4
     env_file: docker-compose.env
     secrets:
       - kheops_auth_hmasecret_post
@@ -130,7 +140,7 @@ services:
       - kheops_network
 
   kheops-reverse-proxy:
-    image: osirixfoundation/kheops-reverse-proxy:v0.9.2-insecure
+    image: osirixfoundation/kheops-reverse-proxy:v0.9.4-insecure
     container_name: kheopsreverseproxy
     env_file: docker-compose.env
     ports:
@@ -147,7 +157,7 @@ services:
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
     env_file: docker-compose.env
-    image: osirixfoundation/pacs-authorization-proxy:v0.9.2
+    image: osirixfoundation/pacs-authorization-proxy:v0.9.4
     depends_on:
       - pacs-arc
     secrets:
@@ -168,14 +178,10 @@ secrets:
     file: secrets/kheops_auth_hmasecret
   kheops_auth_hmasecret_post:
     file: secrets/kheops_auth_hmasecret_post
-  kheops_keycloak_clientsecret:
-    file: secrets/kheops_keycloak_clientsecret
   kheops_client_dicomwebproxysecret:
     file: secrets/kheops_client_dicomwebproxysecret
   kheops_client_zippersecret:
     file: secrets/kheops_client_zippersecret
-  kheops_metric_ressource_password:
-    file: secrets/kheops_metric_ressource_password
 
 volumes:
   keycloak-standalone-data:
@@ -185,11 +191,18 @@ volumes:
   kheops-db-data:
 
 networks:
+# Network used for communication between the backend KHEOPS components
   kheops_network:
     driver: bridge
+# The PACS network isolates the PACS from the reset of KHEOPS ensuring that
+# all communication between KHEOPS and the PACS goes the the authorization
+# proxy.
   pacs_network:
     driver: bridge
+# network reserved for communication with the frontend UI.
   frontend_network:
     driver: bridge
+# Network for the backend communication between the KHEOPS Authorization
+# Server and Keycloak.
   keycloak_network:
     driver: bridge
