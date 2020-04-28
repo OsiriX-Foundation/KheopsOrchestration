@@ -63,13 +63,12 @@ echo "Downloading realm"
 if [[ ! -d "$realmpath" ]]
 then
   mkdir $realmpath
-  curl $downloadURI/realm/kheops-realm.json --silent | \
-    sed "s|\${CLIENT_SECRET}|$(cat $secretpath/kheops_keycloak_clientsecret | tr -dc '[:print:]')|" > $realmpath/kheops-realm.json
+  curl -sL "$downloadURI/realm/kheops-realm.json" > "$realmpath/kheops-realm.json"
 fi
 
 echo ""
 echo "To launch KHEOPS run the following commands"
-echo "cd kheops; docker-compose up -d"
+echo "cd kheops; docker-compose pull; docker-compose up -d"
 echo ""
 echo "Keycloak will be available at http://127.0.0.1:8080"
 echo "KHEOPS will be available at http://127.0.0.1"
