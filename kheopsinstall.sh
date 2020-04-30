@@ -43,6 +43,13 @@ then
   curl $downloadURI/themes/kheops.tar.gz --silent | tar -xzC $themespath
 fi
 
+echo "Downloading realm"
+if [[ ! -d "$realmpath" ]]
+then
+  mkdir $realmpath
+  curl -sL "$downloadURI/realm/kheops-realm.json" > "$realmpath/kheops-realm.json"
+fi
+
 echo "Generating secrets"
 if [ ! -d "$secretpath" ]
 then
@@ -55,19 +62,12 @@ secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
 
 printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > $secretpath/keycloak_admin_password
 
-docker pull frapsoft/openssl
+docker pull osirixfoundation/openssl
 
 for secretfile in ${secretfiles[*]}
 do
-  printf "%s\n" $(docker run --rm frapsoft/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath/$secretfile
+  printf "%s\n" $(docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath/$secretfile
 done
-
-echo "Downloading realm"
-if [[ ! -d "$realmpath" ]]
-then
-  mkdir $realmpath
-  curl -sL "$downloadURI/realm/kheops-realm.json" > "$realmpath/kheops-realm.json"
-fi
 
 echo ""
 echo "To launch KHEOPS run the following commands"
