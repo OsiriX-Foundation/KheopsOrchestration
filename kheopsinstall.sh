@@ -22,9 +22,12 @@ kheopspath="kheops"
 realmpath="kheops/realm"
 themespath="kheops/themes"
 
-echo "Enter a password to be set for the Keycloak administrator account"
-echo "(username will be admin):"
-read KEYCLOAK_ADMIN_PASSWORD
+while [ -z $KEYCLOAK_ADMIN_PASSWORD ]
+do
+  echo "Enter a password to be set for the Keycloak administrator account"
+  echo "(username will be admin):"
+  read KEYCLOAK_ADMIN_PASSWORD
+done
 
 echo "Downloading resources"
 if [ ! -d "$kheopspath" ]
