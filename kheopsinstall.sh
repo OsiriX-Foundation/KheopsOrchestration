@@ -48,7 +48,7 @@ fi
 
 secretfiles=("kheops_auth_hmasecret" "kheops_auth_hmasecret_post" \
   "kheops_client_dicomwebproxysecret" "kheops_client_zippersecret" \
-  "keycloak_psql_password" "kheops_pacsdb_pass" "kheops_authdb_pass")
+  "kheops_pacsdb_pass" "kheops_authdb_pass")
 
 printf "%s\n" $(printf "%s" $KEYCLOAK_ADMIN_PASSWORD | tr -dc '[:print:]') > $secretpath/keycloak_admin_password
 
