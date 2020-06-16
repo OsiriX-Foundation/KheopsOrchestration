@@ -8,7 +8,7 @@ services:
   keycloak:
     image: jboss/keycloak:9.0.3
     container_name: keycloak
-    command: ["-b", "0.0.0.0", "-Dkeycloak.migration.strategy=IGNORE_EXISTING"]
+    command: ["-b", "0.0.0.0"]
     ports:
       - "8080:8080"
     environment:
@@ -32,7 +32,7 @@ services:
 # we do not apply any custom configuration to DCM4CEE
   ldap:
     container_name: ldap
-    image: dcm4che/slapd-dcm4chee:2.4.48-21.0
+    image: dcm4che/slapd-dcm4chee:2.4.48-22.2
     env_file: docker-compose.env
     networks:
       - pacs_network
@@ -40,7 +40,7 @@ services:
 # DCM4CHEE uses this PostgreSQL database
   pacs-postgres:
     container_name: pacspostgres
-    image: dcm4che/postgres-dcm4chee:12.1-21
+    image: dcm4che/postgres-dcm4chee:12.1-22.2
     logging:
       driver: json-file
       options:
@@ -60,7 +60,7 @@ services:
 # The main DCM4CHEE container
   pacs-arc:
     container_name: pacsarc
-    image: dcm4che/dcm4chee-arc-psql:5.21.0
+    image: dcm4che/dcm4chee-arc-psql:5.22.2
     env_file: docker-compose.env
     environment:
       POSTGRES_DB: kheops_pacs
