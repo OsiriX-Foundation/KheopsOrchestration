@@ -40,7 +40,7 @@ services:
 # DCM4CHEE uses this PostgreSQL database
   pacs-postgres:
     container_name: pacspostgres
-    image: dcm4che/postgres-dcm4chee:12.1-22.2
+    image: dcm4che/postgres-dcm4chee:12.2-22
     logging:
       driver: json-file
       options:
