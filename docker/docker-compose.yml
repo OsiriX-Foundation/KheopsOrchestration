@@ -70,7 +70,7 @@ services:
       POSTGRES_HOST: pacspostgres
       WILDFLY_CHOWN: /storage /opt/wildfly/standalone
       WILDFLY_WAIT_FOR: ldap:389 pacspostgres:5432
-      JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n
+      JAVA_OPTS: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true
     secrets:
       - kheops_pacsdb_pass
     depends_on:
