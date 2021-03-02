@@ -210,7 +210,7 @@ services:
     networks:
       - kheops_network
       - frontend_network
-      - kibana_network
+      - elk_network
 
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
@@ -241,7 +241,6 @@ services:
     container_name: kibana
     networks:
       - elk_network
-      - kibana_network
 
   logstash:
     image: osirixfoundation/kheops-logstash:main
@@ -317,9 +316,6 @@ networks:
     driver: bridge
 # Network for elastic stack (logstash-elasticsearch-kibana)
   elk_network:
-    driver: bridge
-# Network for kibana frontend
-  kibana_network:
     driver: bridge
 # Network for beats (filebeat and metricbeat)
   beats_network:
