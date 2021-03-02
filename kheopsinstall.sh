@@ -14,7 +14,7 @@ then
   exit 1
 fi
 
-download_branch="insecure-install-v0.9.5"
+download_branch="insecure-install-kibana-v0.9.6"
 downloadURI="https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/$download_branch"
 
 secretpath="kheops/secrets"
@@ -75,3 +75,4 @@ echo "cd kheops; docker-compose pull; docker-compose up -d"
 echo ""
 echo "Keycloak will be available at http://127.0.0.1:8080"
 echo "KHEOPS will be available at http://127.0.0.1"
+echo "Kibana will be available at http://127.0.0.1/kibana with 'kheops' as username and '1234' as password"
