@@ -36,7 +36,7 @@ do
   read KIBANA_UI_PASSWORD
 done
 
-docker run --rm -ti xmartlabs/htpasswd kheops $KIBANA_UI_PASSWORD > auth_basic
+docker run --rm -ti marcnuri/htpasswd -bn kheops $KIBANA_UI_PASSWORD > auth_basic
 
 echo "Downloading resources"
 if [ ! -d "$kheopspath" ]
