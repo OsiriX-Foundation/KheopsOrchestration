@@ -36,7 +36,7 @@ do
   read KIBANA_UI_PASSWORD
 done
 
-docker run --rm -ti xmartlabs/htpasswd kheops $KIBANA_UI_PASSWORD > basic_auth
+docker run --rm -ti xmartlabs/htpasswd kheops $KIBANA_UI_PASSWORD > auth_basic
 
 echo "Downloading resources"
 if [ ! -d "$kheopspath" ]
@@ -78,7 +78,7 @@ do
   printf "%s\n" $(docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath/$secretfile
 done
 
-mv basic_auth kheops/secrets
+mv auth_basic kheops/secrets
 
 echo ""
 echo "To launch KHEOPS run the following commands"
@@ -86,4 +86,4 @@ echo "cd kheops; docker-compose pull; docker-compose up -d"
 echo ""
 echo "Keycloak will be available at http://127.0.0.1:8080"
 echo "KHEOPS will be available at http://127.0.0.1"
-echo "Kibana will be available at http://127.0.0.1/kibana
+echo "Kibana will be available at http://127.0.0.1/kibana"
