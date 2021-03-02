@@ -291,6 +291,7 @@ volumes:
   dcm4chee-arc-wildfly:
   dcm4chee-arc-storage:
   kheops-db-data:
+  elastic_data:
   logs_pep:
   logs_reverse_proxy:
   logs_auth:
