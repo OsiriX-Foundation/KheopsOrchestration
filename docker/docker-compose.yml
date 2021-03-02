@@ -127,6 +127,9 @@ services:
     container_name: kheopsauthorizationmetricbeat
     image: osirixfoundation/kheops-authorization-metricbeat:main
     env_file: docker-compose.env
+    environment:
+      - KHEOPS_INSTANCES=kheops
+      - KHEOPS_LOGSTASH_URL=logstash:5044
     depends_on:
       - kheops-authorization
     networks:
