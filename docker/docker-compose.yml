@@ -211,6 +211,8 @@ services:
       - kheops_network
       - frontend_network
       - elk_network
+    secrets:
+      - basic_auth
 
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
@@ -286,6 +288,8 @@ secrets:
     file: secrets/kheops_client_dicomwebproxysecret
   kheops_client_zippersecret:
     file: secrets/kheops_client_zippersecret
+  basic_auth:
+    file: secrets/basic_auth
 
 volumes:
   keycloak-standalone-data:
