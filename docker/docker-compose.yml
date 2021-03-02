@@ -136,7 +136,7 @@ services:
     container_name: kheopsfilebeatsidecar
     image: osirixfoundation/kheops-filebeat-sidecar:v0.9.6
     environment:
-      - KHEOPS_INSTANCES=${INSTANCE_NAME:?err}
+      - KHEOPS_INSTANCES=kheops
       - KHEOPS_LOGSTASH_URL=logstash:5044
     env_file: docker-compose.env
     depends_on:
