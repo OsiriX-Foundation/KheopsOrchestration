@@ -99,7 +99,14 @@ services:
 
   kheops-authorization:
     container_name: kheopsauthorization
-    image: osirixfoundation/kheops-authorization:v0.9.5
+    image: osirixfoundation/kheops-authorization:v0.9.6
+    logging:
+      driver: json-file
+      options:
+        max-file: "10"
+        max-size: "10m"
+    volumes:
+      - logs_auth:/usr/local/tomcat/logs
     env_file: docker-compose.env
     environment:
       KHEOPS_OIDC_PROVIDER: http://keycloak:8080/auth/realms/kheops
@@ -114,10 +121,43 @@ services:
     networks:
       - kheops_network
       - keycloak_network
+      - beats_network
+
+  kheops-authorization-metricbeat:
+    container_name: kheopsauthorizationmetricbeat
+    image: osirixfoundation/kheops-authorization-metricbeat:main
+    env_file: docker-compose.env
+    depends_on:
+      - kheops-authorization
+    networks:
+      - beats_network
+
+  kheops-filebeat-sidecar:
+    container_name: kheopsfilebeatsidecar
+    image: osirixfoundation/kheops-filebeat-sidecar:v0.9.6
+    environment:
+      - KHEOPS_INSTANCES=${INSTANCE_NAME:?err}
+      - KHEOPS_LOGSTASH_URL=logstash:5044
+    env_file: docker-compose.env
+    depends_on:
+      - kheops-authorization
+      - kheops-reverse-proxy
+      - pacs-authorization-proxy
+    volumes:
+      - logs_auth:/kheops/authorization/logs
+      - logs_pep:/kheops/pep/logs
+      - logs_reverse_proxy:/kheops/reverseproxy/logs
+    networks:
+      - beats_network
 
   kheops-zipper:
     container_name: kheopszipper
-    image: osirixfoundation/kheops-zipper:v0.9.5
+    image: osirixfoundation/kheops-zipper:v0.9.6
+    logging:
+      driver: json-file
+      options:
+        max-file: "10"
+        max-size: "10m"
     env_file: docker-compose.env
     secrets:
       - kheops_client_zippersecret
@@ -126,14 +166,19 @@ services:
 
   kheops-ui:
     container_name: kheopsui
-    image: osirixfoundation/kheops-ui:v0.9.5
+    image: osirixfoundation/kheops-ui:v0.9.6
     env_file: docker-compose.env
     networks:
       - frontend_network
 
   kheops-dicomweb-proxy:
     container_name: kheopsdicomwebproxy
-    image: osirixfoundation/kheops-dicomweb-proxy:v0.9.5
+    image: osirixfoundation/kheops-dicomweb-proxy:v0.9.6
+    logging:
+      driver: json-file
+      options:
+        max-file: "10"
+        max-size: "10m"
     env_file: docker-compose.env
     secrets:
       - kheops_auth_hmasecret_post
@@ -142,9 +187,16 @@ services:
       - kheops_network
 
   kheops-reverse-proxy:
-    image: osirixfoundation/kheops-reverse-proxy:v0.9.5-insecure
+    image: osirixfoundation/kheops-reverse-proxy:v0.9.6-kibana-insecure
     container_name: kheopsreverseproxy
     env_file: docker-compose.env
+    volumes:
+      - logs_reverse_proxy:/var/log/nginx
+    logging:
+      driver: json-file
+      options:
+        max-file: "10"
+        max-size: "10m"
     ports:
       - "80:8042"
     depends_on:
@@ -155,11 +207,19 @@ services:
     networks:
       - kheops_network
       - frontend_network
+      - kibana_network
 
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
     env_file: docker-compose.env
-    image: osirixfoundation/pacs-authorization-proxy:v0.9.5
+    image: osirixfoundation/pacs-authorization-proxy:v0.9.6
+    volumes:
+      - logs_pep:/var/log/nginx
+    logging:
+      driver: json-file
+      options:
+        max-file: "10"
+        max-size: "10m"
     depends_on:
       - pacs-arc
     secrets:
@@ -168,6 +228,46 @@ services:
     networks:
       - pacs_network
       - kheops_network
+
+#####################################################################
+####   ELK                                                        ###
+#####################################################################
+
+  kibana:
+    image: osirixfoundation/kheops-kibana:main
+    container_name: kibana
+    networks:
+      - elk_network
+      - kibana_network
+
+  logstash:
+    image: osirixfoundation/kheops-logstash:main
+    container_name: logstash
+    environment:
+      - LS_JAVA_OPTS=-Xmx3g        
+    networks:
+      - elk_network
+      - beats_network
+
+  elasticsearch:
+    image: osirixfoundation/kheops-elasticsearch:main
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - elastic_data:/usr/share/elasticsearch/data
+    networks:
+      - elk_network
+
+  kibana-initialize:
+    image: osirixfoundation/kibana-initialize:main
+    container_name: kibanainitialize
+    networks:
+      - elk_network
+
+#####################################################################
+####   Secret, volumes & Networks                                 ###
+#####################################################################
 
 secrets:
   keycloak_admin_password:
@@ -191,6 +291,9 @@ volumes:
   dcm4chee-arc-wildfly:
   dcm4chee-arc-storage:
   kheops-db-data:
+  logs_pep:
+  logs_reverse_proxy:
+  logs_auth:
 
 networks:
 # Network used for communication between the backend KHEOPS components
@@ -201,10 +304,19 @@ networks:
 # proxy.
   pacs_network:
     driver: bridge
-# network reserved for communication with the frontend UI.
+# Network reserved for communication with the frontend UI.
   frontend_network:
     driver: bridge
 # Network for the backend communication between the KHEOPS Authorization
 # Server and Keycloak.
   keycloak_network:
+    driver: bridge
+# Network for elastic stack (logstash-elasticsearch-kibana)
+  elk_network:
+    driver: bridge
+# Network for kibana frontend
+  kibana_network:
+    driver: bridge
+# Network for beats (filebeat and metricbeat)
+  beats_network:
     driver: bridge
