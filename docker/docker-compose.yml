@@ -240,7 +240,7 @@ services:
     container_name: kibana
     networks:
       - elk_network
-    port:
+    ports:
       - 8081:5601
 
   logstash:
