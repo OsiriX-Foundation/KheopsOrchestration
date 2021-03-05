@@ -190,7 +190,7 @@ services:
       - kheops_network
 
   kheops-reverse-proxy:
-    image: osirixfoundation/kheops-reverse-proxy:v1.0.0-kibana-insecure
+    image: osirixfoundation/kheops-reverse-proxy:v1.0.0-insecure
     container_name: kheopsreverseproxy
     env_file: docker-compose.env
     volumes:
@@ -210,9 +210,6 @@ services:
     networks:
       - kheops_network
       - frontend_network
-      - elk_network
-    secrets:
-      - auth_basic
 
   pacs-authorization-proxy:
     container_name: pacsauthorizationproxy
@@ -243,6 +240,8 @@ services:
     container_name: kibana
     networks:
       - elk_network
+    port:
+      - 8081:5601
 
   logstash:
     image: osirixfoundation/kheops-logstash:main
@@ -288,8 +287,7 @@ secrets:
     file: secrets/kheops_client_dicomwebproxysecret
   kheops_client_zippersecret:
     file: secrets/kheops_client_zippersecret
-  auth_basic:
-    file: secrets/auth_basic
+
 
 volumes:
   keycloak-standalone-data:

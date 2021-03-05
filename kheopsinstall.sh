@@ -29,15 +29,6 @@ do
   read KEYCLOAK_ADMIN_PASSWORD
 done
 
-while [ -z $KIBANA_UI_PASSWORD ]
-do
-  echo "Enter a password to be set for the Kibana user interface"
-  echo "(username will be kheops):"
-  read KIBANA_UI_PASSWORD
-done
-
-docker run --rm -ti marcnuri/htpasswd -bn kheops $KIBANA_UI_PASSWORD > auth_basic
-
 echo "Downloading resources"
 if [ ! -d "$kheopspath" ]
 then
@@ -77,8 +68,6 @@ for secretfile in ${secretfiles[*]}
 do
   printf "%s\n" $(docker run --rm osirixfoundation/openssl rand -base64 32 | tr -dc '[:print:]') > $secretpath/$secretfile
 done
-
-mv auth_basic kheops/secrets
 
 echo ""
 echo "To launch KHEOPS run the following commands"
