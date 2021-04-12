@@ -32,7 +32,7 @@ services:
 # we do not apply any custom configuration to DCM4CEE
   ldap:
     container_name: ldap
-    image: dcm4che/slapd-dcm4chee:2.4.48-22.2
+    image: dcm4che/slapd-dcm4chee:2.4.57-23.2
     env_file: docker-compose.env
     networks:
       - pacs_network
@@ -40,7 +40,7 @@ services:
 # DCM4CHEE uses this PostgreSQL database
   pacs-postgres:
     container_name: pacspostgres
-    image: dcm4che/postgres-dcm4chee:12.2-22
+    image: dcm4che/postgres-dcm4chee:13.1-23
     logging:
       driver: json-file
       options:
@@ -60,7 +60,7 @@ services:
 # The main DCM4CHEE container
   pacs-arc:
     container_name: pacsarc
-    image: dcm4che/dcm4chee-arc-psql:5.22.2
+    image: dcm4che/dcm4chee-arc-psql:5.23.2
     env_file: docker-compose.env
     environment:
       POSTGRES_DB: kheops_pacs
