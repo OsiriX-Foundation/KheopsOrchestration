@@ -170,7 +170,7 @@ services:
 
   kheops-ui:
     container_name: kheopsui
-    image: osirixfoundation/kheops-ui:v0.9.5
+    image: osirixfoundation/kheops-ui:v1.0.0
     env_file: docker-compose.env
     networks:
       - frontend_network
