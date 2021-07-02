@@ -191,7 +191,7 @@ services:
       - kheops_network
 
   kheops-reverse-proxy:
-    image: osirixfoundation/kheops-reverse-proxy:v0.9.5-insecure
+    image: osirixfoundation/kheops-reverse-proxy:v1.0.0-insecure
     container_name: kheopsreverseproxy
     env_file: docker-compose.env
     volumes:
