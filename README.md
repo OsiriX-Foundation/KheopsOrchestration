@@ -1,6 +1,6 @@
 # Insecure Install
 
-This branch contains a bash script and associated files for a simple all-in-one installation of an Insecure instance of KHEOPS.
+This branch contains a bash script and associated files for a simple all-in-one installation of an Insecure instance of KHEOPS with elastic stack.
 
 Below are instruction for getting a basic instance of KHEOPS up and running. This configuration does not provide security. In order to be properly secured, the KHEOPS and Keycloak must be placed behind TLS (https) connections and the Keycloak configuration must be updated. Nevertheless, this install with provide a starting point that can be modified as needed for the local environment.
 
@@ -10,13 +10,13 @@ Below are instruction for getting a basic instance of KHEOPS up and running. Thi
 4. Run the following command:
 
 ```shell
-bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install/kheopsinstall.sh)
+bash <(curl -sL https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/insecure-install-v1.0.0/kheopsinstall.sh)
 ```
 
 This script will create a new directory named `kheops` in which it will download docker-compose configuration files, a keycloak realm configuration, and generate the necessary secrets.
 
-Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), and
-KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1). When you first connect to KHEOPS
+Once installed, Keycloak will be available at [http://127.0.0.1:8080](http://127.0.0.1:8080), 
+KHEOPS will be available at [http://127.0.0.1](http://127.0.0.1), and Kibana at [http://127.0.0.1/kibana](http://127.0.0.1/kibana). When you first connect to KHEOPS
 you will be redirected to the Keycloak login screen. The `Register` link will be available to
 create a new KHEOPS account. 
 
