@@ -1,5 +1,4 @@
 ---
-version: "3.1"
 services:
 # In a production environment, Keycloak should be set up separately from KHEOPS.
 # KHEOPS interacts with Keycloak using the Authorization Code flow please
@@ -262,6 +261,10 @@ services:
       - elastic_data:/usr/share/elasticsearch/data
     networks:
       - elk_network
+    deploy:
+      resources:
+        limits:
+          memory: 2gb
 
   kibana-initialize:
     image: osirixfoundation/kibana-initialize:main
