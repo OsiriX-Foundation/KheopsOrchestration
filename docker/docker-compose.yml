@@ -117,6 +117,7 @@ services:
       - kheops_authdb_pass
       - kheops_client_dicomwebproxysecret
       - kheops_client_zippersecret
+      - kheops_auth_admin_password
     networks:
       - kheops_network
       - keycloak_network
@@ -291,6 +292,8 @@ secrets:
     file: secrets/kheops_client_dicomwebproxysecret
   kheops_client_zippersecret:
     file: secrets/kheops_client_zippersecret
+  kheops_auth_admin_password:
+    file: secrets/kheops_auth_admin_password
 
 
 volumes:
