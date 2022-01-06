@@ -14,7 +14,7 @@ then
   exit 1
 fi
 
-download_branch="insecure-install-v1.0.6"
+download_branch="insecure-install-v1.0.7"
 downloadURI="https://raw.githubusercontent.com/OsiriX-Foundation/KheopsOrchestration/$download_branch"
 
 secretpath="kheops/secrets"
