@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kheopsdicomwebproxy
-        image: osirixfoundation/kheops-dicomweb-proxy:v0.9.1-google-branch
+        image: osirixfoundation/kheops-dicomweb-proxy:v1.0.8
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

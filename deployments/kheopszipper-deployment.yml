@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kheopszipper
-        image: osirixfoundation/kheops-zipper:v0.9.1-google-branch
+        image: osirixfoundation/kheops-zipper:v1.0.8
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: kheopsauthorization
-        image: osirixfoundation/kheops-authorization:v0.9.1-google-branch
+        image: osirixfoundation/kheops-authorization:v1.0.8
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -31,9 +31,6 @@ spec:
           mountPath: "/run/secrets/kheops_authdb_pass"
           subPath: kheops_authdb_pass
         - name: secrets
-          mountPath: "/run/secrets/kheops_keycloak_clientsecret"
-          subPath: kheops_keycloak_clientsecret
-        - name: secrets
           mountPath: "/run/secrets/kheops_client_dicomwebproxysecret"
           subPath: kheops_client_dicomwebproxysecret
         - name: secrets
@@ -48,8 +45,6 @@ spec:
             path: kheops_auth_hmasecret
           - key: kheops_authdb_pass
             path: kheops_authdb_pass
-          - key: kheops_keycloak_clientsecret
-            path: kheops_keycloak_clientsecret
           - key: kheops_client_dicomwebproxysecret
             path: kheops_client_dicomwebproxysecret
           - key: kheops_client_zippersecret

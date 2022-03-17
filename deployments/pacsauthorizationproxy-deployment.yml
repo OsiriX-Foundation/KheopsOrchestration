@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pacsauthorizationproxy
-        image: osirixfoundation/pacs-authorization-proxy:v0.9.1-google-branch
+        image: osirixfoundation/pacs-authorization-proxy:v1.0.8
         imagePullPolicy: Always
         ports:
         - containerPort: 80
@@ -42,5 +42,3 @@ spec:
             path: kheops_auth_hmasecret_post
           - key: kheops_auth_hmasecret
             path: kheops_auth_hmasecret
-          - key: cloudhealth_service_account_private_key
-            path: privkey.pem

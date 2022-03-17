@@ -1,20 +1,19 @@
-apiVersion: networking.gke.io/v1beta1
-kind: ManagedCertificate
-metadata:
-  name: kheops-gke-certificate
-spec:
-  domains:
-    - gke-test.kheops.online
----
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kheops-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: kheops-ip
-    kubernetes.io/ingress.allow-http: "false"
-    networking.gke.io/managed-certificates: kheops-gke-certificate  
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  backend:
-    serviceName: kheopsreverseproxy
-    servicePort: 80
+  ingressClassName: nginx-example
+  rules:
+    - host: kheops.local
+      http:
+          paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: kheopsreverseproxy
+                  port:
+                    number: 80
