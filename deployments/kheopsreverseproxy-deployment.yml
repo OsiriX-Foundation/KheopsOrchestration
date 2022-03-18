@@ -21,5 +21,3 @@ spec:
         envFrom:
         - configMapRef:
             name: kheops-config
-        - configMapRef:
-            name: kheops-config-common

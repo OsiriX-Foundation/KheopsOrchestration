@@ -21,8 +21,6 @@ spec:
         envFrom:
         - configMapRef:
             name: kheops-config
-        - configMapRef:
-            name: kheops-config-common
         volumeMounts:
         - name: secrets
           mountPath: "/run/secrets/kheops_client_zippersecret"

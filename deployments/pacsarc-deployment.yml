@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacsarc
+spec:
+  selector:
+    matchLabels:
+      app: pacsarc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pacsarc
+    spec:
+      containers:
+        - name: pacsarc
+          image: dcm4che/dcm4chee-arc-psql:5.25.1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: WILDFLY_CHOWN
+              value: /storage /opt/wildfly/standalone
+            - name: WILDFLY_WAIT_FOR
+              value: ldap:389 pacspostgres:5432
+            - name: JAVA_OPTS
+              value: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true
+          envFrom:
+            - configMapRef:
+                name: kheops-config
+          volumeMounts:
+            - name: secrets
+              mountPath: "/run/secrets/kheops_pacsdb_pass"
+              subPath: kheops_pacsdb_pass
+            - name: dcm4chee-arc-wildfly
+              mountPath: /opt/wildfly/standalone
+            - name: dcm4chee-arc-storage
+              mountPath: /storage
+      volumes:
+        - name: secrets
+          secret:
+            secretName: kheops.secrets
+            items:
+              - key: kheops_pacsdb_pass
+                path: kheops_pacsdb_pass
+        - name: dcm4chee-arc-wildfly
+          emptyDir: {}
+        - name: dcm4chee-arc-storage
+          emptyDir: {}

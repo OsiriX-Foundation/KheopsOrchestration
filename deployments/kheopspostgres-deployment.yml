@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kheopspostgres
+spec:
+  selector:
+    matchLabels:
+      app: kheopspostgres
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kheopspostgres
+    spec:
+      containers:
+        - name: kheopspostgres
+          image: postgres:12.9-alpine
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: kheops-config
+            - configMapRef:
+                name: kheopspostgres-config
+          volumeMounts:
+            - name: secrets
+              mountPath: "/run/secrets/kheops_pacsdb_pass"
+              subPath: kheops_pacsdb_pass
+            - name: kheops-db-data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: secrets
+          secret:
+            secretName: kheops.secrets
+            items:
+              - key: kheops_pacsdb_pass
+                path: kheops_pacsdb_pass
+        - name: kheops-db-data
+          emptyDir: {}

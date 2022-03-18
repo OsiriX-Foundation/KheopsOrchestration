@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kheopspostgres-config
+  labels:
+    app: kheopspostgres
+data:
+  POSTGRES_DB: kheops_pacs
+  POSTGRES_USER: kheops_pacs
+  POSTGRES_PASSWORD_FILE: /run/secrets/kheops_pacsdb_pass
