@@ -9,7 +9,7 @@ data:
 
   # The OIDC Provider
   # TODO Why was /auth/ removed
-  KHEOPS_OIDC_PROVIDER: http://localhost:8080/realms/kheops
+  KHEOPS_OIDC_PROVIDER: http://localhost:8080/auth/realms/kheops
 
   # Database configuration
   KHEOPS_AUTHDB_USER: kheopsuser
@@ -22,7 +22,7 @@ data:
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
   # TODO Why was /auth/ removed
-  KHEOPS_UI_USER_MANAGEMENT_URL: http://localhost:8080/realms/kheops/account
+  KHEOPS_UI_USER_MANAGEMENT_URL: http://localhost:8080/auth/realms/kheops/account
   KHEOPS_UI_VIEWER_URL: https://ohif.kheops.online
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
 

@@ -17,15 +17,13 @@ spec:
     spec:
       containers:
         - name: keycloak
-          image: quay.io/keycloak/keycloak:17.0.0
-          args: ["start-dev"]
+          image: jboss/keycloak:16.1.1
+          args: ["-b", "0.0.0.0"]
           env:
-            - name: KEYCLOAK_ADMIN
+            - name: KEYCLOAK_USER
               value: "admin"
-            - name: KEYCLOAK_ADMIN_PASSWORD
+            - name: KEYCLOAK_PASSWORD
               value: "admin"
-            - name: KC_PROXY
-              value: "edge"
             - name: KEYCLOAK_IMPORT
               value: "/tmp/kheops-realm.json"
             - name: KEYCLOAK_FRONTEND_URL
@@ -33,14 +31,20 @@ spec:
           ports:
           - containerPort: 8080
           volumeMounts:
-            - name: keycloakrealmdata
+            - name: keycloak-realm-data
               mountPath: /tmp/kheops-realm.json
               subPath: kheops-realm.json
+            - name: keycloak-theme-data
+              mountPath: /opt/jboss/keycloak/themes/kheops
           readinessProbe:
             httpGet:
-              path: /realms/master
+              path: /auth/realms/kheops
               port: 8080
       volumes:
-        - name: keycloakrealmdata
+        - name: keycloak-realm-data
           configMap:
-            name: keycloak-config
+            name: keycloak-realm-config
+        - name: keycloak-theme-data
+          hostPath:
+            path: /Users/nikpap/IdeaProjects/KheopsOrchestration/deployments/themes/kheops
+            type: Directory
