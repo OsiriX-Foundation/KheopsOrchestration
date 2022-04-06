@@ -4,11 +4,12 @@ metadata:
   name: kheops-config
 data:
   # KHEOPS environment variables
-  KHEOPS_ROOT_URL: http://127.0.0.1
+  KHEOPS_ROOT_URL: http://localhost
   KHEOPS_API_PATH: /api
 
   # The OIDC Provider
-  KHEOPS_OIDC_PROVIDER: http://127.0.0.1:8080/auth/realms/kheops
+  # TODO Why was /auth/ removed
+  KHEOPS_OIDC_PROVIDER: http://localhost:8080/realms/kheops
 
   # Database configuration
   KHEOPS_AUTHDB_USER: kheopsuser
@@ -20,7 +21,8 @@ data:
   KHEOPS_UI_CLIENTID: loginConnect
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
-  KHEOPS_UI_USER_MANAGEMENT_URL: http://127.0.0.1:8080/auth/realms/kheops/account
+  # TODO Why was /auth/ removed
+  KHEOPS_UI_USER_MANAGEMENT_URL: http://localhost:8080/realms/kheops/account
   KHEOPS_UI_VIEWER_URL: https://ohif.kheops.online
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
 
@@ -33,7 +35,7 @@ data:
   KHEOPS_PROXY_PACS_WADO_RS: http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/rs
   KHEOPS_PROXY_PACS_DCM4CHEE_ARC: http://localhost:8080/dcm4chee-arc
 
-#  KHEOPS_ROOT_HOST: 127.0.0.1
+#  KHEOPS_ROOT_HOST: localhost
 
   KHEOPS_AUTHORIZATION_HOST: kheopsauthorization
   KHEOPS_AUTHORIZATION_PATH: /authorization

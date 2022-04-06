@@ -11,13 +11,14 @@ spec:
     metadata:
       labels:
         app: kheopsreverseproxy
+        k8s-app: kheopsreverseproxy
     spec:
       containers:
       - name: kheopsreverseproxy
         image: osirixfoundation/kheops-reverse-proxy:v1.0.8-insecure
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 8042
         envFrom:
         - configMapRef:
             name: kheops-config

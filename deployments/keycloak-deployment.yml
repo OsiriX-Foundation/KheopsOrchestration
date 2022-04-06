@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: keycloak
+        k8s-app: keycloak
     spec:
       containers:
         - name: keycloak
@@ -25,10 +26,21 @@ spec:
               value: "admin"
             - name: KC_PROXY
               value: "edge"
+            - name: KEYCLOAK_IMPORT
+              value: "/tmp/kheops-realm.json"
+            - name: KEYCLOAK_FRONTEND_URL
+              value: "http://127.0.0.1:8080/auth"
           ports:
-            - name: http
-              containerPort: 8080
+          - containerPort: 8080
+          volumeMounts:
+            - name: keycloakrealmdata
+              mountPath: /tmp/kheops-realm.json
+              subPath: kheops-realm.json
           readinessProbe:
             httpGet:
               path: /realms/master
               port: 8080
+      volumes:
+        - name: keycloakrealmdata
+          configMap:
+            name: keycloak-config

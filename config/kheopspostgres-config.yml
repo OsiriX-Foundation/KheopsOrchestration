@@ -5,6 +5,6 @@ metadata:
   labels:
     app: kheopspostgres
 data:
-  POSTGRES_DB: kheops_pacs
-  POSTGRES_USER: kheops_pacs
-  POSTGRES_PASSWORD_FILE: /run/secrets/kheops_pacsdb_pass
+  POSTGRES_DB: kheops
+  POSTGRES_USER: kheopsuser
+  POSTGRES_PASSWORD_FILE: /run/secrets/kheops_authdb_pass

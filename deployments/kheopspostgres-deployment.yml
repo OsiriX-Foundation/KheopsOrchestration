@@ -25,8 +25,8 @@ spec:
                 name: kheopspostgres-config
           volumeMounts:
             - name: secrets
-              mountPath: "/run/secrets/kheops_pacsdb_pass"
-              subPath: kheops_pacsdb_pass
+              mountPath: "/run/secrets/kheops_authdb_pass"
+              subPath: kheops_authdb_pass
             - name: kheops-db-data
               mountPath: /var/lib/postgresql/data
       volumes:
@@ -34,7 +34,7 @@ spec:
           secret:
             secretName: kheops.secrets
             items:
-              - key: kheops_pacsdb_pass
-                path: kheops_pacsdb_pass
+              - key: kheops_authdb_pass
+                path: kheops_authdb_pass
         - name: kheops-db-data
           emptyDir: {}
