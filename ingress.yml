@@ -1,37 +1,29 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: ingress-kheops
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: kheops-ingressroute
+#  namespace: default
 spec:
-  rules:
-    - host: kheops.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: kheopsreverseproxy
-                port:
-                  number: 80
-  ingressClassName: nginx
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: ingress-keycloak
-spec:
-  rules:
-    - host: keycloak.local
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: keycloak
-                port:
-                  number: 8080
-  ingressClassName: nginx
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`kheops.meduks1.unige.ch`) && PathPrefix(`/`)
+      middlewares:
+        - name: unige-ipwhitelist
+          namespace: traefik
+      services:
+        - name: kheopsreverseproxy
+          port: 80
+    - kind: Rule
+      match: Host(`keycloak.meduks1.unige.ch`) && PathPrefix(`/`)
+      middlewares:
+        - name: unige-ipwhitelist
+          namespace: traefik
+      services:
+        - name: keycloak
+          port: 80
+  tls:
+    options:
+      name: standardtlsoptions
+      namespace: traefik
