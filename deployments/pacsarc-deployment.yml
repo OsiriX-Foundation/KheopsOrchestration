@@ -44,6 +44,8 @@ spec:
               - key: kheops_pacsdb_pass
                 path: kheops_pacsdb_pass
         - name: dcm4chee-arc-wildfly
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: dcm4chee-arc-wildfly-pvc
         - name: dcm4chee-arc-storage
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: dcm4chee-arc-storage-pvc

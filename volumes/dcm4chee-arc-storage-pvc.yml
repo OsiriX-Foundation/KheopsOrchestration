@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dcm4chee-arc-storage-pvc
+#  namespace: my-namespace
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: vspherecsig
+  resources:
+    requests:
+      storage: 10Gi
