@@ -4,12 +4,12 @@ metadata:
   name: kheops-config
 data:
   # KHEOPS environment variables
-  KHEOPS_ROOT_URL: http://localhost
+  KHEOPS_ROOT_URL: https://kheops.meduks1.unige.ch
   KHEOPS_API_PATH: /api
 
   # The OIDC Provider
-  # TODO Why was /auth/ removed
-  KHEOPS_OIDC_PROVIDER: http://localhost:8080/auth/realms/kheops
+  KHEOPS_OIDC_PROVIDER: https://keycloak.meduks1.unige.ch/auth/realms/kheops
+  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak/auth/realms/kheops
 
   # Database configuration
   KHEOPS_AUTHDB_USER: kheopsuser
@@ -19,23 +19,17 @@ data:
   #Web frontend configuration
   KHEOPS_UI_TITLE: Kheops
   KHEOPS_UI_CLIENTID: loginConnect
+  KHEOPS_UI_ROOT_URL: https://kheops.meduks1.unige.ch
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
-  # TODO Why was /auth/ removed
-  KHEOPS_UI_USER_MANAGEMENT_URL: http://localhost:8080/auth/realms/kheops/account
+  KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.meduks1.unige.ch/auth/realms/kheops/account
   KHEOPS_UI_VIEWER_URL: https://ohif.kheops.online
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
-
-#  KHEOPS_KEYCLOAK_CLIENTID: kheopsAuthorization
-#  KHEOPS_KEYCLOAK_REALMS: kheops
-#  KHEOPS_KEYCLOAK_URI: https://gke-test-keycloak.kheops.online
 
 # TODO: Change localhost to pacsarc
   KHEOPS_PROXY_PACS_WADO_URI: http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/wado
   KHEOPS_PROXY_PACS_WADO_RS: http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/rs
   KHEOPS_PROXY_PACS_DCM4CHEE_ARC: http://localhost:8080/dcm4chee-arc
-
-#  KHEOPS_ROOT_HOST: localhost
 
   KHEOPS_AUTHORIZATION_HOST: kheopsauthorization
   KHEOPS_AUTHORIZATION_PATH: /authorization
@@ -52,11 +46,10 @@ data:
 
   KHEOPS_ROOT_PORT: "443"
   KHEOPS_ROOT_SCHEME: https
+  KHEOPS_ROOT_HOST: kheops.meduks1.unige.ch
 
   KHEOPS_UI_HOST: kheopsui
   KHEOPS_UI_PORT: "3000"
 
   KHEOPS_ZIPPER_HOST: kheopszipper
   KHEOPS_ZIPPER_PORT: "8080"
-
-#  KHEOPS_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
