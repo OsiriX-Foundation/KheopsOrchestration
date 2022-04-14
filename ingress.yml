@@ -23,6 +23,14 @@ spec:
       services:
         - name: keycloak
           port: 80
+    - kind: Rule
+      match: Host(`ohif.meduks1.unige.ch`) && PathPrefix(`/`)
+      middlewares:
+        - name: unige-ipwhitelist
+          namespace: traefik
+      services:
+        - name: ohif
+          port: 80
   tls:
     options:
       name: standardtlsoptions
