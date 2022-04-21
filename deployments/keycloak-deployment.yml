@@ -27,24 +27,26 @@ spec:
             - name: KEYCLOAK_IMPORT
               value: "/tmp/kheops-realm.json"
             - name: KEYCLOAK_FRONTEND_URL
-              value: "http://127.0.0.1:8080/auth"
+              value: "https://keycloak.meduks1.unige.ch/auth"
           ports:
           - containerPort: 8080
           volumeMounts:
             - name: keycloak-realm-data
               mountPath: /tmp/kheops-realm.json
               subPath: kheops-realm.json
-            - name: keycloak-theme-data
-              mountPath: /opt/jboss/keycloak/themes/kheops
+#            - name: keycloak-theme-data
+#              mountPath: /opt/jboss/keycloak/themes/kheops
           readinessProbe:
             httpGet:
-              path: /auth/realms/kheops
+              path: /auth/realms/kheops/
               port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
       volumes:
         - name: keycloak-realm-data
           configMap:
             name: keycloak-realm-config
-        - name: keycloak-theme-data
-          hostPath:
-            path: /Users/nikpap/IdeaProjects/KheopsOrchestration/deployments/themes/kheops
-            type: Directory
+#        - name: keycloak-theme-data
+#          hostPath:
+#            path: /Users/nikpap/IdeaProjects/KheopsOrchestration/deployments/themes/kheops
+#            type: Directory
