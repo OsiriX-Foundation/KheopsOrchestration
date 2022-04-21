@@ -23,13 +23,12 @@ data:
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
   KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.meduks1.unige.ch/auth/realms/kheops/account
-  KHEOPS_UI_VIEWER_URL: https://ohif.kheops.online
+  KHEOPS_UI_VIEWER_URL: https://ohif.meduks1.unige.ch
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
 
-# TODO: Change localhost to pacsarc
-  KHEOPS_PROXY_PACS_WADO_URI: http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/wado
-  KHEOPS_PROXY_PACS_WADO_RS: http://localhost:8080/dcm4chee-arc/aets/DCM4CHEE/rs
-  KHEOPS_PROXY_PACS_DCM4CHEE_ARC: http://localhost:8080/dcm4chee-arc
+  KHEOPS_PROXY_PACS_WADO_URI: http://pacsarc:8080/dcm4chee-arc/aets/DCM4CHEE/wado
+  KHEOPS_PROXY_PACS_WADO_RS: http://pacsarc:8080/dcm4chee-arc/aets/DCM4CHEE/rs
+  KHEOPS_PROXY_PACS_DCM4CHEE_ARC: http://pacsarc:8080/dcm4chee-arc
 
   KHEOPS_AUTHORIZATION_HOST: kheopsauthorization
   KHEOPS_AUTHORIZATION_PATH: /authorization
