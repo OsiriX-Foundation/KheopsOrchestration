@@ -6,7 +6,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: vspherecsig
+  storageClassName: vspherecsi
   resources:
     requests:
       storage: 10Gi
