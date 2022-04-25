@@ -12,9 +12,9 @@ data:
   KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak/auth/realms/kheops
 
   # Database configuration
-  KHEOPS_AUTHDB_USER: kheopsuser
-  KHEOPS_AUTHDB_NAME: kheops
-  KHEOPS_AUTHDB_URL: postgresql://kheopspostgres:5432
+  KHEOPS_AUTHDB_USER: lavim-kheops-authorization
+  KHEOPS_AUTHDB_NAME: lavim-kheops-authorization
+  KHEOPS_AUTHDB_URL: postgresql://lavim-kheops-authorization-primary.postgres-operator.svc:5432
 
   #Web frontend configuration
   KHEOPS_UI_TITLE: Kheops
