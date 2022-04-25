@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ldap
+  namespace: postgres-operator
 spec:
   selector:
     matchLabels:
@@ -15,7 +16,6 @@ spec:
       containers:
         - name: ldap
           image: dcm4che/slapd-dcm4chee:2.6.0-25.1
-          imagePullPolicy: Always
           ports:
             - containerPort: 389
           envFrom:

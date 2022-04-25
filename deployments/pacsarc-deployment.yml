@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pacsarc
+  namespace: postgres-operator
 spec:
   selector:
     matchLabels:
@@ -15,14 +16,23 @@ spec:
       containers:
         - name: pacsarc
           image: dcm4che/dcm4chee-arc-psql:5.25.1
-          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           env:
+            - name: POSTGRES_DB
+              value: lavim-pacsarc
+            - name: POSTGRES_USER
+              value: lavim-pacsarc
+            - name: POSTGRES_HOST
+              value: lavim-pacsarc-primary.postgres-operator.svc
+            - name: POSTGRES_PASSWORD_FILE
+              value: /run/secrets/kheops_pacsdb_pass
+            - name: STORAGE_DIR
+              value: /storage/fs1
             - name: WILDFLY_CHOWN
               value: /storage /opt/wildfly/standalone
             - name: WILDFLY_WAIT_FOR
-              value: ldap:389 pacspostgres:5432
+              value: ldap:389 lavim-pacsarc-primary.postgres-operator.svc:5432
             - name: JAVA_OPTS
               value: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true
           envFrom:

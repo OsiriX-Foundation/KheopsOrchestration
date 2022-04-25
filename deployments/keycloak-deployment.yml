@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: keycloak
+  namespace: postgres-operator
   labels:
     app: keycloak
 spec:
@@ -19,23 +20,20 @@ spec:
         - name: keycloak
           image: jboss/keycloak:16.1.1
           args: ["-b", "0.0.0.0"]
+          envFrom:
+          - configMapRef:
+              name: keycloak-config
           env:
-            - name: KEYCLOAK_USER
-              value: "admin"
-            - name: KEYCLOAK_PASSWORD
-              value: "admin"
-            - name: KEYCLOAK_IMPORT
-              value: "/tmp/kheops-realm.json"
-            - name: KEYCLOAK_FRONTEND_URL
-              value: "https://keycloak.meduks1.unige.ch/auth"
+          - name: DB_PASSWORD
+            valueFrom: { secretKeyRef: { name:  keycloakdb-pguser-keycloakdb, key: password } }
           ports:
           - containerPort: 8080
           volumeMounts:
             - name: keycloak-realm-data
               mountPath: /tmp/kheops-realm.json
               subPath: kheops-realm.json
-#            - name: keycloak-theme-data
-#              mountPath: /opt/jboss/keycloak/themes/kheops
+            - name: keycloak-theme-data
+              mountPath: /opt/jboss/keycloak/themes/kheops
           readinessProbe:
             httpGet:
               path: /auth/realms/kheops/
@@ -46,7 +44,6 @@ spec:
         - name: keycloak-realm-data
           configMap:
             name: keycloak-realm-config
-#        - name: keycloak-theme-data
-#          hostPath:
-#            path: /Users/nikpap/IdeaProjects/KheopsOrchestration/deployments/themes/kheops
-#            type: Directory
+        - name: keycloak-theme-data
+          hostPath:
+            path: /Users/nikpap/IdeaProjects/KheopsOrchestration/deployments/themes/kheops/

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kheopsui
+  namespace: postgres-operator
 spec:
   selector:
     matchLabels:
@@ -14,8 +15,7 @@ spec:
     spec:
       containers:
       - name: kheopsui
-        image: osirixfoundation/kheops-ui:v1.0.8
-        imagePullPolicy: Always
+        image: osirixfoundation/kheops-ui:nikpap_unige_k8s
         ports:
         - containerPort: 3000
         envFrom:

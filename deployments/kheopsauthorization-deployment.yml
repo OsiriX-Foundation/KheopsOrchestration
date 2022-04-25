@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kheopsauthorization
+  namespace: postgres-operator
 spec:
   selector:
     matchLabels:
@@ -14,8 +15,7 @@ spec:
     spec:
       containers:
       - name: kheopsauthorization
-        image: osirixfoundation/kheops-authorization:v1.0.8
-        imagePullPolicy: Always
+        image: osirixfoundation/kheops-authorization:nikpap_unige_k8s
         ports:
         - containerPort: 8080
         envFrom:

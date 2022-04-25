@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pacsauthorizationproxy
+  namespace: postgres-operator
 spec:
   selector:
     matchLabels:
@@ -15,7 +16,6 @@ spec:
       containers:
       - name: pacsauthorizationproxy
         image: osirixfoundation/pacs-authorization-proxy:v1.0.8
-        imagePullPolicy: Always
         ports:
         - containerPort: 80
         envFrom:
@@ -28,9 +28,6 @@ spec:
         - name: secrets
           mountPath: "/run/secrets/kheops_auth_hmasecret"
           subPath: kheops_auth_hmasecret
-        - name: secrets
-          mountPath: "/run/secrets/privkey.pem"
-          subPath: privkey.pem
       volumes:
       - name: secrets
         secret:

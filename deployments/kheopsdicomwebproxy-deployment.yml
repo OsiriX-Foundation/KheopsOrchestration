@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kheopsdicomwebproxy
+  namespace: postgres-operator
 spec:
   selector:
     matchLabels:
@@ -15,7 +16,6 @@ spec:
       containers:
       - name: kheopsdicomwebproxy
         image: osirixfoundation/kheops-dicomweb-proxy:v1.0.8
-        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         envFrom:
