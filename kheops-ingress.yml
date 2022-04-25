@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kheops-ingressroute
+  namespace: postgres-operator
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`kheops.meduks1.unige.ch`) && PathPrefix(`/`)
+      middlewares:
+        - name: unige-ipwhitelist
+          namespace: traefik
+      services:
+        - name: kheopsreverseproxy
+          port: 80
+  tls:
+    options:
+      name: standardtlsoptions
+      namespace: traefik
