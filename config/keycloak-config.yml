@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: keycloak-config
+  namespace: postgres-operator
+data:
+  KEYCLOAK_USER: "admin"
+  KEYCLOAK_PASSWORD: ""
+  KEYCLOAK_IMPORT: "/tmp/kheops-realm.json"
+  KEYCLOAK_FRONTEND_URL: "https://keycloak.meduks1.unige.ch/auth"
+
+  DB_VENDOR: "postgres"
+  DB_ADDR: "keycloakdb-primary.postgres-operator.svc"
+  DB_DATABASE: "keycloakdb"
+  DB_USER: "keycloakdb"
+
+#  KEYCLOAK_HTTP_PORT: 8880
+#  KEYCLOAK_HTTPS_PORT: 8843
+#  MANAGEMENT_HTTP_PORT: 8990
+
+  PROXY_ADDRESS_FORWARDING: "true"
+  KEYCLOAK_ALWAYS_HTTPS: "true"
