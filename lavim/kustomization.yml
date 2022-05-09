@@ -1,0 +1,28 @@
+namespace: kheops-lavim
+
+resources:
+  - namespace/namespace.yml
+  - postgres/lavim-kheops-authorization-postgres.yml
+  - postgres/lavim-pacsarc-postgres.yml
+  - config/kheops-config.yml
+  #  - config/lavim-pacsarc-init-sql.yml
+  - secrets/kheops-secrets.yml
+  - services/kheopsauthorization-service.yml
+  - services/kheopsreverseproxy-service.yml
+  - services/kheopszipper-service.yml
+  - services/pacsarc-service.yml
+  - services/kheopsdicomwebproxy-service.yml
+  - services/kheopsui-service.yml
+  - services/ldap-service.yml
+  - services/pacsauthorizationproxy-service.yml
+  - ingress/kheops-ingress.yml
+  - volumes/dcm4chee-arc-storage-pvc.yml
+  - volumes/dcm4chee-arc-wildfly-pvc.yml
+  - deployments/kheopsauthorization-deployment.yml
+  - deployments/kheopsreverseproxy-deployment.yml
+  - deployments/kheopszipper-deployment.yml
+  - deployments/pacsarc-deployment.yml
+  - deployments/kheopsdicomwebproxy-deployment.yml
+  - deployments/kheopsui-deployment.yml
+  - deployments/ldap-deployment.yml
+  - deployments/pacsauthorizationproxy-deployment.yml

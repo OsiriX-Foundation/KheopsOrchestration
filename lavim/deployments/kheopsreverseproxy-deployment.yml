@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kheopsreverseproxy
+  namespace: kheops-lavim
+spec:
+  selector:
+    matchLabels:
+      app: kheopsreverseproxy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kheopsreverseproxy
+        k8s-app: kheopsreverseproxy
+    spec:
+      containers:
+      - name: kheopsreverseproxy
+        # TODO: Change to secure
+        image: osirixfoundation/kheops-reverse-proxy:v1.0.8-insecure
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8042
+        envFrom:
+        - configMapRef:
+            name: kheops-lavim-config
+#        readinessProbe:
+#          httpGet:
+#            path: /inbox
+#            port: 80
+#          initialDelaySeconds: 10
+#          periodSeconds: 60

@@ -12,18 +12,12 @@ Kubernetes orchestration example for running KHEOPS.
 
 ### Bring up Kubernetes objects
 
-1. Configmaps `kubectl apply -f config`.
-2. Secrets `kubectl apply -f secrets/secrets_template.yml`.
-3. Services `kubectl apply -f services`.
-4. Ingress `kubectl apply -f ingress.yml`.
-5. Volumes `kubectl apply -f volumes`.
-6. Deployments `kubectl apply -f deployments`.
+1. Set up the postgres operator in postgres-operator-example : `kubectl apply -k kustomize/install/namespace` , `kubectl apply --server-side -k kustomize/install/default`
+2. Set up the postgres databases: `kubectl apply -f lavim/postgres`.
+3. Get authorization password, save it in secrets : `kubectl -n kheops-lavim get secrets kheops-lavim-authorization-pguser-kheops-lavim-authorization -o go-template='{{.data.password | base64decode}}'`
+4. Utils: `kubectl apply -k utils`.
+5. Lavim: `kubectl apply -k lavim`.
 
 ### Delete up Kubernetes objects
 
-1. Configmaps `kubectl delete -f config`.
-2. Secrets `kubectl delete -f secrets/secrets_template.yml`.
-3. Services `kubectl delete -f services`.
-4. Ingress `kubectl delete -f ingress.yml`.
-5. Volumes `kubectl delete -f volumes`
-6. Deployments `kubectl delete -f deployments`.
+1. Delete utils : `kubectl apply -k utils`.

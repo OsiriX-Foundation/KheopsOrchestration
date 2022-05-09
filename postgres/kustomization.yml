@@ -1,6 +1,0 @@
-namespace: postgres-operator
-
-resources:
-  - lavim-kheops-authorization-postgres.yml
-  - lavim-pacsarc-postgres.yml
-  - keycloak-postgres.yml

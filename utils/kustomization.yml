@@ -1,0 +1,12 @@
+namespace: kheops-utils
+
+resources:
+  - namespace/namespace.yml
+  - postgres/keycloak-postgres.yml
+  - config/keycloak-config.yml
+  - config/keycloak-realm-config.yml
+  - services/keycloak-service.yml
+  - services/ohif-service.yml
+  - ingress/keycloak-ohif-ingress.yml
+  - deployments/keycloak-deployment.yml
+  - deployments/ohif-deployment.yml
