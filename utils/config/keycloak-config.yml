@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: keycloak-config
-  namespace: postgres-operator
+  namespace: kheops-utils
 data:
   KEYCLOAK_USER: "admin"
   KEYCLOAK_PASSWORD: ""
@@ -10,7 +10,7 @@ data:
   KEYCLOAK_FRONTEND_URL: "https://keycloak.meduks1.unige.ch/auth"
 
   DB_VENDOR: "postgres"
-  DB_ADDR: "keycloakdb-primary.postgres-operator.svc"
+  DB_ADDR: "keycloakdb-primary.kheops-utils.svc"
   DB_DATABASE: "keycloakdb"
   DB_USER: "keycloakdb"
 
