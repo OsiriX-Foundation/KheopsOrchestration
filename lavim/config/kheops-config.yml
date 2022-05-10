@@ -10,7 +10,7 @@ data:
 
   # The OIDC Provider
   KHEOPS_OIDC_PROVIDER: https://keycloak.meduks1.unige.ch/auth/realms/kheops
-  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak/auth/realms/kheops
+  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/kheops
 
   # Database configuration
   KHEOPS_AUTHDB_USER: kheops-lavim-authorization
