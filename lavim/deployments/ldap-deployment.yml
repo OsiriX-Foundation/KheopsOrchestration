@@ -18,6 +18,17 @@ spec:
           image: dcm4che/slapd-dcm4chee:2.6.0-25.1
           ports:
             - containerPort: 389
+          env:
+            - name: IMPORT_LDIF
+              value: /tmp/ldap-s3-unige-config.ldif
           envFrom:
             - configMapRef:
                 name: kheops-lavim-config
+          volumeMounts:
+            - name: ldap-s3-unige-volume
+              mountPath: /tmp/ldap-s3-unige-config.ldif
+              subPath: ldap-s3-unige-config.ldif
+      volumes:
+        - name: ldap-s3-unige-volume
+          configMap:
+            name: ldap-s3-unige-config
