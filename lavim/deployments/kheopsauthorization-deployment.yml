@@ -21,7 +21,7 @@ spec:
         - containerPort: 8080
         envFrom:
         - configMapRef:
-            name: kheops-lavim-config
+            name: kheops-config
         volumeMounts:
         - name: dbsecrets
           mountPath: "/run/secrets/kheops_authdb_pass"
@@ -38,7 +38,7 @@ spec:
       volumes:
       - name: dbsecrets
         secret:
-          secretName: kheops-lavim-authorization-pguser-kheops-lavim-authorization
+          secretName: kheops-authorization-pguser-kheops-authorization
           items:
             - key: password
               path: kheops_authdb_pass
@@ -48,8 +48,6 @@ spec:
           items:
           - key: kheops_auth_hmasecret
             path: kheops_auth_hmasecret
-          - key: kheops_authdb_pass
-            path: kheops_authdb_pass
           - key: kheops_client_dicomwebproxysecret
             path: kheops_client_dicomwebproxysecret
           - key: kheops_client_zippersecret

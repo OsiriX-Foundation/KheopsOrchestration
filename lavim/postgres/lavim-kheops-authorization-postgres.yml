@@ -1,7 +1,7 @@
 apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
-  name: kheops-lavim-authorization
+  name: kheops-authorization
   namespace: kheops-lavim
 spec:
   image: registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-14.2-1
@@ -13,11 +13,11 @@ spec:
           - "ReadWriteOnce"
         resources:
           requests:
-            storage: 1Gi
+            storage: 10Gi
   users:
-    - name : kheops-lavim-authorization
+    - name : kheops-authorization
       databases:
-        - kheops-lavim-authorization
+        - kheops-authorization
       password:
         type: "AlphaNumeric"
   backups:
@@ -31,4 +31,4 @@ spec:
                 - "ReadWriteOnce"
               resources:
                 requests:
-                  storage: 1Gi
+                  storage: 10Gi

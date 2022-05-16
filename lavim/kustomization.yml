@@ -5,7 +5,7 @@ resources:
   - postgres/lavim-kheops-authorization-postgres.yml
   - postgres/lavim-pacsarc-postgres.yml
   - config/kheops-config.yml
-  #  - config/lavim-pacsarc-init-sql.yml
+  - config/ldap-s3-unige-config.yml
   - secrets/kheops-secrets.yml
   - services/kheopsauthorization-service.yml
   - services/kheopsreverseproxy-service.yml

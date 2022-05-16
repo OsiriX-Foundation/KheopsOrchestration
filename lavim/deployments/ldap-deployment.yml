@@ -23,7 +23,7 @@ spec:
               value: /tmp/ldap-s3-unige-config.ldif
           envFrom:
             - configMapRef:
-                name: kheops-lavim-config
+                name: kheops-config
           volumeMounts:
             - name: ldap-s3-unige-volume
               mountPath: /tmp/ldap-s3-unige-config.ldif

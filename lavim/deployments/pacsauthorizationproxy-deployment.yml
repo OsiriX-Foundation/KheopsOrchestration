@@ -20,7 +20,7 @@ spec:
         - containerPort: 80
         envFrom:
         - configMapRef:
-            name: kheops-lavim-config
+            name: kheops-config
         volumeMounts:
         - name: secrets
           mountPath: "/run/secrets/kheops_auth_hmasecret_post"

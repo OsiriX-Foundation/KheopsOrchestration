@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kheops-lavim-config
+  name: kheops-config
   namespace: kheops-lavim
 data:
   # KHEOPS environment variables
@@ -13,9 +13,9 @@ data:
   KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/kheops
 
   # Database configuration
-  KHEOPS_AUTHDB_USER: kheops-lavim-authorization
-  KHEOPS_AUTHDB_NAME: kheops-lavim-authorization
-  KHEOPS_AUTHDB_URL: postgresql://kheops-lavim-authorization-primary.kheops-lavim.svc:5432
+  KHEOPS_AUTHDB_USER: kheops-authorization
+  KHEOPS_AUTHDB_NAME: kheops-authorization
+  KHEOPS_AUTHDB_URL: postgresql://kheops-authorization-primary.kheops-lavim.svc:5432
 
   #Web frontend configuration
   KHEOPS_UI_TITLE: Kheops

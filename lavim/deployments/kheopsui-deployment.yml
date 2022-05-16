@@ -20,4 +20,4 @@ spec:
         - containerPort: 3000
         envFrom:
         - configMapRef:
-            name: kheops-lavim-config
+            name: kheops-config
