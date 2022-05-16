@@ -9,11 +9,11 @@ data:
     dn: dcmStorageID=unige-s3,dicomDeviceName=dcm4chee-arc,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
     objectClass: dcmStorage
     dcmStorageID: unige-s3
-    dcmURI: jclouds:s3:https://test.kheops.hcpdufour.unige.ch
+    dcmURI: jclouds:s3:https://lavim.kheops.hcpdufour.unige.ch
     dcmProperty: jclouds.endpoint=https://kheops.hcpdufour.unige.ch
     dcmProperty: identity=
     dcmProperty: credential=
-    dcmProperty: container=test
+    dcmProperty: container=lavim
     dcmProperty: jclouds.provider=s3
     dcmProperty: jclouds.trust-all-certs=true
     dcmProperty: jclouds.relax-hostname=true
