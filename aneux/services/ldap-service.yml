@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ldap
+  namespace: kheops-aneux
+  labels:
+    app: ldap
+spec:
+  ports:
+    - port: 389
+      targetPort: 389
+  selector:
+    app: ldap

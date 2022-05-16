@@ -1,0 +1,55 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kheops-config
+  namespace: kheops-aneux
+data:
+  # KHEOPS environment variables
+  KHEOPS_ROOT_URL: https://aneux.meduks1.unige.ch
+  KHEOPS_API_PATH: /api
+
+  # The OIDC Provider
+  KHEOPS_OIDC_PROVIDER: https://keycloak.meduks1.unige.ch/auth/realms/kheops
+  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/kheops
+
+  # Database configuration
+  KHEOPS_AUTHDB_USER: kheops-authorization
+  KHEOPS_AUTHDB_NAME: kheops-authorization
+  KHEOPS_AUTHDB_URL: postgresql://kheops-authorization-primary.kheops-aneux.svc:5432
+
+  #Web frontend configuration
+  KHEOPS_UI_TITLE: Kheops
+  KHEOPS_UI_CLIENTID: loginConnect
+  KHEOPS_UI_ROOT_URL: https://aneux.meduks1.unige.ch
+  # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
+  # configuration will be displayed
+  KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.meduks1.unige.ch/auth/realms/kheops/account
+  KHEOPS_UI_VIEWER_URL: https://ohif.meduks1.unige.ch
+  KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
+
+  KHEOPS_PROXY_PACS_WADO_URI: http://pacsarc:8080/dcm4chee-arc/aets/DCM4CHEE/wado
+  KHEOPS_PROXY_PACS_WADO_RS: http://pacsarc:8080/dcm4chee-arc/aets/DCM4CHEE/rs
+  KHEOPS_PROXY_PACS_DCM4CHEE_ARC: http://pacsarc:8080/dcm4chee-arc
+
+  KHEOPS_AUTHORIZATION_HOST: kheopsauthorization
+  KHEOPS_AUTHORIZATION_PATH: /authorization
+  KHEOPS_AUTHORIZATION_PORT: "8080"
+
+  KHEOPS_CLIENT_DICOMWEBPROXYCLIENTID: DICOMWebProxy
+  KHEOPS_CLIENT_ZIPPERCLIENTID: Zipper
+
+  KHEOPS_DICOMWEB_PROXY_HOST: kheopsdicomwebproxy
+  KHEOPS_DICOMWEB_PROXY_PORT: "8080"
+
+  KHEOPS_PACS_PEP_HOST: pacsauthorizationproxy
+  KHEOPS_PACS_PEP_PORT: "80"
+
+  KHEOPS_ROOT_PORT: "443"
+  KHEOPS_ROOT_SCHEME: https
+  KHEOPS_ROOT_HOST: aneux.meduks1.unige.ch
+
+  KHEOPS_UI_HOST: kheopsui
+  KHEOPS_UI_PORT: "3000"
+
+  KHEOPS_ZIPPER_HOST: kheopszipper
+  KHEOPS_ZIPPER_PORT: "8080"
