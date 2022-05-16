@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacsarc
+  namespace: kheops-alzheimer
+spec:
+  selector:
+    matchLabels:
+      app: pacsarc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pacsarc
+    spec:
+      containers:
+        - name: pacsarc
+          image: dcm4che/dcm4chee-arc-psql:5.26.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: POSTGRES_DB
+              value: kheops-pacsarc
+            - name: POSTGRES_USER
+              value: kheops-pacsarc
+            - name: POSTGRES_HOST
+              value: kheops-pacsarc-primary.kheops-alzheimer.svc
+            - name: POSTGRES_PASSWORD_FILE
+              value: /run/secrets/kheops_pacsdb_pass
+            - name: STORAGE_DIR
+              value: /storage/fs1
+            - name: WILDFLY_CHOWN
+              value: /storage /opt/wildfly/standalone
+            - name: WILDFLY_WAIT_FOR
+              value: ldap:389 kheops-pacsarc-primary.kheops-alzheimer.svc:5432
+            - name: JAVA_OPTS
+              value: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true
+          envFrom:
+            - configMapRef:
+                name: kheops-config
+          volumeMounts:
+            - name: dbsecrets
+              mountPath: "/run/secrets/kheops_pacsdb_pass"
+              subPath: kheops_pacsdb_pass
+            - name: dcm4chee-arc-wildfly
+              mountPath: /opt/wildfly/standalone
+            - name: dcm4chee-arc-storage
+              mountPath: /storage
+      volumes:
+        - name: dbsecrets
+          secret:
+            secretName: kheops-pacsarc-pguser-kheops-pacsarc
+            items:
+              - key: password
+                path: kheops_pacsdb_pass
+        - name: dcm4chee-arc-wildfly
+          persistentVolumeClaim:
+            claimName: dcm4chee-arc-wildfly-pvc
+        - name: dcm4chee-arc-storage
+          persistentVolumeClaim:
+            claimName: dcm4chee-arc-storage-pvc

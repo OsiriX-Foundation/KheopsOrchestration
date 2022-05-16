@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pacsauthorizationproxy
+  namespace: kheops-alzheimer
+spec:
+  selector:
+    matchLabels:
+      app: pacsauthorizationproxy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: pacsauthorizationproxy
+    spec:
+      containers:
+      - name: pacsauthorizationproxy
+        image: osirixfoundation/pacs-authorization-proxy:v1.0.8
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: kheops-config
+        volumeMounts:
+        - name: secrets
+          mountPath: "/run/secrets/kheops_auth_hmasecret_post"
+          subPath: kheops_auth_hmasecret_post
+        - name: secrets
+          mountPath: "/run/secrets/kheops_auth_hmasecret"
+          subPath: kheops_auth_hmasecret
+      volumes:
+      - name: secrets
+        secret:
+          secretName: kheops.secrets
+          items:
+          - key: kheops_auth_hmasecret_post
+            path: kheops_auth_hmasecret_post
+          - key: kheops_auth_hmasecret
+            path: kheops_auth_hmasecret

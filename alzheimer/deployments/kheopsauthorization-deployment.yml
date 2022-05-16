@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kheopsauthorization
+  namespace: kheops-alzheimer
+spec:
+  selector:
+    matchLabels:
+      app: kheopsauthorization
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kheopsauthorization
+    spec:
+      containers:
+      - name: kheopsauthorization
+        image: osirixfoundation/kheops-authorization:nikpap_unige_k8s
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: kheops-config
+        volumeMounts:
+        - name: dbsecrets
+          mountPath: "/run/secrets/kheops_authdb_pass"
+          subPath: kheops_authdb_pass
+        - name: secrets
+          mountPath: "/run/secrets/kheops_auth_hmasecret"
+          subPath: kheops_auth_hmasecret
+        - name: secrets
+          mountPath: "/run/secrets/kheops_client_dicomwebproxysecret"
+          subPath: kheops_client_dicomwebproxysecret
+        - name: secrets
+          mountPath: "/run/secrets/kheops_client_zippersecret"
+          subPath: kheops_client_zippersecret
+      volumes:
+      - name: dbsecrets
+        secret:
+          secretName: kheops-authorization-pguser-kheops-authorization
+          items:
+            - key: password
+              path: kheops_authdb_pass
+      - name: secrets
+        secret:
+          secretName: kheops.secrets
+          items:
+          - key: kheops_auth_hmasecret
+            path: kheops_auth_hmasecret
+          - key: kheops_client_dicomwebproxysecret
+            path: kheops_client_dicomwebproxysecret
+          - key: kheops_client_zippersecret
+            path: kheops_client_zippersecret

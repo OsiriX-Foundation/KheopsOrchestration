@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kheopszipper
+  namespace: kheops-alzheimer
+spec:
+  selector:
+    matchLabels:
+      app: kheopszipper
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kheopszipper
+    spec:
+      containers:
+      - name: kheopszipper
+        image: osirixfoundation/kheops-zipper:v1.0.8
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: kheops-config
+        volumeMounts:
+        - name: secrets
+          mountPath: "/run/secrets/kheops_client_zippersecret"
+          subPath: kheops_client_zippersecret
+      volumes:
+      - name: secrets
+        secret:
+          secretName: kheops.secrets
+          items:
+          - key: kheops_client_zippersecret
+            path: kheops_client_zippersecret
