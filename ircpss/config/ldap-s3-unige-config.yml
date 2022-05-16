@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ldap-s3-unige-config
+  namespace: kheops-ircpss
+data:
+  ldap-s3-unige-config.ldif: |-
+    version: 1
+    dn: dcmStorageID=unige-s3,dicomDeviceName=dcm4chee-arc,cn=Devices,cn=DICOM Configuration,dc=dcm4che,dc=org
+    objectClass: dcmStorage
+    dcmStorageID: unige-s3
+    dcmURI: jclouds:s3:https://ircpss.kheops.hcpdufour.unige.ch
+    dcmProperty: jclouds.endpoint=https://kheops.hcpdufour.unige.ch
+    dcmProperty: identity=
+    dcmProperty: credential=
+    dcmProperty: container=ircpss
+    dcmProperty: jclouds.provider=s3
+    dcmProperty: jclouds.trust-all-certs=true
+    dcmProperty: jclouds.relax-hostname=true
+    dcmProperty: jclouds.s3.virtual-host-buckets=false
+    dcmProperty: jclouds.strip-expect-header=true
