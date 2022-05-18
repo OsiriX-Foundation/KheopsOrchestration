@@ -27,8 +27,6 @@ spec:
               value: kheops-pacsarc-primary.kheops-aneux.svc
             - name: POSTGRES_PASSWORD_FILE
               value: /run/secrets/kheops_pacsdb_pass
-            - name: STORAGE_DIR
-              value: /storage/fs1
             - name: WILDFLY_CHOWN
               value: /storage /opt/wildfly/standalone
             - name: WILDFLY_WAIT_FOR
@@ -44,8 +42,6 @@ spec:
               subPath: kheops_pacsdb_pass
             - name: dcm4chee-arc-wildfly
               mountPath: /opt/wildfly/standalone
-            - name: dcm4chee-arc-storage
-              mountPath: /storage
       volumes:
         - name: dbsecrets
           secret:
@@ -56,6 +52,3 @@ spec:
         - name: dcm4chee-arc-wildfly
           persistentVolumeClaim:
             claimName: dcm4chee-arc-wildfly-pvc
-        - name: dcm4chee-arc-storage
-          persistentVolumeClaim:
-            claimName: dcm4chee-arc-storage-pvc

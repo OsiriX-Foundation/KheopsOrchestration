@@ -16,7 +16,6 @@ resources:
   - services/ldap-service.yml
   - services/pacsauthorizationproxy-service.yml
   - ingress/kheops-ingress.yml
-  - volumes/dcm4chee-arc-storage-pvc.yml
   - volumes/dcm4chee-arc-wildfly-pvc.yml
   - deployments/kheopsauthorization-deployment.yml
   - deployments/kheopsreverseproxy-deployment.yml
