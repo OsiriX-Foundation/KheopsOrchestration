@@ -8,14 +8,9 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`aneux.meduks1.unige.ch`) && PathPrefix(`/`)
-      middlewares:
-        - name: unige-ipwhitelist
-          namespace: traefik
+      match: Host(`aneux.unige.ch`) && PathPrefix(`/`)
       services:
         - name: kheopsreverseproxy
           port: 80
   tls:
-    options:
-      name: standardtlsoptions
-      namespace: traefik
+    secretName: aneux.unige.ch-tls

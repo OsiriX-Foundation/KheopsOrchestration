@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: aneux.unige.ch
+  namespace: kheops-aneux
+spec:
+  secretName: aneux.unige.ch-tls # secret à créer
+  issuerRef:
+    name: letsencrypt-prod # ClusterIssuer à utiliser
+    kind: ClusterIssuer
+  dnsNames:
+    - aneux.unige.ch
