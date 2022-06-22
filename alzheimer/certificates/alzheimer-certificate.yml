@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: alzheimer.unige.ch
+  namespace: kheops-alzheimer
+spec:
+  secretName: alzheimer.unige.ch-tls # secret à créer
+  issuerRef:
+    name: letsencrypt-prod # ClusterIssuer à utiliser
+    kind: ClusterIssuer
+  dnsNames:
+    - alzheimer.unige.ch
