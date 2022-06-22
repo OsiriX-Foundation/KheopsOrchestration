@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ohif-ingressroute
+  namespace: kheops-utils
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`ohif.unige.ch`) && PathPrefix(`/`)
+      services:
+        - name: ohif
+          port: 80
+  tls:
+    secretName: ohif.unige.ch-tls

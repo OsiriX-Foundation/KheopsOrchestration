@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: keycloak-alzheimer-ingressroute
+  namespace: kheops-utils
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`login-alzheimer.unige.ch`) && PathPrefix(`/`)
+      services:
+        - name: keycloak
+          port: 80
+  tls:
+    secretName: login-alzheimer.unige.ch-tls
