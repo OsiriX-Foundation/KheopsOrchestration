@@ -5,12 +5,13 @@ metadata:
   namespace: kheops-ircpss
 data:
   # KHEOPS environment variables
-  KHEOPS_ROOT_URL: https://ircpss.meduks1.unige.ch
+  KHEOPS_ROOT_URL: https://ircpss.unige.ch
   KHEOPS_API_PATH: /api
 
   # The OIDC Provider
-  KHEOPS_OIDC_PROVIDER: https://keycloak.meduks1.unige.ch/auth/realms/kheops
-  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/kheops
+  KHEOPS_OIDC_PROVIDER: https://keycloak.kheops.online/auth/realms/ircpss
+#  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/ircpss
+  KHEOPS_AUTH_OIDC_PROVIDER: https://keycloak.kheops.online/auth/realms/ircpss
 
   # Database configuration
   KHEOPS_AUTHDB_USER: kheops-authorization
@@ -20,11 +21,11 @@ data:
   #Web frontend configuration
   KHEOPS_UI_TITLE: Kheops
   KHEOPS_UI_CLIENTID: loginConnect
-  KHEOPS_UI_ROOT_URL: https://ircpss.meduks1.unige.ch
+  KHEOPS_UI_ROOT_URL: https://ircpss.unige.ch
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
-  KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.meduks1.unige.ch/auth/realms/kheops/account
-  KHEOPS_UI_VIEWER_URL: https://ohif.meduks1.unige.ch
+  KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.kheops.online/auth/realms/ircpss/account
+  KHEOPS_UI_VIEWER_URL: https://ohif.unige.ch
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
 
   KHEOPS_PROXY_PACS_WADO_URI: http://pacsarc:8080/dcm4chee-arc/aets/DCM4CHEE/wado
@@ -46,7 +47,7 @@ data:
 
   KHEOPS_ROOT_PORT: "443"
   KHEOPS_ROOT_SCHEME: https
-  KHEOPS_ROOT_HOST: ircpss.meduks1.unige.ch
+  KHEOPS_ROOT_HOST: ircpss.unige.ch
 
   KHEOPS_UI_HOST: kheopsui
   KHEOPS_UI_PORT: "3000"

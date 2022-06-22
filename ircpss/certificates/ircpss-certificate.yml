@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ircpss.unige.ch
+  namespace: kheops-ircpss
+spec:
+  secretName: ircpss.unige.ch-tls # secret à créer
+  issuerRef:
+    name: letsencrypt-prod # ClusterIssuer à utiliser
+    kind: ClusterIssuer
+  dnsNames:
+    - ircpss.unige.ch

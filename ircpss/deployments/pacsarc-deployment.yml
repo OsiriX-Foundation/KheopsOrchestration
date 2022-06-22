@@ -28,7 +28,7 @@ spec:
             - name: POSTGRES_PASSWORD_FILE
               value: /run/secrets/kheops_pacsdb_pass
             - name: WILDFLY_CHOWN
-              value: /storage /opt/wildfly/standalone
+              value: /opt/wildfly/standalone
             - name: WILDFLY_WAIT_FOR
               value: ldap:389 kheops-pacsarc-primary.kheops-ircpss.svc:5432
             - name: JAVA_OPTS

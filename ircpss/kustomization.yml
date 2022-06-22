@@ -6,6 +6,7 @@ resources:
   - postgres/pacsarc-postgres.yml
   - config/kheops-config.yml
   - config/ldap-s3-unige-config.yml
+  - certificates/ircpss-certificate.yml
   - secrets/kheops-secrets.yml
   - services/kheopsauthorization-service.yml
   - services/kheopsreverseproxy-service.yml
