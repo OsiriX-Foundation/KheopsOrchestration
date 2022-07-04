@@ -4,19 +4,15 @@ metadata:
   name: keycloak-config
   namespace: kheops-utils
 data:
-  KEYCLOAK_USER: "admin"
-  KEYCLOAK_PASSWORD: ""
   KEYCLOAK_IMPORT: "/tmp/kheops-realm.json"
-  KEYCLOAK_FRONTEND_URL: "https://keycloak.meduks1.unige.ch/auth"
+  KEYCLOAK_FRONTEND_URL: "https://login-lavim.unige.ch/auth"
 
   DB_VENDOR: "postgres"
-  DB_ADDR: "keycloakdb-primary.kheops-utils.svc"
-  DB_DATABASE: "keycloakdb"
-  DB_USER: "keycloakdb"
-
-#  KEYCLOAK_HTTP_PORT: 8880
-#  KEYCLOAK_HTTPS_PORT: 8843
-#  MANAGEMENT_HTTP_PORT: 8990
+  DB_ADDR: "dbaas-int.unige.ch"
+  DB_PORT: "30004"
+  DB_DATABASE: "kheops-keycloak"
+  DB_USER: "kheops-keycloak-user"
+  DB_PASSWORD: ""
 
   PROXY_ADDRESS_FORWARDING: "true"
   KEYCLOAK_ALWAYS_HTTPS: "true"

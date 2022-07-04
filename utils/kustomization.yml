@@ -2,7 +2,6 @@ namespace: kheops-utils
 
 resources:
   - namespace/namespace.yml
-  - postgres/keycloak-postgres.yml
   - config/keycloak-config.yml
   - config/keycloak-realm-config.yml
   - certificates/ohif-certificate.yml
