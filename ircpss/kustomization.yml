@@ -2,8 +2,6 @@ namespace: kheops-ircpss
 
 resources:
   - namespace/namespace.yml
-  - postgres/kheops-authorization-postgres.yml
-  - postgres/pacsarc-postgres.yml
   - config/kheops-config.yml
   - config/ldap-s3-unige-config.yml
   - certificates/ircpss-certificate.yml

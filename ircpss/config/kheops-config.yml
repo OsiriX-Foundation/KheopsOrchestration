@@ -9,14 +9,13 @@ data:
   KHEOPS_API_PATH: /api
 
   # The OIDC Provider
-  KHEOPS_OIDC_PROVIDER: https://keycloak.kheops.online/auth/realms/ircpss
-#  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/ircpss
-  KHEOPS_AUTH_OIDC_PROVIDER: https://keycloak.kheops.online/auth/realms/ircpss
+  KHEOPS_OIDC_PROVIDER: https://login-ircpss.unige.ch/auth/realms/ircpss
+  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/ircpss
 
   # Database configuration
-  KHEOPS_AUTHDB_USER: kheops-authorization
-  KHEOPS_AUTHDB_NAME: kheops-authorization
-  KHEOPS_AUTHDB_URL: postgresql://kheops-authorization-primary.kheops-ircpss.svc:5432
+  KHEOPS_AUTHDB_NAME: kheops-ircpss-authorization
+  KHEOPS_AUTHDB_USER: kheops-ircpss-authorization-user
+  KHEOPS_AUTHDB_URL: postgresql://dbaas-int.unige.ch:30004
 
   #Web frontend configuration
   KHEOPS_UI_TITLE: Kheops
@@ -24,7 +23,7 @@ data:
   KHEOPS_UI_ROOT_URL: https://ircpss.unige.ch
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
-  KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.kheops.online/auth/realms/ircpss/account
+  KHEOPS_UI_USER_MANAGEMENT_URL: https://login-ircpss.unige.ch/auth/realms/ircpss/account
   KHEOPS_UI_VIEWER_URL: https://ohif.unige.ch
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
 
