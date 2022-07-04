@@ -9,14 +9,13 @@ data:
   KHEOPS_API_PATH: /api
 
   # The OIDC Provider
-  KHEOPS_OIDC_PROVIDER: https://keycloak.kheops.online/auth/realms/alzheimer
-#  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/kheops
-  KHEOPS_AUTH_OIDC_PROVIDER: https://keycloak.kheops.online/auth/realms/alzheimer
+  KHEOPS_OIDC_PROVIDER: https://login-alzheimer.unige.ch/auth/realms/alzheimer
+  KHEOPS_AUTH_OIDC_PROVIDER: http://keycloak.kheops-utils.svc.cluster.local/auth/realms/alzheimer
 
   # Database configuration
-  KHEOPS_AUTHDB_USER: kheops-authorization
-  KHEOPS_AUTHDB_NAME: kheops-authorization
-  KHEOPS_AUTHDB_URL: postgresql://kheops-authorization-primary.kheops-alzheimer.svc:5432
+  KHEOPS_AUTHDB_NAME: kheops-alzheimer-authorization
+  KHEOPS_AUTHDB_USER: kheops-alzheimer-authorization-user
+  KHEOPS_AUTHDB_URL: postgresql://dbaas-int.unige.ch:30004
 
   #Web frontend configuration
   KHEOPS_UI_TITLE: Kheops
@@ -24,7 +23,7 @@ data:
   KHEOPS_UI_ROOT_URL: https://alzheimer.unige.ch
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
-  KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.kheops.online/auth/realms/alzheimer/account
+  KHEOPS_UI_USER_MANAGEMENT_URL: https://login-alzheimer.unige.ch/auth/realms/alzheimer/account
   KHEOPS_UI_VIEWER_URL: https://ohif.unige.ch
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
 
