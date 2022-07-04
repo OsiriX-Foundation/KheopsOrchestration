@@ -20,34 +20,36 @@ spec:
             - containerPort: 8080
           env:
             - name: POSTGRES_DB
-              value: kheops-pacsarc
+              value: kheops-aneux-pacsarc
             - name: POSTGRES_USER
-              value: kheops-pacsarc
+              value: kheops-aneux-pacsarc-user
             - name: POSTGRES_HOST
-              value: kheops-pacsarc-primary.kheops-aneux.svc
+              value: dbaas-int.unige.ch
+            - name: POSTGRES_PORT
+              value: "30004"
             - name: POSTGRES_PASSWORD_FILE
               value: /run/secrets/kheops_pacsdb_pass
             - name: WILDFLY_CHOWN
               value: /opt/wildfly/standalone
             - name: WILDFLY_WAIT_FOR
-              value: ldap:389 kheops-pacsarc-primary.kheops-aneux.svc:5432
+              value: ldap:389 dbaas-int.unige.ch:30004
             - name: JAVA_OPTS
               value: -Xms64m -Xmx512m -XX:MetaspaceSize=96M -XX:MaxMetaspaceSize=256m -Djava.net.preferIPv4Stack=true
           envFrom:
             - configMapRef:
                 name: kheops-config
           volumeMounts:
-            - name: dbsecrets
+            - name: secrets
               mountPath: "/run/secrets/kheops_pacsdb_pass"
               subPath: kheops_pacsdb_pass
             - name: dcm4chee-arc-wildfly
               mountPath: /opt/wildfly/standalone
       volumes:
-        - name: dbsecrets
+        - name: secrets
           secret:
-            secretName: kheops-pacsarc-pguser-kheops-pacsarc
+            secretName: kheops.secrets
             items:
-              - key: password
+              - key: kheops_pacsdb_pass
                 path: kheops_pacsdb_pass
         - name: dcm4chee-arc-wildfly
           persistentVolumeClaim:
