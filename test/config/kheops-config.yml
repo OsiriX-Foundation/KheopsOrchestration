@@ -24,7 +24,7 @@ data:
   # KHEOPS_UI_USER_MANAGEMENT_URL is optional, if it is set, a link to the
   # configuration will be displayed
   KHEOPS_UI_USER_MANAGEMENT_URL: https://keycloak.meduks1.unige.ch/auth/realms/kheops/account
-  KHEOPS_UI_VIEWER_URL: https://ohif.meduks1.unige.ch
+  KHEOPS_UI_VIEWER_URL: https://ohif.unige.ch
   KHEOPS_UI_VIEWER_SM_URL: https://reportprovider.kheops.online/wsi-viewer
 
   KHEOPS_PROXY_PACS_WADO_URI: http://pacsarc:8080/dcm4chee-arc/aets/DCM4CHEE/wado
