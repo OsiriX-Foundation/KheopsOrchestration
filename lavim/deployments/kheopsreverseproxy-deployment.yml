@@ -17,8 +17,8 @@ spec:
       containers:
       - name: kheopsreverseproxy
         # TODO: Change to secure
-        image: osirixfoundation/kheops-reverse-proxy:v1.0.8-insecure
-        imagePullPolicy: Always
+        image: osirixfoundation/kheops-reverse-proxy:nikpap_unige_k8s-insecure
+#        imagePullPolicy: Always
         ports:
         - containerPort: 8042
         envFrom:

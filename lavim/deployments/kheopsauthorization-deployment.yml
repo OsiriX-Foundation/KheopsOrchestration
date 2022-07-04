@@ -23,7 +23,7 @@ spec:
         - configMapRef:
             name: kheops-config
         volumeMounts:
-        - name: dbsecrets
+        - name: secrets
           mountPath: "/run/secrets/kheops_authdb_pass"
           subPath: kheops_authdb_pass
         - name: secrets
@@ -36,16 +36,12 @@ spec:
           mountPath: "/run/secrets/kheops_client_zippersecret"
           subPath: kheops_client_zippersecret
       volumes:
-      - name: dbsecrets
-        secret:
-          secretName: kheops-authorization-pguser-kheops-authorization
-          items:
-            - key: password
-              path: kheops_authdb_pass
       - name: secrets
         secret:
           secretName: kheops-lavim.secrets
           items:
+          - key: kheops_authdb_pass
+            path: kheops_authdb_pass
           - key: kheops_auth_hmasecret
             path: kheops_auth_hmasecret
           - key: kheops_client_dicomwebproxysecret

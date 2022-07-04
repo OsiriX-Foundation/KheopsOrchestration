@@ -16,6 +16,7 @@ spec:
       containers:
       - name: kheopsui
         image: osirixfoundation/kheops-ui:nikpap_unige_k8s
+#        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         envFrom:

@@ -8,14 +8,9 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`lavim.meduks1.unige.ch`) && PathPrefix(`/`)
-      middlewares:
-        - name: unige-ipwhitelist
-          namespace: traefik
+      match: Host(`lavim.unige.ch`) && PathPrefix(`/`)
       services:
         - name: kheopsreverseproxy
           port: 80
   tls:
-    options:
-      name: standardtlsoptions
-      namespace: traefik
+    secretName: lavim.unige.ch-tls

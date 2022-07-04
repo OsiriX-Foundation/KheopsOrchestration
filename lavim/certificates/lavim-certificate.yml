@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: lavim.unige.ch
+  namespace: kheops-lavim
+spec:
+  secretName: lavim.unige.ch-tls # secret à créer
+  issuerRef:
+    name: letsencrypt-prod # ClusterIssuer à utiliser
+    kind: ClusterIssuer
+  dnsNames:
+    - lavim.unige.ch
