@@ -46,7 +46,7 @@ spec:
             - wget
             - "-O"
             - "/keycloak/10_million_password_list_top_1000000.txt"
-            - https://github.com/raikar/attack-docs/raw/master/password/10_million_password_list_top_1000000.txt
+            - https://github.com/OsiriX-Foundation/KheopsOrchestration/raw/kubernetes-unige/utils/keycloak/10_million_password_list_top_1000000.txt
           volumeMounts:
             - name: keycloak
               mountPath: "/keycloak"
