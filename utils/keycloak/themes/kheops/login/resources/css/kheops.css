@@ -1,0 +1,22 @@
+.login-pf body {
+    background: url("../img/kheops-bg.jpg") no-repeat center center fixed;
+}
+
+div.kc-logo-text {
+    background-image: url(../img/kheops-logo-text-silver.png);
+    height: 120px;
+    width: 396px;
+}
+
+@media (max-width: 767px) {
+
+    .login-pf body {
+      background: white;
+    }
+
+    div.kc-logo-text {
+        background-image: url(../img/kheops-logo-text-black.png);
+        width: 150px;
+        height: 64px;
+    }
+}
