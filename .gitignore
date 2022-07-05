@@ -1,3 +1,7 @@
 .DS_Store
-*secret.yml
-*secret.yaml
+*secrets.yml
+*secrets.yaml
+*s3-unige-config.yml
+*s3-unige-config.yaml
+keycloak-config.yml
+keycloak-config.yaml
