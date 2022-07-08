@@ -22,9 +22,3 @@ spec:
         envFrom:
         - configMapRef:
             name: kheops-config
-#        readinessProbe:
-#          httpGet:
-#            path: /inbox
-#            port: 80
-#          initialDelaySeconds: 10
-#          periodSeconds: 60
