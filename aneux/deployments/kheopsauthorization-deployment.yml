@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: kheopsauthorization
-        image: osirixfoundation/kheops-authorization:nikpap_unige_k8s
+        image: osirixfoundation/kheops-authorization:v1.1
         ports:
         - containerPort: 8080
         envFrom:

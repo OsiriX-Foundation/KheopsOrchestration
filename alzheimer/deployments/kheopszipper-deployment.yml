@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: kheopszipper
-        image: osirixfoundation/kheops-zipper:v1.0.8
+        image: osirixfoundation/kheops-zipper:v1.1
         ports:
         - containerPort: 8080
         envFrom:

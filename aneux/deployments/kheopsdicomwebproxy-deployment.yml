@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: kheopsdicomwebproxy
-        image: osirixfoundation/kheops-dicomweb-proxy:nikpap_unige_k8s
+        image: osirixfoundation/kheops-dicomweb-proxy:v1.1
         ports:
         - containerPort: 8080
         envFrom:
