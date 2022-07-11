@@ -29,10 +29,8 @@ spec:
             - name: keycloak-realm-data
               mountPath: /tmp/kheops-realm.json
               subPath: kheops-realm.json
-            - name: keycloak
+            - name: keycloak-password-blacklists
               mountPath: /opt/jboss/keycloak/standalone/data/password-blacklists
-#            - name: keycloak-theme-data
-#              mountPath: /opt/jboss/keycloak/themes/kheops
           readinessProbe:
             httpGet:
               path: /auth/realms/kheops/
@@ -40,22 +38,19 @@ spec:
             initialDelaySeconds: 10
             periodSeconds: 10
       initContainers:
-        - name: install
-          image: busybox:1.28
+        - name: keycloak-password-blacklists
+          image: busybox
           command:
             - wget
             - "-O"
             - "/keycloak/10_million_password_list_top_1000000.txt"
             - https://github.com/OsiriX-Foundation/KheopsOrchestration/raw/kubernetes-unige/utils/keycloak/10_million_password_list_top_1000000.txt
           volumeMounts:
-            - name: keycloak
+            - name: keycloak-password-blacklists
               mountPath: "/keycloak"
       volumes:
         - name: keycloak-realm-data
           configMap:
             name: keycloak-realm-config
-        - name: keycloak
+        - name: keycloak-password-blacklists
           emptyDir: {}
-#        - name: keycloak-theme-data
-#          hostPath:
-#            path: /Users/nikpap/IdeaProjects/KheopsOrchestration/utils/deployments/themes/kheops/
