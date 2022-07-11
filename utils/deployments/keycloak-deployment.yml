@@ -31,6 +31,8 @@ spec:
               subPath: kheops-realm.json
             - name: keycloak-password-blacklists
               mountPath: /opt/jboss/keycloak/standalone/data/password-blacklists
+#            - name: keycloak-kheops-theme
+#              mountPath: /opt/jboss/keycloak/themes/
           readinessProbe:
             httpGet:
               path: /auth/realms/kheops/
@@ -48,9 +50,21 @@ spec:
           volumeMounts:
             - name: keycloak-password-blacklists
               mountPath: "/keycloak"
+#        - name: keycloak-kheops-theme
+#          image: busybox
+#          command:
+#            - wget
+#            - "-O"
+#            - "/keycloak-kheops-theme/keycloak-kheops-theme.tar"
+#            - https://github.com/OsiriX-Foundation/KheopsOrchestration/raw/kubernetes-unige/utils/keycloak/themes/keycloak-kheops-theme.tar
+#          volumeMounts:
+#            - name: keycloak-kheops-theme
+#              mountPath: "/keycloak-kheops-theme"
       volumes:
         - name: keycloak-realm-data
           configMap:
             name: keycloak-realm-config
         - name: keycloak-password-blacklists
           emptyDir: {}
+#        - name: keycloak-kheops-theme
+#          emptyDir: {}
